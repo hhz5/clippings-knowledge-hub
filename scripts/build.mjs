@@ -87,8 +87,15 @@ function slugify(rel) {
 }
 
 function firstImage(md) {
-  const m = md.match(/!\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/);
-  return m ? m[1] : '';
+  // 跳过微信公众平台等带反盗链的图床，避免卡片封面显示“未经允许不可引用”占位图
+  const blocked = /mmbiz\.qpic\.cn|mmbiz\.qlogo\.cn/;
+  const re = /!\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/g;
+  for (const m of md.matchAll(re)) {
+    const url = m[1];
+    if (blocked.test(url)) continue;
+    return url;
+  }
+  return '';
 }
 
 function fmtDate(iso) {
