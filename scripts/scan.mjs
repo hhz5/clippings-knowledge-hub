@@ -36,6 +36,7 @@ function clean(s) {
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.name.startsWith('.')) continue; // 跳过 .trash / .workbuddy 等隐藏目录
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, out);
     else if (e.name.endsWith('.md')) out.push(p);

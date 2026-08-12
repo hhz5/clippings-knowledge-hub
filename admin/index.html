@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剪藏管理后台</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏<span>管理后台</span></a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+
+<div id="roBanner" class="ro-banner" style="display:none">
+  ⚠️ 当前为<strong>只读模式</strong>：后台管理需在<strong>本机运行</strong>才能编辑内容。请在本机启动管理服务器后访问 <code>http://localhost:7777/admin/</code>。
+</div>
+
+<main class="wrap admin">
+  <section class="panel">
+    <div class="row between">
+      <h2>文章（<span id="count">0</span>）</h2>
+      <div class="row gap">
+        <input id="search" class="inp" placeholder="搜索标题 / 作者 / 标签" disabled>
+        <select id="authorFilter" class="inp" disabled><option value="">全部作者</option></select>
+        <button id="newBtn" class="btn primary" disabled>＋ 新建文章</button>
+      </div>
+    </div>
+    <div class="row gap mt">
+      <button id="rebuildBtn" class="btn" disabled>🔄 重建站点</button>
+      <button id="deployBtn" class="btn" disabled>🚀 部署 GitHub</button>
+      <span id="opMsg" class="op-msg"></span>
+    </div>
+    <div id="list" class="list"></div>
+  </section>
+
+  <section class="panel">
+    <h2>作者管理</h2>
+    <div id="authors" class="authors"></div>
+  </section>
+</main>
+
+<!-- 编辑 / 新建 弹窗 -->
+<div id="modal" class="modal" style="display:none">
+  <div class="modal-card">
+    <div class="row between"><h3 id="modalTitle">编辑文章</h3><button id="modalClose" class="x">✕</button></div>
+    <label>作者（文件夹）<input id="fAuthor" class="inp full"></label>
+    <label>标题<input id="fTitle" class="inp full"></label>
+    <label>标签（逗号分隔）<input id="fTags" class="inp full"></label>
+    <label>日期（YYYY-MM-DD）<input id="fDate" class="inp full"></label>
+    <label>正文（Markdown）<textarea id="fBody" class="inp full area"></textarea></label>
+    <div class="row between mt">
+      <button id="saveBtn" class="btn primary">保存</button>
+      <button id="deleteBtn" class="btn danger">删除文章</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
