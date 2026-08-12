@@ -32,6 +32,17 @@ const TAG_MERGE = {
   '即梦图片': '即梦', '即梦图片4.0': '即梦',
 };
 
+// 作者别名/昵称：这些标签本质是作者名，不应出现在标签云里。
+// Key 为 author（文件夹名），Value 为可能出现的标签形式。
+const AUTHOR_ALIASES = {
+  '宝藏同学阿真': ['阿真'],
+  '歸藏的AI工具箱': ['歸藏', '藏师傅'],
+  '银海inhai': ['银海'],
+  '小歪的AI工具箱': ['尹小歪', '小歪'],
+  '海辛和阿文': ['海辛', '阿文'],
+  '猫叔的AI': ['猫叔'],
+};
+
 // ---------- 工具 ----------
 function cleanText(s) {
   return String(s == null ? '' : s)
@@ -130,6 +141,8 @@ const tagSet = new Set();
 const usedSlugs = new Set();
 const authorDroppedTags = new Set();
 
+// ---------- 第一阶段：收集原始元数据与作者集合 ----------
+const rawArticles = [];
 for (const f of files) {
   const raw = fs.readFileSync(f, 'utf8');
   const parsed = parseFront(raw);
@@ -145,21 +158,6 @@ for (const f of files) {
   const author = dir === '.' ? '其他' : dir;
   authorSet.add(author);
 
-  const rawTags = Array.isArray(data.tags) ? data.tags : [];
-  const tags = [];
-  for (const t of rawTags) {
-    const nt = normTag(t);
-    if (!nt) continue;
-    if (nt === author) { authorDroppedTags.add(nt); continue; } // 作者即标签，丢弃
-    if (!tags.includes(nt)) tags.push(nt);
-    tagSet.add(nt);
-  }
-
-  const body = parsed.content;
-  const plainBody = toPlain(body);
-  const htmlBody = marked.parse(body);
-  const cover = firstImage(body);
-
   let dateObj;
   if (data.创建时间) {
     dateObj = fmtDate(data.创建时间);
@@ -167,12 +165,39 @@ for (const f of files) {
     const m = fs.statSync(f).mtime;
     dateObj = { display: m.toISOString().slice(0, 10), ts: m.getTime() };
   }
-  const { display: date, ts } = dateObj;
 
-  const title = cleanText(data.标题) || path.basename(f, '.md');
-  const summary = cleanText(data.摘要);
-  const link = cleanText(data.链接);
+  rawArticles.push({
+    slug, author,
+    rawTags: Array.isArray(data.tags) ? data.tags : [],
+    title: cleanText(data.标题) || path.basename(f, '.md'),
+    summary: cleanText(data.摘要),
+    link: cleanText(data.链接),
+    dateObj,
+    body: parsed.content,
+  });
+}
 
+// 全局作者名黑名单（作者目录名 + 已知别名/昵称）
+const authorAliases = new Set(Object.values(AUTHOR_ALIASES).flat());
+const authorBlock = new Set([...authorSet, ...authorAliases]);
+
+// ---------- 第二阶段：规范化标签并生成文章页 ----------
+for (const r of rawArticles) {
+  const tags = [];
+  for (const t of r.rawTags) {
+    const nt = normTag(t);
+    if (!nt) continue;
+    if (authorBlock.has(nt)) { authorDroppedTags.add(nt); continue; } // 作者名标签，丢弃
+    if (!tags.includes(nt)) tags.push(nt);
+    tagSet.add(nt);
+  }
+
+  const plainBody = toPlain(r.body);
+  const htmlBody = marked.parse(r.body);
+  const cover = firstImage(r.body);
+
+  const { display: date, ts } = r.dateObj;
+  const { slug, author, title, summary, link } = r;
   const url = `articles/${slug}.html`;
   articles.push({
     id: slug, url, title, author, date, ts, summary, cover,
