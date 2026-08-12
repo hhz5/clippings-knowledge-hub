@@ -4,6 +4,7 @@ const $ = (id) => document.getElementById(id);
 const api = (p, opt) => fetch(p, opt).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status + ' ' + (r.statusText || '')))));
 let ENABLED = false;
 let editingId = null;
+let staticItems = [];
 
 function setMsg(text, kind) {
   const el = $('opMsg');
@@ -24,16 +25,53 @@ function setMsg(text, kind) {
 async function load() {
   try {
     await api('/api/status');
+    ENABLED = true;
+    ['search', 'authorFilter', 'newBtn', 'rebuildBtn', 'deployBtn'].forEach((id) => { $(id).disabled = false; });
+    $('roBanner').style.display = 'none';
+    await refresh();
   } catch {
     ENABLED = false;
     $('roBanner').style.display = 'block';
     setMsg('只读模式：请在本地运行管理服务器以编辑内容。', 'err');
-    return;
+    await loadStatic();
   }
-  ENABLED = true;
-  ['search', 'authorFilter', 'newBtn', 'rebuildBtn', 'deployBtn'].forEach((id) => { $(id).disabled = false; });
-  $('roBanner').style.display = 'none';
-  await refresh();
+}
+
+async function loadStatic() {
+  // Pages 等静态托管无 /api，回退到构建好的 data.json 做只读浏览
+  try {
+    const res = await fetch('../assets/data.json');
+    if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+    const data = await res.json();
+    staticItems = (data.articles || []).map((a) => ({
+      id: a.id, title: a.title, author: a.author, date: a.date, tags: a.tags || []
+    }));
+    $('count').textContent = staticItems.length;
+    renderList(staticItems);
+    renderAuthorFilter(staticItems);
+    renderAuthors(staticItems);
+    // 只读模式下仍允许搜索/筛选
+    $('search').disabled = false;
+    $('authorFilter').disabled = false;
+  } catch (e) {
+    setMsg('只读模式：未能加载文章数据（' + e.message + '）', 'err');
+  }
+}
+
+function refreshStatic() {
+  const q = $('search').value.trim().toLowerCase();
+  const author = $('authorFilter').value;
+  let list = staticItems;
+  if (author) list = list.filter((a) => a.author === author);
+  if (q) {
+    list = list.filter((a) =>
+      (a.title || '').toLowerCase().includes(q) ||
+      (a.author || '').toLowerCase().includes(q) ||
+      (a.tags || []).some((t) => t.toLowerCase().includes(q))
+    );
+  }
+  $('count').textContent = list.length;
+  renderList(list);
 }
 
 async function refresh() {
@@ -58,20 +96,23 @@ function renderList(items) {
     const row = document.createElement('div');
     row.className = 'item';
     const tags = (a.tags || []).slice(0, 4).map((t) => `<span class="tagpill">${esc(t)}</span>`).join('');
-    row.innerHTML = `
-      <div class="t">
-        <div class="ti">${esc(a.title)}</div>
-        <div class="sub">${esc(a.author)} · ${esc(a.date || '—')} · ${tags}</div>
-      </div>
+    const acts = ENABLED ? `
       <div class="acts">
         <button class="mini" data-act="edit" data-id="${enc(a.id)}">编辑</button>
         <button class="mini" data-act="move" data-id="${enc(a.id)}" data-author="${enc(a.author)}">移动</button>
         <button class="mini danger" data-act="del" data-id="${enc(a.id)}">删除</button>
-      </div>`;
+      </div>` : '';
+    row.innerHTML = `
+      <div class="t">
+        <div class="ti">${esc(a.title)}</div>
+        <div class="sub">${esc(a.author)} · ${esc(a.date || '—')} · ${tags}</div>
+      </div>${acts}`;
     frag.appendChild(row);
   }
   box.appendChild(frag);
-  box.querySelectorAll('button[data-act]').forEach((b) => b.addEventListener('click', () => onAct(b.dataset.act, b.dataset.id, b.dataset.author)));
+  if (ENABLED) {
+    box.querySelectorAll('button[data-act]').forEach((b) => b.addEventListener('click', () => onAct(b.dataset.act, b.dataset.id, b.dataset.author)));
+  }
 }
 
 function renderAuthorFilter(items) {
@@ -81,6 +122,7 @@ function renderAuthorFilter(items) {
   for (const a of items) set[a.author] = (set[a.author] || 0) + 1;
   sel.innerHTML = '<option value="">全部作者</option>' + Object.keys(set).sort().map((n) => `<option value="${enc(n)}">${esc(n)} (${set[n]})</option>`).join('');
   sel.value = cur;
+  sel.disabled = !ENABLED && items.length === 0;
 }
 
 function renderAuthors(items) {
@@ -92,17 +134,20 @@ function renderAuthors(items) {
   for (const n of Object.keys(set).sort()) {
     const c = document.createElement('div');
     c.className = 'acard';
-    c.innerHTML = `
-      <div class="an">${esc(n)}</div>
-      <div class="ac">${set[n]} 篇</div>
+    const arow = ENABLED ? `
       <div class="arow">
         <button class="mini" data-a="rename" data-n="${enc(n)}">重命名</button>
         <button class="mini" data-a="merge" data-n="${enc(n)}">合并</button>
-      </div>`;
+      </div>` : '';
+    c.innerHTML = `
+      <div class="an">${esc(n)}</div>
+      <div class="ac">${set[n]} 篇</div>${arow}`;
     frag.appendChild(c);
   }
   box.appendChild(frag);
-  box.querySelectorAll('button[data-a]').forEach((b) => b.addEventListener('click', () => onAuthor(b.dataset.a, b.dataset.n)));
+  if (ENABLED) {
+    box.querySelectorAll('button[data-a]').forEach((b) => b.addEventListener('click', () => onAuthor(b.dataset.a, b.dataset.n)));
+  }
 }
 
 function onAct(act, id, author) {
@@ -206,8 +251,8 @@ function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').repla
 function enc(s) { return encodeURIComponent(s); }
 
 // 事件
-$('search').addEventListener('input', debounce(refresh, 200));
-$('authorFilter').addEventListener('change', refresh);
+$('search').addEventListener('input', debounce(() => ENABLED ? refresh() : refreshStatic(), 200));
+$('authorFilter').addEventListener('change', () => ENABLED ? refresh() : refreshStatic());
 $('newBtn').addEventListener('click', openNew);
 $('saveBtn').addEventListener('click', save);
 $('deleteBtn').addEventListener('click', () => editingId && doDelete(editingId));

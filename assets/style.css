@@ -75,8 +75,18 @@ body {
   font-size: 14px; cursor: pointer; transition: all .15s;
 }
 .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-/* 管理入口在桌面端也始终可见（filter-btn 默认隐藏，仅用于移动端「筛选」按钮） */
-.filter-btn#adminLink { display: inline-flex; }
+
+.admin-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 40px; padding: 0 14px 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-soft);
+  font-size: 14px; font-weight: 500; text-decoration: none;
+  transition: all .15s;
+}
+.admin-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.admin-btn svg { flex-shrink: 0; }
+
 .theme-toggle {
   width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--border);
   background: var(--surface); color: var(--text); cursor: pointer; font-size: 18px;
