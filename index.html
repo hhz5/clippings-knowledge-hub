@@ -24,12 +24,29 @@
       <svg viewBox="0 0 24 24"><path d="M21 21l-4.3-4.3M11 19a8 8 0 110-16 8 8 0 010 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <input id="searchInput" type="search" placeholder="全文检索标题 / 作者 / 标签 / 正文…" autocomplete="off">
     </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色主题">🌓</button>
+    <div class="top-actions">
+      <button class="filter-btn" id="filterBtn" aria-label="打开筛选">筛选</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色主题">🌓</button>
+    </div>
   </div>
 </header>
 
+<section class="hero" id="hero" style="display:none">
+  <div class="wrap">
+    <div class="hero-head">
+      <h1>最新剪藏</h1>
+      <p class="hero-sub">精选最近更新的内容</p>
+    </div>
+    <div class="hero-grid" id="heroGrid"></div>
+  </div>
+</section>
+
 <div class="wrap layout">
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="side-title">浏览维度</div>
+      <button class="side-close" id="sideClose" aria-label="关闭">✕</button>
+    </div>
     <div class="side-section">
       <div class="side-title">作者 <span class="cnt" id="authorCount"></span></div>
       <div class="author-list" id="authorList"></div>
@@ -40,16 +57,22 @@
     </div>
   </aside>
 
-  <main>
+  <main class="main-content">
     <div class="results-head">
       <h2 id="resultTitle">全部剪藏</h2>
       <div class="sub" id="resultSub"></div>
     </div>
     <div class="filter-bar" id="filterBar" style="display:none"></div>
     <div class="grid" id="grid"></div>
-    <div class="empty" id="empty" style="display:none">没有匹配的文章，试试调整筛选或搜索词。</div>
+    <div class="sentinel" id="sentinel"></div>
+    <div class="empty" id="empty" style="display:none">
+      <div class="empty-icon">🔍</div>
+      <p>没有匹配的文章，试试调整筛选或搜索词。</p>
+    </div>
   </main>
 </div>
+
+<div class="scrim" id="scrim"></div>
 
 <script src="assets/data.js"></script>
 <script src="assets/app.js"></script>

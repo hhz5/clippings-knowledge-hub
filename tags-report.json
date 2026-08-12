@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-08-12T07:38:51.253Z",
-  "totalArticles": 976,
-  "uniqueAuthors": 90,
-  "uniqueTagsBefore": null,
-  "uniqueTagsAfter": 1538,
+  "generatedAt": "2026-08-12T08:08:00.924Z",
+  "totalArticles": 983,
+  "uniqueAuthors": 27,
+  "uniqueTagsAfter": 1539,
   "systemTagsRemoved": [
     "clippings",
     "剪藏"
@@ -33,22 +32,16 @@
     "即梦图片": "即梦",
     "即梦图片4.0": "即梦"
   },
-  "authorAliases": {
-    "银海": "银海inhai"
-  },
+  "authorModel": "文件夹名为作者；根目录文件归入「其他」",
   "authorNameTagsDropped": [
     "AI产品黄叔",
     "云中江树",
-    "AI沃茨",
-    "一泽Eze",
-    "阿真",
-    "MuleRun",
+    "宝玉",
+    "小歪的AI工具箱",
     "数字生命卡兹克",
     "李继刚",
-    "张梦飞i",
-    "海辛",
     "猫叔的AI",
-    "琢么琢么",
+    "空格的键盘",
     "船长AI视界",
     "银海inhai"
   ]

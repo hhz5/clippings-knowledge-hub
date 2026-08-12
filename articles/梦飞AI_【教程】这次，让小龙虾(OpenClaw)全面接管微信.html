@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【教程】这次，让小龙虾(OpenClaw)全面接管微信 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏<span>知识库</span></a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">【教程】这次，让小龙虾(OpenClaw)全面接管微信</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%A2%A6%E9%A3%9EAI">梦飞AI</a>
+    
+    <span class="date">2026-03-11</span>
+  </div>
+  
+  <article class="content"><p>Original 张梦飞i 梦飞 AI</p>
+<p> <em>2026年3月10日 19:46</em> <em>河南</em> 听全文</p>
+<p>这一篇，应该是很多人想要的小龙虾接入的终极方案。</p>
+<p>OpenClaw（小龙虾）接管微信</p>
+<p>注意，不是像Qclaw那样的接入。</p>
+<p>而是，让小龙虾像独立的人一样全面接管微信。</p>
+<p>他不仅能给你发消息，还能给任何人、任何群聊发消息、并且拥有着小龙虾的全部能力，让他操控本地做个PPT、写个文档完全不在话下。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/WG3tm0K6TK37JkmkOc0AS3ibqENiciaYPu73bRWicIU6RQXWrcyGb5k2QfjibQU1mOV3Zk7RecGUfgs5EvWHdCsGdRe3WlDJhBsSqPTqxSYXc1hI/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></td>
+<td><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/WG3tm0K6TK1zZ3LK5Qe95BegnfzTPux9XBCdIHbHYEs4ttrGiaNGniauP4KoPy03WrX7cBbRpicOkiaKWoibgwM5wbwJ7pyAghCY7yibkIAD8sZQw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></td>
+</tr>
+</tbody></table>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/WG3tm0K6TK1Js57h3dHpCPtKLRBIpbUDiaHPxsJCMYgcl7ByQwUz9GGicS8hqXwgeWNgycjYToTb5sicLibblZHXbSrToQj51MJic3VSXOvU3UMc/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>首先，本帖只作为技术交流、学习使用。你需要明确知道。这并不是官方提供的接入能力，这与官方Qclaw有很大不同，Qclaw只能你个人对话，不能进群，而此方案是通过额外手段进行的控制，是全面的接管，所以，你必须知道：</p>
+<p>有封号风险，有封号风险，有封号风险！</p>
+<p>本篇仅作技术交流，请勿用于非法或商业用途。</p>
+<p>好了，叠甲完毕。</p>
+<p>本篇方案一共三个大步骤：</p>
+<p>1、本地部署OpenClaw</p>
+<p>2、修改OpenClaw的消息通道</p>
+<p>3、录入微信通道</p>
+<p>我把这个部署的方式做成了Skill，你只需要安装这个Skill，就可以让你的智能体或者你的小龙虾指导你安装。</p>
+<p>这个东西不难，但是也并不是一个纯小白可以搞定的，所以我建议你直接用Cursor或者Claude Code、Trae这类工具，直接配置上Skill之后让Agent帮你完成。</p>
+<p>在后台回复：「龙虾微信」获取Skill文件。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3FIz4UaUbw0sSL3dcVYAkEMQS7lg7Bh2B5xV4ChiadWCm23kB5mNPwc3SwjUPOSNt4UDtFgN0kD6Q/300?wx_fmt=png&wxfrom=19" alt=""></p>
+<p><strong>梦飞 AI</strong></p>
+<p>专注于分享AI实践原创干货 | 帮你实测最趁手的AI工具</p>
+<p>139篇原创内容</p>
+<p>公众号</p>
+<p>以下为全流程部署龙虾微信 AI 机器人：OpenClaw + bot 全流程指南</p>
+<p>不需要公网服务器，在自己电脑上就能跑起来一个能聊天、能回群消息的🦞小龙虾微信机器人。</p>
+<p>这套方案能做：</p>
+<p>私聊自动回复：好友发消息，AI 自动回复</p>
+<p>群聊自动响应：AI 自行决定是否回复</p>
+<p>支持多种大模型：火山引擎、OpenAI、Claude 等主流模型均可接入</p>
+<p>无需公网IP：通过 WebSocket 长连接主动接收消息，整体架构如下：</p>
+<pre><code>微信用户发消息    
+↓
+云端虚拟设备（你的微信账号在云上登录）    
+↓ 
+OpenClaw 网关（本地运行）    
+↓
+大模型（火山引擎 / OpenAI 等）    
+↓
+回复消息 → 微信用户
+</code></pre>
+<p>三个核心组件：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/WG3tm0K6TK2Vib6EeDIXBAiceGfmYdYWbDTpRDIOI3y5XIyXWEu7LzhfyLPeiajBR1vPIyvDdCV8BHQdW9BoXc7rsXaUw4cYuTdToYafLrpNFI/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>准备工作</p>
+<ol>
+<li>准备大模型 API Key</li>
+</ol>
+<p>本文以火山引擎为例（也支持 OpenAI、DeepSeek 等）。</p>
+<p>前往 火山引擎方舟控制台 创建 API Key，记录下来备用。</p>
+<ol start="2">
+<li>安装 Node.js</li>
+</ol>
+<p>前往 nodejs.org 下载并安装 Node.js v18 或更高版本（推荐 v22/v24 LTS）。</p>
+<p>安装完成后验证：</p>
+<pre><code>node --version  # 应显示 v18.x 或更高
+npm --version
+</code></pre>
+<p>第一步：安装 OpenClaw  </p>
+<p>打开终端（Windows 用 Git Bash 或 PowerShell），执行：  </p>
+<pre><code>bash npm install -g openclaw --ignore-scripts
+</code></pre>
+<p>必须加 --ignore-scripts，否则会因为 node-llama-cpp 的安装脚本报错</p>
+<p>验证安装成功：</p>
+<pre><code>openclaw --version
+</code></pre>
+<p>第二步：注册账号</p>
+<p>前往 openclaw-juhe 注册并订阅服务，具体见GitHub。</p>
+<p>登录后台后：</p>
+<p>1、进入「设备管理」→「设备列表」</p>
+<p>2、点击「初始化设备」，选择登录类型（建议使用ipad不影响你手机正常使用微信）</p>
+<p>4、下载「本地代理.exe」，运行后点击「启动代理」，复制客户端 ID</p>
+<p>5、在后台粘贴客户端 ID，点击「设置代理并登录」</p>
+<p>6、扫码完成微信登录</p>
+<p>登录成功后，在设备详情里记录三个凭证：</p>
+<p>appKey、appSecret、guid（设备 ID）</p>
+<p>第三步：下载 openclaw-juhe 插件</p>
+<pre><code>git clone https://github.com/Hanson/openclaw-juhe.git
+cd openclaw-juhe``
+npm install --ignore-scripts --legacy-peer-deps`
+</code></pre>
+<p>记录下这个目录的完整路径，后面配置会用到（例如 D:\projects\openclaw-juhe）。</p>
+<p>因为这里有一些限制操作，所以我更改了一部分代码：</p>
+<p>第四步：修改插件代码</p>
+<p>改动 1：允许所有好友私聊</p>
+<p>打开 openclaw-juhe/src/bot.ts，找到私聊过滤的代码段：</p>
+<p>改之前：</p>
+<pre><code>if (!isGroupMsg) {
+if (!isContact(senderId, account)) {
+log(`juhe: ignoring DM from non-admin user ${senderId}`);
+return;
+}
+}
+</code></pre>
+<p>改之后：</p>
+<pre><code>// contacts 为空时允许所有人，否则按白名单过滤
+if (!isGroupMsg) {
+const hasContactList = account.config.contacts &amp;&amp; account.config.contacts.length &gt; 0;
+if (hasContactList &amp;&amp; !isContact(senderId, account)) {
+log(juhe: ignoring DM from non-contact user ${senderId});
+return;
+}
+}
+</code></pre>
+<p>改动 2：允许所有群消息</p>
+<p>同样在 <code>src/bot.ts</code>，找到群消息过滤代码：</p>
+<pre><code>if (!isRoomAvailable(chatId, senderId, account.rooms)) {
+log(`juhe: ignoring message from unconfigured room ${chatId}`);
+return;
+}
+</code></pre>
+<p>改之后：</p>
+<pre><code>// rooms 为空时允许所有群
+const hasRoomList = account.rooms &amp;&amp; account.rooms.length &gt; 0;
+if (hasRoomList &amp;&amp; !isRoomAvailable(chatId, senderId, account.rooms)) {
+log(juhe: ignoring message from unconfigured room ${chatId});
+return;
+}
+</code></pre>
+<p>改动 3：添加 WebSocket 心跳</p>
+<p>打开 <code>openclaw-juhe/src/monitor.ts</code>，在文件顶部的常量处添加一行：</p>
+<pre><code>const WS_RECONNECT_INTERVAL = 5000;
+const WS_MAX_RECONNECT_ATTEMPTS = 10;
+const WS_PING_INTERVAL = 20000; // 新增：每20秒发一次心跳
+</code></pre>
+<p>在 <code>ws.onopen</code> 回调里，认证消息发送后添加心跳逻辑：</p>
+<pre><code>ws.onopen = () =&gt; {
+// ... 原有的 auth 消息发送代码 ...
+// 新增：启动心跳，防止服务器 45 秒后断开连接let pingTimer: ReturnType&lt;typeof setInterval&gt; | null = null;
+pingTimer = setInterval(() =&gt; {
+if (ws?.readyState === WebSocket.OPEN) {
+ws.send(JSON.stringify({ type: &quot;ping&quot; }));
+}
+}, WS_PING_INTERVAL);
+};
+</code></pre>
+<p>在 <code>ws.onclose</code> 回调开头清除心跳：</p>
+<pre><code>ws.onclose = () =&gt; {
+// 新增：清除心跳
+if (pingTimer) {
+clearInterval(pingTimer);
+pingTimer = null;
+}
+// ... 原有的重连逻辑 ...
+};
+</code></pre>
+<p>juhebot 服务器大约 45 秒没有收到任何数据就会断开连接，加了心跳之后连接才能保持稳定。</p>
+<p>第五步：配置 OpenClaw</p>
+<p>首次运行 OpenClaw 会自动生成配置文件，位置在：</p>
+<ul>
+<li><p>Windows：<code>C:\Users\你的用户名\.openclaw\openclaw.json</code></p>
+</li>
+<li><p>macOS/Linux：<code>~/.openclaw/openclaw.json</code></p>
+</li>
+</ul>
+<p>先运行一次让它生成配置文件：</p>
+<pre><code>openclaw gateway run
+</code></pre>
+<p>看到启动日志后按 Ctrl+C 退出</p>
+<p>然后编辑 <code>openclaw.json</code>，添加以下配置（在现有内容基础上合并）：</p>
+<p>添加火山引擎模型</p>
+<p>在 <code>models.providers</code> 下添加：</p>
+<pre><code>&quot;volcengine&quot;: {
+&quot;baseUrl&quot;: &quot;https://ark.cn-beijing.volces.com/api/v3&quot;,
+&quot;apiKey&quot;: &quot;你的火山引擎API Key&quot;,
+&quot;api&quot;: &quot;openai-completions&quot;,
+&quot;models&quot;: [
+{
+&quot;id&quot;: &quot;ark-code-latest&quot;,
+&quot;name&quot;: &quot;ark-code-latest&quot;,
+&quot;api&quot;: &quot;openai-completions&quot;,
+&quot;reasoning&quot;: false,`      `&quot;input&quot;: [&quot;text&quot;, &quot;image&quot;],
+&quot;contextWindow&quot;: 128000,
+&quot;maxTokens&quot;: 4096
+}
+]
+}
+</code></pre>
+<p>添加微信通道</p>
+<p>在 channels 下添加：</p>
+<pre><code>&quot;juhe&quot;: {
+&quot;enabled&quot;: true,
+&quot;type&quot;: &quot;wechat&quot;,
+&quot;baseUrl&quot;: &quot;https://chat-api.juhebot.com&quot;,
+&quot;appKey&quot;: &quot;你的appKey&quot;,
+&quot;appSecret&quot;: &quot;你的appSecret&quot;,
+&quot;guid&quot;: &quot;你的guid&quot;,
+&quot;contacts&quot;: [],
+&quot;rooms&quot;: []
+}
+</code></pre>
+<p>type：个人微信填 &quot;wechat&quot;，企业微信填 &quot;wework&quot;</p>
+<p>contacts：留空数组 = 所有好友均可私聊；填入 wxid 列表 = 白名单模式</p>
+<p>rooms：留空数组 = 所有群均可响应注册插件路径</p>
+<p>在 plugins 下添加：</p>
+<pre><code>&quot;plugins&quot;: {
+&quot;load&quot;: {
+&quot;paths&quot;: [&quot;D:\\projects\\openclaw-juhe&quot;]
+},
+&quot;entries&quot;: {
+&quot;juhe&quot;: { &quot;enabled&quot;: true }
+}
+}
+</code></pre>
+<p>设置默认模型</p>
+<p>在 agents.defaults.model 下修改：</p>
+<pre><code>&quot;agents&quot;: {
+&quot;defaults&quot;: {
+&quot;model&quot;: {
+&quot;primary&quot;: &quot;volcengine/doubao-seed-2.0-code&quot;
+}
+}
+}
+</code></pre>
+<p>第六步：启动服务</p>
+<pre><code>openclaw gateway run
+</code></pre>
+<p>看到以下日志说明启动成功：</p>
+<pre><code>[juhe] juhe[default]: WebSocket connected
+[juhe] juhe[default]: auth message sent
+[juhe] juhe[default]: authentication success
+</code></pre>
+<p>用你自己的微信给机器人账号发一条消息，机器人应该会在几秒内回复。</p>
+<p>在群里发消息，机器人会自行判断是否回复（可以通过 system prompt 设定回复规则）</p>
+<p>常见问题</p>
+<p><strong>Q：安装时报错 &quot;Invalid Version&quot; 或程序崩溃</strong></p>
+<p>A：加上 <code>--ignore-scripts</code> 参数：</p>
+<pre><code>npm install -g openclaw --ignore-scripts
+</code></pre>
+<p>Q：WebSocket 每隔几分钟就断开</p>
+<p>A：按照第三步改动 ，给 monitor.ts 添加心跳机制。</p>
+<p>Q：私聊发消息机器人不回复</p>
+<p>A：检查日志，如果出现 ignoring DM from non-admin user，说明 contacts 白名单限制了，按改动 1 修改代码。</p>
+<p>Q：群消息不回复</p>
+<p>A：检查日志，如果出现 ignoring message from unconfigured room，说明 rooms 配置限制了，按改动 2 修改代码，并确保 openclaw.json 里 rooms: []。</p>
+<p>Q：发消息返回&quot;协议不在线&quot;</p>
+<p>A：微信账号在 juhebot 云端掉线了，去 juhebot 后台重新登录。</p>
+<p>Q：日志显示回复成功但微信里没有收到</p>
+<p>A：检查日志里 to_username 字段，确认发送目标地址格式是否正确（个微群应该是 xxxxxxx@chatroom，不能有额外前缀）。进阶配置指定群和权限控制</p>
+<p>如果只想让机器人在特定群里响应，在 rooms 里配置：</p>
+<pre><code>&quot;rooms&quot;: [
+ {
+&quot;id&quot;: &quot;xxxxxxxxx@chatroom&quot;,
+&quot;requireMention&quot;: true,
+&quot;scope&quot;: &quot;everyone&quot;
+}
+]
+</code></pre>
+<p>群 ID 可以从日志里看到：received message from ... in group xxxxxxxxx@chatroom</p>
+<p>配置项说明：</p>
+<pre><code>requireMention: true
+</code></pre>
+<p>需要 @ 机器人才回复</p>
+<pre><code>requireMention: false
+</code></pre>
+<p>所有消息都处理</p>
+<pre><code>scope: &quot;everyone&quot;
+</code></pre>
+<p>所有群成员</p>
+<pre><code>scope: &quot;whitelist&quot;
+</code></pre>
+<p>仅白名单用户自定义 AI 人设</p>
+<p>在 openclaw.json 的 agents.defaults 里添加 system prompt，告诉 AI 它的角色和行为规则：</p>
+<pre><code>&quot;agents&quot;: {
+&quot;defaults&quot;: {
+&quot;systemPrompt&quot;: &quot;你是一个友善的助手，名字叫小助手。在群聊中，只有当有人直接向你提问时才回复，不要回复闲聊内容。&quot;
+}
+}
+</code></pre>
+<p>总结：</p>
+<p>无需服务器：本地运行，0 运维成本</p>
+<p>无需公网IP：WebSocket 主动连接，内网环境也能用</p>
+<p>灵活接入模型：换模型只需改一行配置</p>
+<p>代码开源，有能力的同学可以在此基础上二次开发，实现更丰富的功能。</p>
+<p>注意：本帖只作为技术交流、学习使用，不对任何人使用该方法承担任何责任，该方案可能存在封号风险！请勿商用。</p>
+<p>最后，愿每个人都能享受技术带来的乐趣。</p>
+<p>我是梦飞，下次见~</p>
+<p>在后台回复：「龙虾微信」获取Skill文件。</p>
+</article>
+  
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

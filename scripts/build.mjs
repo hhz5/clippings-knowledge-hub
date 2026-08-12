@@ -31,9 +31,6 @@ const TAG_MERGE = {
   '即梦图片': '即梦', '即梦图片4.0': '即梦',
 };
 
-// 作者别名归一（去除 [[]] 后再映射）
-const AUTHOR_ALIAS = { '银海': '银海inhai' };
-
 // ---------- 工具 ----------
 function cleanText(s) {
   return String(s == null ? '' : s)
@@ -55,13 +52,13 @@ function toPlain(md) {
 }
 
 function parseFront(raw) {
-  if (!raw.startsWith('---')) return null;
+  if (!raw.startsWith('---')) return { data: {}, content: raw };
   try {
     const { data, content } = matter(raw);
     return { data, content };
   } catch {
     const m = raw.match(/^---\n([\s\S]*?)\n---\n?/);
-    if (!m) return null;
+    if (!m) return { data: {}, content: raw };
     const data = {};
     for (const line of m[1].split('\n')) {
       const km = line.match(/^([^:：]+)[:：]\s*"(.*)"\s*$/);
@@ -71,12 +68,6 @@ function parseFront(raw) {
     }
     return { data, content: raw.slice(m[0].length) };
   }
-}
-
-function normAuthor(a) {
-  let s = cleanText(a).replace(/[\[\]]/g, '').trim();
-  if (AUTHOR_ALIAS[s]) s = AUTHOR_ALIAS[s];
-  return s || '未知';
 }
 
 function normTag(t) {
@@ -111,6 +102,7 @@ function fmtDate(iso) {
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.name.startsWith('.')) continue; // 跳过隐藏/系统目录（如 .workbuddy）
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, out);
     else if (e.name.endsWith('.md')) out.push(p);
@@ -132,15 +124,16 @@ const authorDroppedTags = new Set();
 for (const f of files) {
   const raw = fs.readFileSync(f, 'utf8');
   const parsed = parseFront(raw);
-  if (!parsed) continue; // 无 frontmatter：跳过，不生成页面
-  const data = parsed.data;
+  const data = parsed.data || {};
   const rel = path.relative(SRC, f);
 
   let slug = slugify(rel);
   while (usedSlugs.has(slug)) slug += '_';
   usedSlugs.add(slug);
 
-  const author = normAuthor(data.作者);
+  // 作者 = 直接父文件夹名；根目录文件归入「其他」
+  const dir = path.dirname(rel);
+  const author = dir === '.' ? '其他' : dir;
   authorSet.add(author);
 
   const rawTags = Array.isArray(data.tags) ? data.tags : [];
@@ -157,7 +150,16 @@ for (const f of files) {
   const plainBody = toPlain(body);
   const htmlBody = marked.parse(body);
   const cover = firstImage(body);
-  const { display: date, ts } = fmtDate(data.创建时间);
+
+  let dateObj;
+  if (data.创建时间) {
+    dateObj = fmtDate(data.创建时间);
+  } else {
+    const m = fs.statSync(f).mtime;
+    dateObj = { display: m.toISOString().slice(0, 10), ts: m.getTime() };
+  }
+  const { display: date, ts } = dateObj;
+
   const title = cleanText(data.标题) || path.basename(f, '.md');
   const summary = cleanText(data.摘要);
   const link = cleanText(data.链接);
@@ -186,7 +188,7 @@ for (const f of files) {
 <body>
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="../index.html">剪藏知识库</a>
+    <a class="brand" href="../index.html">剪藏<span>知识库</span></a>
     <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
   </div>
 </header>
@@ -225,19 +227,18 @@ const dataPayload = { articles, authors: [...authorSet].sort(), tags: [...tagSet
 fs.writeFileSync(path.join(ASSETS, 'data.json'), JSON.stringify(dataPayload));
 
 // data.js — 直接内联数据，支持 file:// 协议下无需 fetch 即可打开
-fs.writeFileSync(path.join(ASSETS, 'data.js'),
-  'const __DATA__ = ' + JSON.stringify(dataPayload) + ';\n');
+const payload = JSON.stringify(dataPayload).replace(/</g, '\\u003c');
+fs.writeFileSync(path.join(ASSETS, 'data.js'), 'window.__DATA__ = ' + payload + ';\n');
 
 // tags-report.json
 const report = {
   generatedAt: new Date().toISOString(),
   totalArticles: articles.length,
   uniqueAuthors: authorSet.size,
-  uniqueTagsBefore: null,
   uniqueTagsAfter: tagSet.size,
   systemTagsRemoved: [...SYSTEM_TAGS],
   tagMergeMap: TAG_MERGE,
-  authorAliases: AUTHOR_ALIAS,
+  authorModel: '文件夹名为作者；根目录文件归入「其他」',
   authorNameTagsDropped: [...authorDroppedTags],
 };
 fs.writeFileSync(path.join(OUT, 'tags-report.json'), JSON.stringify(report, null, 2));

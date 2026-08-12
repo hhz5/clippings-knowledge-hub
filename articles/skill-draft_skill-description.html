@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>skill-description · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏<span>知识库</span></a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">skill-description</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=skill-draft">skill-draft</a>
+    
+    <span class="date">2026-04-15</span>
+  </div>
+  
+  <article class="content"><h1>内容写作统一器 - 短描述</h1>
+<p>把 AI 工具、Prompt、Skill、工作流、教程、测评、玩法盘点等主题，稳定写成适合公众号 / 小红书 / 社媒长帖发布的图文内容资产。</p>
+<p>它会自动完成：</p>
+<ul>
+<li>内容类型路由</li>
+<li>风格组合选择</li>
+<li>标题与开头生成</li>
+<li>正文结构化写作</li>
+<li>模板 / Prompt / SOP 输出</li>
+<li>配图规划与图注重点设计</li>
+<li>常见失败模式自检与修正</li>
+</ul>
+<p>适合场景：</p>
+<ul>
+<li>写公众号</li>
+<li>写小红书图文</li>
+<li>写 Prompt / Skill 分享文</li>
+<li>写教程、测评、工作流拆解</li>
+<li>把零散素材整理成高传播、高收藏、高执行欲的内容</li>
+</ul>
+<p>不适合：</p>
+<ul>
+<li>纯短句广告</li>
+<li>纯新闻快讯</li>
+<li>单句标题或 slogan 生成</li>
+</ul>
+</article>
+  
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
