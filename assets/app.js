@@ -12,18 +12,23 @@ $('themeToggle').addEventListener('click', () => {
 });
 
 // ---------- 数据加载 ----------
-fetch('assets/data.json')
-  .then((r) => r.json())
-  .then((d) => {
-    DATA = d;
-    applyUrl();
-    buildSidebar();
-    render();
-  })
-  .catch((e) => {
-    $('empty').style.display = 'block';
-    $('empty').textContent = '数据加载失败：' + e.message + '（请通过本地服务器访问，而非 file://）';
-  });
+function initWithData(d) {
+  DATA = d;
+  applyUrl();
+  buildSidebar();
+  render();
+}
+if (typeof __DATA__ !== 'undefined') {
+  initWithData(__DATA__);
+} else {
+  fetch('assets/data.json')
+    .then((r) => r.json())
+    .then(initWithData)
+    .catch((e) => {
+      $('empty').style.display = 'block';
+      $('empty').textContent = '数据加载失败：' + e.message;
+    });
+}
 
 // ---------- URL 参数 ----------
 function applyUrl() {

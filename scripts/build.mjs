@@ -221,8 +221,12 @@ for (const f of files) {
 articles.sort((a, b) => b.ts - a.ts);
 
 // data.json
-fs.writeFileSync(path.join(ASSETS, 'data.json'),
-  JSON.stringify({ articles, authors: [...authorSet].sort(), tags: [...tagSet].sort() }));
+const dataPayload = { articles, authors: [...authorSet].sort(), tags: [...tagSet].sort() };
+fs.writeFileSync(path.join(ASSETS, 'data.json'), JSON.stringify(dataPayload));
+
+// data.js — 直接内联数据，支持 file:// 协议下无需 fetch 即可打开
+fs.writeFileSync(path.join(ASSETS, 'data.js'),
+  'const __DATA__ = ' + JSON.stringify(dataPayload) + ';\n');
 
 // tags-report.json
 const report = {
