@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原型设计的终极方案：Html to Figma + cursor 完美复刻任意网页 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">原型设计的终极方案：Html to Figma + cursor 完美复刻任意网页</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1">原型设计</a><a class="chip" href="../index.html?tag=Figma">Figma</a><a class="chip" href="../index.html?tag=Cursor">Cursor</a><a class="chip" href="../index.html?tag=%E7%BD%91%E9%A1%B5%E5%A4%8D%E5%88%BB">网页复刻</a>
+    <span class="date">2025-12-08</span>
+  </div>
+  
+  <article class="content"><p>原创 空格 zephyr <em>2025年9月5日 12:02</em></p>
+<p>之前就分享过用 cursor、v0、TRAE 等 AI 代码工具来绘制原型的方法： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247489365&idx=1&sn=6cddff1f62a9bd0cbceb216e58fd3919&scene=21#wechat_redirect">用 Claude 生成高保真原型</a></p>
+<p>其中对于在已有产品进行修改的原型设计，最好用的方式是截图，让其参考图片绘制。</p>
+<p>但把图片转为代码，只是让模型把图片先描述为文字，然后再根据描述输出了代码，这个过程无法做到百分百复刻，比如颜色、icon、文字大小不准确。</p>
+<p>经常需要让模型推倒重做，而且每次在原有产品做改动，都要发一遍截图和描述，每次生成效果也不同。</p>
+<p>直到我这两天开始上手 Html to figma，可以完美复制网页到设计图再到代码。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5qNsxYX3B1WWB0ftH2L2f2ybYF0sTQLiaiav22x7pT2rDClVBXQ4pq53Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>基本上解决了我的两大难题：</p>
+<ol>
+<li>AI 出的前端样式都差不多丑</li>
+<li>让 AI 在已有的产品上，做原型设或 UI 设计很难精确生成</li>
+</ol>
+<p>整个操作可以总结为两大步骤：</p>
+<h2>一、用 Html to figma 插件复刻网页</h2>
+<p>1 下载 html to figma 浏览器插件</p>
+<p>推荐使用 chrome 浏览器，下载地址： <strong><a href="https://chromewebstore.google.com/detail/html-to-figma-by-demoway/amcccnldajjnngnaoinemnaloklogjak?hl=zh-tw">https://chromewebstore.google.com/detail/html-to-figma-by-demoway/amcccnldajjnngnaoinemnaloklogjak?hl=zh-tw</a></strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5s38AKKen75VgVYdNLYkpNohoA9dX4jpIk5QqPpzVKVEJUxBmvhswyA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="loading"></p>
+<p>2 在 figma 安装 html2figma 插件</p>
+<p>点击下面链接，在figma 打开这个插件，就能让插件和 figma 账号做绑定。</p>
+<p><strong><a href="https://www.figma.com/community/plugin/1385944139259302061/html-to-figma-convert-any-web-into-figma-support-ai-generated-page">https://www.figma.com/community/plugin/1385944139259302061/html-to-figma-convert-any-web-into-figma-support-ai-generated-page</a></strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5g9sC8POZTnQPCrxoicjtEWYCe4Vk2eD6cl8hHUXFgUxXicFpibYr7OzRg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="loading"></p>
+<p>3 选择一个你要复刻的网页</p>
+<p>这里我选择的是 腾讯云的控制台 ，它页面信息足够复杂，兼具 B 端和 C 端的属性。</p>
+<p>进入页面后，点击浏览器右上角 html to figma 插件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5pjGnk2JVItqllCw0v3giafDBnMaZKvVVBibPygLTH1fgKuiaicribptuf9A/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="loading"></p>
+<p>选择 capture，插件将自动截取当前页面并上传到 figma 对应的插件里</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5AhldrsfZMBeKCdSEkbFs5ygbayo2SFiaYH6sW79icxr0CESibtxBafsmg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="loading"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5EKA73ibXCXhlic473Pl0lKBibE8uJhCklZeJ0NyRE6D15y94et1PMdtJA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="loading"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5ibgfCloypKnu8vtyWdowgS2DfSsh6S804CGiaxwAQ232ICetDv9mpXsQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="loading"></p>
+<p>上传完成后，还需要到 figma，任意打开一个设计页面，将上传到 html2figma 的插件导入到设计页面。按下图操作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5Wwicnqmh4vsaMyaeQMPQ4lW1x6zhibWRBUsX8ZTErRQpUWz8nnmE9M2A/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="loading"></p>
+<p>至此，就已经把一个网页导入进figma 了，如果觉得不满意，可以在 figma 直接修改导入的页面。</p>
+<p>Html 2 figma 这个插件，免费版每周可以导入 2 个页面，付费无限制可捕捉导入多页面，我自己用下来觉得两个就够我用了，因为我自己负责的产品都不超过 5 个，想要 copy 别人的设计开发产品也用不了太多。</p>
+<p>导入成功后，就进入第二大步骤了，把设计转为代码。</p>
+<h2>二、使用 V0 或 cursor 将设计转为代码</h2>
+<h3>2.1 用 v0 复刻</h3>
+<p>设计转为代码，我常用的有 v0 和 cursor。</p>
+<p>对于 v0 很简单，在对话框左下角点击连接 figma，输入 figma 画板的链接，按下图所示操作</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5u5KmugHiaIK7kOiaaPCkIcg6ibcBt7xNXJmSDmfWholaiaSaiaSS88QThZQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="loading"></p>
+<p>1 在figma 左侧画板目录选择后，右键菜单点击-复制为选中链接，如下图：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN540NPT7h6Xr5ibzbn2bdGgRPOCn7aaZiaHe9KcmZmthlkeIHP3pcodAkQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="loading"></p>
+<p>2 将上面链接发送给 v0 ，识别成功后，点击发送，就能让 v0 生成代码。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5rRdkGe4ouFBQpEb2WnX4hAy0mIcULQq3HgnI4SlEozyELZJZNx90QQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="loading"></p>
+<h3>2.2 用 cursor 复刻</h3>
+<p>用 cursor 复刻，需要在 cursor 配置 figma 的 mcp，这能够让 cursor 读取到 figma 的设计文件。</p>
+<p>配置方式如下：</p>
+<p>1 获取 Figma Access Token：</p>
+<ul>
+<li>打开 Figma 官网，点击左上角头像，选择「Settings」</li>
+<li>在设置页面，切换到「Security」标签</li>
+<li>滚动到「Personal access tokens」部分，点击「Generate new token」</li>
+<li>输入名称，确保有 File content 和 Dev resources 的读取权限，点击生成</li>
+<li>复制生成的 Token，后续配置需要用到</li>
+</ul>
+<p>2 配置 MCP 服务器到 Cursor： Cursor 支持通过 JSON 配置 MCP 服务器。将 Figma MCP 的配置添加到 Cursor 的 MCP 配置文件中。</p>
+<p>配置内容如下（ 将 YOUR-KEY 替换为你的 Figma Token ）：</p>
+<pre><code>{
+&quot;mcpServers&quot;:{
+&quot;Framelink Figma MCP&quot;:{
+&quot;command&quot;:&quot;npx&quot;,&quot;args&quot;:[
+&quot;-y&quot;,&quot;figma-developer-mcp&quot;,
+&quot;--figma-api-key=YOUR-KEY&quot;,
+&quot;--stdio&quot;
+]}}}
+</code></pre>
+<ul>
+<li>打开 Cursor 编辑器</li>
+<li>按 Cmd + Shift + P，输入 MCP，选择「Open MCP setting」</li>
+<li>将上面的 JSON 配置粘贴进去（如果已有内容，合并到 &quot;mcpServers&quot; 字段下）</li>
+<li>保存文件</li>
+</ul>
+<p>配置成功后，同样的，复制 figma 的画板链接，发送给 cursor。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5AOiaoMhOdxUtUJrLlHYspWZbLDTRxYdfMV1X8etNwaYlJ1pQTmwibicCA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="loading"></p>
+<p>等待片刻，最后获取到的生成效果，少了一些图片，整体布局和原来基本一致。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5NvVlWj0GNz5K9pAL71GN5X0hzcH8CdNQ7Ia2AEibxagszicGcND6xxTT0YBAzMUwUm4cAUzuLJQZQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="loading"></p>
+<p>有了这个复刻出来的原型效果，只需要一个页面，cursor 基本上就懂了你们产品的设计规范，可以在这个基础上继续修改，比如在顶部导航增加一个 AI 搜索的按钮、设计点击管理视图的弹窗显示的内容。</p>
+<p>我现在已经实现，把自己做的产品完全复刻了一个 demo，任何小功能添加、小页面改动，直接在 cursor 里进行修改。</p>
+<p>这个流程基本上就是 AI 时代绘制原型图的规范了。未来可能会推出更为标准化的产品，完全颠覆原型设计、UI 设计、代码开发的流程。</p>
+<p>我是空格，分享 AI 实践经验来提升个人效率和能力。欢迎点击 阅读原文 ，加入 AI-PAC 社群。</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/hzNqcvbThFG15hLpInVPWg?scene=21#wechat_redirect" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

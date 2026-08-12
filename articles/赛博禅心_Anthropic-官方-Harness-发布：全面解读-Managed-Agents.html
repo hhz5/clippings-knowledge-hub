@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 官方 Harness 发布：全面解读 Managed Agents · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Anthropic 官方 Harness 发布：全面解读 Managed Agents</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%87%91%E8%89%B2%E4%BC%A0%E8%AF%B4%E5%A4%A7%E8%81%AA%E6%98%8E">金色传说大聪明</a>
+    
+    <span class="date">2026-04-09</span>
+  </div>
+  <p class="lead">Anthropic 把 Harness 做成了可托管的 Agent 基础设施</p>
+  <article class="content"><p>原创 金色传说大聪明 <em>2026年4月9日 10:15</em></p>
+<p>API Product</p>
+<p>今天，Anthropic 发布了 <strong>Claude Managed Agents</strong></p>
+<p>这是一套可组合的 API，用于构建和部署云托管的 AI Agent。但跟市面上的 Agent 框架不同，Anthropic 卖的核心是 <strong>Harness（Agent 编排引擎）</strong> ：一个经过调优的编排循环，自动处理工具调用决策、上下文管理、错误恢复，并且随模型能力升级自动演进</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdhURNuES2uKYzp2HyAa5dGatQznOcgibBlAAS0T6XnUIKbopfLD9ZyGCXS9tQ5WGcN4t60lEYJL6ZjTRp5l1gCH23VIRQLkcdxM/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>Claude Managed Agents 架构，来自官方产品博客</p>
+<p>之前 Anthropic 的产品线有一个明显的断层。面向消费者有 claude.ai 和 Claude Code，面向开发者有 Messages API。但如果一家企业想基于 Claude 做一个长时间运行的、能自主调用工具的 Agent，它需要自己搭沙箱、做状态管理、处理权限、写错误恢复逻辑。这些基础设施工作可能比 Agent 本身的业务逻辑还重</p>
+<p>Managed Agents 填的就是这个空。你定义 Agent 的任务、工具和约束，Anthropic 负责跑</p>
+<h2>它能做什么</h2>
+<h3>生产级沙箱</h3>
+<p>每个 Agent 跑在一个安全的云容器里，可以预装 Python、Node.js、Go 等环境，配置网络访问规则，挂载文件。Agent 在容器里执行代码、编辑文件、跑命令，都在隔离环境中</p>
+<h3>长时间运行的 Session</h3>
+<p>Agent 可以自主运行几个小时，断连了会恢复，进度和产出持久化。这解决了「Agent 跑到一半挂了怎么办」的问题</p>
+<h3>内置编排 Harness</h3>
+<p>Anthropic 提供了一个经过调优的 Agent Harness，自动处理工具调用决策、上下文管理和错误恢复。内置 prompt caching、compaction 等性能优化</p>
+<h3>多 Agent 协调</h3>
+<p>研究预览阶段。一个 Agent 可以启动其他 Agent，分配子任务并行处理</p>
+<h3>自评估能力</h3>
+<p>研究预览阶段。你定义成功标准，Claude 自己迭代直到达标。在内部测试中，结构化文件生成任务的成功率比标准 prompting 方式提高了最多 <strong>10 个百分点</strong> ，提升在难题上最明显</p>
+<h3>治理工具</h3>
+<p>Scoped permissions（作用域权限）、身份管理、执行追踪。Session tracing 和集成分析直接内置在 Claude Console 里，可以检查每一个工具调用、决策点和失败模式</p>
+<p>定义 Agent 可以用自然语言描述，也可以用 YAML 文件。支持 MCP 服务器和 Agent Skills</p>
+<h2>Harness 怎么做的：把大脑和手分开</h2>
+<p>这是这次发布中技术含量最高的部分。Anthropic 同时发了一篇工程博客，标题是「Scaling Managed Agents: Decoupling the brain from the hands」，详细讲了 Harness 的架构设计</p>
+<p>Harness 编码的是模型做不到什么的假设，这些假设会过时</p>
+<p>一个具体例子：Sonnet 4.5 在接近上下文限制时会提前收工（他们叫「context anxiety」），Anthropic 在 Harness 里加了上下文重置来应对。但换到 Opus 4.5 之后，这个行为消失了，重置变成了多余的负担</p>
+<p>所以 Managed Agents 的设计目标是： <strong>为「尚未想到的程序」设计系统</strong> 。这个思路借鉴了操作系统的做法。操作系统通过虚拟化硬件（进程、文件）来支持还不存在的程序。抽象比硬件活得久</p>
+<h3>三层虚拟化</h3>
+<p>Managed Agents 把 Agent 的组成部分虚拟化成三个接口：</p>
+<p><strong>Session（会话）</strong> ：所有事件的追加写入日志，持久存储在 Harness 之外</p>
+<p><strong>Harness（编排循环）</strong> ：调用 Claude、把 Claude 的工具调用路由到对应基础设施的循环</p>
+<p><strong>Sandbox（执行环境）</strong> ：Claude 可以在里面跑代码和编辑文件的容器</p>
+<p>三者解耦，互不依赖。任何一个出故障或需要替换，都不影响其他两个</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdhSJZhmDVfSUekaPrIsEGic3e6cIAy8Qlve8TIvic9ibFiaSaO6TiaodMPriaqVqDbJlvLuicRHFjrJwlo5jicOxH4AlgByJNFrp5pibuEM/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>大脑与双手解耦的架构</p>
+<h3>从宠物到牲畜</h3>
+<p>最初的设计把所有组件放在一个容器里。好处是文件操作是直接系统调用，没有服务边界。但坏处是：容器变成了一只「宠物」。宠物坏了你得救它，牲畜坏了换一头就行</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdiakIjx519pyCExm2Z89ib5YA9eIcBWI8t3uHYmxwNsJkRibJrnicianh6sEXzkB5iauzArKa1L3D5NsxX3TuU2Pnn6JcgxiajLM0L748/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>耦合 vs 解耦：从宠物到牲畜</p>
+<p>解耦之后，容器变成了牲畜。Harness 通过 <code>execute(name, input) → string</code> 调用容器，就像调用其他工具一样。容器挂了，Harness 捕获错误传给 Claude，Claude 决定是否重试，重试就起一个新容器</p>
+<p>Harness 也变成了牲畜。Session 日志在 Harness 之外，Harness 崩溃了什么都不丢。新的 Harness 通过 <code>wake(sessionId)</code> 启动，从上次停下的地方继续</p>
+<p>安全边界也因此变干净了。耦合设计里，Claude 生成的不可信代码跟凭证在同一个容器里。解耦后，凭证永远不在沙箱里。Git 令牌在初始化时写入本地 remote，Agent 不经手。OAuth 令牌存在安全保管库里，通过代理调用</p>
+<h3>Session 不是上下文窗口</h3>
+<p>长任务经常超出 Claude 的上下文窗口。压缩、裁剪、总结都是不可逆操作，可能丢掉后面用得上的信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdjJk1q6s5Z3jyTLx5qeWgVPrJR3iaCGWNjaavlmNDxicOmXfMZqvSkk5ZibWS99xC8ciaFxKJBibianHjEhwMxNlkp5bVwI4eXADx7Ls/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>Session 与上下文窗口的关系</p>
+<p>Managed Agents 的做法是：Session 作为一个独立的、持久化的上下文对象存在于上下文窗口之外。Harness 通过 <code>getEvents()</code> 按需取回事件流的切片，可以回到特定时刻之前重读上下文</p>
+<h3>多个大脑，多双手</h3>
+<p>解耦带来了扩展能力。之前 Harness 在容器里，每个 Agent 会话都要等容器起好才能开始推理。解耦后，推理可以在容器起好之前就开始。 <strong>p50 TTFT 下降了约 60%，p95 下降了超过 90%</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdia98uyMWPVjY3QQMWKC6zPibvPHs6KM3ogYfTNdeAtvlUmKM2tM1zDxYf4hNTgGcZFx96b9jKjVvJ6gsyo0JUZds9tiaIjEH0Qdo/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>多大脑多双手</p>
+<p>每双手就是一个工具调用： <code>execute(name, input) → string</code> 。Harness 不知道沙箱是容器、手机还是 Pokémon 模拟器。因为手不绑定大脑，大脑之间可以互相传递手</p>
+<p>Anthropic 工程博客把这个架构叫「meta-harness」：不对具体的 Harness 实现做假设，只对 Claude 需要的接口形状做假设</p>
+<h2>谁在用</h2>
+<p>我们希望 Notion 成为团队与 Agent 协作、把事情做完的最佳场所。Claude Managed Agents 能处理长时间运行的 Session、管理记忆、持续输出高质量结果</p>
+<p>Eric Liu，Notion 产品经理</p>
+<p><strong>Rakuten</strong> 在产品、销售、营销、财务、HR 部门都部署了 Agent，接入 Slack 和 Teams。每个专项 Agent 一周内部署完成</p>
+<p><strong>Asana</strong> 做了 AI Teammates，在项目管理流程中跟人类协作。团队表示用 Managed Agents「显著加速了高级功能的开发」</p>
+<p><strong>Sentry</strong> 把 Seer 调试 Agent 跟 Claude Agent 配对，后者负责写补丁和开 PR。集成在几周内完成，而非原来预估的几个月</p>
+<p><strong>Atlassian</strong> 把 Agent 直接构建到 Jira 工作流里，用户可以在 Jira 中直接分配任务给 Agent</p>
+<h2>定价</h2>
+<p>标准的 Claude Platform token 费率，加上每个 Session 的活跃运行时间 <strong>$0.08/小时</strong> （按毫秒计量）。Agent 等待用户输入或等待工具返回的空闲时间不计费。Agent 做 web 搜索额外收 <strong>$10/千次搜索</strong></p>
+<h2>几个信号</h2>
+<p>第一，Anthropic 的产品形态在这一步发生了质变。之前它卖的是模型（API token），现在它卖的是运行 Agent 的基础设施（容器、Session、Harness、权限管理）。从「模型提供商」到「Agent 基础设施提供商」，这是一个根本性的定位转移</p>
+<p>第二，Harness 的 meta-harness 设计思路值得注意。Anthropic 没有把某一个具体的 Harness 实现写死，而是虚拟化了 Harness 的接口。这跟操作系统的设计哲学一致：接口比实现活得久</p>
+<p>第三，时间线。4 月 4 日封杀 OpenClaw 订阅通道，4 月 7 日发布 Mythos，4 月 8 日发布 Managed Agents。三天三个动作：收紧第三方 Agent 的薅羊毛通道，展示最强模型能力，推出自己的 Agent 基础设施平台。商业闭环形成</p>
+<p>$0.08/session-hour 意味着 Anthropic 开始在 token 之外赚钱了</p>
+<p>Token 收入跟模型使用量挂钩，session-hour 收入跟 Agent 运行时长挂钩。后者是一个更稳定、更可预测的收入流</p>
+<p>参考材料</p>
+<p>Claude Managed Agents 产品公告<br><code>https://claude.com/blog/claude-managed-agents</code></p>
+<p>Anthropic 工程博客：Scaling Managed Agents<br><code>https://www.anthropic.com/engineering/managed-agents</code></p>
+<p>Claude Managed Agents API 文档<br><code>https://platform.claude.com/docs/en/managed-agents/overview</code></p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>赛博禅心</p>
+<p>向上滑动看下一个</p>
+<iframe src="chrome-extension://cnjifjpddelmedmihgijeibhnjfabmlf/side-panel.html?context=iframe"></iframe></article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/N0OBBlPIdUKJzRU0ZCciFg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

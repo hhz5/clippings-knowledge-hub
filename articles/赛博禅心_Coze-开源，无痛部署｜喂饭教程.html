@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coze 开源，无痛部署｜喂饭教程 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Coze 开源，无痛部署｜喂饭教程</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%87%91%E8%89%B2%E4%BC%A0%E8%AF%B4%E5%A4%A7%E8%81%AA%E6%98%8E">金色传说大聪明</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Coze%E5%BC%80%E6%BA%90">Coze开源</a><a class="chip" href="../index.html?tag=Docker">Docker</a><a class="chip" href="../index.html?tag=%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B">部署教程</a><a class="chip" href="../index.html?tag=%E5%A4%A7%E6%A8%A1%E5%9E%8B">大模型</a>
+    <span class="date">2025-07-28</span>
+  </div>
+  <p class="lead">不用懂技术，有手就行</p>
+  <article class="content"><p>原创 金色传说大聪明 <em>2025年07月27日 14:17</em></p>
+<h3>剧前提要</h3>
+<p>昨天凌晨，Coze 开源，掀了桌子</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tDTp5wMqpMvn1gLKnVZh56QictxjlxBo58NymmYWictiaD4I2Z7580U47g/640?wx_fmt=png&from=appmsg&randomid=2xr0qqb4&tp=webp&wxfrom=5&wx_lazy=1" alt="这一信息，官方尚未发布"></p>
+<p>这一信息，官方尚未发布</p>
+<p>作为「官方认证」的「中文互联网第一扣吹」<br>我带来了第一时间的报道：<br><a href="https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247503262&idx=1&sn=729be1083aa3de92acff580969f6d7df&scene=21#wechat_redirect">(／‵Д′)／~ ╧╧ 扣子，开源 🎉🎉🎉</a></p>
+<p>1天时间，Github 5k Star，非常牛逼</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87t26mia1nOuhTcRqnIYDWsr9j53z2O8B9IbibTMoIVQN1kF3WtE6grGsYw/640?wx_fmt=png&from=appmsg&randomid=psm30zdm&tp=webp&wxfrom=5&wx_lazy=1" alt="https://github.com/coze-dev/coze-studio"></p>
+<p><a href="https://github.com/coze-dev/coze-studio">https://github.com/coze-dev/coze-studio</a></p>
+<p>大家都知道，Coze 这个项目很大<br>可能会产生疑问： <strong>部署是不是很麻烦？</strong></p>
+<p><strong>长话短说：有手就行</strong></p>
+<p><strong>搞技术的朋友</strong><br>可直接参考 GitHub 的文档</p>
+<p><strong>非技术的朋友</strong><br>跟着本教程，10分钟搞定，无痛</p>
+<h2>开源版 Coze，无痛部署</h2>
+<p>本教程针对「扣子开发平台」，对应</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tG2icswBsXsG9cFdgpZrwTAH5LSX3Fs8poOMTsibpKsjLIdDvLObUTFlQ/640?wx_fmt=png&from=appmsg&randomid=gi1gakdm&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><a href="https://github.com/coze-dev/coze-studio">https://github.com/coze-dev/coze-studio</a></p>
+<p>对于「扣子罗盘」<br>流程几乎没差别，照葫芦画瓢即可</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tmxWmvPUpM3tz2S2UicUMKgwtz1FRdJZNJQ7FHX54rZAP0103Rx56bRw/640?wx_fmt=png&from=appmsg&randomid=j4jlbm5c&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><a href="https://github.com/coze-dev/coze-loop">https://github.com/coze-dev/coze-loop</a></p>
+<p>过程分为几步....</p>
+<ul>
+<li>• 安装 Docker</li>
+<li>• 下载并安装 Coze Studio</li>
+<li>• 启动并访问系统界面</li>
+<li>• 配置模型（用来运行智能体）</li>
+<li>• 更换模型（比如切换到 OpenAI 或智谱）</li>
+</ul>
+<p>让我们分开来说</p>
+<h3>一、安装 Docker</h3>
+<p>第一步，你需要安装一个叫做 <strong>Docker</strong> 的程序</p>
+<blockquote>
+<p><strong>Docker 是啥？</strong><br>是一个“运行应用环境”的工具，省的用户来回折腾环境</p>
+</blockquote>
+<p><strong>安装方法：</strong></p>
+<p>你可以去 Docker 官网下载：<br><a href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a></p>
+<p>也可以使用我提供的下载包<br><a href="https://ay6exk7fyt.feishu.cn/drive/folder/IccNf2B4JlJOIvd2kWfcpYnRn4l">https://ay6exk7fyt.feishu.cn/drive/folder/IccNf2B4JlJOIvd2kWfcpYnRn4l</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tjjTEicicElyuHGHzlAGjia23JPMfqWo1k9Swicic7nzqicLfrfqgtG3CXxbg/640?wx_fmt=png&from=appmsg&randomid=64owyjr9&tp=webp&wxfrom=5&wx_lazy=1" alt="传到飞书了"></p>
+<p>传到飞书了</p>
+<h3>二、安装 Coze Studio</h3>
+<p>首先，打开 Docker Desktop，点击右下角“终端 Terminal”，输入：</p>
+<pre><code>git clone https://github.com/coze-dev/coze-studio.git
+</code></pre>
+<p>含义是：<br>从 GitHub 下载 Coze Studio 的官方代码</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87t4KO99JWUM68PcmZUZ3txmicdr2emiaTiazgwHic3xV8IvpQLtolmAGxwdg/640?wx_fmt=png&from=appmsg&randomid=7ohyokyy&tp=webp&wxfrom=5&wx_lazy=1" alt="右下角有个 Terminal，点一下"></p>
+<p>右下角有个 Terminal，点一下</p>
+<p>按下回车，东西就被拉取下来了</p>
+<hr>
+<p>第二步，输入：</p>
+<pre><code>cd coze-studio/docker
+</code></pre>
+<p>意思是：进入 Coze 的 docker 配置文件夹</p>
+<p>cd 的意思是 Change Directory，更改目录</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tQKBJZcBiasticNKRa6DIFW2TAZ3Ic6vRK6Pf39twNkWS5QZtg7I3ibJeQ/640?wx_fmt=png&from=appmsg&randomid=j70czhi8&tp=webp&wxfrom=5&wx_lazy=1" alt="更改目录到项目位置"></p>
+<p>更改目录到项目位置</p>
+<hr>
+<p>第三步，输入：</p>
+<pre><code>cp .env.example .env
+</code></pre>
+<p>这句话的意思是，把环境配置模板，复制为实际配置</p>
+<p>其中， <code>cp</code> ：是 <strong>copy（复制）</strong> 的缩写，用于复制文件或目录。然后将当前目录下的 <code>.env.example</code> 文件复制一份，并命名为 <code>.env</code></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87t8AqWOs8YE1vZbcrmZHysH4LBGNGoJ4XFicKibWeIiaXMIruoY63ZTH2ew/640?wx_fmt=png&from=appmsg&randomid=u60kqpmi&tp=webp&wxfrom=5&wx_lazy=1" alt="复制环境"></p>
+<p>复制环境</p>
+<hr>
+<p>最后，输入：</p>
+<pre><code>docker compose --profile &#39;*&#39; up -d
+</code></pre>
+<p>这个指令的意思是，安装所有配置，然后 Coze Studio 需要的所有服务</p>
+<p>docker compose ：使用 Docker Compose 运行服务</p>
+<p>--profile &#39;*&#39; ：启用所有 profile 配置， * 代表所有</p>
+<p>up ：启动服务（没有就创建容器，有就重启）。</p>
+<p>-d ：detached 模式，即后台运行</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87t4k8zGf1FsKicvvXc7xsYSYQk39jhu2P2IbW37A7O1ejF5DWgvjpy4XA/640?wx_fmt=png&from=appmsg&randomid=v5dpnnij&tp=webp&wxfrom=5&wx_lazy=1" alt="启动项目"></p>
+<p>启动项目</p>
+<p>首次部署，需要构建本地镜像，这可能需要一些时间，请耐心等待</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tKJ3uFFCf59wHicVzz4BhmiakaNrqKJe3qeeq1931IUz6dbFUZ1uqwwgA/640?wx_fmt=png&from=appmsg&randomid=d28cmbmi&tp=webp&wxfrom=5&wx_lazy=1" alt="要一点时间，取决于网络"></p>
+<p>要一点时间，取决于网络</p>
+<hr>
+<p>很好，一切部署完成，打开浏览器，访问:</p>
+<pre><code>http://localhost:8888/
+</code></pre>
+<p>localhost:8888 是打开本地运行的项目，然后监听的 <strong>8888 端口</strong></p>
+<p>于是，你就可以看到 Coze Studio 的首页了</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87ty6bnFd87iczr1eahUT1TrXRGXgGuQtOWnaOwW736YePu7MPEHLPcH9w/640?wx_fmt=png&from=appmsg&randomid=014cxtz8&tp=webp&wxfrom=5&wx_lazy=1" alt="随便输入点啥"></p>
+<p>随便输入点啥</p>
+<h3>三、配置模型服务</h3>
+<p>这时候虽然可访问 UI，但没有模型无法创建智能体或工作流</p>
+<p>1、在 terminal 里输入：</p>
+<pre><code>open ../backend/conf/model/
+</code></pre>
+<p>如果你是 windows，则输入</p>
+<pre><code>start ../backend/conf/model/
+</code></pre>
+<p>意思是，打开上级目录中的 <code>backend/conf/model/</code> 文件夹</p>
+<p>其中 .. 指的是「上级目录」</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87txh3v2FAQ6FFiaOq1nNPjqSIsPCvTfHIwdabibSna4jrZibLtGicBXhRTQg/640?wx_fmt=png&from=appmsg&randomid=r5utvtgv&tp=webp&wxfrom=5&wx_lazy=1" alt="当然，你也可以手动打开文件夹"></p>
+<p>当然，你也可以手动打开文件夹</p>
+<p>2、这里，我们以配置豆包模型为例，打开文件 <code>ark_doubao-seed-1.6.yaml</code></p>
+<p>修改其中的 <code>model</code> 和 <code>api_key</code></p>
+<pre><code>meta:
+  conn_config:
+    api_key: &quot;你的密钥&quot;
+    model: &quot;doubao-seed-1.6&quot;
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tSb7ibibiaNsNLRt4IsBeUF49r1gxiafr69NTOpXbTw8dvawcc2FyW9exyw/640?wx_fmt=png&from=appmsg&randomid=ipyq7fpa&tp=webp&wxfrom=5&wx_lazy=1" alt="这里有很多配置可以更改"></p>
+<p>这里有很多配置可以更改</p>
+<p>有朋友可能会问：<br>Api Key 在哪里获取？</p>
+<p>答：各 API 平台都行</p>
+<p>比如豆包的 API Key，来自火山（字节的云服务平台）<br><a href="https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D">https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D</a></p>
+<p>在这里新建即可</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tXXkfhwqtvjPMa3Ih5NPia1PEybgckxTHj61NUia1iasLoq2yPMXnebiaZg/640?wx_fmt=png&from=appmsg&randomid=j8hveglk&tp=webp&wxfrom=5&wx_lazy=1" alt="点一下新建"></p>
+<p>点一下新建</p>
+<p>3、保存后，需要重启 Coze 服务生效</p>
+<pre><code>docker compose --profile &quot;*&quot; restart coze-server
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tFMLOwQDUc3ibauKyM21oXDdJ2YALxVViaDHIib14E49cyOQiamf06TjibTQ/640?wx_fmt=png&from=appmsg&randomid=9251zm44&tp=webp&wxfrom=5&wx_lazy=1" alt="大概需要 10 秒"></p>
+<p>大概需要 10 秒</p>
+<h3>四、重启后体验 Coze</h3>
+<p>打开浏览器访问：</p>
+<pre><code>http://localhost:8888
+</code></pre>
+<p>此时，你就能完整地体验 Coze Studio 了，可以创建智能体、组合工作流</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tpELbjHFuS0X5Pib8uxTabUNkO0cnbiaakcToMwdMgJ3d5a4OfHDibGShQ/640?wx_fmt=png&from=appmsg&randomid=8qeak0cy&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>啊～熟悉的页面</p>
+<h3>五、如果想更换模型？</h3>
+<p>1、重新打开 model 配置文件夹，打开 template 文件夹：</p>
+<pre><code>open ../backend/conf/model/
+</code></pre>
+<p>2、打开 template 文件夹，找到一个模板，然后复制到上一级目录</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tiaia7UEpDbZN3XKbgcqv3q0Xibofe9oTCbWR3tqF9p82c3FZhAh7B6XmQ/640?wx_fmt=png&from=appmsg&randomid=mpfvnfub&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>里面有很多模板</p>
+<p>3、比如说，我想使用智谱的模型，就复制 <code>model_template_basic</code> 到上一层文件夹，改名 <code>glm.yaml</code> （名字不影响）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tTdjEPJe3viawygjvicNjwrwAVp9wpnRHS2cC7XdxzKe0LESHrHhszYAA/640?wx_fmt=png&from=appmsg&randomid=wmupt5c6&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>随便复制一个，改不改名都行</p>
+<p>4、修改里面的各种简介， <code>url</code> 、 <code>model</code> 、 <code>api_key</code> 等各种信息，然后保存</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87t4Z8NJrb3NzfYWjcp7uxH1CViavdAvIBiblibz2Y7hicl8jKSNakiaPWFPbw/640?wx_fmt=png&from=appmsg&randomid=r32mednq&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>当作是个.txt，用笔记本就能改</p>
+<p>5、重启 coze-server 服务生效：</p>
+<pre><code>docker compose --profile &quot;*&quot; restart coze-server
+</code></pre>
+<p>6、再次访问 Coze，就可以选择新模型了</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tichmdVus46dAHnTaCEEv3S8ZG3jqib0h09S8FsVg9crlcoSojX2s7SHA/640?wx_fmt=png&from=appmsg&randomid=5i51n0ka&tp=webp&wxfrom=5&wx_lazy=1" alt="你可以配置 logo，以及其他信息"></p>
+<p>你可以配置 logo，以及其他信息</p>
+<h2>一些 FAQ</h2>
+<p><strong>部署是不是很麻烦？</strong><br>参考上文，有手就行</p>
+<p><strong>听说没完全开源，是不是只能看不能用？</strong><br>最核心部分，也是大家所理解的Coze，已经全部开源</p>
+<p><strong>扣子是「Apache 2.0 开源」，啥意思？</strong><br>Apache 2.0 是常见开源协议中 <strong>最开放的</strong> ：</p>
+<ul>
+<li>• 可商用：可商业使用，无附加条款</li>
+<li>• 专利授权： 明确授权，无后顾之忧</li>
+</ul>
+<p>对于常见的开源协议，这里做了一个对比</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2icSMc1VBIYrhy9ySVGDHNq2hr8NmD87tRx3VoFCA8XwPAJovnvQYMqxya1mibFdGK8ibgiasznmZUTfg7YKNiaDiaOg/640?wx_fmt=png&from=appmsg&randomid=i91m3n1x&tp=webp&wxfrom=5&wx_lazy=1" alt="不同开源协议的差异"></p>
+<p>不同开源协议的差异</p>
+<p><strong>是不是只能用火山/豆包的模型？</strong><br>你想用啥都行</p>
+<p><strong>插件没开源，是不是有限制？</strong><br>插件是第三方服务，你可以在../backend/conf/plugin 中定义任何插件</p>
+<p><strong>Coze 开源到底有什么意义？</strong><br>Agent 平台的绝对老大，开源了自己的业务...掀桌子了<br><strong>同赛道其他项目，或迎来巨大挑战</strong></p>
+<p>我可太聪明了</p>
+<p>继续滑动看下一个</p>
+<p>赛博禅心</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/IU3xa6qNGbxvH-n0Jyqpag" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

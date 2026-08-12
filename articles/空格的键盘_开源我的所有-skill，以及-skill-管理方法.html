@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源我的所有 skill，以及 skill 管理方法 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源我的所有 skill，以及 skill 管理方法</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%9C%AA%E7%9F%A5">未知</a>
+    
+    <span class="date">2026-04-07</span>
+  </div>
+  
+  <article class="content"><p>假期也没有闲着，今天在家办公，发现现在离开了Skill，根本没有办法工作，为了让自己在家里电脑也能用工作电脑的 skill，我把 100 多个 skill 做了一个同步和分类。  </p>
+<p>可以实现跨工具、跨电脑、跨网络来使用和分享 skill。  </p>
+<p>主要用到的方法就是用.claude/skills 来做全局 skill，其他工具如 codex 的skill 根目录做软链接同步.claude/skill。  </p>
+<p>再对全局 skill 按类型拆分文件夹，并在 github 建仓同步，这就实现了跨网络/电脑/工具同步了，最后，再建立一个 skill-mannage 来定时自动推送 git。  </p>
+<p>对于 git 的处理，强烈建议 GitHub CLI，可以实现让 Agent 无碍障增删改查 git。  </p>
+<p>既然做了分类，就给大家分享一下我的四大类 skill，分类清晰更便于各位使用。  </p>
+<p>共 100 多个 Skill 分了写作类、画图类、信息获取类、产品经理类，建了四个仓库  </p>
+<p>1 写作类，write-skill，21 个 Skill，覆盖内容创作全流程：  </p>
+<p>地址：<a href="https://github.com/zephyrwang6/write-skill">https://github.com/zephyrwang6/write-skill</a>  </p>
+<p>2 画图类draw-skill，13 个 Skill，解决&quot;AI 配图&quot;全场景：  </p>
+<p>地址：<a href="https://github.com/zephyrwang6/draw-skill">https://github.com/zephyrwang6/draw-skill</a>  </p>
+<p>3 信息获取类：info-skill，14 个 Skill，把散落各处的信息收回来。  </p>
+<p>地址：<a href="https://github.com/zephyrwang6/info-skill">https://github.com/zephyrwang6/info-skill</a>  </p>
+<p>4 产品经理类：protodesign，13 个 Skill，产品经理的工具箱：  </p>
+<p>地址：<a href="https://github.com/zephyrwang6/protodesign">https://github.com/zephyrwang6/protodesign</a>  </p>
+<p>所有 skill: <a href="https://github.com/zephyrwang6/myskill">https://github.com/zephyrwang6/myskill</a>  </p>
+<p>对于skill工作 的创造和管理，我已经在社群里分享过很多，如果大家感兴趣，可以点赞支持一下，后面再发长文分享制作技巧和管理方法，让你的 Agent 更有用</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/4Toyhq9UuYYHQMZjx0uG-w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

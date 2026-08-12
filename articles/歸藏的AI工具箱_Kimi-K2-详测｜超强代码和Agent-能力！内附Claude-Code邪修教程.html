@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kimi K2 详测｜超强代码和Agent 能力！内附Claude Code邪修教程 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Kimi K2 详测｜超强代码和Agent 能力！内附Claude Code邪修教程</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Kimi%20K2">Kimi K2</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2">月之暗面</a>
+    <span class="date">2025-07-14</span>
+  </div>
+  <p class="lead">大家好，我是歸藏（guizang），熬夜给大家带来 Kimi K2 模型和提升K2模型的CC+K2邪修教程。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年07月12日 02:17</em></p>
+<p>大家好，我是歸藏（guizang），熬夜给大家带来 Kimi K2 模型和提升K2模型的CC+K2邪修教程。</p>
+<p>今晚 Kimi 终于放出了自己憋了半年的大招，拥有 1T 参数量的 MoE 模型 K2。</p>
+<p>基准测试中取得开源模型 SOTA成绩， 尤其在代码、Agent、数学推理任务上表现突出 。</p>
+<p>而且模型居然还是开源的，预训练模型和指令微调模型全部开源，可以在 Kimi（ kimi.com ）快速尝试。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egcs5SA7h92uDWedbznGajYyYJ13fia9crIwweibA4WUibywgFElEOc5tDmZRyt8M2726ib9ASFGaZTH3g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>昨晚试了一下在 前端能力上非常强，基本上在一流梯队，我感觉接近 Claude Sonnet 3.7 和 4 之间 ，测试的几个提示词效果都不错。</p>
+<p>最重要的是有人hack了一个用法， 可以替换掉 Claude Code 的默认模型，用 K2 驱动 Claude Code ，再也不用担心封号，搭配他输出百万 Token 16 元的超划算价格，我直接爽用！</p>
+<p>咱们先看测试结果，后面我会附上如何在 Claude Code 中使用 K2 的保姆级教程。</p>
+<h2>K 2 前端能力测试</h2>
+<p>我们循序渐进，先来藏师傅的经典提示词，这次加上了 PPT 逻辑，让整个页面支持类似 PPT 的翻页，每一页的高度固定带来了一些挑战。  </p>
+<p>不是很多朋友想要 PPT 提示词吗，现在来了 。</p>
+<pre><code>帮我将文件夹下这个[编码代理入门：真正完成任务的艺术 --- Coding Agents 101 The Art of Actually Getting Things Done]文档生成中文网页 HTML 动态网页，不要遗漏任何信息，尽量展示所有信息
+
+网页生成要求：
+使用Aurora Gradient Hero风格的视觉设计，纯黑色底配合特斯拉红色#E31937颜色作为高亮
+强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差
+中英文混用，中文大字体粗体，英文小字作为点缀，必要时引用Google Font的适合风格字体
+采用全屏分页滚动的PPT演示形式，每个章节或主题占据一个完整页面，使用fullpage.js实现平滑的垂直分页滚动效果。
+运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变
+模仿 apple 官网的动效（段落切屏 &amp; 视差缩放等），向下滚动鼠标配合动效
+使用Apache ECharts 5 CDN 版做简洁的勾线图形化作为数据可视化或者配图元素，样式需要跟主题一致
+使用HTML5、TailwindCSS 3.0+（通过CDN引入 ）和必要的JavaScript
+使用专业图标库如Font Awesome或Material Icons（通过CDN引入 ）
+避免使用emoji作为主要图标
+不要省略内容要点
+</code></pre>
+<p>效果超出预期了，即使是 Gemini 和 Opus 4 在运行这个提示词的时候也时常有超出页面高度的问题。</p>
+<p>K2 一次成功，而且还为每一个卡片加上了回弹和缓动效果，图表都加上了动效，非常适合展示汇报内容。</p>
+<p>然后整一下藏师傅的日签网站吧，基本上就是看简单的前端能力和构建网页的美学素质。</p>
+<pre><code>请帮我创建一个简洁优雅的日签网站，具体要求如下：
+视觉设计
+背景图片：使用下面几个图片链接随机获取高质量风景图片作为背景
+图片链接：XXXX
+图片处理：添加25% 黑色遮罩，和一点点图片高斯模糊，确保文字清晰可读
+整体风格：简约现代，风景图作为网页背景增加沉浸感
+动画框架使用 anime.js （通过CDN引入：JsDelivr jsdelivr.com），使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript，使用专业图标库如Font Awesome或Material Icons（通过CDN引入）
+时间显示模块
+顶部：显示月日格式（如&quot;05月29日&quot;），字体较小，居中
+次行：显示&quot;星期X · 农历X月初X&quot;格式，字体更小
+中央：突出显示当天日期数字，超大字体，白色，居中
+名言展示模块
+内容：随机显示中外哲学家、作家的经典名言
+排版：名言居中显示，字体适中，行间距舒适
+署名：底部右对齐显示&quot;作家，XXX&quot;或&quot;哲学家，XXX&quot;
+名言库：包含励志、人生感悟、智慧思考等不同主题的名言
+音乐播放功能
+位置：页面左下角，默认收起
+内容：嵌入Spotify白噪音播放列表
+代码：
+技术实现
+响应式设计：适配桌面端和移动端
+字体选择：使用优雅的中文字体，google font 引入
+颜色方案：主要使用白色文字，确保在各种背景下的可读性
+加载优化：图片懒加载，提升页面性能
+交互功能
+自动刷新：每日自动更换背景图和名言
+手动刷新：提供刷新按钮，允许用户手动更换内容
+文案风格
+名言选择：倾向于积极正面、富有哲理的短句
+语言风格：简洁有力，避免过于冗长
+主题分类：人生感悟、励志成长、智慧思考、情感表达等
+请按照以上要求，生成一个完整的HTML/CSS/JavaScript网站，确保界面美观、功能完善、用户体验良好。
+</code></pre>
+<p>直接来看结果，如果你记得我之前的四大顶尖模型测评的结果的话。</p>
+<p>这个质量和效果基本跟 Claude Sonnet 4 差不多，所有功能都能够使用，而且他还做了简单的文案排版。</p>
+<p>看到这个我舒了一口气，国内很多模型的前端能力连这个都搞不定，现在终于可以往下测试上重量了。</p>
+<p>然后就是一个偏视觉能力的的考察项目，让他整个点阵动画，这个也是当时四大顶尖模型翻车最严重的测试了。</p>
+<p>在当时这个提示词除了 DeepSeek 0528 之外是全军覆没的，基本都无法运行。</p>
+<pre><code>请创建一个基于P5.js的全屏互动点阵动画生成器，满足以下技术需求：
+## 核心功能
+- 使用P5.js实现全屏点阵动画，动画需覆盖整个视口区域
+- 点阵矩阵总面积必须至少是可见区域的10倍，确保即使在最小网格间距下也能完全覆盖
+- 提供多种动画模式：波浪(Wave)、脉冲(Pulse)、涟漪(Ripple)、噪声(Noise)
+- 支持多种点形状选择：圆形、方形、十字、三角形、菱形等
+- 所有控制面板放置在页面右侧，移动设备下可折叠至底部
+## 可调节参数
+- 点阵密度：控制每行/每列点的数量
+- 形状大小：调整点的尺寸
+- 动画速度：控制动画效果的速度和幅度
+- 网格间距：调整点与点之间的距离
+## 技术规范
+- 使用HTML5、TailwindCSS 3.0+（通过CDN引入）和P5.js
+- 实现完整的深色/浅色模式切换功能，默认跟随系统设置
+- 代码需包含性能优化逻辑，仅渲染可见区域内及边缘附近的点
+- 动画必须流畅运行，无卡顿
+## 响应式设计
+- 页面必须在所有设备上（手机、平板、桌面）完美展示
+- 移动端视图中，控制面板应可折叠/展开
+- 针对不同屏幕尺寸优化布局和字体大小
+- 确保移动端有良好的触控体验
+## 界面要素
+- 动画模式选择器（波浪、脉冲、涟漪、噪声）
+- 形状选择器（带图标展示各种形状）
+- 滑块控制：密度、大小、速度、间距
+- 主题切换按钮
+- 显示矩阵覆盖信息和总点数
+</code></pre>
+<p>直接看结果，第一次就正确运行，同时上面的动画模式和形状选择切换也没问题。</p>
+<p>下面的其他调整选项第一次没有生效，跟他说完修复了一次也好了，夜间模式也能正常搞定。</p>
+<p>到这里我已经吃了定心丸了，这模型基本上在前端能力上已经是 Gemini 或者 Sonnet 3.7 的水平了。</p>
+<p>然后我们来整一个真的能干活的带有复杂逻辑的产品，比如一个极简的 Markdown 笔记编辑器。</p>
+<pre><code>请创建一个基于纯 HTML 的 Markdown 笔记编辑器，具体要求如下：
+
+## 功能需求
+1. **编辑器布局**
+   - 左右分屏设计：左侧 Markdown 输入，右侧实时预览
+   - 可拖拽调整分屏比例
+   - 工具栏快捷按钮（加粗、斜体、标题、链接、图片、代码块等）
+   - 支持键盘快捷键操作
+
+2. **笔记管理**
+   - 侧边栏显示所有笔记列表
+   - 笔记搜索和筛选功能
+   - 支持标签分类系统
+   - 创建、删除、重命名笔记
+
+3. **数据功能**
+   - 使用 localStorage 保存所有笔记
+   - 自动保存（显示保存状态）
+   - 导出为 .md/.txt/.html 文件
+   - 导入 Markdown 文件
+   - 字数统计和预计阅读时间
+
+## 技术要求
+- 使用 marked.js 或类似库进行 Markdown 解析
+- 使用 Prism.js 实现代码高亮
+- TailwindCSS 3.0+ 样式框架
+- 图标使用 Lucide Icons 或 Heroicons
+- 实现深色/浅色主题切换
+- 响应式设计，移动端友好
+
+## 交互细节
+- 实时预览（输入时延迟渲染）
+- 快捷键提示浮层
+- 搜索结果高亮显示
+- 拖拽上传图片（转 base64）
+- 打印优化样式
+</code></pre>
+<p>这个项目其实非常复杂，涉及到 Markdown 格式的渲染以及样式的添加，主要是编辑和渲染的逻辑很复杂，需要考虑超级多的边界情况。</p>
+<p>K2 首次生成的结果在功能上处理的很好，基本上所有的功能都可用，都是生效的，没有 Bug。</p>
+<p>就是渲染的 Markdown 样式有点感人，我就跟他说样式各种格式的样式渲染太差了，再改一下吧。</p>
+<p>然后基本上就改好了，所有的样式都没啥问题。</p>
+<p>除了那个表格背景色，这个好说，这么复杂的功能和样式处理第一次搞成这样已经超出预期了。</p>
+<h2>如何在 Claude Code 中使用 K2</h2>
+<p>这次的 K2 模型不止兼容了常见的 Open AI 调用方式，还兼容了 Anthropic 的模型调用。</p>
+<p>这就是说你可以将 K2 替换为为 Anthropic 提供服务的模型，不用担心封号和费用彻底爽用 Claude Code了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egcs5SA7h92uDWedbznGajYyzoH1HicucqKiaiciaNNKZWn23tPXwrXdLPMYzsyQ9gVmDicoHwugx2ysK3A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>首先我们需要去月之暗面的开发者（ <a href="https://platform.moonshot.cn/console/account">https://platform.moonshot.cn/console/account</a> ）后台创建一个 API Key。</p>
+<p>进去以后随便充值个几块钱，然后去 API Key 管理这个侧边栏新建一个 Key 记好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egcs5SA7h92uDWedbznGajYyt1FyyKUCWwvdngOaKQFNCZD8dyibfR1eImTTqbMib10GKeAibpicFYfpvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后你需要安装 Claude Code 了，打开你苹果或者 Windows 的终端，安装前需要安装 Node.js，输入下面的命令。</p>
+<pre><code>sudo xcode-select --install
+/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sbrew install node
+node --version
+</code></pre>
+<p>安装完成 Node.js 后，我们安装 Claude Code，继续在终端中输入，如果最后输出了 Claude Code 的介绍和版本号说明就安装成功了。</p>
+<p>这期间你可能会遇到各种问题，相信我，复制你的终端输出结果扔给 GPT-o3，他都能帮你搞定。</p>
+<pre><code>npm install -g @anthropic-ai/claude-code 
+claude --version
+</code></pre>
+<p>这时候我们已经安装成功了，接下来我们需要把 Claude Code 里面原来的 API 请求地址和 Key 给他替换掉。</p>
+<p>先创建一个你想要写代码的文件夹，然后打开终端，输入“cd+空格+文件夹路径”按住 shift 把文件夹拖到终端里面就会自动展示路径了，直接回车就行。然后输入这两个命令：</p>
+<pre><code>export ANTHROPIC_AUTH_TOKEN=你的月之暗面 API Key
+export ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic
+claude
+</code></pre>
+<p>这时候你就可以开始爽用 K2 在 Claude Code 里面编程了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egcs5SA7h92uDWedbznGajYyoKxWLp5iaDGPTa5UtPNp7a4bMSVic458diay47HXDS0YyWHZeuJ2ApbPA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当然也有不需要这么麻烦的。</p>
+<p>如果你以前已经安装过 Claude Code，可以直接下载这个项目（ <a href="https://github.com/LLM-Red-Team/kimi-cc">https://github.com/LLM-Red-Team/kimi-cc</a> ）的 sh 文件，然后打开就行，他会要求你输入你的 API Key，然后就搞定了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egcs5SA7h92uDWedbznGajYyicwAce2PfDJm9SWz2e1lv6bPSZ9HmbjFDjkib9ktpncZDQpSJR12Bclw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我最近经常跟朋友们说。</p>
+<p>海外的 Agent 的编程产品如火如荼，每天都有新的出现。</p>
+<p>国内到现在也没有一个在工具调用和前端能力都符合要求可以驱动 Agent 的模型，感觉被锁死了，不自觉的有点悲观。</p>
+<p>但现在我试完这个开源的 K2，我感觉自己又恢复了信心。我意识到它填补了一个关键空白： 工程实用性 。</p>
+<p>K2 当然在世界范围不是最强的模型，但它是又一个让我觉得&quot;能用来干活&quot;的国产开源模型。</p>
+<p>16 元百万 Token 这个价格让我重新思考了很多。</p>
+<p>所有的代码生成能力好的模型都非常贵，但 K2 的成本结构完全不同。同样的使用强度，成本可能只有几毛钱。这意味着：</p>
+<ul>
+<li>可以做真正的免费增值模式，让用户先体验再付费</li>
+<li>可以开放更多实验性功能，不用担心被薅羊毛</li>
+<li>小团队也能承担起 AI 产品的运营成本</li>
+</ul>
+<p>这就是开源的力量——不是给你一个产品，而是给你一个起点。</p>
+<p>接下来的几个月，K2 将会真正激活国内的 AI 编程产品和 Agent 产品的势能，真的在国内普及 AI 编程以及 Agent，变化才刚开始。</p>
+<p>很难想象基于 K2 的推理模型会强到什么地步，另外上下文再长点就好了。</p>
+<p>深夜码字测试不易，如果这篇文章对你有帮助，记得点个赞。我是歸藏，我们下次再见。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>修改于 2025年07月13日</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 0.99 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 948.6 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 3.07 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 4 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 948.6 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 0.99 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 2.55 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 3.07 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/S5SKpzQ8GFGzv6dO6efnFA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

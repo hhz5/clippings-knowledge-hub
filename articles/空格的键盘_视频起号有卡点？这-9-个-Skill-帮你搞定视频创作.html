@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>视频起号有卡点？这 9 个 Skill 帮你搞定视频创作 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">视频起号有卡点？这 9 个 Skill 帮你搞定视频创作</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C">视频制作</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E7%A9%BA%E6%A0%BC%E7%9A%84%E9%94%AE%E7%9B%98">空格的键盘</a>
+    <span class="date">2026-08-05</span>
+  </div>
+  <p class="lead">上次分享小红书起号的 Skill，评论区问得最多的一句是：能不能来一套视频创作的 Skill？</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年8月4日 17:09</em></p>
+<p>上次分享小红书起号的 Skill，评论区问得最多的一句是： <strong>能不能来一套视频创作的 Skill？</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowxGz7uXzJurl01VEgqUPqiadTKZNPtH2K8DPWcS1aCJafS4I27icXfpb1uNrOkqrezTOOqFRzHnvdt1RunvucvgcprLtZPImxAU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>我花了一周，边搭边测，又攒出了一套，9 个 Skill。</p>
+<p>把做视频拆成选题、脚本、动效、剪辑、字幕、声音、封面 几个环节。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy8gSuyCfNslqwvLRjFQmtT01JxTyIp4aU3K1rLCmxXlulNyUdIuEs3eUHhKdXZ7qxx95zyNCHsBkqu5zOn9JPrSmaZKcwzGxI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>一个环节一到两个 Skill，再加一个总控把它们串起来，一共 9 个。</p>
+<p>跟小红书那套一样，单个都能用，但真正的价值是 <strong>串成一条流水线</strong> 。</p>
+<p>下面逐个讲功能、实现和产出效果。</p>
+<p><strong>一、总控：space-video</strong></p>
+<p>和小红书那套的思路一样，Skill 一多，你和模型都会选择困难。</p>
+<p>所以我先给这套配了个 <strong>导演</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowLmXoicOG2RTYOdw1gbBwMqRQRlm9vSoiadBaKGXd8xe3Zfib7sPX7pQ91LFyCCGQ5RFAiaCZvYDCf0NJq4rAfANJPVPFQPQ5iciaaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>你跟它说一句「帮我做条视频」，它先问清楚：口播还是录屏？发竖屏还是横屏？有没有参考？然后判断你现在卡在哪一步，路由到对的子 Skill，按对的顺序串起来，成片后还帮你复盘。</p>
+<p>Skill 再多，也不用自己去记名字。</p>
+<p><strong>二、选题：space-video-topic</strong></p>
+<p>一条视频动手前，先解决四件事：参考哪条、讲什么、叫什么、说什么。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxicOMXRGfEaGKUpoe7AaqAIzo0SetHwn3kcNCkJnLWMculXRMgSCQxqLKrNouGUuibkrq6mP2hF0r3yEicUFH9WYMUWmsm4icKtC4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>这一个 Skill 全包了：</p>
+<p>- <strong>下载参考</strong> ：给一个抖音 / YouTube / B站链接，去水印下载。</p>
+<p>抖音这条我实测，先在浏览器打开一次页面刷新签名，再用 yt-dlp 脚本下载。下载内容包括：</p>
+<p>- <strong>逐字稿</strong> ：把参考视频转成带时间的逐字稿，方便拆解。</p>
+<p>- <strong>选题 + 标题 + 正文</strong> ：从爆款里拆出可复用的选题结构，再起标题、写口播正文。</p>
+<p>我给一个我的抖音视频链接，它就给我下载了下面几个内容。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozia2tian89icR2BzEkMx8SBibvMkTBlBVHmYQYBHtI1wmTpIqT5Prz4k526Wx0WhdWKFJv168fvkEFM3nyhG1m1nD9GJOrmhhUwxs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><strong>三、脚本：space-video-script</strong></p>
+<p>这个 Skill 干两件事：</p>
+<p>一是 <strong>去 AI 味</strong> 。AI 写的稿子念出来会「假」：长句一口气接不上、书面连接词、工整排比。它把这些改成能对着镜头念的口语。</p>
+<p>二是 <strong>精确到秒的分镜</strong> 。每一秒都有安排：这几秒讲什么、画面是什么、怎么切。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozrvnCAxCyqqc1bZvXWDGczB9ASlcjDeXRLVg4Nhkfou3eiby5sp7Bzy8U2CgrjCia98cfIbo37eLSbo7h5GYSE19BEcgl48rHeM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><strong>四、剪辑：space-video-edit</strong></p>
+<p>这是最硬的一个 Skill，专治口播失误。</p>
+<p>它先帮你 <strong>剪口播</strong> ：转写 → 识别口误、语气词、静音、重复、卡顿、残句 → 生成审核页让你确认删哪里 → 剪出干净视频 → 再重新转写做字幕。</p>
+<p>这里参考了博主 chengfeng 制作的剪辑 skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCoz3pupHKN7pdliaw3bNw7N2NevupHST6Jc0puA1nHZZPt9keiaewNQpciaDXQ6SGIYiagNZgqdq3Xxjrq9n3I9G2Jldn7ibcC1PEXias/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>- <strong>删前保后</strong> ：后说的通常更完整，所以删前面的口误，保后面完整的。</p>
+<p>剪完再走成片：分镜、时间轴对齐、导出。</p>
+<p><strong>五、画面 B-roll：space-video-broll</strong></p>
+<p>我自己剪口播最头疼的就是画面，一张脸从头说到尾，观众很容易走神。</p>
+<p>这个 Skill 是个 <strong>动效导演</strong> ：先给内容找一个能动起来的视觉隐喻（河流、网络、流水线、坍缩……），再排成一条 30 秒以上的连续动效。</p>
+<p>可以把动效加到原视频轨道里。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxZbt7IfP6qicoURCEJanckEIUfxN72y7D6IVjUrvtXbInnEPFM9KQKibymQHe6HBwXG4SLTq3UwBn1DAq5nvy9IYcDICkQrGI7g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>这个 Skill 使用 haperfram 的 Skill 做基础，用纯 HTML/CSS 写画面，逐帧确定性渲染成 MP4，</p>
+<p><strong>六 B-roll（手绘图解）：space-video-broll-sketch</strong></p>
+<p>上一个是代码渲染，这个是 <strong>调真实视频模型</strong> 。</p>
+<p>给它一篇公众号文章，它优先抽原文配图，把逻辑拆成 6 到 10 帧手绘白板图解：白底、黑色单线、每帧只有一处蓝，像一支看不见的笔一笔一笔画出来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCox2mEDm71BoicjRdPiadYu2ph0rOHhIrloL9ibf80QreSfOeLomTAyHpcbDOfuK0TuIWy57atrDEKZBNctwAcBmTdSibiarCpBB7mb8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>出片这一步接了两条模型通道：火山引擎的 <strong>Seedance</strong> ，或者 <strong>libtv 的 Agent</strong> ，二选一，配好 key 就能逐帧生成再拼成片。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/CFe2b8yvCozgaibuQNF1ibtsTcPKwNo0Ir4wc5cax0ib9U9HUxZANwKeibAf5t0rcEd2wz16JU3jWNClBbtugOc6hibDqkpkg6qjnFBuGgicrCU7c/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><strong>七、字幕：space-video-subtitle</strong></p>
+<p>这个 Skill 走四步：转写 → <strong>口播式断句</strong> （按呼吸和语义断，不按标点）→ <strong>AI 校对</strong> （专名、同音字、标点，中文 ASR 高发的「在/再」「的/得」都会盯）</p>
+<p>输出 SRT/ASS，可以用剪映导入。</p>
+<p>剪过的视频，字幕会基于剪后视频重新转写，不沿用原字幕。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz8N6pypN8JiaOBV9U0uZljehRaQ2Yhe0lsn8vz5ia2v21n8hdH3UaRy68giahAicAfd7nZWdu6iaJc4XdGvMMuMiarorhKZN4W0Fj70/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p><strong>八、配音配乐：space-video-audio</strong></p>
+<p>声音这块也补上了，这个 Skill 处理三件事：</p>
+<p>- <strong>配音</strong> ：把口播稿用 TTS 生成旁白，使用 edge-tts 免费模型。</p>
+<p>- <strong>找 BGM</strong> ：按视频调性去免版权曲库找，我实测跑通了 Pixabay 免登录取直链的方法（免费免署名）。</p>
+<p>- <strong>混音</strong> ：BGM + 旁白压进视频，自动做 <strong>压音</strong> （人声一响 BGM 自动下沉）、响度归一到 -14 LUFS、淡入淡出，画面不重编码。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxIJger1icYZIlkalNLkeFyQc5iccgFyJTCeFx0sVdcXwPzsEGic9YJ5ibseNbvibImyagogNhc1iboEnianvdsLicBECqF80EibtxvffSk/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p><strong>九、封面：space-video-cover</strong></p>
+<p>封面决定点击率。</p>
+<p>它出的封面要满足两点：这一条足够抓人，且放进主页一排能看出是同一个账号</p>
+<p>固定的主色、字体、标题位，每条只换具体排版和强调色。</p>
+<p>支持视频号、B站、小红书、YouTube 各自的比例。</p>
+<p>这篇文章的封面就是用这个 Skill 做的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowjTOv5FEjBdkk7SMM97C30rpohcptUGgs0Q7tpVh32wHic5wKT7bVNI2jvCK2a7Yq5Na4njWH8YdGHLBGDPCAm65yHdwI920Ng/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p><strong>怎么用</strong></p>
+<p>告诉你的 Agent（Qoder / Claude Code / Codex）：</p>
+<p>帮我安装这几个 Skill：github.com/SpaceZephyr/creator-buddy/tree/main/video-Skills</p>
+<p>装完，说一句「帮我做条视频」会自动路由到总控，也可以直接点名某一环，比如「帮我剪一下这条口播」。</p>
+<p>单个能用，但价值在串成工作流，三条标准工作流：</p>
+<p><strong>链路 A · 完整口播成片</strong></p>
+<p>topic 选题脚本→ script → 录制 → edit → broll → subtitle → audio → cover → 发布</p>
+<p><strong>链路 B · 拆解一条爆款参考</strong></p>
+<p>topic 下载参考 + 逐字稿 → 拆选题结构 → 复用到自己的脚本</p>
+<p><strong>链路 C · 把一篇文章变成视频</strong></p>
+<p>broll-sketch（文章转手绘图解）→ audio 配乐 → cover → 发布</p>
+<p>除了下载和视频模型生成需要对应的 key，其余 Skill 都不需要第三方 API。</p>
+<p><strong>最后</strong></p>
+<p>很多人问我，怎么做的这么快，我想了想大概是这些 Skill 大多 <strong>依赖我最早做的那几个最底层的 Skill。</strong></p>
+<p>还有参考了一些开源的 Skill，比如B-roll 的渲染路线参考了 <strong>HyperFrames</strong> （HTML 转视频），剪辑的方法论来自博主 <strong>chengfeng 的剪口播 Skill</strong> 。</p>
+<p>大家可以创建自己的 Skill 基因。</p>
+<p>我的 Skill 大多源自于我的 <strong>写作风格和设计风格</strong> 。</p>
+<p>去 AI 味那一步，用的是我的写作风格；B-roll 和封面的视觉，用的是我的设计风格。</p>
+<p><strong>这就是我的 Skill 基因。</strong></p>
+<p>你也可以试试：把自己的写作习惯、审美偏好，落成几份文字，当成你所有 Skill 的底座。</p>
+<p><strong>再去制作其他 Skill 会快很多。</strong></p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/lRR9-5S3PbS19I9VUn9M_g" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

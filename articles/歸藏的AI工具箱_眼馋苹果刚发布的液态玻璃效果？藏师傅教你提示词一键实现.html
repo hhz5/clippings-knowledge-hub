@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>眼馋苹果刚发布的液态玻璃效果？藏师傅教你提示词一键实现 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">眼馋苹果刚发布的液态玻璃效果？藏师傅教你提示词一键实现</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1">网页设计</a><a class="chip" href="../index.html?tag=%E6%B6%B2%E6%80%81%E7%8E%BB%E7%92%83%E6%95%88%E6%9E%9C">液态玻璃效果</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a>
+    <span class="date">2025-06-11</span>
+  </div>
+  <p class="lead">探索了一下如何将液态玻璃效果融入到网页生成的提示词里面，没想到真让我搞了个差不多的出来。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年06月10日 14:49</em></p>
+<p>昨晚又是一年的 WWDC 这次苹果所有的更新都压在了视觉和交互上，尤其是这个液态玻璃（Liquid Glass）效果更是引起了很多讨论。</p>
+<p>看了一些演示之后，发现还是有可取之处的，边缘的效果确实真实细腻，就是现在卡片中心的可读性实在是太差了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egegx7Z7zGHv0vCibGyXD3hx6O7Zmrlu6cgF7LU7rhy89lB27f9PdIB1Y9ue3H4lSHOUovWg6Szdw0w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>反正只要是苹果的一定会有很多人跟风，所以这个效果在接下来的一段时间你一定会频繁的看见，或者被要求使用。</p>
+<p>这里藏师傅也是一上午探索了一下 如何将液态玻璃效果融入到网页生成的提示词里面，没想到真让我搞了个差不多的出来。</p>
+<p>先来看看效果，这套提示词在 Gemini 和 Lovable 上效果最好，Cluade 4 opus 可以实现，但是质量有些问题。</p>
+<p>先来看 Lovable 的效果，整体的折射非常自然，就是描边有点生硬了。</p>
+<p>然后是谷歌的效果边缘没有那么有厚度，但是整体可读性不错，看起来顺眼。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egegx7Z7zGHv0vCibGyXD3hx6NPC10UQicSJz1pd1fJ2GES1WgDx3Coabl3KvpuFsibqHMEMIRKQUVJzg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后是 Claude Opus 4，他老是有加模糊的倾向，而且不太稳定，效果时好时坏，这个是几次里比较好的效果。</p>
+<p>🍰</p>
+<p>然后我们直接看提示词：</p>
+<p>基于下面苹果 WWDC2025发布会关键信息，帮我用类似苹果发布会PPT的Bento Grid风格的视觉设计生成一个中文动态网页展示，在线引用背景图片，背景图片为： <a href="https://i.ibb.co/xtN61cRf/Comfy-UI-Output-4-1.png">https://i.ibb.co/xtN61cRf/Comfy-UI-Output-4-1.png</a></p>
+<h2>网页具体要求为：</h2>
+<ol>
+<li>使用Bento Grid风格的视觉设计，尽量在一页展示所有内容，文字颜色为白色，高亮文字色为苹果标志性的渐变，带有玻璃质感的卡片，卡片不需要深色背景</li>
+<li>强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差</li>
+<li>网页需要以响应式兼容更大的显示器宽度比如1920px及以上</li>
+<li>中英文混用，中文大字体粗体，英文小字作为点缀</li>
+<li>运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变</li>
+<li>数据可以引用在线的图表组件，Apache ECharts 5（ <a href="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js">https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js</a> ）样式需要跟主题一致</li>
+<li>使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript</li>
+<li>字体引用 Google Font 的字体</li>
+<li>图标引用Font Awesome （ <a href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">https://use.fontawesome.com/releases/v5.11.2/css/all.css</a> ） ，避免使用emoji作为主要图标</li>
+<li>不要省略内容要点</li>
+</ol>
+<h2>卡片样式严格参考如下实现方式：</h2>
+<p>菜单项</p>
+<p>CSS样式：/* 容器 */.liquidGlass-wrapper { position: relative;</p>
+<p>display: flex;</p>
+<p>overflow: hidden; padding: 0.6rem; border-radius: 2rem; cursor: pointer; box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);}/* Hover效果 /.liquidGlass-wrapper:hover { padding: 0.8rem; border-radius: 2.5rem;}/ 扭曲层 */.liquidGlass-effect {</p>
+<p>position: absolute; z-index: 0; inset: 0; backdrop-filter: blur(3px); filter: url(#glass-distortion);</p>
+<p>}/* 色调层 */.liquidGlass-tint {</p>
+<p>position: absolute; z-index: 1; inset: 0; background: rgba(255, 255, 255, 0.25);}/* 光泽层 */.liquidGlass-shine {</p>
+<p>position: absolute; z-index: 2; inset: 0; box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5), inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);}/* 内容层 */.liquidGlass-text {</p>
+<p>position: relative; z-index: 3; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);}</p>
+<p>.liquidGlass-wrapper:hover.liquidGlass-text { transform: scale(0.95);}/* 子项样式 */.menu-item { padding: 0.4rem 0.6rem; border-radius: 0.8rem; transition: all 0.1s ease-in;}</p>
+<p>.menu-item:hover { background-color: rgba(255, 255, 255, 0.5); box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1); backdrop-filter: blur(2px);}</p>
+<p>⚠️ 提示词使用注意事项：</p>
+<ol>
+<li>1. 如果你不想要一图流的话可以删除提示词里的“尽量在一页展示所有内容”的这部分。</li>
+<li>2. 这个风格必须要背景图片，没有的话辨识度就会很受影响，建议加上，建议用深色背景图。</li>
+<li>3. 建议优先使用 Gemini 2.5 Pro 生成，DeepSeek R1 0528 可以用，但是他无法搞定后面的图片扭曲部分。</li>
+</ol>
+<p>如果你觉得教程对你有帮助的话可以帮我点个赞👍或者喜欢🩷，也可以推荐给你需要的朋友们</p>
+<p>代码参考了 <a href="https://github.com/lucasromerodb/liquid-glass-effect-macos">https://github.com/lucasromerodb/liquid-glass-effect-macos</a> 这个项目</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | 2 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/sd50A6KhGHApEqf8exrS6A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

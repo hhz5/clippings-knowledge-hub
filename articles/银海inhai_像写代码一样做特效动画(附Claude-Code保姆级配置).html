@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>像写代码一样做特效动画(附Claude Code保姆级配置) · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">像写代码一样做特效动画(附Claude Code保姆级配置)</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=Remotion">Remotion</a><a class="chip" href="../index.html?tag=%E7%89%B9%E6%95%88%E5%8A%A8%E7%94%BB">特效动画</a>
+    <span class="date">2026-01-26</span>
+  </div>
+  <p class="lead">分享一个好用的SKill以及配置Claude Code的完整方法！</p>
+  <article class="content"><p>原创 银海 <em>2026年1月26日 13:58</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7XGqfdibmNCebXoHxLhibqjqNZJhkQCI7JkStxxj2lqJNY5JPnN46YM5g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>这几天在刷 X 的时候，刷到一个挺离谱的视频案例。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7UqEv9Oia2MkQPjic1icaJic6wg7rByYV7P9N3E8KJMafU8bMX2aKc9IqmA/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>作者说自己几乎没剪视频，全程是在和 AI 对话，通过写代码的方式直接做动画，这事一下子把我勾住了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7MAr173tJb5R9NpQibBnvnvU7Lk3uBwGTFWgPB9kvmicW8PvbhNacpR3g/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>画面是那种很规整的数据可视化动画，节奏、字幕、讲解都很到位，看第一眼你会以为是哪个剪辑师做出来的，结果点进去一看，全是代码生成的...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7dtt8tiaNrYAcs65wj9jicXuPato2NMrljMakbRVRuWcfheIMiafNU530g/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>顺着线索往下看，才发现是在 Claude Code 用的 Remotion 的 Agent Skills，简单说，就是把 Remotion 这种“用代码做视频”的能力，直接交给 Claude Code 来调度。</p>
+<p>我们就不再关心组件怎么写、时间轴怎么对齐，而是用提示词描述你要什么样的视频。</p>
+<p>本文内容就会手把手带你在国内用自己喜欢的模型用上 Claude code （ <strong>文末赠送免费使用的Token</strong> ） ，然后可以结合着不同的 Skills 做出更有趣的内容。</p>
+<p>我干脆照着思路，自己模仿着跑了一次完整流程，目标也定得很明确，做一条 <strong>科普解说类的视频</strong> ，不是炫技，就是那种日常内容创作者真的会用到的东西，也经常刷到类似的。</p>
+<p>正好小红书上刷到一个灵感，说是做 Space X 的火箭发射故事，而这一些Claude本身就很擅长，所以我提给他的第一个需求就是：</p>
+<pre><code>根据这个skill信息，使用这个remotion，帮我制作一个介绍马斯克SPace X的火星发射动画，需要按照时间周期来设计，并且需要有火箭发射到天空上的动画，然后同时呢你需要根据时间周期配备对应的文本解说
+</code></pre>
+<p>我拆的时候，没有只盯着 Remotion 本身，而是把整个视频拆成了三件事：讲什么、怎么说、画面怎么配。</p>
+<p>第一步是内容，先让模型帮我生成一段偏口语的科普解说稿，结构清楚一点，有起有落，适合直接念出来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N74f3p56DIM82R8wBw8nibEene1qArq4OgqGG0zgG8JNTUeeqiaskzvQSA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>这里我用到的就是 remotion-dev/skills 这个 skill，它更像一个“视频执行器”。</p>
+<p>Remotion Skill 的地址是：<a href="https://github.com/remotion-dev/skills">https://github.com/remotion-dev/skills</a></p>
+<p>我把文案结构、解说音频的信息一股脑丢给它，让它去负责画面、字幕和简单动画的组合。</p>
+<p>真正跑起来之后，我最大的感受是： <strong>已经不太像在“剪视频”了，更像是在描述一个视频应该怎么长。</strong></p>
+<p><strong>哪里是标题，哪里是重点句，哪里该停一拍，哪里该换画面，这些事情从操作层，退回到了表达层。</strong></p>
+<p><strong>上面这个动画视频， 就是用 Claude code + Remotion Skill 全自动生成的。</strong></p>
+<p>这套 Claude code + Skills 的组合跑下来，我只是在改提示词，改文案，改节奏描述，视频本身的生成反而成了一个相对确定的结果，让我很难想象精细化的视频剪辑会长成什么样。</p>
+<p>比如说，我第二个需求就是：</p>
+<pre><code>帮我设计一个关于 AI产品银海的 视觉动画，需要大概有20秒，然后我喜欢的风格是黑色+高斯模糊毛玻璃等高级一些的视觉效果，你可以使用一些失焦，缩放的效果，然后可以用旁白配音，给我生成最终的这个结果。
+</code></pre>
+<p>有了上面的这些Skill学习基础以及Claude的使用，我们可以更轻松的拿到一个比较好的效果。</p>
+<p>这个视频里面，我还加入了文本语音合成能力的 Skill ，它也能自动给你合并成一个音视频文件，如果我们在对于画面细节再进行进一步打磨，它一定会做的更好，核心底层是前端层面。</p>
+<p>当然，我也不是想把它吹成“随便一句话就能出大片”，它依然有门槛，比如你得先把 Remotion 和 Claude Code 在本地跑起来，还要要找到合适的 Skill ，才能真的开始玩。</p>
+<p>那么，下面就逐步教大家如何使用安装 Claude code。</p>
+<p>这篇会提供保姆级的第三方模型在 Claude Code 中使用的一个实际可用配置方案，用起来更灵活，成本也更友好。</p>
+<p>先说安装。Claude Code 官方推荐用 npm 全局安装，直接一行命令就可以：</p>
+<pre><code class="language-nginx"># 通过 npm 全局安装（官方推荐）npm install-g @anthropic-ai/claude-code
+</code></pre>
+<p>装完之后，可以在终端里跑一下 claude --version，如果能看到版本号，说明环境没问题。</p>
+<pre><code class="language-css">claude --version
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7JrrgVttVzJpakdx4icE2urjX3yfkFyug7H4Y9RDybicahIMIOUOOeibBQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>到这里，其实 Claude Code 已经可以直接用了，默认会走 Claude 自家的模型，但大多数同学不太好搞定Claude API，并且容易封且贵。</p>
+<p>Claude Code 实际上本身支持通过环境变量的方式接入第三方推理服务，比如 Kimi、DeepSeek、Minimax 这些模型，都可以统一接进来用。</p>
+<p>我这里用的是七牛云的 AI 大模型推理服务，新用户可以直接领一个 1000 万 token 的免费额度，而且是全模型通用的， 地址是：<a href="https://s.qiniu.com/26fa2a%E3%80%82">https://s.qiniu.com/26fa2a。</a></p>
+<p>领完之后，在模型广场里选一个你觉得合适的模型就行了，这次演示我选的是 Minimax M2.1，整体体验和响应速度都还不错。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7avYuZH23LxnNax0nYeY5MpuW5wpCHebfl6OyQbeXibpu0GP6XtlDH8A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>模型选好之后，接下来就是配置 API Key 和模型信息。</p>
+<p>直接在本地创建 Claude Code 的配置文件，用下面这条命令：</p>
+<pre><code class="language-javascript">vim ~/.claude/settings.json
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7QdcdWwoXnVr6nibb23s2lhZH1TjPVPVIpv7EpicAF9ibNu8oCvx6MFn9g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>如果之前没有这个文件，直接新建就行，然后把下面这段配置完整贴进去：</p>
+<pre><code class="language-json">{  &quot;env&quot;: {    &quot;ANTHROPIC_AUTH_TOKEN&quot;: &quot;sk-your-api-key-here&quot;,    &quot;ANTHROPIC_BASE_URL&quot;: &quot;https://api.qnaigc.com&quot;,    &quot;ANTHROPIC_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;,    &quot;ANTHROPIC_DEFAULT_SONNET_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;,    &quot;ANTHROPIC_DEFAULT_HAIKU_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;,    &quot;ANTHROPIC_SMALL_FAST_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;  },  &quot;permissions&quot;: {    &quot;deny&quot;: [      &quot;Read(./.env)&quot;,      &quot;Read(./.env.*)&quot;,      &quot;Read(./secrets/**)&quot;    ]  },  &quot;companyAnnouncements&quot;: [    &quot;您正在使用七牛云 AI 大模型推理服务 🚀&quot;  ]}
+</code></pre>
+<p>其中最关键的就是 ANTHROPIC_AUTH_TOKEN，这里需要替换成你自己的 API Key。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7Qziaiczyda1ibCbicyFDMKJccnoSWX9Lf8E0HT2KCXFDF8xFYqb2qv3E9w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>API Key 可以在七牛云控制台里获取，访问 <a href="https://portal.qiniu.com/ai-inference/api-key%E3%80%82">https://portal.qiniu.com/ai-inference/api-key。</a></p>
+<p>登录后创建一个新的 Key 或直接复制已有的就行，填好之后，保存文件并退出即可。</p>
+<p>如果你后面想换模型，也很简单。直接在七牛云的模型广场里点开目标模型。</p>
+<p>把对应的模型 ID 拿过来，替换配置里的 minimax/minimax-m2.1，保存后重新启动 Claude Code 就可以生效。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7Ujy5TdJNZ3XalzyljWdWajicy7Zb8D4d81dTYMicW50PxvJGsDruLxCQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>配置完成之后，可以简单验证一下。终端里直接输入 claude 启动 Claude Code，然后用 /status 命令查看当前状态。</p>
+<p>如果 Base URL 显示的是 <a href="https://api.qnaigc.com%EF%BC%8CAPI">https://api.qnaigc.com，API</a> Key 是已设置状态，模型名称也对得上，基本就说明一切正常了。</p>
+<p>到这一步，其实已经可以放心用了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7yXgXznEd7wX7uicVCEVQ8RAzJcHkiaib1DoNVEAvYeickqfbY3rL0vOfdg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>如果你对费用比较敏感，也可以顺手去七牛云控制台的订单管理和资源包管理里看看消耗明细，整体会比较清楚，不太容易踩坑。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7zhvQJ1FSkBuVxIjv1MKvcribI1zsZlsrJpQ6Y7sOjc9yxl39QDZRCyw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>到此为止，恭喜你，已经大功告成了。</p>
+<p>接下来就很简单了，你可以直接在 Claude Code 里输入各种需求，不管是写代码、改脚本、做工程辅助，还是当一个本地超级助手，用起来都很顺手。</p>
+<p>然后你可以直接把 Skill 放到你的新项目文件目录下面，然后直接对它提出你的需求即可。</p>
+<p>模型在本地工具里的那种“随叫随到”的感觉，确实会让人效率提升得很明显。</p>
+<p>对了， 大家也可以直接点击左下角 阅读原文 👇，可以免费领取 1000万 Token，海内外模型都是通用的！还可生成个人专属码邀请好友一起体验，领取更多的Token 😆</p>
+<p>以上就是本期的内容分享，我们下期再见 👋</p>
+<p>© THE END</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 1.35 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 952.9 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/fPJPChJzpc3LkAKpqT5pyw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

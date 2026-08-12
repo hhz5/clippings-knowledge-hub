@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用 LiblibAI 实现完整的工作流程 · 从图像到视频 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用 LiblibAI 实现完整的工作流程 · 从图像到视频</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=RaDesign">RaDesign</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=LiblibAI">LiblibAI</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90">图像生成</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90">视频生成</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1%E6%95%88%E7%8E%87">设计效率</a>
+    <span class="date">2025-12-15</span>
+  </div>
+  <p class="lead">大家好，相信 LiblibAI 平台都不陌生，那么今天介绍它的目的就是我发现 每次都在切换不同的 AI 平台来</p>
+  <article class="content"><p>原创 RaDesign <em>2025年12月15日 12:50</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUicRibsNbbd6N1cshO9Dw6iarMPeM6iaq8j1VRlYtKT77O9wREuu30zHwCw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>大家好，相信 LiblibAI 平台都不陌生，那么今天介绍它的目的就是我发现 每次都在切换不同的 AI 平台来完成一个项目 ，频繁地去切换页面 让我头大。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkU96OERAuP7CHqz69MQcIjh1EjA7kmrHrjEjb83oQNoEgKSWpzjqMzvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>LibLibAI</p>
+<p>其他不必多说，文章一大把，老传统这里还是要给新来的小伙伴们传送链接，避免后台回复不及时。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUm5gibTYY5U70pGFdOicZmykiaxzBElT9GPO5DPvTlNk6Bib2XsdKe3NRMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>地址： <a href="https://www.liblib.art/">https://www.liblib.art/</a></p>
+<hr>
+<p>准备工作</p>
+<p>一切的根源，还是要从香蕉模型说起，进入首页后左侧栏里 创作 下方里的 图片生成 点击进入工作页面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUe9jnm8LR5icHxwsSfyMqhyc0tHIXBoGllUrK1DBFzY3ibQBWgj4RC5MQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUia7QpMBQY8S8B5ofyfWbBHKxN0n9JrFuK4envwa8hJadgHT3dEA97hA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>我在输入框里找了半天也不知道那个是 Nano Banana Pro 模型，没得办法去 LiblibAI 官方公众号 里瞅了一眼才知道“ 全能图片模型v2 ”「他们入口藏的太深了」，找到模型就好说，开始测试！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUjIeQIoJEPD5FHtepWmU68yrXibxV99bCGRXPE80iaWjgfeJ4BXJ9kQdQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>地址： <a href="https://liblibai.feishu.cn/wiki/QW3VwEyieiNnp4kfyXfch5bfnvh">https://liblibai.feishu.cn/wiki/QW3VwEyieiNnp4kfyXfch5bfnvh</a></p>
+<hr>
+<p>1.漫画墙</p>
+<p>这是 X 上最火的漫画墙， 先上传 1 张人物角色 ，先来测试下。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUFmpl5AJTRPuxtKjo4rwmzbVxnlCjHyJ9U6PKYQyxWhqSicKKD3ZYS8Q/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>该提示词为 JSON 格式：</p>
+<p>{</p>
+<p>&quot;title&quot;: &quot;Shopping Version&quot;,</p>
+<p>&quot;description&quot;: {</p>
+<p>&quot;real_woman&quot;: {</p>
+<p>&quot;appearance&quot;: &quot;A real human woman wearing a stylish polka dot dress&quot;,</p>
+<p>&quot;pose&quot;: &quot;Holding shopping bags with a happy expression&quot;,</p>
+<p>&quot;style&quot;: &quot;Full photorealistic photography&quot;,</p>
+<p>&quot;details&quot;: &quot;Vibrant colors, sharp detail, realistic skin texture, natural lighting&quot;,</p>
+<p>&quot;restriction&quot;: &quot;Must remain photorealistic and not cartoon&quot;</p>
+<p>},</p>
+<p>&quot;background_comic&quot;: {</p>
+<p>&quot;style&quot;: &quot;Intricately detailed multi-panel black-and-white comic strip&quot;,</p>
+<p>&quot;character&quot;: &quot;Same woman depicted as a cartoon&quot;,</p>
+<p>&quot;story_panels&quot;: [</p>
+<p>&quot;Entering the store excitedly&quot;,</p>
+<p>&quot;Fighting over sale items&quot;,</p>
+<p>&quot;Trying ridiculous outfits&quot;,</p>
+<p>&quot;Struggling with an overflowing cart&quot;,</p>
+<p>&quot;Checking an empty wallet with a shocked expression&quot;</p>
+<p>],</p>
+<p>&quot;connection&quot;: &quot;Comic narrative continues directly from her realistic shopping pose&quot;</p>
+<p>},</p>
+<p>&quot;overall_goal&quot;: &quot;Create a seamless story where the photorealistic woman is the &#39;real moment&#39; inside her own comic adventure&quot;</p>
+<p>}</p>
+<p>}</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUWkjfnNRE51jlT1eKlp2XX81Uq91T6uDF8chEwbCYicSsgXHhLWw9w8w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>很好，生成的角色一致性有点意思，我现在想让他动起来，选择最近的可灵 O1 模型 来试试水...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUuvL6tjicnVgjWf3I1LYAAHWwGiaD987uI9dwGOjATLtpnygCszjboicdA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>点击下方 “图生视频 ”，默认“ 多模态参考 ”， 比例 9:16, 时长 5秒，提示词： 请把角色背后的 6 宫格漫画从各个方向汇聚在角色背后。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUPs1hHtVPor27ibjc9mve1ELdK0mqMSpHoysQEWrNTyJ77S0gq4vlgTA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>注意：这里我没有选择 添加特效 ，最后面我会简单讲解...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUHXA1CNz7FpiaC6o8uDSodoIWu0poQKNdjHjJMlaYicRn4sJxUWNZIulg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>这个质量一次成型，这种高效率，2个模型配合就可以做成这样，这放到抖音上很难分辨真假了。</p>
+<hr>
+<p>2.IP变装</p>
+<p>很早之前称之为“ 跨时代变装 ”，一致性也还行，但是生成的都比较复古，还是 先上传 1 张人物角色 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUGNdUAYjE7HzCSE4MChRIsib9mX3bvX2JibMsnGFJ4Az1kibNJ8vYOTUfw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>该提示词为： Make a 4×4 grid starting with the 1880s. In each section, I should appear styled according to that decade (clothing, hairstyle, facial hair, accessories). Use colors, background, &amp; film style accordingly.</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkU4daftjvicnlBqUKs26dy7pCMX5niccbE0Oia2Kyn9Aem0kVbWVibjZTCCg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>到这里我想法多了起来，看看是否根据这张延展成 cosplay DC的漫画英雄服饰， 鼠标滑过 生成的图像，选择右下角第 2 个图标“ 作为参考图 ”，附上提示词： 请把这张图里的角色 cosplay 成 DC里漫画英雄的服饰，要求每一个英雄角色服饰都不同。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUicz7LxlqeuibZaL0JMrZ7iaZADj3GJq7JLJZO6H70aI2uDzfeaYVwdXDg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUmaUdJCMRN5y8WM2HO9AZRoOxblwDGSqQBSdf2YDx7nVtz6vLT7iacsg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>这可太有意思了hhhh... 但是有点问题，左上角时间显示需要去掉，看看在 LiblibAI 里 “ 局部修改 ” 能否只用一句话就能修改掉。</p>
+<p>生成的图再次“ 作为参考图 ” 附上提示词： 去掉每个左上角英雄上面的已年为时间的数字。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkU6SeQicdE5Cjyk5MMCqT96AbtXnqwVA6yygt9icFg2Uzy8hBibcnLD9VZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>这种批量生成统一且保持IP角色特征的，绝对是设计师的利器！！</p>
+<hr>
+<p>3.团队徽标</p>
+<p>在 MJ 里尝试过且搞过公式，并且分享在 pdf 里了，现在试试 LiblibAI 里的 Nano Banana Pro 模型。</p>
+<p>提示词： Design an e-sports mascot logo &quot;Red Wolves.&quot; Aggressive wolf head vector illustration. Red/Black. Sharp lines.</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUZjSiciaArWMRSa1R8V5A9uTtoIt5VblcXaxEic2YDDvgTgQibCl6RYG3Cg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>同样，我想把狼头换成猫头，根据上面方法还是把这张 “ 作为参考图 ”，附上提示词： 请把狼头换成猫头。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUKzVBndicicicm0obib06iczE4qiayteWzSsFkKrFTIuB9bkE8T2EPN9d3S4w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>可以看到我把“狼”都拼写错误了，它居然还能识别，牛逼啊，在利用图生视频，选择 “ 可灵O1 ” 模型，选择 首尾帧 ，比例9:16，5秒。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUdc3uD0pHYbLAsicKqQc4wic0iadu8DkBSXzkUQ9ZIGJN2pbkcFPLlt8oQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>从猫变成狼的动态，点击添加 首帧 ，弹出选择弹窗，在里面找到“ 图片生成器 ”「也就是你之前生成的图像」， 尾帧 也是同理，附上提示词： 从首帧丝滑切换到尾帧。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUF80lN9WTZkibqibGK4SbGg8rCQcjhmCM3e1YkWbMO9c3ibBdicib34HiaL7A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUzpapjQsVib4oibsEtpvHm8MqTG5keibQb5EHbBjR7o3zqaXWxqZzce5Rw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkU5RiaS1wcqoI2rwEKKFxP9WIVHGnZpJqOxUfTBuW5FSOCGVj8kjcicoyQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_gif/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUK0vf9XY11fC0Z87lwu2hnpicn3Qcu0grbIjicpSRuNFL1Qv5mo92R4dA/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>可以说是效率非常高了，平时要做徽章，在做动态效果，没个几天是不可能的，现在AI加持节省了很多时间。</p>
+<hr>
+<p>4.3D手办</p>
+<p>3D 手办也有很多版本，我这里挑选了一种稳定的提示词，可以作为大家延展来使用。</p>
+<p>提示词： A high-fidelity 3D render of a &quot;Blind Box&quot; vinyl collectible toy. Character: A tiny, round pastel-blue sheep wearing a translucent raincoat made of clear plastic. It is holding a glowing star. Texture: The sheep’s wool is matte and velvety, while the raincoat is glossy and reflective. Studio lighting with soft pink rim light. White background.</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUEeQHczia0vNChoMdqbktkQh4TpKibDVibRMVI9xkgU4djBFKrIBCYvJiaA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>讲到这里，其实 LiblibAI 平台还有一个特别 🦅的得功能，就是它的“ 局部重绘 ”，我前面只用单独的文字提示就可以实现 局部修改 ，现在来看下里面都有什么功能。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUbjfcvOscqmoA8VjFzwA0IyIntnXjx5GvLvjqCXtlDeQy83WjxbicPVw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUZrrLia6e1k7A4hO93N0klYVZrN67KshZibOMMCKSZA8tU0deIZ7Ojicwg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>这里的局部重绘只是冰山一角，里面包含「 整体参考/线稿轮廓/景深构图/人物长相/主体参考/风格特征/人物姿态/局部重绘 」今天这篇文章讲不完，只说“ 局部重绘 ”，后面有时间大家愿意看请打在评论区，我在写下一篇。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUkUdK6htygDNiaS4PDCIlt1e3T5IHs4EzB2Ug62ItWZq9WKGCJtiaJpdw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUYOlmE6NxmSb7ynhkGXjbXyQwiaJRw8RnrhtaJFxtyufp60XfRC7PD4A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUe2bNia8pqYGCHicqRDOiaZAVFTNvr0lK2Nc8u6ePCvoCTyzvsI70rJBZg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p>这里我用左面的画笔进行涂抹角色抱住的“ 星星 “，点击 确定 ，等待片刻，图片会出现在输入框里，写下提示： 把角色手里抱着的星星换成月亮。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUxv7T43mz3p1WVx1RQWAtYtjtrTwGTWWzIQ02hKLzAgAIQxicZiaAPHSA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUbKKKljaFibXp08oT1p3cE71DPyWjf1uBNKbudVFk3rMRS7ND0NY0vdA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>这是一个非常有意思的功能，大家可以去体验一下...</p>
+<hr>
+<p>5.刺绣</p>
+<p>该提示词也很火，某书上有一阵这个很受欢迎，各种个样的刺绣都很有意思。</p>
+<p>提示词： flat view, top-down embroidery of a cute, pastel [Pikachu holding a tiny flower], an organic wool-textured embroidered design pattern on a white background, hand-painted details and vibrant colors. minimalist composition, soft lighting, high resolution, highly detailed, high quality.</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUxic1lNLh8MwKT9Q3EUJVu7ibib18rC3cKuqscdTqoYWnYTBUkEIcF8p5g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>我们复习一下，选择作为参考，延展出其他的宝可梦。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUiccQGJ4Aib7NCs2caleC8o8eVkY3g2sZelPlQR0vFNHcYHB4KUicoiaicGg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>非常的有意思hhhh...</p>
+<hr>
+<p>Pro玩法解锁</p>
+<p>介绍一下这个功能窗口，里面有很多模版，选择一个喜欢的模版，它会一同连模型复制到输入框，直接生成或者修改后生成都可以。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUcLLSypAgOg8GW1u4lVAh5zQaqox7iax3ibVDAickehkODGcsY9e1JZZWA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p>在首页进入，选择 1 张 做同款 ，我个人选择了做海报。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUuCDL1G9z52WKl3ruRYu4Lqicm7ZIaMiaSeMhrCrzDEzqEaoQG3P9ckwg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=36" alt="图片"></p>
+<p>附上做同款提示： kv,一位白发少男戴着黑色耳机和墨镜,身穿绿色上衣与黑色阔腿裤,脚踩厚底靴,坐在金属椅子上,手持手机,手机壳印有“wuhuarou”字样,她周围散落着绿色布料,化妆刷,lipstick,购物袋等物品,背景中有“五花肉特馋”大字标题,以及“@五花肉”,“你就学吧，一学一个不吱声！”等文字,画面右上角标有“ <a href="https://mp.weixin.qq.com/s/">#WUHUAROU</a> 2025”,整体风格时尚前卫。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkURSowxuectcNiaiaT1gFTiau77s2XvkDIiavUWWuDQ0Ew10w89UsuGBlKbA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=37" alt="图片"></p>
+<p>大家可以去试试，同时 千问模型后面需要加一种风格lora, 该风格 lora 是一位叫 小 猪XIAOZHU 的模型博主。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkUUvZh8BwOYsfzOIztd7XO48patXM0v0X5pBJho2myZljy29KDFlKChA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="图片"></p>
+<p>真不错啊真不错~~</p>
+<hr>
+<p>视频特效</p>
+<p>最后简单聊一下视频特效这块，回到 图片生成 ，在输入框里选择 视频生成 ，可以看到右侧可选择视频特效，我激动的心，颤抖的手，我决定测试一下。</p>
+<p>首先生成一个化妆品类的商业图像，然后根据生成的来做视频特效，附上以下化妆品提示词： Create a cosmetics jar mockup on a marble podium. Frosted glass, gold lid. Label &quot;RaDesign&quot; in script. Surround with white orchids. High-key light.</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhz1Jgn1K9KqEnq05CaGBQkapeticiaGKWKM0V0C5k9riabBoibZ9YRbabNZhLIt2oZibwO0t6w7mU2XRw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=40" alt="图片"></p>
+<p>可以看到生成的很好， 选择视频生成 -模型选择「这里暂时不要去选，因为特效模型有很多」- 选择图片添加 -图片生成器里刚生的产品图像- 添加特效 -选择一个特效-输入提示词。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhz1Jgn1K9KqEnq05CaGBQkK9jYsLTbBnGvxZtkW4kuL5AWqiaYfEWrqUD5bvzviapNCY39k3QhmJYQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=41" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhz1Jgn1K9KqEnq05CaGBQkgwicc8vTXyarT8TE1DXkaHsZPoOo4qwBG45fcibLmkcEC6u05QXgibVqg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=42" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhz1Jgn1K9KqEnq05CaGBQkfzkh4fKwJHpMhXISJ2Pp5kYWlYq69jdo2rD3VYLYic8OXlxWvoINVAw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=43" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhz1Jgn1K9KqEnq05CaGBQkD2ulOpFNgraiaLicTHK1o8VkwfibGChs5KzuufyeKn8jRCxibtuias8DNjA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=44" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_gif/ekECa2J6aibhz1Jgn1K9KqEnq05CaGBQkl0zMIfnkibvZ7tK9wA8lIoIjDDqhcgEcc59G6eUaHV67kLo6K8WT9gg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=45" alt="图片"></p>
+<p>可以看到还是很不错的， 通义万相的视频模型 还带音效的，抽卡了3次左右，附上提示词： 产品化妆品瓶旋转展示。</p>
+<hr>
+<p>结尾</p>
+<p>最后安利一波，会员要合理很多，同时也有活动： 购买年包会员，365天内可以畅玩可灵全系模型+香蕉Pro、Seedream、F.2 ，承包你一年的AI创作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibgVIdpwntYOIz9cGSPP8XkULCyYxcvEDXhiar9TccibT8MbEuibtcBNby9icLcqpQo7SDqPOGBeibkOqFQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=46" alt="图片"></p>
+<p>地址： <a href="https://www.liblib.art/viphome">https://www.liblib.art/viphome</a></p>
+<hr>
+<p>历史文章</p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925877792105037831#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=adxnvt2m&tp=webp#imgIndex=18" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925882854227312641#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=6du8fus1&tp=webp#imgIndex=19" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925887427964829708#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnyxekKjZGTauzZM1tnGU8XhMe8cQ8kPtK35fawroYY7ybu0LkYiaibW8g/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=yk6gkdmw&tp=webp#imgIndex=20" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925889414856966155#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnlePXhuwMKJ6yCnsZM4zdUQOXwdCwHy5dibrW2hKIrTCDb4263utLJuA/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=ldmkfp07&tp=webp#imgIndex=21" alt="图片"></a></p>
+<p>有意向或者感兴趣的小伙伴欢迎加入AI [MJ · DeepSeek · 4o·Gemini ]交流</p>
+<p>继续滑动看下一个</p>
+<p>RaDesign</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Qt8yx097vpK0GUpXqKECfQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

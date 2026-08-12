@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人人都会的数据分析 AI 工作流 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">人人都会的数据分析 AI 工作流</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%A8%A1%E6%9D%BF">提示词模板</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-12-11</span>
+  </div>
+  <p class="lead">让每个人都能成为数据驱动的决策者</p>
+  <article class="content"><p>原创 空格 zephyr <em>2025年12月11日 15:38</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5kOPm8tqoAyEjBeY4ibAPnDBqCr6FiaeMxI3vHGPaMicIJHZvdJmLD9BzOjy7hAPBicV5Picmv0Irt8Yg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>因为 AI，数据分析的门槛发生了革命性的变化。以前需要掌握 SQL、Python、统计学才能做的数据分析工作，现在 小白也能用 AI 完成 80% 的分析任务。</p>
+<p>无 论你是产品经理、运营、市场、销售、HR，还是行政、财务，只要还在职场，就离不开数据，这套方法论都能帮到你高效工作。</p>
+<p>我将结合实际场景和案例教你一套通用的 AI 数据分析框架，提供数十个分析模板，让你在任何场景下都能用 AI 上手。</p>
+<h2>一、数据分析技能正在被 AI 改写</h2>
+<p>传统方式的痛点：</p>
+<ul>
+<li>不会技术 ：不懂 SQL、Python，只能求助技术同事</li>
+<li>效率低下 ：手动整理数据，容易出错，耗时长</li>
+<li>分析浅显 ：只能做简单的统计，无法深入洞察</li>
+<li>难以决策 ：数据一大堆，但不知道该怎么办</li>
+</ul>
+<p>AI 带来的改变：</p>
+<ul>
+<li>零技术门槛 ：用自然语言对话，不需要写代码</li>
+<li>效率提升 10 倍 ：从数据清洗到报告生成，全流程自动化</li>
+<li>洞察更深入 ：AI 能发现人类容易忽略的模式</li>
+<li>决策更科学 ：基于数据给出可执行的建议</li>
+</ul>
+<h2>二、数据分析的标准流程</h2>
+<p>无论你分析什么数据，都遵循这个标准流程：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5kOPm8tqoAyEjBeY4ibAPnDzZsXtAMtg6lVTtP8CJ6Ykx91ttEiaF8DjPXDmTEaLpQIntxsHsOUPPA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>AI 的价值：贯穿整个流程，大幅降低每个环节的门槛和时间成本。</p>
+<h2>三、AI 数据分析的通用方法论</h2>
+<p>方法论框架：问题驱动 + 结构化提问</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5kOPm8tqoAyEjBeY4ibAPnDpuNyp3l9dkq4BqNLArc5QWMJAaFGKl5QGpFicA4HMn9cH3FyRXHB5yg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h3>步骤 1：明确问题 - 用 AI 帮你结构化思考</h3>
+<p>场景老板说分析一下为什么业绩下滑了&quot;，这个问题太模糊。</p>
+<p>传统做法：自己猜测可能的原因，然后逐个验证。</p>
+<p>AI 辅助做法：让 AI 帮你把模糊问题变成结构化的分析框架。</p>
+<p>提示词模板：</p>
+<pre><code class="language-js">我遇到一个问题：[描述问题]
+请帮我将这个问题拆解为可分析的子问题：
+1. 这个问题可以从哪些维度分析？（时间、地域、渠道、用户群体等）2. 每个维度需要关注哪些指标？3. 可能的原因有哪些？4. 需要收集哪些数据来验证这些原因？
+请用结构化的方式呈现分析框架。
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-js">我遇到一个问题：这个月的销售额比上个月下降了 15%
+请帮我将这个问题拆解为可分析的子问题：
+1. 这个问题可以从哪些维度分析？2. 每个维度需要关注哪些指标？3. 可能的原因有哪些？4. 需要收集哪些数据来验证这些原因？
+请用结构化的方式呈现分析框架。
+</code></pre>
+<p>AI 会给你一个完整的分析框架：</p>
+<blockquote>
+<p>销售额下降分析框架</p>
+<p>维度 1：拆解指标</p>
+<ul>
+<li>销售额 = 订单量 × 客单价</li>
+<li>需要分析：是订单量下降，还是客单价下降？</li>
+<li>维度 2：时间维度</li>
+<li>对比：上月同期、去年同期</li>
+<li>分析：是突然下降，还是逐步下降？</li>
+<li>关注：是否有异常日期（如某天销售额特别低）</li>
+<li>维度 3：产品/品类维度</li>
+<li>哪些产品/品类的销售额下降最多？</li>
+<li>哪些产品/品类反而增长了？
+  ......</li>
+<li>需要的数据：</li>
+<li>最近 3-6 个月的销售数据（订单明细）</li>
+<li>产品信息（品类、价格、库存）</li>
+<li>渠道信息</li>
+<li>客户信息（新老客户、属性）</li>
+<li>营销活动记录</li>
+<li>竞品动态（如果有）</li>
+</ul>
+</blockquote>
+<p>这个框架就是你接下来分析的路线图。</p>
+<h3>步骤 2：收集数据 - 明确需要什么数据</h3>
+<p>原则：</p>
+<ul>
+<li>只收集必要的数据，不要贪多</li>
+<li>数据要完整（时间跨度足够）</li>
+<li>数据要准确（来源可靠）</li>
+</ul>
+<p>常见数据来源：</p>
+<ul>
+<li>业务系统 ：CRM、ERP、订单系统</li>
+<li>数据分析平台 ：Google Analytics、友盟、神策</li>
+<li>第三方平台 ：电商平台后台、广告平台</li>
+<li>Excel/表格 ：手动整理的数据</li>
+<li>问卷调查 ：用户反馈、满意度调查</li>
+</ul>
+<p>数据格式：</p>
+<ul>
+<li>优先选择 Excel（.xlsx）或 CSV 格式</li>
+<li>确保数据是结构化的（有清晰的列名）</li>
+<li>每一行代表一条记录，每一列代表一个字段</li>
+</ul>
+<p>数据字段说明：</p>
+<p>在上传数据给 AI 之前，先整理一份&quot;数据字典&quot;，说明每个字段的含义：</p>
+<pre><code class="language-js">数据字典：
+订单数据：- order_id：订单编号- order_date：下单日期（格式：YYYY-MM-DD）- amount：订单金额（单位：元）- product_category：商品品类（服装/食品/电子产品）- channel：销售渠道（线上/线下）- customer_id：客户 ID- is_new_customer：是否新客户（1=是，0=否）
+</code></pre>
+<p>这样做AI 能准确理解你的数据、避免误解和错误分析、提高分析效率</p>
+<h3>步骤 3：清洗数据 - 让 AI 帮你检查和修正</h3>
+<p>数据质量问题：</p>
+<ul>
+<li>缺失值：某些字段为空</li>
+<li>重复数据：同一条记录出现多次</li>
+<li>格式不统一：日期格式不一致、金额单位不统一</li>
+<li>异常值：明显不合理的数据（如订单金额为负数）</li>
+</ul>
+<p>提示词模板：</p>
+<pre><code class="language-js">我上传了 [数据类型] 数据，包含 [时间范围] 的 [数据内容]。
+数据字段说明：[粘贴你的数据字典]
+请帮我检查数据质量：1. 有没有缺失值？在哪些字段？占比多少？2. 有没有重复数据？3. 有没有异常值？（如金额为 0 或异常大）4. 数据格式是否统一？（日期、金额等）5. 数据的时间范围是否完整？
+如果发现问题，请告诉我如何处理。
+</code></pre>
+<p>AI 会给你一份数据质量报告：</p>
+<blockquote>
+<p>数据质量检查报告</p>
+<p>发现的问题：</p>
+<p>缺失值：</p>
+<ul>
+<li>customer_id 字段：200 条记录缺失（2%）<ul>
+<li>product_category 字段：50 条记录缺失（0.5%）</li>
+</ul>
+</li>
+</ul>
+<p>重复数据：</p>
+<ul>
+<li>发现 15 条完全重复的订单记录</li>
+</ul>
+<p>异常值：</p>
+<ul>
+<li>100 条订单金额为 0（可能是测试订单或退款）<ul>
+<li>5 条订单金额超过 100,000 元（需要确认是否为大客户订单）</li>
+</ul>
+</li>
+</ul>
+<p>......</p>
+</blockquote>
+<p>然后让 AI 帮你清洗数据：</p>
+<pre><code class="language-js">请按照你的建议帮我清洗数据：1. 删除重复记录2. 删除订单金额为 0 的记录3. 统一日期格式为 YYYY-MM-DD4. 删除 customer_id 缺失的记录
+清洗完成后，告诉我清洗前后的数据量变化，并生成清洗后的数据摘要。
+</code></pre>
+<p>目前市面上的大模型对话都支持上传文件并输出文件，按照上面操作，你将得到一个清洗后的数据文件。</p>
+<h3>步骤 4：分析数据 - 用结构化提问引导 AI</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5kOPm8tqoAyEjBeY4ibAPnDRhe2Rj9XzWulK8KUiaAtvHanb5WRQRl8DtDiciatibiam55e1469BFxRanQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>提示词模板（层次 1：描述性分析）：</p>
+<pre><code class="language-js">基于清洗后的数据，请帮我做描述性分析：
+1. 总体情况：   - [关键指标] 的总量和平均值   - 与上期对比的变化（同比/环比）
+2. 时间趋势：   - [关键指标] 随时间的变化趋势   - 是否有明显的周期性或季节性？   - 是否有异常的时间点？
+3. 分布情况：   - [维度 1]（如产品品类）的分布   - [维度 2]（如销售渠道）的分布   - 各个维度的占比和排名
+4. 初步观察：   - 有哪些明显的模式或规律？   - 有哪些意外的发现？
+请用数据和百分比说明，并用表格呈现关键数据。
+</code></pre>
+<p>提示词模板（层次 2：诊断性分析）：</p>
+<pre><code class="language-js">基于描述性分析的结果，请帮我做诊断性分析：
+1. 对比分析：   - 对比 [维度 A] 和 [维度 B]，找出差异最大的地方   - 哪些因素与 [关键指标] 的相关性最强？
+2. 细分分析：   - 将数据按 [维度] 细分，分析各个细分群体的特征   - 哪个细分群体表现最好？哪个最差？
+3. 异常分析：   - 识别异常值或异常模式   - 这些异常是由什么原因导致的？
+4. 因果推断：   - [因素 A] 的变化是否导致了 [结果 B] 的变化？   - 有哪些混淆因素需要排除？
+请用数据支持你的结论，并指出关键发现。
+</code></pre>
+<p>也可以进行预测性分析和指导性分析，篇幅有限，文末获取模板。</p>
+<h3>步骤 5：可视化呈现 - 让数据说话</h3>
+<p>原则：</p>
+<ul>
+<li>选择合适的图表类型</li>
+<li>突出关键信息</li>
+<li>简洁清晰，避免信息过载</li>
+</ul>
+<p>常用图表类型：</p>
+<table>
+<thead>
+<tr>
+<th>分析目的</th>
+<th>推荐图表</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>展示趋势</td>
+<td>折线图</td>
+<td>销售额随时间的变化</td>
+</tr>
+<tr>
+<td>对比数值</td>
+<td>柱状图</td>
+<td>不同产品的销售额对比</td>
+</tr>
+<tr>
+<td>展示占比</td>
+<td>饼图</td>
+<td>各品类的销售额占比</td>
+</tr>
+<tr>
+<td>展示分布</td>
+<td>直方图</td>
+<td>用户年龄分布</td>
+</tr>
+<tr>
+<td>展示相关性</td>
+<td>散点图</td>
+<td>广告投入与销售额的关系</td>
+</tr>
+<tr>
+<td>展示流程</td>
+<td>漏斗图</td>
+<td>用户转化漏斗</td>
+</tr>
+<tr>
+<td>展示多维对比</td>
+<td>雷达图</td>
+<td>不同用户群体的特征对比</td>
+</tr>
+</tbody></table>
+<p>参考文章： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247489943&idx=1&sn=c136940efd39dc7c3ecfce0d0ef4848f&scene=21#wechat_redirect">告别excel：AI 驱动的数据分析指南</a></p>
+<p>提示词模板：</p>
+<pre><code class="language-js">基于以上分析结果，请生成以下图表：
+1. [图表类型 1]：展示 [数据内容]   - 横轴：[维度]   - 纵轴：[指标]   - 突出：[关键信息]
+2. [图表类型 2]：展示 [数据内容]   - ...
+要求：- 图表清晰易懂- 标注关键数据点- 使用专业的配色- 每个图表有清晰的标题和说明- 以 html 样式输出
+</code></pre>
+<h3>步骤 6：提炼洞察 - 从数据到结论</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5kOPm8tqoAyEjBeY4ibAPnD9C6HTLz6T6FXySTFFq2db8fOtmGGyAlWib47topauOOhRIQGuORg7pA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>提示词模板：</p>
+<pre><code class="language-js">基于以上分析，请帮我提炼关键洞察：
+1. 最重要的 3 个发现是什么？2. 每个发现背后的原因是什么？3. 这些发现对业务有什么影响？4. 如果不采取行动，会有什么风险？
+请用&quot;发现 → 原因 → 影响 → 建议&quot;的结构呈现。
+</code></pre>
+<p>示例输出：</p>
+<blockquote>
+<p>关键洞察</p>
+<p>洞察 1：新客户获取出现问题</p>
+<ul>
+<li>发现：11 月新客户订单量下降 40%，是销售额下降的主要原因</li>
+<li>原因：线上渠道的广告投放在 11 月减少了 50%</li>
+<li>影响：如果持续下去，12 月销售额可能进一步下降 20%</li>
+<li>建议：立即恢复广告投放，重点投放转化率高的渠道（如微信）</li>
+<li>洞察 2：服装品类遇到瓶颈</li>
+<li>发现：服装品类销售额下降 35%，远超其他品类</li>
+<li>原因：库存不足（热销款断货）+ 竞品促销（双十一期间竞品大促）</li>
+<li>影响：服装品类是主要收入来源，如果不解决，全年目标可能无法完成</li>
+<li>建议：紧急补货 + 推出限时促销活动挽回客户</li>
+</ul>
+</blockquote>
+<h3>步骤 7：形成决策 - 从洞察到行动</h3>
+<p>决策的三要素：</p>
+<ol>
+<li>做什么 ：具体的行动方案</li>
+<li>怎么做 ：执行步骤和资源需求</li>
+<li>预期效果 ：量化的目标和评估标准</li>
+</ol>
+<p>提示词模板：</p>
+<pre><code class="language-js">基于以上洞察，请帮我制定行动计划：
+1. 列出 3-5 个具体的行动方案2. 每个方案包含：   - 行动目标（要达到什么效果）   - 执行步骤（具体怎么做）   - 资源需求（需要什么资源和支持）   - 时间计划（什么时候开始，什么时候完成）   - 预期效果（量化的目标）   - 风险和应对（可能遇到什么问题，如何应对）
+3. 按优先级排序（哪些应该立即执行，哪些可以稍后）
+请用表格形式呈现行动计划。
+</code></pre>
+<h2>四、通用提示词模板库</h2>
+<p>为了方便你快速上手，我 整理了一套通用的提示词模板，适用于各种数据分析场景。</p>
+<h3>模板 1：问题拆解</h3>
+<pre><code class="language-js">我遇到一个问题：[描述问题]
+请帮我将这个问题拆解为可分析的子问题：1. 这个问题可以从哪些维度分析？2. 每个维度需要关注哪些指标？3. 可能的原因有哪些？4. 需要收集哪些数据来验证这些原因？
+请用结构化的方式呈现分析框架。
+</code></pre>
+<h3>模板 2：数据质量检查</h3>
+<pre><code class="language-js">我上传了 [数据类型] 数据，包含 [时间范围] 的 [数据内容]。
+数据字段说明：[粘贴你的数据字典]
+请帮我检查数据质量：1. 有没有缺失值？在哪些字段？占比多少？2. 有没有重复数据？3. 有没有异常值？4. 数据格式是否统一？5. 数据的时间范围是否完整？
+如果发现问题，请告诉我如何处理。
+</code></pre>
+<h3>模板 3：描述性分析</h3>
+<pre><code class="language-js">基于清洗后的数据，请帮我做描述性分析：
+1. 总体情况：   - [关键指标] 的总量和平均值   - 与上期对比的变化
+2. 时间趋势：   - [关键指标] 随时间的变化趋势   - 是否有异常的时间点？
+3. 分布情况：   - [维度 1] 的分布和占比   - [维度 2] 的分布和占比
+4. 初步观察：   - 有哪些明显的模式或规律？
+请用数据和百分比说明，并用表格呈现关键数据。
+</code></pre>
+<h3>模板 4：对比分析</h3>
+<pre><code class="language-js">请帮我对比 [对象 A] 和 [对象 B]：
+1. 在 [指标 1] 上的差异2. 在 [指标 2] 上的差异3. 在 [指标 3] 上的差异
+请用表格和图表呈现对比结果，并指出关键差异点。
+</code></pre>
+<h3>模板 5：相关性分析</h3>
+<pre><code class="language-js">请帮我分析哪些因素与 [目标指标] 相关：
+可能的影响因素：- [因素 1]- [因素 2]- [因素 3]
+请：1. 计算各因素与目标指标的相关性2. 识别最重要的影响因素（Top 3）3. 用图表展示相关性4. 说明相关性背后的可能原因
+注意：相关性不等于因果性，请提醒我注意这一点。
+</code></pre>
+<h3>篇幅有限，文末获取更多模板：模板 6：趋势预测、模板 7：用户分层、模板 8：根因分析、模板 9：行动建议、模板 10：报告生成</h3>
+<h2>五、进阶技巧</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5kOPm8tqoAyEjBeY4ibAPnD0ibYB01Zoibyojcj3sCCZyUwMnxjajic35r0bRLJPp4H6UmlE9c0kAoFg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>数据分析不再是专业人士的专属技能了。</p>
+<p>只要你掌握了这套完整的方法论——从明确问题开始，到收集数据、清洗数据、分析数据、可视化呈现，再到提炼洞察、最后形成决策。</p>
+<p>整个流程走下来，配合 AI 工具和本文提供的提示词模板，你会发现原来需要半天才能完成的分析工作，现在 10 分钟就能搞 定。更重要的是，你能发现以前根本发现不了的洞察，从而做出更科学的决策。</p>
+<p>这里面有几个关键要点需要记 住。首先是问题驱动，永远要先明确问题是什么，然后再去收集数据，而不是反过来。</p>
+<p>第二是结构化提问，要用模板来引导 AI，而不是随意地问问题。</p>
+<p>第三是分步骤分析，从描述性分析 到诊断性分析，从预测性分析到指导性决策，一步步深入。</p>
+<p>第四是验证结果，不要盲目相信 A I 给出的答案，要进行交叉验证。最后是持续积累，慢慢建立起自己的分析知识库。</p>
+<p>从今天开始，让 AI 成为你的数据分析助手吧。</p>
+<p>你可以这样开始：先选一个顺手的 AI 工具，可以是 ChatGPT 、Claude、豆包或者 Kimi，然后找一份你工作中真实的数据，选择本文中适合的提示词模板，试着分析一次。</p>
+<p>文章内容有限，后台回复“ 数据分析 ”获取所有数据分析相关提示词和模板。</p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+<p>帮「空格的键盘」擦擦灰</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/rTCfRzXUhcJQKt-3PqQvmA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

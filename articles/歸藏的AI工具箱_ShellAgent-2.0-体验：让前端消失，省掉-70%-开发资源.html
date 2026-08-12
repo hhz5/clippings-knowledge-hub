@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShellAgent 2.0 体验：让前端消失，省掉 70% 开发资源 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">ShellAgent 2.0 体验：让前端消失，省掉 70% 开发资源</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Myshell">Myshell</a><a class="chip" href="../index.html?tag=ShellAgent%202.0">ShellAgent 2.0</a><a class="chip" href="../index.html?tag=%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91">前端开发</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-07-25</span>
+  </div>
+  <p class="lead">大家好我是歸藏（guizang），今天带来 Myshell ShellAgent 2.0 的测试和介绍。</p>
+  <article class="content"><p>set 限制解除  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3fROBnAC2BGVPQPsE8kjVGndicicRVffCFKfV2s5bUySu6JCtQvnOrZ6w/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 歸藏的 AI 工具箱 <a href="https://mp.weixin.qq.com/s/">歸藏的AI工具箱</a> <em>2025年07月25日 10:35</em></p>
+<p>大家好我是歸藏（guizang），今天带来 Myshell ShellAgent 2.0 的测试和介绍。</p>
+<p>发现 Myshell 上了一个 ShellAgent 2.0 的能力，只需要提示词就能生成一个 Agent 应用。</p>
+<p>他们这个有意思的点是，没有复杂的前端页面都会在一个 Chatbot 里构建类似的交互，这就摆脱了构建前端的复杂流程降低了错误率，Agent 只需要管理工具之间的交互就可以。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3BhmcLGHdDo6Pwmy5NDLykey97zon6Xo6JicU4GxZ8WvhgSvt3IQFd5Q/640?wx_fmt=png&from=appmsg&randomid=6iatfo7n&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>整个创建门槛很低，不需要关心界面样式和交互，只需要说出你的需求就行，而且还能发布给其他人用，来看一下我尝试的案例。</p>
+<p>我先是想让他整一个计算八字的 Agent，然后再给一张对应的图片。</p>
+<p>看过我之前的提示词的都知道我需要写一堆网页样式和交互逻辑的提示词，这个对于 C 端用户来说是很高的门槛，但是现在完全不需要的，一句话就行。</p>
+<pre><code>帮我创建一个运势推算网站，主要包括输入日期推算出八字计算长期运势和点击一下生成随机的六爻推断短期运势功能，需要学习两种运势推荐方法生成对应的算法，并且给出一个跟结果相关用 Kontext Image 图像模型绘制的海报上面需要包含大致结果和解释结果的互联网矢量插画风格场景插画
+</code></pre>
+<p>在你输入提示词之后他会先进行需求分析，然后询问你一些需要补充的细节，在你确认之后就开始生成了。</p>
+<p>右侧会展示 Agent 的生成进度，下面那个用户旅程图特别有意思，你可以很快的理解他的 Agent 构筑思路。</p>
+<p>而且旅程图的部分选中之后还能作为上下文填写到修改的部分。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3ib83tDXJy4zIUnuJwQbdXNj4BJF7aCY9Q1gWYicUV7Vhzic4RxRAsPzag/640?wx_fmt=png&from=appmsg&randomid=4947jx47&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>生成过程非常的简单，输入完提示词等待他生成结果就行。</p>
+<p>生成结束后你就能看到右侧预览界面有内容了，这时候直接进行交互就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3tgSeiamo7QaDbuUjsQVjTQalAdXndEibeyafTibmFA7YRvibbqhn6A94mQ/640?wx_fmt=png&from=appmsg&randomid=twcfawt8&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>比如我们这里选八字推算，之后他就会弹出一个弹窗让你输入自己的出生年月日和需要算的方向。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3K0xG9aeQj2Ooxb61F6K7UQggcSrjBJZydhBRice7zg0ictic79X3lSicYg/640?wx_fmt=png&from=appmsg&randomid=u2qeabcf&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>之后等待结果就行，由于这个是真的强力模型在推动，所以效果上非常好。</p>
+<p>整个结果非常专业，他先会进行排盘，然后解释你的命局，之后会介绍流年分析，最后给开运建议，非常全面和完善。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3Y24e3Dk5b7c4zmZYMbaKQFMa1ibI4ALRvFVs4NTruPcX6hA4CZtGVCg/640?wx_fmt=png&from=appmsg&randomid=h33dslwh&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后我还会让他根据你的运势生成一张运势海报图片，帮助你形象的理解自己的运势。</p>
+<p>你可以在这里玩我这个 Agent： <a href="https://app.myshell.ai/bot/QzAvU3">https://app.myshell.ai/bot/QzAvU3</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3lDoSOfrsyqMm6oOGqsmDSickwvIzLRCazX1ibzUcvh7vxZxhM2uTE3FA/640?wx_fmt=png&from=appmsg&randomid=2k07u4aa&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>搞完这个之后由于 MyShell 里面还内置了一些 Web3 的工具，虽然咱不能玩，但是可以看看八卦。</p>
+<p>于是我就让他可以根据你输入的钱包地址详细的分析这个钱包的资产和转账内容，然后给出一个偏娱乐性质的报告。</p>
+<pre><code>帮我做一个应用，能让你像刷朋友圈一样，看懂某个Web3大佬或NFT项目的钱包里发生了什么有趣的故事，把冰冷的数据变得八卦又好玩。
+普通用户场景：
+我对加密世界很好奇，听说V神（Vitalik Buterin）又买了一个新的NFT，但我看不懂Etherscan上那些复杂的交易记录，我只想知道“他买了啥？好不好看？”。
+所需工具与模型链：
+用户输入： 一个Web3领域的名人钱包地址（如 vitalik.eth）或一个NFT项目的名称。
+Wallet Asset Explorer：查询该钱包地址下最近的资产变动和交易记录。
+Gemini 2.5 Pro (大型语言模型)：这是最关键的一步。Agent将原始的、机器可读的交易数据（例如 “Transaction 0x123... to contract 0xabc...”）“翻译”成普通人能读懂的大白话故事。例如：“就在昨天，V神钱包里多了一个来自&#39;Pudgy Penguins&#39;系列的可爱小企鹅NFT！看来他也对这个项目青睐有加。”
+Janus Pro - Multimodal Understanding (多模态理解)：如果交易涉及到NFT，Agent自动抓取该NFT的图片URL，并把图片展示出来。
+最终输出： 一个图文并茂的“钱包动态”卡片，告诉你“谁，在什么时候，花了多少钱，买了什么好玩的东西”。
+对用户的价值： 彻底打破Web3的技术壁垒，将普通人拒之门外的区块链数据，转变为人人都能看懂、乐于分享的“瓜”，让追蹤Web3动态像追星一样简单有趣。
+</code></pre>
+<p>输入提示词等待一段时间后就好了，我们只需要点击开始追踪，然后输入钱包地址或者 ENS 域名，选择网络就好，这里用 V 神的域名做测试。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3J9rfMHhWxiaNW5gESHQ3jlK9XITCp9Qx5tayvKiaqBQGwey9ibUOuFGdw/640?wx_fmt=png&from=appmsg&randomid=fd9bipf6&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后等待结果就行，AI 会以非常简练而且幽默的方式对你解读这个钱包的资产配置以及背后所代表的意思，很好玩，无论你是否理解 Web 3 都可以看懂，而且后面还能选择输出详细数据和给出 NFT 的分析。</p>
+<p>来这里试试： <a href="https://app.myshell.ai/bot/jmie6z">https://app.myshell.ai/bot/jmie6z</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3Ie7P3TzqbvaKRafcvYXUW7nazibaUHP0S6sjqJLomSBM9365Kbeibicrg/640?wx_fmt=png&from=appmsg&randomid=od2utdgn&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>ShellAgent 2.0 里面内置了超多工具，除了能生成文本和图片之外还能生成音频。</p>
+<p>所以就想了一个点子，让他根据我的文档内容生成学习的播客和图片闪卡来拆解学习资料。</p>
+<pre><code>帮我做一个应用，能把任何一篇冗长的PDF文档或网页文章，转换成一个可以随时随地学习的“互动闪卡”或“音频摘要”。
+普通用户场景：
+我是一个学生，有一份几十页的PDF课件需要复习，我想快速抓住重点并考考自己。
+我在网上看到一篇深度好文，但没时间马上看完，希望有工具能帮我总结并生成音频，让我在通勤路上听。
+所需工具与模型链：
+用户输入： 上传一个PDF文件或粘贴一个网页链接。
+Fast PDF to Text (或网页抓取工具)：自动提取所有文字内容。
+Claude 4 Sonnet (大型语言模型)：
+功能A (总结)： 将全文总结成5-10个核心要点。
+功能B (问答)： 基于文章内容，自动生成“一问一答”式的学习卡片（例如“问：什么是ShellAgent 2.0的核心特性？答：Text-to-App、Remix和即时分享。”）。
+(分支A) HTML to Image：将上面生成的问答卡片，格式化成一张张精美的图片，方便用户保存到手机相册进行记忆背诵。
+(分支B) Whisper (假设有TTS能力)：将总结出的核心要点，转换成自然的语音朗读出来，生成一段音频摘要。（注：Whisper是语音转文字，这里假设平台有对应的文字转语音TTS能力，这是非常常见的功能组合）。
+最终输出： 一套可供学习的“闪卡”或一段可随时收听的“音频摘要”。
+对用户的价值： 将被动、耗时的“阅读”行为，转变为主动、高效的“学习”体验，极大地节省时间，提升知识吸收效率。
+</code></pre>
+<p>你只需要上传文档或者给出你想要学习的网页链接就可以。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede30icG1sAichDrEZYTjZvQET4h1IariaibiacaeibWJ5fiavJwajoAQ2oN5onEQ/640?wx_fmt=png&from=appmsg&randomid=mkugmvwz&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>比如我这里拿个论文模型试一下，他会先生成对应的核心要点总结，然后你可以选择生成图片的闪卡或者解读播客。</p>
+<p>右侧的图片就是生成的图片闪卡，感觉可以自己打印出来放到一个地方去记忆。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3Jew7sGoEnwRFQEqZUrsB35F4icDYjjPRibFk3Z3Brbl0fEIFtiaycehAw/640?wx_fmt=png&from=appmsg&randomid=cwfijf5t&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当然由于他们的音频模型用的是 ElevenLabs，所以中文可能不是很标准，你可以改一下变成英语，顺便联系口语。</p>
+<p>你可以在这里玩这个 Agent： <a href="https://app.myshell.ai/chat/1753349518">https://app.myshell.ai/chat/1753349518</a></p>
+<p>最后如果你自己不会写提示词，或者看到好的 Agent 想要改一下给自己用的话也可以 Remix 别人发布的。</p>
+<p>在首页找到 Agent 或者通过别人分享的链接进到使用界面，点击这个 Remix 按钮就可以。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede32UE3qiaMhWbialib7qUmCl4icFsvicexbGhlbia7FTbjl5Aftk4YdcvrwrvQ/640?wx_fmt=png&from=appmsg&randomid=oe8n7rvf&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>本身这个创建门槛就很低，现在更低了，基本上人人都能创建自己的 Agent，只需要你有点子。</p>
+<p>另外他们用通用的组件替代掉了复杂的前端页面，虽然牺牲掉了界面多样性，但是大幅降低了开发成本和 Token 消耗，使得用户可以专注在自己想要实现的功能逻辑上。</p>
+<p>所以下次当你有个「要是能有个...」的想法时，别急着否定自己。打开 ShellAgent 2.0，试着把这句话原封不动地输进去。</p>
+<p>感兴趣可以来这里试试（ <a href="https://app.myshell.ai/robot-workshop">https://app.myshell.ai/robot-workshop</a> ），下面是 10 个邀请，今天中午 12 点开奖。</p>
+<p>点击这里抽奖</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egd1m5kMT1x3jHe33HFiaede3eJFUVZUmjCxTyMc7zuibquOuEma5krNdVDxovF6bxH4T2czlhnHUevw/640?wx_fmt=jpeg&from=appmsg&randomid=9umfatgi&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>如果这篇文章对你有帮助，记得点个赞。我是歸藏，我们下次再见。</p>
+<p><img src="https://mmbiz.qlogo.cn/mmbiz_jpg/FHoZCAjrvqgWLlBljDrYWKz1Ye6EYz33ukAVcyMBsRVbMqbfUibViadbnEGQmq4UkIoTodgambExicYdObJmQ8ZeA/0?wx_fmt=jpeg" alt=""></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p> <a href="https://mp.weixin.qq.com/s/">喜欢作者</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/gW5HDsmd-rS0BToYMDhy9g" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

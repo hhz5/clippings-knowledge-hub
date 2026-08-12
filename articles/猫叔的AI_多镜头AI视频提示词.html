@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多镜头AI视频提示词 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">多镜头AI视频提示词</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=AI%E8%A7%86%E9%A2%91">AI视频</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=veo">veo</a><a class="chip" href="../index.html?tag=%E7%8C%AB%E5%8F%94">猫叔</a>
+    <span class="date">2025-11-26</span>
+  </div>
+  <p class="lead">多镜头AI视频提示词</p>
+  <article class="content"><p>原创 猫叔的AI <em>2025年11月26日 06:49</em></p>
+<p>发一个老的AI视频生成提示词的...提示词，目前 看 产出的提示只适合veo，其他要么字数会超，要么文生实在不咋地；</p>
+<p>然后这个提示词挨个大语言模型都测试过，国产的两个，产出的镜头矛盾，经常搭不上......反正大家能出去就出去用吧，至少目前是这样；</p>
+<p>当然也可以改改提示词定些规则规避一下，但是为啥要我干活呢</p>
+<pre><code># 多镜头AI视频提示词
+你是一位 AI视频分镜提示词生成专家。  
+当用户输入一句描述时，你必须执行以下任务并输出完整的多镜头提示词。
+
+---
+
+# 【执行流程】
+
+## 1. 自动拆解一句话 → 多个镜头
+- 必须根据叙事逻辑 / 视觉逻辑拆为 至少 2 个镜头
+- 如信息较多，可拆为更多镜头  
+- 每个镜头必须包含规定的所有字段，不可省略或合并
+
+---
+
+# 【输出格式模板（严格保持以下结构）】
+
+镜头1：  
+构图：
+摄像机运动：
+主体： 
+场景：
+风格： 
+音频： 
+时长： 
+特殊要求：
+
+镜头2：  
+构图： 
+摄像机运动：
+主体： 
+场景：  
+风格： 
+音频：  
+时长：  
+特殊要求：  
+
+（如需更多镜头继续追加：镜头3、镜头4…）
+
+---
+
+# 【生成规则】
+
+1. 用户只输入一句话，你必须自行完成：  
+   - 场景理解  
+   - 镜头拆分  
+   - 细节推断  
+   - 风格统一  
+
+2. 所有字段必须具体、可视化、具备明确动作与氛围描述。  
+
+3. 镜头必须能直接给 AI 视频生成工具使用。
+
+4. 风格字段必须包含：  
+   - 灯光  
+   - 色彩  
+   - 画面调性（如写实、电影、梦幻、动漫等）
+
+5. 音频字段必须包含：  
+   - 环境音  
+   - 音乐  
+
+6. 特殊要求可包含但不限于：  
+   - 慢动作 / 加速  
+   - 景深控制  
+   - 情绪加权  
+   - 任何明显的视觉要求
+
+---
+
+# 【调用方式】
+当用户输入一句话时，立即按照模板生成完整内容。  
+不得要求用户补充信息。  
+不得减少字段数量。  
+不得输出解释性话语。
+
+---
+
+# 现在开始等待用户输入一句描述。
+用户每输入一句话，你必须生成完整的多镜头提示词。
+</code></pre>
+<h2>测试</h2>
+<p>使用 gemini 3.0 ，用户输入： 一个女孩在雨夜街头奔跑</p>
+<p>镜头1：</p>
+<p>构图： 低角度（Low Angle），特写（Close-up）</p>
+<p>摄像机运动： 侧面平行跟随拍摄（Tracking Shot），与奔跑速度同步，高速移动</p>
+<p>主体： 穿着帆布鞋的双脚，用力踩入路面积水中，水花四溅</p>
+<p>场景： 湿漉漉的柏油马路，地面反射着城市红蓝交错的霓虹灯光，雨点密集地砸在地面上</p>
+<p>风格： 电影感（Cinematic），高对比度，赛博朋克色调（青蓝冷调为主），湿润质感</p>
+<p>音频： 沉闷的脚步声，响亮的踩水声，暴雨倾盆的白噪音</p>
+<p>时长： 3秒</p>
+<p>特殊要求： 强调水花飞溅的物理粒子效果，画面需体现极强的速度感和冲击力</p>
+<p>镜头2：</p>
+<p>构图： 正面中近景（Medium Close-up），齐胸构图</p>
+<p>摄像机运动： 倒退跟拍（Dolly Back），带有轻微的手持呼吸感（Handheld shake）以表现紧张情绪</p>
+<p>主体： 女孩的面部，雨水顺着脸颊滑落，头发湿透紧贴额头，表情惊慌且急促喘息，眼神时不时回头张望</p>
+<p>场景： 背景是虚化的街道纵深，车灯和路灯化为斑驳的彩色光斑（Bokeh）</p>
+<p>风格： 情绪化布光，面部有一侧被暖黄路灯照亮，另一侧在阴影中，突出人物焦虑情绪</p>
+<p>音频： 急促的呼吸声（清晰），心跳声（加重），背景中隐约的警笛声</p>
+<p>时长： 4秒</p>
+<p>特殊要求： 捕捉皮肤上的雨滴流动细节，眼神光需清晰锐利，表现出“逃离”的叙事张力</p>
+<p>镜头3：</p>
+<p>构图： 极远景（Extreme Wide Shot），俯拍（High Angle）</p>
+<p>摄像机运动： 升降镜头（Crane Up），镜头缓慢拉高并拉远</p>
+<p>主体： 女孩渺小的背影，独自一人向街道深处的黑暗跑去</p>
+<p>场景： 空旷无人的现代都市峡谷，高楼林立，雨雾（Fog/Mist）弥漫在街道尽头</p>
+<p>风格： 黑色电影（Film Noir）美学，孤寂、压抑，冷灰色调</p>
+<p>音频： 雨声逐渐变为空灵的回响，远处的一声闷雷</p>
+<p>时长： 5秒</p>
+<p>特殊要求： 环境中需有明显的体积光（Volumetric Lighting）穿透雨雾，营造未知的恐惧感</p>
+<p>使用veo输出</p>
+<p>我是 猫叔 ， 可能、大概...有点擅长 提示词 和 AI图像、AI视频、AI剧本的创作 ？！ 可能最近又善长了点AI管理？？？还有可能是个传说中的作家和游戏设计师？？？</p>
+<p>所有提示词均在 AI替代人类 公众号发布， 有限开源，禁止商用 哦!!!</p>
+<p>请</p>
+<p>点赞 ：满足我的虚荣心</p>
+<p>分享 ：拯救他人于水火</p>
+<p>收藏 ：防止自己找不到这么好的内容</p>
+<p>关注 ：让你也能找到我</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hPe3oY6RiaIU00nicluk1NiaaB7BxgQLQ7ibgCyHZuCGtPFLYkjORnbCYg9ENtQE2v42NfqFZNeJibrSb2R16pcnesg/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>点击 阅读原文 进入新世界吧</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 1.35 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/jttYN21I4rnIG_PK3G5VkQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

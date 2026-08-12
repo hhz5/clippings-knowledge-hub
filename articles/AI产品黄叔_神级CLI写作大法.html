@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>神级CLI写作大法 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">神级CLI写作大法</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E4%BA%A7%E5%93%81%E9%BB%84%E5%8F%94">AI产品黄叔</a>
+    
+    <span class="date">2026-04-15</span>
+  </div>
+  <p class="lead">Context 才是唯一的壁垒，我用 CLI 把&quot;心里的话&quot;变成了一条可执行的内容生产线</p>
+  <article class="content"><p>原创 AI产品黄叔 AI产品黄叔 AI产品黄叔</p>
+<p><em>2026年4月15日 07:33</em> <em>北京</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>Context 才是唯一的壁垒</p>
+<p>我用 CLI 把&quot;心里的话&quot;变成了一条可执行的内容生产线</p>
+<p>好朋友橘子昨天写了篇文，写的很好：</p>
+<p> Context 是唯一重要的事情。 Context 不在你的小红书里，不在你的即刻里。 Context 在你的微信里，飞书里，电脑里。 但其实那些也远远不是全部。 最重要的 Context 其实是在你的心里。 是你对世界的认知，对关系的感知，对事物的判断。 那是你独一无二的灵魂。 </p>
+<p>他的提炼和表达非常的到位。正好最近我在做一件事情，和他讲的不谋而合。</p>
+<p>展开前先说个数据：同样质量的一篇文章，我用传统方式（打开 AI 对话框来回改 Prompt）大概需要 120-240 分钟。用我接下来要讲的这条管线，25-40 分钟，而且我自己动手的时间不超过 15 分钟。</p>
+<p>省下来的时间不是偷懒——是把时间从&quot;和 AI 拉扯&quot;转移到了&quot;注入我的判断&quot;上。这种感觉很像过去你在自己弹奏，现在你在指挥。</p>
+<p>这篇文章和大家分享下如何用最近很火的Cli来把审美变成可执行的内容生产线！</p>
+<p>01</p>
+<p>PART</p>
+<p>你的 AI 为什么总写不出你要的东西？</p>
+<p>你大概经历过这个场景：打开 ChatGPT 或 Claude，输入一段 Prompt——&quot;帮我写一篇关于 xxx 的公众号文章，要有深度，有案例，语言生动一点……&quot;</p>
+<p>然后等。有时候出来还行，更多时候你觉得&quot;差点意思&quot;。于是开始改——&quot;再口语化一点&quot;、&quot;加个数据&quot;、&quot;开头换个钩子&quot;……折腾半小时，最后要么凑合发了，要么还是自己重写一遍。</p>
+<p><strong>问题到底出在哪？</strong></p>
+<p>不是模型不够好。Opus 4.6、GPT 5.4，能力都够强了。也不是 Prompt 不够精，你加了约束、给了示例、甚至塞了几千字参考材料。</p>
+<p><strong>问题是：你的 AI 没有足够的 Context，也没有你的审美。</strong></p>
+<p>它不知道你上周写过类似的文章、风格是什么样的。不知道你的读者是有行业经验但不懂代码的人。不知道你收藏过哪些好文章、你觉得什么样的表达叫&quot;好&quot;。不知道你对这个话题的真实判断是什么——哪些观点你认同、哪些是废话。</p>
+<p>它在一个真空环境里凭空创作。<strong>一个再聪明的人被关在没有任何信息的房间里，也只能说出正确但空洞的废话。</strong></p>
+<p>橘子那句话点破的就是这个：<strong>Context 在你心里——但 AI 读不到你的心。</strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_jpg/j5GjAevlWGkQcX7AFicWsMEPwm2bf8pibLbCqicQJ7wX5picVeuHGAag3xPDMBNdnBymJQv5ajjFyn7zZkCsOrx7iaaun1qVicZCjSQE1ibI2tZRew/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></strong></p>
+<p>所以我前阵子一直在做一件事：<strong>把心里的 Context 外化成一条 AI 能读得懂的管线。</strong></p>
+<p><strong>这套方法适合谁？</strong></p>
+<p>适合已经有稳定内容输出习惯的人。</p>
+<p>如果你一周写不了一篇，问题不在于工具链而在于要不要写、写什么。</p>
+<p>这套方法解决的是**&quot;已经决定要写，怎么写得更快更好&quot;**。</p>
+<p>另外文中会用到命令行工具（CLI），不会用也没关系——核心思维一样，结尾会给降级方案。</p>
+<p>下面我从IPO三个角度拆解这套写作工作流：</p>
+<p>02</p>
+<p>PART</p>
+<p>Input 层：把散落的 Context 汇聚起来</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/j5GjAevlWGmCg944HoaqzrtDbliabpyGWN3micPRqC3bIuMq45W188qt79fV00jIPRrrc7f4vZ56dCxibicc5o0JSsDL5WJQpN5lQxvEORtP0Ro/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>我的 Context 主要散落在两个地方。</p>
+<p><strong>飞书</strong> — 我自己的知识库。过去写的所有文章、课程、决策文档……加在一起就是&quot;我是谁&quot;的数字化版本。</p>
+<p>以前写新文章要在脑子里翻：&quot;我以前写过类似话题吗？当时怎么说的？那个数据在哪？&quot; 效率低还经常漏。</p>
+<p>现在一句话让 AI 去翻：</p>
+<p>帮我找到和Skill相关的飞书云文档</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGnnqhmqE86ytoqcfoVgcILZLQeibqcESWJ6kSCArElvgpkPib6bDEgBOnke8b9P0GNO8kwzJ14g21ic9ibfpdy92oEGn2k0OsjOuzw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>拉出所有相关文档，挑几篇拉全文，AI 瞬间获得&quot;我在这个话题上想过的所有东西&quot;——不是几百字摘要，而是<strong>完整原始素材</strong>。</p>
+<p><strong>YouMind</strong> — 我手动收藏外部优质内容的地方。好的文章、好的数据、好的表达方式，我会收藏进来。这些收藏不是资料库，它们是我的审美和判断的投影——<strong>我收藏的东西 = 我看重什么</strong>。</p>
+<p>帮我在YouMind里找到和Skill相关的内容,罗列出来,每篇都简单介绍下内容是什么</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/j5GjAevlWGliccxIbF36ibLBdXoJFpViaQK9onzs3RbGcE5u1PvHJxVoXBExYlyyibI3Zz6ezHZa4tyiawjnZibib8mAKgpzdfyH1TiakXoD2TjoApY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>Input 层做的事就一件：<strong>把&quot;飞书里的我&quot;和&quot;YouMind 里的视野&quot;同时喂给 AI。</strong> 这时候 AI 已经不是空脑袋了——有了知识基础，有了筛选过的参考素材。但它还缺最重要的东西。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGm0FYB4cXvbSaJywDyr6q6KNQA49dqLCnegNEiaYvppq7ESCM6BmVBk84JJeepgZicQGrwwutjHgZuk9SLPrM90BfTaMyFBBicyhg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>03</p>
+<p>PART</p>
+<p>Process 层：把&quot;心里的判断&quot;变成多轮可执行的指令</p>
+<p>这是整条管线最关键的一层。也是绝大多数人完全缺失的一层。</p>
+<p>橘子说的&quot;Context 在你心里&quot;——在写作场景里指的是什么？是你知道章节该什么顺序读者才跟得上。知道哪里该用大白话哪里可以来点专业感。知道哪个数据比另一个更有说服力。知道结尾用什么力度才能让人记住而不是划走。</p>
+<p>这些东西没法写成一条 Prompt。</p>
+<p>它们不是一个指令，是你的审美、经验、直觉在同时运作。</p>
+<p>我怎么传递给 AI？答案在Claude Code的终端打开的知识库里，在飞书云文档的评论里！这整个过程是人机协作的过程，非常美妙！</p>
+<p><strong>首先Claude Code打开就是黄叔的知识库：</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGla4y88X0iaibTYG45cgdfl3tm9ooYfyjVtFicO3gsedQurpDG6E6ka7WVoBc4zvEnyG81iapPvxceNT0b1KvHAicUlwicm5ldOdtCPw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><strong>这样Claude Code默认 就自带了黄叔的认知和审美，然后再叠加下面的路径：</strong></p>
+<p>Process 不是&quot;写完稿改一遍&quot;，而是<strong>从骨架到血肉的全程人机协作，一个三层递归结构</strong>。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/j5GjAevlWGmYJjicd7yolPcJicKwxls8A7oZUJUT8ZhbZZW2eSWPAJUl2lQW13OhZQH9JExaqibt6u8ymkv41PpAgHTpiberFPXKichO9zs6LNQA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>📌 配图位置：Process 三层递归结构示意图（骨架 → 血肉 → 全局校准）</p>
+<p>第一轮：骨架碰撞 — 决定先后、详略、边界</p>
+<p>我不会让 AI 直接开始写正文。先让它基于飞书里的素材生成<strong>参考提纲</strong>，然后我开始批注（比如）：</p>
+<p><strong>&quot;顺序反了。应该先讲&#39;为什么你需要&#39;（痛点），再讲&#39;是什么&#39;（概念），最后才讲&#39;怎么做&#39;（实操）。现在直接跳进实操，读者跟不上。&quot;</strong> 这条背后是我的判断——你得先让人觉得有问题，再给解法。 </p>
+<p><strong>&quot;缺一整块：冲突检测和版本管理。这是实际使用中最高频的痛点，用户反馈里反复提到过。去飞书找一下那次社群讨论的记录。&quot;</strong> 这条背后是对&quot;真实痛点&quot;vs&quot;我觉得重要&quot;之间的区分能力。前者来自用户反馈，后者来自我自己。 </p>
+<p><strong>这些批注的本质是在做决策，也是你审美的体现。</strong> </p>
+<p>AI 可以基于我的认知先生成一版及格提纲，但只有我知道什么顺序能让读者看得下去、什么该浓墨重彩。</p>
+<p>然后，执行交给AI：Claude Code可以基于飞书云文档的评论去调整内容！</p>
+<p>第二轮：逐章打磨 — 校准开头、数据、用词、节奏</p>
+<p>提纲定了，一章一章来写，每章都走一轮批注。颗粒度从章节级降到了段落级：</p>
+<p><strong>&quot;开头太平了。用一个场景切入——&#39;你打开 Claude Code 输入一段 Prompt 等了三十秒拿到不错的回复。然后呢？下次遇到类似问题你还是从头开始。&#39; 让读者瞬间代入。&quot;</strong></p>
+<p><strong>&quot;&#39;提升效率&#39;这个词出现了三次，换掉两个。用具体的场景描述代替抽象词汇。&quot;</strong></p>
+<p>你会发现有些批注甚至在<strong>指挥 AI 回到 Input 层去拉新数据</strong>——比如&quot;换成 Skill Hub 最新扫描结果&quot;。Process 和 Input 不是串行的，它们在交互。<strong>这是一个活的循环，不是死的流水线。</strong></p>
+<p>第三轮：整体校准 — 消除重复、统一主线、对齐风格</p>
+<p>所有章节写完合在一起，跳出单章视角做全局批注：</p>
+<p><strong>&quot;第二章和第五章都在讲&#39;Agent 思维&#39;但有大量重复。保留第二章定义部分，第五章只留实战案例。&quot;****&quot;全书缺一根贯穿的主线。现在像五篇独立文章拼在一起。埋一条线——&#39;从使用者到设计者&#39;——每章结尾回扣。&quot;</strong></p>
+<table>
+<thead>
+<tr>
+<th>轮次</th>
+<th>颗粒度</th>
+<th>我在做什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>骨架</td>
+<td>章节级</td>
+<td>先后顺序、详略分配、边界划分</td>
+</tr>
+<tr>
+<td>血肉</td>
+<td>段落级</td>
+<td>开头、数据、用词、节奏</td>
+</tr>
+<tr>
+<td>全局</td>
+<td>全书级</td>
+<td>消除重复、统一主线、风格对齐</td>
+</tr>
+</tbody></table>
+<p>每一轮都是同一个模式：<strong>AI 给出框架或内容 → 我注入判断 → AI 执行我的判断。</strong></p>
+<p>而这些判断来自我写了几百篇文章、做了几十次直播、和上千个用户聊过天之后积累下来的直觉。橘子管它叫灵魂，我管它叫 <strong>Process 层</strong>。</p>
+<p>关键是这每一层都可以被 AI 读取和执行——评论写在飞书文档里，CLI 拉出来传给 Opus：</p>
+<p>读取这篇文档的评论，并且根据评论进行修改。</p>
+<p>AI 拿到的不再是模糊的&quot;写得更好一点&quot;，而是<strong>一条条带着上下文的具体校正指令</strong>。</p>
+<p>我不得不再夸一次Skill，Claude Agent Skills完全可以逐步把上面人的判断变成Skill，从而上面整个Process会越来越少有你的参与。</p>
+<p>04</p>
+<p>PART</p>
+<p>Output 层：让最对的厨师来炒菜</p>
+<p>Input 有了素材，Process 有了判断，最后选谁来执行。我用 <strong>Claude Code + Opus</strong>——文字质感、理解深度、处理复杂指令的能力最匹配我要的风格。</p>
+<p>但注意：<strong>我不是让它创作，我是让它合成。</strong> 它不需要凭空想观点（Input 给了），不需要猜我喜欢什么风格（Process 给了）。它只需要做一件事：<strong>按我的判断整合成通顺的内容。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/j5GjAevlWGnM05r5m2xQkdrVicH8bgOoMOLOWtgBY1B2eTZG35aae1NxMiaW4M6Mabpj1E1gtiaJLHIuobpZJYVnQAvYPs7UbSQ2oeXhBNFic7s/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>📌 配图位置：厨师炒菜比喻图（菜篮子 + 菜谱 + 厨师）</p>
+<table>
+<thead>
+<tr>
+<th>飞书 + YouMind</th>
+<th>= 菜篮子（食材）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>我的批注</td>
+<td>= 菜谱（怎么做、什么口味）</td>
+</tr>
+<tr>
+<td>Opus</td>
+<td>= 厨师（执行烹饪）</td>
+</tr>
+</tbody></table>
+<p>厨师不需要会种菜也不需要发明菜系。只需要拿到好食材照着菜谱炒出一盘好吃的。</p>
+<p>包括这里面可以调用YouMind的各种Skill，比如我做了个信息图，能参考我个人形象出图片，咱们这篇文章就完全是用YouMind的生图Skill来跑的，我已经提前在YouMind里配置好了，CC直接调用就好。</p>
+<p>05</p>
+<p>PART</p>
+<p>完整运转一次给你看</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/j5GjAevlWGnpT05zsXHdc6oz0LfgLzXgwhr0ZXrKx0xd2ENqVrgWJyy9EQFR5omefq5u6TLSWlFPSqRBaqbpEpBKxoCGj73oHrVkpr8CVGI/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>假设选题是**&quot;为什么大多数人用不好 AI 写作？&quot;**，完整流程：</p>
+<p>**Step 0 — Input：**从飞书拉取历史相关内容（8 篇），从 YouMind 搜索外部参考，从黄叔知识库获得我的认知。</p>
+<p>**Step 1 — 定骨架：**Opus 基于素材生成提纲 → 放进飞书 → 写 3-5 条结构性批注 → 提纲定稿。</p>
+<p>**Step 2 — 逐章填充：**按提纲逐章生成，每章一轮表达性批注 → 所有章节定稿。</p>
+<p>**Step 3 — 全局校准：**合稿后做跨章节批注（消除重复、统一主线、对齐配图）。</p>
+<p>**Step 4 — 最终合成：**把所有批注拉出传给 Opus 做最终整合。</p>
+<p><strong>Step 5 — 推到公众号：这一步先手动了，毕竟最近似乎风声比较紧。</strong></p>
+<p>全程 <strong>25-40 分钟</strong>。我自己动手不超过 <strong>15 分钟</strong>——主要是写批注。</p>
+<p>剩下的是 CLI 和 AI 在跑。</p>
+<p>06</p>
+<p>PART</p>
+<p>为什么这件事值得讲</p>
+<p>值得讲的是背后的思维变化。</p>
+<p>大多数人对 AI 的使用还在第一阶段：<strong>我问，AI 答。</strong></p>
+<p>少数人到第二阶段：<strong>我给详细 Prompt，AI 给更好的答。</strong></p>
+<p>但几乎没人到第三阶段：<strong>我搭一条管线，AI 是其中一个环节。</strong></p>
+<p>第三阶段的变化在于：<strong>你不再是一个使用者，你变成了架构师。</strong> 你设计的不是单次对话，而是信息流动的方式。</p>
+<table>
+<thead>
+<tr>
+<th>橘子说的</th>
+<th>我的管线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Context 在飞书、微信、电脑里</td>
+<td>Input：飞书 CLI + YouMind CLI+黄叔知识库</td>
+</tr>
+<tr>
+<td>最重要的 Context 在你心里</td>
+<td>Process：飞书批注 = 判断的多轮外化</td>
+</tr>
+<tr>
+<td>那是你独一无二的灵魂</td>
+<td>Output：Opus 合成 = 灵魂 + 效率</td>
+</tr>
+</tbody></table>
+<p>今天就能做的三件事</p>
+<p>不管你现在用什么工具写内容，都可以从这三步开始：</p>
+<p><strong>1. 建一个&quot;素材篮子&quot;</strong> — 不一定用飞书，任何你能快速检索的地方都行，比如有些人喜欢用Obsidian。把你过去写过的东西、收藏的好内容放进去。下次写新文章之前先翻一遍，比凭空写强十倍。（注意，黄叔后面还会延展，这个素材篮子其实就是构建内容管线的知识库）</p>
+<p><strong>2. 写批注代替改 Prompt</strong> — 下次 AI 给你初稿时，不要在对话框里说&quot;再改改&quot;。把初稿放到任何能写评论的地方（飞书云文档的评论），像审稿一样逐段写你的判断。然后把所有批注一次性丢给 AI。</p>
+<p><strong>3. 让每个工具只干它最擅长的事</strong> — 不要指望一个 AI 完成所有事。找会画图的工具画图，找会搜索的工具搜索，找一个文字最强的做最终整合。<strong>你不是在找最好的工具，你在搭最好的流水线。</strong></p>
+<p>Context 确实是在心里的。  </p>
+<p>但如果你能把心里的 Context 变成一条可执行的管线，  </p>
+<p>那你就不再只是一个人在写内容——<strong>你是一个系统。</strong>  </p>
+<p>而这个系统产出的每一篇内容，都有你的味道。</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/SuUMCE8TJ5E-CnrE9r2TEQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillDeck 上线，给 Codex 装上 Skill 管理工作台 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">SkillDeck 上线，给 Codex 装上 Skill 管理工作台</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=SkillDeck">SkillDeck</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Skill">Skill</a>
+    <span class="date">2026-07-27</span>
+  </div>
+  <p class="lead">最近又迷上了 vibe coding。下班在搞，周末也在搞。经常是冒出一个念头，就忍不住马上打开 Codex，把它做出来。</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年7月25日 11:16</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxWZUGzvDUqII46f7TFoM1S3jiaXVzzY7wpNY27Sfqiaib9QRCeGbrfictU9PnXgwj3XRUJmBibOfWCluGgIYQ9qNbq6ty90Vmft5Ho/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="修改后的 SkillDeck 宣传图"></p>
+<p>修改后的 SkillDeck 宣传图</p>
+<p>最近又迷上了 vibe coding。</p>
+<p>下班在搞，周末也在搞。经常是冒出一个念头，就忍不住马上打开 Codex，把它做出来。</p>
+<p>这周做了好几个项目，最值得分享的项目，是 SkillDeck。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCox1QsWgQtewYbzL3NxktJPm7pojUlyssHWDibNYfSkjPFbIZ3z8Cianb8ttvJdZjCFlUicla6hBvEKt3XnJ8HYKVkPgNu3vxkia9l4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p><strong>它是一个本地 Skill 可视化管理工作台，可以导入本地Skill，自动分类、搜索和管理 Skill，也可以把多个 Skill 组合成专家。</strong></p>
+<p><strong>在 Codex 里边对话，边调用Skill。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozjUmgQA7SwL3clYejXFg0xW0c78W3MAtWcUvibW57GQicdg0RneFle5OJnT0NBbCGSYB1h3IWSSl2fib01mTAZibjrh3USs57gibf4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>01</p>
+<p>Skill 多了以后，管理本身成了问题</p>
+<p>一开始装 Skill，感觉什么都想要。</p>
+<p>写文章有一批，做图片有一批，产品分析有一批，处理文档、做 PPT、剪视频又各有一批。</p>
+<p>等 Skill 积累到几十个甚至上百个，问题就来了。</p>
+<p>文件夹越来越乱，名字越来越难记。</p>
+<p>真正开始干活时， <strong>我经常想不起该调用哪一个，也不记得某个 Skill 到底放在哪里。</strong></p>
+<p>SkillDeck 做的第一件事，就是把这些散落在本地文件夹里的 Skill，变成一面可以浏览的卡片墙。</p>
+<p>我又 110 个 Skill，它给我分了 10 个类型</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyia079kGic6ibRNSgsnfvb2ISYYzgcLhhW26T6WSlz0RKW7lHfREicNlhAafOISPMUfX18TZrgd2dBwxiaSFZH9nYFTwjh47zwSZ14/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>它会递归读取 Skill 目录里的 <code>SKILL.md</code> ，识别名称和描述，再按写作、图片、产品、开发、数据、视频等用途自动分类。</p>
+<p>你可以搜索，也可以按分类筛选。</p>
+<p>找到需要的 Skill 后，点一下使用，可以选填具体任务，就能生成调用口令。</p>
+<p>复制到 Codex 里发送，Codex 会按地址读取说明并执行。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCox2YXPI6CKiapRgsqylTHVfvmgacYORmLkICDCjJcKMhsMqTn5V0iaKqslBicx7oj4C9G8FBg96sWAicJpMsdW4uHia3zRGN2brUCHU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>不想复制，也可以直接让 SkillDeck 调用本机的 Codex CLI 或 Qoder CLI、ClaudeCode，运行结果会在页面里回显。</p>
+<p>02</p>
+<p>我还给 SkillDeck 加了专家</p>
+<p>专家这个概念，是 <strong>天工超级智能体</strong> 给我的启发，WorkBuddy 也支持专家能力。</p>
+<p>所谓专家， <strong>就是把同一个领域里的一组 Skill 打包起来，再交给 Agent 自动选择。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxqAESzfLgEbNwd0dH5PYiaviaW3FhyBeMvWdrhkBeeRjukpBYWVLDAHGEicCzhfgeuRJENWSwUoKFh6QZiaTRoQMmOfaqvJIHBOpA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>比如我的本地 Skill，经过自动整理后，被分成了 <strong>内容创作与写作专家、视觉创意与设计专家、产品管理与策略专家、记忆与知识管理专家、技能开发与优化</strong> 专家等十多个专家。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxBQZdyyqH9XELl02pQcmXjzicG4icPmvWea3vUJJtjPW5ohewCHAgOKGsRQYFZnj7x7aC0iaw0kIxspuepYEQMxJTFrIL4VcX66Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>内容创作与写作专家里，有公众号写作、文章改写、商业稿件、社交媒体、播客脚本等 12 个 Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxkT9IVW9Zbf3IKWGiamYwowtP56txvW0tSyz2omvfwpRo8c6NH0aNibwx9ayG8xsTWZr1CN2WJ6p8Ig5JLLdjpYNwUTZhkgpcfI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>以前写一篇文章，我要反复提醒 Codex 先用哪个 Skill，下一步再用哪个 Skill。</p>
+<p>现在只要把这个专家的口令复制到 Codex，对话里的工作方式就一次设定好了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozFicTF16kaROkl8c4ovadIkgH8n6z9iciaWowBhMrjzicjueyRicGqUl5f7vbZKRpjW3x0iaTBzKjkibycHXicNL2PmrOiaTGpXXwRvWRg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>它会根据我接下来发的内容，自己判断该用哪个 Skill。每完成一步，还会主动提示后面可以继续调用什么。</p>
+<p>这篇文章就是用内容创作专家制作的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowJJZeN3lQMypicyicgdnRfz52ia4LccglhG0ovF9yVkl5L1PuRTndXPibHgMCaaMicYPoZmOumKKl1jQtSuvIhBPc1xEDdzwYs5NsU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>这样 Codex 就能在同一个对话里持续调用相关 Skill，不需要我每次点名，也不会做到一半忘了还有哪些能力可以用。</p>
+<p>03</p>
+<p>专家怎么制作</p>
+<p>SkillDeck 支持两种方式。</p>
+<p>最省事的是配置一个大模型 API，让 AI 读取全部 Skill，然后按照用途自动分组，生成专家名称、介绍和对应的 Skill 列表。</p>
+<p>如果不想配置 API，也可以手动创建专家。填好名称和介绍，再勾选需要加入的 Skill 就行。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyyK0bBibBBUBwiaT2N3jR8GsibnfJ9f2uaNC9hhHzqCL3sUabCU6UIHAK4R9rEjhSK0dIp5YKSAL00bibYibsB0ibBD736W8Fef4ga8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>API Key 只保存在本机配置文件里，不会提交到仓库，也不会传回页面。</p>
+<p>专家制作好后，点使用并复制口令，粘贴到 Codex 就能开始工作。</p>
+<p>口令里包含 Skill 的名称、使用说明和调用地址，它也可以交给 Claude Code、WorkBuddy 等能够读取本地文件的 Agent 使用。</p>
+<p>04</p>
+<p>SkillDeck 解决什么</p>
+<p>它解决的是 Skill 太多以后，找不到、记不住、不会组合，也无法在一段工作流里持续使用的问题。</p>
+<p>以前我们管理的是文件。</p>
+<p>现在我们管理的是能力。</p>
+<p>再往前一步，就是把零散能力组合成可以长期协作的专家。</p>
+<p>这也是我做 SkillDeck 最想验证的一件事。</p>
+<p>05</p>
+<p>怎么安装</p>
+<p>SkillDeck 已经开源</p>
+<p>地址：github.com/SpaceZephyr/skilldeck.git</p>
+<p>告诉你的 Agent，安装并运行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyJkXnUckTSbhdzYNWv1YoYXQpt5mkpMFib2IsFiaGoRWEsvIic23JEQs7XX1zEoz8jX1a2xvlURnawrxnGuuCzlwAoOXTl48WlCg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>启动后打开 <code>http://localhost:4177</code> ，</p>
+<p><strong>导入Skill到SkillDeck</strong></p>
+<p>选择本地的 Skill 文件夹就能使用。</p>
+<p>Skill 文件夹一般在.codex/skill 或.claud/skill</p>
+<p>项目在本地运行，不涉及个人隐私安全。</p>
+<p>我还在继续完善 SkillDeck。</p>
+<p>接下来会继续打磨 Codex 内的原生体验，也会增加更多 Skill 组织、调用和专家协作能力。</p>
+<p>如果你本地也装了几十个 Skill，已经开始记不住它们各自能干什么，欢迎安装体验。</p>
+<p>期待你回来告诉我，你用自己的 Skill 组出了哪些专家。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/FNohMGxzGITdabw-9V69JA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

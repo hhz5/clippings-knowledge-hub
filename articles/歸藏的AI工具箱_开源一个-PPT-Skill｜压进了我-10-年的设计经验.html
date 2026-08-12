@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源一个 PPT Skill｜压进了我 10 年的设计经验 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源一个 PPT Skill｜压进了我 10 年的设计经验</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=PPT%E8%AE%BE%E8%AE%A1">PPT设计</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a><a class="chip" href="../index.html?tag=%E6%9D%82%E5%BF%97%E9%A3%8E%E6%A0%BC">杂志风格</a>
+    <span class="date">2026-04-24</span>
+  </div>
+  <p class="lead">上周被李继刚老师邀请去做了场私享会，关于 AI 和组织的访谈。散场之后，发现大家问得最多的一句话是：&quot;那个 PPT 是什么做的，能不能开源一下？</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 歸藏的 AI 工具箱 歸藏的AI工具箱</p>
+<p><em>2026年4月24日 07:30</em> <em>北京</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DU3rehfy1DmBib24vSSfuQS3yaTtKc1L6CITNOzwzNeD0Viaic9keefEZeQlDiat0yoGEg1mFts6tz9evuMFPgIpnu6s2pGTKWedRw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>上周被李继刚老师邀请去做了场私享会，关于 AI 和组织的访谈。</p>
+<p>散场之后，发现大家问得最多的一句话是：&quot;那个 PPT 是什么做的，能不能开源一下？&quot;</p>
+<p>没想到副产品成了主产品。</p>
+<p>索性就把它开源了，叫 guizang-ppt-skill（github.com/op7418/guizang-ppt-skill）。</p>
+<p>今天这篇文章聊聊这个 Skill 长什么样，以及作为一个做了十年设计的人，我为什么会觉得它好看。</p>
+<h2>它长什么样</h2>
+<p>打开 Skill 生成的 PPT，第一眼的感觉大概是：这不太像 AI 做的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWdicccWUMwxFVqrwUZpibFryLjfUriciccxfdicBhShoaLbGpegtMXCRhkXD2PY1c5kUtVoF2lP2GV9LBzPGSjAXVicUKTIRDFnhiaA4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>几个直观特征：</p>
+<p>•</p>
+<p>封面：墨色底 + 衬线大标题，背后一层若隐若现的 WebGL 流体在缓缓流动</p>
+<p>•</p>
+<p>正文：底色切回纸白，墨字压在上面，像一本摊开的印刷杂志</p>
+<p>•</p>
+<p>翻页：横向左右滑动，键盘、滚轮、触屏手势都行，不是 PowerPoint 的下一页</p>
+<p>•</p>
+<p>元数据：每页四个角落有小号等宽字，写着 &quot;Act II · 15 / 25&quot; 这类报刊页码</p>
+<p>我给这套视觉基调起了个名字，叫&quot;电子杂志 × 电子墨水&quot;。</p>
+<p>灵感来源是《Monocle》《卫报》《NYT》这类印刷杂志的版式传统，叠加 Kindle 电子纸的阅读美学，再用当代 Web 的交互语法串起来。</p>
+<h2>它能做什么</h2>
+<p>Skill 目前提供 10 种页面布局、5 套主题色预设，和一套完整的翻页交互。</p>
+<p>10 种布局覆盖了一场 15-30 页分享会用到的几乎所有页面类型：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DXUapzYsCbqE7XlfCQxI2vNTWcSHeuRoX3ZIicUSd2acFgZicmHDpUtXyKfIrgojfHOlcqs2e0iaK6p3O5aBkVypl2DeSE3DxHv68/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>开场封面、章节幕封、数据大字报、左文右图、图片网格、Pipeline 流程、悬念问题、大引用、Before/After 对比、图文混排。</p>
+<p>每种都是一段可以直接粘贴的 HTML 骨架，改掉文字和图片就能用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DX5OTARwn5xnof5Gr48SnoqNggaW9h9K2OUu65gmVnL0n7GNicDUbyqXrxj93dHDMfV4UAPQSnGnLDaT863ZVutSMa5ibsibVCYico/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>5 套主题分别对应不同场景：</p>
+<p><strong>墨水经典</strong> — 商业发布、通用默认</p>
+<p><strong>靛蓝瓷</strong> — 科技、研究、AI 发布会</p>
+<p><strong>森林墨</strong> — 自然、可持续、人文</p>
+<p><strong>牛皮纸</strong> — 怀旧、文学、独立杂志</p>
+<p><strong>沙丘</strong> — 艺术、设计、创意</p>
+<p>每套主题只是 6 个 CSS 变量的不同取值，切换主题只要替换 :root 里那 6 行代码。</p>
+<p>用户不允许自定义 hex，后面会说原因。</p>
+<p>翻页交互支持键盘左右箭头、鼠标滚轮、触屏滑动、底部圆点跳转、ESC 键打开缩略图索引。</p>
+<p>尽量接近在浏览器里翻一本真实杂志的体验。</p>
+<p>产物是一个单文件 HTML，双击浏览器就能看，发给别人也只是一个文件，不用担心字体和动画在别人电脑上乱掉。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DV7WpCzaER3yKrtG8OeosCLRHQx4JaepUfRkpSV1s2KgS9jhibWUGYRB5USgB2PjIWTiaB3ZyicN1tQg7tXsv7IbAVmxq93GFVFia4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<h2>怎么用</h2>
+<p>其实这份 Skill 真正的价值不在模板本身，而在它定义了一套人 × AI 协作做 PPT 的接口。</p>
+<p>下面三件事，是我自己用了一周后，觉得最值得告诉别人的。</p>
+<h3>先跟 AI 说清这 6 件事</h3>
+<p>Skill 装好之后，你只需要说一句&quot;帮我做一份杂志风 PPT&quot;，Claude 会反过来主动问你 6 个问题：</p>
+<ol>
+<li></li>
+</ol>
+<p>受众是谁、什么场景？（行业内部 / 商业发布 / 私享会）</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>分享时长多久？（15 分钟 ≈ 10 页，30 分钟 ≈ 20 页）</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>有没有原始素材？（文档、数据、旧 PPT、文章链接）</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>有没有图片、放在哪？</p>
+<ol start="5">
+<li></li>
+</ol>
+<p>想要哪套主题色？（5 套预设里选）</p>
+<ol start="6">
+<li></li>
+</ol>
+<p>有没有硬约束？（必须包含 XX 数据 / 不能出现 YY）</p>
+<p>你不用一次说完，它会一条条问。答完之后，它会先给你一份大纲和主题节奏表，对齐之后再开始写代码——这一步拦截了我 80% 的返工。</p>
+<p>以前用 AI 做 PPT 最痛的是什么？是它直接开始写，等你看到第 10 页才发现整体方向就是错的。这套澄清流程把&quot;对齐&quot;前置到了开头。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVvd8IWGeibqIA6icyt63G5AkicGfWX7H1xKWJLYpa4mbFoLAENicmdfQjvPmuqltoF3D9casIBic3YRZyeng73G1g5OZicibyA1wXLXg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<h3>图片这样塞</h3>
+<p>图片放在和 index.html 同级的 images/ 文件夹，文件名有规则：</p>
+<p>ppt/ </p>
+<p>├── index.html </p>
+<p>└── images/     </p>
+<p>    ├── 01-cover.jpg     </p>
+<p>    ├── 03-figma.png     </p>
+<p>    └── 05-dashboard.png</p>
+<p>•</p>
+<p>页号补零 + 英文语义——01 不是 1，cover 不是 fengmian。方便按顺序排，AI 引用也清晰</p>
+<p>•</p>
+<p>照片用 JPG，截图用 PNG——截图带文字，PNG 保真不糊</p>
+<p>•</p>
+<p>单张 ≥ 1600px 宽——大屏投影才不糊</p>
+<p>你只需要告诉 Claude&quot;第 3 页是 Figma 界面截图&quot;，它会自动写成 images/03-figma.png，你把同名文件丢进文件夹就行。</p>
+<h3>无损换图的秘诀：同名覆盖</h3>
+<p>文案改完想换张图，结果要全局搜替换路径，一不小心就把 HTML 改坏了。</p>
+<p>正确做法只有一句话：新图用同名覆盖旧图，HTML 一个字不改。</p>
+<h2>为什么长成这样</h2>
+<p>聊完怎么用，聊聊它为什么是这个样子。</p>
+<p>好看不是玄学，是一套可以拆解的决策。我做的事，本质上是把杂志行业一百年沉淀下来的排版语言，搬到了 HTML 里。</p>
+<h3>字体的三级分工</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DUJa8xSlQMh7nzJz1HDtVjlO3rAetokMrArQpbzM0e8iaOnhe6fnys431YjC2reneBU2icgT9Hyo09AAZlfA5fULX0r6pmDmgT0g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>•</p>
+<p>衬线 → &quot;观点&quot;。大标题用衬线，读者一眼就觉得&quot;这是一句该被重视的话&quot;。</p>
+<p>•</p>
+<p>非衬线 → &quot;信息&quot;。正文密度高、阅读不累。</p>
+<p>•</p>
+<p>等宽 → &quot;元数据&quot;。页眉页脚的章节号、日期、页码，像杂志页脚，也像终端里的代码。</p>
+<p>读者不用费劲想，眼睛自己就知道这句话是正文还是附注。</p>
+<h3>色彩的纪律</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUt2jLWSU5GqKicJmva9VpceomA4FjbGgZPIUnsYUQiaOOT9Licu0HPS9N7fQaoKZh6tSSDmfxN6iaf2tgBrqwJFy5CjEGLdVOlImI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>纸白、墨色，加一个重点色，就够了。</p>
+<p>纯白刺眼、纯黑暴力，印刷行业从来不这么干，Kindle 也是。</p>
+<p>Skill 的 5 套主题，底色没有一个是 #FFFFFF，字色没有一个是 #000000。</p>
+<p>每套只暴露 6 个 CSS 变量，SKILL.md 里写明：不允许用户自定义 hex，只能五选一。</p>
+<p>约束越严，风格越稳。 保护美学，比给用户自由更重要。</p>
+<h3>网格与节奏</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWHxWqQ4ic9tnLiaDMiaiahTFia0FnOarJMXBpjpq0efl0joic2T6micwATApPdm2ka0hib3hUB85r0srPhF9e7xia6iahmygoCSnkBy7tVU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>7:5、6:6、8:4 几套固定网格保证单页秩序。</p>
+<p>hero 页和 non-hero 页必须交替，保证整本的节奏。</p>
+<p>一页密、一页疏，就是翻杂志时那种呼吸感。</p>
+<p>Skill 里写了条硬规则：连续三页以上相同主题会被判为 P0 错误。</p>
+<p>没有节奏的 PPT 就是一沓 slide 堆成的 PDF。</p>
+<h2>写在最后</h2>
+<p>上面这些规则，没有一条是我发明的。</p>
+<p>我做了十年设计，UI、交互、AI 特效都干过，这些其实都是行业常识。</p>
+<p>我只是把它们一条条写进了 SKILL.md 和 checklist.md，让 AI 能替我逐条执行而已。</p>
+<p>换句话说，这个 Skill 就是我这十年审美的一个压缩包。</p>
+<p>以前做一份像样的 PPT，我得花两天手动调网格、选字号、抠色值。</p>
+<p>现在把素材丢给 AI，它按照这些规则直接拼出来，我只需要检查一下。</p>
+<p>也正因为这样，我才敢把它开源。</p>
+<p>规则本来就不是我的独家，《Monocle》的设计师比我早用了几十年，我只是把它 copy 到了 2026 年的 HTML 里。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DVwxqMxgHquJ6uZ5SOCgmmia5QCBeOLWH2ZZSIuJRBfyKwsANcEUgMjrj0egIaBytialxria5MTBJuWvlRxddUbaic6pXiafTBSVz3M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>Skill 已经放在 GitHub 上：github.com/op7418/guizang-ppt-skill</p>
+<p>README 里有一段&quot;给 AI 的安装 prompt&quot;，复制粘贴给你的 Claude Code或其他 AI Agent，它会自动完成安装。</p>
+<p>装好之后对它说一句&quot;帮我做一份杂志风 PPT&quot;就会触发。</p>
+<p>也可以在 Bloome 这个 Agent 里面用，目前是免费的：</p>
+<p><a href="https://bloome.im/agent/join/iKXCLtkD?ref=wNL9Ew2G">https://bloome.im/agent/join/iKXCLtkD?ref=wNL9Ew2G</a></p>
+<p>如果觉得内容对你有帮助的话，可以帮我点个赞，或者分享给你需要的朋友。</p>
+<p>也可以在评论区分享一下你拿这个 Skill 做的 PPT。</p>
+<p>✦</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/GXjjlxpIJ604HVCCZJkUBA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

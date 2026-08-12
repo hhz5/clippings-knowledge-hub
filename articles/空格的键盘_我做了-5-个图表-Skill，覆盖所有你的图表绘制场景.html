@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我做了 5 个图表 Skill，覆盖所有你的图表绘制场景 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我做了 5 个图表 Skill，覆盖所有你的图表绘制场景</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E8%A1%A8%E7%BB%98%E5%88%B6">图表绘制</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7">效率工具</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a>
+    <span class="date">2026-04-16</span>
+  </div>
+  
+  <article class="content"><p>原创 空格丶 空格丶 <a href="javascript:void(0);">空格的键盘</a></p>
+<p><em>2026年4月16日 08:04</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowXNJ1Ng1rzuggJaTBvicVELwDAS5cGYYydA2icTic5LL7vMFY0pJYNlLyZ2TaAMzVZdXUcQsnvStyDhtMOpxw3KQYXibHxdcu2NEg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片">  </p>
+<p>上周准备写一篇关于 AI Agent 架构的文章，需要一张系统架构图。  </p>
+<p>就想到打开 Figma 画的流程： 新建画布... 找组件... 调颜色... 对齐……</p>
+<p>然后就觉得这不对啊，我天天用 Claude Code ，为什么不能让它帮我画图？</p>
+<p>想起我去年就做过一个web 产品“文To 图”，可以把文字转成有对比、递进、循环的逻辑图。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowk4oFF3w9nXrJXCz3QiaaqAt0ObIQm0rI2gDXuenCZQztD51at7pibklag8CshAV5MSkqwnuCJHthIdzd9H11mhiaia9ic092pvPRA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>于是我把这个产品做成了 Skill。又顺手做了架构图、流程图、通用图表，共 5 个 skill。</p>
+<p>可以说能够覆盖你所有绘制图表的场景。</p>
+<p>现在我跟 Claude Code 说一句「画一个 AI Agent 的工作流架构图」</p>
+<p>30 秒出图，截图，贴到文章里，完事。</p>
+<p>这 5 个 Skill 分别是：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxjt8IBmegkaDesib6tVbT73IM29fOngibkeNI0AnefL2TZmsw50fJCkUIic6nbL4gez5tMZ0xxcYtia91JtoJxBNbyTHqTL5UDUgI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p>这篇文章把 5 个 Skill 的效果和用法过一遍，穿插几个我实际用的案例。</p>
+<p>不想看的可以直接去这个仓库安装：github.com/zephyrwang6/draw-skill</p>
+<p>1. text-logic-diagram：文字转为逻辑图</p>
+<p>这个 Skill 解决的问题是配图。我经常写完一篇文章，想用图表把逻辑关系可视化。但架构图 Skill 只能画系统组件，画不了概念之间的递进、循环、对比这种抽象关系。</p>
+<p>所以我就做了这个。</p>
+<p>它支持 6 种逻辑关系：递进、流程、循环、层次、对比、矩阵。</p>
+<p>你丢一段文字给它，它先分析文本的逻辑结构，然后判断每一段适合用哪种关系图来表达，生成多张 SVG 图。</p>
+<p>**案例：**上周分析 Anthropic 那篇 &quot;Building Effective Agents&quot; 博客，我把五种 Agent 工作流模式的文字描述丢进去，它自动拆出了三张图——一张递进关系图（从提示链到自主 Agent 的复杂度阶梯），一张对比图（工作流 vs Agent），一张循环图（Agent 的 OODA 执行循环）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyYup53aia2DVgbaDvibwH1KicJg5YuYzguedU8nyRDGagDQHBYjicQZaZplbusbQ0ZWoD974wJ33Nm2fjaQFlsfibsmxwtderPBOVU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxOtVTYjYPAibDWcyDLbMzrTvykXWibeqv6ibykmpzyr6volID9D5E8CAWHKIXBqXAbeNAYV3oha8Zss6ARQNtR6bib67Syd2VRKvE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozVUwlF7rjRnAFiaZoebGpXMvGOezPE7F7sUDZNyDbH5w2yYYicgOl4rpbYRWjdLodsphQJyian4zS4ALNySWh6lIenKrhMxpRTOE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p>地址：github.com/zephyrwang6/draw-skill/tree/main/text-logic-diagram</p>
+<p>2. architecture-diagram：系统架构图</p>
+<p>这个参考了一个 GitHub 开源项目：github.com/Cocoon-AI/architecture-diagram-generator</p>
+<p>我把它的样式进行了优化，并改成了中文。</p>
+<p>现在支持 8 种组件类型的语义化配色。双主题切换。深色模式科技感拉满。</p>
+<p>点一下右上角按钮切到浅色模式，贴到文档里一点不突兀。</p>
+<p>调用时候说：画一个 AI 客服平台的微服务架构图</p>
+<p>然后它会问你几个问题，确认后生成一个独立 HTML 文件，浏览器直接打开，截图就能用。</p>
+<p>**案例：**同样是 Agent 那篇文章，我说「画一个 AI Agent 工作流架构图」。</p>
+<p>它把五种模式（提示链、路由、并行化、编排-工作者、评估-优化）全部画在一张图里，底层是增强型 LLM，顶层是自主 Agent 循环。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowWQRYQqpabpCxQatianeZwic9wyENUTnAibzCnvT49w0Zzb5SjazH4icLZibhHWjLOcHHacEpSwGLG2BFttz48C1ydxlfeelHtJ8gY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>3. mermaid-generator：Obsidian 里直接画</p>
+<p>有时候我不需要精美的 HTML，只需要一段 Mermaid 代码。</p>
+<p>在 Obsidian 里、飞书里就能直接渲染，不用打开浏览器，不用截图。轻量、快速、够用。</p>
+<p>这个 Skill 支持三种 Mermaid 图表：流程图、序列图、类图。</p>
+<p>只需要说：把这个转为流程图：用户打开页面、浏览商品、加入购物车、结算支付</p>
+<p>它直接输出：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxE7icicI9qf606gxEwnmEsQzhM8ic6hW1Jko2E1Cic7ebUoPRJFlqogocpaLHakKVNeMJjugLe2Vmrz4v430vCk6qd1ibYLmhiazP7A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片"></p>
+<p>粘贴到 Obsidian，就能渲染。</p>
+<p>或者在 mermaid.live、excalidraw.com渲染效果更佳。</p>
+<p>适合 在 Obsidian 笔记里快速记录一个架构思路，或者给同事发一个流程示意。不用追求好看，能看懂就行。</p>
+<p><strong>地址</strong>：github.com/zephyrwang6/draw-skill/tree/main/mermaid-generator</p>
+<p>4 . chart-craft ：35 个通用图表</p>
+<p>这两个是通用的图表生成器。</p>
+<p>chart-craft 是基础版，支持 10 种图表类型，覆盖最常见的场景：流程图、架构图、ER 图、商业模式画布、用户旅程图、思维导图、竞品分析、SWOT、产品路线图、组织架构图。</p>
+<p>chart-craft-plus 是增强版，直接扩展到 35 种图表，5 大类别：技术架构、流程逻辑、业务战略、数据可视化、信息展示。</p>
+<p>新增了桑基图、漏斗图、热力矩阵、OKR 对齐树、甘特图、C4 模型、威胁建模图、BPMN 图等等。</p>
+<p>两者的共同特点：</p>
+<p>三种内置风格：<strong>黑白简约（Notion 风）、深色暗调（科技感）、Claude 暖色（默认）</strong>。</p>
+<p>还支持品牌风格扩展，说一句「Stripe 风格」，它会自动去拉设计规范，应用到图表里。</p>
+<p>全部输出为独立 HTML 文件，无外部依赖。截图清晰，打印友好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyDT5JSVanxoa3lUJiamYlhxFE2GQwYeibpHlZNEXxpLiaqH4x2fS4PW2Hicf2C0lfLHfiaZJIlzaWRFhMmUlUNTCPHqnooQugiahxics/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p>**案例：**用 chart-craft-plus 的 Claude 暖色风格，给 Anthropic 那篇 &quot;Effective Harnesses&quot; 做了一张「四种失败模式」对照图。</p>
+<p>无限循环、发散偏移、环境破坏、上下文丢失，每种失败模式左边写症状、右边写 Harness 对策。暖色卡片式布局，贴到文章里信息密度高，看着也不累。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyPjyUic0SGQNyod9ChFruPVaTPd6DgVFsFMTfzdI6xljrtdr7dGoGpzEqWasT7TNOG44n3Hia1IJmj8kMmC0jGLgH8b2Rj1MotU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy9cZZRqrqh9xj89mEEwXpb0wqAntF4Dzm0WW02WtLgQUWlg0Z4UcRs9Fj1NpxrTnB2F30O4ItwGibw25V2OFHhIxyuGibbB9leI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片"></p>
+<p>地址：github.com/zephyrwang6/draw-skill/tree/main/chart-craft-plus</p>
+<p>怎么用？</p>
+<p>复制上面的地址，告诉你的 Agent，给我安装这个 skill，就能使用了，最好安装在<code>~/.claude/skills/</code>全局目录下。</p>
+<p>github.com/zephyrwang6/draw-skill 这个仓库里还有很多图片绘制的 skill，比如调用 Gemini3 pro 生图模型给文章配图、制作 logo、看板、数据分析的，可以按需安装。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxxctSc7f5G3Na5j2VZICo09dDZzqHy13r1hS2niavbWIcwJGfibEictD2vD8yohsPlKTXc0ky8eSGcibPbz1xEf1LqucrQBcXiaKD4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片"></p>
+<p>关于 skill 和生产力提升的系统学习，如果需要，可以订阅专栏加入社群：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxP1nZVnPTby0aJ3QUXfxRZeicsqvMIs9q8uycvPf8vCSSKDiaT4yd7hjTLub9HKpflibDGk66HVeibicG2eOa4N0zS8ic3fJWWrlibRo/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=13" alt="Image"></p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/QuphE7OjgF8DkMdtTn7gkw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

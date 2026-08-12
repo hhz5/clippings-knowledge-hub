@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skill 很好，但怎么用？3 种方法把你的 SOP 变成 Claude Skill · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Skill 很好，但怎么用？3 种方法把你的 SOP 变成 Claude Skill</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude%E6%8A%80%E8%83%BD">Claude技能</a><a class="chip" href="../index.html?tag=SOP">SOP</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a>
+    <span class="date">2026-01-10</span>
+  </div>
+  <p class="lead">用起来💪</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年1月9日 16:47</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbv9qKLlWDThGer0liaEeiboQVJXI81sGfsicvTu1Niawbx15L6Yk7yibalmmg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>最近经常被 Skill 所惊艳。</p>
+<p>比如下面用 Obsidian canvas 创建的 Skill 解释一下 <strong>「什么是 Skill」。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbva9hQPsC5Nd6zfzk1UQNmiaKyKcWhsHgbeaeOsb2ax2Ss2ia105IXlichA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>惊艳之处就在于，Skill 能直接产出高质量的交付物，不止文档，还可以是 PPT、excel、网页、画板等等。</p>
+<p>文档也能玩出花来，比如我做的 youtube 视频转文档SKill执行步骤是</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbvZvPWEH7pFTlicsPWgYL4NmAib1TJy3LAy6icW3ToSUmMWwdeeXFlBneUA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p>10分钟就能产出一篇播客转文章，读起来有人味，方便自己加深对播客的学习。</p>
+<p>👇这里可以查看我每日公开的播客知识库：</p>
+<p><a href="https://my.feishu.cn/wiki/TOSJwKzxTiFdiRk0aducHNBFntg?from=from%5C_copylink">https://my.feishu.cn/wiki/TOSJwKzxTiFdiRk0aducHNBFntg?from=from\_copylink</a></p>
+<p>这篇文章的重点是以低门槛的方式来创建 Skill，并且把 Skill 用起来，主要结构是：</p>
+<ul>
+<li>Skills、提示词、MCP 区别</li>
+<li>什么场景适合用 Skills</li>
+<li>看看有哪些现成的好用 Skills</li>
+<li>三个方法教你创建自己的 Skill</li>
+<li>推荐一些开源资源</li>
+</ul>
+<p>一、Skills vs 提示词 vs MCP</p>
+<p>这三个概念经常被混淆，我用一个表格帮你理清：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbvsrwFkIo5aUia7eF7AtoUWwzFqFZHpa45V6rOoQjcR6lxgpMhMWg6pWQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<ul>
+<li><strong>提示词 = 口头交代任务，说完就忘。对应的是一次性任务</strong></li>
+<li><strong>Skills = 员工手册，随时可查。对应重复性任务和固定规范</strong></li>
+<li><strong>MCP = 给员工配的工具（浏览器、数据库访问权限等）。需要访问外部数据时使用</strong></li>
+</ul>
+<blockquote>
+<p>三者不是互斥的。实际工作中，可能用 <strong>Skills</strong> 定义代码规范，用 <strong>MCP</strong> 连接数据库，再用 <strong>提示词</strong> 说「帮我查一下用户表里上周的新增数据」。</p>
+</blockquote>
+<p>二、Skill 的原理</p>
+<p>在讲应用场景之前，先搞清楚 Skill 是怎么工作的。</p>
+<p>一个完整的 Skill 包含下面文件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbvo71WsZK2ialhYrmykicPBNSR6iajckxL9k06tKurfibJCrquu6GjuNYblg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>其中 <strong>SKILL.md</strong> 是唯一必须的文件，其他都是按需添加。</p>
+<p>Claude 加载 Skill 的过程：</p>
+<ul>
+<li><strong>发现阶段：Claude 启动时扫描所有 Skill 目录，只读取每个 SKILL.md</strong> <code>description</code> 字段</li>
+<li><strong>匹配阶段：用户输入后，Claude 根据 description 判断是否需要某个 Skill</strong></li>
+<li><strong>加载阶段：如果匹配，Claude 读取完整的 SKILL.md 内容</strong></li>
+<li><strong>执行阶段：按照 Skill 中的指引处理任务，必要时调用 scripts/ 里的脚本</strong></li>
+</ul>
+<blockquote>
+<p>Skill 不会一直占用上下文窗口。只有 description 会常驻内存（很短），完整内容只在需要时加载。这是 Skill 比「超长系统提示词」高效的关键原因。</p>
+</blockquote>
+<p><strong>Skill 的几个核心特性</strong></p>
+<ul>
+<li><strong>自动触发：不需要手动调用，Claude 根据任务自动识别</strong></li>
+<li><strong>可组合：多个 Skill 可以在同一任务中协作</strong></li>
+<li><strong>可扩展：通过 scripts/ 和 references/ 扩展能力</strong></li>
+<li><strong>版本化：放在 Git 里可以追踪变更</strong></li>
+</ul>
+<p>Skill 可以放在三个地方，优先级从高到低：</p>
+<p><strong>项目目录</strong><code>.claude/skills/</code></p>
+<ul>
+<li>适合：项目特定的规范、工作流</li>
+<li>优点：跟项目代码一起版本控制，团队共享</li>
+</ul>
+<p><strong>用户目录</strong> <code>~/.claude/skills/</code></p>
+<ul>
+<li>适合：个人通用的 Skill</li>
+<li>优点：所有项目都能用</li>
+</ul>
+<p><strong>插件目录（由工具自动管理）</strong></p>
+<ul>
+<li>适合：第三方 Skill 包</li>
+<li>例如：通过包管理器安装的社区 Skill</li>
+</ul>
+<blockquote>
+<p>除非有明确的项目特定需求，否则都放 <code>~/.claude/skills/</code> 。放一个地方好管理，不容易忘记自己有哪些 Skill。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbvIrbOMlF8ImcfY4bdPb9epWnNvyl0un4tqS4icPuuR4b8bpNZST4rboQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p>三、Skill 的创建</p>
+<p>创建 Skill 的核心其实很简单：写一个 SKILL.md 文件，放到对应目录就行。</p>
+<p>但要让 Skill 真正好用，还需要理解脚本、参考文件和迭代优化。</p>
+<pre><code>my-skill/
+├── SKILL.md          # 核心文件，必须有
+├── references/       # 参考文档（可选）
+│   ├── api-docs.md
+│   └── examples.md
+├── scripts/          # 可执行脚本（可选）
+│   ├── generate.py
+│   └── validate.sh
+└── templates/        # 模板文件（可选）
+    └── output.md
+</code></pre>
+<p>创建 Skill 前，先调整一下心态： <strong>要胆大</strong> 。</p>
+<p>把 Claude Code 想象成一个无所不能的程序员、一个电脑高手，它能交付你任何任务。任何你日常重复做的事情，任何你有固定套路的工作，都可以尝试做成 Skill。</p>
+<p>在开始创建之前，确保完成以下准备：</p>
+<p><strong>1. 安装并配置好 Claude Code</strong></p>
+<p>如果还没装，可以参考 <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247492908&idx=1&sn=942328417db27fa756124eece3c8c64d&scene=21#wechat_redirect">claude code 小白级安装指南和必备工具</a></p>
+<p><strong>2. 下载 skill-creator</strong></p>
+<p>这是官方提供的 Skill 创建向导，地址：</p>
+<p><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator">https://github.com/anthropics/skills/tree/main/skills/skill-creator</a></p>
+<p>下载后放到 <code>~/.claude/skills/</code> 目录即可。有了它，Claude 就能引导你一步步创建 Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbv03LEoup8g7KjnDgsDUkDGU7lrC7GmBnxn3xRaic90EYOEUlribhy4YIg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>3.1 <strong>方法一：把提示词做成 Skill</strong></p>
+<p>这是最快的方式。你肯定收藏过一些好用的提示词，与其每次复制粘贴，不如直接做成 Skill。</p>
+<p><strong>案例：审稿员提示词</strong></p>
+<p>假设你有这样一个提示词：</p>
+<pre><code>3. 共鸣：写的东西读者是不是也经历过同样的痛苦、困境？
+4.人设： 始终围绕着 AI 创业者【你自己的人设】的身份来写
+5. 干货：读者是否有获得感？信息增益？
+6. 好玩： case 是否好玩？ 这是流量基础
+8. 对话感：好内容语气应该是跟读者对话 让读者忍不住在评论区里回复
+</code></pre>
+<p><strong>操作步骤：</strong></p>
+<ul>
+<li>打开 Claude Code</li>
+<li>把提示词贴进去，然后说：「 根据这个提示词创建一个 Skill 」</li>
+<li>Claude 会问你几个问题：</li>
+<li>Claude 生成 SKILL.md，保存到 <code>~/.claude/skills/article-reviewer/</code></li>
+</ul>
+<p>以后你只需要说「 帮我审一下这篇文章 」，Claude 就自动调用 Skill 来审稿。</p>
+<p>3.2 方法二：描述 SOP 创建 Skill</p>
+<p>如果你没有现成的提示词，但有一套固定的工作流程（SOP），也可以直接描述给 Claude，让它帮你做成 Skill。</p>
+<p><strong>有哪些 SOP 适合做成 Skill？</strong></p>
+<ul>
+<li>写作 SOP：写公众号文章的固定流程</li>
+<li>会议 SOP：整理会议纪要的模板和步骤</li>
+<li>审批 SOP：处理各类申请的检查清单</li>
+<li>复盘 SOP：项目复盘的固定框架</li>
+<li>......</li>
+</ul>
+<p><strong>案例：写作 SOP 变成 Skill</strong></p>
+<p>假设你写公众号文章有这样一套流程：</p>
+<ul>
+<li>先确定选题和核心观点</li>
+<li>列出 3-5 个大纲选项</li>
+<li>选定大纲后逐段展开</li>
+<li>写完后检查：标题是否吸引人、开头是否有 hook、结尾是否有行动号召</li>
+<li>最后润色语言风格</li>
+</ul>
+<p><strong>操作步骤：</strong></p>
+<ul>
+<li>打开 Claude Code，说：</li>
+</ul>
+<pre><code>帮我创建一个写公众号文章的 Skill。
+我的写作流程是：
+1. 先确定选题和核心观点
+2. 列出 3-5 个大纲选项让我选
+3. 选定后逐段展开
+4. 写完检查标题、开头 hook、结尾 CTA
+5. 润色成我喜欢的风格：干货但轻松，像朋友聊天
+</code></pre>
+<p>Claude 会追问细节，比如「你平时写什么类型的文章」「有没有参考样本」</p>
+<p>回答完后，它会生成完整的 SKILL.md</p>
+<p><strong>如何写好 SOP 描述？</strong></p>
+<ul>
+<li>写清楚每一步要做什么</li>
+<li>说明每一步的输入和输出</li>
+<li>提供你喜欢的风格或样本</li>
+<li>说明哪些情况需要特殊处理</li>
+</ul>
+<p>3.3 方法三：把对话做成 Skill</p>
+<p>这里的对话指的是和模型的上下文对话，比如下面这个案例</p>
+<p><strong>案例：用聊天记录创建「虚拟人」Skill</strong></p>
+<p>想象一下：你把和女友的 500 条微信聊天记录发给 Claude，再补充一些信息（TA 的性格MBTI、星座、沟通风格），让 Claude 创建一个「虚拟老板」Skill。</p>
+<p>以后你想发消息前，可以先问这个 Skill：「她为什么生气」它会模拟女友的思维方式给你建议。</p>
+<p><strong>操作步骤：</strong></p>
+<ul>
+<li>导出聊天记录（微信可以导出为文本）
+  准备补充信息：</li>
+<li>对方的 MBTI、星座（如果知道的话）</li>
+<li>沟通风格：直接还是委婉？</li>
+<li>发给 Claude，说：理解 ta 的潜台词</li>
+<li>Claude 会分析对话模式，提炼出这个人的特征，生成 Skill</li>
+</ul>
+<p>3.4 什么时候需要脚本文件</p>
+<p>SKILL.md 只能提供「知识」，但有些任务需要「能力」——这时候就需要脚本。</p>
+<p><strong>需要脚本的场景：</strong></p>
+<ul>
+<li>文件格式转换（PDF → Markdown、Excel → JSON）</li>
+<li>数据处理（批量重命名、格式化）</li>
+<li>调用外部 API（天气、翻译、搜索）</li>
+<li>执行验证逻辑（检查文件是否符合规范）</li>
+<li>...</li>
+</ul>
+<p>3.5 如何创建脚本</p>
+<p>建脚本也不需要自己手动去写代码，但你需要有一个 <strong>意识</strong> ：知道你的 Skill 是否需要依赖脚本。</p>
+<p>脚本就是一段可以被执行的代码。当 Claude 遇到它自己做不了的事（比如访问网络、操作文件系统、调用外部 API），它就会运行脚本来完成。</p>
+<p><strong>脚本的类型：</strong></p>
+<ul>
+<li><strong>Python 脚本</strong>
+  （<code>.py</code> ）：最常用，适合数据处理、网络请求、文件转换</li>
+<li><strong>Shell 脚本</strong>
+  （<code>.sh</code> ）：适合系统操作、批量命令、环境配置</li>
+<li><strong>Node.js 脚本</strong>
+  （<code>.js</code> ）：适合前端相关、JSON 处理</li>
+</ul>
+<p><strong>案例：X（Twitter）内容抓取 Skill</strong></p>
+<p>假设你想创建一个 Skill，能够抓取 X 上某个用户的推文并保存到本地。这个任务 Claude 自己做不了（需要网络请求），所以需要脚本。</p>
+<p><strong>创建时这样描述：</strong></p>
+<pre><code>帮我创建一个抓取 X 内容的 Skill。
+
+功能：
+1. 输入一个 X 用户的用户名
+2. 抓取该用户最近 100 条推文
+3. 保存为 Markdown 格式到指定目录
+
+技术细节：
+- 需要用 Python 写抓取脚本
+- 保存位置：~/Documents/x-archives/
+- 文件命名：用户名_日期.md
+</code></pre>
+<p>Claude 会帮你生成完整的 Skill，包括脚本文件。</p>
+<p><strong>生成的目录结构：</strong></p>
+<pre><code>└── scripts/
+    └── fetch_tweets.py    # Python 抓取脚本
+</code></pre>
+<p><strong>脚本内容示例：</strong></p>
+<pre><code># Claude 会根据你的需求生成具体代码
+
+    # 保存为 Markdown
+    filename = f&quot;{username}_{datetime.now().strftime(&#39;%Y%m%d&#39;)}.md&quot;
+    # ...
+
+if __name__ == &quot;__main__&quot;:
+    username = sys.argv[1]
+    output_dir = sys.argv[2]
+    fetch_tweets(username, output_dir)
+</code></pre>
+<p><strong>SKILL.md 中如何引用脚本：</strong></p>
+<pre><code>python scripts/fetch_tweets.py &lt;用户名&gt; &lt;保存目录&gt;
+
+参数说明：
+- 用户名：X 的 @handle，不带 @
+- 保存目录：默认为 ~/Documents/x-archives/
+
+脚本会自动：
+1. 请求 X API 获取推文
+2. 格式化为 Markdown
+3. 保存到指定位置
+</code></pre>
+<p>Claude 会读懂这些说明，在你说「帮我抓取 @elonmusk 的最近推文」时自动调用脚本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5UgwiakAon6giacTh3EoibKbvzOsjKPibRQUYND4OwaXphL865l8VL8tuTiadpQicodUGgqaFFwSvJtzsQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p><strong>创建脚本的关键：</strong></p>
+<p>你不需要自己写代码，告诉 Claude 你要做什么就行，获取什么数据，在描述 Skill 时说清楚：输入是什么、输出是什么、保存在哪里，Claude 会帮你生成脚本，你只需要确认能跑通。</p>
+<p>如果脚本运行出错，直接把错误信息贴给 Claude，它会帮你修复。</p>
+<p>3.6 如何使用参考文件</p>
+<p>如果你要让 AI 参考你的风格输出文章</p>
+<p>就可以放很多篇你自己写过的文章在在 <code>references/</code> 目录</p>
+<p><strong>除了文章，其他适合做参考文件的内容：</strong></p>
+<ul>
+<li>API 文档（接口定义、参数说明）</li>
+<li>代码规范（团队的编码标准）</li>
+<li>术语表（专业词汇对照）</li>
+<li>示例文件（期望的输入输出样本）</li>
+</ul>
+<p><strong>SKILL.md 中如何引用参考文件：</strong></p>
+<pre><code>- \`references/coding-style.md\`：代码规范
+- \`references/examples/\`：示例代码目录
+</code></pre>
+<p>3.7 迭代优化 Skill</p>
+<p>Skill 不是写完就完了。用着用着你会发现：有些场景没覆盖到，有些输出不够理想。</p>
+<p><strong>迭代流程：</strong></p>
+<ul>
+<li><strong>发现问题：用 Skill 执行任务，发现输出不满意</strong></li>
+<li><strong>让 AI 优化输出：直接告诉 Claude「这个输出不太对，帮我改成 XXX 风格」</strong></li>
+<li><strong>反向优化 Skill：对 Claude 说「根据刚才的改进，帮我更新 Skill 文件」</strong></li>
+<li><strong>测试验证：用新的 Skill 再跑一遍，看效果</strong></li>
+</ul>
+<p><strong>实际例子：</strong></p>
+<pre><code>你：「用写作助手帮我写篇产品介绍」
+Claude：（输出了一篇文章）
+你：「太正式了，我想要更口语化、更有网感的风格」
+Claude：（重新输出）
+你：「这个风格对了。把这个风格要求更新到 Skill 里」
+Claude：（更新 SKILL.md，加入风格指引）
+</code></pre>
+<p>这样你的 Skill 会越用越贴合你的需求。</p>
+<p><strong>优化建议：</strong></p>
+<ul>
+<li>每次发现问题就记录下来，攒几个一起更新</li>
+<li>好的输出可以存到 <code>references/examples/</code> 作为样本</li>
+</ul>
+<p>四、使用 Skill 与注意事项</p>
+<p>4.1 存放位置的选择</p>
+<p>前面提到 Skill 可以放项目目录或用户目录。我的建议是： <strong>除非有明确理由，都放</strong> <strong><code>~/.claude/skills/</code></strong> 。</p>
+<p>原因很简单：</p>
+<ul>
+<li>放一个地方，不容易忘记自己有哪些 Skill</li>
+<li>跨项目通用，不需要每个项目都复制一份</li>
+<li>方便统一管理和更新</li>
+</ul>
+<p>只有真正「项目特定」的 Skill 才放项目目录，比如某个项目独有的代码规范。</p>
+<p>4.2 命名要理解</p>
+<p>我用了一段时间Skill会发现： <strong>最大的问题是忘了自己有哪个 Skill</strong> 。</p>
+<p>我的 Skill 命名基本都是 AI 自动生成。</p>
+<p>现在我会刻意记住这些名字，知道它代表什么技能。</p>
+<p>并且避免 Skill 1 和 Skill2 的名字相似、重复。</p>
+<p>因为AI 不会每次都自动调用Skill，S <strong>kill 不是 100% 自动触发的。</strong></p>
+<p>Claude 根据 <code>description</code> 判断是否需要某个 Skill。如果 description 写得不够精准，或者你的表述和 description 差太远，可能就不会触发。</p>
+<p>建议建立自己的命名规范：</p>
+<ul>
+<li>按功能命名： <code>pdf-extractor</code> 、 <code>email-writer</code></li>
+<li>按场景命名： <code>morning-standup</code> 、 <code>weekly-report</code></li>
+</ul>
+<p><strong>如果忘记了 Skill 的名字：</strong></p>
+<ul>
+<li>手动提醒：「用 XX Skill 帮我做这件事，名字我忘记了，但是它可以帮我 xxxx，你可以在 xx 目录找下」</li>
+<li>检查 Skill 是否被正确加载（Claude 会在触发时提示）</li>
+</ul>
+<p>五、开源 Skills 资源汇总</p>
+<p>不用从零开始造轮子，这里有一些优质的开源 Skills 资源。</p>
+<p><strong>1 我自己保存和创建的 Skill</strong></p>
+<p><a href="https://github.com/zephyrwang6/myskill">https://github.com/zephyrwang6/myskill</a></p>
+<p><strong>2 claude 官方 Skill，建议全下载</strong></p>
+<p><a href="https://github.com/anthropics/skills/tree/main/skills">https://github.com/anthropics/skills/tree/main/skills</a></p>
+<p><strong>3 ComposioHQ/awesome-claude-skills</strong></p>
+<p><a href="https://github.com/ComposioHQ/awesome-claude-skills">https://github.com/ComposioHQ/awesome-claude-skills</a></p>
+<p>覆盖：代码、写作、数据处理、自动化等多个领域</p>
+<p><strong>4 BehiSecc/awesome-claude-skills</strong></p>
+<p><a href="https://github.com/BehiSecc/awesome-claude-skills">https://github.com/BehiSecc/awesome-claude-skills</a></p>
+<p>包含一些独特的个人效率工具</p>
+<ol start="5">
+<li>Skill 平台 ： <a href="https://skillsmp.com/zh">https://skillsmp.com/zh</a></li>
+</ol>
+<p>汇总了五万多个 Skill</p>
+<p>如何安装开源 Skills</p>
+<pre><code># 克隆仓库
+git clone https://github.com/xxx/awesome-skill.git
+
+# 复制到个人 Skills 目录
+cp -r awesome-skill ~/.claude/skills/
+</code></pre>
+<p>下一步行动</p>
+<ul>
+<li><strong>新手：先安装几个开源 Skills 体验一下</strong></li>
+<li><strong>进阶：把你最常用的提示词转成 Skill</strong></li>
+<li><strong>高手：设计自己的 Skills 体系，形成个人工作流</strong></li>
+</ul>
+<p><strong>我是空格，持续分享 AI 产品的思考与实践，你有什么使用Skill 的技巧？欢迎评论区分享，如果有用，点赞转发支持一下。</strong></p>
+<p>每天好心情</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ESA43XKOQGD86mC-kj4-xw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

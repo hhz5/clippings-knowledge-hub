@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源一个非常漂亮的运动数据分析、分享 Skills · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源一个非常漂亮的运动数据分析、分享 Skills</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%BF%90%E5%8A%A8%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">运动数据分析</a><a class="chip" href="../index.html?tag=%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96">数据可视化</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a>
+    <span class="date">2026-08-10</span>
+  </div>
+  <p class="lead">我做了一个骑行、跑步和徒步分析 Skill，可以帮你分析运动数据，并生成非常漂亮的分享视频。</p>
+  <article class="content"><p>歸藏的 AI 工具箱 歸藏的AI工具箱 <em>2026年8月10日 08:20</em></p>
+<p>我做了一个骑行、跑步和徒步分析 Skill，叫 guizang-sports-skill（github.com/op7418/guizang-sports-skill）。</p>
+<p>把码表或运动 App 导出的 FIT / KML 交给 Codex、Claude Code 或者其他 Agent，它会先告诉你这次运动发生了什么、下次可以怎么做，然后自动打开一份本地 3D 路线报告。</p>
+<p>，时长00:10</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3jaao6aaarqaekytycvvfasgd55eab3ya.f10002.mp4?dis_k=7cab7886e56ab39124a096d2b4fce5eb&amp;dis_t=1786338850&amp;play_scene=10120&amp;auth_info=XdPHsjNeXUbv1+qZfnRBOBc/axxjQAV3bAoBQDwkMgp7GERmSkUQMQNBPW0SeWEsHQ==&amp;auth_key=1b001d965388d709fe5c467a675acd64&amp;vid=wxv_4642266761336487938&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>想分享时，还能把路线、数据卡和沿途照片做成非常漂亮的 PNG 和 MP4。</p>
+<p>这个 Skill 主要解决两件事：帮你看懂这次运动，再让你把它以非常漂亮的方式分享出去。</p>
+<h2>先把这次运动讲明白</h2>
+<p>我发现我的码表软件上，每次骑行完就给我一堆的数据，但是呢，没有什么值得我注意的建议。</p>
+<p>里程、均速、最高速度、心率、踏频、功率、爬升，每个数字都有，但还是需要你自己把它们拼成结论。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVMhmDtzzjUmSZQv5MTSxHJ524muRBwepibGVawQ1rEIwySdswLIhiaxkrZdPxZZM44wylBxlzEz0q9ic6g4pD0cGOgpP20b6sWrg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="码表软件数据界面"></p>
+<p>这个 Skill 会先给一句路线判断和最值得看的发现，再展开证据、数据限制和行动建议。</p>
+<p>你第一眼看到的是“这次怎么样”，不用从一堆数据和图表里面自己猜。</p>
+<p>骑行时，它会把速度、踏频、停顿和路线起伏放在一起看。</p>
+<p>跑步会换成配速和步频语言。徒步则优先看距离、爬升密度、海拔范围和主要连续爬坡。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUIvk0dN592eTeLdTof5XsZzTMsusCOGlyuG7aOeBPnMwXJfMBRQ8xQ8VX8Z1FibWSP5pV2MPIrAzms5qFCCjTUClt9yvl0yP6E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="运动分析报告"></p>
+<p>页面会根据真实证据选择 2–6 个值得深挖的部分，再给出 2–8 条按影响排序的建议。</p>
+<p>每条建议都会写清依据、原因和可以执行的动作。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DWHt5n4z4FRtApORX6rzHmejGQqV7YNoARJOabSwoK4gZdbg4nicOCic5CIzuJD96ghibW5KFXkJ3uJXS96ibgz5eoHehZW7eNIiag4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="建议详情"></p>
+<p>比如，只有活动时长和温度真的支持时，它才会提补水。</p>
+<p>如果心率和功率覆盖不足，它会告诉你现在还不能判断训练负荷。</p>
+<p>如果路线高度闭合，建议则会变成公开分享前隐藏起终点。</p>
+<p>建议是跟着这次运动变的，不会每次都是“多喝水、注意休息”。</p>
+<h3>先算清楚，再让 AI 解释</h3>
+<p>我没有把一份 FIT 文件直接丢给模型，让它对着原始数据自由发挥。</p>
+<p>Skill 底层有一个确定性分析器，负责解析轨迹、统一单位，再计算时间、距离、爬升、坡度分布和传感器覆盖率。</p>
+<p>AI 负责选择值得讲的部分，把数字之间的关系写成人能看懂的解释。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWSxD5ped96sVcOoNYV3p05aQ0BiaW0sunuBsZJkRq927QLyZtuydQ0UYk3H9UZAPhfInAobnGkKpXho3IMaCYnzTWthTFQPg4E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="确定性分析器"></p>
+<p>这套分工能避开很多常见的假结论。</p>
+<p>没有心率带，页面会写“未记录”，不会写 0 bpm。KML 没有时间戳，就不猜速度、停留和照片时间。</p>
+<p>用户没提供个人阈值，就不生成 FTP、心率区间、VO₂max、恢复状态和医疗结论。</p>
+<p>爬坡分析也没有直接相信容易飘的“最大坡度”。</p>
+<p>它会看距离加权的坡度分布，用平滑后的 P99 表示代表性陡坡，再找出最多三段连续爬坡，告诉你它们在第几公里、有多长、爬了多少。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DWTrjGiccicE2dJW0ibxiays8X7AeACRZpPAlC1LaoBW6Rg9LkIUmGB0m1unMibUZcw3cbrNPj6Wic3kp4q158tic0SGTfQ1rYg821feA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="爬坡分析"></p>
+<h2>分析完，还可以把它做得很漂亮</h2>
+<p>运动分析完成后，AI 会自动操作它自带的内置浏览器（就侧边栏）打开对应的网页。</p>
+<p>如果没有的话，比如 Cloud Code 这种 CLI，它会操作默认浏览器打开。</p>
+<p>左边是一条有真实海拔起伏的 3D 路线。路线会缓慢旋转，点位沿着全程移动，也可以拖动视角和时间轴。</p>
+<p>颜色会跟着坡度连续变化：冷色是下坡，浅色是平缓，暖色是爬坡。</p>
+<p>右边依次是活动总览、路线画像、深度分析和行动建议。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DXibqV3fGUZOyGQzK5iaQGHQfU3ykEhe1PvV4TuQXJvcgCl2Cq1KnrsQzMpia7RPueic0Dh78tNMXEMZPntpiacRImQGKGj7Zy5tgLo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="3D 路线报告"></p>
+<p>如果你想把这次运动发到小红书、即刻或视频平台，可以继续点击右上角的“导出创作”。</p>
+<p>背景可以使用自己的照片、视频或预置素材。</p>
+<p>就会把这个数据和非常漂亮的动态 3D 路线图，以及你的图片一起合成一个用来分享的视频。</p>
+<p>动态地图、数据卡和水印是独立图层，可以拖动、缩放和关闭。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUFyDWchmZWN2WujmWGPQZ3FoXK4DkXRIYDRJwbj9Zfvur4mr6RBg7GK3rfcq6qdmYHrkLU6qI2kqc8gkshwnuyNDpsskGzZa4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="导出创作"></p>
+<p>数据卡有玻璃、实色和极简三种样式。</p>
+<p>卡片展示整次活动的总里程、爬升、均速或配速，不会在视频中不停跳成缺少上下文的瞬时数字。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DURaflGhRjxabIgNDbG6svs0YgcLELic0NHicPpFeOYeJeDstcibXR6TjRVQ628OEQE47rwJ41LRGVUwjl5cfHsQ5KTjOicZwY6GPE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="数据卡样式"></p>
+<p>我最喜欢的是沿途照片故事。</p>
+<p>你可以将自己在沿途拍的照片放到里边，这样的话，导出的时候它就会叠加你的照片去播放，变成一个视频。</p>
+<p>照片有 GPS 时，它会匹配到路线最近的位置；没有 GPS，但照片和轨迹都有时间，就按拍摄时间匹配。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVxzibdpq3wCCicpukyspEhLc1GM0Ne6N7JqJrxKIFMpgiaLhC9jtDl7pQiaDykibxAz5EYTMdTcyNMeWYLmPg5FHIkWb8j2uLNWPUg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="沿途照片故事"></p>
+<p>两种信息都没有时，也可以在 2D 路线上手动点一个位置。</p>
+<p>视频播到那段路时，背景切换到对应照片，地图上只亮起当前照片的位置。默认每张停留 2.5 秒。</p>
+<p>比如这个，就是我前几天去北灵山徒步，用两步路的路径和我的照片做的分享视频。</p>
+<p>播放</p>
+<p>倍速</p>
+<p><em>全屏</em></p>
+<p><video src="https://mpvideo.qpic.cn/0bc3q4c7yaafmaafnyl5fnvflb6d7sdql7aa.f10002.mp4?dis_k=5305a1e97f01b30837a0e5d1e44c12fb&amp;dis_t=1786338850&amp;play_scene=10120&amp;auth_info=YtnK/oxlX15D6NS7mn92RG1GamdONhdTd2lYVhM7czZZLxtCO0tEEzQEQmxuE3tkeUw=&amp;auth_key=d708fe841963689eab2d87669de0f09f&amp;vid=wxv_4642267359679119363&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>目前支持四种比例：</p>
+<table>
+<thead>
+<tr>
+<th>比例</th>
+<th>尺寸</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9:16</td>
+<td>1080 × 1920</td>
+<td>小红书、Reels、竖屏视频</td>
+</tr>
+<tr>
+<td>3:4</td>
+<td>1080 × 1440</td>
+<td>图文封面、运动卡片</td>
+</tr>
+<tr>
+<td>1:1</td>
+<td>1080 × 1080</td>
+<td>方形社交分享</td>
+</tr>
+<tr>
+<td>16:9</td>
+<td>1920 × 1080</td>
+<td>横屏视频、桌面展示</td>
+</tr>
+</tbody></table>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DV0o7y6cShLt6yvN0RaYVOgHFqksbaw0miamDqgov8P1nK4q8z5xMEk881o0Q3zvrrx5f9oAp7nwxJm4uFJ5LhxF2gTkEPiammaE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="四种比例"></p>
+<p>四种比例有各自的构图，静态图导出 PNG，动画和视频导出 H.264 MP4，规格是 30 FPS、12 Mbps。</p>
+<h2>为什么做这个 Skill</h2>
+<p>我自己平时会骑行和徒步。</p>
+<p>现在的运动软件大概分成两类：一类很专业，把心率、功率、踏频和坡度全部摊开，普通人不知道从哪里开始看；</p>
+<p>另一类只保留里程、配速和一张固定模板，好懂了，但路线和个人经历也丢了。</p>
+<p>我真正想看的其实很简单：</p>
+<p>这次运动发生了什么，下次可以怎么调整，以及怎么把那天的路线和照片留下来。</p>
+<p>最近我也一直在用 ChatGPT Health。</p>
+<p>当训练、睡眠、恢复和长期记录被放在一起时，AI 能看到单次运动页里没有的上下文。</p>
+<p>Sports Skill 现在只从原始轨迹开始，但方向是一样的：</p>
+<p>数据要带着上下文一起看。它先把能确定的部分算清楚，再让 AI 解释。</p>
+<p>运动健康结合 AI，我觉得有非常大的应用前景。</p>
+<p>而且有了 AI 的 coding 能力后，我们对于运动和健康，更多的需要的是数据，而非分析能力。</p>
+<p>顶级的 AI 能够把这些东西通过上下文（不管是一些论文还是你的数据）分析得非常好，所以这也是最近在探索这个的一个动机。</p>
+<h2>怎么安装和使用</h2>
+<p>一行命令安装：</p>
+<p>Bash</p>
+<p>npx skills add <a href="https://github.com/op7418/guizang-sports-skill">https://github.com/op7418/guizang-sports-skill</a> --skill fit-ride-studio</p>
+<p>装好以后，对 Codex、Claude Code 或其他有本地文件和 Shell 能力的 Agent 说：</p>
+<p>Plain</p>
+<p>帮我分析一次运动。</p>
+<p>它会让你拖入一个或多个.fit /.kml 文件，然后自动检查依赖、完成分析并打开报告页。</p>
+<p>一般所有的骑行码表都可以导出.fit 格式。两步路（徒步用的软件）可以导出.kml 格式的路径轨迹文件。</p>
+<p>也可以直接把关心的事和文件一起交给它：</p>
+<p>•</p>
+<p>“分析这份 FIT，重点看踏频、爬坡和数据质量。”</p>
+<p>•</p>
+<p>“把这几次骑行做综合分析，找出最长、爬升最多和传感器最完整的一次。”</p>
+<p>•</p>
+<p>“这是两步路导出的徒步 KML，帮我看路线强度和主要爬坡。”</p>
+<p>•</p>
+<p>“用这些沿途照片做一个 9:16 的 3D 路线视频，每张停留 2.5 秒。”</p>
+<p>没有现成文件，可以先说“用示例数据演示一遍”。仓库里的 demo 是合成轨迹，不包含真实住址和运动者数据。</p>
+<p>GitHub：<a href="https://github.com/op7418/guizang-sports-skill">https://github.com/op7418/guizang-sports-skill</a></p>
+<p>如果觉得这个东西对你有帮助的话，可以帮我点个赞，或者转发给你需要的朋友。</p>
+<p>✦</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.02 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 2.59 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.02 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/WXQqLtFGqoSLzMTmF5Wf3A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

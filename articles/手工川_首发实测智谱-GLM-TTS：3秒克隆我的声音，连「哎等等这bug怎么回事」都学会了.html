@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>首发实测智谱 GLM-TTS：3秒克隆我的声音，连「哎等等这bug怎么回事」都学会了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">首发实测智谱 GLM-TTS：3秒克隆我的声音，连「哎等等这bug怎么回事」都学会了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%8D%97%E5%B7%9D%E5%90%8C%E5%AD%A6">南川同学</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%B0%B1">智谱</a><a class="chip" href="../index.html?tag=GLM-TTS">GLM-TTS</a><a class="chip" href="../index.html?tag=%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90">语音合成</a><a class="chip" href="../index.html?tag=%E5%A3%B0%E9%9F%B3%E5%85%8B%E9%9A%86">声音克隆</a>
+    <span class="date">2025-12-11</span>
+  </div>
+  <p class="lead">「声音」这个曾经最私人的东西，正在变成一种可复制、可编程的数字资产。</p>
+  <article class="content"><p>原创 南川同学 <em>2025年12月11日 14:54</em></p>
+<p>TTS 赛道又卷起来了。</p>
+<p>今天，智谱正式开源了 GLM-TTS —— 一套工业级语音合成系统。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UBWAWibiaa4jfjOtX2L9c6tOmL4R31Bv92CCgm0fYn88YJuhd9oPol6ibV64LPgKLybKX5mXOZjsc0k3YfROu7kvQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=0" alt="图片"></p>
+<p>如果你对「AI 语音」这几个字不感冒，建议留下来看看。</p>
+<p>文字说多了没用，语音这东西，得听。</p>
+<h2>01先听效果</h2>
+<p>听完什么感觉？</p>
+<p>这是我录了一段话，然后用 GLM-TTS 克隆我的声音后生成的。</p>
+<p>如果我不说，你能听出来哪个是 AI 吗？</p>
+<p>我专门设计了一段带语气词和情绪转折的文案来测试：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYaz2prZDqHBONXVwkf1SzYUF0xykhO8uEBW4CZaPJkGGpA7SmffjyJg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>重点来了——那句「哎，等等，这个 bug 怎么回事……哦，路径写错了」， <strong>语气转折、停顿、恍然大悟的感觉，全都在</strong> 。</p>
+<p>这不是机械地念字，这是在「表演」。</p>
+<h2>02我是怎么测的</h2>
+<p>打开 audio.z.ai，首页长这样：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYv0b8Js0TmevZiaW1TFXbb3a9kCoObcYVef23KQXpr8G9eoHnoIXPdKQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>登录支持邮箱、Google 和 GitHub，界面基于 Open WebUI 构建，挺清爽的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYPfStM6PUKTiaHjYhRmtb9hZbUuOq0sH5sg9WxGs3icCkN8QqnaSAcXPw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>默认提供三种声音，但重点是—— <strong>你可以克隆自己的声音</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYh8Y4ZmXhBRBac9OoDnibUasv7QtyGrx5qGP52fn9ESugD8GAWbBKoeA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>点「创建音色」，支持上传文件或直接录音：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGY5HoiaQF8GOejUsC0kWEPYzTwkIbic7GtgTjXfribPjsvibp1RPWFmbu5cw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>我的录音环境是茶馆，有点小杂音，用的电脑浏览器 + AirPods，能听清但不算特别清晰。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYd6JsbYRxXVdzHLcfibwySITQd6iap8YrlruOnTuKow5icSOPxB63zgvQg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>点击克隆， <strong>十几秒</strong> 就完成了：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYCJrFfDTHCMBiasGU913uh8conGm9OZjKKtEmt6IibWMOcY8jObD5ibc3Q/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>克隆成功后就在你的音色库里了：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYQVqcnzbwCvWEQgDVcgyKichWtoQt28gapBRv0ryajcAArMPejDyhyRg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>实测下来， <strong>确实像</strong> 。</p>
+<p>不过有个小 bug：生成的声音里偶尔会有听不到声音的片段。希望后续能修。</p>
+<h2>03整点活：让我念丘吉尔</h2>
+<p>光测中文不过瘾，我又用克隆后的声音念了段丘吉尔的「至暗时刻」：</p>
+<pre><code class="language-text">We shall not flag or fail. 
+
+We shall go on to the end! 
+
+We shall fight in France. 
+
+We shall fight on the seas and the oceans. 
+
+We shall fight with growing confidence and growing strength in the air.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYZnd6HicevgRBTPAX6HK3mIv36rBhbcciaLSMa2xpn8gIsmlDIlCEET1g/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>效果你们自己感受：</p>
+<p>用我的声音念英文演讲词，这个违和感……有点上头。</p>
+<h2>04技术上到底强在哪？</h2>
+<p>聊完体验，说说技术。GLM-TTS 这次有几个点让我印象深刻：</p>
+<h3>训练效率炸裂</h3>
+<ul>
+<li><strong>10 万小时</strong> 训练数据（行业主流商用模型动辄百万小时）</li>
+<li><strong>单机 4 天</strong> 预训练就能达到开源 SOTA</li>
+<li>精品音色 LoRA 微调 <strong>1 天</strong> 搞定</li>
+</ul>
+<p>什么概念？以前训个能打的 TTS 模型是大厂专属，现在中小团队甚至独立开发者也能玩了。</p>
+<h3>情感表达吊打竞品</h3>
+<p>这是最让我惊讶的。</p>
+<p>智谱公布了一个评测结果：在 CV3-eval-emotion 情感测试集上，GLM-TTS 在「开心」「悲伤」「愤怒」三个维度都是 SOTA。</p>
+<p>而 <strong>阿里 Qwen3-TTS、百度超拟人 TTS、豆包 TTS-2.0 在悲伤和愤怒维度几乎没有有效输出</strong> （得分接近 0）。</p>
+<p>为什么？</p>
+<p>我猜是训练数据的问题。大部分 TTS 数据集里，负面情绪的样本本来就少，或者厂商出于某种考虑刻意回避。但智谱这次用 GRPO 强化学习专门优化了情感表达，把「笑声」都作为奖励维度之一。</p>
+<p>智谱在 TTS 领域引入的强化学习算法，融合了字符错误率、音色相似度、情感表达、笑声副语言四个维度的奖励机制。这是让 AI「会表达」而不只是「会念字」的关键。</p>
+<p>对于有声书、游戏配音、短剧这些需要丰富情感的场景，这个突破意义重大。</p>
+<h3>方言也能克隆</h3>
+<p>技术报告里提到，Speech Tokenizer 新增了 <strong>海量方言语料</strong> ，支持四川话、东北话等。</p>
+<p>这对中国市场太重要了——想象一下用你老家方言做的有声书，那个亲切感。</p>
+<h3>多音字不再翻车</h3>
+<p>传统 TTS 最头疼的就是多音字。「行」是 xíng 还是 háng？「长」是 cháng 还是 zhǎng？</p>
+<p>GLM-TTS 搞了个 <strong>Phoneme-in</strong> 机制，你可以通过动态词典强制指定发音。教育、评测这些对准确度要求极高的场景，终于不用再手动校对了。</p>
+<h2>05和字节比怎么样？</h2>
+<p>在6月的时候，我们有深度使用豆包实时端到端语音系统，还基于它为友商搭建一个商业化Agent产品，并开源了核心代码，参考我们之前的文章： <a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTg5NDg3Mg==&mid=2247491980&idx=1&sn=d94800ed2b5f9b009f367e47e6a94368&scene=21#wechat_redirect">2025 AI 语音对话系统，从级联到端到端</a> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYSCSOaPCiadJy6ewnUNLOMRZOE5lrSuhicj0oKjdIjZabkztyLbSYhPng/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="手工川交付某集成语音控制合作项目初始设计架构"></p>
+<p>手工川交付某集成语音控制合作项目初始设计架构</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYqM4iculphGwTGia3rxx2jVCHJaH3pfxJdUOedicsRfpcAj1mmXpI7iaXXw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="手工川计划开源人机交互系统，同时支持级联、端到端、视频、手势识别"></p>
+<p>手工川计划开源人机交互系统，同时支持级联、端到端、视频、手势识别</p>
+<p>以及之前豆包语音 2.0 出来的时候我也测过，那个细节描述控制情绪的玩法确实惊艳。</p>
+<p>但 GLM-TTS 的优势在于： <strong>开源</strong> 。</p>
+<ul>
+<li>豆包是商用闭源，你只能调 API</li>
+<li>GLM-TTS 是 Apache License，模型权重、推理代码全开放</li>
+</ul>
+<p>对于想自己部署、二次开发、或者对数据隐私有要求的场景，GLM-TTS 是目前开源领域的最优解。</p>
+<p>而且智谱还同时发布了 <strong>GLM-ASR</strong> （语音识别）和 <strong>智谱 AI 输入法</strong> 。TTS + ASR = 完整的语音交互闭环。</p>
+<p>特别是那个 <strong>输入法里的 Vibe Coding 功能</strong> ——用语音输入代码逻辑、查 Linux 指令、让 AI 帮你写脚本。这不就是我一直在研究的方向吗？</p>
+<h2>06体验地址</h2>
+<p>想试的直接戳：</p>
+<p><strong>在线体验</strong></p>
+<ul>
+<li>audio.z.ai <sup><span>[1]</span></sup> —— 上传文本或录音，生成专属声音</li>
+<li>智谱清言 APP / 网页版 <sup><span>[2]</span></sup> —— 在对话中体验</li>
+</ul>
+<p><strong>开源资源（Apache License）</strong></p>
+<ul>
+<li>GitHub <sup><span>[3]</span></sup></li>
+<li>Hugging Face <sup><span>[4]</span></sup></li>
+<li>魔搭社区 <sup><span>[5]</span></sup></li>
+</ul>
+<p><strong>API 接入</strong></p>
+<ul>
+<li>开放平台文档 <sup><span>[6]</span></sup></li>
+</ul>
+<p><strong>智谱 AI 输入法</strong></p>
+<ul>
+<li>下载地址 <sup><span>[7]</span></sup> （Mac/Windows）</li>
+</ul>
+<hr>
+<h2>07写在最后</h2>
+<p>测完这一圈，我最大的感受是什么？</p>
+<p>是 <strong>边界感的模糊</strong> 。</p>
+<p>以前我们说 AI 语音，第一反应是「机械」「念课文」「AI 味」。但现在，当 AI 能学会「哎等等这 bug 怎么回事」的语气转折，能在悲伤和愤怒的情绪里游刃有余，能用你的声音念出你都没组织好的话——</p>
+<p><strong>AI 和人在声音上的边界，真的在消失。</strong></p>
+<p>对于我们这些内容创作者来说，这意味着什么？</p>
+<p>有声书可以批量生产了，播客可以用 AI 分身了，技术视频的旁白不用再自己录了。</p>
+<p>当然，也意味着「声音」这个曾经最私人的东西，正在变成一种可复制、可编程的数字资产。</p>
+<p>这是好事还是坏事？我不知道。</p>
+<p>但我知道的是， <strong>这个趋势不可逆</strong> 。</p>
+<p>与其焦虑，不如先玩起来。</p>
+<hr>
+<p><em>更多技术细节见智谱公众号的 GLM-TTS 中文技术报告。</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYFZKMiadhdlVxZ563vptI2OHxAg6GL7vNSYWcRPNFYknZfRbl1ZtdUSQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="关注手工川，AI不迷茫"></p>
+<p>关注手工川，AI不迷茫</p>
+<p>关注手工川，AI不迷茫</p>
+<hr>
+<p>[1] audio.z.ai, <a href="https://audio.z.ai">https://audio.z.ai</a></p>
+<p>[2] 智谱清言 APP / 网页版, <a href="https://chatglm.cn">https://chatglm.cn</a></p>
+<p>[3] GitHub, <a href="https://github.com/zai-org/GLM-TTS">https://github.com/zai-org/GLM-TTS</a></p>
+<p>[4] Hugging Face, <a href="https://huggingface.co/zai-org/GLM-TTS">https://huggingface.co/zai-org/GLM-TTS</a></p>
+<p>[5] 魔搭社区, <a href="https://modelscope.cn/models/ZhipuAI/GLM-TTS">https://modelscope.cn/models/ZhipuAI/GLM-TTS</a></p>
+<p>[6] 开放平台文档, <a href="https://docs.bigmodel.cn/cn/guide/models/sound-and-video/glm-tts">https://docs.bigmodel.cn/cn/guide/models/sound-and-video/glm-tts</a></p>
+<p>[7] 下载地址, <a href="https://autoglm.zhipuai.cn/autotyper/">https://autoglm.zhipuai.cn/autotyper/</a></p>
+<p>继续滑动看下一个</p>
+<p>五道口手工川</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/u3kuFAjHohtJQ8v557Rvug" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

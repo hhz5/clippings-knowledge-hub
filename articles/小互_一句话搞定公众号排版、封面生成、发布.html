@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一句话搞定公众号排版、封面生成、发布 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">一句话搞定公众号排版、封面生成、发布</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    
+    <span class="date">2026-03-26</span>
+  </div>
+  <p class="lead">一句&quot;排版这篇文章&quot;，从到发布到草稿箱，整个过程大概也就2-3分钟。</p>
+  <article class="content"><p>原创 小互 <em>2026年3月25日 17:05</em></p>
+<p>最近我一直研究 Claude Code 工作流，自动化搜集素材、处理素材、写文章、自动配图、自动排版、自动同步到各个平台。</p>
+<p>从今天开始我将陆续公布我最近研究和实战的结果，帮助大家学习Claude Code 工作流，如何实现各种复杂工作的自动化...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtNe3jKFNHqibMicttoNkmu1UnGRNicLLmxQbFFTOrNJ8luhHicj4ibqxbINXyySlaTn1YHxVeibefJu4xkhlGDdTYR0097SFRsbHy5uY/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>今天将分享如何：一句话搞定公众号排版、封面生成，和一键发送到公众号草稿箱，你只需点下发布即可。</p>
+<p>写公公众号文章的同学，相比都有这样的感悟。</p>
+<p>排版比写文章累多了...</p>
+<p>以前的流程是这样的：写好文章复制到 mdnice 或者 135 编辑器，选模板，调样式，把图片一张张上传到微信后台，再复制粘贴到公众号编辑器。一篇文章排版要几十分钟，而且还需要不断的调整各种格式和样式，如果图再多一点，更是麻烦，全花在重复劳动上。</p>
+<p>现在我跟 Claude Code 说一句&quot;排版这篇文章&quot;，从到发布到草稿箱，整个过程大概也就2-3分钟。</p>
+<p>这篇文章分享我做自己通过Claude Code 做的这个开源工具怎么用。</p>
+<h2>它解决什么问题</h2>
+<p>微信公众号编辑器有三个让人头疼的限制：</p>
+<p><strong>不支持 CSS 类名</strong> 。你在 HTML 里写 <code>class=&quot;highlight&quot;</code> ，微信直接给你删掉。所有样式必须写成内联的 <code>style=&quot;color: red; font-size: 16px&quot;</code> ——每个标签都要写一遍。</p>
+<p><strong>不支持外部链接</strong> 。你在文章里放一个 <code>[点击这里](https://...)</code> ，微信会把链接吃掉，读者看到的就是一段没有链接的纯文本。</p>
+<p><strong>图片必须在微信服务器上</strong> 。你本地的图片、别的 CDN 的图片，粘贴进去都不显示，必须先上传到微信的素材库拿到 mmbiz.qpic.cn 的地址。</p>
+<p>⚡ 核心问题</p>
+<p>这三个限制叠在一起，意味着你没法直接把 Markdown 转成 HTML 粘贴进去，得有一个专门处理微信兼容性的中间层。</p>
+<h2>小互排版神器的优势</h2>
+<p>市面上做 Markdown 转微信的工具不少，mdnice、135 编辑器、墨滴都能用。但用下来总觉得差点意思。</p>
+<p><strong>它能理解你在写什么：</strong> 传统工具是机械转换，把 Markdown 语法一对一翻译成 HTML。但是如果你 Markdown 本身格式就不好，你还会要去手动去调。很多人还是嫌麻烦，还有如果不是Markdown的文章可能就无效。</p>
+<p>我这个工具多了一层 AI 分析：它会读你的文章，判断你内容的结构和具体内容部分适合什么排版，它会自动分析自，然后自动做排版增强。检测到对话体内容套上聊天气泡，发现连续截图变成横向画廊，识别到金句加高亮框。你不用手动调，它替你想好了。</p>
+<p>具体操作步骤</p>
+<p>打开 Claude Code，说：</p>
+<pre><code>排版这篇文章 /path/to/article.md
+</code></pre>
+<p>Claude 会做四件事：</p>
+<p><strong>1. 读文章，分析内容结构</strong></p>
+<p>它会判断文章类型（访谈？教程？深度分析？），然后自动做一些排版增强。比如检测到对话体内容会套上聊天气泡容器，检测到金句会加高亮框，连续多张图片会变成横向滚动画廊。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPxh7mTrhzRbAs7QUIeDyQqZtNb6ibDiaFt5gLhabMmUko8anmRbP3Z6QTpmnmB0zYzb2cJyDwkD5yqZ4Hic12ialTN5YBvxqc2gc4/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>💡 AI 排版的核心优势</p>
+<p>这一步是 AI 排版比纯工具排版强的地方：它理解内容，不是机械转换。</p>
+<p><strong>2. 打开主题画廊</strong></p>
+<p>浏览器里会弹出一个页面，用你的真实文章渲染了 30 个主题：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNYXLfavj0Epl705JT6ssmIA1EsrEjUvd581I9koomSkQ0pic6x1CteibzibCib6EyCSl0pRpciaZGqQc5tfQHxgMlMTvicBJn9jVorA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>不是那种用 Lorem ipsum 假文字预览的效果图，是你自己的文章、你自己的段落、你自己的标题。</p>
+<p>30 个主题分五类：</p>
+<p>• <strong>深度长文</strong> ：报纸、杂志、墨韵、咖啡——严肃、留白多、适合万字长文</p>
+<p>• <strong>科技产品</strong> ：字节蓝、GitHub、少数派、暗夜——现代、代码友好</p>
+<p>• <strong>文艺随笔</strong> ：赤陶、薄荷、日落、薰衣草——有温度、有情绪</p>
+<p>• <strong>活力动态</strong> ：运动、包豪斯、中国风、微信原生——醒目、节奏快</p>
+<p>• <strong>模板系列</strong> ：简约/聚焦/精致/醒目 × 多种配色——同一布局换个色</p>
+<p>点一个主题按钮，预览区立刻切换，不用等渲染：</p>
+<p>主题预览效果</p>
+<p>橙色的「推荐」标签是 AI 根据文章内容推荐的主题，不影响选择你喜欢哪个选哪个。还可以选择字体大小...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtN8iaCA5Rw2b2Tz9TPWoSgjjwZ9R2Xibn46Peg1zHbQhpPqdA9Xz59QNzBpNIzK2k6fQlYmXfuCAL9KICx2oCPf9upvepBcEMicn4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>选好了有两种操作方式：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtOYhXVKIicxzMFw7FBqW2xA6l9B83dcI6YoSbAOtPhV74MbkDIFicsC3sheZQstDIgKzCjnzBL4Mrib1icY9Ljj2Rb8RNn6ZjPgANM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>• <strong>绿色按钮</strong> ：点确认，回到 Claude Code 告诉它主题名（比如&quot;报纸&quot;），Claude 会帮你排版+推送</p>
+<p>• <strong>灰色按钮</strong> ：直接复制 HTML 到剪贴板，去公众号后台粘贴——不需要回到 Claude</p>
+<p><strong>3. 生成微信兼容 HTML</strong></p>
+<p>所有样式写成内联、外链自动转脚注、图片路径自动处理。输出一个 HTML 文件，打开就是手机上看到的效果。</p>
+<p><strong>4. 推送到草稿箱（可选）</strong></p>
+<p>如果配了公众号 AppID 和 AppSecret，可以直接推到草稿箱，图片自动上传到微信 CDN。</p>
+<h2>最懒的安装方式：让 AI 帮你装</h2>
+<p>如果你已经在用 Claude Code、Codex 或 OpenClaw，最简单的方式就是把仓库地址丢给它：</p>
+<pre><code>帮我安装这个公众号排版技能 https://github.com/xiaohuailabs/xiaohu-wechat-format
+</code></pre>
+<p>AI 会自己 clone 仓库、装依赖、创建配置文件。你什么都不用管。</p>
+<p>这招在 Cursor、Windsurf 这类 AI 编辑器里也能用——打开终端对话框，把上面那句话粘进去就行。</p>
+<h2>手动安装（完全小白版）</h2>
+<p>如果你更喜欢自己来，或者上面那招没成功，跟着下面一步步走。</p>
+<p><strong>1. 确认你有 Claude Code：</strong></p>
+<p>打开终端（Mac 按 <code>Cmd+空格</code> 搜&quot;终端&quot;），输入：</p>
+<pre><code>claude --version
+</code></pre>
+<p>如果显示版本号（比如 <code>2.1.81</code> ），说明已经装好了。如果提示 command not found，先去 claude.ai/code 装 Claude Code。</p>
+<p><strong>2. 确认你有 Python 3：</strong></p>
+<pre><code>python3 --version
+</code></pre>
+<p>Mac 自带 Python 3。如果没有，装 Homebrew 后 <code>brew install python3</code> 。</p>
+<p><strong>3. 一条命令安装：</strong></p>
+<p>复制下面这整条命令，粘贴到终端回车：</p>
+<pre><code>mkdir -p ~/.claude/skills \
+  &amp;&amp; git clone https://github.com/xiaohuailabs/xiaohu-wechat-format.git ~/.claude/skills/xiaohu-wechat-format \
+  &amp;&amp; cd ~/.claude/skills/xiaohu-wechat-format \
+  &amp;&amp; pip3 install markdown requests \
+  &amp;&amp; cp config.example.json config.json
+</code></pre>
+<p>它会自动创建目录、下载代码、装依赖、创建配置文件，全部一步到位。如果你只想排版复制粘贴，到这步就够了，不需要改 config.json 里的任何内容。</p>
+<p><strong>4. 验证安装成功：</strong></p>
+<p>随便找一篇 Markdown 文件试一下：</p>
+<pre><code>python3 scripts/format.py --input /path/to/any-article.md --gallery
+</code></pre>
+<p>如果浏览器弹出一个画廊页面，恭喜，装好了。</p>
+<hr>
+<h2>不用 Claude Code 也能用</h2>
+<p>核心是两个 Python 脚本，不依赖任何 AI 框架：</p>
+<pre><code>&quot;color:#6a9955&quot;&gt;# 打开主题画廊
+python3 scripts/format.py --input article.md --gallery
+
+&quot;color:#6a9955&quot;&gt;# 直接指定主题排版
+python3 scripts/format.py --input article.md --theme newspaper
+
+&quot;color:#6a9955&quot;&gt;# 推送到公众号草稿箱
+python3 scripts/publish.py --dir /tmp/wechat-format/output/ --cover cover.jpg
+</code></pre>
+<p>支持Codex、Gemini CLI、OpenClaw 小龙虾等，包括国内各种变体小龙虾也可以...甚至纯命令行都行。</p>
+<p>Claude Code 的 SKILL.md 只是让对话触发更自然，底层跑的就是这两个脚本。</p>
+<hr>
+<h2>配置公众号推送</h2>
+<p>如果只是排版复制粘贴，不需要任何配置。</p>
+<p>要用自动推送功能，编辑 <code>config.json</code> ：</p>
+<pre><code>{
+  &quot;wechat&quot;: {
+    &quot;app_id&quot;: &quot;你的AppID&quot;,
+    &quot;app_secret&quot;: &quot;你的AppSecret&quot;
+  }
+}
+</code></pre>
+<p>去公众号后台 → 设置与开发 → 开发者后台基本配置，拿到 AppID 和 AppSecret。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMJ3khsibNLDacPuVSCFCH9dsvTK4mRl7Srw6qCibIEp1nqv60icBWI407d11VUh3oicIyesgJ3RNbFia3WkPodlN9VDMuBD1vibXbL4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>地址：<a href="https://developers.weixin.qq.com/">https://developers.weixin.qq.com/</a></p>
+<p>不会编辑也没关系，把拿到的 AppID 和 AppSecret 发给Claude Code、Codex、OpenClaw等...</p>
+<p>它会帮你自动配置好</p>
+<p>⚠️ IP 白名单</p>
+<p>必须把你的公网 IP 加到公众号后台的 IP 白名单里，否则会报 40164 错误。每次换网络环境（比如换 WiFi、用热点）IP 都会变，得重新加。</p>
+<hr>
+<h2>自定义主题</h2>
+<p>所有主题都是 JSON 文件，放在 <code>themes/</code> 目录下。格式大概长这样：</p>
+<pre><code>{
+  &quot;name&quot;: &quot;我的主题&quot;,
+&quot;colors&quot;: {
+    &quot;accent&quot;: &quot;&lt;span color:#b5cea8&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;6a9955&quot;&gt;#FF6B35&quot;,
+    &quot;bg&quot;: &quot;&lt;span color:#b5cea8&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;6a9955&quot;&gt;#FFFAF5&quot;,
+    &quot;text&quot;: &quot;&lt;span color:#b5cea8&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;6a9955&quot;&gt;#2D2D2D&quot;
+  },
+&quot;heading&quot;: {
+    &quot;h2&quot;: {
+      &quot;font-size&quot;: &quot;22px&quot;,
+      &quot;font-weight&quot;: &quot;bold&quot;,
+      &quot;color&quot;: &quot;&lt;span color:#b5cea8&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;6a9955&quot;&gt;#FF6B35&quot;
+    }
+  }
+}
+</code></pre>
+<p>改颜色改字号改间距，存个 JSON 就是一套新主题。</p>
+<hr>
+<h2>封面图生成</h2>
+<p>公众号发文必须有封面图。如果你手边没有现成的，可以让 Claude Code 帮你生成：</p>
+<pre><code>给这篇文章生成封面图
+</code></pre>
+<p>封面图生成用的是 Gemini 的图片生成 API。你需要一个 Gemini API Key，在技能的 config.json 里配置：</p>
+<pre><code>{
+  &quot;gemini_api_key&quot;: &quot;你的Gemini API Key&quot;
+}
+</code></pre>
+<p>去 aistudio.google.com 免费申请，有免费额度够用。</p>
+<p>没有 Gemini Key 也不影响排版功能，排版和封面是两个独立的技能，排版不依赖任何 API。</p>
+<hr>
+<h2>常见问题</h2>
+<p><strong>Q：粘贴到公众号后台样式丢了？</strong></p>
+<p>检查你是不是用了&quot;粘贴为纯文本&quot;。微信后台要用普通粘贴（Cmd+V），不能用 Cmd+Shift+V。另外确认是在&quot;正文编辑区&quot;粘贴，不是标题栏。</p>
+<p><strong>Q：图片不显示？</strong></p>
+<p>本地图片粘贴到公众号后不会自动上传。两种解法：<br>1. 推送，它会自动上传图片到微信 CDN<br>2. 手动上传：如果失败，可以在公众号手动上传</p>
+<p><strong>Q：报错 <code>No module named &#39;markdown&#39;</code> ？</strong></p>
+<p>依赖没装。跑一下 <code>pip3 install markdown requests</code> 。如果你用的是 Homebrew 的 Python，可能需要 <code>pip3 install --break-system-packages markdown requests</code> 。</p>
+<p><strong>Q：打开画廊是空白页？</strong></p>
+<p>可能是文件路径有中文或空格。试试把文章复制到一个纯英文路径（比如 <code>/tmp/test.md</code> ）再跑。</p>
+<p><strong>Q：推送报 40164 错误？</strong></p>
+<p>IP 白名单问题。去公众号后台 → 设置与开发 → 基本配置 → IP 白名单，把你当前的公网 IP 加进去。终端跑 <code>curl ifconfig.me</code> 可以看到你的公网 IP。</p>
+<p><strong>Q：Windows 能用吗？</strong></p>
+<p>Python 脚本跨平台，Windows 上能跑。Claude Code 已经支持 Windows 了（Mac、Linux、Windows）</p>
+<p>都支持）</p>
+<p><strong>Q：能配合 Obsidian 用吗？</strong></p>
+<p>可以，而且这是最佳搭配。在 Obsidian 里写 Markdown，图片用 <code>&lt;span style=&quot;color:#999;&quot;&gt;[图片: image.jpg]&lt;/span&gt;</code> 引用，排版脚本会自动在 Vault 里搜索图片并处理。config.json 里的 <code>vault_root</code> 填你的 Obsidian 仓库根目录就行。</p>
+<hr>
+<p>开源地址：<a href="https://github.com/xiaohuailabs/xiaohu-wechat-format">https://github.com/xiaohuailabs/xiaohu-wechat-format</a></p>
+<p>装上试一下，排版这件事以后不用再操心了。</p>
+<p>有任何问题可以留言我来解答，可能也会有很多bug，可以反馈</p>
+<p>或者在群里提问↓</p>
+<p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=9" alt="Image"></p>
+<p>____________</p>
+<p>End.</p>
+<h2>感 谢 阅 读</h2>
+<p>点赞，转发，关注关注关注↓↓</p>
+<p>继续滑动看下一个</p>
+<p>小互AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/6e-9aeZbA_PgI9umWdgkag" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

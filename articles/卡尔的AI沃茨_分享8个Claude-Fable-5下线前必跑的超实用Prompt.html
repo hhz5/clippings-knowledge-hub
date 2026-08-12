@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分享8个Claude Fable 5下线前必跑的超实用Prompt · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">分享8个Claude Fable 5下线前必跑的超实用Prompt</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=prompt%E5%B7%A5%E7%A8%8B">prompt工程</a><a class="chip" href="../index.html?tag=Claude%20Fable%205">Claude Fable 5</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a>
+    <span class="date">2026-07-06</span>
+  </div>
+  <p class="lead">榨榨榨榨榨干算力</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月6日 09:19</em></p>
+<p>满打满算，Fable5还剩不到48小时就从订阅计划里下线了，</p>
+<p>整个周末我都在把额度刷刷刷满，剩下最后20%的时候在X上看到一个开发者发的一条长贴，他说他把Fable 5的行为模式，再结合Claude团队开源的Fable5提示语技巧，提炼成了一份协议，贴给Opus 4.8用，神人来的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fzj8Ud4facLnry9ibNq2u7NSNwOI4BPIEAIadGSBqXP9NK7DFum7pJ2hIkZ1grzesvxWmqCYaticqcTTccaxgZ7ZsN5wtic10Ggvo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>顺着这条线往下挖，我用了两天时间把中英文圈十几篇最有料的实战帖全翻了一遍，全变成 prompt，让你现在立刻马上就跑起来的。</p>
+<p>我把筛完的东西按稀有度排了个序。先给结论。</p>
+<p>就剩那么点时间，Fable 5值得做的事就两类，</p>
+<p>第一类，让它自己跑实验。你睡觉，它干活，醒来看报告。</p>
+<p>第二类，让它研究你自己，然后把你的工作方式变成一套可复用的系统。</p>
+<p>其他所有用法都是这两类的子集。</p>
+<p>先说第一类，因为它效果更夸张。</p>
+<p>Superpowers的作者Jesse Vincent用Fable5做出了6.0版本，这个项目里的头脑风暴brainstorming Skill属于是入门Agent必装的一个Skill了，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwQicULlRpL4eAfSVAJs1b3ibZiaTDsXcUBuVbnRQ9rI9hk8mGOLh8Y1KYX8g7jONJpewhrwzsWCt2PhKQb3dFVsmV4RRqNKcc9jc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>他做的就是睡觉前给 Fable 写了一个/goal提示语，翻译成中文就是，</p>
+<pre><code class="language-bash">## goal目标提示语
+/goal 任务完成后，再专门跑一轮成本优化研究，让Opus负责统筹，持续记录“我为什么这么试、预期会怎样、实际结果如何”。
+至少做 25 次不同实验，每次实验开始前先写清楚假设，失败路线也要完整记录。如果中途发现数据量错了、口径不一致，或者评估方法有问题，要当场修正并继续。
+</code></pre>
+<p>等他第二天起床的时候，25个实验跑完了。</p>
+<p>花了165刀就把构建速度提高50%，token开销降了 60%。</p>
+<p>赚麻了。</p>
+<p>这个goal提示语跟我之前看到的不同之处就在它补充实验的过程，每个实验都有清楚记录的假设。每个被否定的想法被完整记录下来。Fable5在跑实验的过程中就发现了自己的三个测量 bug，自己中途修正了。</p>
+<p>它在没有任何人类介入的情况下给自己纠错。</p>
+<p>而且还很诚实地告诉你哪些优化路径是完全没用，甚至产生负面效果的。</p>
+<p>有人觉得「给Fable5的思考过程加个字数上限，能省点 token」，Jesse 测了，结果适得其反。Fable5为了在限制里把话说清楚，反而车轱辘话来回说，原本92轮能搞定的事变成了138轮，输出翻倍，更贵了。</p>
+<p>还有人想「先用便宜的Sonnet模型写计划，再让贵的Fable5执行」能省钱。Jesse 也测了，Sonnet 写出来的计划虽然看着没问题，但根本不是Fable的思路，整个任务结构都乱了。</p>
+<p>还有就是「给测试计划设个字数预算」这种看起来很合理的操作，直接把模型的测试内容削减了 62%。其实就像让一个研究员用一页纸写实验方案，在保证每个实验质量不变的情况下，他只能把一半实验删掉。</p>
+<p>这些彻底失败的实验结果比成功的还值钱。因为之后在新的项目上，我不用再花钱重新踩一遍坑。</p>
+<p>测试这个goal提示语的时候，我想起Karpathy大神说过一句话。</p>
+<p>「Here&#39;s an objective, here&#39;s a metric, here&#39;s your boundaries of what you can and cannot do. And go.｜这是你要达成的目标，这是怎么判断你做完了，这是你的边界。剩下的交给你了。」</p>
+<p>目标，指标，边界。三个词。</p>
+<p>其实就是/goal提示语的最佳结构。</p>
+<p>给模型说清楚要什么结果，怎么判断做完了，什么东西不能碰。写完这三样，放手让它去发挥就好了。</p>
+<p>好，来到第二类，让Fable5研究我们，</p>
+<p>我觉得这可能是整个窗口期里最被低估的用法，简单来说就是让Fable5研究我们的工作模式，优化之后打包成一套系统，交给一个Opus4.8或者别的模型去执行。</p>
+<p>输出工作模式跟直接总结出一个报告还不太一样，这是一套可以直接用的东西。</p>
+<p>你以后切回Opus 4.8的时候，它已经知道你是谁，了解你的工作模式了。</p>
+<pre><code class="language-shell">## 工作模式提示语
+遍历我Claude所有的历史聊天记录，重复提示，文档，项目，Skills和工作流程。然后回答：
+1、我最常使用Claude做什么？2、哪些任务我总是重复地做？3、哪些指令我总是手动重写？4、哪些工作流程应该变成可重用的Skills？5、过去做了哪些事的方法和思路是错的，以你的视角应该要避免？6、Opus应该知道什么，这样它就能给我90%的Fable 5体验？
+把所有这些转化为Claude Skills、使用指南、工作流程模板，以及给Opus的系统指令。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwZM6jiawlqbqia4RXZSpLMcITiaa6HquvPDgyLEzplicSJwDtPHrkKzZ8QTdFZ9JDuVz6FD8YwJKxdSwqcEHNGDW8guv93jY1dGUw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>那如果之前被封了很多次账号，也没有从被封账号的历史对话记录成功恢复自己的对话，又想要得到一个表现还不错的工作流程的话，那我们就要回到开头的开发者hiromi maeo的事了。</p>
+<p>他从Anthropic的Fable 5文档里，反向提炼出了一份能让Fable5表现更好的行为规范，</p>
+<pre><code class="language-shell">## 行动规范提示语
+结论先行｜每次汇报第一句话就说「发生了什么」或「发现了什么」，不要让我翻三页才看到结果。立即行动｜信息够了就动手。不要重新推导已经确定的事实，不要重新讨论已经关闭的决定，不要列一堆你不会采用的方案。实证汇报｜报告前用工具结果交叉验证。没验证的说没验证，测试失败的把输出原样贴出来。编造进度是最恶劣的失败。最小范围｜不做要求以外的功能、重构或抽象化。做最小能用的东西。不要写防御不可能发生的场景的代码。说到做到｜永远不要说「这就去做」然后停下来。执行完再终止。
+</code></pre>
+<p>这样一份行为规范有什么用呢？</p>
+<p>Fable 5虽然聪明，但它不会一个人干完所有活。遇到大任务的时候，它会自己拆分成多个独立任务，派出几个小弟去完成，也就是subagent，那这些 agent里面内置的模型可能是便宜一点的Opus，也可能是再低一档的Sonnet。</p>
+<p>问题是，这些小弟没有Fable 5那么聪明。</p>
+<p>不明确告诉它们该怎么干活，它们就会按自己的习惯来，可能会磨蹭，可能会重复做已经确定的事，甚至会说好的我这就去做然后就停在这摸鱼。</p>
+<p>我们需要一份行为规范，贴在每一个小弟的提示语末尾，这样subagent输出的结果会变得更加易读，换成API的时候就可以完全让Fable5出计划，其他模型去执行。</p>
+<p>说到subagent，</p>
+<p>这几天还有一个非常极端的任务分配逻辑火了，</p>
+<p>既然两天不到就要用API了，那就提前适应，让Fable5自己判断什么任务下放给便宜模型，什么留给自己。这样token消耗就降下来了。</p>
+<pre><code class="language-shell">## subagent分配提示语
+对于任何编码任务，自行判断选择低算力模型并在subagent中运行。小任务交给便宜模型，重任务保留全力运行。
+</code></pre>
+<p>我上周开源的搭子Skill也是同样的逻辑，</p>
+<p>让Fable5在出计划的步骤来分配哪个阶段用哪个Agent，claude code可以把codex也拉进来干活，codex也可以让Fable5在出计划的时候参与进来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fx00hB6ncRic7ibouxeOYyY3nIQH7Ok9HTYh1RnRL5qXLwa8xibmdD5xQ8WuRcABIvpcedicUqpsuNSI0kyIFEVIafnyb3ibZP8osoA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>但是还有人更加极端，直接所有执行都走codex subagent，让Fable5只负责出计划和头脑风暴。</p>
+<p>API 计费之后，这种多Agent分配的打法大概率会变成主流。</p>
+<p>同样的思路，有个叫Machina的开发者把让 AI 自己判断什么时候做什么这件事，固化成了 25 个可以直接抄的 loop 工作流（就是固定的时间间隔运行某个任务），也就是说把fable5加入到自动化工作流里了。</p>
+<p>每个loop有三个要素。</p>
+<p>一个排期表，什么时候醒来。每轮只改一件事。同一个检查标准，让本周的分数和上周可比。一个状态文件，记录做了什么、下一步是什么。一个停止条件，硬性限制轮次的上限加上对完成和流程被堵住的定义。</p>
+<p>他还给每个定时任务标了颜色。</p>
+<p>绿色完全自动跑。</p>
+<p>黄色要我们审批才能发出去。</p>
+<p>红色涉及生产环境或者外发消息，就不能在无人的时候自动跑。</p>
+<p>我把这个25个定时任务都看完了，状态文件就是让每次运行比上一次更聪明的关键。模型每轮开始前先读自己上一轮的历史，这样它永远都不会重做已完成的工作。</p>
+<p>这 25 个 loop 里，我觉得最值得抄的是Shadow prompt loop，一句话总结就是测新提示语的效果的时候走流量的A/B Test。让新旧两个prompt同时跑在真实流量上，用数据决定好坏。</p>
+<pre><code class="language-markdown">## loop提示语
+/loop daily, on real traffic
+读取 shadow-prompt-STATE.md，里面记录了：- baseline prompt（当前线上版本）- candidate prompt（待验证的新版本）- 已积累的 disagreement cases（两个 prompt 输出不一致的真实请求）
+本轮任务：1. 从今天真实流量中抽取 N 条代表性请求（边缘 case、高频场景各占一半）2. 同时用baseline和candidate各跑一遍，记录输出3. 只记录有分歧的case（输出明显不同），相同的跳过4. 每个分歧case标注：哪个更好、为什么、是否 candidate 一致性更优
+约束：- 不直接替换线上prompt，只积累对比数据- 积累50个有效分歧case后，生成一份「是否切换」的推荐报告- 报告必须包含：candidate胜/平/负的比例，典型分歧场景，切换风险评估
+State file（状态文件）: shadow-prompt-STATE.md（记录：已测多少条、disagreement堆、当前结论）Stop（停止条件）: 50 个分歧 case 或 14 天Color: 🟢 Green（只读流量 + 写 state file，不改线上配置）
+</code></pre>
+<p>我现在其他loop都统一成了这个模版。</p>
+<p>最后说两个Anthropic官方放出来的提示语模板。我自己验证过，直接能用，也已经设成 hook 了。</p>
+<p>第一个是自动检查点。</p>
+<p>Fable5确实可以长时间运行，我基本都把权限拉满的，但还是需要它在关键时刻停下来问我，</p>
+<pre><code class="language-shell">## 自治运行 + 自动暂停提示语
+只在工作真正需要我介入时暂停，破坏性或不可逆的操作，真正的范围变更，或者只有我才能提供的信息。其他情况继续推进，完成后汇报。
+</code></pre>
+<p>实测比auto mode会更少打扰我。</p>
+<p>第二个是记忆系统。</p>
+<p>这个我已经设成 hook 了，只要说「记一下」就自动触发。</p>
+<p>主要是因为被封的次数太多了，每次封完回来都是一片空白。有了这个hook，它至少能从错题本里知道上一世犯过什么错，保留一手前世记忆。</p>
+<pre><code class="language-markdown">## 记忆更新提示语
+每条经验单独存成一条记录，开头用一句话概括。只记录两类东西：1. 被我纠正过、下次不能再犯的点2. 已经验证有效、以后可以复用的方法每条记录要写清楚它为什么重要。不要记录仓库、文档或聊天记录里已经有的信息。如果已有相似记录，就更新旧记录，不要重复新建。如果后来发现某条记忆是错的，就删掉或标记废弃。
+</code></pre>
+<p>最后补一个动手前让Fable5反向面试你的提示语，</p>
+<p>在写需求文档的时候，等它问到95%有把握了，再进入正式执行。</p>
+<pre><code class="language-shell">## 反向面试提示语
+问我问题，直到你有95%的把握可以把这件任务完成
+</code></pre>
+<p>问清楚之后，就给Fable5开个计划模型（plan）按照Anthropic推荐的/goal结构化写法模板做一个初版本，</p>
+<pre><code class="language-css">## goal目标提示语 
+背景：我在为 [谁] 做 [什么项目]，他们需要 [这个东西能帮他们解决什么问题]。具体要求：[用一句话说清楚你要什么]交付格式：[你希望最终结果是什么样的，怎么给你]红线：[过程中绝对不能做什么事]
+</code></pre>
+<p>呼，完事了，额度也没了，开始烧API去了。</p>
+<p>Claude Code团队的工程总监 Fiona Fung 之前做过一个分享。</p>
+<p>他们团队有个习惯已经变成了肌肉记忆，每遇到一个重复性工作，就条件反射地问自己，能不能自动化。</p>
+<p>如果一件事重复三遍以上，</p>
+<p>就想尽一切办法让AI自动化掉。</p>
+<p>7号之后Fable 5从订阅制变成按token计费，</p>
+<p>上面的提示语就跟我们平时的账单实时挂钩了。</p>
+<p>我是觉得不要担心烧API额度，</p>
+<p>也不要去限制Fable 5本身的能力来省token，</p>
+<p>最好的模型本身就是最便宜的实现路径。</p>
+<p>还剩两天不到就下线了，</p>
+<p>我们可以做的最小动作还有什么？</p>
+<p>我选择让Fable5研究我，把我变成一套Skill。</p>
+<p>这些沉淀下来的提示语，skill，文件，</p>
+<p>不会只在Fable5的脑子里，</p>
+<p>模型会换，会下架，号也可能会被封，</p>
+<p>但我们的工作模式，错题本，跟模型的对话记忆</p>
+<p>这些是不会消失的。</p>
+<p>用Fable5把这些重新激活，</p>
+<p>这可能是整个窗口期里，</p>
+<p>ROI最高的三十分钟。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>289人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ZkMsdeTK6wmgkaER0iPT8w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

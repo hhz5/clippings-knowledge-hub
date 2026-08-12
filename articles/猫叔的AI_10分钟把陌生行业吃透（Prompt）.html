@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10分钟把陌生行业吃透（Prompt） · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">10分钟把陌生行业吃透（Prompt）</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90">行业分析</a><a class="chip" href="../index.html?tag=%E6%88%98%E7%95%A5%E5%92%A8%E8%AF%A2">战略咨询</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-12-15</span>
+  </div>
+  <p class="lead">10分钟把陌生行业吃透（Prompt）</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hPe3oY6RiaIWbb8LN3kYpzHLRnvdokJ2cHyyO3ic0NG0BBpvFCWQdv6g0UZUEicOaMP4vgicFbVhSwdxEwXoxXzb4g/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 猫叔的AI <a href="https://mp.weixin.qq.com/s/">AI替代人类</a> <em>2025年12月15日 07:00</em></p>
+<h2>这是什么</h2>
+<p>这是一条“咨询顾问式行业快扫提示词”。它的目标不是生成花哨的长文，而是把一个陌生行业压缩成 可复述、可汇报、可行动 的结构。</p>
+<h2>你应该在什么时候用</h2>
+<ul>
+<li>你刚接触一个新赛道，需要 30分钟内形成行业地图</li>
+<li>你要做立项/汇报/写方案，但脑子里信息零散，需要 变成PPT结构</li>
+<li>你要做竞品与投放打法研究，想快速锁定 钱从哪来、谁在买量、怎么跑ROI</li>
+</ul>
+<h2>它会输出什么</h2>
+<ul>
+<li>行业速记卡 ：一句话定义 + 钱从哪来 + 谁付费 + 核心指标</li>
+<li>结构与格局 ：价值链、分层、常见商业模式、护城河</li>
+<li>趋势/拐点/风险 ：过去变化、未来剧本、容易误判点</li>
+<li>竞品地图 ：玩家类型与打法对比 + 市场白空间</li>
+<li>入场建议 ：3条切入策略 + 90天最小验证计划</li>
+<li>待验证清单 ：把“需要补证据的数据点”列出来，防止空想</li>
+</ul>
+<h2>使用方式（推荐三轮）</h2>
+<ol>
+<li>1.第一轮：只跑结构（先有地图）</li>
+<li>2.第二轮：贴真实材料（会议纪要/竞品链接/报价/投放截图），让模型“基于证据更新”</li>
+<li>3.第三轮：聚焦一个国家+一个渠道+一个人群，产出可执行打法</li>
+</ol>
+<h2>注意事项</h2>
+<ul>
+<li>这条提示词最强的是 结构化与策略推演 ，不保证市场数据自动准确；关键数字请用你掌握的数据或 启用AI联网 来校验。</li>
+<li>行业一定要具体到“地区/渠道/商业模式”，否则输出会泛化。</li>
+</ul>
+<pre><code>你是一名顶级战略咨询顾问。我的目标是：在最短时间内快速搞懂【行业：XXX】。
+
+请按以下顺序输出（只用要点，结论先行，不要写散文）：
+
+0) 范围确认（如果我没写清楚就按默认）：
+- 默认市场范围：{国家/地区=中国或全球？你选一个并说明}
+- 默认细分：{B2B/B2C、上游/中游/下游、价格带、核心场景}
+- 你将采用的关键假设（3-6条）
+
+1) 一页“行业速记卡”（我看完就能复述给别人）：
+- 这行业一句话是什么
+- 价值链：钱从哪来，谁付费，利润点在哪
+- 典型客户画像与购买决策链（谁用/谁买/谁拍板）
+- 关键指标（5个以内）：用来判断公司好坏
+
+2) 现状与结构（用最少字讲清楚）：
+- 市场分层与主流商业模式（列出3-6种）
+- 竞争格局：现在是寡头/混战/碎片化？为什么
+- 行业的“护城河”通常是什么（技术/渠道/品牌/供应链/数据/合规等）
+
+3) 趋势与拐点（只给高置信度的）：
+- 正在发生的3-7个趋势
+- 未来12-24个月最可能的两种剧本（乐观/保守）
+- 最大的误判风险（3条）：新手最容易看错什么
+
+4) 快速竞品地图（不求全，求抓住类型）：
+- 典型玩家类型（3-5类）及其打法
+- 每类玩家的优势/短板/常见定价逻辑/常见获客渠道
+- “白空间”：哪些需求被忽略、哪些人群/场景没被服务好
+
+5) 我如果要进入这个行业：
+- 3条可执行的切入策略（要具体：目标客户、主张、渠道、盈利方式）
+- 90天最小验证计划（要做什么、要验证什么、成功标准是什么）
+
+最后加一个“待验证清单”：
+- 我必须找哪些数据/事实来证伪或确认你的关键结论（10条以内）
+并给每个结论标注置信度：高/中/低（基于常识推断/需要数据验证/依赖地区差异）。
+</code></pre>
+<p>我是 猫叔 ，可能、大概...有点擅长 提示词 和 AI图像、AI视频、AI剧本的创作 ？！ 可能最近又善长了点AI管理？？？还有可能是个传说中的作家和游戏设计师？？？</p>
+<p>所有提示词均在 AI替代人类 公众号发布， 有限开源，禁止商用 哦!!!</p>
+<p>请</p>
+<p>点赞 ：满足我的虚荣心</p>
+<p>分享 ：拯救他人于水火</p>
+<p>收藏 ：防止自己找不到这么好的内容</p>
+<p>关注 ：让你也能找到我</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hPe3oY6RiaIWbb8LN3kYpzHLRnvdokJ2coOgRbI2Z2dXB0qJJYwD53UUW09wBooYkDshd2bsfj2vkPcqHuiaXrAg/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>点击 阅读原文 进入新世界吧</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+<p>AI替代人类</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ONlXDUck_Hfi5GV3DIABVA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

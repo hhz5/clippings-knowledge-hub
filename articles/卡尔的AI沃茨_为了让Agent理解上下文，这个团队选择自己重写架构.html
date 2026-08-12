@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>为了让Agent理解上下文，这个团队选择自己重写架构 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">为了让Agent理解上下文，这个团队选择自己重写架构</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    
+    <span class="date">2026-03-27</span>
+  </div>
+  <p class="lead">聊一聊我认识的特赞</p>
+  <article class="content"><p>原创 AI沃茨 AI沃茨 <a href="javascript:void(0);">卡尔的AI沃茨</a></p>
+<p><em>2026年3月26日 19:54</em> <em>浙江</em></p>
+<p>在小说阅读器中沉浸阅读</p>
+<h2>GPT Sora不是要关停了嘛，</h2>
+<p>我就忙着把之前生成好的视频和图片和提示语们搬到本地知识库做二次存档，不然保不齐几个月后又关了。然后就被难住了。就是他们没有信息链接，几乎是完全独立的，管理起来很麻烦。</p>
+<p>我甚至都快忘了当初生成某个片段用了哪个版本的咒语。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fwwm5MHctk2iaSqxyM1Nvg8WtglFVmIESNBGEGx0E3zeFibNRBTcluZKPyhYUnU3DcVb8KySXEYWZ0W1mLibcvNYPamqkgWQ4LXcc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>看着这一堆混乱的文件，我突然意识到，我正淹没在一片由我自己创造出来的，毫无关联的产出物海洋里。</p>
+<p>我拥有一大堆的Output，但没啥用，</p>
+<p>我需要的是能够形成知识体系，能够被复用和迭代的Outcome。</p>
+<p>这两天我内测上了特赞正在做的一套企业智能体架构，他们称之为GEA，他们实现了从Output到Outcome的跨越。</p>
+<p>他们把我所有的AI输出都剪藏到了一个地方，不是简单地把内容存进一个知识库，而是把这些分散的数据组织成可以持续调用的上下文系统（Context System）。Agent每次工作要读取上下文的时候，背后会有一个编排层，由发散推理模型（Creative Reasoning Model ）驱动，根据每次对话目标来准备当前对话的上下文，以及要不要改变方向。</p>
+<p>在GEA的架构下，Agent 就会在一个系统里持续工作，而不是一次性被调用的工具。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxSCEMndKlbfajnibIaaMEW7kUgfh6UXJiaiaIkibic1t3YWYVB0zMHX8CFZDPcna37UUFic5jjzmBu77vgOxU90Gsoic18UUUKECIhCs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>🔗 atypica.ai 一个典型的洞察研究GEA</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwgBVccrdTwnibYiaSUZngJdhedMtGiaxRTOpoyXuzajEMPoRdKcAicWkb8llcySSRhUdemOFkLt6a9ia3qEJ4McPXdjHKLDS2Msia80/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>🔗 musedam.ai 这一体系的企业上下文系统入口，为Agent提供可调用的语境基础。</p>
+<p>我这次需求很简单，作为一个内容创作者，我想试试海外内容平台，该怎么做。</p>
+<p>这在过去，意味着我需要让AI帮我生成市场分析报告，竞品调研表格，内容策略文档。我会得到一堆Output，然后自己去消化，理解，串联，形成一个可执行的计划。</p>
+<p>但我把这个想法告诉那个洞察研究GEA后，它完全没有给我这些中间产物。</p>
+<p>它先是像一个资深顾问一样，反过来问我问题，了解我的账号定位和内容风格。然后，它告诉我，要达成我的目标，最好的方式是进行一系列一对一的深度访谈。紧接着，它就自己通过AI配置了八个不同的人格（AI Persona），有成功出海的创作者，有精通平台的运营专家，有商业化顾问，几乎覆盖了所有。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzO3ibQnqyJarDLmxUsugib3Cbrhll1PugS9dqtVvXNyAauCB2Rn1owjGwN8MOVLvfFeTnG8wiaYzibEF4Cib3ODx8oMvgQpuS3KJlo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>然后，它就开始自己访谈自己了。</p>
+<p>我像一个旁观者，看着它和这些虚拟专家进行了一场场高质量的深度对话。最终，它直接给了我一份整合了十五个不同角色观点的完整出海策略。这是一个可以直接拿来用的Outcome。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fwxw90yjXl6u7rTFwdwpoIHnfpLsJ8XnwAcKwy1jtuIQfnzXx0icsFpDP4072vFWia7dpHgsiclgmp7pmgPLZpY9NdUAZDVKiaZvvU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>我点进其中一个访谈实录，有点被详细到了。</p>
+<p>那个角色叫Marcus，设定是一个三十岁，住在伦敦的油管博主。</p>
+<p>AI问他，对于新账号，是应该先追求垂直领域的深度，还是先尝试多个方向来测试市场反应。Marcus的回答逻辑清晰，充满了细节。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fz0MeN12aXBKwh0R3efAJI1TticxvynAFjACaJlzgLrsB638xe8DazLTeGicj9HibtYNUibia722KkPf5icL5jviaAmBNUmkPgxXNIEN8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>最关键的一点是，这些AI人格，像Marcus，会被保留下来。</p>
+<p>它们成为了这个项目的常驻顾问，并自动变成了这个研究任务的一部分上下文资产。</p>
+<p>等我真的开始做油管了，我可以随时回来，把我的新视频内容再拿给Marcus看，问他有什么建议。他拥有我们之间所有的记忆，所有的上下文。反正我是把这个对谈一句句看完了，并转发给运营朋友逐句学习。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/02:32</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>02:32</p>
+<p>02:32</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2euqcboaaeuiaaxewb2vuvjjgdc6saifya.f10002.mp4?dis_k=b1c3a484d35c396e7a4343d23dfe1624&amp;dis_t=1774567783&amp;play_scene=10120&amp;auth_info=eYmVucYFYnURyviq7nVYQzpDZWY1G2U0SjBXBHFrXVFIPXI1Eww/GnMGdWA5VE95MA==&amp;auth_key=6f27d0a7656bd4ba16683cd8a5f69fbe&amp;vid=wxv_4444841116785393667&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FzyZpUrxeaHV2FFQ2Ze1icEMFsqibPVBIwLKMdKR2aneMibIfA2WqyzEQEusn8TrTXsQjhwBzic0u4Qjy7FujViapibFP0umMz7OYJQI/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="" style="display: block; width: 661px; height: 372px;">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>为了让Agent理解上下文，这个团队选择自己重写架构</p>
+<p>转载</p>
+<p>,</p>
+<p>为了让Agent理解上下文，这个团队选择自己重写架构</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>所以其实要实现从Output到Outcome的跨越，关键就在于一个东西，</p>
+<p>上下文，Context。</p>
+<p>我那些混乱的视频和图片，缺的是能将它们串联的上下文。而特赞用4层架构打造了一个以 Context System 为核心的企业级Agent系统。</p>
+<p>最顶层，是我发出的那个目标，一个Intent。</p>
+<p>当我给出我要出海这个意图后，系统的大脑，也就是编排层，就会接管。它会把这个大目标，拆解成无数条可能的执行路径，评估哪条路最好，再把一个个具体的子任务，派给最合适的模型和工具去执行。</p>
+<p>它知道应该先做市场调研，再做用户访谈，最后生成策略报告。</p>
+<p>然后，GEA的手和脚，也就是执行层，开始工作。这里有各种主动的智能体，它们会调用超过四百个技能模块，去完成内容生成，数据分析等具体任务。</p>
+<p>Agent们的协作，全都依赖于上下文系统。</p>
+<p>它像一个第二大脑，存储着品牌，产品，项目，案例，用户画像等所有信息。</p>
+<p>最底层就是提供能力的基础多模型层。这里有三十多个不同领域的模型，哪个强就用哪个。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fz5XtH4EPibrHX6jXGDNwyykcEPQAXGarTJic60jQQTLzG3kd1SkEZnjib1MOLWFNhibLeuMWibYzcecx9c9Dc5tKr38eniadO3kcGV8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>这个架构的设计目标很纯粹，</p>
+<p>就是为了交付Outcome。</p>
+<p>所以GEA的诞生，几乎是一个必然的结果。</p>
+<p>它是从那片叫做Context的土壤里，</p>
+<p>自然生长出来的。</p>
+<p>写到这里，我想起我那个混乱的文件夹。</p>
+<p>有了GEA，有了这套可持续运行的架构</p>
+<p>我就可以告诉它，我的意图是建立一个关于Sora创作的知识库。</p>
+<p>它会自动把我所有的视频，图片和提示词进行关联，分析它们的风格，打上标签，</p>
+<p>甚至能主动建议我，</p>
+<p>基于现有的素材，</p>
+<p>可以尝试创作哪些新的内容。</p>
+<p>这样的Agent不急于交付更多的零件，</p>
+<p>而是直接帮你思考，帮你执行，</p>
+<p>帮你把神探夏洛克同款的记忆宫殿用AI的方式，</p>
+<p>一点点盖起来。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/08rZsbL2KzpwbkiBc1gxjw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测ego lite，给我Codex浏览器自动化加到2.5倍速了！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测ego lite，给我Codex浏览器自动化加到2.5倍速了！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=ego%20lite">ego lite</a><a class="chip" href="../index.html?tag=%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8C%96">浏览器自动化</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E5%B0%8F%E7%BA%A2%E4%B9%A6">小红书</a>
+    <span class="date">2026-07-31</span>
+  </div>
+  <p class="lead">这次浏览器自动化甚至可以不占我任何Token</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月30日 18:04</em></p>
+<h2>很多人都好奇我一天烧几个亿token都是怎么烧的，</h2>
+<p>最近就是在不停迭代ai news radar这个AI热点网站，新的域名已经在路上了，并行在做的就是有没有一个便宜大碗的方案，让一些小模型也能做浏览器自动化，可以看到各个平台上博主们都在聊什么，什么工具突然火了被人提到了。</p>
+<p>毕竟API都是烧钱啊。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzFhKGXBiaL3JGoIs2LuiblkVmUb7N2GofQLiceEvLEB4RqGYb4XncgOo2eHicWO0esVopPl07RfIz3XtgeYtt1O4HP2aiaUhDFOHyU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>前两天它给我推了一个新的浏览器自动化开源项目，ego lite，5.9k star，冲上github周榜了都。</p>
+<p>用人话说，ego lite就是一个专门给AI Agent用的浏览器。Codex已经内置了一个类似的Chrome Use，我现在填ICP备案都可以全程GPT上传文件了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fwxup9cZH52MTejgUxvTia4oic2gmwAW1unnTiaBw2fPY5easoKGfZdYhnJP0ibOJcRol6rWa4wGbFhMGBk9qSWpNnHeOzwxhkTdBE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>但如果你跟我一样浏览器有多个账号的话，它属于是会经常弄错的那种，甚至是需要我在规则里面指定什么操作用账号A，什么操作用账号B之类的。</p>
+<p>ego lite解决的就是这件事。</p>
+<p>不是那种给Chrome套个插件，外面包一层自动化脚本的方案。它是一个基于 Chromium内核定制的独立浏览器，从底层就开始兼容人和Agent共用同一套浏览器环境的场景。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FworKCfBfZexb3RM6uD4sUFbXaiaYtGdBqUr0iaG9b2Hy2PFb5JOCE8NzUS1SibpyZNdLlAD326sNbNnneBf50xKRAjYqxIhdfP54/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>在用ego lite之前，我也折腾过几个别的方案。Browser-Use，Vercel的agent-browser这些我都试过，它们本质上是自动化框架，自己不带浏览器，得外挂一个来驱动，登录态搞起来很麻烦。</p>
+<p>但ego lite因为它自己就是浏览器，还不绑死某个Agent，WorkBuddy，Claude Code，Codex都能直接接入。</p>
+<p>核心就一句话，</p>
+<p>让人和Agent共享同一个浏览器，但各自在自己的空间里干活。</p>
+<p>WorkBuddy一键接入之后，效果是能直接对标别人的Browser和Web Use的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fyj5vMvAB9K1wP5XRlg4SIjNsSCoyAiaJl6aru0oyxnLZ9tSicFROoUSMwNJ81Jd1mGOhJ6s8ibxoMhHibUmCbZfs3cNmGCfSAP1gQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>在WorkBuddy里，我先用了Playwright（另一个微软出的非常出名的浏览器自动化MCP，93.7k了）和ego lite跑了个简单的对比。</p>
+<p>任务很简单，上GitHub Trending给我找今日 7 月 28 日的 Top 10项目。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyFhhPSaACibJwBgZgw4AxJfSOcHQ3Khhpgfic9EEX92mvCmWjwicn3SlmQKU2AeUThQjiaZEh6BB8h8Mc1wP2ibV0e8wNYObMJs7ls/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>ego-browser耗时明显比Playwright短。</p>
+<p>为了控制变量，我还对比了Claude Code的Claude-in-Chrome跟Codex的Control-Chrome，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fw9y5KfUcdYWVZbZG4wzoM5LXTR1H0pTl349coq9SIzMfjrvib8TlTP350kLKS8nTflK37y3WcyO0ia6C6ibuUHqWdQ4Zkodx8b3w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>ego跑出来的速度要比Claude-in-Chrome快27秒。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fz3LIfHPl4oIRIelpY5HSDedtp6S5qLicBd9GvJZdEBYmibJHP4P02fmjkdaH0iaicSKc681LH9Z19y3cCgqiaT3QYzs3jBp3aoRCwI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>比Control-Chrome更是快了2.4倍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fyz27C5luXOAQRyPiaVqznGGxs0FoY9QsumOEBiaxiaEnjJfh1Y84sZHFXMiaLJz4GO5WxOOD0zia9U79H0MiblznlkW6dkZ8RU0Nib6U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>接下来就直接上压力，看下真实任务跑得怎么样。</p>
+<p>Case 1，帮我把小号X上关注的博主全部扒一遍。</p>
+<p>这是我测的第一个真实任务。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwE6UiaaCicTBibV9qNdvajpdWM3b5dLcYfoiclpwksW4ialNicbwhoAjshx1kqjMl2bOgtau3iczICYqUNoIyNKoQ0bWDoZFicqRJsTLc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>事情很简单，我想知道我在X上到底关注了哪些人，每个人的粉丝量和关注量分别是多少。</p>
+<p>但X的Following页面只显示头像和名字，不显示粉丝数。要看每个人的粉丝量，得一个一个点进去看。</p>
+<p>所以我让Workbuddy通过ego-browser skill来帮我做。</p>
+<p>在说结果之前，先额外岔开说说一个让我觉得体验很爽的点。</p>
+<p>ego lite的做法是在同一个浏览器里开了多个独立的Space。每个Space就是一个隔离的工作区，互相独立互不干涉，Agent做的事跟你毫无关系。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FyibiafG6VxNIzSUlYTticDCNgu7e2yRbXBmibiackRc6q9wicc4rnSVGnadJ8C99eNAAauAw4Oe9nqCM9eSSshF2zqWTVHibGLs4GiadE/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>更爽的是，首次启动的时候ego lite会问你要不要迁移Chrome 的Cookie，扩展，书签和Profile。迁移完之后Agent就直接复用你的登录态了，不用每个网站重新登一遍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fy06w4Mc9vs5fylHX4qSUDCaUkF0YQKgmMAT5icfVQKbcM8cTibcPOFXOwoD57fYV2dAsSDJyX5OIF0ibOwwsFjQUVib2rbPFnBreY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>当然了，能用你的登录态也就代表它的权限比较高。还是建议第一次用的时候可以先用独立Profile测测，涉及付款，删除，发布这类敏感操作，最好还是保留人工确认的步骤。</p>
+<p>回到这个case。</p>
+<p>整个过程大概是这样的，ego-browser在ego lite里开了一个Space，打开了我的X Following页面。因为之前迁移过Chrome的登录态，直接就是我的账号状态，不用重新登录。</p>
+<p>然后它开始自动往下滑，把账号全部加载出来，再逐个提取每个人的Following和Followers数据。我在另一个Space里继续干我的工作。真的，就是很字面意思的互不打扰。</p>
+<p>，时长00:04</p>
+<p><video src="https://mpvideo.qpic.cn/0b2eiaaaiaaaamabjvllrjvfaqgdaraaabaa.f10002.mp4?dis_k=b6956e5b35daf2ecca90676eae119e38&amp;dis_t=1785472580&amp;play_scene=10120&amp;auth_info=CZyjyH5JPAH7uIycXnFmbWpnHGozE2FIXTk/TxxCfHEvDjEbWlJxdiQwRkYxfEZ5YA==&amp;auth_key=ccc351548250eb4410a79dae4692506f&amp;vid=wxv_4627309524255866881&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>随便挑几个看看准不准，</p>
+<p>Sam Altman，565万粉丝</p>
+<p>Elon Musk，2.41亿粉丝</p>
+<p>Anthropic，居然只有155万粉丝</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwEYxfGfwUTgxtPxLTLmSBiad740ZvFicD9gNQdYicgCeR3kBhjEXISXWqG3gqulibiaqSvd2OpM0JlmKyBQn6BvhpZRAchjUXz3lMs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>我又手动去X上抽查了几个小号，数据也都对得上。</p>
+<p>这整个任务，从我下达指令到拿到完整的CSV和Markdown表格，中间完全不需要我插手。ego-browser自己处理了滚动加载，页面跳转，数据提取这些操作，我就是最后看了一眼结果。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyXVz0NbgCpXHBS5cjb7kEKTmGFgVFw9oib5biaDSjGCwiaElLk5lfXzLaqwGAia9SkxG1JxZDb80dtoiaMgEwarpYC6989K34WicHg0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>第二个case我想了个更离谱的操作。</p>
+<p>在用Codex的朋友应该都知道，Codex的API额度和ChatGPT网页版的额度是分开算的。你在网页版里跟ChatGPT聊天，让它联网搜索，这些不消耗你的订阅额度，不走API。</p>
+<p>那问题来了，如果我正在用Codex跑一个需要联网搜索的任务，我能不能不用Codex 自己去烧token做搜索，而是让它打开ChatGPT网页版，在那边搜完，把结果带回来？</p>
+<p>答案是可以的。ego-browser 能做到这件事。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fyo0z3uNvibZdiamoossia0G2gfRQzYbmEE2XSiaUDib6iaPb4ibFRljVJ86ZajUMjnsH5K7zjxucicvzw0LSd9uVRra2xK0DkpoStTORk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p>而且平时Agent操作浏览器的时候，要么就是把整个HTML丢给模型，要么就是不停地截图再识别。HTML一丢就是几万个Token，截图识别又经常认错元素，来来回回烧的钱比任务本身还多。</p>
+<p>ego lite做了一个叫Snapshot的东西，不吃截图不需要完整代码，直接从浏览器内核层面直接提取页面的结构化信息，哪里有按钮，哪里有输入框，哪里有可以点的链接，整理成一份精简的说明交给 Agent。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwqnvvmUvWtasZ47nF6TuFianuRWw2411Y9CiaHl81Pib4LgibrftKodBxP6LmadGGb9yOc08LLbKWj6kicy0GhBSdfYxROT43gXWH4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Image"></p>
+<p>传给模型的上下文量一下子就降下来了。</p>
+<p>我实际测的时候还发现，一些嵌套iframe比较深的页面，传统方案经常抓不到里面的内容，ego lite的Snapshot能覆盖到。这点在处理一些后台管理系统，第三方嵌入组件这类复杂页面的时候体感更加明显。</p>
+<p>回到这个case。</p>
+<p>整个过程大概 5 分钟不到。ego-browser照样是在ego lite里开了个Space，照样是打开ChatGPT网页版（因为登录态迁移过了，直接就是登录状态），输入问题，等ChatGPT联网搜索完毕，再把结果整理好带回来。</p>
+<p>，时长00:09</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3ceb5saadsyamtz3izrvfgeod3eiqhwia.f10002.mp4?dis_k=ad4d3e96e17e692012571d6a2957efd3&amp;dis_t=1785472580&amp;play_scene=10120&amp;auth_info=TJ/N4rZwSz1WpLjZzg8laGw4Zks9a0NnHAI4PxYaQCF3fFIyHFhQcCF7MBMUYChIeDI=&amp;auth_key=91f580d8619d46d96002b65ed3cba9d8&amp;vid=wxv_4627310659721117696&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>拿到的结果质量还挺不错的，ChatGPT用High模式做了完整的联网检索，整理出了一份带数据、带来源链接的10条清单。</p>
+<p>同样的做法，在WorkBuddy里也是能做到的，对模型要求不高。</p>
+<p>，时长00:27</p>
+<p><video src="https://mpvideo.qpic.cn/0b2eyeacaaaanqadbell3rvfbqodedaqaiaa.f10002.mp4?dis_k=10029b12ca58a52dd7d530c492b4acc2&amp;dis_t=1785472580&amp;play_scene=10120&amp;auth_info=Rp+Tk7wkSWABqLiNmwp0am5sMx42YBRkGAc/PkZORHd9e1o2GghSLXZ3MEdBZXlKemY=&amp;auth_key=fb25572cd18ee73a4d1fb95d8d3e4ed6&amp;vid=wxv_4627311294956535809&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>而且很多Agent网页端的credit都不算在通常的coding plan额度里，不用白不用，四舍五入就是直接省钱了。</p>
+<p>Case 3，终极任务小某书</p>
+<p>我就这样说难度吧，一般的浏览器自动化Skill连帖子都打不开。</p>
+<p>我还给ego故意挑了一个难的，还是从WorkBuddy走。某书是出了名的对Agent不友好。不登录连搜索结果都看不到，页面各种动态加载，内容结构也复杂。很多传统的自动化方案一到小红书就直接趴窝，要么卡在登录页面，要么抓到的是空白页。</p>
+<p>所以我特别想看看ego lite在小某书上能不能跑通。</p>
+<p>提示语也简单，去小某书上搜搜我自己，翻一翻主页，看看最火的几条内容是哪些。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwuVicImt6auQfJ1xnNrK8lr8897TxegXcgeQ8THibCjSJaXceg4pBqtPn6wO7opUTIXicISyzicEzRwGHKvcibqNjicj1ibvAAAgP1Gw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Image"></p>
+<p>ego-browser在ego lite里打开小某书，一开始弹了个登录弹窗，但因为之前迁移过Chrome的登录态，它实际上是已登录状态，关掉弹窗就直接进去了，很爽，不需要扫码。</p>
+<p>搜索，进主页，翻列表，整个流程都很顺畅。</p>
+<p>，时长00:14</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3u4acyaaaouadzztlknvfbj6dfstqalaa.f10002.mp4?dis_k=179962cf37ff907226f51467e404dcf6&amp;dis_t=1785472580&amp;play_scene=10120&amp;auth_info=SfXA95RxGj5Zrb3bzQt2amxoZh1qZkZkHQc6OkZJTXxyKwhiSl4Bcy5yNREXZHtKeGI=&amp;auth_key=ae550b9a6d72e7e2c2d87407636cccf6&amp;vid=wxv_4627311921048322049&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>这里面有个细节值得说一下。</p>
+<p>小红书的帖子列表是虚拟列表，你往下翻的时候，上面的内容会从页面里被移除掉，不是简单地「滚到底就能看到全部」。</p>
+<p>ego-browser处理得很聪明，它一边滚一边把数据存下来，最后拼出了完整的列表，一共采集到了251篇帖子。</p>
+<p>然后它还能进到每篇帖子的详情页，把点赞，收藏，评论这些数据一个个抓出来。我手动抽查了几条，数据都是对的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxZuumjvGf16ZtLg7lPkRffL0booq1Bk2QVGANjxn4kbqiap77gYIfWLDJrXkD9yBOVlBACKlRuCIQC84sPrRqcsQGic97bBcz5M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyrOlm9r8ZbdcP0QibeWZThe1VVjA6P99qcfItlibAZOmMEDVQ74Omrvfbjc2HzSumosjyI3mLtNrYVvAUK2Ak03kz5MwB4yM6bM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="Image"></p>
+<p>小某书在各个渠道爬取时挺容易被风控的，限制特多特杂。</p>
+<p>但是在ego lite里因为是真的浏览器操作，体感是真的相对安全的，而且也没有跳验证码人工验证。</p>
+<p>最后，说到这里就不得不提速度了。</p>
+<p>ego lite的Agent操作方式也不一样，不是传统的发一条CLI指令→看一次结果→再发一条指令的来回循环，是让Agent直接写一段JavaScript脚本，把多个操作步骤组合在一起一次性执行。</p>
+<p>用人话说就是，传统方案像聊天一样一条一条发消息，ego lite更像写一封邮件把事情一次说清楚。</p>
+<p>我自己跑下来体感确实快了不少，尤其是多步骤的复杂自动化任务，以前Agent要来来回回十几轮才能搞定的事，现在几轮就结束了。</p>
+<p>GitHub仓库里也有一组对比数据，跟Vercel的agent-browser比，复杂任务最快能到2.6倍速。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzWdjP2H5I3VxJHr39ibGlSyE1gbVLE8m96diaf69Omwj78ZIbhvLA6ymVzPA7n6xsb1LkkttDn1ruG2iapYyNXT6ZBdR5YveDW8Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="Image"></p>
+<p>用几天后我就有点好奇，</p>
+<p>这个团队到底是在浏览器外面套了一层壳，还是真的在改浏览器内核？</p>
+<p>查了一下发现，从Citro Labs的资料来看，这团队里的成员甚至参与过Chromium上游的代码贡献，比如CSS shape-outside对path()和shape()的实现，这部分已经合入Chromium主线，随Chrome 149 发布了。Google I/O 2026也把CSS shape()列为了重点能力之一。林林总总也有了近500个补丁被合并进Chromium。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fy0EMz75paqkFXvJL1O7L3SXZFkJpRGrA4d0MI15kfIL9EicSvwLfp3hygvyx3JsRicTbKen8nqlHIKCKLHGvicEP9ooxunPfRh9c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="Image"></p>
+<p>怪不得这帮人上来就能搞浏览器内核。。。</p>
+<p>OK聊完体验，说说怎么装，这部分特别简单。</p>
+<p>ego lite目前只支持macOS，Windows和Linux还在规划中。</p>
+<p>去官网lite.ego.app 下载一个dmg，装上就行。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fw5fnDUFmjSGpp0icJCcrCJXCVa6LY51qN5MicUsld5Ke7QQUDAiccQqgbad9q3kRhJ3MOyAXHaZicS6ooMDibAzhSjbXAIC9a9yIbY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="Image"></p>
+<p>我装完打开的时候它自动扫描了我电脑上的Agent工具，检测到了Claude Code和Codex，然后自动把ego-browser这个skill装好了。</p>
+<p>我什么都没配，直接就能用。</p>
+<p>之后我在Claude Code里跑任务，只要涉及到浏览器操作，它就会自动调用ego-browser skill，启动ego lite来干活。整个过程零配置，这点我觉得做得挺好的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzWw1ibGrH7lQIO49kuofoyYm4EZXPsd2zrnG9CvjIab2a18WR6BuhhytQJOkZbTzS3nETl8oOnQBNRENSChNpDaA024arDXT5s/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="Image"></p>
+<p>最后的最后，</p>
+<p>ego lite现在还处在很早期的阶段，</p>
+<p>现在Agent是已经可以写代码，做分析，生成内容，参与决策。但还是需要Skill，MCP等辅助它们去打开网页，登录系统，查看后台和跨页面操作时。</p>
+<p>ego lite是有在认真给Agent提供一个可理解，可操作，还低干扰的浏览器环境。</p>
+<p>不占用屏幕，</p>
+<p>不额外烧Token，</p>
+<p>不需要全程盯着它干活。</p>
+<p>稳稳地，</p>
+<p>很放心。</p>
+<p>@ 作者 / 卡尔 &amp; yc星辰</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>304人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.44 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 2.30 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.97 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 582.8 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/J_XtkE8zHBGOjyvGDHze8Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

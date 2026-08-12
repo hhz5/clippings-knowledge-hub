@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源一个Skill管理神器 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源一个Skill管理神器</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E4%BA%A7%E5%93%81%E9%BB%84%E5%8F%94">AI产品黄叔</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a><a class="chip" href="../index.html?tag=%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">版本控制</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E8%BF%AD%E4%BB%A3">产品迭代</a>
+    <span class="date">2026-04-16</span>
+  </div>
+  <p class="lead">你电脑里有多少个 Skill？我数了一下，超过100个作为一直在研究和玩耍Skill的AI玩家，不知不觉发现自己似乎有了太多的Skill，是的，整整超过100个。</p>
+  <article class="content"><p>原创 AI产品黄叔 AI产品黄叔 <a href="javascript:void(0);">AI产品黄叔</a></p>
+<p><em>2026年4月13日 11:33</em> <em>北京</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>你电脑里有多少个 Skill？  </p>
+<p>我数了一下，超过100个</p>
+<p>作为一直在研究和玩耍Skill的AI玩家，不知不觉发现自己似乎有了太多的Skill，是的，整整超过100个。  </p>
+<p>也发现自己的社群用户在 Skill 上面管理遇到了各种各样的问题。  </p>
+<p>有必要去做一个 Skills 管理神器。是的，黄叔已经把它开源，一键安装，功能强大。下面来给大家介绍一下怎么用它来方便你的 skill 管理。</p>
+<p>只要你的 skill 超过20个，我就建议你装一个，非常的简单。</p>
+<p>01</p>
+<p>PART</p>
+<p>社群里的问题，就是产品的起点</p>
+<p>我自己做社群，教大家写 Skill、用 Skill。每天社群里都有人在分享自己写的 Skill，也有人在问各种问题。</p>
+<p>教着教着，有两类问题开始反复出现：</p>
+<p><strong>&quot;黄叔，Skill 越装越多，怎么管理啊？&quot;</strong></p>
+<p><strong>&quot;黄叔，我改了一个 Skill 效果变差了，怎么回到上一版？&quot;</strong></p>
+<p>说实话，看到这些问题的时候我愣了一下——因为我自己也有完全一样的困扰。</p>
+<p>我甚至都不知道自己电脑里到底有多少个 Skill。感觉很多，但不知道它们在哪，不知道怎么管理，不知道都有什么。就是很乱。</p>
+<p>有些在 ~/.claude/skills/，有些在插件目录下三四层，有些在某个项目的 .claude/skills/ 里——那个项目我已经两个月没打开了。想找一个 Skill？靠记忆。想改一个 Skill？翻目录。改坏了想退回去？没有版本历史。</p>
+<p>我一直想给社群用户做一些产品，来解决他们真实遇到的问题。这次，他们的问题和我的问题完全重合了。</p>
+<p>那就做吧。</p>
+<p>02</p>
+<p>PART</p>
+<p>Git 是正确答案，但门槛太高</p>
+<p>比如版本管理这件事，我第一反应想到的是 Git。</p>
+<p>Skill 的本质就是一个文件夹，里面就是 SKILL.md 和一些配置文件。文件夹 + 纯文本，天然适合用 Git 管理。git init、git commit、改坏了 git checkout 回去——所有问题都解决了。</p>
+<p>我也确实想教大家用 Git 来管理 Skill 版本。</p>
+<p>但想了想，这件事对普通用户来说门槛太高了。</p>
+<p>我社群里大部分人不是程序员。他们学会了用 Claude Code 写 Skill，已经很厉害了。你现在跟他们说&quot;装个 Git，学一下 commit、push、pull、merge，遇到冲突要手动解决&quot;——这不是在帮他们，是在劝退他们。</p>
+<p>有没有一种可视化的方式，把 Git 的能力包在一个用户友好的界面里？让版本管理、Skill 查找、冲突检测这些事，变成点一下鼠标就能完成的操作。</p>
+<p>我在Skill管理器里，只要点开任意一个Skill，就能看到版本历史按钮，点击一下，可以快速完成版本管理：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGnyy3ZiallCdFNyA7aAEJjpO2FRXdDHBenXSWnFpibU3ILxxFEIe9kG93oSHVYcxzonFZv3AiczibpN5no0DRyiaZHF4P7zGJsx6Iko/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/j5GjAevlWGlcgtM6MaeSkwHI7f0Ltns6NGJKwgHzTWiasJce3w0jRA7iaxBT7BcxNjI1GjFRibHxLibm30PvMeMeicPaNFltepyYr0sHic2IFUsQs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>这就是 Skill Hub 的起点——给社群里的普通用户，做一个他们真正用得起来的 Skill 管理器。</p>
+<p>03</p>
+<p>PART</p>
+<p>让 CC 搭第一版</p>
+<p>想清楚要什么之后，剩下的事交给 Claude Code。我描述需求，CC 写代码，中间遇到问题它自己调试。核心逻辑就三件事：<strong>扫描、展示、编辑</strong>。</p>
+<p><strong>扫描</strong>覆盖了能想到的所有位置：全局 Skill 目录、插件目录（递归）、注册过的项目目录、常见开发路径（<del>/Documents、</del>/Projects、~/Developer……），甚至会往当前目录的上面再扫三级。</p>
+<p>一次扫描，100+个 Skill 全部聚合到一个页面。每个 Skill 有名字、描述、来源（本地 / 插件 / 符号链接）、作用域（全局 / 项目）、最后修改时间。</p>
+<p><strong>展示</strong>可以按来源分组、按作用域分组、按项目筛选、按关键词搜索。终于不用 find 了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGnibCQse3ySbV2ZzOp1Q90RVb6zNrRt54wg2cTKQl1JMiaW9Jj6ibfwKfwgASONgNtibY0HibWHeTTmBvYIiaCrp8cvfjmoP1pziamlcg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p><strong>编辑</strong>直接在浏览器里改 SKILL.md，保存就生效。而且每次保存前会自动拍一个版本快照——改坏了随时回滚。不用学 Git，点一下&quot;回退&quot;就行。</p>
+<p>一行命令启动：</p>
+<p>skill-hub</p>
+<p>浏览器自动打开 localhost:3456，完事。</p>
+<p>第一版解决了最核心的问题：看得见、找得到、改得了、退得回。</p>
+<p>04</p>
+<p>PART</p>
+<p>发到社群之后，需求才真正开始</p>
+<p>第一版做完发到社群之后，反馈来得很快。而且每一条都是我没预料到的。</p>
+<p><strong>有人用 Codex，不只用 Claude Code。</strong> 我写扫描器的时候只扫了 ~/.claude/skills，因为我自己只用 Claude Code。但社群里有人同时用 Codex、Cline、Warp，Skill 散落在完全不同的位置。</p>
+<p>这不是&quot;没想到&quot;，是没有使用场景就没有感知。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/j5GjAevlWGlFJPtSYPEACh7l97UEDzicPnVewjbat0jILw2xUaOCmOVibuSnBvfFxxahQJCCXro6h6kPq7VkArVbyqsJiaDuxyGoVjibu1X4u70/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p><strong>有人有两台电脑。</strong> Mac mini 在家当主力写 Skill，MacBook Air 出门用。167 个 Skill，怎么同步？</p>
+<p>这个需求听起来就是&quot;上传下载&quot;。但一展开，全是决策点：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>为什么难</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冲突策略</td>
+<td>两边都改了同一个 Skill，以谁为准？</td>
+</tr>
+<tr>
+<td>增量 vs 全量</td>
+<td>100+ 个 Skill 每次全量比对太慢，增量需要维护状态</td>
+</tr>
+<tr>
+<td>网络异常</td>
+<td>同步到一半断了，部分写入算不算脏数据？</td>
+</tr>
+<tr>
+<td>多设备</td>
+<td>不止两台，可能台式机 + 笔记本 + 公司电脑</td>
+</tr>
+<tr>
+<td>私有 Skill</td>
+<td>有些 Skill 里有 API key，要不要排除？</td>
+</tr>
+</tbody></table>
+<p>这些细节在 PPT 里永远不会出现。只有手沾泥巴的时候才会一个个撞上。</p>
+<p><strong>还有人说删 Skill 能不能批量？</strong> 简单但高频。167 个 Skill 里有不少试验品，一个一个删太痛苦。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGnVwQTqz8ibmldyex6AdgnZ69FehsT1v9JEP6Nwib6wmT8I40KeQSibNkH43efmlpTPOrXg3TtRoa5ERgLySQRXoaWeg4Fic0yJqeU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>每条反馈都变成了下一版功能。</p>
+<p>05</p>
+<p>PART</p>
+<p>每条反馈都变成了下一版</p>
+<p>基于这些反馈，密集迭代。批量删除加回收站、冲突标记、启用禁用开关这些都是常规操作，做了就有。</p>
+<p>但有两个功能值得展开说。</p>
+<p>第一个是相似检测</p>
+<p>扫出来 167 个 Skill 之后我自己都吓了一跳——我居然有好几对&quot;几乎一样&quot;的 Skill。同一个功能，不同时间写的，名字不同但内容重叠度 80%。社群里很多人也有这个问题：装了七八十个 Skill，根本记不清哪些撞了。</p>
+<p>所以加了基于关键词的相似度检测。自动把疑似重复的 Skill 聚类展示，支持中英文混合匹配。点进去能看两个 Skill 的内容差异，决定保留哪个。相当于给你的 Skill 库做了一次&quot;体检&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/j5GjAevlWGmOAriceWCb9ibNQvq1pqGU8F6YkT3rTSI5He9Stsz2WzoA8A6MBWHsyich42tTWyGlUgdLKROxlQiaFrAI0gEq6aP4cWVicOVIBA4Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>第二个是 Git 同步</p>
+<p>多设备同步这个需求，我一开始想自己做一套 sync 协议。但马上否掉了——冲突处理、增量传输、断点续传，每个展开都是一个工程。</p>
+<p>然后我想到：这些问题 Git 全都解决过了。</p>
+<p>最终方案是用 GitHub 私有仓库当免费后端：</p>
+<p>本地 Skill → git push → GitHub 私有仓库 → git pull → 另一台设备</p>
+<p>冲突处理交给 git merge，增量同步 git 天然只传 diff，私有仓库免费不用搭服务器。用户只需要在界面上设一个仓库地址加一个 Token，就能实现多端同步。Mac mini push，MacBook Air pull，不用懂一行 Git 命令。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/j5GjAevlWGnFtJiamC0bdfPTyyicnnD6VDx7iacKTmfUcJ2j3qApibmskE5C8hS2Fb8Z8QKokXyWF7sicmTj3ZNuibycYfaQGnbe335J1wCvhriaYU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>把复杂度交给 Git，我只做上层体验。这和搭知识库的逻辑一样——不是什么都自己造，是找到好的基础设施，在上面做好用户看得见的那一层。</p>
+<p>06</p>
+<p>PART</p>
+<p>需求不是想出来的，是用出来的</p>
+<p>回过头看这个项目，我觉得最值得记录的不是功能列表，而是一个体感：</p>
+<p>需求不是想出来的，是用出来的。</p>
+<p>每一个&quot;我没想到&quot;的功能——多平台扫描、相似检测、多设备同步——都不是我坐在那里想出来的。是真实用户拿着他们的真实场景，帮我撞出来的。</p>
+<p>在社群里教 Skill 的好处是，我离用户足够近。痛点不需要调研，不需要问卷，它们每天自己会冒出来。</p>
+<p>做产品的第一步不是画原型，是自己先用起来，然后丢给真实用户。他们的使用习惯，就是最好的产品经理。</p>
+<p>Skill Hub 现在开源了，一行命令就能用：</p>
+<p>npm install -g <a href="https://github.com/Backtthefuture/skillmanager/raw/main/release/claude-skill-hub.tgz">https://github.com/Backtthefuture/skillmanager/raw/main/release/claude-skill-hub.tgz</a> &amp;&amp; skill-hub</p>
+<p>整个仓库放在：<a href="https://github.com/Backtthefuture/huangshu">https://github.com/Backtthefuture/huangshu</a></p>
+<p>如果你的 Claude Skill 超过了 20 个，你可能已经需要它了。</p>
+<p>如无必要，勿增实体。基于这个原则，我并没有去开发 Mac 版本，我觉得使用浏览器就足够简单了。如果不小心你把浏览器给关闭了，可以使用一行命令，在终端里就能够重新打开它。</p>
+<p>skill-hub</p>
+<p>我也做了期视频介绍，欢迎大家查看：</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/xMFZhFC3Dyj7Y4Den7upTQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20 个Codex 官方提供的最佳使用案例 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">20 个Codex 官方提供的最佳使用案例</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a>
+    <span class="date">2026-06-02</span>
+  </div>
+  <p class="lead">最近我在翻 Codex 官网，发现它专门有一个Use Cases 页面，整整列了55 个真实使用案例。</p>
+  <article class="content"><p>空格丶 <em>2026年6月2日 11:32</em></p>
+<p>最近我在翻 Codex 官网，发现它专门有一个 <strong>Use Cases 页面</strong> ，整整列了 <strong>55 个</strong> 真实使用案例。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowGwLZZO9ibtrFNkvuX3mOBiaicslfDcZWtuzlVezZNFfI0ks76C5ANEpJEhDyQGREudmriamVhEpfDpdnaAiaaXLVpazTJsxlbPibkg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片"></p>
+<p>每一个案例点进去都写得非常详细： <strong>这个场景适合谁、解决什么问题、要用到哪些插件和技能、具体怎么一步步操作，</strong> 给出一段可以复制就用的 <strong>启动提示词</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxia3Sk4886OZElAF3ahJ7pUAQSSw5QIPBW6qt8y5oQMVODbAdAs871fa9DqHTY2tgTViaTvA0IsH4LcrzjwSJ6tJfUF9WFBtrCM/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>这给我提供了非常多可以落地的应用方向，也让我重新认识了 Codex 到底能干多少事。</p>
+<p>Codex 对比 Claude Code、cursor、openclaw 等 Agent 产品，它的优势是 ：</p>
+<p>一是 <strong>插件生态丰富</strong> ，GitHub、Figma、Vercel、Computer Use……几乎把日常工作要碰的工具都接上了，能真正跨应用把活干完；</p>
+<p>二是 <strong>长任务执行靠谱</strong> ，靠 <code>/goal</code> 和 Automations 这类能力，给它一个有明确&quot;完成标准&quot;的目标，它能自己分阶段推进、自我验证、连续跑好几个小时不用你盯着；</p>
+<p>三是 <strong>代码能力本身也很能打</strong> ，重构、读大型代码库、PR 审查、安全扫描都拿得出手；</p>
+<p>四是 <strong>用户体验好，</strong> 图形界面，点几下就能配置插件、看进度、审阅产物，比纯命令行的上手和使用成本低太多。</p>
+<p>下面，我从这 55 个案例里挑出了 20 个通用性最强、最值得上手的场景，按&quot;什么时候用、解决什么问题、怎么用、提示词&quot;整理出来：</p>
+<blockquote>
+<p><code>@xxx</code></p>
+<p>= 调用插件， <code>$xxx</code> / <code>/xxx</code> = 调用技能或命令。用前先装好对应插件/技能。</p>
+</blockquote>
+<p>1. 指挥电脑跨应用干活</p>
+<p><strong>场景</strong> ：一件事要在多个软件/窗口间来回切换。免去手动复制粘贴，它像人一样点击操作并在后台做完。</p>
+<p>提示词</p>
+<pre><code>@Computer 帮我把笔记里这周的会议记录整理成跟进清单，标注负责人和截止日期。
+</code></pre>
+<p>2. 清洗一份乱表格</p>
+<p><strong>场景</strong> ：CSV 里日期、金额格式混乱，有重复行和小计行。生成干净副本，原文件不动，附质量说明。</p>
+<p>提示词</p>
+<pre><code>清洗 @客户导出.csv
+现有问题：日期格式不统一；金额含符号/逗号/空值；有重复行；地区名用了别名；混进了小计行。
+我想要：输出一份干净 CSV，保留原文件；统一日期格式；附一段&quot;改了/删了/没把握&quot;的数据质量说明。
+</code></pre>
+<p>3. 设一个长期目标，让它自跑几小时</p>
+<p><strong>场景</strong> ：迁移、做原型、调提示词这类比一条指令大的活。定义好&quot;完成标准&quot;后无人值守、自我验证，达标才停。</p>
+<p>提示词</p>
+<pre><code>/goal 把项目从[旧栈]迁移到[新栈]，保证界面视觉完全一致，用 playwright interactive 验证，
+不要停直到全部完成且可回滚。
+</code></pre>
+<p>4. 合并前自动审 PR</p>
+<p><strong>场景</strong> ：人工 review 前想先有道机器把关。自动指出回归、漏测、风险改动，还能让它直接修。</p>
+<p>提示词</p>
+<pre><code>@codex review 重点检查安全回归、缺失的测试和有风险的行为变更。
+</code></pre>
+<p>5. 截图变响应式页面</p>
+<p><strong>场景</strong> ：有设计截图，想做成符合现有规范的页面。复用现有组件，用 Playwright 按不同尺寸对照截图迭代到一致。</p>
+<p>提示词</p>
+<pre><code>用我提供的截图和说明作为唯一标准实现这个 UI：复用现有设计系统和 token，紧贴间距/层级/响应式，
+桌面和移动都适配。用 $playwright-interactive 在真实浏览器里对照参考图迭代到一致。
+</code></pre>
+<p>6. 问表格一个问题并出图</p>
+<p><strong>场景</strong> ：有个数据文件，只想要一个结论加一张图。自动看列、算结果、生成本地可视化，可继续换维度。</p>
+<p>提示词</p>
+<pre><code>分析 @销售导出.csv
+问题：上季度哪个客户分层变化最大？请先检查各列再分析，生成 HTML 可视化并起本地预览。
+</code></pre>
+<p>7. 做一套可交付的 PPT</p>
+<p><strong>场景</strong> ：要做汇报或在品牌模板上批量更新幻灯片。逐页排版、生成统一风格插图，交付前查溢出和字体。</p>
+<p>提示词</p>
+<pre><code>用 $slides 和 $imagegen 编辑这份 deck：每页右下角加 logo.png；指定页右侧配抽象风插图；
+文本保持文本、简单图保持原生图表；沿用现有品牌；交付前跑溢出和字体检查。
+</code></pre>
+<p>8. 发版前替你点一遍产品</p>
+<p><strong>场景</strong> ：上线前想跑核心流程确认没坏。自动点击流程、记录失败，产出结构化 Bug 报告。</p>
+<p>提示词</p>
+<pre><code>@Computer 在[环境]里测试我的应用，测试这些流程：[用例1]、[用例2]、[用例3]。
+每个 Bug 给出：复现步骤/预期/实际/严重程度。非阻塞问题继续测，最后给 triage 总结。
+</code></pre>
+<p>9. 快速读懂论文/新概念</p>
+<p><strong>场景</strong> ：要啃一篇密集材料，想真正搞懂。多子代理并行阅读，汇总成带图示、证据表和待解问题的报告。</p>
+<p>提示词</p>
+<pre><code>我想从这篇材料学一个概念：[路径/链接]。以子代理工作流并行：一个理结构，一个补背景，
+一个查图表公式，一个当审稿人挑刺，最后汇总成 notes/概念-report.md，能引用就标出处。
+</code></pre>
+<p>10. 对授权仓库做深度安全扫描</p>
+<p><strong>场景</strong> ：动手修前想尽量多挖出潜在漏洞。全仓高召回审计，产出带证据的可审阅报告。</p>
+<p>提示词</p>
+<pre><code>/goal 对这个@github 仓库做深度安全扫描（我已获授权），整个仓库在范围内，用 Codex Security 插件 deep scan，
+保持只读不改代码。返回最终报告路径，优先总结需人工审查的发现。
+</code></pre>
+<p>11. 读懂一个陌生的大代码库</p>
+<p><strong>场景</strong> ：刚接手一个项目或一块陌生功能，不敢贸然改。梳理请求流转、说明各模块职责、指出风险点和该先读的文件。</p>
+<p>提示词</p>
+<pre><code>解释一下这个仓库里 &lt;某个系统区域&gt; 的请求是怎么流转的：
+说明各模块负责什么、在哪里做校验、动它之前要注意的坑，最后告诉我接下来该读哪些文件。
+</code></pre>
+<p>12. 重构 / 清理老代码</p>
+<p><strong>场景</strong> ：仓库里死代码、重复逻辑、超大文件让每次改动都很贵。在不改行为的前提下，分成小步、可审阅地清理和现代化。</p>
+<p>提示词</p>
+<pre><code>重构并现代化这个代码库：除非我明确要求，否则保持行为不变。
+先找出死代码、重复路径、超大模块和过时写法；把工作拆成可审阅的小步（删死代码、简化控制流、
+抽取 helper、替换旧写法），每步说明现有行为、结构改进和验证方法。先给我一个计划。
+</code></pre>
+<p>13. 从想法到能跑的 Demo</p>
+<p><strong>场景</strong> ：有个产品点子，想先有个能演示的原型来验证。先用图像生成定视觉方向，再实现最小可用版本并在浏览器里验证。</p>
+<p>提示词</p>
+<pre><code>用 ImageGen 为下面这个想法生成一张高质量 UI 草图，再用 Build Web Apps 插件实现它：
+[描述想法、目标用户和主要流程]。完成后用 $playwright-interactive 在浏览器里验证。
+</code></pre>
+<p>14. 让文档跟着代码自动更新</p>
+<p><strong>场景</strong> ：代码变了，文档总是滞后没人改。对比代码改动、PR、发布说明，只改需要改的文档并给出验证。</p>
+<p>提示词</p>
+<pre><code>根据这些来源更新[产品/功能]文档：本仓库的改动文件、提到新行为的现有文档页、我提供的 issue/PR/发布说明。
+只改需要改的文档，保留现有结构和术语，别把内部信息写进公开文档，跑相应文档检查，最后总结改了什么、验证了什么。
+</code></pre>
+<p>15. 把流程做成可复用的命令行工具</p>
+<p><strong>场景</strong> ：同样的脚本/查询每周都要手动跑一遍。让 Codex 做一个可组合的 CLI，以后任何对话/文件夹都能直接调用。</p>
+<p>提示词</p>
+<pre><code>帮我做一个可组合的命令行工具，封装[某个 API/日志源/导出/团队脚本]：
+要能从任意目录运行、有清晰的子命令和帮助说明、输出便于其他脚本消费。先给我一个设计方案。
+</code></pre>
+<p>16. Figma 设计稿转代码</p>
+<p><strong>场景</strong> ：设计师在 Figma 里画好了页面，要落地成符合现有规范的代码。</p>
+<p>用 <strong>Figma 插件</strong> （基于 MCP）拉取设计上下文、资产和变体，复用现有设计系统，再用 <strong>Playwright</strong> 在浏览器里对照 Figma 原稿迭代到一致。</p>
+<p>提示词</p>
+<pre><code>- 用 get_screenshot 拿到对应变体；
+- 复用现有设计系统组件和 token，翻译成本仓库写法而非另造一套；
+- 桌面和移动都响应式。
+验证：用 Playwright 在真实浏览器里对照 Figma 参考检查外观和行为，迭代到一致。
+</code></pre>
+<p><strong>场景</strong> ：有个 repo、截图或粗略点子，想快速变成一个能发链接演示的网站。用 <strong>Build Web Apps 插件</strong> 把它做成可跑的网站，再用 <strong>Vercel 插件</strong> 部署预览并交还一个实时 URL。</p>
+<p>提示词</p>
+<pre><code>用 @build-web-apps 把[repo/截图/设计/粗略点子]做成一个能跑的网站，
+再用 @vercel 部署预览并把实时 URL 给我。
+上下文：[网站要做什么]、[用到的数据/API/资产]、[风格或产品约束]、[不要改动的部分]。
+交还前先跑本地构建并确认部署就绪。
+</code></pre>
+<p>18. 给 AI 应用补上一套可重跑的评测</p>
+<p><strong>场景</strong> ：你的 AI 应用有提示词、模型调用、检索或 Agent，但没有可重复的评测，改动前心里没底。用 <strong>Promptfoo 插件</strong> （ <code>$promptfoo-evals</code> 和 <code>$promptfoo-provider-setup</code> ）把期望行为变成一套可运行的回归评测。</p>
+<p>提示词</p>
+<pre><code>用 $promptfoo-evals 给这个 AI 应用加一套 Promptfoo 评测；若还没有可用的 provider，
+先用 $promptfoo-provider-setup。
+要评测的行为：[回答质量 / 工具调用正确性 / 检索是否有据 / 业务规则 / Agent 任务完成度]
+改动前：先看用户实际走的路径和已有测试，提出最小可用的评测方案；在基线评测建好并跑通前别动生产配置。
+要求：尽量测用户真实走的应用路径而非裸提示词；fixture 不含密钥和敏感数据；提供一条本地评测命令。
+最后给出：改动文件、跑过的评测命令、通过/失败的用例。
+</code></pre>
+<p>明白，把提示词放进代码块、并简化一下。</p>
+<p><strong>19. 把可复用的工作流沉淀成技能</strong></p>
+<p>场景：有一段已经跑通的 Codex 对话、一套评审规则、一组测试命令或发布清单，不想每次都重新粘一长串 prompt，而是把它固化成 Codex 之后能直接调用的&quot;技能&quot;。用 $skill-creator 把流程提炼成一个 SKILL.md，主指令保持精简，参考资料和脚本各归其位，并验证结果可用。</p>
+<p>提示词</p>
+<pre><code>用 $skill-creator 创建一个 Codex 技能，用来 [修复失败的 CI / 把 PR 笔记转成行内评论 / 生成发布说明]。
+
+创建时请使用这些素材：
+- 可用范例：[说&quot;用这条对话&quot;、贴一个已合并的 PR，或粘一段满意的回答]
+- 来源：[Slack 线程、PR 评审链接、runbook、文档 URL 或工单]
+- 仓库：[路径，如果技能依赖某个仓库]
+- 要复用的脚本/命令：[测试命令]、[预览命令]、[取日志脚本]、[发布命令]
+- 理想输出：[你希望以后照着对齐的 Slack 更新、changelog、评审评论或最终答案]
+
+让 Codex 完成后定义好 $skill-name、说明触发时机，并验证技能可用。
+</code></pre>
+<p><strong>20. 跑可审计的&quot;已验证操作&quot;</strong></p>
+<p>场景：有一类需要反复执行的运维型操作：批量改权限、发邀请、调配额、客户初始化、迁移收尾等，既要按授权范围执行，又要每一项都留下可核对的凭证。让 Codex 先规整输入、跑批处理，对每条记录单独记成功/失败，再用日志或产物验证结果，最后给出可审计的汇总。</p>
+<p>提示词</p>
+<pre><code>我需要跑这样一个工作流：
+- 目标：[想达成什么]
+- 输入：[CSV、Google Sheet、列表、工单或文件路径]
+- 授权/策略来源：[Slack 线程、文档、工单，或无]
+- 执行器：[脚本、API、CLI、技能或手动流程]
+- 验证产物：[结果 CSV、日志、看板、截图或其他证明]
+
+请：
+- 先检查输入，只追问缺失的必填字段
+- 执行前规整日期、金额、负责人、ID
+- 支持时先跑一次 dry run，只执行已授权的范围
+- 每条记录记一行成功/失败
+- 瞬时失败只重试一次，不重跑已成功的行
+- 汇总总数、失败、重试和验证产物
+
+遇到不可逆操作或范围变更前先暂停等我确认。
+</code></pre>
+<p>上面提供的案例，不仅限于 codex，在用任何 Agent 产品的都可以试试，扩大你 Agent 的使用场景。详细的可以去官网查看更多。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/to12iSMXxJBoDNgRf5jr6w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

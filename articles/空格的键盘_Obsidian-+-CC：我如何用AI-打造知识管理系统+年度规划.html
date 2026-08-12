@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obsidian + CC：我如何用AI 打造知识管理系统+年度规划 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Obsidian + CC：我如何用AI 打造知识管理系统+年度规划</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Obsidian">Obsidian</a><a class="chip" href="../index.html?tag=%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86">知识管理</a><a class="chip" href="../index.html?tag=%E5%B9%B4%E5%BA%A6%E8%A7%84%E5%88%92">年度规划</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-01-12</span>
+  </div>
+  <p class="lead">最近很多人问我怎么做到日更。这都来源于我搭建的这个知识管理系统。</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年1月12日 08:16</em></p>
+<p>最近很多人问我怎么做到日更。</p>
+<p>这都来源于我搭建的这个知识管理系统。</p>
+<p>Claude code 让一些本地工具的价值被重新定义。</p>
+<p>特别是笔记软件 Obsidian 的价值上了不止一个台阶。</p>
+<p>它基于 vscode 的笔记工具可以安装各种插件。</p>
+<p>将 Claude code（简称 CC） 集成在 obsidian（简称 OB），可以说就是 <strong>全宇宙最强的笔记工具。</strong></p>
+<p>比如可以和 CC 共创文章保存在 OB 项目内；</p>
+<p>让 CC 爬取网络任意内容并以自己风格改写保存在 OB；</p>
+<p>让 CC 帮你制定年度计划——并拆解成每日行动，如下图我的计划画板。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wrhWQE6RmnxoBDSw0DgIW8lCX1fx1ibQw19On7hWIoFibdiaCs5jVc4pLw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image"></p>
+<p>那要完成这一切，需要搭建环境和文件夹目录结构、以及一些使用技巧。</p>
+<p>这篇文章分享我是怎么用 Obsidian + Claude Code 搭建个人知识管理系统的，主要结构是：</p>
+<ul>
+<li>安装配置环境（3 步搞定）</li>
+<li>配置年度文件夹结构 + About Me</li>
+<li>创建年度目标，拆解成每周和每日计划</li>
+<li>一些使用心得</li>
+</ul>
+<p>一、安装配置</p>
+<p>整个配置分 3 步，10 分钟搞定。</p>
+<p>1.1 下载 Obsidian 和 Claude Code</p>
+<p>obsidian：<a href="https://obsidian.md/">https://obsidian.md/</a></p>
+<p>Claude code：参考之前文章 <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247492908&idx=1&sn=942328417db27fa756124eece3c8c64d&scene=21#wechat_redirect">claude code 小白级安装指南和必备工具</a></p>
+<p>Skill的配置：参考之前文章 <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247493176&idx=1&sn=4cdb0304230757914b1875dd669fac2b&scene=21#wechat_redirect">Skill 很好，但怎么用？</a></p>
+<p>1.2 安装 Claudian 插件</p>
+<p>Claudian 是让 Obsidian 和 Claude Code 无缝对接的插件。</p>
+<p><strong>安装步骤：</strong></p>
+<ul>
+<li>从最新 Release下载 <code>main.js</code> 、 <code>manifest.json</code> 、 <code>styles.css</code></li>
+</ul>
+<p><a href="https://github.com/YishenTu/claudian/releases">https://github.com/YishenTu/claudian/releases</a></p>
+<ul>
+<li>在 vault 的插件目录创建文件夹：</li>
+</ul>
+<pre><code>/path/to/vault/.obsidian/plugins/claudian/
+</code></pre>
+<ul>
+<li>把下载的文件复制进上面目录
+<img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6w8jypX5BdWYoxbbd2O8IPviaXhPR7JdBQ9wk8jBl7ORWEFEet9BvJQdw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image"></li>
+<li>启用插件：</li>
+</ul>
+<pre><code>打开 obsidian——Settings → Community plugins → Enable &quot;Claudian&quot;
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wFCnGXxRWybdNESIpcpXvN1XcDkMoLSHShM5MTAq97b0fb2Kt7ibgI8w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p>装完之后，你就可以点击左侧的机器人按钮，在 Obsidian 右侧直接和 Claude 对话了。</p>
+<p>1.3 配置 Skills</p>
+<p>Skills 是让 Claude 具备特定能力的「技能包」。比如创建 Canvas 画布、处理 Markdown 等。</p>
+<p>推荐安装这个开源 Skills 包：</p>
+<pre><code># 克隆 Skill 到本地
+git clone https://github.com/kepano/obsidian-skills.git ~/.claude/skills/obsidian-skills-main
+# 复制到个人 Skills 目录
+cp -r awesome-skill ~/.claude/skills/
+</code></pre>
+<p>这个包包含：</p>
+<ul>
+<li><strong>json-canvas：创建和编辑 Obsidian Canvas 文件</strong></li>
+<li><strong>obsidian-markdown：处理 Obsidian 风格的 Markdown</strong></li>
+<li><strong>obsidian-bases：处理 Obsidian Bases 文件</strong></li>
+</ul>
+<p>配置好后，你就可以让 Claude 帮你创建可视化画布了。</p>
+<p>二、配置年度文件夹结构</p>
+<p>这是我最喜欢的部分。</p>
+<p>传统做法是自己一个个建文件夹，写规范。现在只需要告诉 Claude 你的需求，它帮你全部搞定。</p>
+<p>2.1 我的文件夹结构</p>
+<p>这是我发送给CC 的内容</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wkx7RszrMCvu0my73FAQqUOPc7tM2lrPm7MIia13ezPEqUcNibI8S6ZkQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"></p>
+<p>我是 CC 给我创建的目录结构：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wlUCRicW3OdIV2KPc2oWh4ic63udLt06ibRSl7LVog3WIbE5MAQooVhlMA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>这个结构借鉴了 <strong>「杜威十进制分类法」</strong> 和 <strong>「PARA」</strong> 方法，</p>
+<p>这是我根据我的工作内容做的定制。</p>
+<p>你可以根据自己的需求调整。</p>
+<p>2.2 让 Claude 创建 README</p>
+<p>关键来了，OB+CC可以释放双手，</p>
+<p>以后所有创建文件夹、撰写文档的工作。</p>
+<p>都通过对话框和 CC 共同完成。</p>
+<p>可以说整个文件夹是给 AI 用的。</p>
+<p><strong>所以每个文件夹都要有 README</strong> 。</p>
+<p>README 要说明这个文件夹的作用是什么。</p>
+<p>AI 在里面创建文件时要遵循什么规则。</p>
+<p>我在 README 里规定了文件命名规范：</p>
+<p>MMDDxxxx.md</p>
+<ul>
+<li><strong>MMDD：月日，如0111表示 1 月 11 日</strong></li>
+<li><strong>xxxx：文件名/主题</strong>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wfvlraYGKIHibtZhUWfKY2sTU7pgg3gnyWb4lHJVKKQOibS714HG6ScBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></li>
+</ul>
+<p>以时间+名称来命名，方便我管理</p>
+<p>比如 <code>0111如何用AI提升写作效率.md</code> 。</p>
+<p>README 最后还加了一行 AI 指令：</p>
+<blockquote>
+<p><strong>AI 指令</strong>: 在此文件夹创建文件前，请先读取本 README 并遵循命名规范。</p>
+</blockquote>
+<p>这样每次让 Claude 创建文件时，它会先读 README，然后按规范命名。不用你每次都提醒。</p>
+<p>2.3 readme 创建方法</p>
+<p>直接告诉 Claude：</p>
+<pre><code>帮我创建以下文件夹结构，每个文件夹下写 README，
+说明每个文件夹的用途和命名规范（MMDD+文件名）：
+
+00 收件箱
+01 内容创作
+02 软件开发
+...
+</code></pre>
+<p>一条指令，全部搞定。</p>
+<p>2.4 创建 About Me 文件夹</p>
+<p>这是一个容易被忽略但非常重要的设置： <strong>让 AI 了解你是谁</strong> 。</p>
+<p>我创建了一个 <code>aboutme/</code> 文件夹，里面放了几个文件：</p>
+<pre><code>aboutme/
+├── README.md          ← AI 读取指南
+├── 我的介绍.md        ← 个人背景、职业经历
+├── 写作风格.md        ← 语言偏好、格式习惯
+├── 性格特点.md        ← MBTI、沟通风格
+├── 内容定位.md        ← 受众、方向、差异化
+└── 审稿标准.md        ← 文章质量检查清单
+</code></pre>
+<p>没有这些信息，AI 每次都是从零开始猜你的风格。有了这些信息，AI 能：</p>
+<p>知道我是谁，我的内容服务于谁，我的目标是什么，从我的角度来创建文件，自动匹配我的语言风格。</p>
+<p>三、创建年度目标，拆解成每日计划</p>
+<p>这是最省力且最有价值的部分。</p>
+<p>3.1 把年度目标告诉 Claude</p>
+<p>关键是要把目标描述得足够具体。不是简单说「我想做自媒体」，而是要包含：</p>
+<ul>
+<li><strong>量化目标：具体数字，不是「做大做强」</strong></li>
+<li><strong>当前基线：现在在哪，才能算出差距</strong></li>
+<li><strong>变现路径：怎么把流量变成收入</strong></li>
+<li><strong>内容体系：持续输出什么内容</strong></li>
+<li><strong>执行节奏：每天/每周做什么</strong></li>
+</ul>
+<p>下面是一个 虚构的示例（你可以根据自己情况修改），发送下面内容给 CC。</p>
+<pre><code>我 2026 年度目标：【流量目标】
+- 技术博客：月访问量从 5000 做到 5 万
+- Twitter/X：从 2000 粉丝做到 1 万
+- 公众号：从 3000 做到 2 万【变现目标】
+- 付费专栏：上线一个 ¥199 的技术专栏，目标 500 人订阅
+- 技术咨询：建立付费咨询渠道，¥500/小时
+- 开源赞助：GitHub Sponsor 月收入 $200【内容体系】
+- 核心方向：AI 开发工具、效率提升、独立开发
+- 内容金字塔：
+  - 日更：Twitter 技术心得/工具分享
+  - 周更：公众号深度文章 2 篇
+  - 月更：技术教程视频 2 个【执行节奏】
+- 每日：发 1-2 条推文，回复评论
+- 每周：2 篇长文 + 1 个视频脚本
+- 每月：1 次数据复盘 + 下月规划【知识库建设】
+- AI 编程工具使用手册
+- 独立开发者工作流
+- 开源项目运营经验
+
+请帮我：
+1. 拆解成 12 个月的里程碑
+2. 设计每日执行系统（晨间、工作、晚间）
+3. 设计每周节奏（周一到周日各做什么）
+4. 创建可追踪的模板
+</code></pre>
+<p>3.2 Claude 输出了什么</p>
+<p>Claude 帮我创建了一份完整的年度计划文档，包含：</p>
+<p><strong>月度里程碑</strong> （按季度）：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wWibJB0MlHUibJibGc72uxCmX983iadnED86FwfwvyKyfXiawzSOp3Fdiab1w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image"></p>
+<p><strong>每日执行系统</strong> ：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wv3vBclqictBhokghBNYGUkwBWcSNbe8FBygfFlW1eQmcNatV9LCX7xw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>3.3 创建可视化 Canvas</p>
+<p>这是最惊艳的部分。</p>
+<p>我让 Claude 用 JSON Canvas 格式创建了两个画布：</p>
+<ul>
+<li><strong>年度目标拆解画布：把所有目标可视化，一眼看到全局</strong>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wjVawOPeaUnIiaicrPG0LscOlv9q8FIx48K3KpYn8SG77PsZz5ujZeZcg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"></li>
+<li><strong>每日每周行动指南画布：每日循环和每周节奏的可视化</strong></li>
+</ul>
+<p>可以看文章开头的图</p>
+<p>在 Obsidian 里打开<code>.canvas</code> 文件，可以自由缩放、拖动、编辑。</p>
+<p>比文字清单直观 100 倍。</p>
+<p>3.4 创建模板</p>
+<p>Claude 还帮我创建了两个模板</p>
+<ul>
+<li><strong>周回顾模板：每周日填写，统计数据、反思收获、规划下周</strong></li>
+<li><strong>每日打卡模板：每日执行清单，晨间、创作、互动、复盘</strong>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5otPc5ia4S13zoicvBiaBha6wVmgDsuKDU7Czm3q3laeyoOfUbfCyOia3Lce9rGkibzhoOCicjLHQNlNnA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></li>
+</ul>
+<p>以后每周日复制一份周回顾模板，甚至可以让 AI 根据我每周创作的内容自动生成每周数据模板。</p>
+<p>按规范命名（如 <code>0112周回顾-W2.md</code> ），持续追踪进度。</p>
+<p>整个框架搭建好以后，就可以将自己以后的内容都保存在这里。</p>
+<p>我还做了播客、推文的文件夹，是用来保存我看到的好的播客和推文。</p>
+<p>这些我每天都会花时间去看。</p>
+<p>CC 可以做到自动同步下载我收藏的推文到本地。</p>
+<p>只要我发送播客的链接，就能翻译文字稿到本地。</p>
+<p>总之，这个系统包含了我的阅读、笔记、内容和复盘。</p>
+<p>这个管理系统降低了我输入到输出的摩擦。</p>
+<p>更丝滑的每个环节都有 AI 的协助。</p>
+<p>但我才运行了两周。</p>
+<p>这个结构会跟我我实践过程而更新。</p>
+<p>行动建议</p>
+<ul>
+<li>先把 Obsidian + Claude Code + Claudian 装好，体验一下</li>
+<li>创建自己的文件夹结构，让 Claude 写 README</li>
+<li>把年度目标丢给 Claude，让它帮你拆解成执行系统</li>
+</ul>
+<p>后续我继续分享我的知识管理成果。</p>
+<p>这个系统可以说就是 <strong>全宇宙最强的笔记工具。</strong></p>
+<p>你可以和 CC 共创文章保存在 OB 项目内；</p>
+<p>还可以让 CC 爬取网络任意内容并以自己风格改写保存在 OB；</p>
+<p>感谢你读到这里</p>
+<p>我是空格，持续分享 AI 产品的思考与实践。你有什么 Obsidian 使用技巧？欢迎评论区分享。如果有用，点赞转发支持一下。</p>
+<p>每天好心情</p>
+<p>修改于 2026年1月12日</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 24.05 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 24.05 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/FRAzFpgRkHYKFb3EnpkxGQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

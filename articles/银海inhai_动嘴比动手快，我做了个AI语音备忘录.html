@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>动嘴比动手快，我做了个AI语音备忘录 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">动嘴比动手快，我做了个AI语音备忘录</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=AI%E8%AF%AD%E9%9F%B3%E5%A4%87%E5%BF%98%E5%BD%95">AI语音备忘录</a><a class="chip" href="../index.html?tag=IOS%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4">IOS快捷指令</a><a class="chip" href="../index.html?tag=%E9%98%BF%E9%87%8C%E4%BA%91%E7%99%BE%E7%82%BC">阿里云百炼</a><a class="chip" href="../index.html?tag=%E9%93%B6%E6%B5%B7">银海</a>
+    <span class="date">2025-05-29</span>
+  </div>
+  <p class="lead">灵感本易逝，行动应当时。IOS快捷指令也可以是验证MVP的好平台。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQ4SUeFQm9AjKrE73NlDp4CHN7eKibmic1p4icicuOUgodaqib9jLtsm8vCcg/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 银海inhai <a href="https://mp.weixin.qq.com/">AI产品银海</a> <em>2025年05月12日 08:23</em></p>
+<p>Hi，我是银海。</p>
+<p>你身边的AI产品经理，陪你解决每一个真实问题。</p>
+<p>你有没有过这样的时刻？</p>
+<p>灵感突然冒出来，打字还没开始，想法已经飞走了。</p>
+<p>或者会议刚结束，脑子里还有不少重点内容，但此刻双手不方便打字记录。</p>
+<p>我有。我也一直在找更高效的记录方式。于是我决定，自己动手，做一个“只属于我”的语音备忘录工具。</p>
+<p>它不是什么高大上的 App，也不是团队产品，而是我用 iPhone 自带的“快捷指令” + “阿里云百炼大模型平台”的能力，自己拼起来的一套“小而美”的AI语音备忘录工作流的工具。</p>
+<p>今天就来跟你分享一下它的制作思路、使用方法，还有开箱即用的链接，你可以直接一键上手。</p>
+<p>市面上语音笔记工具不少，为什么还要自己做？</p>
+<p>说白了，就是两个字： 顺手。</p>
+<p>很多产品功能太重、流程太多、订阅还贵。我更想要的是—— 一个随时随地可以打开说话的入口，说完就能让AI自动整理好，丢到我日常用的工具里 ，像是备忘录、飞书多维表格、Cubox、Notion，甚至是发个邮件都行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQEc4guF8KLFPgXyL29VsBtiap3M2UgA9w6pgicVPox44uYRJmvUJCKL9Q/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>于是，我用 iOS 快捷指令搞了个轻量级语音听写入口，再用阿里云百炼的 Qwen-plus 模型（成本低、效果好、够用就行）帮我自动整理语音内容，转成结构清晰、条理分明的备忘录。</p>
+<p>整套下来，只需要点一下图标，说完就完事。</p>
+<p>整个工具链其实也简单：</p>
+<p><strong>1.iOS 快捷</strong> <strong>指令</strong> 这是苹果自带的神器。如果你用的是 iPhone，那你基本可以直接无门槛开干了。</p>
+<p><strong>2.阿里云百炼</strong> <strong>大模型</strong> <strong>平台 用来调用大模型。我用的是性价比很高的 Qwen-plus 模型，不仅识别效果好，还能根据我的提示词自动把语音转成结构化内容。比如会议纪要、关键词、ToDo列表、灵感清单，统统搞定。</strong></p>
+<p>但是如果你不是 iPhone 用户，很遗憾那可能就不太适用了，但这个思路你可以迁移到安卓的自动化工具里，比如 Tasker 或 AutoInput，一样能实现。</p>
+<p>下面是功能流程设计四步拆解思路：</p>
+<p><strong>1.新建快捷指令</strong> ： 打开快捷指令，创建一个新的快捷指令，如果觉得下面的配置麻烦也可以直接复制我的模版。 公众号后台回复“语音笔记”获得开箱即用的快捷指令链接。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQUYKtG8vHQ6Qu5tiaTSibIPs6Eb2BaQLYCRyxL1SxjN5Mw5nKKiaIygJYQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>2.语音转文字</strong> ： 系统会自动将语音转成文本，并向大模型平台发起文本处理的请求接口。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQqQ5v9XKFLrfHxDSI5iaSEgu4Sdb80ZQDVBIrHtWIMOEg3MylK1huLNA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>3.结构化整理</strong> ： 文本自动发送给阿里云大模型，结合我的提示词，生成格式清晰的备忘录内容。</p>
+<p>你需要上阿里云百炼大模型平台获取自己的鉴权密钥信息，填入“ Authorization”的值中，进入平台后登陆完成后，可以点击左下角可以获取“API-KEY”。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQnYiatcOawbv6Nv94f6kz1j5Txk8NKMibm0qkQFviasbchRjkIgnqvbGVQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>阿里云百炼大模型平台 地址： <a href="https://bailian.console.aliyun.com/">https://bailian.console.aliyun.com/</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQ1SC0hTg7DkYyKSN3LY9t9ANg7H3jPa2wyEDfp2ibTl6WHKmueg9FcibQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>如果还没API-KEY的话，可以直接创建一个，另外这个新用户都有免费的额度赠送的，咱们用来做语音笔记的模型处理绰绰有余了。</p>
+<p><strong>4.写入到备忘录</strong> ： 最终结果可以自动写入备忘录、发送到 Cubox、同步到 Notion，甚至对接你自己的 API。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQ47XlF3Lic6nUiczTRz0PaGfiaKvN1bibYLHWlnjxfNzpMT2bWVOY3t1gYQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>是不是发现快捷指令的配置也不难，下面是完整的截图预览：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQ7Qqg8aqbC3iaEmuMKBHKA5cjzhPct1qpamqGAVmlpvAZjyRhiaaOtWHQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>配置完成之后咱们可以预览一下效果：</p>
+<p>你说话的速度永远比打字快多了，再加上大模型，更高效了。</p>
+<p>即便我们一开始说的顺序会有一些混乱，可以让大模型帮助你来润色整理，让全篇内容看起来更加可靠（这个方法咱们在之前的创作中也有分享过： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247484465&idx=1&sn=6b0e28e059b8efe38d633c2d46676180&scene=21#wechat_redirect">我是怎么“口喷”就能写出文章的</a> ）</p>
+<p>我已经把这个快捷指令做成了开箱即用的版本，直接点击链接就能导入到你的 iPhone 里， 修改一下你的模型 API 的鉴权信息就能用了。</p>
+<p>可以直接在 公众号后台回复“语音笔记” ，系统就会自动发送给你 一个开箱即用的快捷指令链接，可以一键复制到你的手机中。</p>
+<p>你还可以根据自己的习惯修改提示词，定制成自己的风格，比如“请用会议纪要风格总结”、“请输出待办事项清单”之类的。</p>
+<p>下面是我的提示词，你可以替换在快捷指令中获取“URL”内容中的请求题信息，在“system”的“content”里面，按照你自己的需要去修改：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6SCeU6LGnoQQo46mL6nibmQZyMDHyiaSJT8YI2MqCBg3LKOmkD7rwYNvP8iaBlKE8o9xGGfBsTDzyhA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code>你是一位经验丰富的口播稿文本纠错专家，擅长识别语法错误、语序不当及表达不通顺的问题，具备优秀的语言联想与优化能力。请对以下文本进行精细修改，使其更符合自然表达习惯，适合用于口播场景。
+
+输出结构统一为五个部分，段落间换行，内容简洁明晰：
+
+标题：提炼修改后的文本主题；
+
+原文：保留原始内容，便于对照；
+
+修改后：提供流畅自然的优化版本；
+
+有启发：提炼出1句语言表达上的启发或通用技巧；
+
+关键词：提取3-5个与修改相关的关键词。
+
+请直接输出结果，无需其他解释说明。
+
+以下是需要修改的文本：
+</code></pre>
+<p>我一直相信，在 AI 浪潮之下， 人人都有能力做出属于自己的“小而美”的产品。</p>
+<p>不一定非得等着别人做，我们完全可以自己动手，把一个灵感变成一个实实在在能用的工具。</p>
+<p>就像这次的AI语音备忘录，它就是一个很简单的工作流程重塑，没有炫酷的界面，也不是全能王，但它恰好解决了我最常见的记录难题。</p>
+<p>你也可以试着从一个简单的痛点出发，构建属于你的第一个 AI 工作流。</p>
+<p>别怕折腾，先从一个小功能开始，慢慢你会发现：</p>
+<p>创造的乐趣，远远大于使用的快感。</p>
+<p>下一期我也可能还会分享更多这样的“小工具改造术”，我是银海，你身边的AI产品经理，陪你解决每一个真实问题，我们下期再见 👋</p>
+<p>© THE END</p>
+<p>觉得我的内容还不错， 顺 手点个赞、分享、在看</p>
+<p>都是对我最好的认可！</p>
+<p><img src="https://mmbiz.qlogo.cn/sz_mmbiz_png/DhduwiaBa7lcH5oG1yRdR55WmAziaFjE8n80qrKYXWyomZyd6hdsAK5pRB7X7usIO0658XjGeyibbb4Qibn01MhSZw/0?wx_fmt=png" alt=""></p>
+<p>充满你的好奇心</p>
+<p> <a href="https://mp.weixin.qq.com/">稀罕作者</a></p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>AI产品银海</p>
+<p>| |  | 2 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.97 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&amp;mid=2247485114&amp;idx=1&amp;sn=a740315ab9035bd263986db0eb6f7053&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

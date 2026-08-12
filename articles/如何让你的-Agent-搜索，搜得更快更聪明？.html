@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>如何让你的 Agent 搜索，搜得更快更聪明？ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">如何让你的 Agent 搜索，搜得更快更聪明？</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E4%B8%80%E6%B3%BDEze">一泽Eze</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Agent%E6%90%9C%E7%B4%A2">Agent搜索</a><a class="chip" href="../index.html?tag=%E8%B1%86%E5%8C%85%E6%90%9C%E7%B4%A2">豆包搜索</a><a class="chip" href="../index.html?tag=%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5">搜索策略</a><a class="chip" href="../index.html?tag=Skill%E5%AE%9A%E5%88%B6">Skill定制</a>
+    <span class="date">2026-07-28</span>
+  </div>
+  <p class="lead">从 0 到 1，获取你的专属 Agent 搜索 Skill</p>
+  <article class="content"><p>一泽Eze 一泽Eze <em>2026年7月28日 09:30</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5RibsGBzYA9rRBTGicHoINWJQMDL0KnnTAtibAGmeqYANyPdJV7l760noq3dSrvibpseMOxQeUrKI9a4BiaMdJnzJBqOy6hgzb4QB8/640?wx_fmt=png&from=appmsg#imgIndex=0" alt="图片"></p>
+<p>即使到了人手 N 个 Agent 产品的时代，大部分人还在用 Agent 产品的默认搜索与策略。</p>
+<p>但你可能没注意到的是，Agent 们的默认搜索并不好用 ⬇️</p>
+<p>1）比如，想搜 RAG 相关的论文，却搜到大量非论文平台的文章信息。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb6mmP3f0bicGkHIlKhbvyMnyDia5NViciaPe10Vm1KIYC9ow7NTT83DruL1e48EKwKUgKjsnRgicPgKZIE5QgRPicsZdrR0AcYSreFxg/640?wx_fmt=png&from=appmsg#imgIndex=1" alt="Image"></p>
+<p>甚至搜索结果中还有 AI 生成内容…</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb6HfR5HRMQlKicR1zHiawduzAlwzEBccx9syicaxwNEXficy0CYQj0CiaiaOzoiaNsQe1q7kzwPUMKAHMkI0uBFiaRr26e0PY2adbwRUQg/640?wx_fmt=png&from=appmsg#imgIndex=2" alt="Image"></p>
+<p>2）想搜某个 AI 模型的规格、定价？理应直奔官方定价文档的 Agent，却被淹没在默认搜索策略的第三方资讯结果中。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5GibRMHXIyGgwkL7oZ6j3hhl0101lvO0R7WQaEZ4ib3EEzBqR3ZN2vibN4uwEw9DibiaxRoL0FJuwiadhHuwRhjcgGaZupf7FBWNTiag/640?wx_fmt=png&from=appmsg#imgIndex=3" alt="Image"></p>
+<p>一个好的搜索策略，能够有效增强 Agent 调研、工作时的信息时效性与准确度。</p>
+<p>我最近用比较多的是「豆包搜索」Web Search 服务（即豆包 APP 背后的搜索能力，现在面向开发者和企业提供独立调用服务）</p>
+<p>每月 500 次免费查询，足够自用需求（我中度使用，一个月 200 次左右）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb6uk7QZcE8VVGnLAeib0P8uKSMy0llBtZ2ib4gWA7In4z9QsTalXrNfuoFxDkg6M0Q4d9Bok7w1VZkFF86QGloRuycMPYib4bicT70/640?wx_fmt=png&from=appmsg#imgIndex=4" alt="Image"></p>
+<p>这篇文章刚好拿它为例，和你分享：</p>
+<ol>
+<li>1. Agent 是怎样完成联网搜索的原理</li>
+<li>2.如何 0-1 定制自己的 Agent 搜索 Skill</li>
+</ol>
+<p>看完就能上手，让自己的 Agent 查信息时更准、更聪明。</p>
+<h2>📍 从这里开始：AI 是如何完成联网搜索的</h2>
+<p>此段为面向非技术读者的科普，专业读者也可以分享给身边还不了解的朋友们</p>
+<p>通常来说，Agent 在执行联网搜索任务时，可以理解为有两个关键环节：广撒网、定点挖。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5z5vqe4lw3iaeHCF77oWYouuolziaSzib9cnbVdVEwYbseS9aPwEnQbPlknX5oQpo73SqryxzjrVia4N6mZ5iaT3naQ6AbJQOUWEh8/640?wx_fmt=png&from=appmsg#imgIndex=5" alt="Image"></p>
+<p>讲个具体例子（以 Doubao-Seed-Evolving 模型驱动的 Agent 为例）：</p>
+<h3>1）广撒网：</h3>
+<p>联网获取信息的第一步，往往是进行广泛的「Web Search」：即根据用户输入，Agent 构造搜索请求。</p>
+<p>比如，“今年世界杯冠军是哪只队伍？”</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5GAKR9wLl0QkCSCdWzmLmAlIzOexGYMNw6C9pElZ59k5Un9kEcuglQCmkHMDvyr1hXbD3pwexvgVCIniaKKAoehXrhnPibnaMI8/640?wx_fmt=png&from=appmsg#imgIndex=6" alt="Image"></p>
+<p>查询会被 Agent 改为“2026 世界杯 冠军”等关键词，以期命中有对应关键词的网页结果 ⬇️</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb41DbgTU2BbPhTxgzyoWTaVwsY0emsbOT6w7ho1YeCsCO2GNfySy6CKGKw26r397LfJjKrJe58Pc2d7KDjCKDYz9qHIrIPvfrc/640?wx_fmt=png&from=appmsg#imgIndex=7" alt="Image"></p>
+<p>通常情况，AI 搜索服务将返回复数个包含关键词的网页结果，并且附有网页标题、命中片段（有些是摘要后的网页概述）、来源链接。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb6ibED3FBCjDibZvrxHUvicx1SFvHYcibibLsMP1XxNJ3FSUQOYztjJS04JgllFtAgMsYAwrFZibjj8ME2UWGwG1TLxm43awMdICUfkc/640?wx_fmt=png&from=appmsg#imgIndex=8" alt="Image"></p>
+<p>每一条结果基本由以上内容构成</p>
+<p>如果刚好返回片段内有直接可用的信息，模型就能结合用户的原始问题，延展出最终回答——“西班牙加时 1:0 绝杀阿根廷”</p>
+<h3>2）定点挖：</h3>
+<p>不过通常情况下，搜索的返回片段有字数限制：</p>
+<ol>
+<li>1.有时是因为不够长，没命中直接可用的答案</li>
+<li>2.有时是问题需要更长的源信息，例如“决赛的详情经过是怎么样的”</li>
+</ol>
+<p>遇到这种情况，就很难仅凭 Web Search 返回的检索片段 or 摘要，取得足够信息。</p>
+<p>此时 Agent 就会借助「fetch」工具，访问特定网页，获取完整内容。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb42BX0mLh3XP4OwBkd0HvP5o33jhQ9FkDUQEo3ny7P1yIbTmpOPU6ujWvAq1h4CyTJH1EQAfYS8eECRfZ722NxdJhszAFXx5rs/640?wx_fmt=png&from=appmsg#imgIndex=10" alt="Image"></p>
+<p>如同人读完整网页一样，fetch 工具的作用是，给 Agent 返回经过格式清洗、模型可读的原始内容，让 Agent 看到正文。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb5FfsxYy4O4bNrXuozF1icmQIZrK53SfYbhaSicPrDWFKibuH3Yib8zzvCS59Q3LYuotrlwh3n7IWnsJEzONTlzbhcs5hpVDyEch54/640?wx_fmt=png&from=appmsg#imgIndex=11" alt="Image"></p>
+<p>不过也有两种特例：</p>
+<p>特例 1：部分 fetch 工具会内置一个轻量模型，主模型在发起 fetch 时，附上查询 Prompt，即可由轻量模型代看网页返回直接可用的答案。</p>
+<p>以此避免在上下文，中完整加载正文，减小 context 窗口压力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4ajtzHDlV0zOwdfGuT5h0cXfo25FjKFqtYNaObufQGJb2zjw6I0WftznhXH5FS9JJ6iaBFDIr2hVOZ5WklibeOxbVEN8e0zENdA/640?wx_fmt=png&from=appmsg#imgIndex=12" alt="Image"></p>
+<p>特例 2：当任务 Prompt 直接指定了要看的网页链接时，模型也可直接 fetch 对应网页，跳过搜索环节</p>
+<p>BTW： Fetch 一般只能读静态/非登录网页，需要读动态登录、有访问限制的页面，就得 Agent 代操作浏览器、让用户协助登录后才能获取对应信息。</p>
+<p>而刷屏去年一年的 Deep Research 能力，大都则是 Agent 建立在这两个环节上，通过多轮“搜-挖”反馈循环，不断补充搜索目标，得到大量信源比对求证后的深度回答。</p>
+<p>OK，到现在，你已经搞明白了 AI 是如何联网查信息的，并且熟谙 Deep Research 之道了 ✅</p>
+<h2>怎么选搜索服务：好的搜索，该有哪些能力？</h2>
+<p>也简述了豆包搜索的核心能力与定价情况</p>
+<p>搜索决定的是 Agent 向外获取信息的起点质量。</p>
+<p>如果在这一步能直接给出 Agent 真正需要的内容，就能省去大部分的 Fetch、浏览器使用。进而避免「搜-挖」循环塞入过多的搜索上下文，更好地缓解 Agent 的上下文腐烂情况，保持长程任务的智力在线。</p>
+<p>故 Web Search 的评判标准，绝不仅在搜索速度，其根本在「低成本地替 Agent 拿回真正需要的数据」。</p>
+<p>我在自己的 Agent 产品中，也把豆包搜索做成了推荐的配置选项：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb5nVKt5Miaf43pJX8JXSD7IBticqRIX783X7cicywZibDmGtEHXeYBJVyozPWDl7gtPoUciaATHjSekW2v3amH1VRckvOhogcjJIfHg/640?wx_fmt=png&from=appmsg#imgIndex=13" alt="Image"></p>
+<p>以「豆包搜索」为例，我在挑搜索服务时，比较关心的点在于「价格、可信度、可定制项、搜索及时性」：</p>
+<p>1️⃣ 定价是否足够低？</p>
+<p>模型定价已经给 Agent 带来了大量的成本，能省则省是每个开发者的必然追求。</p>
+<p>豆包搜索给了每人每月 500 次免费搜索，超额后单次定价 0.02 元/次……还有包月套餐模式，限时定价能低至 0.005 元/次（不过包月有日限额）</p>
+<p>为了方便对照参考，这是市场的大致定价情况</p>
+<ul>
+<li>国内大部分搜索，分不同能力等级，定价普遍在 0.02～0.08 元/次，少数有月免费额度</li>
+<li>国外 Tavily 等，有月免费额度，但付费区间定价基本在 0.03 元/次以上</li>
+</ul>
+<p>如果你是自带 Key 去 Agent 工具内配置搜索，那基本 500 次以上的免费额度就已经绰绰有余。</p>
+<p>2️⃣ 可信度</p>
+<p>靠谱的 AI 回答源自 权威的搜索结果 与 交叉比对。前者只能靠 Web Search 服务商的数据。</p>
+<p>豆包搜索针对搜索结果，做好了「非常权威～不权威」的多层分级。</p>
+<p>以我 25 日实际调用 API 情况为例，搜索当天刚发布的「Opus 5」，返回结果中为不同结果打好了权威度标记</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb7X8wkeS2R3ME1FKGbabCj2HF43CGNVapibPGhh0hY3WibypiaeZyjjKCqGS1kiaTfFZgWibufFOsGFGv02HC4DwjiajD8sbVhaxdXds/640?wx_fmt=png&from=appmsg#imgIndex=14" alt="Image"></p>
+<p>我找过搜索团队，问了很直白的问题：怎么让我们相信你们说的「权威」是「权威」呢？</p>
+<p>他们的回答是：</p>
+<ul>
+<li>一方面，对站点动态评估权威度（结合站点发文质量定期更新标签）可通过 rerank，避免低质内容进入结果池</li>
+<li>另一方面，部分主要内容平台，还会细到以作者权威度与单篇内容专业度，进行打分，过滤营销号内容</li>
+<li>另外，也做了识别 AIGC 生成的低质内容、Agent 注入攻击内容并过滤的能力</li>
+</ul>
+<p>实测下来，以今日头条为例，搜索结果确实以作者权威度与单篇内容专业度，进行了动态打标与过滤。（你可以自行评判这组标签是否靠谱 👀）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb6NEqviciclribx0z0fWFiasbR8349eCAj2VLociaLAB4rBv3PtxWsraLqHR98c2jEylVIfmJY3MicOfWpF97EH4ibuluabyDH0JYYGXs/640?wx_fmt=png&from=appmsg#imgIndex=15" alt="Image"></p>
+<p>3️⃣ 可配置功能是否充足？</p>
+<p>「搜发表于 XX 网站的新闻」、「XX 平台质量很差，不要搜对应信息」、「只看最近一周的新内容」、「还想搜出图片结果」……</p>
+<p>为了精细搜索，除开权威度区分，往往还需要 Agent 根据搜索需求，动态配置 站点黑、白名单，筛选时间、筛选结果类型等。</p>
+<p>豆包搜索有个点真的不错：他们 Global、Custom 两个版本和所有可配置项，对免费额度用户也完全开放</p>
+<ul>
+<li>Global 版：开箱即用的通用搜索，内置搜索规则无需额外配置</li>
+<li>Custom 版：基于企业场景打造的规则版本，能够更好适配企业复杂场景（还能可选设置「直接返回全文 Markdown」，节省二次 fetch 的工具调用过程）</li>
+</ul>
+<p>——所以我选了 Custom，以求更大限度的自定义</p>
+<p>4️⃣ 及时性</p>
+<p>毕竟一个搜索服务，总得做到最新新闻、内容发布的及时收录与索引。</p>
+<p>这一块，上面实测那天刚发布的「Opus 5」，早上就能搜到当天发布的信源了，没做更细的及时性测试，但在我自己的场景里觉得够用了。</p>
+<h2>🖥️ 实操环节：定制自己的 Agent 搜索策略</h2>
+<p>豆包搜索提供了三种接入方式：</p>
+<ul>
+<li>API：有着最全、最灵活的配置项，通常自建 Agent 框架，或者放入自定义调用脚本定制自己的 Skill</li>
+<li>MCP：即插即用的工具接入方法，但精细化控制参数得看 MCP 封装完整度（一般我不用）</li>
+<li>Skill：直接给了 Agent 一套官方写好的「如何使用豆包搜索」的通用方法</li>
+</ul>
+<p>为了定制我们自己的 Agent 搜索策略，我选「利用 Skill-Creator Skill + API 文档，直接定制自己的专属搜索 Skill」。</p>
+<p>演示环境：Claude Code + Doubao-Seed-Evolving 模型，你也可以按你的喜好自由搭配。</p>
+<p>PS：Doubao-Seed-Evolving 模型是豆包 Seed 每周保持迭代的模型版本，1M 上下文。火山方舟的 Agent Plan 订阅用户，套餐内同时包含 Evolving 模型和 豆包搜索 API 额度。</p>
+<h3>1️⃣ 给出 API 文档，生成初版搜索 Skill</h3>
+<p>按以下 Prompt 方法，发送任务给 Agent：</p>
+<pre><code>这是豆包搜索 Custom 版本的 API 文档 &lt;此处替换为对应 API 文档全文&gt;
+遵循 Skill Creator Skill 和该 API 文档（不需要看其他文档），帮我定制专属 AI 联网搜索 Skill
+用户首次调用时， 引导其提供 API Key（位置 https://console.volcengine.com/search-infinity/api-key?tab=post_paid），并保存在 env 中
+</code></pre>
+<p>直接发送给你的 Agent 即可（请确保内置有 Skill Creator Skill）</p>
+<p>API 文档全文位于 <a href="https://docs.volcengine.com/docs/87772/2272953?lang=zh%EF%BC%8C%E8%BF%9B%E5%8E%BB%E5%90%8E%E5%A4%8D%E5%88%B6%E5%85%A8%E6%96%87%E5%8D%B3%E5%8F%AF">https://docs.volcengine.com/docs/87772/2272953?lang=zh，进去后复制全文即可</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4NiboRPO2icW7nfiaAxwWmRQNTBGxyaaOicO5kUibMbrhiaaYtsQfH3BOSlfJrmISBfGr1RmJVuXjbXbkbMo59sY6BQiaTj4icbyvz2VI/640?wx_fmt=png&from=appmsg#imgIndex=16" alt="Image"></p>
+<p>发送后，Agent 就会遵循 API 文档内容 与 Skill Creator 规范开工。</p>
+<p>前者教会 API 调用规则，包括搜索参数的配置方法；后者指导 Agent 如何写一个标准的 Skill（对 Skill 还不了解的读者，可移步文章 <a href="https://mp.weixin.qq.com/s?__biz=MzIzNDU0NzY1MA==&mid=2247489324&idx=1&sn=788fba586346ba6e3d7c03053482b868&scene=21#wechat_redirect">Agent Skills 终极指南：入门、精通、预测</a> ）</p>
+<p>不用你写一行代码，Agent 自动替你 Coding 搜索服务调用脚本</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb5gJYmjKqicq6aBGv9rG5CbTsP84kXdvbhIXMX2OXgWiaXWickRC6VXoUADeu1TcKF408aqBheiaQOHVbDV0euP9GC8Fkic3rJAXTLc/640?wx_fmt=png&from=appmsg#imgIndex=17" alt="Image"></p>
+<p>这个给 API 文档 → 自主写调用脚本的方法，可适用于任何想要 Agent 用上的服务。</p>
+<h3>2️⃣ 定制个性化搜索策略</h3>
+<p>通常来说，模型还会在制作过程中，来问你「常用的搜索场景有哪些」、「喜欢怎么样的搜索回答方式」</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb7pZ1QoibXgCTrwn8ibpPx22A7qoT3Xr293xPHDiaPYDYmvhY8WHVHIGg1NoNfMCTibQksmw8jCicw3FrouQAmOasqXmuGRLy2GrEdc/640?wx_fmt=png&from=appmsg#imgIndex=18" alt="Image"></p>
+<p>如果你的 AI 偷懒没问对应的问题？或者写的规则不如你的预期</p>
+<p>没关系，在它做好第一版 Skill 后，按照自然对话的方式，向它提出要求即可 ⬇️</p>
+<p>例如，我是一个开发者，经常查各种 API 文档、定价，如果 Agent 在搜索的时候总是找第三方信源，就很容易给出错误的答案。</p>
+<p>所以我直接发送要求：</p>
+<pre><code>我平时经常需要查各个服务的 API 文档、定价等内容，关于这块想定制一下搜索与 fetch 规则
+</code></pre>
+<p>Skill 内就会自动补充对应场景的检索策略偏好（可能是像下面这样先确认你的偏好，也可能它自己直接写了）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb57AUmPwdUfom3aLkwoMUrz89ECFA3xUcV02cTLYlGIibslibRPudsZ97Xk3ibRbFCsvha1c0eOFhx9CVplacsfhG0DPXm5qL1vZ0/640?wx_fmt=png&from=appmsg#imgIndex=20" alt="Image"></p>
+<p>比如，Agent 就为我自动添加了两个策略：</p>
+<ul>
+<li>优先检索官方网站来源，利用时效参数筛选更近的内容</li>
+<li>强制豆包搜索在该类问题时，直接返回一手正文，减免 fetch 原始 API 文档网页的步骤</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb66NhfL7HIjiaTDHleclUWnWs3YIabTXJTu99x9IW9rrAHhGs1qwRUnn361HCF5VGzcscWZDsWibm8YjYic9AG2HJZXkVYVcbtQE0/640?wx_fmt=png&from=appmsg#imgIndex=21" alt="Image"></p>
+<p>最妙的是：这次它给我写了跳过 CSDN 等二手转载内容，懂得都懂这些站点搜索权重贼高，但 API 信息错误率更高。🤣</p>
+<p>抛砖引玉，你也能要求 Agent 在搜论文的时候，只看 arXiv 的内容：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4HwKzsictfXBNUEFZUsEVIvwFIXOejqLf77ytLLuicPo8fY9LNibH8J923SDcD0ffQV3zNBpjvqlyhybp25K3wTWZibGX5OmsWpnk/640?wx_fmt=png&from=appmsg#imgIndex=22" alt="Image"></p>
+<p>这样一来，你就能抛掉默认 Agent 搜索策略，很轻松能有一套自己专属定制的 AI 搜索策略了</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5SkBujvSqMGWUMPkIhibeZOrkDtzjTvo9w5Q2Y3F8MTeiao9teXTU2ibPCiaYw7NtenYD4pIOhqEO26XUu2ibnhibpiaveQGmXkzXhKc/640?wx_fmt=png&from=appmsg#imgIndex=23" alt="Image"></p>
+<h3>3️⃣ Check 最终效果</h3>
+<p>直接在新的对话窗口和 Agent 自然提问「使用豆包搜索查……」，Agent 就会根据 Skill，开始检索网络信息。</p>
+<p>你也可以在刚才做 Agent 的过程中，让 Agent 替你提高这个 Skill 的优先级：“优化该 skill 的 description，使得任何联网搜索都默认使用该 skill”。</p>
+<p>第一次使用时，则还会引导你提供豆包搜索的 API Key。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb6GEJegMAbWicwJcRvqVuphxXV4b4icOicOBkaqaYdqzACofPZT5AExB93yQrWOR17bCVYfuOZuGzpobicrHsZhx5WzCbib1bbNjJ4U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="Image"></p>
+<p>验证通过后，就能启用每月免费 500 次搜索的额度，增强 Agent 联网搜索能力了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb4kKCvms6HuN3jzTibAwPWVW5XojfVCAfL3A3H6HUZ7ofKn5MyBD998HZWAZ96IDcpmpRpVGV8FiafXrG9Y7pJeZPlTUHzEg8EibE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="Image"></p>
+<p>👆 可以看到，在不加任何要求的情况下，按照定制的搜索 Skill，自动过滤掉了我们不希望看到的站点来源， 成功仅返回了 arXiv 的论文网页。</p>
+<p>你真是太棒啦！🎉</p>
+<h2>🎐 写在最后</h2>
+<p>到了这一步，你已经成功学会了 Agent 联网搜索的原理，并掌握了「0-1 定制自己 Agent 搜索策略」的完整方法～</p>
+<p>从头到尾，不用写一行代码。</p>
+<p>只用「豆包搜索 API + Skill Creator」，就能定制一个搜索更及时、更精准的 Agent 搜索体验，大幅提升日常时效信息查询、乃至 Deep Research 任务的检索体验。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb5OIyR6tV13NZ425Ifaibwibv0081mpYosgysZKmmD7D1DcKLuPiaxgjWlSiaabIbicibufGg64wFWMPuYcI83N0qp1cPnELR7ZcfARQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>不妨快去试试？</p>
+<p>也欢迎给本文点赞、分享给有可能用上的朋友～</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb7icrkOWfRia3UVGBTOrFKm8ctBmW8UrlS9KRB8AV4JxszrrrbrbqZOLILzeseR7opALBvxw4ECiagtIKQ4TjrKHrczDxXbNTGlYY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="Image"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/P9zZOsICRrrqZKnISD1nAA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

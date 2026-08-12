@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>零基础装好OpenClaw 小龙虾：小学生都能看懂的保姆教程 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">零基础装好OpenClaw 小龙虾：小学生都能看懂的保姆教程</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%8F%AF%E6%80%9C%E7%9A%84%E5%B0%8F%E4%BA%92">可怜的小互</a>
+    
+    <span class="date">2026-03-07</span>
+  </div>
+  <p class="lead">零基础装好 OpenClaw：你的第一个 AI 私人助手（保姆级教程）</p>
+  <article class="content"><p>原创 可怜的小互 <em>2026年3月6日 10:51</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMWibOWb0gXkM9CWlBwyKvcwusYJPFMItKRicYanZOPsnpgtxzMHo37ia1tTrK08y5lj2rrPLicUiaUPHl7wkEZOuNYdEibR6py3tob8/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<blockquote>
+<p>不需要会编程，没关系</p>
+<p>照着做就行...</p>
+<p>每一步都有详细说明，小学生都能看懂。</p>
+</blockquote>
+<h2>OpenClaw 是什么？一句话说清楚</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNZ1OZr0MtLaTTreDxUiaVqDGG2WzklBvzpp2wUMUmN5LpasxPSQrpiaRTlHvOacwGzjLI0JfSroXohQXct5Ok72DGia8qDYJq5sQ/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="OpenClaw 概念图：你的 AI 私人助手"></p>
+<p>OpenClaw 概念图：你的 AI 私人助手</p>
+<p>OpenClaw 是一个装在你自己电脑上的 <strong>AI 私人助手</strong> 。</p>
+<p>跟 ChatGPT 最大的区别是：ChatGPT 只能跟你聊天，而 OpenClaw 能 <strong>真的帮你干活</strong> ：发邮件、管日程、整理文件、抓取网页数据、控制智能家居…</p>
+<p>而且它是开源免费的（但需要自己付 AI 模型的 API 费用，后面会讲怎么选最省钱的方案）。</p>
+<p>装好之后，你可以通过QQ、飞书、钉钉、Telegram 或者网页跟它对话，让它帮你做事。</p>
+<blockquote>
+<p><strong>它有多火？</strong> OpenClaw 在 GitHub 上的星标登顶，超越了 React（全球最流行的前端框架）排名第一，只用了一个多月时间，是目前最受关注的开源 AI 项目之一。</p>
+</blockquote>
+<hr>
+<h2>开始之前：你需要什么</h2>
+<table>
+<thead>
+<tr>
+<th>你需要准备的</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一台电脑</td>
+<td>Mac 或 Windows 都行（Mac 体验更好，Windows 需要多装一个东西，后面会教）</td>
+</tr>
+<tr>
+<td>网络连接</td>
+<td>可能有时候需要能访问国际网络（安装过程中要从 GitHub 下载东西）</td>
+</tr>
+<tr>
+<td>大概 30 分钟的时间</td>
+<td>第一次装会慢一点，后面熟了就很快</td>
+</tr>
+</tbody></table>
+<p><strong>不需要的：</strong> 不需要会编程、不需要懂代码。虽然要用到&quot;终端&quot;（一个输入命令的窗口），但所有命令都是复制粘贴的，你不需要自己写任何代码。</p>
+<blockquote>
+<p><strong>什么是&quot;终端&quot;？</strong> 终端就是一个跟电脑对话的窗口。平时你用鼠标点击图标来操作电脑，终端是用打字的方式来操作电脑。比如你在终端里输入&quot;打开浏览器&quot;，电脑就会打开浏览器。听起来很高级，其实就是复制粘贴命令而已。</p>
+</blockquote>
+<hr>
+<h2>重要提醒：Mac 和 Windows 的安装路线不一样</h2>
+<p>因为 Mac 和 Windows 的操作差别比较大，下面分成两条路线讲。 <strong>请根据你的电脑类型，只看对应的部分。</strong></p>
+<p>• <strong>Mac 用户</strong> → 往下看「Mac 安装全流程」</p>
+<p>• <strong>Windows 用户</strong> → 跳到「Windows 安装全流程」</p>
+<p>配置向导部分（选 AI 模型、输入密钥等）两个系统是一样的，合并在后面统一讲。</p>
+<hr>
+<h2>🍎 Mac 安装全流程 （Win用户跳过）</h2>
+<h2>Mac 第一步：打开终端</h2>
+<p>1 按键盘上的 <code>Command + 空格键</code> （同时按这两个键），会弹出一个搜索框（叫 Spotlight）</p>
+<p>2 在搜索框里输入 <code>Terminal</code> （或者输入中文&quot;终端&quot;）</p>
+<p>3 按回车键，或者点击搜索结果里的&quot;终端&quot;</p>
+<p>4 会弹出一个窗口，里面有一行文字和一个闪烁的光标， <strong>这就是终端</strong></p>
+<blockquote>
+<p><strong>终端长什么样？</strong> 它就是一个白色（或黑色）背景的窗口，上面可能显示你的电脑名字和用户名，最后有一个 <code>$</code> 或 <code>%</code> 符号和一个闪烁的光标。你在这里输入命令，按回车，电脑就会执行。</p>
+<p><strong>怎么在终端里粘贴命令？</strong> 先在网页上复制命令（选中文字后按 <code>Command + C</code> ），然后切到终端窗口，按 <code>Command + V</code> 粘贴，最后按回车执行。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtO4Pv0hYcKWL2pFtjiarakncWibI1HTHQS1DoURcLibNNnLlCAGRU3sWMH3w189LQbDdBCjo2ic16QKCd5KMiaciaibIS4jSQdnoRYeYQ/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Mac 终端和 Windows PowerShell 对比"></p>
+<h2>Mac 第二步：检查有没有 Homebrew</h2>
+<p>⚠️ 注意：通常情况下， OpenClaw 会自动安装Homebrew 和Node.js ，当你安装 OpenClaw的时候，它顺带就会帮你安装。</p>
+<p>所以这里我们先跳到 第五步 ，如果没有安装，再跳回到这一步开始！</p>
+<p>Homebrew 是 Mac 上的一个&quot;软件管家&quot;，用来安装各种开发工具。安装 OpenClaw 需要先有它。</p>
+<p>在终端里输入下面这行命令，按回车：</p>
+<pre><code>brew --version
+</code></pre>
+<p><strong>看结果：</strong></p>
+<p>• 如果显示类似 <code>Homebrew 4.x.x</code> 的版本号 → 说明你已经有了， <strong>跳过下一步，直接去&quot;Mac 第四步&quot;</strong></p>
+<p>• 如果显示 <code>command not found: brew</code> 或者报错 → 说明没装，继续下一步</p>
+<h2>Mac 第三步：安装 Homebrew</h2>
+<blockquote>
+<p><strong>这一步大概需要 3-10 分钟</strong> ，取决于你的网速。安装过程中会让你输入电脑密码（开机密码）。</p>
+<p>如果你的电脑里有，可以直接跳过！</p>
+</blockquote>
+<p>在终端里复制粘贴下面这行命令，按回车：</p>
+<pre><code>/bin/bash-c&quot;$(curl-fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre>
+<p><strong>安装过程中你会遇到的情况：</strong></p>
+<p>1 <strong>要求你按回车确认</strong> → 直接按回车</p>
+<p>2 <strong>要求输入密码</strong> → 输入你的 Mac 开机密码（注意：输入密码时屏幕上不会显示任何字符，这是正常的！不是卡住了，而是为了保护隐私。盲打输入完密码后直接按回车）</p>
+<p>3 <strong>屏幕上滚动一堆英文</strong> → 正常现象，等它跑完就行</p>
+<p>4 <strong>最后出现 &quot;Installation successful!&quot;</strong> → 恭喜，安装成功！</p>
+<p><strong>如果你是 Apple Silicon（M1/M2/M3/M4 芯片的 Mac）：</strong></p>
+<p>安装完 Homebrew 后，它可能会提示你运行两行命令来配置路径。通常是类似这样的：</p>
+<pre><code>echo &#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39; &gt;&gt; ~/.zprofile eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;
+</code></pre>
+<p><strong>请把终端里提示的那两行命令原样复制粘贴执行</strong> （不要用我上面写的，以你终端里实际显示的为准）。</p>
+<p><strong>怎么判断自己是不是 Apple Silicon？</strong> 点击屏幕左上角的苹果图标 → &quot;关于本机&quot;，如果芯片那里写的是&quot;Apple M1&quot;、&quot;Apple M2&quot;之类的，就是。</p>
+<p>验证 Homebrew 是否装好了：</p>
+<pre><code>brew --version
+</code></pre>
+<p>看到版本号就说明成功了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNQo7fqjNSEzbFCfsB65pxxWCDicZyfDVtZR3YZhs5JL9I49iahpUkIP0icmsImyRVp8iaGgbHhjRGh6ExLsHuus8SibH8jWITqx04U/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="安装 Homebrew：Mac 的软件管家"></p>
+<h2>Mac 第四步：安装 Node.js</h2>
+<p>Node.js 是 OpenClaw 运行需要的一个环境（你不需要了解它是什么，装上就行）。</p>
+<p><strong>注意：OpenClaw 要求 Node.js 版本 &gt;= 22。</strong> 如果你以前装过旧版本的 Node.js，可能需要升级。</p>
+<p>先检查你电脑上有没有 Node.js：</p>
+<pre><code>node --version
+</code></pre>
+<p><strong>看结果：</strong></p>
+<p>• 如果显示 <code>v22.x.x</code> 或更高版本（比如 v22.5.0、v24.13.0）→ <strong>版本够了，跳过这一步，直接去&quot;Mac 第五步&quot;</strong></p>
+<p>• 如果显示的版本号低于 v22（比如 v18.x.x、v20.x.x）→ 需要升级，继续往下看</p>
+<p>• 如果显示 <code>command not found</code> → 没装过，继续往下看</p>
+<p><strong>安装（或升级）Node.js：</strong></p>
+<pre><code>brew install node
+</code></pre>
+<p>安装完成后验证：</p>
+<pre><code>node --version
+</code></pre>
+<p>看到 <code>v22</code> 或更高的版本号就对了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNicxVRs7Ln3sSUw8CD2TK0vbNSPyH2y3BmykVekqmI27cNmfGGcY2mQALysHcZKtVajzvCOw0OyYmf0DJ2Tuvd64XWGE68Nvnc/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="安装 Node.js：OpenClaw 的运行环境"></p>
+<blockquote>
+<p><strong>如果 brew install node 装出来的版本还是低于 22 怎么办？</strong></p>
+<p>试试这个命令强制安装最新版：<br><code>brew install node@22</code><br>然后按照终端里的提示把它链接到系统路径。</p>
+</blockquote>
+<h2>Mac 第五步：一键安装 OpenClaw</h2>
+<p>终于到了安装 OpenClaw 本体的时候了！在终端里复制粘贴下面这行命令，按回车：</p>
+<pre><code>curl -fsSL https://openclaw.ai/install.sh | bash
+</code></pre>
+<blockquote>
+<p><strong>这行命令做了什么？</strong> 它会从 OpenClaw 的官网下载一个安装脚本，然后自动执行。脚本会帮你：<br>1. 下载 OpenClaw 的程序文件，包括 Homebrew 和 Node.js （如果没有跳回第二步开始）<br>2. 把它安装到正确的位置<br>3. 自动启动配置向导</p>
+</blockquote>
+<p><strong>整个过程大概 5-10 分钟</strong> ，等它跑完就行，中间不要关掉终端窗口。</p>
+<p>安装完成后，它会自动进入配置向导。→ <strong>跳到下面的 「配置向导（Mac 和 Windows 通用）」 部分继续。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtO1LjjeicfY8tWGDRko3cMV1nBRC35e0BSTNoxZxPibWKdApibLsP2ibD874iaCmjqCZXyKEg4tPjg5lOpwCwIcrRoXCrjxSQCLanTw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="一键安装三步流程：复制、粘贴、自动完成"></p>
+<hr>
+<h2>🪟 Windows 安装全流程（Mac用户跳过）</h2>
+<h2>重要：Windows 需要先装 WSL</h2>
+<blockquote>
+<p><strong>什么是 WSL？</strong> WSL（Windows Subsystem for Linux）是微软官方提供的一个工具，让你在 Windows 上运行 Linux 系统。OpenClaw 不能直接在 Windows 上运行，需要通过 WSL 来运行。放心，装 WSL 很简单，一行命令就行。</p>
+</blockquote>
+<h2>Windows 第一步：以管理员身份打开 PowerShell</h2>
+<p>1 按键盘上的 <code>Win 键</code> （键盘左下角那个 Windows 标志）</p>
+<p>2 搜索 <code>PowerShell</code></p>
+<p>3 <strong>右键点击</strong> &quot;Windows PowerShell&quot;</p>
+<p>4 选择&quot; <strong>以管理员身份运行</strong> &quot;</p>
+<p>5 如果弹出提示&quot;你要允许此应用对你的设备进行更改吗？&quot;，点&quot; <strong>是</strong> &quot;</p>
+<p>6 弹出一个蓝色窗口，这就是 PowerShell</p>
+<blockquote>
+<p><strong>为什么要&quot;以管理员身份运行&quot;？</strong> 因为安装 WSL 需要修改系统设置，只有管理员权限才能做。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtMmSHtbmsy17kc2qtcialx4tNpUYdM8yyCPoLRvsLwicBgE64PEyrYrW4XP33OedEDZ8Up3zphRnzib0gicjUldGzYibiaOltogJVq6U/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="以管理员身份打开 PowerShell"></p>
+<h2>Windows 第二步：安装 WSL</h2>
+<p>在 PowerShell 里输入下面这行命令，按回车：</p>
+<pre><code>wsl --install
+</code></pre>
+<p><strong>安装过程中你会遇到的情况：</strong></p>
+<p>1 系统会自动下载和安装 WSL2 和 Ubuntu（一个 Linux 系统）， <strong>需要几分钟到十几分钟</strong></p>
+<p>2 <strong>安装完成后需要重启电脑</strong> → 保存好你正在做的事情，然后重启</p>
+<p>3 重启后，电脑可能会自动弹出一个 Ubuntu 的窗口，让你设置用户名和密码</p>
+<p>4 <strong>用户名</strong> ：随便起一个英文名字（比如 <code>user</code> ），不要有空格和中文</p>
+<p>5 <strong>密码</strong> ：设置一个你能记住的密码（输入时同样不会显示字符，盲打后按回车）</p>
+<p>6 <strong>确认密码</strong> ：再输入一次相同的密码</p>
+<blockquote>
+<p><strong>如果重启后没有自动弹出 Ubuntu 窗口：</strong> 在开始菜单搜索 <code>Ubuntu</code> ，点击打开它，然后按照提示设置用户名和密码。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPD1giasj4pO9wwZichia6WXY1ttib4jWXJVLwUwARLQBmsSjEbRxiaxRyHQibZ4an1Yiaiby4SBeHKyVuusCVC2pFdJ5oawia3V6wPZZsc/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="WSL 概念：在 Windows 里运行 Linux"></p>
+<h2>Windows 第三步：打开 WSL 终端</h2>
+<p>以后每次操作 OpenClaw，都在这个 WSL 终端里进行（不是 PowerShell）。</p>
+<p><strong>打开方式：</strong></p>
+<p>1 在开始菜单搜索 <code>Ubuntu</code> ，点击打开</p>
+<p>2 或者在 PowerShell 里输入 <code>wsl</code> 按回车</p>
+<p>你会看到一个类似 Linux 终端的窗口，显示类似 <code>user@你的电脑名:~$</code> 的提示符。</p>
+<blockquote>
+<p><strong>怎么在 WSL 终端里粘贴命令？</strong> 在网页上复制命令后，在 WSL 终端窗口里 <strong>右键点击</strong> 就是粘贴。或者用 <code>Ctrl + Shift + V</code> （注意：是 Ctrl + Shift + V，不是 Ctrl + V）。</p>
+</blockquote>
+<h2>Windows 第四步：安装 Node.js</h2>
+<p>在 WSL 终端里依次输入下面的命令（一行一行来，每行输入后按回车等它执行完再输入下一行）：</p>
+<p><strong>第一行：更新系统软件包列表</strong></p>
+<pre><code>sudo apt update
+</code></pre>
+<blockquote>
+<p>如果要求输入密码，输入你刚才设置的 WSL 密码，按回车。</p>
+</blockquote>
+<p><strong>第二行：安装 Node.js 版本管理工具</strong></p>
+<pre><code>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+</code></pre>
+<p><strong>第三行：安装 Node.js</strong></p>
+<pre><code>sudo apt install -y nodejs
+</code></pre>
+<p><strong>第四行：验证安装</strong></p>
+<pre><code>node --version
+</code></pre>
+<p>看到 <code>v22.x.x</code> 或更高版本号就说明成功了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNqJxShO2NibmamPaMGuZVia61Z5vhnvrsvIg21sI8MWib139w3Vwic4Vf6Pcoep2Sd1T9Et0icjSYNIERvwEvtZtFkUHiboTkSKhxibU/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="WSL 环境配置：三步搞定 Node.js"></p>
+<h2>Windows 第五步：一键安装 OpenClaw</h2>
+<p>在 WSL 终端里复制粘贴下面这行命令，按回车：</p>
+<pre><code>curl -fsSL https://openclaw.ai/install.sh | bash
+</code></pre>
+<p><strong>整个过程大概 2-5 分钟</strong> ，等它跑完就行，中间不要关掉窗口。</p>
+<p>安装完成后，它会自动进入配置向导。→ <strong>继续看下面的「配置向导」部分。</strong></p>
+<hr>
+<h2>⚙️ 配置向导（Mac 和 Windows 通用）</h2>
+<p>安装完成后，会自动进入一个交互式的配置向导。它会一步一步问你问题，你按提示选择就好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtMgsFsMsxiaKlHGUVM4ZIgAsJSzSqabmlcmEA9adPHTB9e27s0tkPAECbibmM1AibcjbOmNaDJCbJEygdhjWnRnhZlznicJ8r194R0/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="安全确认和快速开始选择"></p>
+<p>安全确认和快速开始选择</p>
+<blockquote>
+<p><strong>如果安装后没有自动进入配置向导</strong> ，手动输入这个命令启动：<br><code>openclaw onboard --install-daemon</code><br>（ <code>--install-daemon</code> 会让 OpenClaw 注册为系统服务，开机自动启动）</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNmyniavjLj8HJPb8A8ZibZvR3MqLbRrrC6W1EBia2fiboqR0CCsnH24zXicUW0tcPPF9PhicGFlmDVBZ70dujujjwRxDFbUSqKiazxZQ/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="配置向导：五步完成设置"></p>
+<h2>第一步：安全提醒</h2>
+<p>第一个画面会提醒你 OpenClaw 是实验性软件，会访问你的文件和网络，问你是否了解风险。</p>
+<p><strong>操作：</strong> 用键盘 <strong>左箭头 ←</strong> 选择 <strong>Yes</strong> ，按回车继续。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNBwVKUx0oEN58iaU5wUTMBWA5HtEfFS7ayMuQSr422k2vhgZ6p8voXYufWC2sQMZpVe8ibv0Nlia85CHtSFLgqicj3GMkwIQSkoNg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<blockquote>
+<p><strong>关于安全：</strong> OpenClaw 会读取你电脑上的文件来帮你干活，这也意味着它能看到你的私人文件。建议不要在存有敏感文件（银行信息、密码文档等）的电脑上使用，或者在使用时注意限制它的访问范围。</p>
+</blockquote>
+<h2>第二步：选择安装模式</h2>
+<p>会问你要 QuickStart（快速开始）还是自定义安装。</p>
+<p><strong>操作：</strong> 选 <strong>QuickStart</strong> ，按回车。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOx27ksovcxAnkKv6HjYELAia3ym8zWiasqIvFnBRIFALHtv8nA8jibOwv87ibdOBUSVqwCah37Xgu1gdm7w43sbw3jnCstaFBEEXY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<blockquote>
+<p>选 QuickStart 就对了，它会帮你设置好最基本的东西。等你熟悉了以后，随时可以用 <code>openclaw onboard</code> 重新配置。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMd5vGDD5ztVerutuaTqKG9tqcbDlr1CvnWOARkzkWwoeoHB1yzlFEt5iamtLd5eSK0T4ib0FhjL5ne1vmdqy9vqqshwMZpyFUY4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<h2>第三步：选择 AI 模型提供商（重要！）</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOFo7ug232gtXsme7gmDSF2LCibgcmtR5A4A01rcia2pYUz1iciaYmsibKulsvYn5QNP0GlnQeGUNmVhvNibXTfMnN89Jdiad6QHicwYEk/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="选择 AI 提供商：四个选项一目了然"></p>
+<p>选择 AI 提供商：四个选项一目了然</p>
+<p>这一步是选&quot;AI 的大脑&quot;用谁家的。会列出几个选项，用键盘上下箭头选择，按回车确认。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOp09mwXNrrb9LeQm16PjXmVGaictU8Q0Ovuxc7d11HibQdzM5UPjnzHoukWnb3mZgvBfwy6PD3hYGobEzRs4q2eT1RrbRPpSRFg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<table>
+<thead>
+<tr>
+<th>提供商</th>
+<th>推荐度</th>
+<th>说明</th>
+<th>价格参考</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ChatGPT</td>
+<td>首选</td>
+<td>不封号，授权登录即可</td>
+<td>免费额度大</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>备选</td>
+<td>功能最全，推理能力最强（不要授权登录会被封号）</td>
+<td>用API很贵</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong></td>
+<td>备选</td>
+<td>性价比高，中文不错 （授权也封号）</td>
+<td>推荐用API</td>
+</tr>
+<tr>
+<td><strong>MiniMax</strong></td>
+<td>省钱之选</td>
+<td>中文能力强，价格便宜</td>
+<td>注册送免费额度</td>
+</tr>
+<tr>
+<td><strong>Kim/Zhipu</strong></td>
+<td>国内首选</td>
+<td>国内直连不需要梯子，便宜</td>
+<td>注册送免费额度</td>
+</tr>
+<tr>
+<td><strong>Ollama（本地模型）</strong></td>
+<td>免费之选(不推荐)</td>
+<td>完全免费，不需要联网，但需要电脑配置好</td>
+<td>免费</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>省钱建议：</strong><br>- 如果你只是想试试看 → 选 <strong>MiniMax</strong> 或 <strong>Kim/Zhipu</strong> ，注册就有免费额度<br>- 如果你在国内，网络不方便 → 选 他们就行 <strong>，国内直连，不需要梯子</strong><br>- 如果你电脑配置好（至少 32GB 内存）→ 可以试试 <strong>Ollama</strong> ，完全免费，但需要另外安装 Ollama 软件<br>- 如果你追求最好的效果 → 选 <strong>Anthropic（Claude）但是要用API</strong></p>
+</blockquote>
+<h2>第四步：连接 AI 模型（两种方式）</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtMLdaVDIlQQ0libD3spED7S1gTwCmCibtbYPcJFjmuaD8SficjqIL6y2icGW3RsahTxjlBiaFNNlJauMPQI20QhHhl4s4kOmqKNrZxw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="API Key vs OAuth：两种连接方式对比"></p>
+<p>API Key vs OAuth：两种连接方式对比</p>
+<p>选完提供商后，你需要让 OpenClaw 连接上 AI 服务。有两种方式：</p>
+<h3>方式一：API Key（推荐，更稳定）</h3>
+<p>API Key 是一串类似密码的文字，用来连接 AI 服务。</p>
+<p><strong>以 Anthropic（Claude）为例，获取 API Key 的步骤：</strong></p>
+<p>1 打开浏览器，访问 <a href="https://console.anthropic.com/">https://console.anthropic.com/</a></p>
+<p>2 注册一个账号（需要邮箱）</p>
+<p>3 登录后，点击左侧菜单的 <strong>API Keys</strong></p>
+<p>4 点击 <strong>Create Key</strong> （创建密钥）</p>
+<p>5 给密钥取个名字（随便写，比如 <code>openclaw</code> ），点创建</p>
+<p>6 <strong>复制生成的那串密钥</strong></p>
+<blockquote>
+<p>⚠️ <strong>这串密钥只会显示一次！</strong> 一定要复制好保存下来。如果忘了复制，就需要删掉重新创建一个。</p>
+</blockquote>
+<p><strong>其他提供商获取 API Key 的地方：</strong></p>
+<table>
+<thead>
+<tr>
+<th>提供商</th>
+<th>注册地址</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OpenAI</td>
+<td><a href="https://platform.openai.com/api-keys">https://platform.openai.com/api-keys</a></td>
+<td>需要绑定信用卡</td>
+</tr>
+<tr>
+<td>Google Gemini</td>
+<td><a href="https://aistudio.google.com/apikey">https://aistudio.google.com/apikey</a></td>
+<td>有免费额度</td>
+</tr>
+<tr>
+<td>MiniMax</td>
+<td><a href="https://platform.minimaxi.com/">https://platform.minimaxi.com/</a></td>
+<td>注册送 ¥15 额度</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><a href="https://platform.deepseek.com/api%5C_keys">https://platform.deepseek.com/api\_keys</a></td>
+<td>注册送额度，国内直连</td>
+</tr>
+<tr>
+<td>KIMI（月之暗面）</td>
+<td><a href="https://platform.moonshot.cn/console/api-keys">https://platform.moonshot.cn/console/api-keys</a></td>
+<td>注册送 ¥15 额度</td>
+</tr>
+</tbody></table>
+<p><strong>提醒：</strong> 第三方服务商可能更便宜，可以多问问，或者问问小互！嘿嘿</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPeV9FA4WYsyuQAmKASDYgSuRVyUb4NjicHG1ZZfoZa9NkVg6OsAe13p2WzkBtaR1qggrnP0fGz0566rInKDzeFqkP3UicaQic8dw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="API Key 概念：用钥匙连接 AI 大脑"></p>
+<p>API Key 概念：用钥匙连接 AI 大脑</p>
+<h3>方式二：OAuth 授权登录（更方便，但有风险）</h3>
+<p>如果你已经有 ChatGPT Plus 或 Claude Pro 的 <strong>付费订阅账号</strong> ，OpenClaw 支持直接用你的订阅账号登录，不需要单独购买 API。</p>
+<p><strong>操作方法：</strong> 在配置向导中选择对应的 OAuth 选项，它会自动打开浏览器让你登录你的账号，授权完成后自动连接。</p>
+<blockquote>
+<p>⚠️ <strong>重要警告：OAuth 方式有封号风险！</strong></p>
+<p>2026 年 2 月，有多位用户报告使用 Claude Pro/Max 和 Google 的 OAuth 账户接入 OpenClaw 后 <strong>账号被封禁</strong> 。PCWorld、SecurityWeek 等多家媒体都报道了这个问题。</p>
+<p><strong>建议：</strong> 用独立的 API Key，不要用你的个人付费订阅账户的 OAuth 登录。如果你一定要用 OAuth，建议用一个不重要的账号。</p>
+</blockquote>
+<h2>第五步：选择默认模型</h2>
+<p>会让你选具体用哪个模型。屏幕上会列出该提供商的可用模型。</p>
+<p><strong>推荐选择：</strong></p>
+<table>
+<thead>
+<tr>
+<th>提供商</th>
+<th>推荐模型</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Anthropic</td>
+<td><strong>Claude Sonnet 4.5</strong></td>
+<td>性价比最高</td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td><strong>GPT-4o</strong></td>
+<td>速度快、效果好</td>
+</tr>
+<tr>
+<td>Google</td>
+<td><strong>Gemini 2.0 Flash</strong></td>
+<td>快又便宜</td>
+</tr>
+<tr>
+<td>MiniMax</td>
+<td><strong>M2.1</strong></td>
+<td>中文最好</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><strong>deepseek-chat</strong></td>
+<td>国内直连、便宜</td>
+</tr>
+<tr>
+<td>KIMI</td>
+<td><strong>kimi-k2.5</strong></td>
+<td>中文好、有免费额度</td>
+</tr>
+</tbody></table>
+<p><strong>操作：</strong> 用键盘上下箭头选好模型，按回车确认。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOGSLTOYibY3tMZeibw1caHR5ulLEg1Mic01icu7I30Fia42apVPNcyiaRuWoGU9ONH5am89uxQWWVKNFic1HuBHwW3JC41oAibAMZEEoE/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="选择 AI 模型"></p>
+<h2>第六步：配置聊天渠道（可以跳过，后续通过聊天让龙虾帮你）</h2>
+<p>这一步决定你以后怎么跟 OpenClaw 说话。可以选：</p>
+<p>• <strong>Telegram</strong> ：推荐海外用户，设置最简单</p>
+<p>• <strong>WhatsApp</strong> ：扫个二维码就行</p>
+<p>• <strong>飞书</strong> ：国内用户推荐，但配置稍微复杂一点（需要去飞书开放平台创建应用）</p>
+<p>• <strong>网页面板</strong> ：不需要额外配置，装好就能用</p>
+<p><strong>操作：</strong> 如果你不确定，上下箭头选择，先选 <strong>跳过</strong> （Skip）。网页面板是默认就有的，不用额外设置。等你玩熟了，随时可以用 <code>openclaw onboard</code> 重新配置。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNq1sslZYlnybhGEjVlmRPOGtTRTQPXy92pSp8D3IGJpuWZU3K9JKFK4fmOVsf7rSJQwYruD5DJ8frYTQpRd8PhCK3OMVIKnF8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<h2>第七步：技能（Skills）等其他配置</h2>
+<p>会问你要不要启用一些预装技能（比如网页浏览、文件管理、日程管理等）。</p>
+<p><strong>操作：</strong> 选 <strong>Yes</strong> 全部启用。以后用不到的随时可以关掉。也可以选择跳过，后续通过聊天方式安装， 我建议是跳过》</p>
+<p>回车 空格 然后选择跳过</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMeYvXxKibUzVzoNXuHVrG3biaIicOB0ONJnXQPIG7eACPHTeb9zHolgo0VRic8dUFzJxBnVCoeb2uzXBNOyVLHg7BcV6MibWwBfpa4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>然后后面的所有都先选 NO</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNfdrGKrZVqRwwicTrw7tkn6Gfxs08xdyWweUwmYSJTag1FzaFovHIV4cDDLWxxpeu7gPticjJQiap7kEwR2NFKAkbjAKA25QQGVQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>这一步也选跳过，这是设置龙虾个性、记忆和配置的地方，后续我们也通过聊天的方式设置，更方便。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNtlga1icspN2eCENgvJ8GBiaLGctBQKnW0Df1nPpgosGPZR5fu4vrBfQ2rYLq9pdwEdDG3mBAxsic0YibBsDvRDyibVQlkE20IllEI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<h2>第八步：安装完成！</h2>
+<p>看到类似 <strong>&quot;OpenClaw is ready!&quot;</strong> 或者 <strong>&quot;Your AI assistant is now running&quot;</strong> 的提示，就说明安装配置全部完成了！</p>
+<p>它可能会问你是否要打开网页面板（Web UI），选 <strong>&quot;Open the web UI&quot;</strong> 就会自动在浏览器里打开。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPsXonib9FzxibNRdscYVZo0SaiacBljpn5OCheKiao2FkVb3XibNCaLZeMztmCWRq4v6dEnE37Cfqg5VuicE1Via9W6nX3f953OvFF2M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>但是我建议选在终端里聊天，因为后续你会慢慢习惯这种操作，会对你有很大好处。</p>
+<p>这样我们的安装就完成了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOY8fKTbgwEUrAquyn7H010ZRFon9UFQHMA4qkBq44nVWesq3XFfcBAjwicO8vaWh3YibTnfbFa9VnPrkUo9iaNIJG6QUF67iayqibc/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="安装完成！OpenClaw 已就绪"></p>
+<p>安装完成！OpenClaw 已就绪</p>
+<p>最后你会看到这样的画面↓</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPah79aweJfG6CNB5JpBSHRdZ7icy6HvBYFVSR6Akb40zqXS3alxBIVVQKG0yBrMZEk6PiaN1IEW7M6Npb7DDvY8MXpvx8jIYHKo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>你就可以和它对话了！</p>
+<hr>
+<h2>验证安装成功</h2>
+<p>装完了，我们来确认一切正常。</p>
+<h3>检查运行状态</h3>
+<p>在终端里输入：</p>
+<pre><code>openclaw status
+</code></pre>
+<p>如果看到显示 <strong>Running</strong> （运行中），就对了。</p>
+<blockquote>
+<p><strong>如果显示没在运行</strong> ，输入 <code>openclaw gateway start</code> 启动它。</p>
+</blockquote>
+<h3>打开网页面板</h3>
+<p>在终端里输入：</p>
+<pre><code>openclaw dashboard
+</code></pre>
+<p>或者直接在浏览器地址栏输入：</p>
+<pre><code>http://127.0.0.1:18789/
+</code></pre>
+<blockquote>
+<p><strong>什么是 127.0.0.1？</strong> 这是一个特殊的网址，表示&quot;你自己的电脑&quot;。因为 OpenClaw 是装在你自己电脑上的，所以通过这个地址访问。18789 是 OpenClaw 使用的端口号。</p>
+</blockquote>
+<p>如果看到 OpenClaw 的网页面板，恭喜你，安装成功！</p>
+<h3>发一条消息测试</h3>
+<p>在面板的聊天框里发一条消息试试，比如输入：</p>
+<pre><code>你好，介绍一下你自己
+</code></pre>
+<p>如果收到正常回复，说明 AI 大脑也连接正常！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNZHPtRxFuQJx1ia0l49qxrzD7ITpRf8DejIG3eqdgXmj57PP9mCro6Ng7sA3Yic1nJO9EZ9icOaWWvE06uARah8DDSxmjrrdCDoM/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="网页面板聊天界面"></p>
+<h3>健康检查（可选）</h3>
+<p>如果你想更全面地检查有没有问题，输入：</p>
+<pre><code>openclaw doctor
+</code></pre>
+<p>它会自动检查各项配置是否正常，有问题会给出修复建议。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNicZ8kxAGrHQOtibic98UosHHckOU289OhdO9bhRS9oSmFhrSK13O1MmEzZTgvSTe73yc6hdBwCHQLukBJDdOpCOs0IE0Lq2nF7o/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="安装成功：面板已就绪"></p>
+<p>安装成功：面板已就绪</p>
+<p>当然这只是安装成功，后续还有很多配置什么的需要做，本教程可能无法写那么详细，我后续会继续写对应的手把手教程，敬请期待。</p>
+<p>下面是一些基本的设置配置，技能安装什么的。</p>
+<p>你可以看看！</p>
+<p>龙虾和GPT最大的不同是，你不会什么都可以让它安装和操作，不只是回答问题。</p>
+<p>但是注意任何操作都需要小心谨慎，不然它会乱删东西什么的，你的命令一定要清晰不要太模糊。</p>
+<p>当然你也可以选择在云端安装，比如coze里↓</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNjCw952Wr1gBQ3dLBwxUbEKw1XBVpzIZF9Hna1yCql3pnUsP9rO0XHAM1icnW4za386IBpzibrPHXdExOgib3XSP3S2yVL5oaGxw/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=20" alt="Image"></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkzMTcyMTgxNg==&mid=2247508277&idx=1&sn=44bef9b3e9c19858af91d5ed029d9551&scene=21#wechat_redirect">这个春节无疑属于字节 Seedance 2.0 后 豆包 Seed 2.0 也来了 详细评测</a></p>
+<p>回头见！</p>
+<hr>
+<h2>常用命令速查表</h2>
+<p>装好之后，这几个命令你可能会用到，都是在终端里输入的：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>什么时候用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>openclaw gateway start</code></td>
+<td>启动 OpenClaw</td>
+<td>电脑重启后，OpenClaw 没有自动启动时</td>
+</tr>
+<tr>
+<td><code>openclaw gateway stop</code></td>
+<td>停止 OpenClaw</td>
+<td>不用了想关掉时</td>
+</tr>
+<tr>
+<td><code>openclaw gateway restart</code></td>
+<td>重启 OpenClaw</td>
+<td>改了配置之后</td>
+</tr>
+<tr>
+<td><code>openclaw status</code></td>
+<td>查看运行状态</td>
+<td>想看看它是不是在运行</td>
+</tr>
+<tr>
+<td><code>openclaw dashboard</code></td>
+<td>打开网页面板</td>
+<td>想用网页跟它聊天</td>
+</tr>
+<tr>
+<td><code>openclaw doctor</code></td>
+<td>自动检查配置问题</td>
+<td>出了问题不知道怎么回事时</td>
+</tr>
+<tr>
+<td><code>openclaw update</code></td>
+<td>更新到最新版本</td>
+<td>想体验新功能时</td>
+</tr>
+<tr>
+<td><code>openclaw onboard</code></td>
+<td>重新运行配置向导</td>
+<td>想换 AI 模型或重新配置时</td>
+</tr>
+<tr>
+<td><code>openclaw logs</code></td>
+<td>查看运行日志</td>
+<td>出了问题想看详细错误信息</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>小技巧：</strong> 如果你在安装时加了 <code>--install-daemon</code> ，OpenClaw 会在开机时自动启动，你不需要每次手动输入 <code>openclaw gateway start</code> 。</p>
+<p>如果没有，下次打开终端，输入： openclaw tui 即可</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtMSfFrSBxmgicqoh8icen2GyDiafsoAPwdiaZlKQLUZgZvbR5CkmayF67rULQnnaXMZwRDibcylb1NEk01ryym39UtWEFCOAa9TaJoY/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="常用命令速查表"></p>
+<hr>
+<h2>常见问题排查</h2>
+<h3>❓ 输入 openclaw 后提示 &quot;command not found&quot;</h3>
+<p><strong>原因：</strong> 终端找不到 OpenClaw 程序，通常是环境变量没配好。</p>
+<p><strong>解决办法：</strong></p>
+<p>1 <strong>先试试关掉终端，重新打开</strong> ，再输入 <code>openclaw status</code></p>
+<p>2 如果还是不行，可能是 npm 全局路径没配好。输入以下命令：<br><code>npm config get prefix</code><br>看看输出的路径是什么。然后把那个路径加到你的 PATH 里：<br><code>echo &#39;export PATH=$(npm config get prefix)/bin:$PATH&#39; &gt;&gt; ~/.zshrc    source ~/.zshrc</code></p>
+<p>3 如果以上都不行， <strong>重新运行一次安装命令</strong></p>
+<h3>❓ 网页面板打不开</h3>
+<p>1 先确认 OpenClaw 在运行： <code>openclaw status</code></p>
+<p>2 如果没在运行： <code>openclaw gateway start</code></p>
+<p>3 再试一次访问 <a href="http://127.0.0.1:18789/">http://127.0.0.1:18789/</a></p>
+<p>4 如果端口被其他程序占用了，可以换一个端口：<br><code>openclaw gateway --port 18790</code><br>然后访问 <a href="http://127.0.0.1:18790/">http://127.0.0.1:18790/</a></p>
+<h3>❓ AI 不回复消息</h3>
+<p>1 <strong>检查 API Key 是否正确：</strong> 运行 <code>openclaw doctor</code> ，它会告诉你哪里有问题</p>
+<p>2 <strong>检查 API 账户是否有余额：</strong> 去对应提供商的网站查看</p>
+<p>3 <strong>检查网络：</strong> 如果你用的是国外的 AI 服务（如 Claude、GPT），需要确保网络能访问这些服务</p>
+<p>4 <strong>检查模型名称：</strong> 确保配置文件里的模型名称跟提供商的一致（比如 DeepSeek 的模型名必须是 <code>deepseek-chat</code> ）</p>
+<h3>❓ Mac 上 Homebrew 安装失败</h3>
+<p><strong>可能原因：</strong> 网络问题，下载超时。</p>
+<p><strong>解决办法：</strong> 换国内镜像源安装：</p>
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
+</code></pre>
+<p>这是一个中国大陆用户维护的 Homebrew 安装脚本，下载速度会快很多。</p>
+<h3>❓ Node.js 安装失败或版本太低</h3>
+<p><strong>解决办法 1：</strong> 直接从官网下载安装包：<br>- 访问 <a href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a><br>- Mac 用户下载 <code>.pkg</code> 安装包，双击安装<br>- 安装完关掉终端重新打开，再输入 <code>node --version</code> 检查</p>
+<p><strong>解决办法 2（Mac）：</strong> 用 npm 的版本管理工具升级：</p>
+<pre><code>npm install -g n sudo n 22
+</code></pre>
+<h3>❓ Windows 上 WSL 安装失败</h3>
+<p>1 <strong>确保 Windows 版本够新：</strong> WSL2 需要 Windows 10 2004 版本以上，或 Windows 11</p>
+<p>2 <strong>检查虚拟化是否开启：</strong> 打开任务管理器 → 性能 → CPU，看&quot;虚拟化&quot;是否显示&quot;已启用&quot;。如果没有，需要在 BIOS 里开启（具体方法因电脑品牌不同，可以搜索&quot;你的电脑品牌 + 开启虚拟化&quot;）</p>
+<p>3 <strong>如果提示需要更新 WSL 内核：</strong><br><code>wsl --update</code></p>
+<h3>❓ 想重新配置</h3>
+<p>如果之前配置选错了，不用重新安装，直接运行：</p>
+<pre><code>openclaw onboard
+</code></pre>
+<p>会重新进入配置向导，重新选择 AI 模型、输入密钥等。</p>
+<h3>❓ 想完全卸载重装</h3>
+<pre><code>openclaw gateway stop npm uninstall -g openclaw rm -rf ~/.openclaw
+</code></pre>
+<p>然后重新从安装命令开始。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtN4hAAmSm4icDXCZ9ZH7l5nZs4ic6ibxx8xqGicFfJXZv3BCyAp7P4WPa5yxLenmAlKa7EhnQ25Aslt7uQhrCfjz307da6yrry7iaa4/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="常见问题排查指南"></p>
+<hr>
+<h2>装好之后可以做什么？</h2>
+<p>OpenClaw 装好只是第一步。它真正强大的地方在于你可以给它装&quot;技能&quot;，让它会做更多事情：</p>
+<p>• <strong>邮件管理：</strong> &quot;帮我查看今天的未读邮件，重要的做个摘要&quot;</p>
+<p>• <strong>日程管理：</strong> &quot;明天下午 3 点提醒我开会&quot;</p>
+<p>• <strong>网页抓取：</strong> &quot;帮我查一下 XXX 产品的最新价格&quot;</p>
+<p>• <strong>文件整理：</strong> &quot;把下载文件夹里的图片按日期归类&quot;</p>
+<p>• <strong>写作辅助：</strong> &quot;帮我起草一封回复客户的邮件&quot;</p>
+<p>更多技能可以在 ClawHub（<a href="https://clawhub.ai/%EF%BC%89%E4%B8%8A%E6%B5%8F%E8%A7%88%E5%92%8C%E5%AE%89%E8%A3%85%E3%80%82%E7%9B%AE%E5%89%8D">https://clawhub.ai/）上浏览和安装。目前</a> ClawHub 上已经有超过 13,000 个社区技能，但刚上手不要贪多， <strong>先装几个最实用的就够了</strong> 。</p>
+<h3>新手必装（装完立刻有用）</h3>
+<p>安装方法很简单，在聊天框里对 OpenClaw 说「安装 xxx 技能」就行。</p>
+<table>
+<thead>
+<tr>
+<th>技能</th>
+<th>干什么用</th>
+<th>一句话推荐理由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Tavily Search</strong></td>
+<td>联网搜索最新资讯</td>
+<td>让 AI 能查实时信息，不再只靠训练数据。零配置，装上就用</td>
+</tr>
+<tr>
+<td><strong>Summarize</strong></td>
+<td>长文章/长邮件压缩成摘要</td>
+<td>每天刷资讯省一半时间，知识工作者必备</td>
+</tr>
+<tr>
+<td><strong>Firecrawl</strong></td>
+<td>抓取网页内容、提取正文</td>
+<td>给 AI 一个链接，它就能读懂整个网页并总结</td>
+</tr>
+<tr>
+<td><strong>Obsidian</strong></td>
+<td>自动整理 Obsidian 笔记库</td>
+<td>用 Obsidian 做笔记的同学必装</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>第一天只装这四个就够了</strong> ，用顺了再加。</p>
+</blockquote>
+<h3>中国用户推荐</h3>
+<table>
+<thead>
+<tr>
+<th>技能</th>
+<th>干什么用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>openclaw-china</strong></td>
+<td>一键接入飞书、钉钉、企业微信、QQ</td>
+<td>国内聊天平台全家桶，不用一个个配。GitHub 搜 <code>BytePioneer-AI/openclaw-china</code></td>
+</tr>
+<tr>
+<td><strong>12306</strong></td>
+<td>查火车票、车次、余票</td>
+<td>对着 AI 说&quot;帮我查明天北京到上海的高铁&quot;，直接出结果</td>
+</tr>
+<tr>
+<td><strong>A-Share</strong></td>
+<td>查 A 股实时行情</td>
+<td>炒股的同学可以让 AI 帮你盯盘、做分析</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>提醒：</strong> 如果你主要用飞书或钉钉跟 AI 对话， <code>openclaw-china</code> 这个技能可以省掉很多配置步骤。飞书从 OpenClaw 2026.2.2 起已经是官方支持的渠道，最稳定。</p>
+</blockquote>
+<h3>进阶推荐（玩熟了再装）</h3>
+<table>
+<thead>
+<tr>
+<th>技能</th>
+<th>干什么用</th>
+<th>适合谁</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GOG（Google Workspace）</strong></td>
+<td>一个技能打通 Gmail、日历、Drive、表格</td>
+<td>用 Google 全家桶的海外用户</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>管理代码仓库、PR、Issue</td>
+<td>在学编程或做开源项目的同学</td>
+</tr>
+<tr>
+<td><strong>n8n</strong></td>
+<td>连接各种 App 做自动化流程</td>
+<td>想把多个工具串成自动化流水线的进阶玩家</td>
+</tr>
+<tr>
+<td><strong>Browser</strong></td>
+<td>控制浏览器自动操作网页</td>
+<td>需要自动填表、自动抢票等场景</td>
+</tr>
+</tbody></table>
+<p>但如果你只是装好就用，它就只是一个普通的 AI 聊天机器人——和 ChatGPT 没什么区别。真正让 OpenClaw 变得不一样的，是它的 <strong>人设配置系统</strong> 。</p>
+<hr>
+<h2>进阶：给你的 AI 助手塑造灵魂</h2>
+<p>OpenClaw 的工作目录（默认在 <code>~/clawd/</code> ）里有一组 <code>.md</code> 文件，它们就像 AI 的&quot;性格档案&quot;。每次 AI 醒来，第一件事就是读这些文件，搞清楚自己是谁、在帮谁、该怎么做。</p>
+<p>你不需要一次全配好， <strong>从 SOUL.md 和 USER.md 开始就够了</strong> ，其他的用到再加。</p>
+<h3>SOUL.md：它是谁</h3>
+<p>这是最核心的一个文件，决定了你的 AI 助手的 <strong>性格、说话方式和行为准则</strong> 。</p>
+<p>打开终端，创建这个文件：</p>
+<pre><code>nano ~/clawd/SOUL.md
+</code></pre>
+<p>往里面写什么？举个例子：</p>
+<pre><code># SOUL.md - 你是谁  你是小白，一个温柔、直接、有主见的 AI 助手。  核心信条： - 要提供真正的帮助，不是表演式的客套 - 跳过&quot;这是一个好问题！&quot;这类废话，直接解决问题 - 可以有不同意见，有偏好，甚至觉得某些事情无聊 - 提问前先自己想办法，真的卡住了再问 - 做一个你自己都想与之交谈的助手  边界： - 隐私就是隐私，没得商量 - 对外操作（发邮件、发推文）先问再做 - 对内操作（读文件、整理笔记）大胆做
+</code></pre>
+<p>写完按 <code>Ctrl + X</code> ，然后按 <code>Y</code> 保存，按回车退出。</p>
+<p><strong>重点：</strong> 这个文件你可以随时改。用了几天觉得它太啰嗦？改。觉得它不够主动？改。它会按照你最新写的来。</p>
+<h3>IDENTITY.md：它叫什么</h3>
+<p>比 SOUL.md 更简单，就是给 AI 一张&quot;名片&quot;：</p>
+<pre><code># IDENTITY.md  - 名字：小白 - 身份：你的 AI 私人助手 - 风格：温柔、俏皮、支持感拉满 - Emoji：💫
+</code></pre>
+<p>名字随便起，叫&quot;贾维斯&quot;、&quot;星期五&quot;、&quot;小爱&quot;都行。</p>
+<h3>USER.md：你是谁</h3>
+<p>这个文件是告诉 AI&quot;你在帮谁&quot;，让它了解你的习惯和偏好：</p>
+<pre><code># USER.md  - 名字：小互 - 时区：Asia/Shanghai - 偏好：沟通直接、步骤清晰、可以直接帮我执行 - 当前重点：做自媒体内容、学习编程 - 互动风格：可以轻松，但执行要稳
+</code></pre>
+<p>写了这个之后，AI 不会每次都问&quot;你好，请问有什么可以帮你的？&quot;，而是直接进入状态，知道你是谁、你在做什么。</p>
+<h3>AGENTS.md：工作守则</h3>
+<p>这个文件定义了 AI 的 <strong>工作流程和规矩</strong> ，比如：</p>
+<p>• 每次醒来先读哪些文件</p>
+<p>• 什么操作可以自己做，什么必须先问你</p>
+<p>• 群聊里该怎么表现（不要什么都回，像个正常人一样）</p>
+<p>• 怎么管理记忆文件</p>
+<p>你可以简单写，也可以写得很详细。OpenClaw 安装时会自动生成一个默认版本，后面慢慢按自己的需求改就好。</p>
+<h3>HEARTBEAT.md：定时巡逻</h3>
+<p>这个文件让 AI <strong>主动帮你干活</strong> ，而不是等你发消息才动。</p>
+<pre><code># HEARTBEAT.md  1. 检查有没有新邮件，重要的通知我 2. 看看日历，提前 2 小时提醒我有会议 3. 检查系统运行状态  如果什么都没有，回复 HEARTBEAT_OK（别打扰我）。
+</code></pre>
+<p>配合 OpenClaw 的心跳机制（默认每 30 分钟执行一次），它就会像一个尽职的助理一样定时巡查，有事才叫你。</p>
+<h3>MEMORY.md：长期记忆</h3>
+<p>AI 每次启动都是&quot;失忆&quot;的，但 MEMORY.md 让它能记住重要的事：</p>
+<p>• 你做过的重要决策</p>
+<p>• 你的偏好和习惯</p>
+<p>• 之前踩过的坑</p>
+<p>它会自动维护这个文件——把每天的对话日志（ <code>memory/YYYY-MM-DD.md</code> ）里值得记住的内容提炼进来，就像一个人整理日记、更新自己的认知一样。</p>
+<h3>六个文件一张表</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>一句话说明</th>
+<th>必须配吗</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SOUL.md</td>
+<td>AI 的性格和行为准则</td>
+<td>强烈建议</td>
+</tr>
+<tr>
+<td>IDENTITY.md</td>
+<td>AI 的名字和身份</td>
+<td>建议</td>
+</tr>
+<tr>
+<td>USER.md</td>
+<td>你的个人信息和偏好</td>
+<td>强烈建议</td>
+</tr>
+<tr>
+<td>AGENTS.md</td>
+<td>工作流程和安全规矩</td>
+<td>可选（有默认值）</td>
+</tr>
+<tr>
+<td>HEARTBEAT.md</td>
+<td>定时自动执行的任务</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>MEMORY.md</td>
+<td>AI 的长期记忆</td>
+<td>自动生成</td>
+</tr>
+</tbody></table>
+<p><strong>最低配置：</strong> 只写 SOUL.md + USER.md，花 5 分钟，你的 AI 助手就能从&quot;通用聊天机器人&quot;变成&quot;了解你的私人助手&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNldcntHQl9bz108Suqotf296AFsDWUksMbBsMfIiclHECfQOrKr7ajQxibZrgRtZnqJdRxTC3PzmylpIQnBs1oWyPda5TH6SEMI/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="OpenClaw 五大能力一览"></p>
+<hr>
+<p><strong>小互说：</strong> OpenClaw 是我最近在关注的开源 AI 工具里最有意思的一个。它跟 ChatGPT 最大的区别是：ChatGPT 是你去找它聊天，而 OpenClaw 更像一个 24 小时在线的助手，你随时在聊天软件里 @它就行，它还能主动帮你做事。</p>
+<p>安装过程看着长，其实核心就这几步： <strong>装环境（Homebrew + Node.js）→ 一行命令装 OpenClaw → 跟着配置向导走</strong> 。</p>
+<p>如果你有任何地方卡住了，评论区告诉我，我帮你看看。</p>
+<blockquote>
+<p>更多可参考：<br>- OpenClaw 官方文档 |</p>
+<p><a href="https://docs.openclaw.ai/install">https://docs.openclaw.ai/install</a>  </p>
+</blockquote>
+<p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=9" alt="Image"></p>
+<p>____________</p>
+<p>End.</p>
+<h2>感 谢 阅 读</h2>
+<p>点赞，转发，关注关注关注↓↓</p>
+<p>各位好心人…</p>
+<p>继续滑动看下一个</p>
+<p>小互AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/i9BxFRDBS8RBHQe5N4WFwA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

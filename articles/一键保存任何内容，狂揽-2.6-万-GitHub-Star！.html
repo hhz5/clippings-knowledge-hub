@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一键保存任何内容，狂揽 2.6 万 GitHub Star！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">一键保存任何内容，狂揽 2.6 万 GitHub Star！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%C2%A0G">小 G</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=ArchiveBox">ArchiveBox</a><a class="chip" href="../index.html?tag=GitHub">GitHub</a><a class="chip" href="../index.html?tag=%E7%BD%91%E9%A1%B5%E5%BD%92%E6%A1%A3">网页归档</a><a class="chip" href="../index.html?tag=Docker">Docker</a>
+    <span class="date">2025-12-17</span>
+  </div>
+  
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOcpu9PP91qfQuYgpicnXXkoAFGe1icrds01S3FciafoR2B14wibbTo0W36zw/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 小 G <a href="https://mp.weixin.qq.com/s/">GitHubDaily</a> <em>2025年12月16日 17:05</em></p>
+<p>前几天，刚收藏了一篇技术干货文章，想着周末有空再细读，结果等点开的时候，屏幕上只剩下冷冰冰的 “404 Not Found”。</p>
+<p>心情颇为复杂，说到底，别人的服务器我们也控制不了，只有存到自己硬盘里的东西，才算真正落袋为安。</p>
+<p>于是，我在 GitHub 上找到了 <strong>ArchiveBox</strong> 这个开源项目，已狂揽 26000+ GitHub Star。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOcib0UoJ70v3Ol8UX0GeI804D7eV9B5UexTcmTUpQV8mGdsVSK110D1kA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="star-history-20251216 (1)"></p>
+<p>简单说，它就像是我们私有专属的 “互联网档案馆”，其工作原理简单粗暴。</p>
+<p>只要我们把链接丢给它，它就会调用 Chrome、wget、curl 等各种工具，把这个网页 “连皮带骨” 地保存下来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOctmOTFL3KkgL7icwBLM46FHN8u2w0FpUrWryPPPbpRb9zepTzeQsT3YQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="image-20251216144630319"></p>
+<p>包括网页的原始 HTML、截图（PNG）、PDF 文档，甚至连页面里的媒体文件和 WARC 归档格式都不放过。</p>
+<p>这一下子，哪怕原来的网站倒闭了，域名过期了，我们依然能在本地还原出它当年的样子。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOc5WjWLVKKQ5zx3KGq5lYssic2NG9RgCLucvQthjmuZ1mmzTurGKviboJA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="294289449-ace0954a-ddac-4520-9d18-1c77b1ec50b2"></p>
+<p>还有我们平时用的浏览器书签、历史记录，甚至是 Pocket、Pinboard 这种稍后阅读服务的导出文件，都可以直接喂给它。</p>
+<p>如果我们有订阅 RSS 的习惯，它甚至能定时自动抓取 RSS 源里的新文章，全自动归档。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOcxOnlXzEbKKMWUTelHicPg8y6qqCthSQMkp6iao2ial9kickX0IhbsAsd9A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="294289510-e8e0b6f8-8fdf-4b7f-8124-c10d8699bdb2"></p>
+<p>更重要的是，它存下来的东西，不会搞成那种私有的数据库格式锁死我们。</p>
+<p>打开它的数据文件夹，里面都是普通的文件夹和文件，HTML 就是 HTML，PDF 就是 PDF。</p>
+<p>就算哪天不跑 ArchiveBox 了，这些文件咱们依然能直接双击打开看，这点真的非常务实。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOcopRGCx3sXEBm584F63TfMXjibxo2YUOaCoHnKlG2mWD2Vr3Zg38d5RQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="image-20251216143851514"></p>
+<p>不过，安装这玩意儿有个坑。</p>
+<p>因为它调用了太多的外部工具（Chrome, wget, curl, yt-dlp 等等），如果直接在系统里手动安装，那个依赖关系能让人头皮发麻。</p>
+<p>所以，作者在文档里强烈建议我们使用 Docker 来部署，这是目前最省心的方案。</p>
+<p>执行如下三条命令就能初始化：</p>
+<pre><code class="language-bash"># 1.创建并进入数据目录mkdir -p ~/archivebox/data &amp;&amp; cd ~/archivebox/data
+# 2.初始化数据库和账号docker run -v $PWD:/data -it archivebox/archivebox init --setup
+# 3.启动网页服务器docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox
+</code></pre>
+<p>启动成功之后，访问本地的 8000 端口，就能看到那个简单直接的管理界面了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOccnnJIofGxA81N5DzibW5MLtRPOwQN47ib6rrprKrKyFDia4ia9I8DNJV2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="image-20251216144315672"></p>
+<p>不过这里得提个醒。</p>
+<p>既然它存得这么全，那对硬盘空间的消耗也是实打实的。</p>
+<p>官方文档提到，每存 1000 个网页，根据我们存的内容多少（比如包不包含视频），大概会占用 1GB 到 50GB 不等的空间。</p>
+<p>如果是运行在自己的 NAS 或者服务器上，我们最好提前规划好存储空间。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uDRkMWLia28gYYAXUqoTic6btRGaPgEDOcRpH4qYQ2HCN61m7SSbdvgJtKda1gjdwRxXQ1tGLlBb6f3NtkmgEx4A/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="img"></p>
+<p>另外，虽然它能存下带 JS 的动态网页，但在浏览这些本地存档的时候，如果网页本身包含恶意的 JS 代码，依然是有潜在风险的。</p>
+<p>如果我们对安全特别敏感，记得在配置里关掉 JS 执行或者把相关选项调严格一些。</p>
+<p>总的来说，对于我们这种有 “数字囤积症” 或者不想资料丢失的人来说，ArchiveBox 是一个相当稳健的本地化归档方案。</p>
+<p>GitHub 项目地址： <a href="https://github.com/ArchiveBox/ArchiveBox">https://github.com/ArchiveBox/ArchiveBox</a></p>
+<p>今天的分享到此结束，感谢大家抽空阅读，我们下期再见，Respect！</p>
+<p>继续滑动看下一个</p>
+<p>GitHubDaily</p>
+<p>向上滑动看下一个</p>
+<p>GitHubDaily</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/7C9-zpNOP2JMmjgl7iRhkw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

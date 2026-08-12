@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 时代的产品素养：把活交给 Agent，时间留给做产品 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI 时代的产品素养：把活交给 Agent，时间留给做产品</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81">产品</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86">产品经理</a><a class="chip" href="../index.html?tag=%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1">原型设计</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-05-14</span>
+  </div>
+  <p class="lead">传统的 PM 发展路线正在快速失效。</p>
+  <article class="content"><p>原创 空格丶 空格丶 空格的键盘</p>
+<p><em>2026年5月14日 13:20</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>产品经理这个岗位从面世以来，他的发展路线就很清晰：</p>
+<ul>
+<li>初级产品：会画原型、会写文档、跟得上需求节奏。</li>
+<li>中级产品：能独立负责业务模块、跨部门协作、扛得起核心指标。</li>
+<li>高级产品：懂商业模式、能制定产品战略、能找到 PMF。</li>
+</ul>
+<p>直到 AI 来了。画原型、写文档的<strong>时间极大变少</strong>。</p>
+<p>我自己两年前画一个弹窗原型、要2-4 小时。现在截一张图，说一句话，几分钟就好。，计文档也会跟着出来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxkDEZ2cYnGQTdErjRjVxJEMkIJZIhRI3oE2EUSrwUHvJz0NdO3pzqBsWt6hbNm3hKgePcaWMnXjySRZRAiaYWeW7c0nxwM6kicA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片"></p>
+<p><strong>画原型、写文档的时间变少了，剩下的时间，用来做什么？</strong></p>
+<p>这是对产品经理这个岗位未来发展的提问。</p>
+<p>弄清楚这个问题，我们就知道产品岗位如何变化，产品的能力该怎么培养了。</p>
+<p>以前，有初级产品的岗位来做画图仔，是因为之前就有那么多的活来让他做，现在 Agent 都能画了，那要公司要初级产品来做什么呢？</p>
+<p>这里面有个悖论。</p>
+<p>画原型也好、写文档也好，这些是需要时间去磨练的能力。</p>
+<p>初级阶段反复手搓原型的过程是在训练他对界面信息层次的感知、对用户交互路径的本能反应、对边界场景的敏感度。</p>
+<p>也就是我们说的在<strong>培养“品味”</strong></p>
+<p>现在这个能力的&quot;训练场&quot;没有消失，而是被压缩了。</p>
+<p>对一个产品新人不需要重头去学习拖拽组件、手绘原型。</p>
+<p>AI 把每个人的起点都拉到了同一条线上。</p>
+<p>不存在初级、中级、高级，甚至不存在产品经理，大家都可以用 Agent 制作自己的产品。</p>
+<p>这篇文想聊清楚一件事，<strong>AI 时代的产品经理素养，到底怎么练。</strong></p>
+<p>下面就是我自己这一年用 AI 做 PM 工作的全套方法，提供一些硬技能必备的工具和方法。</p>
+<p>从 3 个画原型的 Skill、到 5 种工具盘点、到我开源的 13 个 PM-Skill 库。</p>
+<p>最后再来探讨开头那个问题：AI 省下来的时间应该用来做什么，以及&quot;产品品味&quot;这件事在 AI 时代怎么培养。</p>
+<p><strong>一、3 个画原型 Skill，先理解 Agent 能做到什么</strong></p>
+<p>讲工具之前，先讲我自己提炼的 3 个 Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyrGbWpFWdmtJfAVSwXib728YtHfDc2uicOgDXibx0L9s6FATxGqnnwzxwzTawoWMaBDqINXNEC6niczuBVUopmicjXNtY1pcwD50mY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>它们是我基于这一年实战总结出来的 Claude Code 工作流。</p>
+<p>三个 Skill 解决同一类问题：把&quot;想法变成可沟通原型&quot;这条路上的距离压缩到极致。区别只在输出物形态：</p>
+<p><strong>image2proto</strong>：</p>
+<p>截图进去，单文件 HTML 原型出来。</p>
+<p>浏览器打开就能交互。Tab 切换、弹窗开关、筛选展开都是真实的。发给任何人都能直接用，不用装环境。适合会前 5 分钟出 Demo，老板说&quot;下午开会先看看效果&quot;，这个最快。</p>
+<p>图片 2 画笔：</p>
+<p>截图进去，可编辑的 Pencil 设计稿出来，旁边还附一份结构化设计文档。</p>
+<p>Pencil 是最近火起来的、专门给 Agent 用的设计工具。AI 出 80%，人在 Pencil 里改 20%。适合需要精细化交付的场景，B 端表单、多状态设计稿都靠这个。</p>
+<p>制作原型示例：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxBqvqzCYRSCKZkFGFib11S4oJwWq5FFFQ6skjnKz6aCYt4ctvX5ls27zKuiaD4q20nA5M9SC8Xw8VOEcvtf3aqncEEkX52dW998/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p><strong>url2proto</strong>：</p>
+<p>网址进去，完整的 Next.js + Tailwind 本地项目出来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowlK2ADib0uZwaS5AEqw3VSXZdoKdcdg4ia2Bqd3E26pgELQYiaR9kE36iaWZg1w3UU38pLEkiaTCfiaZIpPIe3Y4iaicfhibXtO4QHNECA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>AI 自己抓页面结构、设计 token、组件层级，自己规划项目架构，初始化项目，配置 Tailwind，拆组件还原。中间遇到样式对不上，它自己对比修。</p>
+<p>一个网址，半小时出来一个能本地跑、能改、能持续迭代的工程化项目。适合多页面、大型项目、新产品原型起步。</p>
+<p>技能地址：github.com/zephyrwang6/pm-skills</p>
+<p>这三个 Skill 用下来，最大的体感<strong>让你重新理解&quot;原型&quot;这件事</strong></p>
+<p>原型制作就是一个对话过程。</p>
+<p>截图、口头描述、AI 出稿、再口头改，这个循环跑十次的成本，比你手动画一稿还低。</p>
+<p>你脑子里那个模糊的需求，可以在十几分钟里被反复显形、推翻、重构。</p>
+<p>在这个对话过程中也是在训练</p>
+<p>这是 PM 工作方式上的根本变化。</p>
+<p><strong>二、除了 HTML，还有 5 种 AI 画原型工具</strong></p>
+<p>上面 3 个 Skill 的产物都是 HTML 代码。</p>
+<p>但 PM 实际需求不止这一种。有时候要一张能贴进 PRD 的位图、一份流程图、 Figma 稿。</p>
+<p>我把目前真正能落地的另外几种工具盘了一遍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowArUWP8P8342JcaiaiaG9K45VbsMf11HgRsUIhHlEkciaQNKe7N7bzKu7kyfZia8ySgLO8ckrJnOTzXbvfchk1eUiabjyapP4xyGE4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p><strong>1 Claude Code / Codex（命令行代理）</strong></p>
+<p>最底层、也最强大的一种。</p>
+<p>Claude Code 是 Anthropic 出的命令行 Agent，Codex 是 OpenAI 出的对标产品。</p>
+<p>有 CLI 版本和桌面端版本。新手可以使用桌面端版本，CLI 版本可以自定义 API。</p>
+<p>具体的使用方法可以看我过往文章。</p>
+<p>上面我做的那 3 个画原型 Skill 全是跑在 Claude Code 上的。</p>
+<p>但即使不装任何 Skill，光是裸用 Claude Code，你也可以跟它说&quot;看这张截图，帮我做一个 HTML 原型&quot;，它会自己理解、自己写文件、自己调试、自己开浏览器预览。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowhsBROVGpNhJxoqtZia9qBKbdicjml7H8BovsmXoyDsgibfqcwk3MLsh3mKu5t9v00rNMRU8BH8cIBbEy5xwnem6za3SvcauMPKM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p>Agent 能直接帮你建好文件、跑通环境、改到能用为止。</p>
+<p>这是所有想认真用 AI 做产品的人，迟早要用的工具。</p>
+<p><strong>2 图片模型出图</strong></p>
+<p>GPT-Image-2、Nano Banana 等。</p>
+<p>他们出的图是能贴到 PRD 里的 UI 概念图。</p>
+<p>几十秒一张能直接贴进 PRD 的位图原型。中文文字识别几乎不出错。竞品风格图、Banner 草稿、UI 概念图、需求评审用的视觉示意，都是它的主战场。</p>
+<p><strong>3 个 Drawio + AI</strong></p>
+<p>让 AI 直接出 .drawio 的图纸文件。</p>
+<p>使用技能：<a href="https://github.com/Agents365-ai/drawio-skill">https://github.com/Agents365-ai/drawio-skill</a></p>
+<p>直接产出 .drawio 文件落到 Obsidian 库里。点开自动调起编辑器，改完保存，Markdown 笔记引用就能调出。</p>
+<p>一张架构图随系统演化要改十次。AI 重新生成每次都是新的不带历史，AI 加人工编辑的混合模式，才能让一张图的版本演化轨迹被保留下来。</p>
+<p><strong>4 个代理原型 IDE</strong></p>
+<p>原型开发环境，如 v0、Bolt.new、Lovable。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyYShGzxUjibicrlulPFZs0uRqde5Lticibu7CribQia5VzWia3o3DB3hZZJNXxJicwJdMC5TJ7Uk08jU2mG9NY4XUNafFpFV9rSlbDrEs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>v0 最大的特性是生成完直接给一个 vercel.app 的 URL，转发给任何人打开都能用，演示完关掉链接不用清理。</p>
+<p>可点击不等于可上线。他们做的都是 demo 级产品，适合用于原型和想法验证。</p>
+<p><strong>5 缝合/菲格玛制作</strong></p>
+<p>如果你的下游是设计师，最好的路径是直接产出 Figma 格式设计稿。</p>
+<p>Stitch 是 Google 出的 AI 设计工具，入口stitch.withgoogle.com，对话框描述页面或 App 流程，直出 Figma 稿。也支持 html 代码导出等多种格式。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowXcbhEliaibuhHhbw3X1Yibibkv7D1f073OZmvgTAJjNqHiayuFEfxic0zC1ib03npGHrGlNJGqAkBWx21aQia1L1eiaRPw3Vewz2xmD3M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>Figma Make 是 Figma 官方的 AI 面板，直接在figma.com里调右侧 AI Make 面板，生成的节点天然落在 Figma 工作流里。组件库背靠 Figma 生态最全。</p>
+<p>前者适合从零起一个 App 原型，后者适合已经在 Figma 里重度协作的团队接力。两个都能把&quot;AI 出稿 → 设计师精修&quot;这条链路接通。</p>
+<p><strong>三、13 个 PM-Skill，覆盖一整个工作流</strong></p>
+<p>画原型只是 PM 工作的一部分。</p>
+<p>我把这一年自己用过的、打磨过的所有 PM 相关 Skill 都开源了出来。一共 13 个，按 PM 的工作流分四类：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxpgX0ib2t3GhpQf61eZX5bI6sO5BH73suz9qmUtd723NlSuTxX0sJAToXiauickoANAaAHx3mU91iaV49YshoMPia4VoO5GladNEyM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p>仓库地址：github.com/zephyrwang6/pm-skills</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyquC6c1m0Hwoy3ffYctzY7I3vjjiciaPjZ1NZ45gEB4lwlBJqia0HyPQfjTiaCmZ0cXBz6bFxOtL93fMriaNiaGib5MTrQygLdlib1JCQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片"></p>
+<p><strong>这些 Skill 你拿到之后，一定要基于自己的业务直接改。</strong></p>
+<p>正确的姿势是：把你公司常用的 PRD 模板、复盘模板、埋点规范喂给 Agent，告诉它：</p>
+<p>&quot;请按这个模板改 skill，以后都按这个格式输出。&quot;</p>
+<p><strong>四、AI 节省下的时间，用来做什么</strong></p>
+<p>传统的 PM 发展路线正在快速失效。</p>
+<p>当一个会用 Agent 的产品新人，可以在一周内端出来一个能用的小产品，他和一个所谓&quot;高级产品&quot;之间的差距，不再是 title，而是<strong>品味</strong>。</p>
+<p>品味这个东西，没法靠 Agent 速成。</p>
+<p>它来自对原型的反复试错、对用户反馈的反复消化、对踩坑的反复复盘。</p>
+<p>&quot;基本功&quot;并没有被 AI 所代替，但是积攒基本功的方式变了，</p>
+<p>传统路径里，初级产品要花两年练拖控件、对齐间距、写需求文档。</p>
+<p>这套基本功今天看大半是浪费。</p>
+<p>新方式是借助 Agent大量实践和试错。</p>
+<p>你可以一周看 100 个原型、一个月跑 50 个小产品、一年消化 1000 份用户反馈。</p>
+<p>前提只有一个：你真的人在场。</p>
+<p>每一稿 AI 出的原型都过一遍，改一遍，跟自己的判断对一遍。</p>
+<p>AI 把你的练习场放大 100 倍。</p>
+<p>这就是 AI 时代的产品基本功，不按传统路径熬资历，而是用 Agent 把试错周期压到极致，再用人的判断把每一次试错的经验沉淀成品味。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxw9ib20rEiacTJiba3SuVtBorGr1ROFflFnyYUdN4hvlvRXV2LWxYSZlu8ZicZoHAjs8IJic0MYLh6ad41IUBSBXKOaFjg4LXibySus/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片"></p>
+<p><strong>初级、中级、高级，这些 title 不再重要。</strong></p>
+<p>重要的是你做没做过产品，做过几个，做成了几个。用户是怎么评价的。</p>
+<p>PM 这个岗位不会消失。</p>
+<p>但 PM 的定义正在被重写，从写需求文档的人，变成用 Agent 自己造产品、并在试错中积累品味的人。</p>
+<p>迟早所有人都会切换过来。但红利只属于先动手的那批。</p>
+<p>如果大家想要更系统的掌握 coding Agent、Obsidian、Skill、Vibecoding 的技能，欢迎订阅我的 AI 生产力专栏+社群。接下来就要更新 Obsidian 更详细系统的使用、还有 vibecoding 基础和 Coding Agent 的使用待更新。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxP1nZVnPTby0aJ3QUXfxRZeicsqvMIs9q8uycvPf8vCSSKDiaT4yd7hjTLub9HKpflibDGk66HVeibicG2eOa4N0zS8ic3fJWWrlibRo/640?wx_fmt=other&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=13" alt="Image"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/k37pV0kVfR8MbIzaw_tIXw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>烧了一万块API后，我找到了同时适用于Fable5和GPT5.6的AI工作流 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">烧了一万块API后，我找到了同时适用于Fable5和GPT5.6的AI工作流</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E6%90%AD%E5%AD%90">搭子</a><a class="chip" href="../index.html?tag=API%E4%BC%98%E5%8C%96">API优化</a><a class="chip" href="../index.html?tag=Agent%E5%8D%8F%E4%BD%9C">Agent协作</a>
+    <span class="date">2026-07-30</span>
+  </div>
+  <p class="lead">不会被封的焚诀来了！</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月29日 18:32</em></p>
+<p>Claude又大封号了，</p>
+<p>大概率是周日支付出了个SEPA的验证Bug，随便一个德国卡号就可以不扣钱开通max订阅，果然周一周二封了一大批号，这次估计比上次查时区更加直接，甚至到无脑封，因为我认识的人基本上都被封完了。</p>
+<p>不过这次我完全没受影响，因为上次被封，对话记录丢失大半之后，我已经把工作流全都压到API版的Fable上了，再加一个mem0来做记忆层，Github长期做项目文件的存储层，体验上不比用账号差。</p>
+<p>这三周就是天天琢磨怎么把一周500刀（3300块）的API账单至少压缩到400一周，做到跟Max订阅持平的水准。这样就不会心疼到不舍得用，也不能全Fable5出计划，GPT 5.6 Sol干活，这样简单的活也要跑一小时。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyBlFzmdnRLFdBOp58uM6fEumzTThOdQu2d2ACwJtlpWicyFUh2O5SBict2kOVbW55ibic74RW7SlbvuZKsSg2fria2MYVR8ZOAKqYI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>就是七天，3200这个数字组合看着是有点吓人，那能不能把token消耗分别分摊到Fable5、Opus5、Sonnet5，以及量大管饱的GPT 5.6 Sol呢？</p>
+<p>能的，当然能的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fy9UicV29iatv8086xpWyHrQRklMZYXQ69HuU85wBw6JK82lhOJFXjcFE02boGSnwwp54phGqSFZsTPf7R1kfAFg7QrD86IbKcvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>🔗 github. com/LearnPrompt/partner-skill</p>
+<p>就是上个月我开源的让Claude Code和Codex搭配使用的Skill搭子的1.4版，</p>
+<p>当时的定位是把Claude Code出计划然后直接在当前对话调用Codex，不需要复制黏贴，由Fable5自己写交接文档自己从CodeX那读取输出。</p>
+<p>Claude Code负责前期的头脑风暴和规划，UI和交互，还有最后的代码审查。Codex负责耗额度大但对模型能力要求没那么高的事，比方说从零建项目，浏览器自动化，长上下文代码实现等等等等，量大管饱。</p>
+<p>2.0做的事情跟1.4完全是两个量级。</p>
+<p>1.4解决的是两个Agent之间怎么交接。交接是A做完了交给B，B做完了交回A。它是串行的，线性的，像流水线。</p>
+<p>2.0解决的是，怎么让这两个Agent四个不同版本的模型像一支团队协作。协作是A和B在同一个空间里一起工作，各自知道自己该做什么，做完之后有人检查，检查完了有记录，是一个系统。</p>
+<p>先说最大的变化。</p>
+<p>搭子现在有三个身份了。</p>
+<p>安装完搭子2.0之后，输入「搭子，配置」，它会在本机起一个配置页面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fy7ZmKKpL9DnXiafE2mEZlLVxFIryOsXmupiagMGSiaPIfKtgDicDV3N54K1wEMCLQiaiboRFZv5CpGSw1HJIsibsfg4AyFCBtBibKjPTU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>搭子现在不再区分「Claude Code的活」和「Codex的活」了。</p>
+<p>它区分的是三种身份。deep_reasoner，负责深度推理，拆方案，判边界，做架构决策。fast_worker，负责快速执行，改文件，跑测试，批量重构。</p>
+<p>还有一个新角色，arbiter，仲裁者。</p>
+<p>这个角色的设计来自我自己长时间使用的一条Agent规则。</p>
+<p>高风险决策或者说做目标的时候，要让Opus和Codex背对背解同一个问题，互相看不到对方的答案，然后我或者Fable5来做最终裁决。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fxk5l8lwocAyUQMyq8wgItZpP9OE4IGyTw5EbcraEwZUQgiaxzOpUKbeqVoGqS4v5LqnmytcqfPWCPh8h4qibNNOz3vd2sdYUh4g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>这条规则跑了一段时间之后我发现，方向时对的，但执行太累了。</p>
+<p>你得手动复制问题发给两边，手动等两边都答完，手动对比两个答案。做一次还行，做十次你就开始偷懒了，偷懒了这条规则就形同虚设。</p>
+<p>搭子2.0把这件事自动化了。</p>
+<p>你跟搭子说，这个方案让两边各自想想。它就会把同一个问题分别发给deep_reasoner和arbiter，两边独立解题，互相看不到对方任何一个字。做完之后结果摆在一起。</p>
+<p>那再大胆再头脑风暴一点，</p>
+<p>每个角色绑定的模型可不可以随着项目不同随意切换呢？</p>
+<p>也能的。</p>
+<p>比方我的AI热点Skill，ai news rader就把deep_reasoner设置成Fable5，fast_worker换成Opus5，arbiter是GPT 5.6 Sol，</p>
+<p>轮到我更新PPT Skill的时候，我就可以把deep_reasoner设置成Fable5，fast_worker和arbiter是GPT 5.6 Sol。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzsyEuAMLiavYdAyVIqQ9anQ5jK6EETFwiarPq62e9QdyAG2mrTZUdERNYyNAZxDmel4en1U3mJBJiaEric8t2npaLo1SaCWDsxvFA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>再再再大胆一点，</p>
+<p>能不能同一个项目Claude Code和Codex配置的模型不一样呢？</p>
+<p>还是可以的！！！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzjNMqdEL33h2NNadkoWFtRxBZPoQLVQtnW6DUUpE7Zw2s48T2jpWvRzGws7Q5ywtCGSmrdib4xrq6vOOQjV1ib8ibQDvkT94fy9Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>我要的就是API里的每一分钱，都可以花在最合适的模型上。所以搭子现在内置了3套不同的方案，balanced均衡、quality质量优先、cost省钱优先。</p>
+<p>简单来说，config文件可以按host分命名空间，hosts.claude_code管Claude Code侧的配置，hosts.codex管Codex侧的。</p>
+<p>你在Claude Code里跑「搭子，配置」，它只动Claude Code的namespace，Codex那段原封不动。反过来也一样。</p>
+<p>两个Agent共享同一个config文件，但互不干扰。而且config分两级，项目级在.partner/config.toml，全局级在 ~/.config/partner/config.toml，项目级优先。</p>
+<p>这意味着你可以给不同项目配不同的策略。一个大型项目deep_reasoner绑Fable5走重计划，一个小脚本全绑GPT 5.6省钱。</p>
+<p>这套配置跑了两周，就是我第二周成本压一半的核心原因。</p>
+<p>配好不同档位的模型后，还有一个特别贴心的功能，「搭子，试跑」。</p>
+<p>它会跑三个固定的微任务，每个任务分别测试三个身份有没有活着。</p>
+<p>fast_worker做一个JSON排序的机械活，deep_reasoner做一道CLI设计的推理题，arbiter拿到同一道推理题独立去解，盲解规则严格执行，它看不到deep_reasoner的任何答案。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwZqiadVOJ5ia1hC63pSBEkxq0L0sdG4YdY2ZvMpQeiaQCEf9rgENJ9ewBVliaM4LCTgNK5joA7svtoOl3NRffWg2Fz7ibftT6aWZAo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>还有一个升级是Goal-to-PR协议。</p>
+<p>1.4的时候，两个Agent在同步干活的过程中，如果我在对话中间临时修改了目标，或者Codex自己跑偏了，就很难追溯到底哪一步开始偏的。</p>
+<p>2.0加了哈希校验。goal.md每次变更都会生成一个哈希，Codex提交PR的时候会自动对照这个哈希，确认它执行的是你最新版本的目标，而不是某个中间版本的残留指令。</p>
+<p>说完核心升级，最后来看看搭子2.0实际跑起来是什么感觉。</p>
+<p>AI News Radar之前一直有一个问题，就是没有全文提取。RSS拿到的只是摘要，用户想看完整内容还得自己点进去。</p>
+<p>这个功能本来计划在下个版本做，正好用搭子2.0来实战一把。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fz44BWKKc26DyuCXVpQ0M1a6v4hCUCNmiaNY96RNhB1Xryl3Mcq18eswaA5G8lBy0hntkibuxKWDauyeZicUutqwAws4bvfuicXZ48/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>一把搞定，贼省fable5还没降低质量。</p>
+<p>这是我让GPT 5.6做的，正文效果</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fw9wjL8dZ0WyJZMLZ2YOibia8bOEamP2TiaCA85yGvicXEpRiaH2YGrsC1sjPh8T4j1k6rbAk89gjbVwcWvmqLQPdxCdLGD0sEBUVUE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>这是我用搭子让fable5 think，Opus5 do，GPT5.6 review的效果</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/VNz1x8bH8FzHlPdfPI0fx4RCZE61OuHoZl9IIoDLico84OfsAsqAd6ZowGiasRmuVSb27krPY8SFTJN6dczhaoKWRhaKP7mlAxibPhSeFBJQQ0/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>关于省钱这块，搭子2.0也做了一个升级。</p>
+<p>1.4的时候有一个Partner Session Receipt，就是那张小票，告诉你这次协作哪个Agent做了什么，都花了多少钱。</p>
+<p>2.0的小票进化了。</p>
+<p>它现在有证据链了。小票会记录这一轮每个身份实际跑了什么任务、什么模型、什么推理强度都保存。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzQwMNvJe4lh601HF1OJ3QDXnBXFjPKrA6KpcuyejibCRTzicMbEnRrwI3pia18kW4akufiaBKQicQF9tM5mOCWXyPQwh3Ytb8QZ1dk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>所以搭子2.0的省钱逻辑其实是这样的，它做了两件事。</p>
+<p>第一件，通过身份系统和跨项目混编，让该便宜的任务自动走便宜的通道，而且可以随着项目变化，并不会因为用了低一档的模型就降低体验。</p>
+<p>第二件，通过交接文档和session复用，减少重复的上下文加载，Fable5会判断当前任务是否值得派别的模型去做，Agent也不用每次都Cold Start，交接包只传有用的信息，不需要Agent把整个仓库反复读。</p>
+<p>这时候回头看看1.4到2.0这段路，</p>
+<p>变化比我预想的大。</p>
+<p>1.4的时候我把两个Agent摆到一个工位上。</p>
+<p>2.0做的事情是给这个工位装上仪表盘。</p>
+<p>三个身份，跨项目混编，本地配置UI，一键试跑，Goal哈希校验，证据链小票。</p>
+<p>这些功能串在一起之后，我发现已经很久没有手动在两个Agent之间复制粘贴过上下文了，也不需要每天都盯着API账单了。</p>
+<p>这就对了。</p>
+<p>按A社的习惯，封号潮还会继续，</p>
+<p>200刀的订阅随时可能消失。</p>
+<p>3200块的API教会了我一件事。</p>
+<p>花钱也要把每一个Token都花在刀刃上。</p>
+<p>搭子2.0做的，</p>
+<p>就是当好这磨刀石。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>304人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/hhhKsHLtLY_OIU_T6idNhA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

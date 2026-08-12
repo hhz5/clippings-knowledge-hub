@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NanoBanana 2.0 来了， 对比前一代和即梦 5.0 lite，它依旧强的离谱 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">NanoBanana 2.0 来了， 对比前一代和即梦 5.0 lite，它依旧强的离谱</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    
+    <span class="date">2026-02-27</span>
+  </div>
+  <p class="lead">nanobanana2.0 断档领先的生图模型</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年2月27日 01:48</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozpibed8eQMuEdPub59ibURQhTrno58D2ap3SFmaauleEbygz7IyccvIN16UrB93sPR98jSVsuaaHsXQMLzCwNQNmzQb3kaoTjfM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>刚刚，Nano Banana 2.0 上线， 一看到这个名字有点恍惚，我以为上个版本也是 2.0，专门去搜索了，才弄明白：</p>
+<ul>
+<li>25 年 11 月 20 号发布的是 nanobanana pro</li>
+<li>25 年 9 月发的 nanobanana</li>
+</ul>
+<p>而香蕉模型的 API 生图名称是 <strong>gemini-3-pro-image-preview</strong></p>
+<p>这个混乱的命名让我想起了 GPT4.0 系列，好在不需要在对话框里去选择那么多模型。</p>
+<p>说回重点，nanobanana 依旧是目前最能打的生图模型， 11 月的版本还没被竞争对手超越，就又有了新版本。</p>
+<p>使用的话，只需要在 gemini 选择生成图片，就会默认调用 nanobanana 2.0，而且这次还新增了风格选择：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoys1hPtnWgV9pE1oAzKpHKFGxLnLjCiceENp6icDmgdrZenqghOUoibmtBicRTHHKsT9fUhj0lm0ibmaBaq2ySDjhRMmYLTV2AcgFD8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>官方说的这次 2.0 主要提升在画质、成本和速度， <strong>分辨率从 2K 跨入 4K 时代，生成速度从 30 秒+ 压缩进了 10 秒。</strong> 优化了工作流的文本渲染和角色一致性问题。还新增思考模式、多图融合、搜索增强等实用功能，能力全方位进阶。</p>
+<p>要说到生图模型，必然绕不开年前刚推出 seedance2.0 的即梦团队做的 <strong>Seedream</strong> ，一直备受好评，我去看了下他们的最新出的 <strong>Seedream 5.0 Lite ，</strong> 在 2.13 号，也就 10 天前刚发布。下面是模型介绍：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowGIytFcQWYkzKPJxe84EjxPh9tU9pJdomWI34ln33ZP2A3sH8lKqmXiaWartlbwzUibRqUnM8OtdzX64zN91m7SbeYic9G6c603k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p>这俩新鲜出炉的模型，棋逢对手， 它们在各领域表现如何？有何突破？谁强谁弱？ 这篇文章我拿 15 个案例测试 香蕉 2.0 和前一代香蕉 pro 以及即梦最新模型 5.0lite 。</p>
+<p><strong>从电商、海报、中文理解、创意生成、真实摄影5 个领域，15 个案例，三者做对比， 直观感受下 nanobanana2.0 提升在哪里，以及和国产最强生图模型对比领先在哪里？ 下面是详细的测评 ：</strong></p>
+<h3>1. 电商产品提示词：创建一个经典提拉米苏的分步食谱信息图，俯视视角。白色背景上的极简风格。配料照片标注：&#39;200克手指饼干&#39;、&#39;250克马斯卡彭奶酪&#39;、&#39;3个鸡蛋&#39;、&#39;100克糖&#39;、&#39;200毫升浓缩咖啡&#39;、&#39;30毫升咖啡利口酒&#39;、&#39;无糖可可粉&#39;。使用虚线显示制作步骤，配有图标：搅拌碗用于鸡蛋和马斯卡彭奶油混合，咖啡杯用于浸泡饼干，分层玻璃盘用于组装。底部展示最终装盘的提拉米苏切片照片。整洁的布局配有柔和阴影、简洁的字体设计，呈现现代极简主义感觉Nano Banana pro</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoyuiamdhk84YydXTiccYIylzvQuRJTtTKzgYGNaVcbvzFicMc9RClb56zfyKQEQxKwzVBYYEvZJK9GdmGoUwSChcpvgrttKcQWlVI/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxkU8Ky3Ovh1yNOAvicje4Ay5OsIKCQfeTibz8IVn3LKibojCzbYTNdf2QCjarwbvxR2FgEEPIFlAvYfCOACkY4bznahOLTRY6I4Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></p>
+<p>see dream 5.0 lite</p>
+<p>评价： 这三张图，香蕉 2.0 对比 pro 提升不大，同样的提示词，2.0 是中英混合输出，这样的情况还待考察，即梦的图片还是输在了理解上，比如 3 个鸡蛋上面显示的是咖啡。</p>
+<pre><code>提示词：构图为正面中心视角，背景为饱和粉橘色，风格定位为幸运系甜感风格，品牌招桃花冰品视觉主KV创作，情感氛围营造为轻松愉悦与节日好运联想，高品质冰淇淋实拍与品牌主色调融合，主标题大字排布在主体后部，冰淇淋轮廓穿插其中，文字被果球或甜筒局部遮挡，增强画面纵深与立体效果，顶部配置主标题“LUCKY双球，甜到出圈”，点缀文字“每一口都被命运选中，今夏好运开启”，彰显商品品质“LUCKY限定 · 双味好运冰淇淋”，英文标识“LUCKY BITE · ICE LOVE NOW”，文字采用镜面反光字体风格，整体视觉青春甜感兼具空间张力，设计输出须严格符合网格系统布局规范，确保元素对齐、间距统一、比例协调。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxEDfYApNwDIIk1mN2vyYvNrjga4vsMO3Xkb3v55QYL38QDrlGlu1wibNzicbvoBLsl9RRKhXDD4sjNqHvmMvyNCEoHDwD5icREUc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozOy9pibhqLy0qy2BRMRuoViayOvg2yLwicKjoeT0dibdymUQJfUhxtShS0p0xUBOwL0J8fLseichMgaeXIEukh7zLKqd47JchkkkI0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"></p>
+<p>评价 ：这三张图，三者大差不差，2.0 比 pro 画面更复杂，细节更突出了，即梦则显得更简洁。</p>
+<p><strong>2. 广告海报</strong></p>
+<pre><code>提示词：大卫风格石膏雕塑周边点缀柔和色彩的花卉元素（如橙粉色玫瑰、蓝紫跳舞兰）、自然植物叶片（如热带植物树叶、蕨类叶）、透明亚克力或镜面几何体（如球体、三角锥、圆环）错落分布，整体色调以奶油白为背景留白主色，融合珊瑚橘、草绿、钴蓝等明亮点缀色，背景干净通透，营造艺术装置感与自然呼吸感。风格定位为当代装置艺术风格海报，展览海报创作，营造清新现代与古典交织的视觉氛围。顶部配置主标题“形与意之间”，字体为设计字体，有连笔，底部展示“雕塑·装置·空间展”，并在右下角设活动时间“2025.08.10-2025.09.02”、展览地址“798 UCCA当代艺术中心”，预留二维码区域。字体均为深灰色，整体构图强调视觉焦点集中、边缘留白干净，画面层次清晰、质感丰富，适用于文艺展览海报、室内海报张贴或数字媒体传播。设计输出须严格符合网格系统布局规范，确保元素对齐、间距统一、比例协调。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyzJzvIZoM5S3iate5TveKBvibibdOlp5SnHo28F25o8qYXXas8RbfhMlxtGMGqfPoJY60gfThkribR77LgBibTG1ogBibwu8KrnibskY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozibvQicAmkFPYDdzjtuMSSqLq5icZ3gmkWKMtNdfia0SkOm2YbX2Fic8YEX1azBJHiccdDoELNfBJQciaV2IaQRgmBicHb9xOInplic1QQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></p>
+<p>see dream 5.0 lite</p>
+<pre><code>提示词：一幅有趣的3D插图，整体采用卡通+3D拟物风格，色彩饱和度高，突出视觉吸引力；主题文案白色字体“向往就前往”，采用潮流派对风格艺术字体，模拟真手写笔触，字体笔画粗厚醒目，形态夸张变形，部分笔画带俏皮弧度或独特弯折，营造活波、肆意、充满活力的派对氛围。加入黄色线条和飞机图标装饰。搭配英文字体“Happy Travel”进行排版；一个男孩，俯视鱼眼镜头，身穿白色背心，红色夹克，蓝色牛仔短裤，一只手伸向前拿着旅游地图递出去的动作，从下往上拍摄，比例很夸张，强烈的仰视透视感，广角，背景为场景上海微缩景观模型地标景点（外滩三件套建筑、外滩、黄浦江、和平饭店，现代城市风貌），蓝天白云动态模糊的树叶装饰。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz7PupGqWEYJHAK6osTJfYvrAzbhq9ChbjQWaPqFblEEW6AvicoWaTyG0U5yEMhjAfNwKJLdOdnI6ZEtnve4Ff3PUHa6VTUpKFo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyXSeDrIJuEHXVg5G255NYGTKGzdHJNww6WeUREN5f1yUW8BdNp1QRXDWicADcwwEvnDF4Ckh0icVYfhv4J3ojR5eUxFSHxgUyqo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image"></p>
+<p>评价： 香蕉 2.0 画面更加细腻，即梦的图片就显得扁平了一些。</p>
+<p><strong>3. 中文适配</strong></p>
+<pre><code>提示词：创建一个手绘的，富有想象力的 “cheat sheet” 路线图，从初学者到高级学习人工智能，就像一个聪明，古怪的孩子用一盒蜡笔和对机器人的热情绘制的。配色方案应使用充满活力的彩虹色-黄色，紫色，橙色和绿色-创造一个充满活力，凌乱，鼓舞人心的氛围。
+包括一个波浪路径或过山车标记为 “我的AI之旅” 的阶段，如: “第1步: 学会说机器人 (Python!)”“步骤2: 认识脑细胞帮 (神经元!)”“步骤3: 逻辑向导和概率药水 (数学和统计)” “步骤4: 婴儿AI学习爬行 (线性回归)” “步骤5: 隐藏层 = 隐藏的宝藏!” “第六步: 史诗般的战斗: 过度拟合vs欠拟合” “步骤7: 会说话的AI!(NLP)”第8步: AI看到一切!(计算机视觉)” “步骤9: 深度学习地牢” “第10步: AI老板之战: 变形金刚和LLMs”“最终级别: 建立自己的机器人军队 (项目和道德)”
+装饰床单: 简笔画穿着实验室外套训练小机器人宠物、带有标记循环的神经网络过山车，如 “ReLU”，“Dropout!”，“Backprop!”、 从Python书籍中生长出来的大脑形状的树、 一个困惑的孩子大喊 “梯度什么？!” 在一个纠结的损失函数
+GPU火箭飞船进入 “云空间”、 机器人画画，写诗，下棋、 警告标志，如 “当心数据泄漏!” 和 “过度适应悬崖!”、 迷你目标与 “解锁!” 贴纸: “训练有素的第一个模型!”，“发表在拥抱的脸!”，“理解的注意!”
+添加潦草的笔记，如:“魔术 = 数学代码好奇心!”、 “AI = 不只是科幻了!”
+“边做边学 -- 建造、打破、修复、重复!”、“对错误消息尖叫没关系!”
+使其凌乱，混乱且完全可爱-感觉像是冒险的旅程地图，将乐趣与学习融为一体，充满童趣和书呆子般的光彩
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyH72JVZ4nuPBHURicsyicj0ic1JiaibgyticgqC4KoMZrhA8Al6pNfmLm9HPEBDCibocPBdGuwbf2vggrsgAkINhTLC8k568sHSRGOM8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCox0fdGaAwJOKo4fwGHXCQHNcMUms53XIhRZ1hZDHazMFQTTZKibR70lZaFGjHUYtfzsJa3guSpxRvwIyleiaFkBr8geicnPdmpziag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Feishu Docs - Image"></p>
+<p>评价： 香蕉 2.0在语言理解和渲染在这种图上可以说表现到了极致，人物的动作和文字描述完全相符，图片上符号的逻辑说得通，这在生成 PPT 方面能发挥巨大威力。而即梦的效果在这里还不如香蕉 pro。</p>
+<pre><code>提示词：创作一张手绘风格的信息图卡片，比例为9:16竖版。卡片主题鲜明，背景为带有纸质肌理的米色或米白色，整体设计体现质朴、亲切的手绘美感。
+卡片上方以红黑相间、对比鲜明的大号毛笔草书字体突出标题，吸引视觉焦点。文字内容均采用中文草书，整体布局分为2至4个清晰的小节，每节以简短、精炼的中文短语表达核心要点。字体保持草书流畅的韵律感，既清晰可读又富有艺术气息。
+卡片中点缀简单、有趣的手绘插画或图标，例如人物或象征符号，以增强视觉吸引力，引发读者思考与共鸣。
+整体布局注意视觉平衡，预留足够的空白空间，确保画面简洁明了，易于阅读和理解。&lt;h1&gt;&lt;span style=&quot;color:red&quot;&gt;「认知」&lt;/span&gt;决定上限&lt;span style=&quot;color:red&quot;&gt;「圈子」&lt;/span&gt;决定机会&lt;/h1&gt;- 你赚不到「认知」以外的钱，- 也遇不到「圈子」以外的机会。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozaAAcLVpMxMNWOCdYc15XJBYGtazXxszYKpzsa5TNkaTUX4mbJ6wiamjX7Xr0y6zicbwOFEs2rMA6ibwGDEZr6YFgbNbmQcFbxAE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozPvdlRusXYlDmhZIuG5ib2RkHYp4zHmfyVKpJcHal48NSsWemr5EsNibUBgKvdRFwBOWjxHszNJq9pw5DZKs9uNhibOFgR9tLticY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Feishu Docs - Image"></p>
+<p>评价： 香蕉 2.0 更加丰富，图片也更和谐。</p>
+<pre><code>提示词：### 第三格（下半行左侧小格）：- **老板特写镜头**，表情从严肃转为愤怒，面容阴沉，额头出现愤怒的青筋或“井”字符号。
+### 第四格（下半行右侧小格）：- **场景切换到大楼外景**，高层窗户打开，眼镜女性员工小强夸张地被老板扔出窗外，表现幽默的动态姿势，小强表情惊讶并带有喜剧效果，窗内老板依然维持愤怒的表情和姿势。
+### 附加风格要求（可选但推荐）：- 人物绘制：卡通化、线条清晰明快，颜色鲜明易辨，易于网络传播。- 对话气泡：中文文字，字体清晰、大小适中且统一，采用黑色文字、白色背景的标准漫画气泡。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowgLCqnXzbfKSMAZWZoJcf896YapucjLrOTibicBZFqUWANLInEbKWicibhB6bM0ibvW1p4YVcJt874PfrniciapseDWvO528P1cPicqT8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozQnPiaCw1FZicnjhmqW8a0p1iaWAQyo6m5yHvpOnOAhdnEt8BowBW6dTgbdBkuuV5icD0RDToeMbKzoyCYcFZs28VCvicicYVS6jE8A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Feishu Docs - Image"></p>
+<p>评价： 这几张对比感觉香蕉 pro 的效果反而最好。</p>
+<p><strong>4. 创意</strong></p>
+<pre><code>提示词：&quot;一张具有黑暗、氛围感霓虹美学和柔和科幻光效的未来主义交易卡。卡片呈现为半透明的圆角矩形，边缘带有略微柔和的发光效果，看起来像是由全息玻璃制成。中心是一个大型发光的{{logo}}标志，没有额外的文字或标签，以{{colors}}的平滑渐变色照亮，但不过分明亮。卡片表面的反射应该是微妙的，带有轻微的光泽效果捕捉环境光。背景是深色碳纤维纹理或深色渐变，边缘有柔和的环境光晕渗透。添加从顶部对角线向下流动的微妙光线，为场景带来柔和的电影感光晕。在边缘和反射处应用轻微的动态模糊，为场景带来深度感和能量感，仿佛是高端科技动画的静帧。在卡片下方，包含真实的地面反射，镜像霓虹边缘和标志——略微扩散以呈现扎根的未来感外观。文字元素简洁且柔和照明：左上角显示&#39;{{ticker}}&#39;，右上角有风格化签名，底部显示&#39;{{company_name}}&#39;以及序列号&#39;{{card_number}}&#39;、收入徽章&#39;{{revenue}}&#39;和年份&#39;{{year}}&#39;。字体应该有微弱的光晕和轻微模糊，所有元素都应该感觉高端、优雅且柔和照明——就像高端赛博朋克收藏卡。&quot;
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz33OZ3w0vIA0aT9kMSYqTjbPGlNt0CthNSEje1JEMOgtFcgs2KNavCZhVhWWhz5XRCRUxlvt8wh49HLx7495sQQGO4y6EaAGM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Nano Banana 2.0"></p>
+<p>Nano Banana pro</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxsbOkVPlRgicQhwKarNBmxPcPkvF2TPd5RVJ3Xs2ia4geCMTBKOySA07D8JibQCBibicGOjXgFm2gbaibe32xtAsVUmoQBSYOf4DlC0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="Feishu Docs - Image"></p>
+<p>评价 ： 香蕉 2.0 和即梦都理解了占位符，画面上两者也差不太多</p>
+<pre><code>提示词：一个超写实的等距视角 3D 渲染图，展示了一个微型电脑工作室，它位于一个半透明的机械键盘键帽内，该键帽特别放置在一个真实的哑光表面机械键盘的 ESC 键上。键帽内部，一个小人穿着舒适的有纹理连帽衫，坐在现代人体工学椅子上，正在一个发光的超逼真电脑屏幕前工作。环境充满了逼真的微型科技配件：真实材质的台灯、带有反光的显示器、微小的扬声器格栅、缠绕的电线和陶瓷杯子。场景底部由泥土、岩石和苔藓构成，具有照片级的纹理和瑕疵。键帽内部的光线模仿自然的清晨阳光，投下柔和的阴影和温暖的色调，而外部则有来自周围键盘的冷色调环境反射。单词“ESC”以微弱的磨砂玻璃效果巧妙地蚀刻在半透明键帽的顶部——根据角度仅勉强可见。周围的键盘按键如 F2、Q、Shift 和 CTRL 清晰、有纹理，并具有照片级的逼真光照。拍摄效果如同使用高端手机相机，具有浅景深、完美的白平衡和电影般的细节。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy1pWJrCLmibLcb4bg7ibubYBj5DbT5MlaeWCgPUd1A21ziced4kR5YiaS87Bcu2Q1ZPYyO0Ql9W5MQ4EF7PSDjTu21enonquBIicBY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxGrXY2AfHgoUHuHFT0pd4dDdlpjv1kLgWeFYfuz6CUibuMzmicNhJ9hG70GMrkkuzIVhhFO91FyibaWib8wmKgPC52j1UNgBU64fk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="Feishu Docs - Image"></p>
+<p>评价 ：只有香蕉 2.0 理解了 ESC 在键盘右上角。</p>
+<p><strong>5. 真实摄影</strong></p>
+<pre><code>提示词：低饱和绿色色调，风吹过草地，长焦镜头特写，俯视视角，蓝调时刻，画面寂静而孤独，画面里一个极小的人，治愈系，胶片感，粗颗粒质感，杂志封面，获奖摄影作品。同上面的图片绿色感觉
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy1F4SU7huK5W4CK2BKRgpUnr3HxdL3joBepeqQ5wL8xoFFcJEYl9c68rmNdnvdcVxibSwqR83wPo43PKD9hKEibduib4QFWdp3Xw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCox8E3Rb8wBZqD5wANzRc985zhqH6peNBSMVgMto2vGHiaZEpYGM0efcf9XZX92s8JxE2HK03kHib3rjKk9nCXWRkL5gFYaI2Vicqo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="Feishu Docs - Image"></p>
+<p>评价 ：这几张图各自有各自的审美，但可以确信一点，香蕉 2.0 生成的文字，如果提示词是中文，界面上的语言偏好中英混合。</p>
+<pre><code>提示词：一张逼真的特写镜头，拍摄一位中年女性，温柔地微笑着，场景设置在洒满阳光的咖啡馆窗边中。场景由温暖的午后侧光透过百叶窗照亮，营造出宁静而怀旧的气氛。使用索尼A7R IV配85mm f/1.8镜头拍摄，强调眼角的细纹、发丝的光泽和咖啡杯上的蒸汽。图像应采用16:9格式。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCow2Vx9c4O2o354f05aQFm6qR0Ormd7fBh4KicUia291XCoHKEbdFd6flkKNdkPpAYFQ7AgwR65MOvU3SMCymF6Kr4Vl5MX1KM3Ug/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="Nano Banana 2.0"></p>
+<p>Nano Banana 2.0</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCoyoffX9JG7CBBLMlvFLJjcC8LvuBRx0kyuLsJPolZbSo2n0tcgApgvraf2IgzlicY0NSGcUVXicR1FI6lnv0z3nO4QIANk4hkoq0/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="Feishu Docs - Image"></p>
+<p>Nano Banana pro</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozfZUY3thIoGp2ZPApVibL47Pk8pNldiaUUD7q0WqYqpKfqe1sh3hFTWGmZ5BpDoVbI1VIY7ia9W7S2E9wia4LCRUoQmBQUgZiaowh4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="Feishu Docs - Image"></p>
+<p>see dream 5.0 lite</p>
+<p>评价： 对于摄影题材，非常清楚的看出，香蕉 2.0 的画面质感更好</p>
+<p><strong>总结</strong></p>
+<p>Nano Banana 2.0 绝对是目前打通图文排版、复杂逻辑和超写实画质的最强王者；相较于前一代它的画面更加细腻，细节更丰富了，理解能力也有提升，最意想不到的是它还优化了生成速度，画质也提升到了 4K。</p>
+<p>即梦的图相较于香蕉模型更简单、扁平化；理解能力相较于前一代有提升但还差于香蕉 pro。</p>
+<p>而 Nano Banana Pro 在特定格式的创作上依然保有一席之地。</p>
+<p>这就是今天的测评了，也是心血来潮，少有的熬夜测模型，有用的话，欢迎点赞转发。</p>
+<p>每天好心情</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/0DP1DkVYw3CUNsikIIH3LA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

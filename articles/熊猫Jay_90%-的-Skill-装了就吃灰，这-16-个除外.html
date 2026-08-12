@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>90% 的 Skill 装了就吃灰，这 16 个除外 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">90% 的 Skill 装了就吃灰，这 16 个除外</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%86%8A%E7%8C%ABJay">熊猫Jay</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=ClawHub">ClawHub</a>
+    <span class="date">2026-05-11</span>
+  </div>
+  
+  <article class="content"><p>原创 熊猫Jay 熊猫Jay 熊猫Jay字节之旅</p>
+<p><em>2026年5月9日 08:01</em> <em>江苏</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>这段时间一直在折腾 Skill 生态。</p>
+<p>ClawHub 上万个，Skills.sh 八万多个，GitHub 上还有一堆散落的。</p>
+<p>翻了不少，说实话大部分装了用两次就再也想不起来，要么写得粗糙，要么场景太窄。</p>
+<p>但有十几个，装完之后确实离不开了。</p>
+<p><strong>我按使用频率和场景价值筛了一遍，分成五类。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPMqf1CI45MGtibsHdiaKKP7wBQoqcNv2aLfm17FRVDPMfdAZIUxCaGloh39qVRRPtoJsR696QB8CLjO1PicYvLVYa2wJY1rJ33icC8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="配图1"></p>
+<p>每个都是我自己日常在用的，不是看介绍觉得不错，大多数都是跑进工作流里的。</p>
+<p>此外，文末我归纳了下开发Skill的最佳实践、企业案例实战，以及配套讲解视频和PPT。  </p>
+<p>希望对你有所帮助。</p>
+<h2>一、信息抓取：先解决&quot;喂什么&quot;的问题</h2>
+<p>AI 再聪明，没有输入就是空转。</p>
+<p>这类 Skill 解决的是&quot;原材料&quot;问题，让 Agent 能主动获取外部信息，而不是只能等你喂。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPOvch0J7LPMyyjVRK0iaCM47bCiaPfhiaib5ziaBwF3soqS78iabOic8RibS6S3uINibwmfnItuloaAVRMBAxSWxpBdfk31Ml63t6oYEwxU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="配图2"></p>
+<h3>一）Agent Reach ：全网信息源一站式接入</h3>
+<p>一个 Skill 打通十几个信息源。</p>
+<p>从 YouTube、GitHub、Reddit 到国内的 <strong>B 站、小红书、抖音、微信公众号</strong>，全部走免费开源后端，不需要逐个申请 API Key。</p>
+<p>凭证存在本地，数据不经第三方。</p>
+<p>还内置了 <code>agent-reach doctor</code> 诊断命令，环境有问题一跑就知道卡在哪。对需要跨平台采集信息的人来说，这一个 Skill 顶过去五六个工具。</p>
+<p>●●●</p>
+<p><a href="https://github.com/Panniantong/Agent-Reach">https://github.com/Panniantong/Agent-Reach</a></p>
+<p>适合：做竞品调研、内容聚合、跨平台信息监控的人。</p>
+<h3>二）Tavily Web Search ：专为 AI 优化的搜索引擎</h3>
+<p>和普通搜索引擎不同，Tavily 返回的不是一堆链接，而是精简过的、高相关性的结构化结果，直接就能被 Agent 理解和使用。</p>
+<p>省去了“搜到了但还要自己筛”的步骤。</p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/matthew77/liang-tavily-search">https://clawhub.ai/matthew77/liang-tavily-search</a></p>
+<p>适合：需要 Agent 自主查资料、做技术选型、快速了解一个陌生话题的场景。</p>
+<h3>三）YouTube Watcher ：长视频知识提取器</h3>
+<p>快速抓取 YouTube 视频字幕，把一个小时的视频变成几分钟能读完的文字。</p>
+<p>对于经常看英文技术分享、播客、演讲的人，这个 Skill 把&quot;看视频&quot;变成了&quot;读文档&quot;，信息吸收效率翻几倍。</p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/michaelgathara/youtube-watcher">https://clawhub.ai/michaelgathara/youtube-watcher</a></p>
+<p>适合：学习型用户，尤其是需要大量消化英文视频内容的技术人员和内容创作者。</p>
+<h3>四）Summarize ：什么格式都能总结的万能摘要器</h3>
+<p>网页、PDF、图片、音频、YouTube 视频，不管你扔什么格式过去，它都能给你一份干净的摘要。</p>
+<p>不用再根据不同内容类型切换不同工具，一个 Skill 统一处理所有“我没时间看全文，先给我说重点”的需求。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPNjZiauw0AnURaFhr5HrXAcS9ASgCNhdQzuqqPIS9wa8Jnb7NsicOqt2pZrR7z6AAa2lNHHOsMqFYmGoQzT50LdX0r2ynv7GpjZA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="配图3"></p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/steipete/summarize">https://clawhub.ai/steipete/summarize</a></p>
+<p>适合：信息过载的人。每天要处理大量文章、报告、视频但时间有限的场景。</p>
+<h2>二、内容创作与发布：从素材到成品的完整链路</h2>
+<p>有了输入，下一步是输出。</p>
+<p>这类 Skill 覆盖从文字润色、图文生成到一键发布的全流程。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPNaUz2iaaibKpKUMesEMPJuT8gsbicDQs0CoXyNWJ3TuKPUEo4Sfv4Oq06icEe5MSde0FCDBphcX8hU5unB8Avm4w5mGruf3BIMI54/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="配图4"></p>
+<h3>一）宝玉老师 Skill 合集：一个人的内容工厂</h3>
+<p>这套合集堪称自媒体从业者的军火库。</p>
+<p>•视觉内容生成（小红书信息图、通用信息图、封面图、幻灯片、漫画）</p>
+<p>•社交媒体发布（X、微信公众号、小红书）</p>
+<p>•内容处理（Markdown 格式化、图片压缩、翻译、链接转 Markdown），从生产到分发一条龙。</p>
+<p>每个子 Skill 都是针对具体场景调过的，质量稳定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPPXjDibWnqcor9gJApJwkNlqcs4cXAUkO7m752LLqVmYhSsojfblsiaBLL5TAfEbHVv2aKNqJZibEqw9VYk7YVK0cVjZWsickWhqAw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="配图5"></p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://github.com/jimliu/baoyu-skills">https://github.com/jimliu/baoyu-skills</a></p>
+<p>适合：自媒体创作者、需要频繁产出图文内容的运营人员。</p>
+<h3>二）Frontend Slides ：用前端技术做演示文稿</h3>
+<p>不想打开 PowerPoint，想用代码控制每一个像素的人会喜欢这个。直接用前端技术栈生成演示文稿，样式、动画、交互全可编程，比传统幻灯片工具灵活得多。</p>
+<p>安装：</p>
+<p>●●●</p>
+<p><a href="https://github.com/zarazhangrui/frontend-slides">https://github.com/zarazhangrui/frontend-slides</a></p>
+<p>适合：技术分享、产品演示场景，尤其是需要嵌入代码示例或交互式 demo 的演讲。</p>
+<h3>三）Humanizer ：让 AI 写的东西不像 AI 写的</h3>
+<p>AI 生成的文字有一种很难形容但一眼就能认出的&quot;套路感&quot;。</p>
+<p>过度使用连接词、段落结构整齐到不自然、措辞永远正确但永远没有温度。</p>
+<p>Humanizer 专门解决这个问题，重新调整措辞和节奏，让输出读起来更像真人写的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPPHZIZjOgcnqTQgHfMG8PLInIlLzoia6UUYwkYBHs0WAqicPK9BUxm5uB2oUEgBKktQCZeT2w4ovPWYL3lFXef0yEPtXwhQ9zG8c/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="配图6"></p>
+<p>安装：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/biostartechnology/humanizer">https://clawhub.ai/biostartechnology/humanizer</a></p>
+<p>适合：所有用 AI 辅助写作的人。尤其是写公众号、写商业文案、写邮件这类需要&quot;人味&quot;的场景。</p>
+<h3>四）Markdown 一键发 X 长文</h3>
+<p>在本地用 Markdown 写完长文，直接推送到 X 平台作为 Articles 草稿。</p>
+<p>格式、图片自动处理，认证一次管七天，省掉了反复登录和手动排版的麻烦。</p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://github.com/joeseesun/qiaomu-x-article-publisher">https://github.com/joeseesun/qiaomu-x-article-publisher</a></p>
+<p>适合：经常在 X 上发长文的创作者和技术博主。</p>
+<h3>五）Remotion Best Practices ：用代码做视频</h3>
+<p>做产品发布最麻烦的事情之一是录 demo 视频。</p>
+<p>录制、剪辑、导出，整个流程和写代码完全不在一个频道上。Remotion 把视频制作变成写 React 组件：动画是状态变化，时间轴是代码逻辑，导出是一条命令。</p>
+<p>这个 Skill 是 Remotion 官方维护的，把正确的动画曲线、音频处理、字幕生成方式都封装好了。</p>
+<p>没有它，Agent 写 Remotion 代码会在插值、音频裁剪这些地方反复出错。</p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://github.com/remotion-dev/skills/tree/main/skills/remotion">https://github.com/remotion-dev/skills/tree/main/skills/remotion</a></p>
+<p>适合：需要程序化生成视频的开发者，changelog 演示、API demo、数据可视化动画。</p>
+<h3>六）Get笔记 ：用嘴记笔记</h3>
+<p>Get笔记接入了 OpenClaw Skills，意味着你可以让 Agent 直接帮你操作笔记：记笔记、查笔记、打标签、整理知识库，全部通过自然语言完成。</p>
+<p>不用打开 App，不用复制粘贴，不用手动分类。</p>
+<p>更有价值的是&quot;用笔记干活&quot;：让 Agent 根据你的会议记录生成周报，根据你的读书笔记写一篇文章，根据你过去一个月的笔记分析你在关注什么话题。</p>
+<p>你攒的每一条笔记，都能被 Agent 调用起来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPNDEsdkoNXWcQgzjG2HdL879b44CbaP46f80BV8M3VWvp6rAbOAaQpyjgzgPHLtsaTZmZtkpZHQ3hjsicmq4AwqwetMYKmhmDjs/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="配图7"></p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/iswalle/getnote">https://clawhub.ai/iswalle/getnote</a></p>
+<p>适合：重度笔记用户，尤其是希望把零散记录转化为结构化输出的人。</p>
+<h2>三、开发与设计：让代码写得更好看、更规范</h2>
+<p>Agent 会写代码，但&quot;能跑&quot;和&quot;能用&quot;之间还有一段距离。这类 Skill 解决的是代码质量和界面品质的问题。</p>
+<h3>一）Frontend Design ：告别&quot;一眼 AI&quot;的界面</h3>
+<p>让 Agent 写前端界面，出来的东西永远是 Inter 字体、紫色渐变、卡片布局。技术上没毛病，但一眼就知道是 AI 做的。</p>
+<p>Frontend Design 在 Agent 动手之前先锁定视觉方向——极简、极繁、复古未来、editorial 风格——然后所有字体、配色、动效都必须服从这个方向。</p>
+<p><strong>它不是让界面更好看，而是让界面有立场。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPPR9UA67cQBD8LI5ST6IdeZuBRwTibtE3BoUrUZBkicwCXo3d8tdls3XOoPGEPEwVushNTltFsjT0y70ZjiaVZKHicznf84WFRLZiaI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="配图8"></p>
+<p>安装：</p>
+<p>●●●</p>
+<p><a href="https://github.com/anthropics/skills/tree/main/skills/frontend-design">https://github.com/anthropics/skills/tree/main/skills/frontend-design</a></p>
+<p>适合：在意用户侧视觉体验的前端开发者和产品经理。</p>
+<h3>二）Code Review ：给代码上一道质量关卡</h3>
+<p>AI 写的代码通常是&quot;能跑的第一稿&quot;。</p>
+<p>逻辑没大问题，但安全漏洞、性能隐患、可维护性差这些事，它自己很难发现。</p>
+<p>让写代码的 AI 自己审代码，就像让学生自己批改自己的试卷，盲区是一样的。</p>
+<p>Code Review 这个 Skill 把代码审查变成了一套系统化的流程：从安全、性能、可维护性、正确性、测试覆盖五个维度逐项检查，每个问题标注严重程度，给出结构化的反馈。</p>
+<p>它还内置了一份常见反模式清单，专门抓那些&quot;看起来没问题但迟早会炸&quot;的写法。</p>
+<p>养成一个习惯就够了：<strong>每次 Agent 写完一批代码，先让它过一遍 Review 再提交。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPOMQzIkprD4DqwJSQMwjWwndpLbTrSDfCvOWtfnHQ3z90EAT7AiaibkK60WICmicqcBpibpJblXOytriaUpNqHStZicVQhNnJV7vl4p8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="配图9"></p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/wpank/code-review">https://clawhub.ai/wpank/code-review</a></p>
+<p>适合：所有用 AI 辅助编程的开发者。代码能跑只是及格线，Review 过了才敢合并。</p>
+<h3>三）Superpowers ：让 Claude Code 真正跑项目</h3>
+<p>很多人用 AI 写代码，其实只用到了&quot;补全&quot;这一层：写几个函数、改几段逻辑、跑通就完事。</p>
+<p>但如果你想让它从头到尾跑一个完整需求，从想法到代码到测试到合并，光靠补全是搞不定的。</p>
+<p>Superpowers 做的就是这件事。</p>
+<p>它把一个完整的开发流程拆成了一串自动衔接的步骤：需求发散、规格确认、计划拆分、子 agent 执行、代码 review、合并。</p>
+<p>每个环节都有专属 skill 负责，自动触发，自动接力。</p>
+<p>三个设计让它比&quot;直接让 AI 写代码&quot;靠谱得多：</p>
+<p>•多个子 Agent 各管一块，避免任务太长导致 AI 忘了前面在干嘛；</p>
+<p>•强制先写测试再写代码，不是&quot;能跑就行&quot;；</p>
+<p>•合并之前必须过 Review 关卡，不会直接把半成品推上去。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPMHUN8Awb8icgGKZuhOh17RU9nniabicWFsicn5VcQUibtN46AqB20Po2cc5RQVKCb2cMkO48o2iajASKeiaFx1iaibINfDCv8FPSwruJSY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="配图10"></p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a></p>
+<p>适合：做完整项目开发的工程师，尤其是需要从需求到交付全流程跑通的场景。</p>
+<h2>四、Skill 开发与自我进化：让 AI 自己变强</h2>
+<p>学会用 Skill 之后，自然会想自己写。再进一步，还可以让 Agent 在使用过程中自己变得更聪明。</p>
+<h3>一）Skill Creator ：Skill 的 Skill</h3>
+<p>前面介绍过，必备 Skill。</p>
+<p>告诉 Agent 你想要什么能力，它帮你生成完整的 Skill 结构：SKILL.md、脚本文件、目录组织，全部符合规范。</p>
+<p>省去了从零搭骨架的时间，让你把精力集中在业务逻辑上。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPNR27oGYnoCKLflEnia2quqVSDWU5mY0poNfQVNUY3lNYQEsa9xtTmuotibVeSU7FDuwWAsbE2xKribz9w3VLOKibhSWPzbyVV1gfw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="配图11"></p>
+<p>安装：</p>
+<p>●●●</p>
+<p><a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator">https://github.com/anthropics/skills/tree/main/skills/skill-creator</a></p>
+<p>适合：刚开始写 Skill 的新手，或者需要快速原型化一个想法的人。</p>
+<h3>二）Skill Vetter ：装 Skill 之前先过一道安全检查</h3>
+<p>ClawHub 上万个 Skill，质量参差不齐。</p>
+<p>2026 年初安全研究人员在 ClawHub 上发现了上千个恶意 Skill，有的偷 API Key，有的装挖矿程序，有的窃取浏览器密码。</p>
+<p>Skill Vetter 就是你的安全门卫。它本身只是一个 4.5KB 的 SKILL.md 文件，不含任何可执行代码。</p>
+<p>但它会教 Agent 按四步流程审查你要安装的 Skill：</p>
+<p>检查来源信誉 → 代码审查（检测 curl 到未知 URL、读取 .ssh/.aws 等敏感路径、eval/exec、混淆代码等）→ 权限范围评估 → 风险分级（从 🟢 低风险到 ⛔ 极高风险）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPORnArYuf3RWIP0RnFhZaXsbszdb1g8lQmxBzAaT3YMJGGpKvibCKHPlwyVU6uxDqhwMoU3u1nbf0vhic7rxIohWUYMDaO4NQv34/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="配图12"></p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/spclaudehome/skill-vetter">https://clawhub.ai/spclaudehome/skill-vetter</a></p>
+<p><strong>养成一个习惯：装之前先让 Skill Vetter 审一遍，审过了再装。</strong></p>
+<p>适合：所有 OpenClaw 用户。不是可选项，是必装项。</p>
+<h3>三）Self-Improving Agent ：让 Agent 越用越聪明</h3>
+<p>大多数 Skill 是静态的：写好了就不变。</p>
+<p>但 Self-Improving Agent 让 Agent 主动捕获自己的执行错误和你的纠正指令，把这些反馈沉淀下来，下次遇到类似情况自动调整。</p>
+<p>相当于给 Agent 装了一个&quot;错题本&quot;机制，**不是你告诉它该怎么做，而是它自己从失败里学会该怎么做。**用得越久，它越懂你的习惯和偏好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPM2EbVqrVkQAjIpyiciaCicIuQW9GRKPoO4xOUgia1f8o7R70ZenEicQVMo7fWEd567iafPwYvZjWAnBDfW6uE4AD0bkHibBjKBuGoLl4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="配图13"></p>
+<p>安装：</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/xiucheng/xiucheng-self-improving-agent">https://clawhub.ai/xiucheng/xiucheng-self-improving-agent</a></p>
+<p>适合：长期使用 Agent 处理重复性任务的用户。尤其是那些发现自己总在纠正 Agent 同一类错误的人。</p>
+<h2>五、我的个人 Skill 仓库</h2>
+<p>除了上面推荐的公开 Skill，我自己也在持续写一些解决实际问题的 Skill，放在 GitHub 上开源了。</p>
+<p>地址：</p>
+<p>●●●</p>
+<p><a href="https://github.com/jaylpp/pandajay-skills">https://github.com/jaylpp/pandajay-skills</a></p>
+<p>目前仓库里有这些：</p>
+<p>•<strong>prompt-reverse-engineer</strong> ：分析文本写作风格，生成可复用的模仿风格提示词。独立使用，无外部依赖。</p>
+<p>•<strong>chat-to-notes</strong> ： 把当前 AI 对话整理成一篇叙事风格的复盘文章，像写博客一样还原探索过程。输出 Markdown，适合复盘和分享。</p>
+<p>•<strong>req-to-dev-doc</strong> ： 一句话需求变结构化开发文档，包含用户故事、功能描述、影响范围、风险项和验收标准。</p>
+<p>•<strong>dev-doc-match-resource</strong> ： 基于开发文档自动匹配开发和测试人员，结合能力资源矩阵推荐合适人选。</p>
+<p>•<strong>req-to-hours-estimate</strong> ： 从需求到售前工时评估报告，串联需求分析、技术方案、资源配置、工时和报价，一条龙输出。</p>
+<p>•<strong>hotspot-leverage</strong> ： 分析热点事件，生成引流和变现策略。支持闪电档/标准档/精品档三档方案，输出具体行动清单。</p>
+<p>还在持续更新中。觉得有用的话，帮忙点个 Star。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPOqpLWC8k8rG3L8Is6z2D4UssOg4uCQ46yvKwsJl2riccsHAd61B3KzAlPyOZDPicFbQAgQywCExoVCe0NvUMtSpeGeIhxRKlicia4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="配图14"></p>
+<h2>六、去哪找更多 Skill？</h2>
+<p>上面推荐的十几个只是冰山一角。Skill 生态每天都在长，找到好 Skill 本身也是一种能力。</p>
+<p>三个渠道：</p>
+<p>•Skills.sh : Vercel 团队维护，8 万多个 Skill，覆盖 Claude Code、Copilot、Cursor 等 20 多个平台，支持按趋势排序，适合发现新出的热门 Skill。地址：<a href="https://skills.sh/">https://skills.sh/</a></p>
+<p>•ClawHub : OpenClaw 官方生态的 Skill 仓库，1 万多个 Skill，质量相对集中，适合找经过验证的核心能力包。地址：<a href="https://clawhub.ai/">https://clawhub.ai/</a></p>
+<p>•SkillsMP : 中文友好的社区聚合站，从 GitHub 自动同步，体量最大（38 万+），适合广撒网式的探索。地址：<a href="https://skillsmp.com/zh">https://skillsmp.com/zh</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPN0oNslBGCwK5JTDe8qS3tPy7a43fYic2rNf106eRv8uF9Biao4Yot2gXm3nf56NWfAtsqtH33dfGB8ibUpmGpBqsPu7n85OfKUy0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="配图15"></p>
+<p>还有一个偷懒的办法：装一个 Find Skills，用它直接搜索和安装别的 Skill：用 Skill 管理 Skill。</p>
+<p>●●●</p>
+<p><a href="https://clawhub.ai/fangkelvin/find-skills-skill">https://clawhub.ai/fangkelvin/find-skills-skill</a></p>
+<h2>七、如何高效开发 Skill</h2>
+<p>关于如何高效开发 Skill，我在文章、配套视频里介绍适合不同场景的五种设计模式、六步打磨Skill的最佳实践。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPPQVTK9iab3dT2kypCqRBGGAQUibHqKZE7sbDNyovOSS3pQXUuvs2uhfcTB90bzBIzFFVWwa6HW0Df8mX0icpeibHY2m2zs3skjbR0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="配图16"></p>
+<p>也结合我针对企业内部的需求，演示了如何结合这些设计模式和最佳实践落地的实战过程。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&mid=2247495705&idx=1&sn=e909b8b5564864174d6d0bf6380407c0&scene=21#wechat_redirect">Skill 最佳实践：五种设计模式+六步打磨法（含完整实战过程和源码）</a></p>
+<p>视频中的 PPT 材料，我放在公众号里了，需要可以后台回复「skill」 获取。</p>
+<h2>八、最后</h2>
+<p>每个好的 Skill，本质上都是某个人把自己的经验浓缩成了规则。</p>
+<p>装上它，就是站在别人的积累上往前走，不用每件事都自己从头踩一遍。</p>
+<p>开源社区最好的地方就在这里，经验可以流通，能力可以叠加。</p>
+<p>不过繁荣的另一面是：鱼龙混杂。</p>
+<p>2026 年初已经有研究人员在 ClawHub 上发现上千个恶意 Skill，偷密钥、读凭证的都有。</p>
+<p><strong>来路不明的，先审再装。</strong></p>
+<p>如果这篇对你有用，转发给同样在折腾 Skill 的朋友。</p>
+<p>也欢迎在评论区丢出你用着顺手的 Skill。</p>
+<p><strong>谢谢你看我的文章，如果觉得不错，帮忙点赞、转发、关注三连吧～</strong></p>
+<p><strong>我是 🐼熊猫 Jay，我们下次再见～</strong></p>
+<p><strong>往期精选：</strong></p>
+<p><strong><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&mid=2247495010&idx=1&sn=de2402ab1d13addf27f55383d1ed5e1d&scene=21#wechat_redirect">最适合新手的 Claude Code、MCP、Skills 全套教程</a></strong></p>
+<p><strong><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&mid=2247494287&idx=1&sn=b3975f986ee11cecea05acce9ab83b5c&scene=21#wechat_redirect">从混乱到可控：我最受益的 10 个 AI 编程技巧（含提示词）</a></strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/bCHgDYbuSFyWizg0tgQYUA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

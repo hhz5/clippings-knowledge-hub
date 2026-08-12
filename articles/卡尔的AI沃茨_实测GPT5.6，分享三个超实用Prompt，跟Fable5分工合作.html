@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测GPT5.6，分享三个超实用Prompt，跟Fable5分工合作 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测GPT5.6，分享三个超实用Prompt，跟Fable5分工合作</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=GPT">GPT</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E5%A4%9AAgent%E5%8D%8F%E4%BD%9C">多Agent协作</a><a class="chip" href="../index.html?tag=Fable%205">Fable 5</a>
+    <span class="date">2026-07-10</span>
+  </div>
+  <p class="lead">距离GPT6发布只剩一个月+Codex和ChatGPT二合一+Fable5吓到重置额度</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月10日 11:47</em></p>
+<h2>这次OpenAI没跳票，</h2>
+<p>GPT 5.6全家桶来了，之前说的会把Codex内置ChatGPT应用也兑现了，就是兑现的方式有点想不到。</p>
+<p>OpenAI直接把CodeX改名成了ChatGPT。</p>
+<p>是的，没听错。Codex这个名字没了，整个产品改叫ChatGPT了，原来的ChatGPT改名ChatGPT Classic了。然后在里面分了三个区，一个是原来的Codex，展示代码差异和合并请求。一个是新的ChatGPT Work，把中间的代码输出过程藏起来，定位有点像Claude的Cowork。原来的ChatGPT的聊天也移到了左侧栏。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzTlsB6KDx3bk5luMYOYjKZt00vkkspib0qF0wl2iaq0icPu8py4lJEReZtAEI0riacM9KdXrPg8GEDbWbM6TGxicLmxBKdqbicVqiaZo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>主打一个大而全。</p>
+<p>还加了个站点功能。我们跟Codex对话生成的可视化网页，可以直接部署成一个可分享的网站。我在试用这个的时候，也顺手打开了新的内置浏览器。现在支持导入所有的密码和Cookie了，多标签页和文件下载也都有了。</p>
+<p>，时长00:08</p>
+<p><video src="https://mpvideo.qpic.cn/0b2e24aauaaaz4agzdkqn5vfbv6dbllqacqa.f10002.mp4?dis_k=8857bf3a172e1ef2a7d6b5d09fb93fde&amp;dis_t=1783657859&amp;play_scene=10120&amp;auth_info=CMew6LFZf0pF/8uJt11fFmpuH2tiEz0YXXJwEgVPYXMzCnxOF3dkBzIgQ0NtMlI2fmQ=&amp;auth_key=c3ecdb2adbb583cd2800fb4dde1165ce&amp;vid=wxv_4597991359797821449&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>再来说说模型，</p>
+<p>GPT 5.6现在分三个级别。Sol是超大杯，主打复杂推理和长时间自主工作，上下文从272k提升到了372k。Terra是大杯，性能接近GPT-5.5但价格只有一半。Luna是中杯，轻量快速。</p>
+<p>API定价我直接搓一个表格出来看，Sol每百万token输入5刀，输出30刀，比Fable5便宜43.5%左右。我在测试的过程中发现，这次5.6 sol应该是还调校了对于内置插件调用的主动性。之前让GPT5.5生成图表的时候，它是不会主动调用Canvas Design的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzfDWpUR6URrkprBiaZxEC5dELpYricCTqyDXX3AWGGG3tszS6DVRicdnT1icX4caoo4a6kdagTIEjjRImdzvxQS3UFFEzibIaU8Z1o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>Sol还新增了两个推理档位。</p>
+<p>max让模型花更多时间深度思考，ultra会调用多个子Agent并行处理任务，重型任务开max到ultra，日常任务用High就够了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzZ0ic4m1tvVvrzibm9rqWJxrxrCdEawfLictNw6xnoJ9ukXczibyasu4Ctia4NghHRSdBDDu7NEk86HOQjXmUvxtC9YHwh1JvR9NTQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>比较可惜的是GPT5.6的UI是比5.5要好了但是还是没有追上Fable5和Opus4.8。</p>
+<p>但在其他地方补回来了。发布前已经有很多早期测试者在爆料了，基本上大家的判断是一致的。</p>
+<p>Fable 5更聪明，但比5.6 Sol更容易犯错。Fable 5更适合规划，5.6 Sol更适合执行。5.6 Sol的目标驱动和闭环做得更好，特别擅长长时间任务，几个小时甚至几天那种。而且速度这次上一把大分。在Cerebras芯片加速下跑出了750 tokens/s，比Fable 5快了10倍。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzPEhFrJ6ekvyNNRCoSjjgwBpiaPU9QCO9hiaxW6xvXZgj1belpNtd6gqk2eARaonicE3CvPK3TcHUVTS89cib7uPg6ugJWcibIzibjg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>OpenAI还有狠活，准备跳过5.x，直接发GPT6。</p>
+<p>GPT6会基于一个全新的、规模大得多的预训练底座。目前5.5和5.6共用一个代号叫「Spud」的底座，大概4T token，OpenAI原本打算沿用Spud一路做到GPT-6。</p>
+<p>但他们临时改了主意。改主意的原因，所有爆料者几乎用的同一个词。</p>
+<p>Mythos，GPT-6就是OpenAI对标Mythos的下一代模型。</p>
+<p>国内这边也没闲着。DeepSeek V4正式版大概率7月中旬上线，能力可能追平甚至超过GLM-5.2。同时DeepSeek还在研发更大的新模型，跟MiniMax即将推出的2.7T的M3 Pro竞争。</p>
+<p>只能说Scale Law还没到头，</p>
+<p>大就是好，好就是大啊。</p>
+<p>这波大更新和爆料还把Claude Fable 5吓得连夜额度充值了。加油加油，我完全支持新的GPT6一把抓住Fable5，顷刻练化。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzibcJ3TkQCYvIr4mR1lwgJUZuWUGibicr6bCoxxLAutlY6ibJDZZJAIuYNKGTAq0ah9SicUuXlUHYoDkVcOcqribCrVVe15lSicFz4mU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>再多说一句，</p>
+<p>GPT-5.4会在7月23日下线，OpenAI之前推的Atla浏览器也会关停了，现在改成浏览器插件的形式了。</p>
+<p>回到实操这块。</p>
+<p>这次升级之后有几个我自己在用的提示语，觉得挺值得分享的。我基本上把现在公开的，还有没发布的skill全部优化了一遍。</p>
+<p>第一个，纯黑盒自查。</p>
+<p>Codex的浏览器自动化升级后，我们可以让GPT 5.6完全不读代码，像真实用户一样去点击每个按钮、填每个表单，来判断第一次打开这个产品的人会不会产生疑惑。</p>
+<p>我自己的痛点很明确，ai news radar这个AI热点skill优化到了瓶颈，我就想多收集一点意见，特别是跟信息源质量相关的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwRIib06LVaE8tw3ZU8nb0JZ900cP0LLsicPPRHTFk2iavTm3kuV7iang8V746tv0ibKAdhp3vbCj5MicpxF3GIg0eToCelb65LSFlw0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>因为自己本身就是开发者，我总是想当然地操作界面，但实际上我们就是要模拟一个完全不了解产品的人去看一下来挑毛病。我以前是每天要找好几个人测新功能，有了这个纯黑盒走查提示语的话，交给团队之前就可以先自过一遍。</p>
+<pre><code class="language-markdown">## 真实用户走查提示语使用浏览器或电脑控制功能打开 [网址]，像真实用户一样，把以下流程逐一完整走一遍：[注册]、[结账]、[修改设置]。不要通过阅读代码来猜测结果。每一步都要真实地点击、输入、等待并截图。记录所有可能让第一次使用的人感到困惑或受阻的问题，包括：- 页面加载缓慢- 报错- 文案让人看不懂- 找不到按钮- 当前状态不明确- 返回上一页后数据丢失输出一份按严重程度排序的报告。每个问题都要包含：- 复现步骤- 你判断的根本原因- 建议的修复方案然后直接修复这些问题，再把完整流程重新走一遍，确认没有引入回归问题。把我当成一个第一次打开这个产品、从未读过代码的普通用户。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxCZhl9fgkMRLiaeUic0RmUXrxPEuDrL3jhVQywrkuawPEqw7jmRQlIOy0pEVFOhy8becQXwR5H3vU8Ime8RsbfC2vce6eznwbSk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>第二个，红队审查。</p>
+<p>5.6 sol的模型能力升级后，我可以在出计划阶段让Sol反证我们原有的开发计划。这跟从头开始开发一个项目不一样，更多的是通过我们已有项目的数据，来去验证我们后续的迭代计划的可行性。</p>
+<pre><code class="language-markdown">## 红队审查提示语在开始制定这份计划之前，先充当我的红队。你的判断力就是最重要的武器。 把我的计划当成一个需要被攻击和证伪的假设。首先完整复述一遍我的计划，确认你理解无误，然后开始质疑它。假设六个月后，这个计划已经失败。从失败结果倒推最可能的三个原因：- 哪项未经验证的假设被我直接当成了事实？- 哪种失败情形是我从未考虑过的？- 我为了省事，在哪个地方过于乐观？- 有没有更简单的办法可以实现同一个目标？针对每个原因，分别给出：- 触发条件- 失败代价- 一个能够尽早证伪它的最小实验最后给出明确结论：- 可以直接做- 先做某项实验，验证后再做- 推倒重来
+</code></pre>
+<p>拿我自己的真实案例来说。</p>
+<p>我最近在做一个让Claude和Codex协同干活的工作流，叫做搭子Skill，简单说就是Claude出计划，Codex后台跑实现，跑完Claude再验收。想法是挺好，但从昨天晚上测到现在，总觉得慢，就是说不上来慢在哪。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyZILGqnJslEa2LLmJsaj6u0tJecAKIvlqIiaeCueGGf2pibnKuIDL0l9PTCiaF7ybk7qrBIxwFDN4PraLrwv8MCmmaKnBNzqCWick/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>于是我把整个优化计划丢给Sol，让它红队审查。</p>
+<p>它给我指出了三个点。</p>
+<p>第一个，我把「慢」归在了错误的环节。我一直以为是启动脚本拖了后腿，实际上是我把多次调用codex，以及claude code读取修改的时间都算在了一次对话里。</p>
+<p>第二个，它发现我在不同Agent上跑的其实不是同一个版本，Codex和Claude Code上版本已经悄悄漂移了，我自己完全没注意到。</p>
+<p>第三个，它会质疑我「所有任务都走同一套重型交付流程」的设计。有些小活让Claude Code做完可能比走一圈协作流程更快。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyurfqWGpy825SHWU9FWGA8akxvnskbianOmhia1nuNTiarWQk4goVa1m9PRBc5PazLrge00LGxVibtNpV7hNRaj7fbPZqVyeLlNyE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>后来我又拿同一个红队提示语去审了另一个PPT生成Skill的迭代计划，</p>
+<p>给humanize ppt做了一个版本升级，花50分钟把ppt master兼容到下游的生成路径了，在动手之前就被Sol指出了我没注意到的假设盲区，实现的时候都是一次过，省了不少返工。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzGkuOQv0D2TI11AjzhKbVfb213v0FFrS0c4XnV9bK8d6pWj84XVqBovzKVlibRgicj5T0EicabmKLQ2fP7KrgBEBp1rpwkXpG70k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>第三个，说一个更大的，</p>
+<p>GPT 5.6和Fable 5的联动。</p>
+<p>简单版是把Fable 5的提示语总结成行动规范，塞在给Sol的提示语前面。加了之后Sol的执行风格明显利索。我觉得体感上最明显的就是，在做页面设计的时候，就不会再把自己的思考过程塞在页面文字里了。</p>
+<pre><code class="language-markdown">开始之前，按以下方式工作：1. 信息足够时，直接行动。不要重复推导已经确定的事实，也不要罗列那些你根本不会采用的选项。如果需要权衡，请直接给我你的建议，而不是丢给我一份选择菜单。2. 采用能够解决问题的最简单方案。不要添加任务之外的功能，不要进行无关的重构或抽象，也不要为尚未出现的未来需求提前设计。3. 汇报进度前，逐项核对你的每个结论，确保它有本次任务中的实际结果作为依据。只汇报能够拿出证据的工作。如果某件事失败了或尚未验证，请明确说明。4. 只有在确实需要我介入时才暂停，例如操作可能造成破坏、任务范围发生实质变化，或者缺少只有我才能提供的信息。5. 先说结果。第一句话直接回答“发生了什么”，然后再补充细节。具体任务：做一个HTML版的我的世界
+</code></pre>
+<p>，时长00:08</p>
+<p><video src="https://mpvideo.qpic.cn/0b2ebeaa6aaawyagtu2qivvfacodb4eqadya.f10002.mp4?dis_k=1e6f5a3b0c4473a70cb22f4741f2fb9a&amp;dis_t=1783657859&amp;play_scene=10120&amp;auth_info=Wdy8iIRYK0wU+Z2OsgwLEG4+TDtlHmocVid0TwFGPHBiXXtOFHYwAWMmFURoYwYwejQ=&amp;auth_key=f09050817c3022cd2e8cf37da11d178c&amp;vid=wxv_4597994153472638982&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>进阶版是我搞的一套四模型编排。</p>
+<p>Anthropic出过一个数据，Sonnet 5执行加上Fable 5当计划顾问，在SWE-bench Pro上能拿到Fable 5大约92%的分数，成本只有63%。Fable每个任务大概只需要调用一次来把方向，Sonnet执行大部分工作。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwC260Cob8VVsvx6knHtOcqX5FqYGdTQPK2NMOxPkXNZlKy2jmUZiaSW6qkHNfT0ZOMGuTZfrsBuE3mxkWj3Ju1b6xrslvXbJ1k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>但我觉得还能再往前走一步。</p>
+<p>让Fable 5出计划，Opus4.8做深度推理的子Agent。Sonnet5做一些简单开发活的子Agent。Codex单独作为一个有独立视角的高级工程师。遇到高风险决策让Opus和Codex背对背做同一个问题，互不看对方答案，Fable来综合最优解。</p>
+<p>设置不复杂，直接在CLAUDE.md里写好编排规则就行了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwSso14NxZ1VNqhzzYrKew2HDaUOJJDgsicUwzhm34hFOduA8Q0iaUcIjK5CMvKuQy8TFe2ugGE7jJsou9V5LUicibIjIRvDvhmgTs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>用这个工作流我甚至可以只让fable5出一次计划，就让gpt5.6把一个我自用的待办清单从头优化了一版。提前预告下周开源！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fx7LVmLUYXL8RFHodJJEhPzuiaicrbq0fXbRQLo8kISDWXpVU5ibibTPqHvvWhFibqOudic2g4sBiaCkoLOukkLic5uDrGl7bHgV5M7VRg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>我现在的期待完全放在一个月后的GPT-6上。</p>
+<p>Fable 5证明了新一代模型的上限可以非常高。</p>
+<p>GPT 5.6 Sol的执行力治好了Fable5又贵又封号的臭毛病。</p>
+<p>如果GPT-6用上了比Spud大得多的新底座，</p>
+<p>再配上Sol的执行力。。。</p>
+<p>那我只能说这下半年将彻底疯狂！</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>291人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 959.4 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.17 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 959.4 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.17 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/AabBvPiRxmfhHBX3oztZ_w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

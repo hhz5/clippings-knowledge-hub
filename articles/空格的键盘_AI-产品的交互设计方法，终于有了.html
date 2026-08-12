@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 产品的交互设计方法，终于有了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI 产品的交互设计方法，终于有了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0">微信公众平台</a>
+    <a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81">产品</a><a class="chip" href="../index.html?tag=AI%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1">AI交互设计</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a><a class="chip" href="../index.html?tag=%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C">用户体验</a><a class="chip" href="../index.html?tag=shapeof.ai">shapeof.ai</a>
+    <span class="date">2025-12-10</span>
+  </div>
+  <p class="lead">做了两年 AI 产品，交互设计方法终于找到了</p>
+  <article class="content"><p><em>2025年12月9日 17:00</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMImVowwxSDuhQUFT0cxoicbIoia7pP8AHaPhCMInYib4oVV5mMIrUcDJdA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>终于有人把这件事做了。</p>
+<p>最近偶然发现一个网站，系统性地整理了市面上几乎所有 AI 产品的交互设计模式。</p>
+<p>过去一年做 AI 产品，最头疼的不是技术实现，而是 如何让用户自然地与 AI 交互 。这个网站把这个问题拆解成了 6 大类、几十种具体的设计模式，几乎覆盖了 AI 产品设计的方方面面。</p>
+<p>不管你是设计、产品、运营、开发，都能拿现成的设计模式来给产品加入 AI 功能，或来分析 AI 产品。</p>
+<p>这篇文章我引用了网站的文本结构，自己加入案例，分享给大家，希望能给做 AI 产品的同行一些启发。</p>
+<h3>为什么需要 AI 交互设计模式？</h3>
+<p>传统软件产品的交互设计已经形成了多种范式，有成熟的组件库：按钮、表单、导航、卡片……设计师和产品经理有共同语言。</p>
+<p>但 AI 产品不一样：</p>
+<p>•</p>
+<p>输入不确定 ：用户不知道该说什么、怎么说</p>
+<p>•</p>
+<p>输出不可控 ：每次生成的结果都可能不同</p>
+<p>•</p>
+<p>过程不透明 ：用户看不到 AI 在&quot;想什么&quot;</p>
+<p>•</p>
+<p>信任难建立 ：用户担心 AI 会犯错、会泄露隐私</p>
+<p>这些问题需要新的设计模式来解决。</p>
+<h3>六大类 AI 交互设计模式</h3>
+<p>网站将 AI 交互设计分为 6 大类，每一类解决一个核心问题：</p>
+<h4>一、Wayfinders：引路者模式</h4>
+<p>核心问题 ：解决&quot;第一句话怎么说&quot;的困境。</p>
+<p>用户面对空白输入框时往往不知道从何开始，Wayfinders 类模式通过各种方式降低用户的启动门槛，引导他们开启与 AI 的第一次交互。</p>
+<h4>1.1 示例画廊（Example gallery）</h4>
+<p>通过展示高质量的生成结果、对应的提示词和参数设置，既教育用户如何使用，又激发他们的创作灵感。</p>
+<p>比如即梦的灵感、Midjourney 的作品广场就是典型案例，用户可以直接看到别人用什么提示词生成了什么效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMurCuxGWDXibVlK5GAiatdMbqqy6icY3uneVsWDNURCEnQnWz9BTKibobWg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h4>1.2 追问澄清（Follow up）</h4>
+<p>当用户的初始提示不够清晰或信息不足时，AI 主动向用户提出追问，获取更多必要信息。这种方式比直接给出模糊结果更友好，也能帮助用户学会如何更好地表达需求。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMjluuLnddvxEAic6VdhRPmeKuKh4kGBTPAMcccmLsyQArdQmxKL1nE9Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h4>1.3 首次行动号召（Initial CTA）</h4>
+<p>用一个开放式的大输入框作为产品的核心入口，配合简洁的引导文案，鼓励用户直接开始对话。Perplexity 和 ChatGPT 的首页都采用这种设计，降低了用户的心理门槛。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMmJLiaHxPgOhiaIvdPa475MWooquNG3CxZPpBNd4KUxXYqVibJnlg37PqQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<h4>1.4 轻量提示（Nudges）</h4>
+<p>在用户可能需要 AI 帮助的地方，用轻量的视觉提示（如图标、浮动按钮）告诉用户&quot;这里可以用 AI&quot;。Google Docs 的智能撰写功能就是在用户输入时适时出现建议，而不是强制打断。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM1lvhmJcseQO0Z3p37PfkxR5uK0A0MN8zBLRckEy0sR7DTIkD637GkQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<h4>1.5 提示细节（Prompt details）</h4>
+<p>让用户看到&quot;幕后&quot;真正发生了什么，展示完整的提示词、参数设置和系统指令。这种透明度帮助高级用户理解 AI 的工作原理，也便于他们调试和优化自己的提示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMoKibbTWQccP0wZGjArhictSSooFMxw7u6KLDicamoTBgTgo52fibaQ3cRw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<h4>1.6 随机生成（Randomize）</h4>
+<p>通过随机生成的方式让用户无需思考就能开始体验。这种&quot;掷骰子&quot;式的交互降低了决策成本，特别适合创意类工具，用户可以从随机结果中找到灵感。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMgHUBQtzhQXTHRNlfChgbEGfbUDfX2dcD0Yg15NLXtARMR1neNee9sA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<h4>1.7 建议提示（Suggestions）</h4>
+<p>在空白页面提供可点击的问题或任务建议，解决&quot;不知道问什么&quot;的困境。ChatGPT 首页的几个示例问题就是这种模式，用户点击即可开始对话。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMGa5hvBXzllkNicibj5BicXYx1mltSAIGhbN67icreFbqrrIPgOzr2mkNqQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<h4>1.8 模板填空（Templates）</h4>
+<p>提供结构化的模板，用户只需填写关键信息，或者让 AI 预填部分内容。很多 AI 产品的提示词模板就是典型应用，比如用户选择&quot;产品介绍&quot;模板后，只需填写产品名称等关键信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMT5icsh6aIUxXicDrtoIuZtdtOjusuiadTpYpKHuO8MemYOlJtRiab3L4ibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<hr>
+<h4>二、Inputs：输入动作模式</h4>
+<p>核心问题 ：围绕内容生成与编辑，用户需要对 AI 输出进行各种操作。</p>
+<p>这一类模式定义了用户与 AI 生成内容交互的具体动作，从简单的重新生成到复杂的内容转换，覆盖了内容创作的全流程。</p>
+<h4>2.1 自动填充（Auto-fill）</h4>
+<p>一次性将一个提示延展到多个字段或输入区域。比如用户输入&quot;科技公司&quot;，AI 自动填充公司名称、slogan、业务描述等多个相关字段，大幅提升表单填写效率。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMxs0EGLSnAFSbdjGhwJ5SFib088RdMAhjbeeiaKPexKSHmArZhHxMLHnA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<h4>2.2 链式动作（Chained action）</h4>
+<p>串联多个 AI 动作，让它们依次执行。用户可以设计一个工作流：先生成大纲，然后扩写每个章节，最后润色全文。每一步的输出自动成为下一步的输入。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMX89yVMgn5VbMVWMbM8V656w0iaXicYse5lsbFJd8QhawMt9CL7Ax0sCg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<h4>2.3 描述拆解（Describe）</h4>
+<p>将复杂对象拆解为关键要素，并给出建议提示。比如上传一张图片，AI 自动识别并描述其中的元素、风格、色调，用户可以基于这些描述进行修改或再创作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMcjGuwTYL86N0wXeezoH4uYYHNRJYlwc4ib1icjVTv9M5JZuAhjH1hNzw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<h4>2.4 内容扩展（Expand）</h4>
+<p>延长或加深已有内容。Notion AI 的&quot;继续写&quot;功能就是这种模式，用户写了一段话后，AI 可以接着往下写，保持风格和逻辑的连贯性。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMWs7bakdYcibQibiaPTw4BjNLpuhRfRAvL9K51vxyVDrIs5lw0PRmA3wibQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<h4>2.5 行内动作（Inline Action）</h4>
+<p>在已有页面内容上&quot;就地&quot;调用 AI 功能。Google Docs 中选中一段文字后弹出的 AI 菜单（改写、总结、翻译等）就是典型的行内动作，无需跳转到其他界面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM3PbLaIlpOxYMSxibc2r8cNeHpsYFtYjUs4FUb21TP8Ww1xJPKia5OCYQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<h4>2.6 局部重绘（Inpainting）</h4>
+<p>针对生成结果的局部区域重新生成或混合。Photoshop 的生成式填充功能让用户框选图片的一部分，描述想要的效果，AI 只重新生成选中区域，保持其他部分不变。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMv6TkuDEN3ic91eECbDicOx7ceQIibpPy6QV5BMQUVcgWFHaQyPHW3zuCw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<h4>2.7 填空生成（Madlibs）</h4>
+<p>在保持格式和结构稳定的前提下，反复生成内容变体。比如固定&quot;[产品名]让[用户]更[形容词]&quot;的句式，AI 不断填充不同的词汇组合，快速生成多个文案版本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMtiaIOCcEbGNDZyncdtZhdzyXcyAH2Kuyf07oF9FxaiafamqHjfqHU9Ig/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<h4>2.8 开放输入（Open input）</h4>
+<p>最基础的自然语言输入方式，用于对话或指令。这是 ChatGPT 等对话式 AI 的核心交互，用户可以用自然语言表达任何需求，AI 理解并执行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMPefhgGjsV9zlibWia4yPib56Yr7Bmm1GFJSGzsJHib3VMJ83JERYabtiaQg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<h4>2.9 重新生成（Regenerate）</h4>
+<p>在不改变提示词的前提下，让 AI 重新生成结果。由于 AI 的随机性，同一个提示可能产生不同结果，这个功能让用户可以&quot;刷新&quot;直到满意。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM8M2ibv2R6L7ghcb4cg2U7487FOoXKk00xXQcVHgCLGTyCnNtBBgc9rQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<h4>2.10 重组结构（Restructure）</h4>
+<p>以现有内容为基础，重新组织其结构。比如把一篇文章从时间顺序改为主题分类，或者把列表改为段落，内容不变但呈现方式改变。比如 Notion 的段落支持重写。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM0dBgSUqZXyib7gz0lvdlxCKOoU6NHxCrtGd9Ks60EicjXD3KFCp2aicSA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<h4>2.11 风格迁移（Restyle）</h4>
+<p>保持内容结构不变，只替换风格、语气或视觉呈现。Midjourney 的风格迁移功能可以把同一个画面用不同艺术风格重新渲染，文字工具则可以把正式文档改写成轻松口语。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMJXiboiayZoDxMg0H5zBHlv3Mex3icCutqcNUqHwtCwVWmYnyOZZDlC3nQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<h4>2.12 内容总结（Summary）</h4>
+<p>让 AI 将长篇内容或复杂主题提炼为要点。 Otter.ai 可以总结会议录音的关键信息，帮助用户快速抓住重点。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM73Vc4LibZjnPib0MGyc0V5cjVtj7aWwjGXs464DgfDRzT7A6XStxerOg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<h4>2.13 信息综合（Synthesis）</h4>
+<p>把来自多个来源的复杂信息重组为更清晰、更有条理的结构。比如整合多篇研究报告，提取共同结论和差异点，形成综合分析。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMibLOPFZcXfWHfpYAiaia5WWaegib2JNV0W1QWMCmfh2IDM4gTMXmibgf9Lg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<h4>2.14 模态转换（Transform）</h4>
+<p>改变内容的表现形式，比如文字转语音、图片转文字描述、代码转流程图。ElevenLabs 的文字转语音、Suno 的文字转音乐都是这类模式的应用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM5CyVSYMGCZibT99IMpkcMxW9OGnjJuTynJqUAkjB5PWTMo4RiaR0fib2g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<hr>
+<h4>三、Tuners：调优器模式</h4>
+<p>核心问题 ：用户需要在模型和上下文层面精确控制 AI 的输出。</p>
+<p>基础的提示词有时不够精确，Tuners 类模式提供了更细粒度的控制方式，让用户可以调整 AI 的行为、风格和输出质量。</p>
+<h4>3.1 附件参考（Attachments）</h4>
+<p>允许用户上传文件、图片或其他材料作为 AI 的参照锚点。Claude 可以上传 PDF 进行分析，Midjourney 可以上传参考图片，AI 基于这些具体材料生成更符合预期的结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMjgoQ0OqkdHRDNpgicibNib8FlBPOOzE9FL188L1VArY8ibnqv3Mk3CQWdA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<h4>3.2 外部连接（Connectors）</h4>
+<p>让 AI 引用外部数据源和上下文。Zapier AI 可以连接 Google Sheets、Notion 等工具，ChatGPT 的插件可以访问实时网络信息，扩展了 AI 的知识边界。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMPtIluBeic5MrtSJ1U5TTH4lLmXAanAzro3Xr385aKu2f3LNSYbtZzyA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<h4>3.3 筛选过滤（Filters）</h4>
+<p>按来源、类型、模态等维度限制输入或输出范围。比如只搜索学术论文、只生成矢量图、只使用最近一年的数据，帮助用户获得更精准的结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMNGbOYR655eiaruIf7dRuzYc7FTGzIGib1pJGo7z3l5RLSM3w8UCDmSdg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<h4>3.4 模型管理（Model management）</h4>
+<p>允许用户选择不同的 AI 模型来完成任务。Poe 提供了多个模型切换，用户可以根据任务特点选择 GPT-4（复杂推理）、Claude（长文本）或其他专用模型。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMHuEIxLf0Y7s6tEawp8XOlODBrqrnClTlu1Cd8ibzNIKA62QWSrWibK4g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<h4>3.5 场景模式（Modes）</h4>
+<p>针对特定场景调整 AI 的训练、约束和人格。ChatGPT 的 GPTs 就是这种模式，每个 GPT 有特定的系统提示和知识库，适配不同的使用场景（编程助手、写作教练等）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMqXYXqKlWTCCibbO4q7ib12GVykPuuBoiamibNINpicNpFfQ5yPxW11QNt2Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<h4>3.6 参数设置（Parameters）</h4>
+<p>与提示词一起设置的约束条件，如温度（创意度）、长度、格式等。Midjourney 的 --ar 16:9 、 --v 6 等参数让用户精确控制输出的画幅和版本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMATnREUKnQU7jra5uQdU8geXrugqzReGxCo75Q4sIC7oJexvX611vJw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<h4>3.7 预设风格（Preset styles）</h4>
+<p>提供默认的风格选项，快速改变输出的质感或语气。Midjourney 有&quot;写实&quot;、&quot;动漫&quot;、&quot;油画&quot;等预设，文字工具有&quot;正式&quot;、&quot;友好&quot;、&quot;简洁&quot;等语气选项。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMcksY1El11k8Dg3pIaRTFFDsouyMu9rfhxLKnEZcBdJ7YvicZLkiaHBYw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<h4>3.8 提示增强（Prompt enhancer）</h4>
+<p>用 AI 帮助用户优化提示词本身。用户输入一个简单的想法，AI 自动扩展为更详细、更有效的提示词，降低了用户的学习成本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMfTIjFSdunmgb2aoL97ibD3Pd5FMtkJab9v6fRf396L3OFr0iaIicQxBng/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<h4>3.9 保存风格（Saved styles）</h4>
+<p>允许用户保存自定义的风格配置以便复用。设计师可以保存自己常用的配色方案和视觉风格，写作者可以保存品牌的语气和用词偏好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMlp1NDIiaHNZ7mibpibicVITMm3Ja3QwibkFQhZmAEyibiar9Q8v30OZg5ycOQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<h4>3.10 语气语调（Voice and tone）</h4>
+<p>让 AI 的输出稳定匹配用户或品牌的声音特征。Jasper AI 的品牌声音功能可以学习企业的沟通风格，确保所有 AI 生成内容都符合品牌调性。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMwHVZo6Khnguiacwcoxibmo5RUaFCpBj8R4DrujO2HLlqzSErxT62LAaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<hr>
+<h4>四、Governors：治理者模式</h4>
+<p>核心问题 ：把人牢牢放在决策闭环之中，确保用户对 AI 保持控制权。</p>
+<p>AI 可能犯错，也可能做出用户不期望的决策。Governors 类模式通过各种机制让用户始终掌握主动权，可以监督、干预和纠正 AI 的行为。</p>
+<h4>4.1 行动计划（Action plan）</h4>
+<p>在 AI 执行操作之前，先展示它将采取的步骤和逻辑。Cursor 的 Agent 模式会列出&quot;我将要做的事情&quot;清单，用户确认后才开始执行，避免了意外的破坏性操作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMjl33A5P10VMxoQgwh1BibsIoqoUlMtts2eG1vdicVvQ0P6RYAfYU5TZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<h4>4.2 对话分支（Branches）</h4>
+<p>支持在对话的不同节点创建分支，保留多条探索路径。ChatGPT 允许用户在任意回复处创建新分支，尝试不同的提示方向，而不会丢失之前的对话历史。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMLjMwicKk24kDXibc3FhwGLMraOGU5qxoqxVy3kHHswvVONXWozPPIGJg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></p>
+<h4>4.3 引用来源（Citations）</h4>
+<p>在生成内容中标注信息的具体来源。Perplexity 的每个回答都附带引用链接，用户可以点击查看原始资料，验证 AI 说法的准确性。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMpTUNJL7KTF5RmxoqUxlADKfBMElfgEPPEKiaVPaPI8N2ePngOQkI97Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<h4>4.4 过程控制（Controls）</h4>
+<p>管理信息流，或在生成过程中暂停、调整提示、继续执行。Runway 的视频生成可以中途暂停，用户调整参数后继续，而不需要从头开始。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMZcRtukThs7n7ULfWEUq4xHHMiboAyuHicvSflepF0SgXW3icSDejgBGIg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=36" alt="图片"></p>
+<h4>4.5 成本预估（Cost estimates）</h4>
+<p>在执行操作前展示预计消耗的算力、时间或费用。云端渲染工具会告诉用户&quot;这个操作需要 100 积分，预计 5 分钟&quot;，让用户在知情的情况下做决策。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMxsZy1cLlKNdPAjZoM0ZotM6GnjbpLibVcpVRsCOCvsoPFTOGfNdz6QA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=37" alt="图片"></p>
+<h4>4.6 草稿模式（Draft mode）</h4>
+<p>提供低成本、低质量的&quot;草稿模式&quot;，让用户可以快速试错。Midjourney 的快速模式生成速度快但质量略低，用户确认方向后再用标准模式精细化。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlM7HofIK7hGPk8TdmNsuSHAZicdibx5E6Ca03G0Vic7ecMibPMwuiclSTy7WQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="图片"></p>
+<h4>4.7 记忆管理（Memory）</h4>
+<p>让用户管理 AI 记住或忘记哪些关于自己的信息。ChatGPT 的记忆功能允许用户查看、编辑或删除 AI 记住的个人偏好和历史信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMupjhV0bNGibDJPvvZBKMicZENrpZrxVVevmWtENREX6MhIuwdav7lKgA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=39" alt="图片"></p>
+<h4>4.8 引用管理（References）</h4>
+<p>查看和管理 AI 引用的附加资源。用户可以看到 AI 使用了哪些文档、网页或数据库，必要时可以移除某些来源重新生成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMCWpxicbia235I7w6tbic5MSaYjg6YxAEc9H6Gic1Mu6Jm4IO23WpPNQlIQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=40" alt="图片"></p>
+<h4>4.9 样例响应（Sample response）</h4>
+<p>对复杂或模糊的请求，先展示一个样例回应让用户确认理解是否正确。避免 AI 花费大量算力后才发现理解偏差，浪费双方时间。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMT8VBJDGtXZQYrssQvalptANia2kC0uyozoETuOmlBG2nEAECBLmB0zQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=41" alt="图片"></p>
+<p>在共享画布或工作区实时看到 AI 的操作。Figma AI 在设计稿上的修改是实时可见的，用户随时可以介入调整，实现人机协作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMXWUkvEqN5FIMGQZgia1LxjlIer0v6O89gqcX7wLtkCajPjuNHxHmxtw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=42" alt="图片"></p>
+<h4>4.11 思维流（Stream of Thought）</h4>
+<p>展示 AI 的思考过程、使用的工具和决策链路。Claude 在处理复杂问题时会展示&quot;我正在思考...&quot;、&quot;我查询了...&quot;等中间步骤，增加透明度。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMTQj4jqACQYLFp1WSpYN9B5mecVduLfXDskBF6mu9b9rh9X1HJUOlibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=43" alt="图片"></p>
+<h4>4.12 多版本选择（Variations）</h4>
+<p>生成多个版本供用户选择，而不是只给一个结果。Midjourney 的 4 宫格设计让用户可以对比不同版本，选择最满意的一个继续优化。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMxca6wDg9FiaqAVmWNmmkELKVoZwKuBQrNAY1fxZ9TSiaylIlj0YuZuCQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=44" alt="图片"></p>
+<h4>4.13 确认验证（Verification）</h4>
+<p>在关键决策和操作前强制要求用户确认。GitHub Copilot 生成代码后需要用户审查并接受，删除文件等危险操作会弹出二次确认对话框。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMWdr6ic6FziaFGNEyjZibT2ZemrJ5wlIeYTsItHhyx8Qcs4VQkSDicVhhJQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=45" alt="图片"></p>
+<hr>
+<h4>五、Trust builders：信任建立模式</h4>
+<p>核心问题 ：建立用户对 AI 的信任，解决&quot;这个 AI 靠谱吗&quot;的疑虑。</p>
+<p>AI 的黑盒特性和潜在风险让用户天然保持警惕。Trust builders 类模式通过透明度、控制权和责任机制来建立和维护用户信任。</p>
+<h4>5.1 警示说明（Caveat）</h4>
+<p>提前说明模型或技术的局限性和潜在风险。ChatGPT 在首次使用时提示&quot;可能生成不准确信息&quot;，医疗 AI 工具会声明&quot;不能替代专业医生建议&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMXABzpIba0XoxF2uBvvxBMYCicbZAv9zdZwGFB2K96yKRIBGvvhuNBug/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=46" alt="图片"></p>
+<h4>5.2 知情同意（Consent）</h4>
+<p>只在获得明确的知情同意后才收集或使用他人数据。AI 训练工具在使用用户数据前会明确告知用途和范围，并提供退出选项。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMP3yNhtwafqFRujIU6wtGVmQMU1Cib5jleYahBS3uJm2YAZ2n6amzUvA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=47" alt="图片"></p>
+<h4>5.3 数据主权（Data ownership）</h4>
+<p>让用户完全控制 AI 如何记忆和使用自己的数据。OpenAI 的数据控制面板允许用户选择是否让对话用于模型训练，可以随时导出或删除自己的数据。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMUktjtmvcN8RnZk0R3rwwRHJYNmbBB0cAEBUn0UPjQ3e416icMkk5e9A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=48" alt="图片"></p>
+<h4>5.4 明确标识（Disclosure）</h4>
+<p>清晰标识哪些内容或交互由 AI 驱动。LinkedIn 在 AI 辅助生成的内容上标注&quot;AI 辅助&quot;，让读者知道这不是人类原创，避免误导。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMZCPHUD4geQGRp3wgibG59TaVXWahibR2ibq2bYua6eyAzGiaLxWKP5S28Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=49" alt="图片"></p>
+<h4>5.5 可追溯性（Footprints）</h4>
+<p>支持从提示到结果的全链路追踪。用户可以看到一个输出是如何一步步生成的，使用了哪些数据和模型，便于问题排查和责任认定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMmzu2Hk1DqdoWDxvnza9YfJ0gH2SGTGaqoibiajuDDkrDXpxcXNLUxPTw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=50" alt="图片"></p>
+<h4>5.6 隐私模式（Incognito Mode）</h4>
+<p>提供不进入长期记忆的私密模式。ChatGPT 的临时对话功能不会保存历史记录，也不会用于训练，适合处理敏感信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMZmR8eZmuckriaUmOEHwL3D5STicXaTd4NzFoHVGsyvPJwVDOA1FUCtSg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=51" alt="图片"></p>
+<h4>5.7 数字水印（Watermark）</h4>
+<p>在生成内容上添加机器可读的识别标记。Google 的 SynthID 技术在 AI 生成的图片中嵌入不可见水印,即使经过编辑也能识别，帮助对抗深度伪造。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMGmtOiaJicjsbDmo5lOUM9pRpqWhk7wOblmaiawSIqkcy6pf7UicWHbyAeQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=52" alt="图片"></p>
+<hr>
+<h4>六、Identifiers：身份标识模式</h4>
+<p>核心问题 ：定义&quot;这个 AI 是谁&quot;，建立用户与 AI 的情感连接。</p>
+<p>AI 不只是工具，也是用户交互的对象。Identifiers 类模式通过视觉、语言和个性设计，让 AI 拥有可识别的&quot;身份&quot;，增强用户的情感认同。</p>
+<h4>6.1 虚拟形象（Avatar）</h4>
+<p>为 AI 设计易识别、符合品牌的头像或形象。 Character.AI 的每个角色都有独特头像，Siri 有标志性的彩色波形，这些视觉元素让 AI 更具人格化。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMkcCWjpQ0UShZAvUFaZBvHshxYmI0gEopBdu2OJPSWglQJRQJiamOfLg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=53" alt="图片"></p>
+<h4>6.2 色彩语言（Color）</h4>
+<p>使用特定颜色提示 AI 相关功能或内容。Notion AI 用紫色渐变标识所有 AI 功能，用户看到这个颜色就知道是 AI 在工作，形成了清晰的视觉识别。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMxDGwsaV0a8Qcic5niaO8kcmcbJCT7c5TuKWPVX3UQXtHOEyf62dZFetw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=54" alt="图片"></p>
+<h4>6.3 图标体系（Iconography）</h4>
+<p>用统一的图标语言表达 AI 动作入口。Figma AI 用星星图标标识所有 AI 功能，Google 用彩色星形代表 Gemini，这些图标成为 AI 的视觉符号。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMoiaRJpQZqNuPE3icia8iadGJKgS6w4ibpTk3G4kLBOHR28EeI0Ew0EwwZ6g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=55" alt="图片"></p>
+<h4>6.4 命名策略（Name）</h4>
+<p>决定在产品中如何称呼这位 AI 角色。Siri、Alexa、小爱同学都是具有人格化的名字，而&quot;Copilot&quot;、&quot;Assistant&quot;则强调工具属性，不同命名传递不同定位。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMw0fT40txh2ULr52ibQ8UBMAFW3yscB8PLMww4aCEWPzZXM6Fm6g4LZA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=56" alt="图片"></p>
+<h4>6.5 个性设定（Personality）</h4>
+<p>设定 AI 的个性特征和整体&quot;气质&quot;。Pi 是温暖陪伴型，Claude 是专业严谨型，ChatGPT 是友好助手型，这些个性通过语气、表达方式和互动风格体现出来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K76VUgZQcPibkgeeMIKAXLlMOHfjj4OYINjQ9GiaPjg3EaIH0g3YOV4aONsUZJBlHwYe8OkQuXHC8dA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=57" alt="图片"></p>
+<hr>
+<h3>如何应用这些模式？</h3>
+<h4>1. 建立自己的模式库</h4>
+<p>保存这个文档或者把这些模式整理成自己的知识库，在 Notion 或飞书文档中建立结构化的索引。每个模式记录：</p>
+<p>这样在设计新功能时可以快速查阅和参考。</p>
+<h4>2. 用模式思考产品设计</h4>
+<p>上面的每个交互规则不必都使用，但可以作为查漏补缺的项目。在设计 AI 功能时，系统性地检查六个维度：</p>
+<ol>
+<li></li>
+</ol>
+<p>Wayfinders ：用户知道如何开始吗？</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>Inputs ：用户能方便地操作结果吗？</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>Tuners ：用户能精确控制输出吗？</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>Governors ：用户保持控制权了吗？</p>
+<ol start="5">
+<li></li>
+</ol>
+<p>Trust builders ：用户信任这个功能吗？</p>
+<ol start="6">
+<li></li>
+</ol>
+<p>Identifiers ：用户知道在和&quot;谁&quot;交互吗？</p>
+<h4>3. 组合使用多个模式</h4>
+<p>优秀的 AI 产品往往组合使用多个模式。Midjourney 同时用了示例画廊（Wayfinders）、多版本选择（Governors）、参数设置（Tuners）、数字水印（Trust builders）等多种模式，构建了完整的用户体验。</p>
+<h4>4. 根据产品及场景选择模式</h4>
+<p>不同类型的 AI 产品适合不同的模式组合：</p>
+<p>•</p>
+<p>对话式 AI ：重点是 Wayfinders（引导开始）和 Governors（保持控制）</p>
+<p>•</p>
+<p>生成式 AI ：重点是 Inputs（操作结果）和 Tuners（精确控制）</p>
+<p>•</p>
+<p>决策辅助 AI ：重点是 Governors（人在回路）和 Trust builders（建立信任）</p>
+<p>•</p>
+<p>陪伴型 AI ：重点是 Identifiers（人格化）和 Trust builders（情感连接）</p>
+<p>AI 产品设计不是&quot;加一个输入框&quot;那么简单。需要系统性地思考：</p>
+<p>•</p>
+<p>如何 引导 用户开始（Wayfinders）</p>
+<p>•</p>
+<p>如何 操作 生成结果（Inputs）</p>
+<p>•</p>
+<p>如何 精调 输出（Tuners）</p>
+<p>•</p>
+<p>如何 保持 控制（Governors）</p>
+<p>•</p>
+<p>如何 建立 信任（Trust builders）</p>
+<p>•</p>
+<p>如何 定义 身份（Identifiers）</p>
+<p>Shape of AI 提供了一个很好的框架，但更重要的是在实践中建立自己的理解，根据具体场景灵活运用这些模式。</p>
+<p>AI 时代的产品设计才刚刚开始。工具会变，但设计的核心不会变： 理解用户，创造价值 。</p>
+<p>你在做 AI 产品时遇到过哪些交互设计难题？欢迎评论区分享。如果这篇文章对你有帮助，点赞转发支持一下。</p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+<p>参考网站： shapeof.ai</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/VIFcox_u10BkmB3yk983QA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

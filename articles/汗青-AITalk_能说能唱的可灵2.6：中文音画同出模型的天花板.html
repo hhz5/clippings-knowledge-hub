@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>能说能唱的可灵2.6：中文音画同出模型的天花板 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">能说能唱的可灵2.6：中文音画同出模型的天花板</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%B1%97%E9%9D%92%C2%A0AI%C2%A0Talk">汗青 AI Talk</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90">视频生成</a><a class="chip" href="../index.html?tag=%E9%9F%B3%E7%94%BB%E5%90%8C%E5%87%BA">音画同出</a><a class="chip" href="../index.html?tag=%E5%8F%AF%E7%81%B52.6">可灵2.6</a><a class="chip" href="../index.html?tag=%E9%9F%B3%E4%B9%90%E7%94%9F%E6%88%90">音乐生成</a>
+    <span class="date">2025-12-04</span>
+  </div>
+  <p class="lead">可灵发2.6模型了，重点是音画同出，先看成片：需要说明的是：这一整段“群口说唱+京剧”的短片中，全部音频+视频</p>
+  <article class="content"><p>原创 汗青 AI Talk <em>2025年12月4日 17:30</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9np60icgdCoDojKdX5JEGu7dCnRLbKrSzaF9onfm0RZfWDzTMic1vrOPWHQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>可灵发2.6模型了，重点是音画同出，先看成片：</p>
+<p>需要说明的是：这一整段“群口说唱+京剧”的短片中，全部音频+视频均由可灵2.6模型生成，没有借助任何其他的音乐模型（对，就是你心里想的那个）。</p>
+<p>节奏连贯，beat统一，人物口型和歌词高度同步：可灵2.6完全具备生成1分钟左右完整音乐作品的能力。</p>
+<p>但在一次生成10秒片段的情况下，怎么做到输出一分钟的音乐连贯性？需要一点人工处理，本文 后半部分会有详细教程 。我们还是先说说可灵2.6本身的音画能力。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9nphhcjGQp5GsHAmMrhzsfNM0lQ8Yic0PcATV3KxaZbNK5Kxeo1VtcBicmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>对2025年的AI视频模型来说，&quot;音画同出&quot;是大家反复提到的概念。从早些时候的Veo3，到前一段风靡的Sora2，一次搞定画面+声音是个很爽的事。</p>
+<p>而可灵2.6带来的测试感受是：这是目前 在影像质量、中文语音与口型方面天花板级别的音画同出模型。</p>
+<p>细说。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npoSQd20H1yxlQbTtjRaWMfhDqtwQNw7CEC9HLOMibF23ibxPXtwoRTmqw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>看家本领：顶级画质+语义遵循</p>
+<p>先感受一下直出的10秒音画同出clip：</p>
+<blockquote>
+<p>镜头慢慢拉近女人的面部特写，女人露出近乎崩溃的表情，用近乎沙哑的声音，用尽全力歇斯底里的哭腔嘶吼说道：“为什么啊！你告诉我为什么啊，为什么可灵这么好用啊。。。。为什么。。。为什么！！！！！”用手捂住脸，背景里是刺耳的风</p>
+</blockquote>
+<blockquote>
+<p>电影环绕运镜：柔和的焦段变化。女人闭着眼睛深情缓慢的说：“天亮...你就走了，对吗？”转过身抱住男人穿黑西服的胳膊。然后右侧的男人说：“有时我想，如果我根本没来过，也就不用走了”。</p>
+</blockquote>
+<p>直观的感受其实比我啰嗦说一大堆形容词要有力的多。</p>
+<p>理智分析一下：在音画同出的模型领域，把 工业效果和情绪表演拉到这个水准，还配合极高中文语音质量，可灵2.6应该是第一个做到的。</p>
+<p>而作为音画同出模型，Veo3和Sora2对很多朋友肯定不陌生：天马行空的想象力，长文本的理解能力，出色的剪辑。而它们的受众也非常明确：广义用户的Meme段视频（通常在10秒以内），以二创、搞笑、非商业为主。有几个明显的特点：</p>
+<ol>
+<li>影像精度一般（分辨率和影像质量是两件事）。</li>
+<li>稳定性和精控性不够，经常有小错误。</li>
+<li>中文语音质量一般（可以理解）</li>
+</ol>
+<p>这两个模型“玩”的属性还是更强一些，这 并非贬义 ，因为玩具是个很伟大的事儿。但你指望用他们做有严格要求的视频创作（尤其是商业交付的AI广告、AI短剧、AI电影）？</p>
+<p>祝你好运。</p>
+<p>并非拉踩，Veo和Sora作为顶级模型，有自己清晰的特性重点和受众。</p>
+<p>而可灵2.6绝对优势就是：它的影像质量继承于可灵 2.5Turbo 这个T0级的图生视频型，可以理解为它具有2.5Turbo的全部优点，再加持出色的中文语音和口型能力。更适合商业交付的精确要求。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npXsXSrrKaxiaibHRBHENia4CBqvLfwVRZPN6Z4yY9m0icM1XjXq98Bc4ibfw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npu8jQWNwINrh0pbTF1KAXCpYh58ngvyRhas2pA5YFg2rRUibzpcyKayQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npicH1egwYC8dX2JDFs4E2L78lyqY13WC8avciaiarHic9ctfJkgFnk3jJibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>光看截图就能感受到：美学、语义遵循、氛围渲染、节奏调度、运镜、人物演出都维持了可灵系模型的一贯优点。这方面不用我赘述了，大家对可灵都不陌生。</p>
+<p>只能说，图生视频依然在控制力和质量上有很大优势。然后我们看一下这次可灵2.6在音画同出的情绪表演上的完成度。请看下一段：</p>
+<blockquote>
+<p>【场景】 昏暗的摇滚酒吧，舞台上烟雾缭绕，聚光灯打在麦克风架上，观众剪影晃动。【主体】 摇滚歌手紧握麦克风架，手臂纹身清晰可见，激情演唱。【音频】电吉他，失真音色，强烈的前奏riff响起，密集的鼓点轰鸣。摇滚歌手，嘶吼男声，唱道：&quot;Break these chains! Set me free! I won&#39;t fall again!&quot;背景叠加bass低音和观众的掌声、跺脚声。【运镜】 镜头从观众视角推进舞台，穿过烟雾聚焦歌手脸部；快速切换至侧面低角度仰拍，捕捉歌手仰头嘶吼的瞬间；镜头摇至手部特写，紧握麦克风的青筋；最后拉远至全景，展现整个酒吧氛围和观众的狂热。</p>
+</blockquote>
+<p>如此表演张力的音画同步，如果用传统工作流：图生视频—生成音频—数字人换嘴，是很难达到这个表现力的。</p>
+<p>音画同出这个功能如果做不好，就是很鸡肋的特性（和没有差不多）。而一旦迈过质量的临界点，就是可大幅提高生产效率的特性。</p>
+<p>比如我们这次为可灵做的宣传片，速度远超以往，原因就是实现了工作流的压缩（大白话讲就是你不用折腾对口型了）。</p>
+<p>当然，目前还不能支持上传音频，或者固定角色声线，这有点遗憾。不过我觉得都是时间问题。</p>
+<p>借助 2.5Turbo 天花板级别的图生视频能力，这次2.6的音画表现非常非常实用。</p>
+<p>更何况像说话同时的大幅运镜，通过数字人口型能力目前几乎是做不到的。可灵2.6对运镜的支持很好（因为本质就是 2.5Turbo 嘛），推拉摇移，环绕运动，都能较好地完成。口型适配非常自然，有合理的预期和情绪，并非那种机械输出。</p>
+<blockquote>
+<p>提示词：</p>
+<p>片段1：镜头围绕人物向右旋转360度运镜，运镜的同时，人物在说台词“王座的铁锈里藏着万千枯骨，凛冬的寒风中唯有忠诚不灭。”  </p>
+<p>片段2：镜头快速拉出，展示人物全身造型，拉出镜头的过程中，人物在说台词“王座的铁锈里藏着万千枯骨，凛冬的寒风中唯有忠诚不灭。”</p>
+</blockquote>
+<p>我觉得只要可灵进一步完善角色声线一致性的问题，我们就可以实现很丰富的人物表演同步运镜的效果了。</p>
+<p>在测试中，即便是激进的运镜要求，可灵2.6也能保持画面的稳定性和流畅度，没有出现明显的撕裂或变形。比如上面这个镜头的流畅度，整个运动过程中画面始终保持稳定。</p>
+<p>再比如我们创意片中，人物随剧烈镜头变化表现出的极高稳定性与口性匹配度，令人印象深刻。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npYlu9lJ9OpX4GPTShv4A43TzKlzhkZX23IC8pjs4bWibA2cIcvR9TOyA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npggJTTtndkClEE3o1UNjjImHQqaH0JVf5gkNmFByicX9jFkOXtH3NCGQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9np2d9M7kBLicSvAYiaxktiazkn3zAxbiblw4G9zaGdmqqRf24kjq4yMpVdZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9npYjrnPS9buffBlUavAiaGcRad6XezARicNlOGY5tBdMIb2HyXRtqBYIaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>说完画面，说说声音这部分。</p>
+<h3>极佳的语言音频表现</h3>
+<p>可灵 2.5Turbo 也是能输出声音的，但更多是音效。并不支持台词级的对话。</p>
+<p>所以可灵2.6的重大意义是，可以直接生成人物对白、音乐、音效。并且准确度相当之高，只要控制好台词长度（别超过10秒的生成客观长度限制），很少出现错别字的发音。</p>
+<p>我们先看看英文的表现：</p>
+<blockquote>
+<p>提示词：</p>
+<p>片段1英文独白：一个好莱坞黑帮电影的片段，男人一边抚摸猫咪一边在用英语说台词“A man who doesn&#39;t spend time with his family can never be a real man.”</p>
+<p>片段2中文独白：一个好莱坞黑帮电影的片段，男人一边抚摸猫咪一边在说台词“一个不花时间陪家人的人，永远不能成为真正的男人。”</p>
+</blockquote>
+<blockquote>
+<p>提示词：</p>
+<p>【场景】 繁华街道，人群穿梭。【主体】 [街头记者] 采访路人。【音频】[记者，成熟男声] 问：&quot;Excuse me, what do you think about the new policy this year?&quot;[路人，年轻女声] 回答：&quot;Honestly, I think it&#39;s a step in the right direction. The tax relief for small businesses is really helping people like my friends who just started their own café!&quot;。</p>
+</blockquote>
+<p><strong>说实话效果挺绝的。虽然这种对话在Veo和Sora系列模型中也能实现，但大家特点还是挺分明的，可灵主要还是在音与画的同步高质量上表现出色。</strong></p>
+<p><strong>而来到中文领域，这个优势就更被放大了。毕竟是咱们自己的模型嘛，中文的优化明显更到位。</strong></p>
+<blockquote>
+<p>提示词：</p>
+<p>咖啡厅室内，阳光透过左侧窗户洒进。画面左侧穿红色毛衣的女孩坐在沙发上看书，温柔的问&quot;要加糖吗？&quot;画面右侧男孩轻松说： &quot;不用，我喝苦的就好。&quot;</p>
+<p>咖啡倒入声，液体流动</p>
+<p>镜头从左向右平移，先拍摄女孩，经过中央植物，最后聚焦男孩倒咖啡的动作，咖啡杯是透明玻璃的。</p>
+</blockquote>
+<p>两个演员的中文配音和口型，甚至是一问一答中间的间隔都很帮，有种文艺电影的调调。而最后咖啡入杯的音效也相当完美。</p>
+<p><strong>接着上难度，多人快速语速对话：</strong></p>
+<blockquote>
+<p>A是画面左侧演员，B是画面右侧演员。A说：&quot;今儿给大伙儿说段相声！&quot;。然后B说：&quot;我这人特有文化！&quot;。然后A说：“道可道、非常道的下一句是啥？&quot;。然后B说：&quot;此路是我开、此树是我栽！&quot;。然后A说： &quot;你这是抢劫！&quot;观众，爆笑声和掌声。</p>
+</blockquote>
+<p>不过需要说明的是，口型同步并非百分百完美。在我们的测试中，会出现语音口型没有匹配角色的情况，尤其是在一些快速对白、复杂音节或多角色同时说话的场景中，如果你对口型同步有极高的要求，在生成时可能需要多跑几次，选择匹配度更好的结果。</p>
+<h3>音乐能力初见端倪</h3>
+<p>是的，可灵2.6提供了音乐生成的能力。</p>
+<p>虽然它在音乐创作的复杂度上还无法和Suno这样的专业音乐生成工具相比，但它作为一个视频模型，在音乐风格理解、演唱形式支持，以及音画情绪协调上的表现，说实话已经超出了我的预期。</p>
+<p>可灵2.6能够准确理解并呈现不同的演唱形式。在独唱场景中，模型会根据音乐类型自动调整人声表现——摇滚场景下是力量感十足的嘶吼，爵士场景中则是慵懒而富有磁性的演绎。</p>
+<p>直接看以下片段：</p>
+<blockquote>
+<p>Live House舞台近景，温暖的暖黄色灯光柔和照亮面部，轻薄烟雾弥漫在背景。并排站立的三位中国歌手合唱，温柔的民谣风格和声： &quot;那些走过的路啊，都开成了花，oh~&quot; 间奏收尾。【运镜】镜头从舞台一侧缓缓推进。</p>
+</blockquote>
+<blockquote>
+<p>昏暗的Live House舞台，紫红色追光灯交错扫射，并排站立的 独立乐队成员，主唱双手握紧麦克风深情领唱，键盘手和吉他手轻声和声。主唱，磁性中音男声深情唱出：&quot;We&#39;re standing on the edge of something new...&quot;，成员们温柔和声&quot;Ooh~ Something new~&quot;，镜头从舞台侧面缓缓横移，穿过烟雾，捕捉每个人沉浸投入的表情和微妙的肢体律动。</p>
+</blockquote>
+<p>我们特意主要测试了合唱的场景，多个歌手的声部能够形成协调的和声效果，更重要的是，画面中不同歌手的口型能够与各自的声部基本同步。</p>
+<p>从摇滚到爵士，从民谣到电子，可灵2.6都能抓住各个风格的核心特征。正如文章开篇部分的一个摇滚案例，它会生成失真的电吉他音色、密集的鼓点，歌手的肢体语言也会相应地更加激烈——仰头嘶吼、紧握麦克风、身体随节奏摇摆。在民谣或抒情场景中，音乐会变得柔和舒缓，歌手的表情也会更加内敛深情。</p>
+<p>而音画同出的意义，就在于声音的情绪可以延展到视觉。 一旦这个功能成熟，会大幅提升制作音乐MV的效率 。懂得都懂，现在AI对口型和寻找情绪表达的成本还是太高了。</p>
+<p>再说一下配器：可灵2.6惊喜的能生成多层次的配器结构，包括主旋律人声、和声、节奏组和氛围填充。这非常重要，配器的复杂性往往是衡量音乐性的重要标准，说明可灵至少有潜力在音乐生成上进一步深挖。</p>
+<p>作为主打音画同出的功能，长期去实现音乐生成或许是重要的目标之一。所以这次我们也尝试简单做了开头那首说唱。接下来说说如何借助目前的可灵2.6来生成较长的说唱作品。</p>
+<h2>如何用可灵2.6制作完整说唱</h2>
+<p>今天发片子之后很多朋友在问是怎么做的，显而易见，我是把很多可灵2.6生成的说唱片段剪到了一起，这件事的核心难点很清楚： 如何让很多10秒的说唱片段融合时自然流畅 。</p>
+<p>首先如果你想尝试下面的工作流，我在这里推荐说唱风格。因为在流行、摇滚这种旋律变化很强的曲风下，我们实现连贯拼接的难度是很大的，而大家喜闻乐见的说唱反而更容易做到。</p>
+<p>整个流程一共三步，要声明一下：下面的教程会涉及一些基本乐理知识和剪辑操作，不是复制粘贴提示词就能实现的，所以仅推荐愿意折腾的朋友看一下。</p>
+<p>基本提示词 结构如下，我会一点一点讲：</p>
+<blockquote>
+<p>猪八戒一边扭着屁股跳街舞，一边表演说唱音乐。搞笑的沙哑低音声线，配合歌词：“哟，哟，伤情最是晚凉天，憔悴厮人不堪言，吆酒催肠三杯醉，寻香惊梦五更寒”，强烈节奏的摇滚乐+电子乐伴曲，电吉他solo，电子鼓点，100BPM。</p>
+</blockquote>
+<h3>第1步：锁定BPM</h3>
+<p>所谓BPM，就是 Beats Per Minute（每分钟节拍数） ，它决定了一首歌曲的基本节拍。也就是说，这是保证多段视频能连贯的重要前提。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6Ul9iaynavg9JZmnHudN511pLBavtAoILoEWUEpW5e5RBZBmd1PphWxV8D72ibUU7muH2aiaYy38wb0BMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>有趣的是，大部分AI音乐模型在BPM的支持上只能做到接近但不精确，可灵2.6却大概率（肯定也有失败的时候）能实现较好的锁定，这为多段融合提供了更有利的前提。比如：我们可以在所有的片段中都加入“BPM 120”这样的参数。</p>
+<p>这样生成出来的每个片段，在说唱节奏上都是趋于一致的。</p>
+<p>第2步：锁定配器，切割歌词，生成片段</p>
+<p>为了让每一段的链接不要有割裂感，我们需要通过提示词统一配器。比如我选择的是电子鼓点+电吉他的简单伴奏。这样的好处是去掉不必要的干扰，缺点嘛，要牺牲一部分配器的层次感，也少了惊喜，所以如果你对音乐剪辑很有自信，这一步可以适当放宽。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6Ul9iaynavg9JZmnHudN511pLBfHPZakF3VE4FcJsXM6OpFpUA9efj6pMeMBiaMmxaicexib6ZAJc7KClBQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>然后就是要把歌词切成若干段，每一段都是10秒的片段。注意在这里要严格限制字数，否则就会太快或者太慢。</p>
+<p>用我自己的片段举例，在BPM100的情况下，这样的歌词量比较合适：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6Ul9iaynavg9JZmnHudN511pLBZsE3dTCficLfSice9YA5fIhxBBFtpjD8lj3WVPa34zW6hGJYniaMicB4vg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>然后就是生成，需要点耐心，如果效果不理想，适当调整歌词的长短。</p>
+<p>成功的 重要标准 ：每一段中都有明显的、节奏相近的电子鼓点，大家可以自己听一下，感受到明显的鼓点就可以了。</p>
+<h3>第3步：剪辑+复用Beat（可选）</h3>
+<p>接下来需要借助常见的剪辑工具，把每一段连接起来。</p>
+<p>注意，连接时不是简单的收尾拼接，每一段之间的连接点要正好让鼓点的标志性重音重合。一般在波形上明显上升的部分就是这个节奏点。</p>
+<p>如下图，我是把视频和音频分开处理，每一段之间是部分“重合”关系，而不是“拼接”关系</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6Ul9iaynavg9JZmnHudN511pLBf4jLgb2lMMuYOWlOPG5x3fEg3YXehEdMgwPZJREpY7EbgXjBHcrzibg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6Ul9iaynavg9JZmnHudN511pLBiaAz3U2WGyY1yeCgbickM3gq6rpSksAOrPC2VaiaibHmttG6EW8TogAwdw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>下面这一步不是必选项，为了更精准地确保节拍的一致性，我们可以采用一个进阶技巧：把第一个片段的beat剥离出来，复用到后面的其他片段中。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6UlibYOFLYaqu91F5oXIG0H9np54RqPr0xdZdBcE7rFA61P7Jxib6jUvVYuPOk97WDhUGicax5cGiadib2dQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p><strong>其实在大部分剪辑工具中就能完成操作，具体是这样的：</strong></p>
+<ol>
+<li>在把前面的工作做好之后，首先是“分离音频”，然后把人声和伴奏再次分离。这时我们把所有的动画和人生轨道都锁定，单独处理第一段的beat。</li>
+<li>分析这段音乐的节奏模式，找到一个完整的循环单元（通常是4拍或8拍）， 最关键的是对上节奏点（见上图的示意） 。</li>
+<li>将这个循环单元作为节奏模板，调整后续片段时，让每一段的“人声”和“节奏”能对应起来。</li>
+</ol>
+<p>对没有剪辑经验的朋友来说可能有点复杂，但实际上并不难。如果你感兴趣，试几次就能找到规律。</p>
+<p>这样做的好处是，你不仅能保证BPM数值上的一致，还能确保具体的鼓点、贝斯线等节奏元素在不同片段之间是连贯的。观众听起来，就会觉得这是一个完整的作品，而不是几个拼凑的片段。</p>
+<p>通过这样的流程，就能用可灵2.6创作出一个相对完整、节奏连贯的短片了。</p>
+<h2>不足与总结</h2>
+<p>说到缺憾，我觉得有以下几点：</p>
+<ul>
+<li>首先，业界老大难问题：多人同时念台词的时候出现小错误（用Veo的时候这个点会把我逼疯）。其实可灵2.6在多人发音上已经很靠谱了，至少台词都很准确，但有几率会把读台词的角色搞错，这个时候就需要一定程度的开盒了，在测试中，只要有点耐心一般都能解决。</li>
+<li>另外就是，不能支持上传音频和固定声线，估计在规划中吧，长远来说这个功能肯定是会有的。</li>
+<li>关于音乐MV方面，我在文章中给出的方法只是一种过渡方案，更可靠的解决方案大概是支持长音频驱动多图（机位切换的逻辑）。如果真能实现，AI MV的工作流大概会有大变化。</li>
+</ul>
+<p>新工作流的可能性</p>
+<p>对于今天在发布创意片之后，好几位朋友都单独找我聊天，怎么看可灵2.6的音画同出。大家也都提到一个问题：音画同出和数字人lip-sync，哪个范式更有效。</p>
+<p>我没办法预测未来，但就目前模型侧呈现的效果，音画同出的口型与表演明显比数字人的lip-sync要自然很多，牺牲的其实是一定的灵活性。</p>
+<p>音画同出本质是一个多模态的特性，因此这绝不是一个“小功能”，和Veo2诞生时的文生视频一样，只要是能压缩核心工作流的技术，都是大事。在这次创意片的制作过程中， 团队的同学几乎都在反馈：音画同出带来的效率提升很明显。</p>
+<p>至于目前可灵2.6还存在的一些缺憾，我觉得用发展的眼光看问题吧，毕竟所有互联网产品本质上都是一种迭代的过程，以目前视频模型“卷”的速度，很多功能我们应该不用等太久。</p>
+<p>总而言之，可灵系模型长期积累的美学优势，在这次2.6版本的升级中得到了很好的体现，再加上中文语音支持很到位， 可灵2.6应该是目前中文创作者音画同出工作流的首选。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CoshmfW6Ul9n3Bzm7Mbb3x94th4ZKianvuZ2bJL977GzxmTbhjiagXMPSSqh39nVavib4lcWbIfJGyvJgmq4RJ3yA/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=20" alt="图片"></p>
+<p>我是汗青，AI.TALK创始人，一个6岁开始学美术的AI创作者，也是厮混互联网圈16年的产品经理。我在这里分享对AI技术与媒介的思考。  </p>
+<p>我的愿景是寻找新技术与媒介艺术的结合方式。如果你同样对这个话题感兴趣，欢迎关注我的公众号和视频作品。</p>
+<ul>
+<li>商务合作：aitalkgina</li>
+<li>频道视频号：AI.TALK</li>
+<li>个人视频号：汗青HQ</li>
+</ul>
+<p>作者提示: 个人观点，仅供参考</p>
+<p>继续滑动看下一个</p>
+<p>汗青 AITalk</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 1.42 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.61 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 2.83 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 2.09 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.92 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.72 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.77 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.41 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.55 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.56 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/69dFEY7v4fvrlbBo2vMNUg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

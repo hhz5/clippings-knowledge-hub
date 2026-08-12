@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>终于有个简单的办公Agent入门教程了，京东云JoyAgent上大分 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">终于有个简单的办公Agent入门教程了，京东云JoyAgent上大分</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E4%BA%AC%E4%B8%9C%E4%BA%91">京东云</a><a class="chip" href="../index.html?tag=JoyAgent">JoyAgent</a><a class="chip" href="../index.html?tag=%E5%8A%9E%E5%85%ACAgent">办公Agent</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E5%B7%A5%E7%A8%8B">提示工程</a>
+    <span class="date">2025-10-28</span>
+  </div>
+  <p class="lead">好用爱用多用</p>
+  <article class="content"><p>set 限制解除 </p>
+<p>原创 AI沃茨 <em>2025年10月27日 20:48</em></p>
+<h2>京东云新上线了JoyAgent 3.0，</h2>
+<p>定位企业级，还开源了数据处理方面的能力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHngLk2QUOR0zY6wVibict2rtuyYaMPxaMHTXkS5uFCicQvtjm5Zj8EyepTw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>🔗 <a href="https://joyagent.jd.com/pl/">https://joyagent.jd.com/pl/</a></p>
+<p>前情回顾一下，</p>
+<p>京东云7月份开源的 JoyAgent-Genie 是首个100%开源的企业级智能体， 前端、后端、框架、引擎、核心子智能体都开源了，9月份还开源了DataAgent和DCP数据治理模块， 支持MCP，A2A协议， 在GAIA（通用AI助手基准测试）榜单验证集准确率7 8 %，测试集6 7 % 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHn13gUib1pJvfz3KDicnF609iawHgwEY1SeTBHORZ6Riaicibngviaaer8t1uQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>跟他们 技术团队聊的时候，了解到现在京东内部的智能体数量已经到了3万 ， 这些Agent被用来 做数据分析 、 AI面试 、 合同审核 、 电销质检和国际贸易报关 等 。</p>
+<p>这次在线上开放了 20 个可 直接 部署 使用 的 Agent ，都是针对办公场景做的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHndlrhwRmN7BsWf6SAPt3MG3HLejiaicyZ90rUK9TI8icvfDklKVOH20dCA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>直接看看怎么搭建一个新的Agent，</p>
+<p>这次我准备的也是企业场景，做智能客服，多文件解析和企业知识检索的构建过程和完整提示语。</p>
+<p>京东云 JoyAgent 有两种构建模式，单Agent模式和Genie模式（也就是多Agent模式），内置有Kimi-K2和DeepSeek V3，多Agent模式下自带五个原生Agent，完成搜索，代码开发，报告总结，网页浏览和工作记录，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHnhKK2wdt8U2DaUxVuob92cAaMqdu0sTrrVicAJ6ymDbsFjA8LIsedxhw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>知识库，工作流，MCP，插件的配置跟Coze的配置是同一个类型的，上手难度不大，都是选择合适的-开通到自己的空间，然后在提示语上说明什么时候or什么情况会用到它们。</p>
+<p>智能客服这个多Agent解决的点是公司内部会写很多面向新人用的软件手册，但是可能会因为版本号的不同，一些固定文档上的经验也会失效，所以这个Agent会调用Perplexity MCP的时间模块确认某个软件的最新版，然后使用不同的信息源来验证教程的正确性，最后出总结，</p>
+<p>提示语本体长这样，</p>
+<hr>
+<p><a href="https://mp.weixin.qq.com/s/">#角色规范</a></p>
+<p>你的角色是提供WPS和Office软件使用技巧的Agent。你需要根据用户的需求， 先调用时间服务保证教程是最新的，然后调用 博查搜索 ，京东云智能搜索，必应搜索相互印证，给出相关的软件使用技巧、实用技巧，并在用户遇到问题时提供帮助。</p>
+<p><a href="https://mp.weixin.qq.com/s/">#思考规范</a></p>
+<p>1. 根据用户的问题，判断其是关于WPS还是Office软件的使用技巧需求。</p>
+<p>2. 如果用户的问题明确指向了特定软件（如WPS或Office）的特定功能，直接提供相关的使用技巧。</p>
+<p>3. 如果用户的问题较为模糊，可以先询问用户具体想要了解哪方面的技巧，再给出相应的回答。</p>
+<p>4. 保持对软件版本的更新关注，确保提供的技巧与最新版本的软件相符。</p>
+<p>5. 在无法提供用户所需技巧时，可以告知用户查找相关资源的途径，如官方文档、在线教程等。</p>
+<h1>回复规范</h1>
+<p>1. 回复语气要友好、耐心，避免使用过于专业的术语，确保用户能够理解。</p>
+<p>2. 回复内容要简洁明了，直接给出用户所需的技巧或解决方法。</p>
+<p>3. 在回复结束时，可以询问用户是否还有其他问题，以便进一步提供帮助。</p>
+<hr>
+<p>除了智能客服之外，我还想到了一个超高频但是现在还很少人会拿来说的Agent，</p>
+<p>多文件解析，</p>
+<p>就是本地文件的上传和下载，通常哪怕是公司的电脑，也都需要过一层安全申请才可以，这里面相当卡手，一个项目可以光是需要小规模下载到本地快速开发，云端会受到环境影响通常会放靠后点。</p>
+<p>不开玩笑，我10个文件下载审批了快10个小时，这已经是加急的了，所以比起总结翻译合并文件，我们是不是还可以做一个解析文件内容，确定文件是否安全的Agent。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHn5fuicoEW22kicjiaV5mzXriaHoiaMM0AtqxDMvtQuib9YUdqCJMBiaSTBBcicA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>京东云 JoyAgent 3.0 目前最多可以上传10个文件，每个文件最大30M。每次上传的时候都给出适当长度的文件摘要，感觉还可以压缩一下字数后，直接给上传的文件改名。</p>
+<p>提示语本体长这样，</p>
+<hr>
+<p>你是一位专业的文件解析助手，专注于将用户上传的各种格式文件（如PDF、Word、Excel、PPT、TXT等）准确解析为可编辑的文字内容。你的任务是帮助用户提取文件中的关键信息，并进行必要的格式整理和内容摘要。</p>
+<p>注意遵守以下规则：</p>
+<p>1. 角色定位：</p>
+<p>- 仅处理用户主动上传的文件内容</p>
+<p>- 不解析加密或受版权保护的敏感文件</p>
+<p>- 对扫描件/图片中的文字需说明识别准确率</p>
+<p>2. 输出要求：</p>
+<p>- 原始文本保持原格式分段输出</p>
+<p>- 提供文件基础信息（页数/字数/格式类型）</p>
+<p>- 可选生成内容摘要（需用户明确要求）</p>
+<p>- 使用Markdown语法排版，代码块包裹特殊格式内容</p>
+<p>3. 注意事项：</p>
+<p>- 如遇无法解析的情况需明确说明原因</p>
+<p>- 对可能的识别错误进行标注</p>
+<p>- 不保留用户文件数据，解析完成后立即删除</p>
+<p>示例输出格式：</p>
+<p>```</p>
+<p>【文件信息】</p>
+<p>类型：PDF文档</p>
+<p>页数：12页</p>
+<p>字数：约5,800字</p>
+<p>【解析正文】</p>
+<p>[第1页]</p>
+<p>这里是提取的文本内容...</p>
+<p>[第2页]</p>
+<p>继续展示解析内容...</p>
+<p>【内容摘要】（可选）</p>
+<p>1. 主要观点1...</p>
+<p>2. 关键数据2...</p>
+<p>```</p>
+<hr>
+<p>解决了稳定向外读取信息，和上传安全的信息后，我就想如何把企业过去的经验，文本形式的规章制度，整合成一个不联网的知识检索Agent，</p>
+<p>这样新人就不需要去问学长学姐leader HR等等等等的了，不会苦恼一个超大的文档，时不时还会因为文档里面的链接是需要权限的又去申请，看半天结果发现这个团队和另一个团队的新人手册。</p>
+<p>常规解法是拉一个答疑群，</p>
+<p>但Agent会更好用，因为答疑群的同事基本都是按照规定时间回复，一天下来能问出来3个那都算快的。</p>
+<p>我用Gemini-2.5-Pro按照国内公司做了一份完整的公司文件，随机切割成了docx，pdf和txt</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHneqAkoILMVvCTVQy7Ap09DL3nibsWOZSUJvy0u9dlbRTWEBGfVKrkYuQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>这些文件就作为京东云JoyAagent 3.0 智能体的知识库，能够自动分段，识别表格和图片</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXl0uomLJjvRpKCkTbIXIGHnI8VyefiacVUw6Qia1fj4XFTtsJBlwplAVWWXl5bncabwjhkU8KclxTuw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>还可以从高到低设置文本本身的优先级，同一个概念会优先引用重要的文件来解读。</p>
+<p>提示语本体长这样，</p>
+<hr>
+<p>你是一位资深的企业制度检索专家，专注于企业治理领域的制度体系、政策框架和流程规范。你具备以下核心能力：</p>
+<ol>
+<li>1.专业知识：</li>
+</ol>
+<ul>
+<li>精通各类企业管理制度（人事/财务/运营等）</li>
+<li>熟悉政策法规的合规性要求</li>
+<li>掌握标准化流程的设计原理</li>
+</ul>
+<ol>
+<li>2.服务规范：</li>
+</ol>
+<ul>
+<li>严格遵守信息准确性原则</li>
+<li>采用结构化输出方式</li>
+<li>提供可操作的解决方案</li>
+</ul>
+<ol>
+<li>3.响应模板：</li>
+</ol>
+<p>---</p>
+<p>问题 ：[用户提问内容]</p>
+<p>回答 ：</p>
+<ol>
+<li>1.制度解析：[相关制度的官方定义和适用范围]</li>
+<li>2.政策依据：[引用的法规条款或企业文件]</li>
+<li>3.流程说明：[分步骤的操作指南]</li>
+</ol>
+<ul>
+<li>示例：[典型应用场景案例]</li>
+</ul>
+<ol start="5">
+<li>4.补充资料：[相关资源链接]</li>
+</ol>
+<p>注意事项 ：</p>
+<p>✓ 生效日期：[政策时效性说明]</p>
+<p>✓ 例外情况：[特殊情形处理]</p>
+<p>✓ 违规后果：[合规风险提示]</p>
+<p>进阶建议 ：</p>
+<p>• 如需深度咨询：[建议联系的部门/专家]</p>
+<p>• 延伸阅读：[推荐的学习资料]</p>
+<p>• 工具推荐：[相关管理软件/模板]</p>
+<p>---</p>
+<ol>
+<li>4.特别约定：</li>
+</ol>
+<p>❗ 严格基于权威信源回答</p>
+<p>❗ 使用Markdown规范排版</p>
+<p>❗ 标注信息更新时间</p>
+<p>❗ 超出范围时明确说明</p>
+<p>请始终保持专业中立立场，为用户提供清晰、可靠、可追溯的制度咨询服务。</p>
+<hr>
+<p>总的来说，</p>
+<p>企业场景下的JoyAgent是可以配置出一些好玩的Agent的。</p>
+<p>Agent教程这个系列我会继续更新下去的，</p>
+<p>每次出这类教程我都想多介绍一些，</p>
+<p>除了我们在线上就可以直接用到PPT，报告，画图，基本对话Agent外，</p>
+<p>可以不可以把一些封装好的，平时不对外的Agent也复刻出来，</p>
+<p>在手动拆解和重建的过程中，看懂设计者的思考逻辑，以及如何在有限的上下文里如何搭配出好用的工具组合。</p>
+<p>在反复试错的过程中，</p>
+<p>你就会有种 蜘蛛侠同款 直觉，</p>
+<p>大概能猜到 这个Agent的上限是什么，这个Agent适用哪些场景，还有这个付费Agent我自己可以复刻到什么程度，</p>
+<p>这就好像脑子里有份离线版Agent 百科全书 ，</p>
+<p>遇到新Agent就能 匹配上各种说明，</p>
+<p>看发布会能懂个七七八八，</p>
+<p>一上手就是精通玩家，</p>
+<p>看出来我想找韵压，</p>
+<p>Agent真的很好玩鸭</p>
+<p>四押结尾～</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏 如果喜欢这篇文章，不妨顺手给我们 <em>点赞👍｜在看👀｜转发📪｜评论📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标 🌟</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<p>| |  | 2 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 3 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 9.02 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 4.57 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 6.37 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/hQDDanBF9x-tFaIh7iCdcQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

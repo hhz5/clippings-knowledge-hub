@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>最新最全的 coding agent 指南，从入门到进阶 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">最新最全的 coding agent 指南，从入门到进阶</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a>
+    <span class="date">2026-05-12</span>
+  </div>
+  <p class="lead">万字长文，一篇搞懂 coding Agent 的入门歌进阶</p>
+  <article class="content"><p>原创 空格丶 空格丶 <a href="javascript:void(0);">空格的键盘</a></p>
+<p><em>2026年5月11日 09:03</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>前言</p>
+<p>最近做了不少个人 Agent 定制咨询，来咨询的有产品、运营、营销、自由职业的。</p>
+<p>对于 AI 工具的使用和理解各不相同，唯有的共同点是都用过豆包。</p>
+<p>聊到 Agent 的时候，很多人就各有各的理解。</p>
+<p>chatbot、LLM、Agent、skill、Prompt，这些概念交错起来。</p>
+<p>让有些人误以为 chatbot 为代表的产品是 Agent、LLM 是 Agent。</p>
+<p>但这些 AI 对话产品不像 Agent 那样可以操作你的电脑、文件、skill...</p>
+<p>使用豆包，每次想让它干点什么，得手动传文件给它，得把背景从头交代一遍。它没有记忆，没有 Skill，也没办法主动操作电脑、浏览器、本地的任何工具。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyP5kKZkEXzcBiaibCMKq5iccgf6smX3o17icLneqp2WyUZUCsHJFw8sVicic56l2uEKhpZwQbsnV9IHlv9z9cdO2CjGU1MbicESesicpM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片"></p>
+<p>Agent 不一样。</p>
+<p>它能直接读电脑上的文件，调用工具，用 Skill 把一套工作流封装成一个动作交付出来。</p>
+<p>举个最简单的例子。想做一份 PPT，基于本地写过的内容。常规流程是这样：</p>
+<ul>
+<li>选择内容</li>
+<li>确定风格</li>
+<li>输出成品</li>
+</ul>
+<p>熟练之后，可以把这套流程做成一个 PPT 制作 Skill。</p>
+<p>下次只要发一段内容，调用 Skill，PPT 就出来了。</p>
+<p>再进一步，还可以让它定时执行。每天早上 8 点，主动扫描电脑上当天新增的笔记，扫描订阅的 RSS 源，自动生成当天的内容卡片、PPT 或者其他任何形式。</p>
+<p>你睡着的时候它还在帮你干活，这才是 Agent。</p>
+<p>文章指引</p>
+<p>如果还没用过 coding Agent，或者已经在用但想更进一步，看完这篇你应该能搞清楚下面这些事：</p>
+<ul>
+<li>什么是 coding Agent，市面上的产品有哪些</li>
+<li>怎么下载、注册、订阅最主流的Agent 客户端</li>
+<li>怎么从桌面端进阶到 CLI</li>
+<li>怎么在 Claude Code 里接国产模型 API 做平替</li>
+<li>OpenClaw 怎么配，怎么把 Agent 接到飞书里跑自动化</li>
+<li>Skill 怎么做到全局统一管理，多端复用</li>
+</ul>
+<p>先说我目前的用法，建立个画面：</p>
+<p><strong>1 我的主力是 codex 和 claude code。</strong></p>
+<p>Codex 用来做产品，写代码、做原型、跑工程；Claude Code 用来写内容，公众号、专栏、商单。</p>
+<p><strong>2 国产模型平替。</strong></p>
+<p>主力套餐都有 token 限制，跑大了会被限制。我在 Claude Code 里接了智谱 GLM 和 Minimax 的 API，基础的任务全走国产，便宜，够用。</p>
+<p><strong>3 OpenClaw 接 Minimax 的 API。跑一些定时和自动化任务，自动化采集和投递。</strong></p>
+<p>这套组合一个月成本大概 300-500 块。</p>
+<p>有了上面这个介绍，如果你想全面的了解和使用 Agent，下面正式开始。</p>
+<p>01 什么是 coding Agent</p>
+<p>我看过比较清晰的一个定义：</p>
+<blockquote>
+<p>模型（LLM）+ Harness 框架 = Agent</p>
+</blockquote>
+<p>模型是大脑，Harness 是记忆和手脚。模型决定它有多聪明，Harness 决定怎么做事情。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowiaNKCXDWRtluJFT7uQedaGqOf799oBhRLeyicDf474ticX0FBrI7iahQ0dxSibnlGaDKx7iaLqsvD1V1dQQbzpJP4DhiaBLcazuk9pY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>按这个定义，市面上的 coding Agent 大概可以分成几类：</p>
+<p>1）CLI 类（终端命令行）</p>
+<p>特点是门槛高，得会用终端。但天花板也最高，可以接任意模型 API、装 Skill、操作整个文件系统。</p>
+<ul>
+<li>Claude Code：Anthropic 出品，写作、长文分析、 代码输出的天花板</li>
+<li>Codex CLI：OpenAI 出品，工程能力强，做产品首选</li>
+<li>Gemini CLI：Google 出品，多模态强，配合海量上下文</li>
+<li>Kimi CLI / 千问 CLI：国内厂商跟进版本</li>
+</ul>
+<p>2）桌面客户端类</p>
+<p>开箱即用，下载、登录、订阅会员就能跑。比 CLI 友好太多，深度定制能力弱一些。</p>
+<ul>
+<li>Claude Cowork（Claude Desktop）：Anthropic 官方桌面端</li>
+<li>Codex App：OpenAI 的桌面端</li>
+<li>Minimax Agent、Skywork Desktop：国产桌面端</li>
+</ul>
+<p>3）IDE / 代码编辑器类</p>
+<p>编辑器加 AI 的结合，适合一边浏览代码、文件，一边让 AI 改。</p>
+<ul>
+<li>Cursor：基于 VS Code 改的 AI IDE，写代码神器</li>
+<li>Trae：字节出品，国产 Cursor 平替</li>
+<li>Antigravity：Google 出品，能白嫖一年 Gemini 额度</li>
+<li>Codebuddy：腾讯出品</li>
+</ul>
+<p>4）Agent 系统类</p>
+<p>像一个一直活着的 Claude Code，不需要打开终端，可以对接即时通讯工具，如飞书、钉钉，发条消息它就去干活。局限性在于你看不到它在干嘛，以及经常会抽风，换了模型效果就变了。</p>
+<ul>
+<li>OpenClaw（小龙虾）：开源 Agent 框架，可以接飞书、Telegram、Signal 等 IM</li>
+<li>Hermes、Opencode：其他开源 Harness 框架</li>
+</ul>
+<p>5）网页端</p>
+<p>适合交付物标准化的任务，生成网站、PPT、报告这种。但深度上下文不行，订阅费一般都很贵。</p>
+<ul>
+<li>Lovable、Figma Make、Notion AI、Manus：浏览器里直接用的 Agent</li>
+</ul>
+<p>02 最推荐的入门客户端：Codex + Claude Code 桌面端</p>
+<p>第一次接触 coding Agent，建议不要直接上 CLI。先用桌面端，把感觉建立起来。</p>
+<p>我现在主要推荐两个：</p>
+<ul>
+<li>Codex 桌面端：从chatgpt.com/codex下载，需要 ChatGPT Plus（$20/月）或 Pro（$200/月）</li>
+<li>Claude Code 桌面端：从claude.ai下载，需要 Claude Pro（$20/月）或 Max 套餐</li>
+</ul>
+<p>可以先用免费额度跑几天试试感觉，再决定要不要订阅。</p>
+<p>注册和订阅这步，国内会卡一下，订阅支付、虚拟手机号、节点之类的。</p>
+<p>搞不定就去咸鱼解决，别在这一步就耗掉热情了。</p>
+<p>1）Codex 桌面端怎么用</p>
+<p>下载完打开，界面很干净，重点关注几块：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowQOMSZoSAFXCCKibFQwq5ZibpIatTwfbkQ6ZqKoNvBfcg1n6MN5A1hRVLv0sQeCUOnAaW41kkdYMuUQtbMSnCwlgrbzIibmybXgU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p><strong>1 项目文件夹</strong></p>
+<p>最关键的设置。要让 Codex 知道它能操作哪个文件夹。</p>
+<p>我一般会指定一个项目目录，比如某个 obsidian 仓库，Codex 后面所有的读写都在这里发生。</p>
+<p><strong>2 模型选择</strong></p>
+<p>Codex 内部可以切模型，GPT-5.2、GPT-5.3 Codex、GPT-5.4 都行。</p>
+<p>日常用默认就行，复杂任务切 Codex 专用模型。</p>
+<p><strong>3 安全策略</strong></p>
+<p>我自己的策略：日常项目设成自动执行所有命令，敏感项目（比如有线上凭据的）保持每次确认。</p>
+<p><strong>4 对话流、浏览器预览、终端</strong></p>
+<p>Codex 桌面端的强项是有内置浏览器和终端。</p>
+<p>写完代码可以直接打开浏览器预览效果，跑命令也不用切窗口，所有动作在一个界面里完成。</p>
+<p><strong>5 Skill 和插件</strong></p>
+<p>Codex 也支持 Skill（原生叫 Custom Instructions / Tools），可以装第三方插件，也可以自己写。</p>
+<p>可以下载我开源的 skill：github.com/zephyrwang6/myskill</p>
+<p>插件能套codex 和第三方平台连接，比如 github、figma、gmail 的插件，会让你登录你的账号，后续 codex 就能获取你账号下的数据，推荐你可以安装这几个插件。</p>
+<p>6 自动化</p>
+<p>可以让它每天某个时间自动跑一段流程。比如每天早上自动扫描 GitHub 上的 issue，生成 daily summary。</p>
+<p>2）实操：用 Codex 装一个 PPT Skill</p>
+<p>来个最具体的练手场景。</p>
+<p>打开 Codex，跟它说：</p>
+<blockquote>
+<p>帮我作一个 HTML-PPT 的 Skill。流程是：1 我发一段文字内容；2 它问我要什么风格（极简 / 商务 / 活泼）；3 它用 pptx 库生成 .pptx 文件保存到桌面。</p>
+</blockquote>
+<p>Codex 会：</p>
+<p>1 创建一个 Skill 文件夹，比如<code>~/.codex/skills/ppt-maker/</code></p>
+<p>2 写一个 SKILL.md，定义触发词和执行流程</p>
+<p>3 装好需要的依赖（python-pptx）</p>
+<p>4 跑一次测试，确认能用</p>
+<p>下次发 &quot;帮我把下面这段内容做成商务风 PPT&quot;，Codex 自动调用这个 Skill，几十秒后桌面上就多了一个 .pptx 文件。</p>
+<p>3）Claude Code 桌面端</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyO3tLCfXXuW08xJ92Z6LU0AoK0DfwkxeulUUhraibibcWibb3hCh1JTIqVB7ZibZk26WiaNbIbn5icOmDs2owej3kWuKg5lRHBlNq6s/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>逻辑和 Codex 几乎一样，区别在于：</p>
+<ul>
+<li>模型用的是 Claude（Opus / Sonnet）</li>
+<li>写作、长文分析、复杂指令理解上比 Codex 强一档</li>
+</ul>
+<p>两边各订一个会员，加起来 $40/月</p>
+<p>如果只能选一个，看主要场景：</p>
+<ul>
+<li>主要做产品 / 写代码 → Codex</li>
+<li>主要写内容 / 做知识管理 → Claude Code</li>
+</ul>
+<p>03 进阶：CLI 版本 Agent 下载和安装</p>
+<p>桌面端用熟了之后，会感觉到它的天花板。</p>
+<p>它没办法跑后台任务，没办法和 bash 工作流深度结合，没办法接任意模型 API。</p>
+<p>这时候就该上 CLI 了。这里我只推荐 claude code CLI，也可以搭配国产模型 API。</p>
+<p>mac 上打开 terminal，window 打开 powershell</p>
+<p>在命令行输入下面，CLI 版本的下载也很简单，一行命令：</p>
+<pre><code># Claude Code CLInpm install -g @anthropic-ai/claude-code
+</code></pre>
+<p>装完之后在终端里<code>cd</code>到项目目录，敲<code>claude</code>或<code>codex</code>，回车，就进入对话界面了。</p>
+<p>CLI 的体验和桌面端最大的区别：它跑在真实的终端环境里。</p>
+<p>它能直接读能直接执行任意 Bash、shell 命令、Git 操作、Docker 容器，能接入本地的任何脚本、工具、CLI。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozvIJXgvkaRuDiaYskiafEbvU6icfibn0q3f8mkCGjNvr53QDVpNowRic4uiaVZiaR4CwypYAeSpUgMqau9HicHolkugicugKUho3BTe4lE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>可以学一些常用的快捷操作，比如 shift+TAB 切换模型，/调用命令。</p>
+<p>对一个 AI 来说，能用终端约等于能操作整台电脑。</p>
+<p>04 必备工具：CC switch</p>
+<p>CLI 用熟之后，下一个问题就来了。</p>
+<p>claude、oepnai 买的套餐 token 不够用怎么办？</p>
+<p>这时候需要的是国产模型 API 做平替。</p>
+<p>现在智谱、minimax、DeepSeek 最新旗舰模型做的都挺不错了，代码场景完全可以用他们，价格还便宜不少。</p>
+<p>但手动切模型很麻烦。</p>
+<p>今天想用 Claude Sonnet，明天想切 GLM 4.7，后天又想切回去。</p>
+<p>CC Switch 可以做到一键切换。</p>
+<p>下载地址：</p>
+<p>一个图形化的 API 管理工具，专门管理 Claude Code、Codex CLI 等 Agent 的模型来源。在里面可以：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyFTOABQpERRLompF5Tq0hlqP2hz60WEKfJEV1XHmibtiaeDA8tPkvGucgUaQ62N6bXAk6TicTpF1TWnPicBdNG9eSXcn4iaV7vQT1o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<ul>
+<li>注册多个模型供应商（Anthropic 官方、智谱、Minimax、Kimi、各种中转站）</li>
+<li>一键切换当前 Agent 使用的 API</li>
+<li>管理 API Key、统计用量</li>
+<li>顺便管理本地的 Skill 库</li>
+</ul>
+<p>操作流程巨简单：</p>
+<p>1 在主界面，选择 Agent 厂商，比如 Claude Code</p>
+<p>2 选择模型 API 厂商，比如智谱</p>
+<p>3 输入 API Key</p>
+<p>4 保存，点启用</p>
+<p>5 重新打开 Claude Code，已经在跑 GLM 了</p>
+<p>切换一次大概 10 秒。</p>
+<p>05 模型 API 是什么</p>
+<p>插一段基础知识，因为很多人对 API 这个概念是模糊的。</p>
+<p>模型 API，就是访问大模型的地址和钥匙。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozeicSvTctiaFoiaNTgMbpIqrCEZCJScKda5qxianbvFyME47hAbics1MhI7iaz1vXAMRq6D8w4MXvATBdnglRsC7IMB67gKkjTxKic5w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>每次和 Agent 发消息的时候，背后发生的事情大概是这样：</p>
+<pre><code>我 → Agent 客户端 → 模型 API 接口 → 大模型服务器 → 返回结果 → 显示出来
+</code></pre>
+<p>中间那个模型 API 接口，由三个核心参数定义：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoztTPY4btCZpfleRV1xictxeBydU9AfOfZG8vmeyx9qUFw8hcWqHL1uJ4lAQJES7VhQpmaUqeTwC51MJUGu1c1dibep9OSfcYFYw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片"></p>
+<p>1 API 地址（URL / Base URL）。访问到大模型的路径，比如<code>https://api.DeepSeek.com</code></p>
+<p>2 API Key。身份凭证，证明有权限用，证明费用从这个账户扣</p>
+<p>3 模型名称（Model）。用这家厂商的哪个具体模型，比如<code>claude-opus-4-7</code>或<code>glm-4.6</code></p>
+<p>这三个是必填项。剩下还有些可选参数：流式输出、思考深度（thinking）、温度（temperature）、最大输出长度等等，平时不太需要动。</p>
+<p>06 实操：在 Claude Code 里配置国产模型 API</p>
+<p>来个手把手的例子。以智谱 GLM 4.7 为例，也是我自己主力的国产模型之一。</p>
+<p>第一步：注册拿 Key</p>
+<p>去open.bigmodel.cn用国内手机号注册，控制台里创建一个 API Key，复制保存。</p>
+<p>智谱有个套餐叫 Coding 计划，最低档 49 元/月（国内各家价格都差不多），额度对个人用户来说基本用不完。开一个就够。</p>
+<p>第二步：用 CC Switch 配置</p>
+<p>打开 CC Switch：</p>
+<p>1 选 Claude Code 作为目标 Agent</p>
+<p>2 添加新供应商，填：</p>
+<ul>
+<li>名称：智谱 GLM</li>
+<li>Base URL：<code>https://open.bigmodel.cn/api/anthropic</code></li>
+<li>API Key：刚才复制的那串</li>
+<li>Model：<code>glm-5.1</code></li>
+</ul>
+<p>3 保存，点启用</p>
+<p>第三步：验证</p>
+<p>新开一个终端窗口（重要，旧窗口环境变量没刷新），敲<code>claude</code>，进入对话。</p>
+<p>随便问一句：</p>
+<pre><code>你现在可以回答我问题吗？
+</code></pre>
+<p>回复成功，说明配置成功了。这里也能看到配置的模型名称和版本号。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoypY83u3pIgVDVibl0Dlm2ZYCSbe4E2UP3caZ2TQJW6v3Wso0lNWRS64Jkib4pXbBYztG14VMpUY2ncNvQH1GReqyeJWTOm75iceU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p>同样的方式接 Minimax</p>
+<p>Minimax 的 API 地址是<code>https://api.minimax.chat/v1</code>（OpenAI 兼容）或者它的 Anthropic 兼容地址。</p>
+<p>我的 OpenClaw 后端就是接的 Minimax，单价低、并发额度大，特别适合跑批量任务，夜里采集 100 篇文章、批量生成 50 张图这种。</p>
+<p>为什么国产模型也能接到 Claude Code 里</p>
+<p>Claude 和 OpenAI 这两家，定义了行业里两套主流的 API 标准。</p>
+<p>所有 Agent 客户端（Claude Code、Codex CLI、Cursor、OpenClaw 等）默认对接的就是这两套之一。</p>
+<p>国产模型厂商为了让自家模型能被 Claude Code、Cursor 这些工具调用，干了一件事：给自家 API 套上 Anthropic 兼容或者 OpenAI 兼容的外壳。</p>
+<p>比如智谱的 API，访问<code>https://open.bigmodel.cn/api/anthropic</code>是 Anthropic 兼容格式，</p>
+<p>访问<code>https://open.bigmodel.cn/api/paas/v4</code>是 OpenAI 兼容格式。</p>
+<p>DeepSeek、Kimi、Minimax、千问，全都一样。</p>
+<p>所以可以这样组合：</p>
+<ul>
+<li>Agent 还是 Claude Code（壳）</li>
+<li>模型换成 GLM 4.7（脑）</li>
+<li>体验流畅度几乎没变化，token 价格降到 1/10</li>
+</ul>
+<p>07 Skill 的统一管理</p>
+<p>讲完模型层，最后讲 Skill 。这是 coding Agent 真正的杀手锏。</p>
+<p>1）Skill 是什么（一句话版本）</p>
+<p>Skill = 写给 AI 的 SOP（工作标准说明书）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowG1iaYJ9gH3Nz0ehnfFk5Zia9UoCu2vb9wc4u1jlhQ9M3BKfNsIMFibl0ygAUPw2Jkdm6nnhFf5JsepD1lvFibE0PJ8KIU3FBf7KQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片"></p>
+<p>日常重复做的某一类任务，把流程拆出来、把要求写下来、把输入输出定义好，存成一个 SKILL.md 文件，丢到 Agent 能读到的目录里。一个 Skill 就成了。</p>
+<p>下次用一句话触发，Agent 自动按 SOP 执行。</p>
+<p>我做过 100 多个 Skill，覆盖：内容创作、产品经理、图片制作、数据分析等等。</p>
+<p>每个 Skill 都是一个我曾经手动做过 N 遍的工作流。</p>
+<p>2）三层架构：怎么让所有 Agent 共用同一套 Skill</p>
+<p>只用 Claude Code 一家，Skill 放在<code>~/.claude/skills/</code>就行。</p>
+<p>但我同时用 Claude Code、Codex、Cursor、OpenClaw，四个 Agent，不需要每个都维护一份</p>
+<p>我用的是软链接加分类仓库的三层架构：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyP06mmpufJ7ick0bcIKUA5fWX0BeduQhQouiaEUZKdh3dSC0vrI8cDianqkibljukWRGOluI7859j9CSYnwpEqVnKa2wVsAe4HQiaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片"></p>
+<p>核心规则只有一条：永远改全局，再同步到分类仓库。</p>
+<p>我自己的开源的 skill仓库是这样：</p>
+<p>你直接复制下面仓库名就能访问或下载：<a href="https://github.com/zephyrwang6/%E4%BB%93%E5%BA%93%E5%90%8D">https://github.com/zephyrwang6/仓库名</a></p>
+<p>每周复盘的时候，我会让 Claude Code 自动扫描<code>~/.claude/skills/</code>有没有新增 Skill，然后归类、commit、push。一条命令的事。</p>
+<p>3）Skill 怎么装</p>
+<p>我自己做的 100 多个 Skill 已经开源了，仓库地址在我的 GitHub 主页。流程是：</p>
+<p>1<code>git clone</code>到本地，帮我从<a href="https://github.com/zephyrwang6/myskill">https://github.com/zephyrwang6/myskill</a></p>
+<p>2 复制需要的 Skill 文件夹到<code>~/.claude/skills/</code>下</p>
+<p>3 重启 Agent，触发词一发就能用</p>
+<p>也可以直接让 Claude Code 帮我装：</p>
+<pre><code>帮我从 https://github.com/zephyrwang6/myskill 仓库里下载 brand-article 这个 skill，安装到全局 skill 目录。
+</code></pre>
+<p>它会自动 clone、复制、确认 SKILL.md 格式正确。</p>
+<p>1）Skill 怎么用</p>
+<p>每个 Skill 的 SKILL.md 顶部都有一个 description 字段，定义了它什么时候被触发。</p>
+<p>比如我写的 brand-article Skill，触发词是 &quot;商单&quot; &quot;甲方文章&quot; &quot;品牌合作&quot; &quot;推广文章&quot; &quot;写商单&quot;。</p>
+<p>说话里带这些词，Agent 就会自动加载这个 Skill 的完整内容，按里面的流程走。</p>
+<p>不需要记触发词，自然说就行。Anthropic 设计 Skill 的时候用的是渐进式披露原则，平时只加载 Skill 名字和描述，相关的时候才加载全文。</p>
+<p>08 OpenClaw：让 Agent 一直活着</p>
+<p>走到这一步，应该建立起一个习惯：遇事不决，先找 Agent。</p>
+<p>查资料、下载互联网上的任意内容、做数据分析、整理文件夹、搜索电脑上的文件、做 PPT、做 Excel，再技术一点，OpenClaw 报错、终端命令行操作失败，都可以丢给 Agent 解决。它比互联网上任何教程都靠谱，因为它能直接看到我电脑的真实状态。</p>
+<p>带着这个心态再来看 OpenClaw。</p>
+<p>1）OpenClaw 是什么，能干什么</p>
+<p>很多人问我：&quot;你怎么做到飞书发条消息它就在电脑上干活？&quot;</p>
+<p>答案就是 OpenClaw。</p>
+<p>它是一个常驻后台的 Claude Code，前面挂了一个 IM 网关。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozm08I5XIHjhazViaHML4oX4VfibiaD1qicHMyULV6gP93cTwGd77ZrVpp9ibyKNmwB2UKm9ZaUgcS6EBJcdfjDzHYicw4GjicCpBqEX8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片"></p>
+<p>飞书里发条消息 → IM 网关接收 → 喂给 OpenClaw 后台 → 它操作电脑文件、调 API、跑脚本 → 把结果发回飞书。</p>
+<p>我的 OpenClaw 配置：</p>
+<ul>
+<li>后端 Agent：OpenClaw（小龙虾）开源版本</li>
+<li>接入 IM：飞书机器人</li>
+<li>模型：Minimax（量大实惠）</li>
+<li>任务类型：每日采集、定时归档、文档同步、批量出图、夜间爬虫</li>
+</ul>
+<p>它最大的价值是离开电脑也能用 Agent。出门在外，看到一个不错的网页内容，飞书里发一句 &quot;把这个网页存到我的素材库 03 播客分类里&quot;，OpenClaw 就在家里的 Mac 上把活干完。</p>
+<p>但刚入门先别折腾 OpenClaw。它适合那些已经把 Claude Code + Skill 跑通、有大量重复自动化需求的进阶玩家。前 90% 的需求，Claude Code 桌面端加几个 Skill 已经够用了。</p>
+<p>2）安装 OpenClaw</p>
+<p>OpenClaw 是开源项目，去 GitHub 搜 OpenClaw 找到官方仓库。</p>
+<p>安装这一步不用啃文档，直接把官方仓库 README 链接丢给 Claude Code，让它边读边装：</p>
+<pre><code>帮我在本地安装 OpenClaw。仓库地址是：https://github.com/.../openclaw我的系统是 macOS。装完跑一次自检，确认能正常启动。
+</code></pre>
+<p>Agent 会自己 clone 仓库、装依赖、写配置、跑启动命令。中间有报错就把报错贴回去让它改，比对着教程一行一行抄快十倍。</p>
+<p>类似的开源 Agent 框架还有 hermes，可以了解一下，但不推荐用，文档和生态都比 OpenClaw 差一档。</p>
+<p>3）给 OpenClaw 配置模型 API</p>
+<p>OpenClaw 是开源框架，自带模型，跑起来必须接一个外部模型 API。</p>
+<p>两条路：</p>
+<p>一是用 CC Switch 配置，和前面给 Claude Code 配国产模型一个套路，选 OpenClaw 作为目标 Agent，添加供应商，填 URL 和 Key 就行。</p>
+<p>二是直接让 Agent 帮我配。把模型厂商的文档链接和 Key 丢给 Claude Code：</p>
+<pre><code>我想在 OpenClaw 里接智谱 GLM 4.7 的 API。这是文档：https://open.bigmodel.cn/dev/api我的 Key 是 xxx请配置好，并跑一次测试确认能用。
+</code></pre>
+<p>Agent 自己读文档、写配置、改环境变量、跑测试。每家厂商的文档都不一样，智谱、Minimax、Kimi 的参数位置都不同，硬啃没必要。</p>
+<p>我自己 OpenClaw 后端用的是 Minimax。OpenClaw 的特点是任务量大、跑得久（夜里采集、定时归档），单价低的国产模型最划算。Minimax 的并发额度也大，跑批量任务不容易卡。</p>
+<p>09 总结：实操路线</p>
+<p>上面基本讲完了所有你能用的到的 Agent，接下来就差动手实践了，</p>
+<p>安装、注册、登录、订阅只是开始，当你让它为你制作你工作最常用的文档，用 Skill 让它在你休息的时候给你打工时，你就获取到了这个时代最大的复利，让 Agent 为你打工。</p>
+<p>下面做了总结，一个全面的实践路线图</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowIQgFiaacR25aibChBMLsMNNUicOyavic1VnVkK63nUls74UlmpFymkvzicWtQNDCNAPGqabFxpQIer7MK33nePxhK8VtIf6vwbAF0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片"></p>
+<p>Stage 1：建立感觉（第 1 周）</p>
+<ul>
+<li>下载 Claude Code 桌面端 或 Codex 桌面端</li>
+<li>订阅 Pro 会员（搞不定就咸鱼）</li>
+<li>跟它聊一周，丢任意文件给它处理，感受它和豆包的区别</li>
+</ul>
+<p>Stage 2：装第一个 Skill（第 2 周）</p>
+<ul>
+<li>安装网络上比较火的 skill</li>
+<li>找一个每天重复做的工作流</li>
+<li>让 Agent 帮我封装成 Skill</li>
+<li>用一句话触发，体验一下 &quot;丢一句话出活&quot; 的感觉</li>
+</ul>
+<p>Stage 3：进阶 CLI（第 3 周）</p>
+<ul>
+<li>装 Claude Code CLI / Codex CLI</li>
+<li>把工作目录（比如 Obsidian 仓库）接入进去</li>
+<li>写一个 CLAUDE.md 把偏好和工作流定义清楚</li>
+</ul>
+<p>Stage 4：模型路由（第 4 周）</p>
+<ul>
+<li>装 CC Switch</li>
+<li>注册一个国产模型（智谱、minimax）</li>
+<li>跑量任务全切到国产，主力套餐留给攻坚</li>
+</ul>
+<p>Stage 5：自动化（第 2个月起）</p>
+<ul>
+<li>折腾 OpenClaw 或类似框架</li>
+<li>把高频自动化任务挪到后台</li>
+<li>让 Agent 在我睡觉的时候继续干活</li>
+</ul>
+<p>10 最后</p>
+<p>这篇比较入门，适合第一次接触 coding Agent 的人。</p>
+<p>但讲完这些，也只是工具的使用方法。</p>
+<p>工具用好的关键不是工具本身，是理念。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxGDtciabkia6eTick6udIAnUDMWm3ffBFwSBu3sHMoekSun19iamNMRBOoqLzjAn7AT1TYich5EmQiaZbua5dJB8zHtNyUC7TDKZyC4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="飞书文档 - 图片"></p>
+<p>要让 AI 真正变成生产力工具，读文件、记偏好、按 SOP 干活、人不在的时候继续工作，需要的是 coding Agent。</p>
+<p>coding Agent 的核心从来不是某一个工具。是模型、Harness、Skill 加上自己的上下文这四样东西。</p>
+<p>把这一步走通之后，可以让它接着做别的事情。</p>
+<p>怎么用 Agent 做知识管理， 做 vibe coding，每一个方向单独拎出来都是一篇长文。</p>
+<p>如果大家想要更系统的掌握 coding Agent、Obsidian、Skill、Vibecoding 的技能，欢迎订阅我的 AI 生产力专栏+社群。接下来就要更新 Obsidian 更详细系统的使用、还有 vibecoding 基础和 Coding Agent 的使用待更新。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxP1nZVnPTby0aJ3QUXfxRZeicsqvMIs9q8uycvPf8vCSSKDiaT4yd7hjTLub9HKpflibDGk66HVeibicG2eOa4N0zS8ic3fJWWrlibRo/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=13" alt="Image"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/MjCSA_KergmZCsJV3LBXtw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

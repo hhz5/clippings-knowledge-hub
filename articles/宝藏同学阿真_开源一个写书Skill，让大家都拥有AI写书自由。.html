@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源一个写书Skill，让大家都拥有AI写书自由。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源一个写书Skill，让大家都拥有AI写书自由。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%98%BF%E7%9C%9F">阿真</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=AI%E5%86%99%E4%B9%A6">AI写书</a><a class="chip" href="../index.html?tag=%E7%94%B5%E5%AD%90%E4%B9%A6%E5%88%B6%E4%BD%9C">电子书制作</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a>
+    <span class="date">2026-04-17</span>
+  </div>
+  <p class="lead">一句话就可以写很详细的文档那种Skill。</p>
+  <article class="content"><p>原创 阿真 阿真 <a href="javascript:void(0);">阿真Irene</a></p>
+<p><em>2026年4月16日 18:45</em> <em>美国</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicib1K46mBKlkC8ngNX4p3ee9ibR69anJu6wlvpv1YFNdUqDCicBpsblf2MShOgarEaPeH5foImaYA6JDw8zBibiaucEIH5TTTsGuS4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>嗨大家好！我是阿真！</p>
+<p>最近沉迷 VibeCoding 哎嘿，做了非常多有意思的小工具，工具太多也还没来得及整理，等有时间再分享下。</p>
+<p>今天分享一个 Skill。之前看到群友发了很多 PDF 版本的电子资料，感觉很好玩，于是我也梳理了一个完整的 AI PDF 制作 SOP。</p>
+<p>如果你正好是 Token 大户，有 CodingPlan 啊 Token 啊用不完的小烦恼，那么这个非常适合你了哈哈。</p>
+<p><strong>调用这个Skill，只需要给到一个主题和方向，甚至一句话，就可以快乐写书了。</strong> 如果你想加入更多自己的内容，可以准备好素材和知识库，写出来的内容就更符合自己的要求了。</p>
+<p>使用的工具，我推荐 CC 或者 Kimi CLI 或者 Cola，尤其 Cola 真的小白友好，不知道什么时候正式发布，真的很期待了 (温馨提示：需要邀请码可以去公众号@AGENT橘 找橘子老师)。</p>
+<p>当然，聪明的你一定想到了，也可以让你的龙虾写。可恶，这里应该要有一个龙虾🦞工具的小广告的。</p>
+<p>思路和原理如下图。更多的话我也不想多说了，好懒啊，大家去体验一下这个 Skill 就知道了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicoFpfuJdZzx7EgswHkJFmoRavEibZNdqYSqQvyQTQPkLob646mKPNZPicxYUv6uB1FVC8DMhwM7bu95HUJ4tcibcqbtbniagYtib2o/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="附件/开源一个写书Skill/img_01.png"></p>
+<p>插图我调用的是即梦 CLI，现在需要高级会员每月499（但是这里画图我用 2K 不消耗积分加上我本来就需要会员所以），大家可以考虑我之前分享过的在火山调用 Seedance 的API 或者去 Google 调用 nano banana 的 API 啥的。这个让 AI 加就行了，当然不配图也可以hhh。</p>
+<p>啊，除了脑子什么都不想动了，用脑过度有点累啊。今天简单分享。</p>
+<p>因为它本质就是一个 Skill，所以在可以用 Skill 的地方安装都可以。</p>
+<p>直接给大家看它的呈现。</p>
+<p>首先是安装，这里用 Kimi CLI 做个参考 👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sictrHYArhrStS3uAaKxALcnDvHkq4ggwia3vMzUQP4q7icAOhKIlfibibI2YpWVpSm8SCmkUefibQCAjhhicJQ5xElSqjO0ZP43ckP0s/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="📎 附件文件/开源一个写书Skill/img_20260416_173644_11u8.png"><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s86qzsJ8Gz32L7j4qlewf5ViaGe6ejMJjMc8LCiaxn3cmlcfj7SUYXonD5NERSanMGEq5YpxNoq1Ruxib3aesbGa2zTj0RliaEfrFs/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="📎 附件文件/开源一个写书Skill/img_20260416_173720_jsg6.png"></p>
+<p>指令非常简单👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sic99ibJ6icEgpSfLnGNZ0TdOejBfpbRqGEkLpyTmEwxX8m5xibvLRTKkzA8kAdibPicTFxZMyc7f3mhbjPVnUibWReGBakUze2699k70/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="📎 附件文件/开源一个写书Skill/img_20260416_173846_p9wz.png"></p>
+<p>下面是 Kimi 出书效果，完整所有文档我放在最后链接。为了方便排版，所以我这里是将两张图拼在了一起的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9h5WfnCZThCmg6M8HKoImnvH0E8bse8wZeibzaM728T8LlxnVWbuF45PtqIQP46iaDovg0MpJE1CfU9IticNPkulmxGEyUPVeeUk/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="附件/开源一个写书Skill/img_05.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8ZV3AIlwxPNFTF5XKbUU5T2icFvavz2YJ68WQWT1Q6ibehQyvPPsxH5fLsQqvV4bicXK1jFlR88diaK32xFkBiaibxx6KRuibsb3hPMs/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="附件/开源一个写书Skill/img_06.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9uC9YRtz1PDFiahVicIPE16kcKJWicZxh97rK7YG6wLG39b22EI3P7LHDvsABc02jVKBtzG53ROnj0GRG3raEQuq1UYo6SxKC8Y0/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="附件/开源一个写书Skill/img_07.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicOGia9JrotdDeq5p0ZOK8peOCpyDFv8iagE2jWwDUlD2V6JCzsCz6CibOogqYRdXdGlxWqWABZ2MCcibPOXdh5M0lpLPwbic2HSQC4/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="附件/开源一个写书Skill/img_08.png"></p>
+<p>再是 Claude Code ，我让它写了一本《NotebookLM多元玩法全书》，部分效果👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8ejA02rCgDCnEcH27suezwSyFElqPHrvUKe83r0jVeCZF6pibskP9ibVmicOLarTXSVJPzr9fJpLQ9Xt66xaCBvAo9ibJRMvKCQUM/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="📎 附件文件/开源一个写书Skill/img_20260416_174015_76sy.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8lqkDCec8cPS4jS3tom58ticjibiabpQkTibHia3BacNKfbG0bWpBOZA5RDYz1GoqE8xKGYA0nxhghI912FRjQOG7zVtS9emF01yxc/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="附件/开源一个写书Skill/img_10.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9dJy1GYiadmV41eYH5Ad70UlVyqf97CiaKHvar4rEE3W6EhBv1qUhuInnFMnTJbjia2M5WRU8ITnqDLXRCsKicUv75sLbbqnmCCoc/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="附件/开源一个写书Skill/img_11.png"><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sict7MYujib9ZCWLicahDPeMXKL6kEmfYHPIicPSic30skUZfkWlWUChNqUqViacicXV3JGkuP0fvNQMjMcDicq3TWnCO1QBc2ROSHEq5k/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="附件/开源一个写书Skill/img_12.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8ym6sOeYa5amOrYhiaLRbdmgGibMEO32ooibGZQ4aYhpC6rYe60zmqxVstOcGvu2Mhv2ZumgPbKTpmzuDQIpHxjXKSMWsstSR8Ss/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="附件/开源一个写书Skill/img_13.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibQ9X8UJrNiac5tqh6Asic961eGemxgQUV9AK8Ax44f4D2iciaytAQn1iayxy8j7FyIZX6TYLI3uY4kIiaebjN4zKjJTJ8DxicKAzJOL4/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="附件/开源一个写书Skill/img_14.png"></p>
+<p>然后Cola，我让它写了本《Claude Code 指令宝典》。这个真的省心效果也很好，过程也很流畅丝滑（注意下方是一个视频）👇</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>阿真Irene0/0</p>
+<p>00:00/00:14</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:14</p>
+<p>00:14</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eyyc6uaafbyafeb7fq5uvlrwd5ldal2qa.f10002.mp4?dis_k=52032cd1e55fa468028b3cea731b6528&amp;dis_t=1776401210&amp;play_scene=10120&amp;auth_info=dsi3g7tdQwRkzd+myXcRUzcbVxcnKT1aPhpePg0rIWFGBTE3UlQeawYzakNkVgZpPQ==&amp;auth_key=aca06132a5e09ec39d6edd438825842d&amp;vid=wxv_4475201194054828039&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/m1eibvmmT3s9fjMboOKboulY4vVYicPMFslpxpg8MpQWJKHDYkdypUDI1seLPzKaIkQ8B9FBPIOQVOQzxCnwt6cVziaco5Cgn8MZEJdhNAlNjU/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 667px; height: 376px;">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>开源一个写书Skill，让大家都拥有AI写书自由。</p>
+<p>转载</p>
+<p>,</p>
+<p>开源一个写书Skill，让大家都拥有AI写书自由。</p>
+<p>阿真Irene</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>部分效果👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicRHch7Ca4o9BM3YKMjup2LTCzs7NDBUaUI2yBXiaia854ibXUpuIwf0DPvZGZcDiajoJrZyyOGtbvEzOHehH9u3onbPcmc6ExmSnA/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="附件/开源一个写书Skill/img_15.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s925rW6ibicxzTHZlqqnRIoZduibiaYSkiaayObF9AYiatItcsxNvtsZssJ39ibW2eu4pEVCcjMkZblyk19KY7qrKJkTQoAEUECcYqiad4/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="附件/开源一个写书Skill/img_16.png"><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibfwIbrvBokhV0VMjtVX7soI5qicQNcEU6BYm6eS3EX7MbHFiaQnEug4MMbQNu8icV8YIqn9hHjKoSwumkCfic1EJ7yKz5FYWeWWia0/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="附件/开源一个写书Skill/img_17.png"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibViaqvZTN90YCdqLRs4BIia88dY5FKBibfhM9wXHm3m6HVj7qR6bSTldjzicwUnlr0iaStOAfbtiayOLHBUib0iaYVq3IPzUgcxKWeicia8/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="附件/开源一个写书Skill/img_18.png"></p>
+<p>封面还没来得及修改和优化看起来还比较朴素，另外之所以全是紫色调和橙色的重点文字，主要因为我目前只做了这一个排版视觉规范啊哈哈。这个我限制得比较多了点，版式的话有时间再更新。这个 Skill 里排版和插图要求都是单独出来的，大家也可以自行修改优化👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3siboexauj9uys6jjm549foQUzhM3behYYiaBrmIj6ctA44HstuHgwjLmYEN12Fv6oV2KmBaCicUBWWVDN0Z091y26I2EXU4UffEog/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="📎 附件文件/开源一个写书Skill/img_20260416_174111_klmb.png"></p>
+<p>也可以直接在最开始提要求的时候，要求它使用具体的色调，或者甚至可以给它色号，AI 可以自己去修改相关的配色，包括字体和表格格式等等也可以进行要求。</p>
+<p>还有一点，如果使用插图，是比较容易破坏排版的文字内容的连续性的，所以也可以考虑不使用插图。</p>
+<p>GitHub链接：<a href="https://github.com/irenerachel/ebook-maker-skill">https://github.com/irenerachel/ebook-maker-skill</a><br>ClawHub链接：<a href="https://clawhub.ai/irenerachel/ebook-maker">https://clawhub.ai/irenerachel/ebook-maker</a></p>
+<p>上面所有电子书附件链接：<a href="https://my.feishu.cn/docx/URe1dHHnVok42uxUgTrcZfARnOd?from=from%5C_copylink">https://my.feishu.cn/docx/URe1dHHnVok42uxUgTrcZfARnOd?from=from\_copylink</a></p>
+<p>ClawHub下载和查看全部工作流详情👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8a8mQw7w0uTprannmbkl2TMZqFCZSYSa0HOrs03DrP5Bvqo9fL5FeUn3Tegb6dUtdwibNE0uBJYqBx9FvHTLaYF5L28sL0eU1w/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="📎 附件文件/开源一个写书Skill/img_20260416_175958_zgku.png"></p>
+<p>最后温馨提醒：做出来的电子书是肯定不能商用的，仅供大家学习交流。如果要做那种需要商用的一定先确认相关法律细节，以及内容版权一定完全是属于自己的才行哦，还要注意字体是否可商用。</p>
+<p>好今天的分享就到这里，下班！欢迎大家尝试更多用法或者按照自己的需求继续修改优化。</p>
+<p>如果觉得本期内容有趣或者有用，欢迎猛猛三连鼓励阿真 👍🏻 🌸 阿真比心~！</p>
+<p>下期见！</p>
+<p><strong>推荐阅读</strong></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&mid=2247497259&idx=1&sn=4e0dadb495ed826198129ea12c4ce694&scene=21#wechat_redirect">为剧而生！Vidu Q3参考生视频实测来了。</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&mid=2247497209&idx=1&sn=8466b216758409e9a2ef3b2576228fbc&scene=21#wechat_redirect">扣子2.5深度体验：这才是AI伙伴该有的样子。</a></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/QacKHj5ReTZojab1p8rbkQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>告别excel：AI 驱动的数据分析指南 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">告别excel：AI 驱动的数据分析指南</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a><a class="chip" href="../index.html?tag=%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96">数据可视化</a><a class="chip" href="../index.html?tag=Excel">Excel</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a>
+    <span class="date">2025-12-11</span>
+  </div>
+  <p class="lead">用AI重塑数据分析</p>
+  <article class="content"><p>原创 空格 zephyr <em>2025年5月13日 18:07</em></p>
+<p>数据在职场中处处可见，比如汇报、写简历、做决策，就是简单的发放一个问卷调研，也要从调研结果有所洞察。可以说数据分析是打工人的必备技能了。</p>
+<p>我在刚入职场的时候，不懂数据分析，不知道这玩意是干啥用的，感觉离自己很远。后来当了产品，要做决策，要规划下个版本，下半年做什么？为了让决策更科学，就要主动去收集信息。</p>
+<p>比如产品的运营、销售情况、用户的需求反馈、用户行为数据等等，通常是自己来定义想要的指标，去企业内部的业务系统，或找相关业务的运营或开发拿到数据，在excel内制作图表。必要时还要设计的美观的可视化看板做汇报。</p>
+<p>如果有经历过，就知道这个过程相当的消磨时间，特别是在excel里处理上千条内容，确定指标，绘制可视化图表，有时候一做就是一整天。</p>
+<p>通常数据分析会涉及到的流程是：</p>
+<ol>
+<li>数据收集与整合 ：从各种来源收集原始数据，并将其整合到一个统一的数据集中</li>
+<li>数据预处理与清洗 ：处理缺失值、异常值，确保数据的质量和一致性</li>
+<li>数据分析与挖掘 ：设定指标、分析维度，挖掘数据中的规律和趋势</li>
+<li>数据可视化与呈现 ：通过图表和报告将分析结果转化为直观易懂的形式</li>
+</ol>
+<p>这个流程对标准的数据分析产品和非标准的业务分析都同样适用，每一步都必不可少。虽然过程复杂耗时，但我们现在有了更好的解决方案。</p>
+<p>作为一个AI博主和数据产品从业者，我习惯先让AI协助处理数据工作。 AI本身就是通过海量数据训练而来，对数据处理得心应手。</p>
+<p>对于上述四个步骤中，数据预处理、分析挖掘和可视化呈现都可以交给AI完成。比如下面效果👇</p>
+<p>都是在获取到要分析的内容，结合 数据分析看板生成提示词 ，发送文本/Excel/PDF给Claude和Gemini，就可以得到可视化的看板了，文末附提示词。</p>
+<p>效果1：CRM 营销分析</p>
+<p>输入内容为 CRM报表+提示词</p>
+<p>使用模型：Claude 3.7</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K58bafkeyQjL2myp8xVg3frrR90SJJn07OUJWenpQskn7ltG3kcsfGydqyhRun2icic5p7734GamtoQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="loading"></p>
+<p>效果2：AI 行业发展分析</p>
+<p>输入内容为 文本表格+提示词</p>
+<p>使用模型：claude 3.7</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K58bafkeyQjL2myp8xVg3fr8qtOyGCsiahJqH1DjGMiadcstnT9OPJk6x9HnIkUtzky9hXwEQbic2J1A/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>效果3：文本数据抽取</p>
+<p>输入内容为 千字以上的文章+提示词</p>
+<p>使用模型：Gemini 2.5 pro</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K58bafkeyQjL2myp8xVg3frJ6hibZagaQ7ek8icTJxXpVQvicQl3Yzvfy5rybanI4zCvicC0mXiaMIxy1w/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="loading"></p>
+<h3>提示词1：数据预处理与清洗</h3>
+<p>发送要清洗的数据文件，或内容，让AI输出excel，甚至你不知道要清洗哪些字段，也可以告诉AI让他自己选择清洗</p>
+<pre><code>我需要对以下数据进行清洗和预处理。请帮我分析这些数据，识别需要清洗的问题（如缺失值、异常值、重复项、格式不一致等），并进行相应的清洗处理。请执行以下任务：
+1. 分析数据结构和字段类型
+2. 识别并处理缺失值
+3. 检测并处理异常值和离群点
+4. 移除重复记录
+5. 标准化和规范化数据格式
+6. 根据数据特点，自行判断并执行其他必要的清洗步骤
+
+请以表格形式展示清洗前后的数据对比，并解释您采取的每一步清洗措施及其原因。如果有多个清洗步骤，请分别展示每个步骤的结果。
+</code></pre>
+<h3>提示词2：数据分析与挖掘：</h3>
+<p>发送excel、或文本内容，让AI列出可以分析的指标、分析维度，以及可以制作的图表，然后选择合适的指标、维度进行制作</p>
+<pre><code>我需要对以下数据进行全面的分析与挖掘。请帮我分析这些数据，提供可行的分析方向和可视化建议。
+
+请执行以下任务：
+## 第一阶段：数据概览与分析可能性
+1. 分析数据结构、字段类型和基本统计特征
+2. 列出所有可能的分析指标（如总和、平均值、增长率、占比等）
+3. 提供可行的分析维度（如时间维度、地域维度、产品维度、客户维度等）
+4. 建议适合这些数据的图表类型（如折线图、柱状图、饼图、热力图、散点图等）
+
+## 第二阶段：具体分析执行
+基于上述分析，请选择最有价值的3-5个分析方向，并为每个方向：
+1. 计算相关指标
+2. 按照合适的维度进行分组或筛选
+3. 创建对应的数据可视化图表
+4. 提供对分析结果的解读和洞察
+
+## 第三阶段：总结与建议
+1. 总结数据中发现的主要趋势和模式
+2. 提出基于数据分析的行动建议或决策支持
+3. 指出可能需要进一步分析的方向
+</code></pre>
+<h3>提示词3：数据可视化与呈现：</h3>
+<p>在获取到要分析的内容后，结合下面提示词，发送文本/Excel/PDF给Claude和Gemini，就可以获取到数据分析看板</p>
+<p>强大的代码生成能力，可制作HTMl代码，制作可交互的数据看板</p>
+<pre><code># HTML数据看板生成器
+
+## 核心任务：
+请分析我提供的数据源 (\[文本/Excel/PDF] - 请指明文件类型并简述内容)，提取关键洞察和量化数据。构建一个单一、自包含的HTML文件，以专业、交互友好且视觉吸引人的数据看板形式展示这些信息。
+
+## 关键要求：
+1.  数据处理与转换：
+    * 清晰阐述将原始输入数据转换为适用于可视化的结构化 JavaScript 对象/数组的逻辑。
+    * 选择3-5个核心指标，使用适合数据类型的图表（折线图、柱状图、饼图等）
+    * 仔细阅读内容，找出可量化的数据、关键趋势、公司案例或观点。
+
+2.  可视化与交互性 (ECharts 核心)：
+    * 主要库： 使用 ECharts 5.x 进行所有图表绘制。
+    * 图表选型： 采用最能代表数据特性和洞察的 ECharts 图表类型（如折线图、柱状图、饼图/环形图、散点图、热力图等）。
+    * 图表精细化： 图表必须精细调整，包含清晰的标题、坐标轴、标签、内容丰富的提示框 (Tooltip) 和可交互的图例 (Legend)。为数据密集的图表实现 \`dataZoom\`（区域缩放）。包含 \`toolbox\`（工具栏）以支持常用操作（保存图片、数据视图）。
+    * 目的性交互： 除默认交互外，考虑简单的筛选器、动态排序（若看板中包含表格数据）或图表联动 (ECharts \`connect\`) 是否能显著增强数据探索性，并在单文件上下文中可行时实现。
+
+3.  代码结构与技术 (单一HTML文件)：
+    * HTML： 语义化的 HTML5 结构。为不同的看板区域（如KPI、主图表、详细分解）和图表元素使用明确的 \`div\` 容器。
+    * CSS：
+        * 在 \`&lt;style&gt;\` 标签内嵌入 CSS，或少量使用内联样式。
+        * 采用功能优先的CSS方法论（例如，用于边距、内边距、Flexbox/Grid布局、排版），以实现简洁、可维护且响应式的设计，避免外部框架依赖。
+    * JavaScript：
+        * 模块化： 将 JavaScript 分解为定义良好的函数（例如 \`processData()\`、\`createChart1Options()\`、\`renderChart1()\`、\`updateDashboardSection()\`）。以此模拟组件化方式，提升代码清晰度。
+        * 数据流： 清晰定义数据从处理到图表配置项及渲染的流程。
+        * 动态内容： 如果能简化结构，使用 JavaScript 动态生成重复性元素（如信息卡片或列表项）的 HTML。
+        * 事件处理： 确保 ECharts 实例在 \`window.resize\` 时能正确 \`resize()\` (考虑防抖优化性能)。
+
+4.  设计与用户体验：
+    * 主题与风格： \[建议一个：现代简约风、科技暗黑模式、商务专业风，或根据数据内容选择]。
+    * 布局： 简洁、响应式，确保在不同设备（桌面、平板、移动端）上的可读性。关键信息应突出显示。
+    * 色板： 使用专业且易于访问的调色板。如果涉及品牌颜色，\[请提供HEX色值]。
+
+## 期望输出：
+一个单一、完整的HTML文件，并且：
+* 能在现代浏览器中无错直接运行。
+* 完全响应式且视觉效果优良。
+* 有效运用 ECharts 进行富有洞察力的数据可视化和交互。
+* 包含结构良好且有注释的 HTML、CSS 和 JavaScript 代码。
+</code></pre>
+<p>上面的几张效果图是用提示词3生成的，建议使用清洗后的数据来制作看板，效果更准确。</p>
+<p>对于生成的HTML代码需要依赖 ECharts 库，可能会出现下载html预览的可视化组件是空白，遇到这个问题就把代码上传到： <strong><a href="https://www.yourware.so/">https://www.yourware.so/</a></strong> 获取链接就能看到效果了。</p>
+<p>我现在是一名数据产品经理，之前做过前端开发、 B 产品，AI 产品，对于数据分析和 AI 的结合，我还有很多经验可分享，比如一些细分场景的使用，年报分析、需求分析、指标定义、数据可视化等，欢迎持续关注。</p>
+<p>我是空格，一人多用的 AI 产品经理，专注于 AI Prompt、Agent 和 Coding 领域，分享实践经验来提升效率和能力。欢迎点击阅读原文，加入 AI-PAC 社群。</p>
+<p>帮「空格的键盘」擦擦灰</p>
+<p><a href="https://mp.weixin.qq.com/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&amp;mid=2247489943&amp;idx=1&amp;sn=c136940efd39dc7c3ecfce0d0ef4848f&amp;scene=21&amp;poc_token=HEuEOmmjZowt5oT9KJ0KaDqf6zE87UybgvMAN8zb" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

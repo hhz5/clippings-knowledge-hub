@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用 AI 三年多，我发现这 6 种交付物可以完全交给 AI 了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用 AI 三年多，我发现这 6 种交付物可以完全交给 AI 了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E5%A4%A9%E5%B7%A5">天工</a><a class="chip" href="../index.html?tag=%E4%BA%A4%E4%BB%98%E7%89%A9">交付物</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-05-19</span>
+  </div>
+  <p class="lead">最近问了身边十几个朋友怎么用 AI。绝大多数还是同一个模式：自己先写一版，然后丢给 chatbot 改写润色。</p>
+  <article class="content"><p>原创 空格丶 空格丶 空格的键盘</p>
+<p><em>2026年5月19日 14:39</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozP6SL7rJ3GicNxZ5EHBDroKFO3JpicatyoJVJapOw4HLu0hTRP0IkPxCTKqIKeI7qlMGSr8V1HYnWhicWpQj5ZZWgPoZVknLdShY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片"></p>
+<p>最近问了身边十几个朋友怎么用 AI。</p>
+<p>绝大多数还是同一个模式：自己先写一版，然后丢给 chatbot 改写润色。</p>
+<p>Agent 是最近几个月才发展起来的，很多人还没有把习惯切换过来。 chatbot 干不了 Agent 的活，比如让模型端 100% 交付PPT、文档、Excel、视频、图片、网页。基本覆盖知识工作者里的全部场景。</p>
+<p>为了让大家把 Agent 用好，我把用 AI 的方式，大致分成了五级。</p>
+<p>第一级：自己操作 PPT 这类软件，让 AI 帮着填每一页、每一段的内容。</p>
+<p>第二级：完全通过对话和 AI 交互，让它直接输出指定格式的交付物。</p>
+<p>第三级：把日常稳定产出的内容 Skill 化，让 AI 用 Skill 一句话产出。</p>
+<p>第四级：多个 Skill 串联或并行，让 AI 在一次任务里调动多个能力组合交付。</p>
+<p>第五级：套上自动化工具（Agent 自带的定时、n8n、openclaw 这些），让上述场景移动化、自动化执行。</p>
+<p>大多数人用户还停在第一级和第二级之间。从第三级开始，就要依赖 Agent 的能力了。</p>
+<p>这篇文章用最近刚刚大更新的天工超级智能体，演示下从第三级到第五级的全过程。</p>
+<p>使用天工的原因很简单，它有 Agent 的框架，支持图片视频多模态能力，还有 openclaw 接入飞书的能力。方便我演示 Agent 制作不同场景下的交付物。</p>
+<p>天工这次大版本升级，把 OpenClaw 那套完整的智能体能力整个搬上了云端：不用本地部署、不用配 API、不用单配主机，注册就能用。</p>
+<p>多模态能力全面覆盖：视频、图片、文档、表格、网页、PPT，一个对话框统一派发。</p>
+<p>是我目前用过的门槛最低，多模态能力最强的 Agent 产品，这也方便我给大家演示 PPT、视频、图片的制作。</p>
+<p>下面就把Agent的三级应用场景、边界能力，使用效果给大家讲透了。</p>
+<p><strong>第一层：这些任务可以完全交给 Agent</strong></p>
+<p>下面列 6 个手里几乎 100% 可以丢给 AI 的任务。</p>
+<p>整个过程就是，描述任务，天工出第一版，我在用他们这次也更新的多模态编辑器，做最后判断和精修。</p>
+<p>每个任务先把使用场景写清楚。天工就能调用相关的 Skill，来输出和我们日常工作一致的交付物，方便我们修改和分享。</p>
+<p><strong>1 PPT</strong></p>
+<p>假设你临时接到一个任务：明天要给新来的产品经理做一场 AI 工具培训。在对话框里输入这句：</p>
+<p>🪄根据我过去写的文章，给产品经理做一份关于在工作中有效使用 AI 工具的培训 PPT，10 页左右，要有工作流示意图和分步骤布局</p>
+<p>出来的版式审美和配图协调度是目前我用过最舒服的中文格式。</p>
+<p>每个文字、每张图都可以在线编辑器里改，可以导出 PPTX、PDF、HTML 。</p>
+<p>我截取了几张，可以看下这个效果👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCox9mF9WjtITJrnjzia3t3vEdhpsTGxu3ZnTjMfbZ9mtJQGbiaujOnQibtRl0J5KaMCISl9ibEdoJG2mYGN8dibBDrCicynx6RQZdGeBE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozficzDpsRkm8FXCfCaKv2a5RETpbbyYcYTic5MHquQO3FMsnxSPW4gFDogTdsaboYngq4cQp6PtSjhHUNwEhwicNdQPOgRx28lgs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p><strong>2 调研文档</strong></p>
+<p>假设你要给甲方交一份 AI Agent 赛道的市场调研报告，发送下面提示词：</p>
+<p>🪄做一份 AI Agent 行业 2026 年的市场调研，重点看竞争格局、商业模式、未来 3 年的机会点，输出 PDF + Docx</p>
+<p>天工的 Agent 在云端服务器里跑，每个用户都有一个自己的虚拟电脑来做网页深度搜索、抓资料、做验证。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyxP1ZGicFrqXMame0x2dSGP1BRHhlFDMpqXu2JdUhSyhwY6Iq7SlfwRp853lgb6fYkNNyu57m8WiaCk5tBLzNu1hTv99RicqaCs8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>最后交付回来一份竞争格局梳理清楚、商业模式拆解到位、机会点有理有据的稿子。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy4wALYVBVOuVbicDTAykxV55ibcDg99OBGTwNxPdoYqHlCu1OlxquuHRBqTq2oqeQfJ7bnSA27ay3A7vQHYQpZ65y1vjCo1HibLg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>最好用的还是，文档编辑器直接划词就能编辑，改个标题，开头结尾，就可以直接交付了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxFfdPGRIbwg5bN9OrnKY9QUwnUHvFCsx5xF64z7dWyq85uVnLVia4fspPRV4z0HpeFEZCEud9OSem8icg87r8l5RBQicyA3IHEeQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p><strong>3 图片</strong></p>
+<p>我给这篇文章制作了一个封面，就是用的天工Agent。在对话框里输入这个：</p>
+<p>🪄制作一个简约手绘风格，2.35：1 的封面图，必须包含文字“用 AI 三年多，我发现这 6 种交付物可以完全交给 AI 了，”</p>
+<p>然后，天工给了张构图干净、文字排版到位的封面就出来了。不满意的地方可以直接在画布编辑器里改字、抠图、换素材，出图和定稿在一个窗口完成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowpdoJHiaesXjakuPxRnZmmbGC392rv2hWsKxGaTPO052R1zoOWKsaV8eqfPtIL3bGzvic6IECApcNnhT8uQf2u0fgBJ8u6rzl5k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>我对上面图片觉得不是很满意，少了一些icon 的点缀，于是提了点优化，最后得到下面这张图。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyLxK5c9Zvs8Ym12544DickicG0qvszLJRnpMPmVItbBejIBanv2iantqvyO82O5RWbeB19sPodzCZUKYxB5e19XF7ljft0kcNJBk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片"></p>
+<p><strong>4 表格</strong></p>
+<p>把一堆上千行的 CSV 变成可洞察的结论。</p>
+<p>🪄按利润表、资产负债表、现金流量表分别拆，找 3 条亮点和 3 条风险，最后给一句话结论</p>
+<p>接着还能把下面的表格，让它做成可视化的 HTML 财务分析，一站式输出所有想要的内容形式。</p>
+<p>天工内置的 Microsoft Excel 形式的编辑器还能让你实现线上编辑，AI辅助修改。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCow6UA4nnEMBic6vtEl3C9mubkrF5icHGWo1icernkVAL89EYXdNBHdBmW5VWEp3WQAkNt2A2Y2LHNUrK1Wy6oiaPnSUAtlvqzwIHok/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p><strong>5 网页</strong></p>
+<p>假设你想做一个能挂在简历里、放在社交平台 bio 里的个人介绍页</p>
+<p>比如我就让 天工 根据我在即刻上发布的一些动态，生成了一份关于我的个人介绍。</p>
+<p>这块依赖的模型代码能力，以及调用的 Skill，让整体设计审美水平完胜大模型直出的效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozsEbRXkWngyLSLEZibmld95M271atX1gjqIoay8FPy8rYC5mgJLwpBogE7rHT4oxibepHExEdmhiaicQHhbwq0V9ic7a0jueqgIY8Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxgZ3mR9YicQSXlcg39oAQeCoX9s6HRArjd7TftfzHdNLIfjHLAjrvFajUVicQKasqicnJR520rCbRUJIKLZPtyZIETGc4iaWguFDg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoymmTLHwEAglZrgjxLwnu5WXWibpa8uFoD4ZuI4yhnINr2280P298HAsHHFseCic7lckCYzVmUF1Gmttr5Zt5haiaMNF9yfqwH1Ms/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowG49unDhrzChf9wGozYINwreK5EVXvfO2fZUcJaCeSj51Xibnu6gT6YxsfJa6iaM6BM76rOjQIN8e6zqrY1uibwd7Xg7xM6gzLwQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p><strong>6 视频</strong></p>
+<p>有一些时候，新品发布的物料包，里面要塞一支 15 秒预告片。</p>
+<p>这次我直接在天工出视频。生成完不用导去剪映，内置的时间线编辑器里就能改剪辑、加字幕、调滤镜，一个画布从头改到出片。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy9em90KIn2BvmEeA87j3v0ic1STUbQrcTSg8TSqaOF8dHzwvW1WnwiahvCtTjhbFEu2rR1mjmicO5w2VmcS7ny70C6g78LXhYDjY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="飞书文档 - 图片"></p>
+<p>天工 AI 接入了 Seedance 2.0、Kling 3.0、Pixverse V6，按需切旗舰模型和轻量模型。还可以根据需求选择你想要的模型。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong></p>
+<p>空格的键盘</p>
+<p>0/0</p>
+<p>00:00/00:15</p>
+<p>进度条，百分之0</p>
+<p>播放</p>
+<p>00:00</p>
+<p>/</p>
+<p>00:15</p>
+<p>00:15</p>
+<p>倍速</p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p>0.5倍 0.75倍 1.0倍 1.5倍 2.0倍</p>
+<p>超清 流畅</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3jiaioaaaiuagjhylqfvfaswdq5fabbya.f10002.mp4?dis_k=b5d4a9e6fbb52fa8615845590fd05070&amp;dis_t=1779177195&amp;play_scene=10120&amp;auth_info=dfCsk5pjZEJX84OOu30oKnI3PR4fNz0cYTQhGG9gADJOVjpoR1deSQJsFWgeH2sTfSNr&amp;auth_key=b5a079f47286d563a8ea0d0ea1ef029c&amp;vid=wxv_4522661775351136260&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCozPrXZV90PlyUKhhRBJ6y6dicveRFQZ6YV9wcQ0Kka7bXUQfdVsia7tj7XBfBaGiaRO3kShicuxNmCU7MqPUxlauSoJm0Yo80Ah4H0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="" style="display: block; width: 677px; height: 507px;" jm_neat="1705071617">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>用 AI 三年多，我发现这 6 种交付物可以完全交给 AI 了</p>
+<p>转载</p>
+<p>,</p>
+<p>用 AI 三年多，我发现这 6 种交付物可以完全交给 AI 了</p>
+<p>空格的键盘</p>
+<p>已同步到看一看写下你的评论</p>
+<p>视频详情</p>
+<p>这六种交付物是绝大多数知识工作者会使用到的。</p>
+<p>以前要在 好几个软件之间反复横跳，飞书写文档、Keynote 做 PPT、Figma 画图、Excel 跑数、剪映剪视频。</p>
+<p>现在这些文件的输全在天工的对话框下就能实现。</p>
+<p>把这步跑顺了，效率提升至少 3 倍。</p>
+<p>但它还不是终点。</p>
+<p><strong>第二层：把常做的事沉淀成 Skill</strong></p>
+<p>Skill 可以让你每次都不需要输出有多有长的提示词来获得交付物，天工提供了三种使用 skill 的方式。</p>
+<p><strong>1 拿来即用版本</strong></p>
+<p>天工本身提供了很多开源的 Skill，在Skill 广场可以安装，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxa0m0vzc9vjRfEEIAf9YByUvumxwBHIQCTZyxFHib77G6ejpBWLYp4Azib5YvKsh6wIVMiaFA81ICE9sHeKnA3waMSSibxp4ExahE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="飞书文档 - 图片"></p>
+<p>官方挑了一批打磨过的 Skill 放在广场。</p>
+<p>我上面演示的就是这六个官方的Skills，Agent 会根据你的描述自动调用相关的 Skill，搞定你工作中常用的文件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxrPzje6PuAka7ayKM5pHrJO3L7BG3aLfF4CMVrVIo8GSX4tC8Ibw5jOu20ECp4dPcXIEMxY3bmxdO8uPrwyqT1ubfqXIh6rd4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="飞书文档 - 图片"></p>
+<p>下面这两个用 html 搞定 PPT、数据可视化、网站、流程图的设计的 Skill，推荐大家可以常用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxuEXd1OXLxjYxaSC0SH26z2oDM7VEKIqmkpkboO0XASJcO9phz8lFQgjSliavticfaibYaNLH6Vz0O9LZiaWTpv469U9M1wS7dPXQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="飞书文档 - 图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyN7bfa0DEq0SPXicudsjx4rIibuVS75ibQicjcKTRLqyEgyIlStibwJzAFM0DeoCxT6micwqfLkPUzT07qI64T7qrPPSLs99yG9sATs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="飞书文档 - 图片"></p>
+<p><strong>2 自定义 Skill，描述就能生成</strong></p>
+<p>最好用的还是自己制作的 Skill，你可以使用下面这个技能生成器来给自己制作Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowoJWiaEDJU22VxZtJCDlSA0tRD32oc7EibDHxEJgibBcyoSwv1ia7KHB5yexTUnUEwdsORcfjmU14pfVeQuia2ZNGq7pDGHWhbobr4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="飞书文档 - 图片"></p>
+<p>把日常重复做的事用自然语言描述给天工，我每周都要写一份小红书选题，要看最近三天的热点、对照我的账号定位、产出 5 条带切入点的选题。</p>
+<p>Skill Agent 直接帮我打包成一个固定流程，下次只要喊&quot;跑选题 Skill&quot;就能调用。</p>
+<p>天工还可以根据你日常的对话，为你建立专门属于你的Skills。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoztQLexfricibyCQrQsFNZ4FjMIBUMc4uyNbgX6GMxjwpV35evap9iaVicvqNsXS9na50yTzaMKkQUyj9gDwy7Msfc3B9RstLbrkibo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="飞书文档 - 图片"></p>
+<p><strong>3  Skill 会越用越懂你</strong></p>
+<p>Skill 跑多了，你自然会对它输出的内容，提出意见，你的意见就是对 Skill 下一次的优化，用的越多，Skill 就优化的越好。</p>
+<p>我改过的版本、我倾向的风格、我删过的部分，它都在学。</p>
+<p>一个 Skill 跑两周以后，输出的东西基本不用改了。</p>
+<p>但 Skill 还有一个局限。</p>
+<p>它依然要我主动来操作指挥它。</p>
+<p>我希望它在我没喊的时候也能干活。</p>
+<p><strong>第三层：给 Skill 套上定时器和飞书 IM</strong></p>
+<p>这是最爽的一层。</p>
+<p>天工现在支持下发定时任务，并且能直接接入飞书。</p>
+<p><strong>1 对于定时任务</strong></p>
+<p>每天早上 8 点，天工自动跑一次&quot;过去 24 小时 AI 行业动态&quot;的搜集，按大模型发布、产品更新、行业融资、论文突破、政策动态分类，挑 5-8 条最重要的，按固定排版推送到飞书。一觉醒来打开飞书就能看完。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCow20eqg9UfQl6rUIoC72snyKlcZL2SicZ5ywPFrYlRp7OTQncRWXC0dZodrkN9bUNT3Lhsxw6wb3ZIyfcibXyzsW32rO10icSmdfQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="飞书文档 - 图片"></p>
+<p><strong>2 接入飞书移动化办公</strong></p>
+<p>接入飞书后，和养龙虾的体验是一样的，走在路上，躺在沙发上也能指挥Agent 来干活。这个功能用了就会回不去了。</p>
+<p>电脑不在身边的时候，发一句&quot;帮我分析这个 CSV 的数据趋势&quot;，云端立刻跑起来，结果回传到飞书里。</p>
+<p>到这一层，工作模式就彻底变了。Agent 不单纯是 AI 工具的状态，是一支 7×24 小时上班的云端团队。</p>
+<p>天工过去一年在国内没怎么发声，他们一直在全球最卷的 AI 市场上竞争。</p>
+<p>这次升级把打磨成熟的全球旗舰架构直接接入国内版本，有了&quot;跨代际&quot;的感觉。</p>
+<p>体感上的差别就是：别家还在小步迭代功能，天工直接交付了一个满级形态。</p>
+<p>旗舰模型这块尤其爽。DeepSeek V4 Pro、GLM-5.1、K2.6、Qwen3.6-Plus 全都支持，可以手动切，也可以让它&quot;智能调度&quot;自己挑。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowz7CpPr9nhrBl6FVUykM8koQicWYacfL5tIdt2g7TfAGR5aVVZrhPfibU37quMVTcyhibiafib8oJLYanBmrsLalnaZia8NWejDnqBw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>我以前要同时订几家图片、视频模型厂商的 token plan，现在在这里一个账号全包了。</p>
+<p>价格方面是按积分来扣的，用多少，扣多少。</p>
+<p>我在评论区放了他们家的链接，感兴趣的大家可以去体验。</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/kqJEciYf4J3jaDLWBs-PEw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

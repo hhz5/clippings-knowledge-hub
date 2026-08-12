@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>负责任的说：请把流程图放心的交给 AI · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">负责任的说：请把流程图放心的交给 AI</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%B5%81%E7%A8%8B%E5%9B%BE">流程图</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Mermaid">Mermaid</a><a class="chip" href="../index.html?tag=Obsidian">Obsidian</a>
+    <span class="date">2025-12-08</span>
+  </div>
+  <p class="lead">还有序列图、甘特图、泳道图、ER图、饼图和状态机图</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCSxFqvV5hKgI6kKub3d7ibeOuANHx4PmX0ndjIFutU4gYaQhnoJLRzIQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 空格 zephyr <a href="https://mp.weixin.qq.com/s/">空格的键盘</a> <em>2025年3月6日 08:15</em></p>
+<p>绘制流程图应当是每个职场人士必备的技能。</p>
+<p>作为一名产品经理，我在撰写用户流程、页面交互和功能逻辑时，常常需要用到流程图；在制作PPT或Excel时，也难免会涉及相关内容。</p>
+<p>过去两年，我几乎所有的设计文档中的流程图、时序图、结构图都交给了AI生成。这减轻了我的脑力负担，还显著提升了工作效率。</p>
+<p>AI 能做的事情很多，在他能做的这么些事情里，如果能让我挑一样，生成稳定可靠，完全融入到日常工作的一样内容，那就是流程图。</p>
+<p>我相信不少朋友已经这样做过，实现起来也并不复杂——无论是DeepSeek、豆包还是Kimi，都通过对话，生成Mermaid格式的流程图，并且在对话框内就能预览生成结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCT00nsMMcOxdweqXeiaXopMLjfFN8uGM3BcqMcD38VvklNQ6KsiajHAnA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="loading"></p>
+<p>但这样会存在一些问题，比如输出的内容在哪里修改更方便？输入的信息如何固定？输出样式的风格怎么控制？除了流程图还有别的图可以支持吗？</p>
+<p>对于以上问题，就是我这篇文章提出的解决方案——这两年随着AI模型的进化，我逐步摸索并标准化的一套 流程图生成工作流 。我将从以下三个方面展开，让你在工作中，提到流程图时，都能露出轻松的笑容：</p>
+<ol>
+<li>标准化流程图制作 ：完全放心的交给AI，固定输入模板，生成美观且可自定义的图表。</li>
+<li>更多图形的生成 ：除了流程图，还可以用AI制作序列图、甘特图、泳道图、ER图、饼图和状态机图，附带提示词模板。</li>
+<li>Obsidian管理流程 ：如何利用Obsidian+copilot 整理提示词并生成流程图插入编辑页面。</li>
+</ol>
+<h2>标准化AI流程图制作</h2>
+<p>1. 固定模板</p>
+<p>用AI工具替自己省力，最不能省的就是前期的文案编写环节，也就是对于发送给AI的问题或者是需求的描述。</p>
+<p>这也让我觉得这是AI chatbot胜过一些AI应用工具的价值所在， 他会逼迫用户去思考自己的问题是什么？</p>
+<p>而AI工具则在尽力的降低你输入问题的门槛，比如PPT制作工具Gamma，用过后会发现，一开始他让你输入一篇文章，根据文章生成PPT，问题就出现在这里，文章的创作门槛高，但生成门槛低，因此制作而来的PPT大多是AI生成的垃圾文案做的，满屏的口水话，非常不可用。</p>
+<p>所以我建议你多用Chatbot，当然你也不需要逼着自己思考问题是什么，而是固定自己的思考模板，某种层面来看， 思维模型=自己对思考的语言描述=提示词、 这里我们拿流程图来说，固定描述流程图的方式，让个人思考所指导的输入省力，AI大模型的输出稳定可用。</p>
+<p>模板：</p>
+<p>- 主步骤：使用整数编号（1, 2, 3...），每行一个步骤</p>
+<p>- 分支处理：使用小数点编号（3.1, 3.2...）表示条件分支</p>
+<p>- 循环引用：使用&quot;返回到步骤X&quot;明确标注跳转点</p>
+<p>示例 ：</p>
+<p>1. 用户输入账号和密码</p>
+<p>2. 点击登录按钮</p>
+<p>3. 服务端校验账号和密码</p>
+<p>3.1. 密码正确：进入登录界面，继续步骤4</p>
+<p>3.2. 密码错误：提示&quot;账号或密码错误&quot;，返回步骤1</p>
+<p>4. 结束流程</p>
+<p>输出结果：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCIuWPkqbicwf3PE68KK1IPL8xhTtPibdqVdMNm6BSM0aBiakFfpZQrBIRg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>2.选择模型</p>
+<p>Mermaid 是一种逻辑简单的语言，只要需求描述准确了，不需要用推理模型，指令模型就可以达到较好的效果，上面我已经提到了，不推荐使用AI应用工具，也不需要使用付费模型，以下几个就可以</p>
+<ul>
+<li>豆包：对于Mermaid的预览效果最好</li>
+<li>kimi：有个官方推荐的流程图制作智能体</li>
+<li>Claude：最强代码生成</li>
+</ul>
+<p>当然也有很多白板工具集成了 AI 生成流程图的能力，比如 博思白板、excalidraw、ProcessOn、Flowchart.fun、Napkin.Ai</p>
+<p>但是上面大多要收费，且不如 chatbot 这样自由修改结果。</p>
+<p>3. 修改生成结果</p>
+<p>和上一篇提到的原型图生成一样，我认为 AI 生成的内容，一定是需要人介入修改的，不是通过再次对话让它修改 xxx，而是把修改结果复制到编辑器内精准调整。</p>
+<p>Excalidraw 是我最推荐的工具，访问 <a href="https://excalidraw.com/">https://excalidraw.com/</a> ，将生成的流程图导入👇，就可以拖拽线框，编辑文字，任意修改。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCgm7WfGEhCIYoLcGuAYgsicITE5GeufMADVTH1ouBd27jDgolwwC6y3Q/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="loading"></p>
+<p>Excalidraw 是一款开源的在线白板工具，主打手绘风格设计，相比于Draw.io，Excalidraw 简单轻量化，手绘风格颜值高，对于AI功能的适配最好，支持Mermaid导入，也支持将图表转换为代码形式。</p>
+<h2>生成多种类型的结构图</h2>
+<p>Mermaid 不止是可以表达流程图，还可以支持 序列图、甘特图、泳道图、ER图、饼图和状态机图 等等。</p>
+<p>也就是说，只要我们文字描述够准确，就能生成对应类型的图形，这在过去绘制一个复杂的结构图至少 1 小时起步，现在 10 分钟完成文案编辑就可以了</p>
+<p>说到 Mermaid，它由 Knut Sveidqvist 于 2018 年创建，目的是简化文档中的图表绘制和维护。Mermaid使用特定语法规则，能将文本自动转换为直观图形。可以在 <strong><a href="https://mermaid.live/">https://mermaid.live/</a></strong> 学习并预览这一语言代码。</p>
+<p>我们先来认识一下，除了流程图以外的其他类图，然后看看这些图对应的提示词，该如何精确描述，好让 AI 理解并生成。</p>
+<h3>1. 序列图</h3>
+<p>用于展示对象或参与者之间的交互顺序和消息传递。在软件开发中，序列图可以帮助开发团队理解系统中各个模块之间的协作方式，方便进行系统设计和调试。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCJUlfl5WPuR5Ntv3L56FLzUkDDycw0p69L6VZrxarbxqXONGr39gHpQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="loading"></p>
+<h3>2. 甘特图</h3>
+<p>常用于项目管理，能够直观地展示项目的时间计划、任务安排以及任务之间的依赖关系。项目团队成员可以通过甘特图清晰地了解项目的进度和关键时间节点。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCzC9JQ4XFRCUHDoIaCW1XOBibDYWbob9ulbAMldo82EZnPKPria5QiacTQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="loading"></p>
+<h3>3. 类图</h3>
+<p>在面向对象编程中，类图用于描述类的结构、属性、方法以及类与类之间的关系（如继承、关联、聚合等）。通过 Mermaid 绘制类图，可以帮助开发者更好地进行系统设计和代码实现。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCMgZOvLTbDVCIcUnNkEt2tZ7j5MYEK92XqrJJ0hjGHic5SXMKIaeNI6A/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="loading"></p>
+<h3>4. 饼图</h3>
+<p>除了上述常见的图表类型，Mermaid 还支持绘制状态图、实体关系图、饼图、柱状图等多种类型的图表，满足不同场景下的数据可视化需求。例如饼图可以用于展示数据的比例关系：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCJ6FXvrCgicUX5kk3S0PnScuNn2hFffJDNZ6mKLL9QjnNbfvFkLyDCjg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="loading"></p>
+<p>对于不同图表的生成，我总结了下面几个提示词模板，可以直接将自己的任务套用：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCrXgUCvCaScwGZQZAHramsRicDKaNrgQGh0Mic5bqB3QtuCBlMWL6cX6Q/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="loading"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCIVDRCZysWCHSsX5syEdAEOzCOGPib0iaAAtGRhNHqjwbTr7xSSMpvpow/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="loading"></p>
+<p>对于上面的提示词，可以保存在自己的笔记软件里，比如备忘录、Notion、微信笔记、微信输入法，需要的时候，发给豆包，获取到Mermaid代码，再发到Excalidraw进行修改，最后粘贴到自己创作文档里。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCzs8LTiavyrA3odaONF4sbCqsKIk6JEWmI1b9Dpibh9ic7E3NO4Pzu6wBA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="loading"></p>
+<h2>Obsidian：让流程图工作 All in one</h2>
+<p>Obsidian是一个本地化部署的编辑器，可以安装社区提供的copilot插件，通过接入大模型 API，就可以在编辑器内调用AI的能力。</p>
+<p>对于流程图的绘制，我只需要把上面的表格的提示词都放到指定文件里，当有绘制流程图等需求时，就复制并修改提示词，发给右侧大模型对话框，获取生成结果，并引用到当前编辑页面，就像下图所示：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K7GquTXa2DnrQfQjyJjPhJCT8AryiaWvSBeNlj8gmqNJhFn2ibcjncWCoJujgLBMYt5cEE5PxMQTThA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="loading"></p>
+<p>至于Obsidian如何使用copilot，这就需要自己下载摸索一下了，如何使用大模型的API配置，Obsidian还有很多管理知识库的玩法。</p>
+<p>我已经将自己阅读、整理和创作的流程都集成在了 Obsidian，结合 DeepSeek 的能力，极大提高了知识管理的效率，后续再来分享更多 AI 驱动知识管理的技巧。</p>
+<p>如果对 AI 提效感兴趣，可以后台回复「 社群 」，加入现在还是免费的「AI 效能社群：效率与能力提升」，下次再见</p>
+<p><img src="https://mmbiz.qlogo.cn/sz_mmbiz_jpg/Ok2E6oQHUIENqEEEUB116HlvKhcyUOIlVXiabDwTkS9MXibctcmEdIkIEh0ajq0A6NPv230LsfCmWbHHNLLVEmlA/0?wx_fmt=jpeg" alt=""></p>
+<p>帮「空格的键盘」擦擦灰</p>
+<p> <a href="https://mp.weixin.qq.com/s/">喜欢作者</a></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+<p>空格的键盘</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ekS6PGWPGGDtB5EVcgsNhA?scene=21#wechat_redirect" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

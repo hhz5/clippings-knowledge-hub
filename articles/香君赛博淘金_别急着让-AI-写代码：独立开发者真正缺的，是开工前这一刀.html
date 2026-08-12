@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>别急着让 AI 写代码：独立开发者真正缺的，是开工前这一刀 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">别急着让 AI 写代码：独立开发者真正缺的，是开工前这一刀</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%A6%99%E5%90%9B%E8%B5%9B%E5%8D%9A%E6%B7%98%E9%87%91">香君赛博淘金</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91%E8%80%85">独立开发者</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E9%AA%8C%E8%AF%81">产品验证</a><a class="chip" href="../index.html?tag=MVP">MVP</a><a class="chip" href="../index.html?tag=%E5%88%9B%E4%B8%9A%E6%80%9D%E7%BB%B4">创业思维</a>
+    <span class="date">2026-05-07</span>
+  </div>
+  <p class="lead">凌晨两点，你终于把 demo 跑起来了。登录能用，按钮能点，页面也不像半成品。你把链接发到群里，顺手配了一句：大家帮忙看看。</p>
+  <article class="content"><p>香君赛博淘金 <em>2026年5月7日 01:08</em></p>
+<p>凌晨两点，你终于把 demo 跑起来了。</p>
+<p>登录能用，按钮能点，页面也不像半成品。你把链接发到群里，顺手配了一句：大家帮忙看看。</p>
+<p>然后，空气安静了。</p>
+<p>偶尔有人回一句挺酷的，支持一下。再往后，注册没有增长，反馈没有出现，付款更像另一个宇宙的事。</p>
+<p>这时候最难受的不是代码写错了，而是代码没错，产品也能跑，只是没人真的需要它。</p>
+<p>很多独立开发者以为自己缺的是执行力。现在有了 AI 编程工具，执行力突然被拉满：以前一周写不完的页面，现在一晚上能搭出来；以前卡住半天的接口，现在让 AI 改几轮就通了。</p>
+<p>但问题也随之变得更残酷：AI 让你 build 得更快，也让你自嗨得更快。</p>
+<p>我现在看 AI 编程工具，已经不太关心它能不能多写几个页面了。页面迟早能写出来，真正贵的是方向错了之后浪费掉的两周、两个月，甚至半年。</p>
+<h2>真正的坑，不在写代码那一步</h2>
+<p>独立开发最常见的循环大概是这样：</p>
+<p>想出一个 idea → 立刻开干 → 做出东西 → 没人用 → emo → 换下一个 idea。</p>
+<p>这个循环之所以可怕，是因为每一步看起来都很努力。你在学新框架，在调模型，在写落地页，在修 bug，甚至还会发帖复盘。</p>
+<p>但最关键的一步被跳过了：开工前，先验证这个需求到底是不是真的。</p>
+<p>这里的验证，不是问朋友你觉得这个产品怎么样。朋友通常会很礼貌，尤其是不用掏钱的时候。</p>
+<p>真正的验证要看更硬的东西：</p>
+<ul>
+<li>用户过去有没有为这个问题花过钱、花过时间、找过替代办法</li>
+<li>他们现在不用你，会怎么解决</li>
+<li>现有方案烂在哪里，是不爽，还是只是你觉得不爽</li>
+<li>如果让他们换到你的工具，切换成本有多高</li>
+<li>第一批 10 个用户到底是谁，你准备去哪儿一个个找</li>
+<li>两周内能不能做一个最小实验，只验证最危险的假设
+  这些问题听起来不性感，也不如让 AI 生成代码爽。但它们决定了你是在创业，还是在给自己的幻觉装修。</li>
+</ul>
+<h2>这个 Codex skill 的价值：不是帮你写代码，而是先泼冷水</h2>
+<p>最近 X 上 看到一个 Codex skill：startup pressure test。</p>
+<p>先解释一下。Codex 可以理解成一个会帮你写代码、改项目、跑命令的 AI 编程助手。skill 则像是给它装了一套专门的工作说明书，让它在某类任务上按固定方法提问、分析、输出。</p>
+<p>这个 skill 做的事很简单：你把创业想法丢给它，它不急着帮你做需求文档，也不急着生成代码，而是先用一套早期创业视角来压测这个想法。</p>
+<p>如果你已经在用 Codex，可以按项目说明用下面的命令安装：</p>
+<pre><code>npx --yes codex-startup-pressure-test-skill@latest
+</code></pre>
+<p>不熟悉命令行也没关系，这里你只需要知道：它不是一个独立 App，而是装进 Codex 里的一个工作流程。它会安装到 Codex 的 skills 目录。需要注意，如果你本地已经有同名 skill，安装脚本可能覆盖，最好先备份。</p>
+<p>重启 Codex 后，可以这样用：</p>
+<pre><code>Use $startup-pressure-test to pressure-test this startup idea: 你的想法
+</code></pre>
+<p>它的压测一般会围绕几类问题展开，比如问题验证、竞品地图、前 10 个客户、MVP 计划，或者完整压测。</p>
+<p>MVP 用人话说，就是最小可用产品。不是做一个缩水版大产品，而是用最小成本验证一个最关键的判断。</p>
+<h2>它真正逼你看的，是这几个问题</h2>
+<p>第一，核心假设是什么。</p>
+<p>每个产品背后都有一句没说出口的话：我相信某些人有某个痛苦，并且愿意为了某种结果改变行为。这个 skill 会把这句话拎出来，不让你藏在功能列表后面。</p>
+<p>第二，致命缺陷在哪里。</p>
+<p>不是挑几个小毛病，而是看有没有那种一旦成立，整个项目就不值得做的风险。比如用户根本不痛、付费方不是使用方、数据拿不到、获客成本远高于客单价。</p>
+<p>第三，这是真痛点，还是你的幻觉。</p>
+<p>很多 idea 来自我觉得。如果用户从没搜索过、吐槽过、付费过、绕路解决过，那它可能只是一个优雅的想象。</p>
+<p>第四，真实竞品是谁。</p>
+<p>竞品不只是另一个 App。Excel、微信群、人工外包、Notion 模板，甚至什么都不做，都是竞品。因为用户现在已经在用某种方式活着。</p>
+<p>第五，切换成本有多高。</p>
+<p>用户不是觉得你好一点就会换。数据迁移、团队习惯、学习成本、老板审批、已有流程，都会把一个看起来更好的工具挡在门外。</p>
+<p>第六，前 10 个客户是谁。</p>
+<p>如果你说不出具体人群、具体场景、具体去哪儿找，那就别急着写登录页。早期用户通常不是投广告买来的，而是你手动一个个聊出来的。</p>
+<p>第七，两周 MVP 怎么设计。</p>
+<p>它会逼你把宏大产品缩成一个实验：两周内，只验证最高风险假设。能用表单就别写后台，能手动服务就别自动化，能用假门测试就别先造全套系统。</p>
+<p>最后，它通常会给一个倾向性判断，比如这个想法现在看起来更强、更弱，还是需要换方向。你可以把它理解成：继续看、风险很大、先别硬做。但这不是投资结论，也不是市场真理，只是提醒你这个想法现在经不经得起追问。</p>
+<h2>AI 编程的重点，正在从怎么做前移到做什么</h2>
+<p>我看到X上分享的思路里，有一个很值得借鉴的顺序：可以先用 Reddtrends 这类工具去 Reddit 里找真实抱怨和需求，再用 startup pressure test 这类压测清单泼一盆冷水，最后才考虑让 Codex 写代码。</p>
+<p>注意，这不是 Reddtrends、Codex 或这个 skill 的官方集成，也不是固定流程，更像是一套先验证、再开工的工作习惯。</p>
+<p>Reddit 可以理解成海外用户聚集讨论问题的论坛。有人在那里吐槽工具难用、流程痛苦、愿意花钱找替代方案。把这些真实声音挖出来，比坐在椅子上空想一个改变世界的 idea 靠谱得多。</p>
+<p>这条链路的重点不是某个工具组合多神，而是顺序变了：</p>
+<p>先找真实痛点，再压测需求，最后才写代码。</p>
+<p>过去我们问 AI：这个功能怎么实现。</p>
+<p>现在更该问：这个东西值得实现吗。</p>
+<h2>但别把它神化</h2>
+<p>这个 skill 不能替你见用户，不能替你成交第一单，也不能证明市场一定存在。</p>
+<p>它不会自动获客，不会自动找到 PMF，也不会让一个没人痛的想法突然变成好生意。</p>
+<p>PMF 用人话说，就是产品真的戳中了市场需求，用户愿意持续使用、推荐，甚至付费。</p>
+<p>它真正有价值的地方，是在你最兴奋、最想开 IDE 的时候，把你按住，逼你回答一组不舒服的问题。</p>
+<p>独立开发者不怕做得慢，最怕的是把错误的东西做得太快。</p>
+<p>所以，下次你准备让 AI 写代码前，可以先把 idea 丢进这样的压测流程里。不是为了得到一个标准答案，而是为了尽早发现：你是在解决用户的问题，还是在奖励自己的想象力。</p>
+<p>如果你想看，我下一篇可以拆一套更完整的流程：怎么从 Reddit 找需求，怎么用压测清单过滤，最后怎么交给 Codex 做两周 MVP。</p>
+<p>如果你手上正好有一个想做的 AI 产品 idea，也可以直接在评论区或私信发我一句话版本：目标用户是谁、解决什么问题、你打算怎么收费。我会挑几个，用这套清单公开泼一遍冷水</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>香君赛博淘金</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/oLQrnSlVcxX3bxBU2P169w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

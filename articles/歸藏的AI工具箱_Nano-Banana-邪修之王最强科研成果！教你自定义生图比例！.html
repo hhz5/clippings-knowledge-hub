@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nano Banana 邪修之王最强科研成果！教你自定义生图比例！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Nano Banana 邪修之王最强科研成果！教你自定义生图比例！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Nana%20Banana">Nana Banana</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90">图像生成</a><a class="chip" href="../index.html?tag=%E6%95%99%E7%A8%8B">教程</a><a class="chip" href="../index.html?tag=%E6%AD%B8%E8%97%8F">歸藏</a>
+    <span class="date">2025-09-02</span>
+  </div>
+  <p class="lead">大家好，我是歸藏（guizang），今天教大家解决 Nana Banana 出图最大的问题。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgAU7GMcn6JumJvvoUIz5NZrYX1xRIzJV72F2ibyQqmk2RUPlsKRJb7hsg/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 歸藏的 AI 工具箱 <a href="https://mp.weixin.qq.com/s/">歸藏的AI工具箱</a> <em>2025年09月02日 12:58</em></p>
+<p>大家好，我是歸藏（guizang），今天教大家解决 Nana Banana 出图最大的问题。</p>
+<p>Nano Banana 已经非常强了，但是最近大家普遍用的时候两个问题非常影响可用性：</p>
+<ul>
+<li>首先是分辨率较低，这个没啥办法，跟模型相关。</li>
+<li>然后是出图比例高度不可控，本来连续的图片因为比例不一样很难用到生产中。</li>
+</ul>
+<p>我最近也一直在想怎么解决这个问题，前几天心里隐约有个想法，今天终于搞定了，话不多说先看结果：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgAicaS3E2cvbsLAwmicS9tNymESle7AXre3nLZXz5zL96m6jAszfceHBBg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>我们先来看一下方法的原理以及应该怎么做。</p>
+<p>用 Nano Banana 多的朋友可能发现了，就是 Nano Banana 在有多张图片输入的时候，输出图的比例会跟其中一张相同，只不过这个过程很不可控。</p>
+<p>我一直想能不能从这一点去突破，今天早上刚好看到一个英雄所见略同的，GLif 尝试用垫图的方式控制 Nana Banana 纯生成图片的比例，没想到真行，不过他们只支持文生图。</p>
+<p>藏师傅经过一顿科研发现已经生成好的图片也可以用这个方式去修改， 你可以用这个方法重新跑一次拯救你的旧图，而且新生成的图片也可以再跑一次重新定义生成比例。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgA5hoUjCYuPyElWSfs0KErBewbDLsicdewccyj7dfORvJ3p0WlXdDq9UQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>我们需要两张图片来完成这个任务：</p>
+<p>首先肯定是你 之前生成的结果图，或者是你从其他地方获取的图片 只是想更改比例也可以的。</p>
+<p>比如我前几天做的这个 AI 书法舞女，由于书法字体每张截图都不一样大，导致生成的图片大小也不一样，很烦，为了生成视频我还得自己裁切，这样就容易丢失信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgAIVTK2hrUTLV863ghrTjswUq9xj5uLOElobMr0eyboJ3pFQMt4PoiaEw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>然后我们需要一张比例参考图，让 Nano Banana 将我们原来的内容替换到这张参考图上。</p>
+<p>他们长这样，这个图像内容我参考了 glif 的。</p>
+<p>但是他们的比例不全，我索性全部重做一遍，基本覆盖了所有常见比例，你也可以按这个样子自定义自己的比例，用Figma 就可以很简单。</p>
+<p>如果你懒得搞，文章最后有下载，我就不设置私信获取了，希望大家可以帮忙转发一下，谢谢🙏。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgAAiclg4mrib2wV7OrUVWPRWhCVrvia1B0xibSJU9oo12icKYY94O3vHE2U2A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>两张图片素材都有了以后，就可以探索提示词该怎么写了，我先是让 Nano Banana 将图片替换到比例模版图上，结果发现，会有类似的蓝色边，他没有帮我们扩图，只是简单的拼贴。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgADIXoMRCBwL7bhEbmf6iasOYjRNmSK8IOwgcMY1g1AACUon9LcyVdjbg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>于是在藏师傅疯狂迭代和尝试下，新生成的图片会基于原有图片的内容填充新的内容适应更改后的比例。</p>
+<p>提示词为：</p>
+<p>Redraw the content of Figure 1 onto Figure 2, add content to Figure 1 to fit the aspect ratio of Figure 2, completely clear the content of Figure 2, and only retain the aspect ratio of Figure 2.</p>
+<p>这里需要注意图片的顺序，想要修改的图放第一张，比例图放第二张，放反的话可能出问题。</p>
+<p>在 AI Studio 上使用的就是下图这样。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgAhyan9yibv5piaoBe89ZyAZtXiaQ06O5ThXBeaJOSibnI6IQFSlzN7lWh4w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>这就是教程的全部内容了，我们再来复习一下过程：</p>
+<ol>
+<li>1.准备好你想要更改比例的图片以及对应的比例模版图</li>
+<li>2.将想要更改比例的图片放第一张，将比例模版图放第二张，不建议更改顺序</li>
+<li>3.输入提示词：“ Redraw the content of Figure 1 onto Figure 2, add content to Figure 1 to fit the aspect ratio of Figure 2, completely clear the content of Figure 2, and only retain the aspect ratio of Figure 2. ”</li>
+</ol>
+<p>藏师傅实验了一早上，应该没问题，偶尔会出现生成的图片有蓝色背景，这时候多抽一次就行。</p>
+<p>另外在 Gemini APP 中用 Gemini2.5 Pro 模型调用 Nano Banana 效果要比 AI Studio 要好一些，有条件可以用这种方式。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egeaq2icVgD7U0gPdibJbetTgAic1sogXlz8JHtJvPF9dg1eWxoAepibJfrORt0UNoGNIbRzQk0lph46vQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>以上就是Nano Banana 邪修之王藏师傅今天带来的科研成果。</p>
+<p>你可以在这里下载所有比例的案例图： <a href="https://pan.quark.cn/s/163037f38e88">https://pan.quark.cn/s/163037f38e88</a> 提取码：7tJV</p>
+<p>感谢各位的浏览，希望可以给藏师傅一个转发 ✈️ 分享给同样需要这些内容的朋友🙏，我们评论区见</p>
+<p><img src="https://mmbiz.qlogo.cn/mmbiz_jpg/FHoZCAjrvqgWLlBljDrYWKz1Ye6EYz33ukAVcyMBsRVbMqbfUibViadbnEGQmq4UkIoTodgambExicYdObJmQ8ZeA/0?wx_fmt=jpeg" alt=""></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p> <a href="https://mp.weixin.qq.com/s/">喜欢作者</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/RmM2sfcGlfMdmgH2DFqRug" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

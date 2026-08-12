@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>能帮你做 Live Photo 了！藏师傅社交卡片 Skill 重磅更新 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">能帮你做 Live Photo 了！藏师傅社交卡片 Skill 重磅更新</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81">产品</a><a class="chip" href="../index.html?tag=Live%20Photo">Live Photo</a><a class="chip" href="../index.html?tag=%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93">社交媒体</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a><a class="chip" href="../index.html?tag=AI">AI</a>
+    <span class="date">2026-07-02</span>
+  </div>
+  <p class="lead">前段时间我做了一个 guizang-social-card-skill，这次给它补了一个新能力: Live Photo 生成和编辑。</p>
+  <article class="content"><p>歸藏的 AI 工具箱 歸藏的AI工具箱 <em>2026年7月2日 08:20</em></p>
+<p>前段时间我做了一个 <strong>guizang-social-card-skill</strong> （<a href="https://github.com/op7418/guizang-social-card-skill%EF%BC%89%E3%80%82">https://github.com/op7418/guizang-social-card-skill）。</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVjY9okHR3lWJ1oRmOk53hdyoxcDZFrXNpZZM9uOdicgrickl25kXibiaCNysbWia2fyoZwEKgFVnDLvuIYrAicpmPyQ1UpS7Ro4cr8Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>它原来主要解决静态图文的问题:</p>
+<p>把文章、产品说明、截图、照片这些素材，做成小红书 3:4 图文卡片，或者公众号封面。</p>
+<p>这次给它补了一个新能力: <strong>Live Photo 生成和编辑</strong> 。</p>
+<p>你可以把产品录屏、网页 Demo、游戏片段、生活素材交给 Agent，让它做成小红书或公众号文章里能用的动态卡片。</p>
+<p>看一下 Codex 基于藏师傅的这个 Skills 给这次更新做的宣传视频：</p>
+<p>我一开始以为这只是&quot;把视频放进卡片&quot;。实际在实践和做的过程中，发现要处理的事主要有三个:</p>
+<p>•</p>
+<p>第一帧要能当普通图发出去。</p>
+<p>•</p>
+<p>3 秒或 5 秒里只能讲一个很小的动作。</p>
+<p>•</p>
+<p>用户最后要能真的传到手机上发布，不能只停留在本地 Demo。</p>
+<p>所以这次更新不只是在导出 MOV 视频和 Live Photo。</p>
+<p>它还补了素材判断、首帧检查、平台时长和发布路径这些环节。</p>
+<h2>这次能做什么</h2>
+<p><strong>单视频动态卡片：</strong> 适合产品录屏、网页生成结果、代码运行、游戏操作。</p>
+<p>Skill 会先按 3:4 卡片做版式，确认第一帧能看，再生成动态版本。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0bc354abcaaa5aac252fofvfb36dchxqaeia.f10002.mp4?dis_k=0440c2a4d585a9fe8c7c322bdc575d2f&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=IcXa2+4xYhRck5ftty17endmP08fYTxINmd5ST0zWmUaXTprShl5WSt/ATpDQXZaY2w=&amp;auth_key=f2400fba3b508368a9c3ae5a95e347dc&amp;vid=wxv_4585716062247337987&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p><strong>拼图式 Live Photo：</strong> 适合素材本身好看的内容: 旅行、产品细节、美食手作、生活方式。</p>
+<p>可以做成单视频、二宫格、三宫格、四宫格。很多时候不用加字，画面自己就够了。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0b2ef4bccaacdeab3p2hdnvfel6deexqeiia.f10002.mp4?dis_k=cf23827a76345c851e6f2f4cc6fb0862&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=dZL17p83YxFdx5HssHgoL3I6OxtMMzpLbWcvHG4wUWROB2Q7Qx94XCorBztEFCUPZjA=&amp;auth_key=33269ae06de5534e0b7ac083b320b49b&amp;vid=wxv_4585716838528811009&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p><strong>三连 Live Photo：</strong> 适合三个并列结果: 三个生成案例、三个产品状态、三个游戏片段。</p>
+<p>这里的重点是&quot;并列&quot;，不适合把一个长教程硬拆成三段。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3eubusaadqyahl5cgqzvfgjodjesqgsia.f10002.mp4?dis_k=c48f194c5259771ff6e718885c52ec77&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=d433n45jMEBemZ235i17fydhOh5MYTAeZGwsHmw0V2lMU21oFEwrDSl1C2ASQXZfM2s=&amp;auth_key=99ee7850b5fa722f771a8eb67979044f&amp;vid=wxv_4585718669829046273&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p><strong>长视频筛选：</strong> 用户手里的素材通常不是刚好 3 秒或 5 秒。</p>
+<p>Skill 会先粗看视频信息量，再建议裁一段、加速、拆成三连，或者放弃 Live Photo。</p>
+<p>很多工具喜欢说自己能&quot;自动找高光&quot;。我现在更愿意保守一点。自动选错以后，常见问题很难救: 第一帧黑屏、滚动跨了两个页面、UI 字太小、结果画面还没出现。</p>
+<h2>怎么用比较合适</h2>
+<p>先准备视频素材。不需要精剪到很漂亮，但最好别太长。</p>
+<p>每段 10 秒左右比较舒服。太长的视频会消耗更多 token，也更容易让 AI 误判重点。</p>
+<p>比较推荐的方式:</p>
+<ol>
+<li></li>
+</ol>
+<p>先把原视频粗剪成几段。</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>每段只保留一个重点。</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>让 AI 判断哪一段适合做 Live Photo。</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>再决定做单视频、拼图，还是三连。</p>
+<p>可以直接这样说:</p>
+<p>帮我把这段产品录屏做成小红书 Live Photo 第一张卡，重点突出生成结果。</p>
+<p>或者:</p>
+<p>这段视频有点长，先帮我判断哪一段适合做 Live Photo。</p>
+<p>完整教程不建议塞进 Live Photo。教程还是适合拆成 5-9 张图文卡片。</p>
+<p>Live Photo 只放最需要动一下才说得清的那一页: 按钮点击后的结果、生成完成瞬间、游戏动作成功、食物切开的变化。</p>
+<p>比如我前段时间给这些模型做的测试，在演示生成的网页效果时，就是一张图对应一个案例。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0b2ezqbccaacdqab3bshnnvfftgdehgaeiia.f10002.mp4?dis_k=af5d527e152d57e68fe34d4359183f22&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=devjo6MwMERbxZG85nd/dXFkPxtOMz0cYGcvGGgzUDROUzk4ShwrCSwpB2sSG3JVZW4=&amp;auth_key=5ab52bf141300dda979eec6451cd5b20&amp;vid=wxv_4585719427840557057&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>另外，陈抱一还有一个 Live Photo 开箱的栏目也可以看看，他一次只做一个动作，只展示这个产品的一个细节。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DWX16dcb3FnDicg18bCcgX2qh7GZ0WwuGHRf907NjtUSTyhkluUMyFk93z0Uib78a5nYib3bP8bmG5wG2QZRgVTaT2uWLwLuxUJibs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h2>适合哪些场景</h2>
+<p><strong>产品更新和 AI 工具演示：</strong> 静态截图只能说明界面长什么样。Live Photo 可以展示点下去以后发生了什么。</p>
+<p>生成网页、生成代码、生成图片，只放静态图总有点像摆拍。</p>
+<p>这类素材里还有一种很常见: 原始录屏信息太小，手机上看不清。</p>
+<p>比如这类原始视频的 token 显示区域比较小。这里可以让 Skill 自动把关键区域放大，只保留用户真正需要看的部分。</p>
+<p>，时长00:03</p>
+<p><video src="https://mpvideo.qpic.cn/0b2e6ybbaaacbuacyd2hpjvff5wdcd3aeeaa.f10002.mp4?dis_k=6a2b336f42a76d59b34f5bdf8a4f64fd&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=dunSz/tmYRFaw8Hp6y96K3Q2a00ZNDoaZmYuG200A2dNAGk3EEl6XC0vVz4fQ3cLYDw=&amp;auth_key=61e2df05754c16f4b7684879c9aef1de&amp;vid=wxv_4585720152096342017&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<h3>游戏攻略</h3>
+<p>路线、timing、动作节奏、击中瞬间，很多时候截图讲不清。Live Photo 适合放一个关键动作，不适合讲完整攻略。</p>
+<p>游戏素材也适合做全屏动态卡。它不一定需要额外排版，只要把画面裁到合适比例，保留动作完成的那几秒。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3iidsaaahmiab2x2ctnvfoqwdebbaoiaa.f10002.mp4?dis_k=cdc2e3da13f252348ef8bc9d7241f131&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=deLWy6QyM08Nwpzr5Hx6fCQzPhhMMWtKMGZ8HGg1BGJOVm86Sh8oAnouCjwQEHdcMDk=&amp;auth_key=6f41490782da7a86da5ee9c99fa9b7db&amp;vid=wxv_4585720771158851585&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<h3>教程技巧</h3>
+<p>不需要每一步都动。把最容易出错、最需要看到过程的一步做成 Live Photo 就够了。</p>
+<p>如果原来就是一套多图教程，Live Photo 可以只放在第一张或关键页。其他静态页继续负责解释、拆步骤、放细节。这样不会把一整套图文都改成视频，也不会打乱原来的阅读节奏。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3xaaboaaa5macv2sfjjvfbogdc64aafya.f10002.mp4?dis_k=f2e6b794720ac980b8fa8f0903eb5cf8&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=I5GA7ctsMxZXx5W2430rL3dhaxFJZ21ON2IhSW40UjEYXWQ+EEIoWyArA2EXESYPY2s=&amp;auth_key=938c6ae11236ff25318acdb881050dd7&amp;vid=wxv_4585721623072129025&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<h3>旅行和生活方式</h3>
+<p>有些照片很好看，但少一点现场感。到达、走动、开门、转身，这些小动作会让图文更像真人内容。</p>
+<p>这类案例不需要太重的文案。一个开门、走动、拿起物品的片段，就能让图文从&quot;设计图&quot;变得更像真实记录。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3eidscaahlqaby52ctzvfoiwdeeraoiia.f10002.mp4?dis_k=d9a9a6097665ce4617dd14a45e520018&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=I7DFiJ5jMRNelcS75it7f3IyPBFLbGlBNGMoRG4wVGUYAWg4Q00qXil5UmwSR3ZfZjg=&amp;auth_key=9b745f3faeaa8f2df2e8d625b633396b&amp;vid=wxv_4585722343133741058&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<h3>美食、手作、产品种草</h3>
+<p>倒入、切开、搅拌、组装、旋转、开合，这些天然适合 Live Photo。它们不需要复杂文案，看见变化就够了。</p>
+<p>如果同一主题下有几个短片段，也可以做成拼图。二宫格、三宫格、四宫格都适合这类素材。重点是让多个片段同时提供质感，而不是给每个格子都加说明。</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0b2e74a3saabmeaii6cexzvfd76dxh7qdoia.f10002.mp4?dis_k=b0563f29fee1861f93fe3c76587bbb38&amp;dis_t=1782967372&amp;play_scene=10120&amp;auth_info=eP+TovFgMxJcwpK55nZ5LyBgPhFNZT1OZjMqRD9jB2FDUm1oS0koXysuBG4SGnQPNGo=&amp;auth_key=c816259392c8a9daab4ff01cf7753d0f&amp;vid=wxv_4585722883259351041&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>判断标准很简单: 运动有没有提供证据。如果运动只是装饰，静态卡片更干净。</p>
+<h2>做这个功能时我加入的细节</h2>
+<p><strong>第一帧要先过关：</strong> Live Photo 在信息流里先显示的是静态图。第一帧如果不好看，后面会动也没用。</p>
+<p>所以现在流程里会先抽首帧，当普通 3:4 卡片检查一遍: 裁切对不对，主体有没有被切掉，标题会不会挡住关键区域。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DViaUoQDYWvyichqqSGAekKE6NycpYwRPhs1fucxe5CZ4rlGoJFnRfvbsnRgXoHLZdia2riauXRuGeneSN4MT8Dlwrg3icI2dXq4lJk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p><strong>视频当成图片位处理：</strong> 视频不能随便全屏塞进去。</p>
+<p>视频区域沿用图片裁切逻辑：UI 密集就保留完整画面，主体明确就放大重点，人脸、产品、按钮、结果区不能被压住。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUllCHjW4GFiakoJPa8tNEa1dQNJwqjqGJHwrFwxUOUuyia1nYacpNReSgdllmOIcjCjXKrvY7icj90vGTDlGTOReJbtymvlWOqVg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p><strong>先看 contact sheet：</strong> 长视频不适合一帧一帧看。更省事的方法是抽 8-15 帧拼成一张 contact sheet。</p>
+<p>看一张图，基本就能知道有没有黑屏、转场、UI 太小、结果没出现这些问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DVEEXbwuuDib5ezU4ibnxlVYlViazAgGSYDnmuFmAup0aZvgUne0jK7gNKMwX2goNhhbBOic99CJe2b69YlyovvMlAdAs30IDJEV4U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><strong>平台时长要分开：</strong> 小红书按 5 秒做。公众号文章内按 3 秒做。</p>
+<p>时长不同，能承载的信息量也不同。3 秒只适合一个动作点，5 秒可以放一个很小的过程。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DUzZqt92ukpVSJ6uKpAyWKEbuz3k2Nvv2ArcVmf4DiaT5r3KxHqQ5OD0t1PLF2iapmAqUBs4LVrqNOEqTmEfica9DuathKjoagwLY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><strong>发布路径要提醒清楚：</strong> Live Photo 最后不能只给一个视频文件。</p>
+<p>实际测试和发布时，需要把 JPG + MOV 打包成 <code>.pvt</code> ，再 AirDrop 到 iPhone，从手机端发布。桌面端上传不一定能保留 Live Photo。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVlhjOLDTQicLHias6KyEBWQn61zM4a9OdicbMrrV9DzS32DaakiaWjWwRnrOwIJPhdDdiahUKMjZbibdvYx4p5hHHs16ZPicKX2gtsOc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>这些细节不显眼，但少了任何一项，成品都可能停在本地测试里。</p>
+<h2>为什么 Live Photo 值得做</h2>
+<p>图文平台里的&quot;图&quot;现在有点尴尬。</p>
+<p>静态图表达力有限。短视频制作成本又高。很多内容卡在中间: 不值得剪成视频，只用静态图又少一点说服力。</p>
+<p>Live Photo 刚好补这个空位。用户还是在做图文，只是其中一张图多了一点运动。</p>
+<p>我觉得它有用，是因为很多内容需要一点动态证据：产品运行、网页生成、动作完成、食物切开。</p>
+<p>从 Skills 的角度看，这次更新中的实践需要注意：</p>
+<p>一个 Skill 不能只写触发词，还得写清审美、边界和工作流。</p>
+<p>当用户给一段视频素材时，AI 不只负责导出文件。</p>
+<p>它还要判断这段素材该不该动、动哪一段、放在哪张卡里，以及怎么让它仍然像一张能发出去的社交卡片。</p>
+<p>这类判断越多，Skill 就越不像一段 Prompt，越像一个可以复用的生产流程。</p>
+<h2>怎么开始用</h2>
+<p>如果你还没用过这个 Skill，可以直接把下面这段话发给有 shell 权限的 AI Agent:</p>
+<p>帮我安装 guizang-social-card-skill。阅读 <a href="https://github.com/op7418/guizang-social-card-skill">https://github.com/op7418/guizang-social-card-skill</a> 项目的 Readme 后安装，安装完成后检查 SKILL.md、assets/、references/ 是否存在。</p>
+<p>如果你之前已经装过，可以直接让 AI 更新:</p>
+<p>帮我更新 guizang-social-card-skill。请进入 ~/.claude/skills/guizang-social-card-skill 执行 git pull，然后告诉我当前最新 commit。</p>
+<p>更新完以后，你就可以把文章、截图、照片或视频素材丢给 Agent，让它生成小红书图文、公众号封面，或者这次新增的 Live Photo 卡片。</p>
+<p><strong>我觉得这次更新对你有帮助的话，可以帮我点个赞或者转发给你需要的朋友。</strong></p>
+<p>✦</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 732.8 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 730.8 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 822.8 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/2EMtOo6C_xSt6CcU3DZuvA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从混乱到可控：我最受益的 10 个 AI 编程技巧（含提示词） · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">从混乱到可控：我最受益的 10 个 AI 编程技巧（含提示词）</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%86%8A%E7%8C%ABJay">熊猫Jay</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a>
+    <span class="date">2026-01-20</span>
+  </div>
+  
+  <article class="content"><p>原创 熊猫Jay <em>2026年1月20日 00:39</em></p>
+<p>去年这个时候，一个5千块的定制化项目，我整整改了一个多月。</p>
+<p>效率极低，一度让我想放弃。</p>
+<p>过去一年，我做了 3 个产品： <strong>熊猫论文、熊猫工坊</strong> ，还有一个正在内测的出海项目 <strong>PostMaker</strong> 。</p>
+<p>粗略算下来，代码量大概 60 万行。</p>
+<p>这一年我发现：<br><strong>AI 写得太快了，有时候快到你还没反应过来，方向就已经错了。</strong></p>
+<p>于是你就会遇见这些崩溃的画面：</p>
+<ul>
+<li>• 写得越快，返工越多</li>
+<li>• 修完一个bug，又冒出下一个</li>
+<li>• 页面看起来能用，但总像临时拼起来的</li>
+<li>•...</li>
+</ul>
+<p><strong>这篇文章，我会把这一年踩过的坑和摸索出来的打法，按步骤分享出来。</strong></p>
+<p>如果你正在学AI编程，希望这 10 个技巧，能让你少走一些弯路。</p>
+<h2>一、AI 不怕复杂 Bug，只怕一句废话</h2>
+<p>对于非技术背景的朋友，改 bug 可能是 AI 编程过程中频率最高，也是最头疼的事情了。</p>
+<p>如果你修复 bug 的提示词是：</p>
+<pre><code>点击“确认”按钮报错了
+</code></pre>
+<p>又或者是</p>
+<pre><code>页面卡住了，始终空白
+</code></pre>
+<p>那我建议你一定要好好看一看这一章。</p>
+<p><strong>1、快速提问法：</strong></p>
+<p>想让 AI 快速帮上忙，关键就一件事：把 Bug 的“最小闭环信息”说完整。</p>
+<pre><code>XXX角色的用户在XXX地方操作了XXX几个动作，出现了XXX异常现象，
+
+导致在XXX位置（代码控制台 or 浏览器控制台）产生了XXX错误信息。
+</code></pre>
+<p>只要把这 6 点交代清楚，通常就能覆盖 80% 的场景。</p>
+<p>所以请保持对 Bug 起码的尊重，别偷懒，别抱有侥幸心理。</p>
+<p><strong>2、上下文大法：</strong></p>
+<p>遇到顽固 Bug，只靠第一种“最基本信息”往往是不够的。</p>
+<p>因为这种问题通常牵扯到 <strong>更复杂的执行链路</strong> ，局部现象很难直接推到根因。</p>
+<p>这时候就得上“ <strong>上下文大法</strong> ”：把你能想到的线索尽量一次性给全。</p>
+<p>比如最近需求变动的时间点和具体改动、<br>有没有调整过配置参数、<br>为修这个 Bug 你之前做过哪些尝试、<br>每次尝试的结果是什么。</p>
+<pre><code>请基于以下信息，帮我分析并解决问题。
+
+## 问题描述
+- 我做了什么，实际发生了什么：xxx
+- 正常情况下应该发生什么：xxx
+
+## 问题情况
+- 是否每次都会发生：xxx
+- 什么时候开始出现的：xxx
+- 出问题前是否有过改动：xxx
+
+## 提示信息（如果没有，则不提供）
+- 页面提示 / 报错日志内容：
+xxx
+
+## 已尝试
+- 我已经尝试过的操作：
+- 是否有变化：
+
+## 分析要求
+- 用通俗的话说明可能原因
+- 给出下一步可以直接尝试的解决办法
+- 如信息不足，请告诉我需要补充什么
+</code></pre>
+<p><strong>3、AI 也需要适应环境：</strong></p>
+<p>上面两步还搞不定，怎么办？</p>
+<p>这时候，其实很可能不是你不行，而是 <strong>AI 还没进入你的世界。</strong></p>
+<p>我们经常干一件事：<br>直接把一个 Bug 症状，丢给 AI，<br>而且还有可能在一个完全不相干的上下文里。</p>
+<p>这有点像你半夜把一个刚睡醒的同事拽过来：“这个功能为啥炸了？你马上给我答案。”</p>
+<p>成功率，能高才怪。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmzt7ibiabdzIlJIgBV27K1bmdFCDjn50hH8AsGZ2dDCPBHyPD2uRFSIUw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>更稳的做法是： <strong>先让 AI 熟悉环境，再让它动手修 Bug。</strong></p>
+<p>哪怕你现在没有完整的需求文档，<br>也可以先让 AI 帮你 <strong>理解这个功能的代码结构、核心流程、设计意图</strong> ，<br>等它“搞清楚这是在干嘛”，<br>再把具体的异常现象、报错信息丢进去。</p>
+<p>这样，当你和 AI 同时拥有记忆时，效果会完全不一样。</p>
+<p>PS：梳理代码逻辑时，建议让 AI 将流程通过流程图、时序图等等你熟悉的可视化方式来呈现。</p>
+<pre><code>请先帮我理解这个功能在“正常情况下”是怎么工作的：
+- 主要代码结构
+- 核心流程（可以用步骤描述）
+- 关键状态或判断点
+
+请配合使用流程图或时序图的方式，加上通俗的语言帮我梳理代码的完整逻辑。
+</code></pre>
+<p><strong>4、全局观：把完整验收标准 / 测试用例交给 AI</strong></p>
+<p>修复杂 Bug 时，最常见的坑是：这边刚修好，那边又冒出新问题，<br>甚至越修越乱，来回打补丁像陷入死循环。</p>
+<p>如果你已经改了几轮还是不稳定，我建议别再盯着某一行报错死磕了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmlEyiaDFtZCB3HBh4yaNnINy85ibUcmZNcQsYocu56UHqcsOXVON2ZeCg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>去把这个功能的「 <strong>完整验收标准</strong> 」或「 <strong>测试用例</strong> 」找出来，<br>再补上它和其他功能的关联边界，一起丢给 AI。</p>
+<p>有了这些“全局标准”，AI 才能在修复时兼顾整体行为， <strong>不至于拆东墙补西墙</strong> 。</p>
+<p>在企业里这个做法更容易落地：因为正规的研发流程通常都会为需求配套测试用例。</p>
+<p>我们把这些用例作为上下文给 AI，<br>自测时不仅更有方向，还能顺便让 AI 帮你生成 <strong>回归脚本</strong> ，<br>把修复和验证做成闭环。</p>
+<pre><code>请基于我提供的测试用例、验收标准、相关需求等信息，从“全局正确性”出发修复 Bug，避免修一个bug，再次引入新的 Bug。
+
+请按这个顺序输出：
+1) 先简洁复述：这个功能的“正确行为”（根据验收/用例）
+2) 指出当前 Bug 违反了哪几条用例/验收点（列 3-5 条）
+3) 给出最小改动的修复方案（改哪些文件/函数/关键逻辑）
+4) 给出需要回归的用例清单（基于我提供的用例/验收点）
+
+只基于我提供的信息，不要脑补；信息不够就问我最多 3 个关键问题。最终目标是把 Bug 修好并通过这些用例。
+</code></pre>
+<p><strong>5、终极大法：Debug 模式</strong></p>
+<p>这是传统做法里，解决 Bug 最高效的一条路：用“ <strong>可复现 + 可观测</strong> ”的方式，把问题还原出来。</p>
+<p>但对非技术同学确实不友好——你很难知道该抓哪些信息、怎么看日志、怎么把现象还原成线索。</p>
+<p>好在现在不少 AI 编程工具已经把这件事“产品化”了。</p>
+<p>比如 Cursor 有 Debug 模式，Claude Code 也支持通过 debug 指令来辅助排查。</p>
+<p>它们的价值不只是“多输出点日志”，<br>而是 <strong>把排查过程变成一条更可控的链路：</strong><br>更清楚地看到工具的运行步骤、关键调用、以及失败发生在哪一环。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmGnOIoib3MKwJhUyDVIZLjzmU8QnttzxhfPx9VZ3NDanQbicuSdHBNvqA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>以 Cursor 为例。</p>
+<p>我之前在优化工具「 <strong>长文转小红书</strong> 」时，遇到运行时间过长的问题，就直接用 Debug 模式来做定位。</p>
+<p>我先把必要信息补齐，然后按它给出的复现步骤手动执行一遍，让日志完整记录下来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmIO6GpZibqyriczTHoTHphXunLjaicNf6FKAVXutTWBLvgE0Aw6SbSxmMQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>接着它将自动分析日志，也会更容易看出瓶颈点在哪里。</p>
+<p>那次它给我的建议很明确：有些步骤其实可以合并，减少重复计算和中间结果的来回传递。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmMnZXXfFvWXtYwtQD8UibW5cz1GPc6uCU8vLwpwx1HH9D5ZDI5vgfxaQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>我采纳建议后，让 AI 按计划改完，再跑一遍同样的复现步骤做验证。<br>确认问题解决后，记得点“问题已修复”按钮。</p>
+<p>这样 AI 会自动去掉多余的日志，保持代码整洁，否则放到线上可能会出现 <strong>路径找不到</strong> 的问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmLQRNqtz7gyRXvic94wCrUPia1GCGzDu64LGGeGqFhgH3UJFMpxXsA1icA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<h2>二、用 Plan 模式让 AI 慢下来</h2>
+<p>这一年里，我一直和 AI 一起写代码，也慢慢形成了一个固定习惯。<br><strong>在把任务交给 AI 之前，先让它进入 Plan 模式。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmibiblXeuo5Qfqpwg0z2mic52DjJbkpic9El9051UAOdJGFcR3qKqWaeosA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>不管用的是 Cursor，还是 Claude Code，这个模式的作用，其实不只是“多看一眼需求”。<br><strong>它真正做的一件事，是逼着需求先被拆开、被质疑、被补全。</strong></p>
+<p>就拿 Cursor 举例。<br>在 Plan 模式下，它不会马上写代码，而是先找问题。</p>
+<p><strong>哪里有歧义？</strong><br><strong>哪些前提没说清？</strong><br><strong>有没有隐含的假设？</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmxptdficz9I5oIIhPn6FA13E0YE3whUar3aLez5bEulPjP8HwGsK7ib8A/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>它会直接把这些点抛出来，让你补充说明。<br>在一来一回的过程中，原本模糊的想法，会慢慢变成一个边界清楚、能动手执行的方案。</p>
+<p>Plan 模式，其实只是把软件开发里一个很老、但一直好用的做法，搬到了 AI 协作里。<br><strong>先设计，再写代码。</strong></p>
+<p>多花几分钟把计划说清楚，把执行路径对齐好，往往能省下后面几个小时的反复修改。</p>
+<p><strong>有时候，慢下来，会更快～</strong></p>
+<h2>三、需求拆不清，后面将都是返工</h2>
+<p>不管是主业还是副业，我一直是 <strong>直接面对需求</strong> 的人。<br>以前，我要把需求翻译成技术能看懂的话。</p>
+<p>现在不一样了。<br>接到定制商单，或者产品要做新功能，我同样要先做一件事： <strong>拆需求</strong> 。</p>
+<p>说句实话：<br>这件事，至少吃掉了我 30% 的精力。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmsTOcJ2VsAeOU62wpJOISpfQFLr4Kmibkj2VdkCWECzicQIsICwwrPJtw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>从去年开始，我逐渐习惯用提示词来帮自己拆需求。<br>更多是 <strong>逼自己把问题想清楚</strong> 。</p>
+<p>如果拆解不到位，后果通常只有两个：<br>要么反复返工，<br>要么为了赶进度，团队只能硬扛。</p>
+<p>下面这个，是我平时用来拆需求的提示词。<br>说实话， <strong>一些简单的产品需求，直接用它就够了。</strong></p>
+<p>但如果是全新的功能模块，就不要照搬，更好的做法是：</p>
+<ul>
+<li>• 先结合自己的经验</li>
+<li>• 把需求拆成几个具体、独立的使用场景</li>
+<li>• 再用提示词继续往下拆</li>
+</ul>
+<p>这样用，价值会更大。</p>
+<p><strong>需求不是一开始就完整的，其实是逐渐拆出来的。</strong></p>
+<pre><code>你现在是一个资深产品经理兼需求分析师，请将我提供的需求描述，整理成适合开发人员快速理解和交付的结构化需求说明。
+
+## 输出格式
+
+严格遵循以下模板：
+&quot;&quot;&quot;
+
+## 模块：[功能模块名称]
+
+### 功能描述
+- 用项目符号简明列出该模块需要实现的核心功能点（以“支持…”、“允许…”、“点击…”等动词开头）。
+- 避免描述背景或实现方式，只关注“系统需要实现的行为”。
+
+### 用户故事
+作为[角色]，我希望[行为]，从而[目的]。
+
+（仅一句话，保持简短、聚焦价值。）
+
+### 验收标准
+- ✅ 正向验证：描述成功操作后应出现的正确结果。
+- ❌ 负向验证：描述错误或异常场景下应出现的提示或限制。
+- 每条标准前加符号（✅/❌），确保测试可读性。
+- 语言保持简洁明确，避免歧义，用“→”描述操作到结果的逻辑。
+
+### 备注 / 待确认
+- 列出尚不确定、需进一步确认或可能变更的要点。
+- 可包含设计、接口、性能或交互类问题。
+&quot;&quot;&quot;
+
+## 内部注意点
+&quot;&quot;&quot;xxx内部的规范要求或者经常容易遗漏的注意点，减少研发返工xxx&quot;&quot;&quot;
+
+## 输出要求：
+1. 严格使用 Markdown 格式。
+2. 每个模块形成一个“开发-测试闭环”卡片（功能描述 + 用户故事 + 验收标准 + 备注）。
+3. 不写多余的背景或叙述。
+4. 若输入包含多个模块，请分模块分别输出。
+
+## 需求
+&quot;&quot;&quot;xxx需求说明，可以是一句话，也可以是详细的说明xxx&quot;&quot;&quot;
+</code></pre>
+<p>比如最近，主业里的研发平台要支持 <strong>合并列头</strong> 这种平台级配置。</p>
+<p>按照提示词模版，我在 ChatGPT 里给的东西其实很少。<br>只有两句话的口述需求，再加上一些注意点，<br>以及我当时能想到的影响范围。</p>
+<p>除此之外，我顺手把内部的一些规范要求也一起丢了进去。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmo3Kw44aH2ZtKjyvicicflPJY0UwYaVE3QNONBJOdT5sLrtgQsebrBFicQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>像这种相对不复杂的需求，<br>AI 生成的结果， <strong>稍微改一下就能直接用</strong> 。</p>
+<p>但真正有价值的，其实是： <strong>备注 / 待确认</strong> 。</p>
+<p>基于我给的内部注意点，再加上它自己的理解，<br>AI 会列出不少提醒和补充项。</p>
+<p>这些内容，很多并不是“答案”，而是 <strong>替你多想一步</strong> 。<br>帮你提前看到可能的坑，把返工的概率降低。</p>
+<p>有意思的是，<br>这种方式，反而会倒逼我们自己去想清楚问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmRziaQ2ibwQVFEnFIp0pL38eiaojCzAOtWCwBhYdhRBV9egvJunCLwqmqw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<h2>四、复杂方案，先推演，后落地</h2>
+<p>不知道你有没有遇到过这种情况。</p>
+<p>发现一个严重 bug，或者需求突然改动很大，<br>把问题丢给 Cursor 之后，它一下子给你列出好几种方案。</p>
+<p>有最推荐的，有次一点的，<br>有的追求见效快，有的偏向长期维护。</p>
+<p>问题是，这些方案里，常常会踩到我们的知识盲区，<br>或者涉及并不熟的领域。</p>
+<p>这时候就很纠结了： <strong>到底改不改？选哪个？</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmI6XD8q9K4VSXnYE6K2xdeWkKRzIDkYGsyCmTIR9wjmdoOsMlKP3VGw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>改的话，很容易吃掉大量时间和成本，最后还不一定走得通，甚至要推倒重来。<br>不改，问题就一直在那里。</p>
+<p>后来我意识到一件事。想提高复杂方案真正落地的成功率，<br>不能只看“方案本身”，还要提前看 <strong>它会怎么跑</strong> 。</p>
+<p>于是我开始让 AI 帮我做一件事： <strong>方案推演</strong> 。</p>
+<p>在真正动手前，先确认几件事：</p>
+<ul>
+<li>• 这个方案，能不能解决当前的问题</li>
+<li>• 落地之后，会不会影响已有功能</li>
+<li>• 哪些地方最容易出风险</li>
+</ul>
+<p>这些问题，其实都可以在 <strong>方案推演阶段</strong> 被提前看清楚。</p>
+<pre><code>请基于上述方案，帮我模拟程序在完成后的整体执行过程。
+
+请你重点说明：
+- 程序在正常使用情况下，会按照什么顺序一步步运行
+- 每一步主要在做什么事情，想解决什么问题
+- 关键参数在流程中起到什么作用，会对结果产生哪些影响
+
+在说明过程中，请特别留意：
+- 哪些步骤是必不可少的，哪些可能只是为了“看起来完整”
+- 如果某些输入不符合预期，流程可能会受到什么影响
+- 有没有逻辑可以简化、合并，或者其实可以不要
+
+输出要求：
+- 使用通俗、直白的语言描述，不要堆技术术语
+- 可以用简单的流程图或步骤列表，帮助我快速理解整体逻辑
+- 在结尾用几句话总结：这个程序逻辑是否清晰、是否有调整空间
+</code></pre>
+<p>之前碰到过一个很具体的案例。</p>
+<p>为了让 API 的调用过程更稳定，我加了一层能力： <strong>在不同 API 供应商之间做智能切换</strong> 。</p>
+<p>但问题很快就出现了。</p>
+<p>现有系统里，不仅有不同的模型类型，还覆盖了多种业务场景。</p>
+<ul>
+<li>• 语言模型</li>
+<li>• 文生图</li>
+<li>• 视觉模型</li>
+<li>• 文生视频模型</li>
+</ul>
+<p>但当我把这套方案用到 <strong>文生图</strong> 场景时，我先按之前的提示词跑了一次测试。</p>
+<p>结果很直接，它瞬间帮我暴露出了不少 <strong>中高风险问题。</strong></p>
+<p>这些点，如果当时我自己没有想清楚，就直接让 AI 去实现，<br>后面几乎一定会出现一堆 Bug。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmmGrPVDnVeeib1EZEWaXAJPKr9TEG2AqDeaH1uPAfrVxG2GSrPnvTP3Q/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<h2>五、任何用 AI 生成的结果，都该考虑 Plan B</h2>
+<p>有一件事，我想先泼点冷水。 <strong>AI 生成的结果，本质上就是不稳定的。</strong></p>
+<p>如果你心里没有 <strong>Plan B</strong> ，那 Bug 只是早来和晚来的区别。</p>
+<p>我自己最常踩坑、也最容易被忽略的，其实就两类场景：<br><strong>第一类：结果要被“机器继续用”的场景</strong><br>比如 JSON 结构化，用来做特征提取、参数对接、前端渲染。</p>
+<p><strong>第二类：结果有“硬约束”的场景</strong><br>比如小红书标题，最多 20 个字，多一个都不行。</p>
+<p>先说最常见的： <strong>JSON 结构化。</strong></p>
+<p>假设我们现在要拆解一篇长文，提取它的核心观点、金句、爆点、钩子。<br>如果只是：拿来展示，或者作为下一个 AI 节点的上下文。<br>说实话， <strong>根本不需要结构化</strong> ，直接塞就完事了。</p>
+<p>但一旦你想做两件事，麻烦就来了：</p>
+<ul>
+<li>• 前端要“好看地渲染”</li>
+<li>• 某几个字段，要作为下一个函数的输入参数</li>
+</ul>
+<p>这时候，稳定性就不是“加分项”，而是 <strong>生死线</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmFKiaZHJJKjSMqse0lZrBF2ZNDibdAl0pEuciaxewrYic0XiapiayHs6xVmTA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>大多数人会怎么做？</p>
+<ul>
+<li>• 拼命优化提示词</li>
+<li>• 强调「必须输出 JSON」</li>
+<li>• 按官方文档写 <strong>JSON Schema</strong></li>
+</ul>
+<p>这些方法对吗？ <strong>对，而且能解决 95% 的问题。</strong></p>
+<p>但我想提醒一句很现实的话：<br><strong>程序，只要有 1% 的概率出错，在规模化运行时，它就一定会暴露出来。</strong></p>
+<p>所以真正稳的做法，其实很简单： <strong>多加一道校验。</strong></p>
+<ul>
+<li>• 先检查结果是不是合法 JSON</li>
+<li>• 如果不是，直接把结果丢回给 AI，再跑一次</li>
+</ul>
+<pre><code>以下文本可能有格式错误，请提取并修复其中的JSON内容。
+
+期望返回格式：xxx原文本：xxx直接返回修复后的JSON，不要解释。
+</code></pre>
+<p>再说 <strong>字数限制</strong> 这个问题。</p>
+<p>玩过小红书的人都知道，标题最多 <strong>20 个字</strong> 。<br>现实情况是，AI 很难稳定卡在这个范围内。</p>
+<p>偶尔就会写成 22 个字、25 个字。不管你怎么调提示词，这个问题都会出现。</p>
+<p>这是模型本身的特点。</p>
+<p>截取就更不现实，这样破坏的标题的完整性。我的做法是：</p>
+<ul>
+<li>• 先检测字数</li>
+<li>• 超过限制，就把结果再丢回给 AI</li>
+<li>• 明确告诉它：需要压缩到 20 字以内，甚至可以多留点缓冲余地</li>
+</ul>
+<pre><code>你是一名小红书运营专家，请将下面的标题精简。
+
+要求：字数≤18（必须满足），保留核心信息和吸引点，不使用emoji，仅输出精简后的标题，不做任何说明。
+
+原标题：xxx超长标题xxx
+</code></pre>
+<p>不管是上面这两个场景需要兜底，<br><strong>大模型的 API 供应商也是如此，Plan B 始终让你拥有更多的底气。</strong></p>
+<h2>六、尽可能将你遇到的定制化需求通用化</h2>
+<p>我用一个 <strong>真实发生过的需求</strong> ，来讲这个技巧。</p>
+<p>从去年 10 月开始，我接到了不少自媒体的 <strong>定制化需求</strong> 。<br>其中有一个很典型的场景： <strong>把视频文案，自动改写成多种语言版本。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTm6jTo9tbl9dWqwufxwKydvGP9DwWZv3kKp4mEzLMMBatLbHBRQnSQvw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>第一个版本很快就做完了，功能也能用。<br>结果客户很快提了一个优化意见：</p>
+<p><strong>“现在生成的泰文我完全看不懂，能不能给我一个中文对照？”</strong></p>
+<p>如果站在“纯定制”的角度，这个需求其实很好改：</p>
+<ul>
+<li>• 目标语言：泰语</li>
+<li>• 输出格式：泰文 + 中文对照</li>
+<li>• 提示词敲出来，事情结束</li>
+</ul>
+<p><strong>但我当时停了一下。</strong></p>
+<p>我问自己一个问题：</p>
+<ul>
+<li>• <strong>那如果下一个用户是英文呢？</strong></li>
+<li>• <strong>再下一个是日文、越南文呢？</strong></li>
+<li>• <strong>是不是每来一种语言，我就要重写一套逻辑？</strong></li>
+</ul>
+<p>这时候你会发现一件事：<br><strong>需求本身不复杂，复杂的是它未来的变化。</strong></p>
+<p>说实话，这种通用性的设计，靠自己去想，挺吃经验的。</p>
+<p>但是我们可以交给 AI：</p>
+<pre><code>请基于我提供的最新需求和已有的功能设计，帮我重新整理这个需求。
+
+需求：
+xxx需求描述xxx
+
+目标是：
+在不改变核心价值的前提下，将一次性的、具体的需求提炼为一个更通用、可复用的功能。
+
+请你重点思考并说明：
+- 这个需求真正想解决的“核心问题”是什么
+- 当前方案中，哪些设计是强绑定当前场景的
+- 如果未来出现更多相似但不完全一样的使用场景，哪些地方可能会受限
+
+请给出一个更通用的需求表达方式，并简要说明：
+- 这个通用版本可以覆盖哪些类型的场景
+- 相比原需求，复杂度是否明显增加
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmP8icVBxXj6U3PjdVl3QZKD0z342u7FdZGGEJ88hmw99ric35CIh4dHkQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>可以看到，用户真正需要的，<br>是一种 <strong>能够帮助理解非母语文案的能力</strong> ，并不局限于泰语这一种语言。</p>
+<p>这正是这个定制化需求背后隐藏的关键点，<br>一旦抓住这一点，往往就能事半功倍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTm5aOJXSR0mLAIpiazbM4cJHtwJbegyloKibSFubicLfyo9RhFP9IoSGdbw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>AI 把可能出现的场景，几乎都列成了一张矩阵。<br>连对应的 UI 交互草图，也一并给了出来。</p>
+<p>基于这套交互设计，现阶段能覆盖的大部分情况，基本都被兜住了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmBI9U0H4Jfoaak2f13l62jJJNicq4DrwQ2kybs6Fvbw86Lvgkx3t0Y4Q/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>最终优化的效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmKC3LBfZLfFlI6crSnH7wsGb7r0E1XbicHibmEFVUkR4AL0iaYyng0p6Rw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<h2>七、每一次费力修复的过程，都该变成你的知识宝藏</h2>
+<p>真正意识到要把经验总结成 <strong>知识卡片</strong> ，是在做「熊猫论文」这个项目的时候。</p>
+<p>那段时间，我反复在做 Vibe Coding。</p>
+<p>看着功能一个个被 AI 被拼出来，<br>我负责测试，再把结果丢回去，继续纠错，继续改。</p>
+<p>当时用的还是 Claude 3.7。<br>能力和现在的 Claude 4.5 Opus 比，差距很明显。</p>
+<p>一个稍微复杂的问题，经常要来回调一两个小时。<br>连续这样跑了一两周之后，我突然觉得不太对。</p>
+<p>我发现自己并不是在驱动 AI，更像是一个 <strong>被流程推着走的执行者</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmts0K6DEjJoyoeDJQuYNGfFsO4x1wnXHDhTBUoAiaIhcspYR9QcOibprg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>我没有留下任何可复用的东西。只有一些勉强能跑的功能。<br>如果下次再遇到类似问题，我还是得从头再来。</p>
+<p>从那之后，我开始换做法。</p>
+<p>只要遇到复杂问题，或者 <strong>花了很长时间才修完的 bug</strong> ，<br>我都会让 AI 帮我把过程提炼成笔记，或者整理成一张张知识卡片。</p>
+<p><strong>笔记卡片（适合复杂的 bug 修复）</strong> ：</p>
+<pre><code>请回顾这次对话，提炼其中最关键的 xx 个问题，
+并分别整理为 FAQ 形式的笔记卡片。
+
+每张卡片请包含：
+- 问题现象：当时具体遇到了什么情况
+- 根因说明：问题产生的核心原因
+- 解决方式：最终采用的解决方案或判断路径
+- 适用提示：在什么场景下可能再次遇到，如何提前避免
+
+要求：
+- 使用 Markdown，结构清晰，便于快速扫读
+- 表达简洁，偏总结而非过程复述
+- 不引入对话中未出现的新结论
+</code></pre>
+<p><strong>技术教程（适合相对完整的技术教程、方案）:</strong></p>
+<pre><code>请将上面的内容整理成一份「可读性强的 Markdown 笔记」。
+
+整理时请遵循以下原则：
+- 以“希望把事情真正讲清楚”为目标，而不是堆信息
+- 重点说明“发生了什么”和“为什么这样做”，再说明“怎么做”
+- 避免术语堆砌，必要时用直观解释或简单类比辅助理解
+
+笔记结构建议如下（可根据内容灵活调整）：
+1. 背景与问题：事情从什么情况开始，核心困扰是什么
+2. 现有做法：之前的处理方式，以及由此带来的限制或风险
+3. 新的思路：新的解决方向或方案，以及形成这一判断的原因
+4. 关键过程：按步骤梳理重要变化，必要时用流程图或时序图帮助理解
+5. 总结与要点：本次经验中值得记住的结论，以及可复用的判断原则
+
+输出要求：
+- 使用 Markdown，结构清晰、层次分明
+- 语言自然、可顺读，适合作为教程或学习笔记
+- 不引入未出现的新背景，不做过度推演或延展
+</code></pre>
+<p>这些笔记和知识卡片，我都会 <strong>沉淀在代码项目里</strong> ，<br>同时再归档一份到自己的飞书知识库。</p>
+<p>放在代码里的目的，<br>是为了在修复问题或者开发新任务时，我都会提醒AI，在首句中加上：</p>
+<pre><code>请从项目中检索是否遇到同样的问题，xxxx
+</code></pre>
+<p><strong>只要命中一次，我就赚了。</strong></p>
+<h2>八、把长期使用的上下文沉淀成通用文档</h2>
+<p>不管是需求文档、样式规范、组件库、技术栈、接口说明、FAQ 等等，<br>还是用来约束 AI 行为的 Cursor Rule、Claude.md，<br>它们都会在项目的某个阶段，被当作上下文反复交给 AI。</p>
+<p>我的看法是： <strong>这些东西应该尽早准备，并且在开发过程中持续引用、持续优化。</strong></p>
+<p>这样做，自然会形成正循环。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmn1VNDJdTTfyd4W3RI3HmOoibJv4LYKDmWqTibRiaXEzicwsnku1pmdnogA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>当你已经沉淀出一套相对稳定的通用文档，</p>
+<p>再把它们引入到 <strong>Cursor Rule、Claude.md</strong> 中，代码质量往往会明显提升，返工也会大幅减少。</p>
+<p>下面的提示词，就是我在一个真实商业项目中使用的 Cursor Rule。</p>
+<p>如果你有需要，完全可以在此基础上做修改和复用。</p>
+<pre><code># Cursor Rule
+
+## 角色与沟通
+你是 Python 工程师，帮助技术基础较弱的初中生完成项目开发。
+- 用通俗语言解释关键概念（不堆术语）
+- 每次输出尽量给出：要做什么 + 为什么 + 下一步怎么用
+- 遇到不确定点：先列出澄清问题或假设，再写代码（不要瞎补需求）
+
+## 文档即上下文（默认必须引用）
+处理任何需求前，先阅读并遵循这些文件（如不存在则创建）：
+- README.md：项目目标、使用方式、参数/返回值示例
+- docs/development_guide.md：技术栈、目录结构、开发规范
+- docs/requirements.md（如有）：需求与边界
+- docs/api.md（如有）：接口约定、鉴权、错误码
+- docs/faq.md（可选）：常见问题与约定
+
+&gt; 开发过程中持续更新上述文档：新增功能/约定/坑点，必须同步补齐。
+
+## 工作流程（强制顺序）
+1) 需求理解
+- 用一句话复述需求目标
+- 列出 1~3 个关键澄清点/假设（尽量少但必须）
+- 选择最简单可行方案，避免过度设计
+
+2) 实现
+- 遵循 PEP8 + Type Hints + 清晰 docstring
+- 模块化、可维护；必要时加日志与错误处理
+- 严格贴合现有项目目录与代码风格（先读代码再扩展）
+
+3) 测试（必须）
+- 在 tests/ 下按类型放置 pytest 用例（只写接口测试）
+- 覆盖率目标：100%（以关键分支为准，必要时补边界与异常用例）
+
+4) 接口与鉴权
+- 若实现的是接口：根据功能判断是否需要 JWT
+- 接口行为以 docs/api.md 为准；若缺失则补充约定（含示例请求/响应）
+
+5) 数据库变更（如涉及）
+- 在 alembic/versions/ 生成迁移文件
+- 补充初始化数据（如需要）并确保迁移可执行
+- 变更说明同步写入 docs/development_guide.md
+
+6) 收尾与复盘（必须）
+- 更新 README.md：新增功能的用法、配置、示例
+- 更新 docs/development_guide.md：目录/依赖/规范变化
+- 简要列出：本次改动影响范围 + 后续可优化点（不长篇）
+
+## 参考
+默认以 Python 官方文档为准：https://docs.python.org/
+</code></pre>
+<p>在实际使用中，AI 有时候并不会完全严格地按照我们设定的全局规则来执行。</p>
+<p>所以我们也要留意本地文档的变更情况：<br>当新增了组件、调整了需求之后，<br>如果相关文档还没来得及更新，就可以主动提醒 AI，把这些文档补齐和修正好。</p>
+<p>这里要强调一件事： <strong>需求文档一定要及时更新。</strong></p>
+<p>在一个持续演进的项目里， 需求文档是除了代码本身之外，<br>每个功能模块最重要的上下文。</p>
+<p>它能帮助 AI：</p>
+<ul>
+<li>• 在修复局部 bug 时，分清哪些逻辑是刻意保留下来的，避免一不小心伤到整体设计</li>
+<li>• 在新增功能时，理解模块真正的职责，让功能自然生长在该生长的位置上</li>
+<li>• 在重构过程中，始终保有对用户行为和业务约束的整体认知，而不是只追求代码层面的优雅</li>
+</ul>
+<p>提示词：</p>
+<pre><code>这部分功能 / 需求做了如上调整，可能是重构、改逻辑，或者加了点新能力。
+
+请你帮我同步更新需求文档，但注意一件事：
+只写“真的变了什么”，不要扩写。
+
+在整理时，请重点关注：
+- 新增了什么能力（一句话能说清就别多说）
+- 哪些原有需求已经不适用了，需要改或删
+- 这次变化有没有影响到使用方式或边界
+
+请遵循这些原则：
+- 只描述“对用户或系统行为有影响的变化”
+- 不补背景、不做长解释、不写实现细节
+- 能删就删，能合并就合并
+- 尽量不要补充细节代码
+
+目标：
+让这份文档保持最小、最新、好读，
+看一眼就知道现在系统“到底是怎么工作的”。
+</code></pre>
+<h2>九、极致的专注可以击穿代码</h2>
+<p>回头看这一年用 AI 编程，我发现一个常被忽略的点： <strong>我们怎么对待“等结果”的时间。</strong></p>
+<p>后来我意识到， <strong>这些时间不是碎片，而是一段缓冲区</strong> 。</p>
+<p>我们也看到不少人推荐，在这段时间利用 Coding Agent 并行推进多个任务。</p>
+<p>我也认真尝试过一段时间，但最终还是很克制地在使用它。</p>
+<p>因为我发现，这样对我来说，容易把思绪搅乱，效率反而下降。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmSRq9EhypJaHk7hnUalTR6a8vH1Q7XVwibIeX0o1sgUDaHy3ST68f8Jg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>相反，无论只是静静地看着屏幕、或者冥想一会，放空自己，又或者用来补充文档，思考下一步怎么做。</p>
+<p>只要不过度摄入太多干扰信息，我的效率反而就会更高。</p>
+<p>这样一来，等待不再是中断，而变成了 <strong>为下一步提前蓄力的过程</strong> 。</p>
+<p>这个方法不一定适用所有人，大家见仁见智吧。</p>
+<h2>十、从能用到顺眼：我的 UI 优化心得</h2>
+<p>这是「熊猫论文」主界面的 UI 演变过程。</p>
+<p>从一开始的惨不忍睹，到现在被不少人夸更加顺眼了。</p>
+<p>说实话，可能不是因为现在这版有多好看。<br>更多是因为 <strong>第一版太丑</strong> ，一路用过来的用户，突然觉得眼睛得到了解放。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmZiaUt23KoEX7S2RaholODicWicgYhl2ag8C77QRvdcSRcy2ZL2BYV1YRw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmSMuHMDuv0bSgqTIliblCx453ZYZ6aEnJnGH9zib2HJGcBqrTzI8XWcyA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmWIFUt9y8iaxaa4vQQgeVeHMy1gJejfrsGrlnRbSx9Od8fETNge49c7w/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>很多人问我：UI 是怎么慢慢改过来的？</p>
+<p><strong>第一步，最重要的，你必须要得先有一份设计规范。</strong></p>
+<p>因为你不是在做一个页面。<br>登录页、落地页、主页面、充值页、后台管理页，<br>如果每一块都长得不一样，它就不像一个完整的系统。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmPfWOeLCBNI3JjQeASjvvnJicmUT5JnFgtGkwuia0HRNia2CLRcQgqiaORA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>很多人一开始会纠结：<br>“我不会设计怎么办？”<br>“我也说不清楚什么叫好看，怎么办？”</p>
+<p>做法其实很简单。<br>输入提示词，再加上几张自己觉得：<br><strong>符合产品气质、符合用户审美</strong> 的参考图，直接丢给 AI。</p>
+<p>让 AI 生成一份 <strong>初版设计规范</strong> 。</p>
+<pre><code>你是一名大厂资深 UI 设计负责人。请基于我提供的多张参考图，提炼其共性风格，
+并输出一份“可落地的 UI 设计规范（Style Guide）”，用于项目初期统一风格或重构对齐。
+
+请不要逐张描述图片，而是抽象出可执行的规则与设计 tokens。
+如有不确定项，请给出“推荐默认值 + 可选范围 + 使用场景”。
+
+请按以下结构输出（Markdown）：
+
+## 0. 风格摘要（1屏读完）
+- 一句话风格定位（气质关键词）
+- 3条最重要的设计原则（例如：克制、对比明确、留白优先等）
+- 适用场景与不适用场景
+
+## 1. 设计变量（Design Tokens）
+### 1.1 颜色系统
+- 主色 / 辅助色 / 强调色
+- 中性色阶（背景/文字/边框/分割线/禁用态）
+- 状态色（成功/警告/错误/信息）
+- 渐变系统（如适用：方向、用途、禁用场景）
+- 对比度与可访问性建议（简单规则即可）
+
+### 1.2 字体与排版
+- 字体取向与替代方案
+- 字号体系（标题/正文/注释/数据展示）
+- 字重、行高、段落间距
+- 文案语气：按钮/提示/错误信息的风格倾向（简短/克制/友好等）
+
+### 1.3 间距与栅格（布局基础）
+- 8px 或 4px 间距体系（建议选一种并说明理由）
+- 栅格与容器：页面最大宽度、左右边距、分栏规则
+- 圆角体系（xs/s/m/l 对应场景）
+- 阴影与层级（Elevation：0/1/2/3 的含义与使用边界）
+- 分割线/描边粗细规则
+
+## 2. 布局规范（页面层）
+- 信息层级：标题区/操作区/内容区/辅助信息区的组织方式
+- 列表页、详情页、表单页的通用布局骨架
+- 留白策略：何处必须留白、何处可紧凑
+- 空状态/加载/错误态的版式原则
+
+## 3. 组件规范（关键控件）
+请至少覆盖以下组件，并给出：默认样式、状态（default/hover/active/disabled/loading）、使用原则、避免事项。
+- Button（主/次/文字/危险/图标按钮）
+- Input / Textarea / Select / Search
+- Form（必填标识、错误提示、校验触发时机）
+- Tabs / Segmented / Breadcrumb（导航层级）
+- Navbar / Sidebar / Menu（主导航：展开/折叠、选中态）
+- Card / Modal / Drawer（容器与弹层）
+- Table（表头、行高、密度档位、空态）
+- Tag / Badge / Tooltip / Popover
+- Toast / Notification（反馈强度与出现位置）
+
+## 4. 响应式与自适应
+- 断点建议（移动/平板/桌面/大屏）
+- 字体与间距在不同断点如何缩放
+- 导航在不同屏幕下的变化策略（侧边栏/底部栏/抽屉）
+- 表格、图表、长文本在小屏的处理策略
+
+## 5. 动效规范（Motion）
+- 动效的总体原则（克制/顺滑/有目的）
+- 过渡时长与节奏（快/中/慢的建议区间）
+- 常见动效模式：页面切换、弹层出现、列表加载、按钮反馈
+- 禁用动效的场景（性能/无障碍/减少干扰）
+
+## 6. 落地建议（给开发/AI）
+- 如何把规范转为组件库/样式变量（tokens → theme → components）
+- 最小落地路线：先统一哪些组件与页面，收益最大
+- 常见偏离点清单（最容易被做乱的3-5处）
+
+输出要求：
+- Markdown 结构清晰，尽量“一屏一块”，可直接复制进项目文档
+- 优先给“可执行规则”，少用抽象形容词
+- 不编造图片中不存在的品牌元素；如果图片不足以确定，明确标注“建议默认值/可选范围”
+</code></pre>
+<p>PS：如上提示词微调后，同样适用于将老项目的 UI 风格提炼成规范文档，作为后续开发时 AI 的上下文。</p>
+<p><strong>第二步，验证输出效果。</strong></p>
+<p>这一步主要是为了先看看整体的输出效果。</p>
+<p>不管是直接用 Figma 生成初版框架，<br>还是直接上 Coding Agent，<br>在生成之后，我们都可以不断把结果反馈给 AI，持续迭代整体的设计规范。</p>
+<p>这里其实有个小技巧：</p>
+<p>先围绕一个页面做单点击破，打磨出一个自己真正满意的“样板间”，<br>一边用它来校准和迭代样式规范。</p>
+<p>等这套规范相对稳定了，再慢慢铺开到全局。</p>
+<p><strong>第三步，把样式规范写进 Cursor Rule / Claude.md。</strong></p>
+<p>前面一些步骤也提到过。</p>
+<p>为了保证未来多个页面的风格统一，<br>我们可以把样式规范写进全局规则中，避免每次都需要提醒 AI。</p>
+<p><strong>最后再分享一些过程中的小技巧。</strong></p>
+<p><strong>1、“截图 + 局部圈选 + 期望效果”比纯文字强一倍</strong></p>
+<p>一图胜千文。</p>
+<p>如果我们本身不是设计专业，很多 UI 问题其实很难用语言准确说明。</p>
+<p>这时候直接截图，把问题位置简单标出来，再配上一小段说明，又快，也不容易被理解跑偏。</p>
+<p><strong>2、让 AI 生成“多方案对比”，你只做选择题</strong></p>
+<p>别让 AI 直接给“最终方案”，而是让它给 <strong>3 套风格变体</strong> ，<br>每套明确差异点（更克制/更活泼/更商务），你只选一个方向再深化。</p>
+<p>这招特别适合“有审美，但不想自己从零画”的路径。</p>
+<pre><code>你是资深UI/UX设计师。我要做一个【XXX页面类型】页面，目标是【XXX目标】。
+
+请先做两件事：
+1) 如果我没提供方案：请你直接给出 3 套不同布局方案（A/B/C），用几句话描述每套的结构。
+2) 然后对 A/B/C 做对比并给推荐。
+
+对比维度固定为：
+- 信息层级是否清晰
+- 转化效率/视觉焦点
+- 响应式适配难度（桌面/平板/手机）
+- 后续扩展性（运营位/活动/说明）
+
+最后输出：
+- 推荐顺序（例如 A &gt; C &gt; B）+ 一句话原因
+- 推荐方案的 3 条可直接落地的微调建议
+</code></pre>
+<p><strong>3、UI 迭代别靠感觉：要及时总结和沉淀</strong></p>
+<p>很多时候，我们如果不是设计专业出身，可能对 UI 没那么敏感。</p>
+<p>页面能用、看着顺眼了，就容易“先这样吧”，然后放一边不管。</p>
+<p>但我后来发现，UI 最有价值的不是某一版改得好看，<br>而是能不能把优秀设计沉淀下来，变成下次直接复用的标准。</p>
+<p>别忽略这些细微的改动。<br>每次遇到不错的设计，我都会习惯顺手让 AI 做一段总结：</p>
+<pre><code>我会提供一张“做对的页面”截图（可选：再提供一张优化前对比图）。
+请你帮我把这次 UI 优化沉淀成“样板卡片”，用于以后直接照搬。
+
+请输出 4 部分（Markdown）：
+
+1. 一句话规则（最重要）
+- 用一句话说明：为什么它更好看/更好用（要具体、可执行，避免空泛形容词）
+
+2. 关键改变点（3条以内）
+- 这次最关键的 1~3 个变化是什么（例如：信息层级、留白节奏、按钮主次、对比度等）
+
+3. 照搬要点（5条以内）
+- 以后做新页面时，哪些点必须照这个样板做（写成清单，能直接抄）
+
+4. 易踩坑提醒（2条）
+- 最容易被做回去/做乱的地方是什么，以及一句话提醒怎么避免
+
+要求：
+- 简短，适合和截图一起存进“UI 样板库”
+- 不逐图描述细节，不做长篇解释
+</code></pre>
+<h2>十一、总结</h2>
+<p>一年前的我，始终以为，<br>AI 编程的难点在于&quot;模型不够聪明&quot;。</p>
+<p>但现在我明白了， <strong>真正的难点从来不是工具，而是我们自己：</strong></p>
+<ul>
+<li>• 我们习惯了模糊的表达，却要学会精确的描述</li>
+<li>• 我们习惯了一次到位，却要学会分步推进</li>
+<li>• 我们习惯了凭感觉判断，却要学会建立标准和规范</li>
+</ul>
+<p>这些技巧，表面上是在教你&quot;怎么用AI&quot;，但本质上是在重新训练我们的思维方式：</p>
+<p><strong>如何把脑子里模糊的想法，拆解成可执行的步骤；</strong><br><strong>如何把一次性的经验，沉淀成可复用的知识；</strong><br><strong>如何在不确定性中，建立确定性的标准。</strong></p>
+<p>这些能力，在任何场景下都能发挥作用。</p>
+<p>所以， <strong>AI编程教会我们的，不只是写代码，而是把混沌变成秩序，把想法落成系统。</strong></p>
+<p>最后，祝你 2026 在 AI 编程的路上，少踩坑，多收获。</p>
+<p>我是 🐼熊猫Jay，我们下次再见。</p>
+<p><strong>如果觉得不错，随手点个赞、在看、转发三连吧。</strong></p>
+<p><strong>如果想第一时间收到推送，也可以给我个星标 ⭐</strong></p>
+<p><strong>谢谢你看我的文章 ~</strong></p>
+<p>继续滑动看下一个</p>
+<p>熊猫Jay字节之旅</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/TB7bjxoV5dzvTR3tlQ9Clw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

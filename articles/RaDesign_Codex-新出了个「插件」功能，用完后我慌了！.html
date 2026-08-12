@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 新出了个「插件」功能，用完后我慌了！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Codex 新出了个「插件」功能，用完后我慌了！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=RaDesign">RaDesign</a>
+    
+    <span class="date">2026-03-31</span>
+  </div>
+  <p class="lead">说实话，前两天我自己在 Vibe 的时候，涉及到调用别的工具我就觉得很麻烦，一两个还行，要是多了呢？</p>
+  <article class="content"><p>原创 RaDesign <em>2026年3月30日 08:17</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/tAlIKXfSZiaw5eLvZbd2Mib6ynnnaW1hzzHn4oSiaNNFICH6ibBp6NEASr6jgOdFEZKWouh2bEpVABTRUbvy7Mia4iaAvuDVGDAfAwDxyXicHGB2Po/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>说实话，前两天我自己在 Vibe 的时候，涉及到调用别的工具我就觉得很麻烦，一两个还行，要是多了呢？一会这个 MCP，一会那个新 MCP，然后还要 Skill，才能按照我想要的效果去执行，现在好了，这次更新解决了。</p>
+<blockquote>
+<p>AI 工具的中间步骤你不要学习了，学习完它就更新了😂</p>
+</blockquote>
+<p>Codex 昨天更新了：</p>
+<p>👉 多了一个 <strong>Plugins（插件）模块</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxAeFuUGdXLyHF5o4oH6sntIgPtveB8cPmXA03u3Rs8ibAOlgJ7uTgqKAWAJBCbhMOp8jGyR2ibAyskoWZ4Uica3WKSI7lZsJBUAg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>这次更新咋一看 “多了几个工具”，实际上它做了一件很重要的事：</p>
+<p>👉 <strong>把 AI 从“对话工具”，变成了“能直接连工具干活的系统”</strong></p>
+<p><strong>诶？懵了吧，脑瓜子嗡 <strong>嗡的吧，怎么一会代码生成器、一会画布协作者，现在又干活的系统.....</strong></strong></p>
+<hr>
+<p><strong><strong>一、Codex 这个「插件」到底是干嘛的？</strong></strong></p>
+<p>先说结论，说官方的词我也看不懂：</p>
+<p><strong>插件 = 让 Codex 直接连接外部工具，并执行完整工作流。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaz4r1yRvESw2AztcYL3zlWN3rSb6SAQ4QCjucEDLQ5WAh54SHo2GJmGCxHFuxUmLSjnIeO1ctrAT624wLjpLaNsyrYas3e5oNA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>也就是啥呢，以前你用 Codex：</p>
+<ul>
+<li>写提示词</li>
+<li>让它生成代码 / UI</li>
+<li>或者帮你分析</li>
+</ul>
+<p>本质还是“对话 + 生成”，现在插件出来之后，变成：</p>
+<ul>
+<li>Codex 可以连上 Figma、Notion、数据源等</li>
+<li>直接读取真实数据</li>
+<li>再执行一整套操作流程</li>
+</ul>
+<p>再来看看这个插件里到底包含了什么？以 Figma 为例</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazs7VCUciblIyWfstrk0xAyibn2VPADUZMVB3eAxR6aJqRHrWpx4zZvcqL4ZhLQo71yglT5WdejedYthnxibEzlc4y9yX0QsJ2nMU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>这个插件里面包含了：</p>
+<h2>1. 读取设计（基础能力）Codex 可以直接读取，比如：</h2>
+<ul>
+<li>Frame</li>
+<li>Auto Layout</li>
+<li>组件结构</li>
+<li>Token</li>
+</ul>
+<p>这是所有能力的基础</p>
+<h2>2. Code Connect Components（最重要），用来建立：Figma组件 → 代码组件的映射，比如：</h2>
+<ul>
+<li>Button → React Button</li>
+<li>Card → UI组件</li>
+</ul>
+<h2>3. Create Design System Rules，自动生成设计规范，比如：</h2>
+<ul>
+<li>颜色体系</li>
+<li>间距体系</li>
+<li>字体规范</li>
+</ul>
+<p>你不用自己再每次开发的时候写好规范，是不是的还要更新约束等烦琐流程，这个真的太赞了</p>
+<h2>4. Generate Figma Design，AI 直接帮你生成页面</h2>
+<ul>
+<li>基于组件</li>
+<li>基于设计系统</li>
+</ul>
+<p>但不是乱生成，结合新的 MCP 能力，完全可以直接用你自己的规范和组件库来做了</p>
+<h2>5. Generate Figma Library，自动生成组件库</h2>
+<ul>
+<li>批量生成组件</li>
+<li>自动结构化</li>
+</ul>
+<p>是的，你现在也可以让它做组件库了，不用羡慕别的工具了</p>
+<h2>6. Implement Design（核心能力）</h2>
+<p>设计 → 代码 <strong>生产级代码，这个 MCP 能力大家应该已经试过了</strong></p>
+<h2>7. use_figma，进入 Figma 画布做图</h2>
+<p>你可以理解，以前这些都是零散的，单独用 MCP 来画图，或者生成代码，然后再用 Skill 来约束，让它更靠近自己的规范等等，现在你不用那么麻烦了，</p>
+<p>这次插件更新，我感觉本质就是，把MCP、Skill、Rule这些拼在一起，形成一条完整的链路： <code>设计 → 设计系统 → 页面 → 代码</code> <code>   </code> <code>   </code> <code>插件的结构大致如下：</code></p>
+<pre><code class="language-perl">my-plugin/ ├── plugin.json ├── skills/ │    ├── generate-ui.md │    ├── check-tokens.md │    └── ... ├── mcp/ │    └── config.json
+</code></pre>
+<hr>
+<p><strong><strong>二、插件的更新，又会有什么变化？</strong></strong></p>
+<p>我现在感觉什么呢？</p>
+<p>设计稿开始变成“输入”了，不是“交付”了，怎么理解，之前的设计稿是给开发看的，然后有问题就对接，然后总这样不是办法，于是你就出规范，出组件，让他们按照规范来，或者和开发对齐把组件和规范封装好等等。</p>
+<p>现在，这些 AI 都正在干啊，你不觉得流程异常相似吗？</p>
+<p>差别就是，现在的设计稿是给 AI 看的，如果你的插件足够完善，AI 看了就可以自己干完全部的工作。</p>
+<p>现在，设计和实现之间那段 “翻译过程” 被大幅压缩了，之前你和开发来翻译，现在你和 AI 工具来回翻译，再到现在，你慢慢的不用翻译了，它自己完全可以搞定了！🤝</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaxBOCPKUFLXDuiaibdYic4aWbG4KicR2icSgLR9DiaFecx8pibKZh1F5c6XITS4grBHU8Rlu2DWoT2iaXuolU3AFcp0aibnu13Jlbvs8cM4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>后续就是给它设计图，它能自动帮你跑完设计-开发-验收等全流程。你负责把控就行了。</p>
+<hr>
+<p><strong><strong>三、插件到底怎么玩，不是“装上就完了”</strong></strong></p>
+<p>Codex 里的插件，前面也说了，其实就是个 <strong>工作流容器</strong> 。官方定义很明确：插件是可安装的可复用工作流包，可以把 skills、可选 app integration、MCP server 配置打包在一起。</p>
+<p>如果你要在 Codex 里用插件，正确方式不是“打开插件页面随便点一个能力”，更不是把你短期也用不到的全给装上，你首先要做的，就是先想清楚你要解决的问题是什么？</p>
+<p>以 Figma 插件为例：</p>
+<p>它的官方描述就是围绕三件事： <strong>设计实现、Code Connect 映射、设计系统规则生成</strong> 。同时它声明自己有 Interactive / Read / Write 三类能力。</p>
+<blockquote>
+<p>我大概试了一下，俺也不是专业版，没有无限次数，哪位有多次跑完的可以留言分享分享。</p>
+</blockquote>
+<p>可以按这个顺序来试试：</p>
+<p>🥊 第一步，不要先着急“生成页面”或者“转代码”，先处理 <strong>规则和映射</strong> 。</p>
+<p>先用类似 <strong>Create Design System Rules</strong> 和 <strong>Code Connect Components</strong> 这种能力，把你的项目约束先建立起来。</p>
+<p>前提是你要明确这些内容：组件怎么命名、目录怎么组织、哪些值不能硬编码、token 从哪来、优先复用哪些组件、哪些写法禁止出现。</p>
+<p>然后是 skill。官方要求一个 skill 至少是一个目录，里面要有 <code>SKILL.md</code> ，并且要写清楚 <code>name</code> 和 <code>description</code> 。Codex 会先加载 skill 元数据，需要的时候再加载完整 <code>SKILL.md</code> 。</p>
+<p>这样后面 AI 生成出来的内容才更像你们项目自己的东西，而不是一个“长得差不多”的通用页面。这个顺序其实也符合 Figma 相关 skill 的官方设计思路：先把项目级规则写出来，再进入后续的 Figma-to-code 工作。</p>
+<blockquote>
+<p>官方的 Skill 库：Create Design System Rules</p>
+<p><a href="https://github.com/openai/plugins/blob/main/plugins/figma/skills/figma-create-design-system-rules/SKILL.md">https://github.com/openai/plugins/blob/main/plugins/figma/skills/figma-create-design-system-rules/SKILL.md</a></p>
+</blockquote>
+<p>或者嫌麻烦，最简单的就是你直接对话，把你的标准化设计规范地址给它，让它先读一遍，然后让它给你总结，或者就有官方这个 Skill，根据自己规范情况来自行选择吧。缺点就是费钱，想省钱就得自己写🫣。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaywj4QjGiaO48D5TvHKicpH1eHgFicjycWQBTjnJABPQHMxJNQAez0zlChjrZoNib0pFgPqYpPkctXgpvr7bOn8ld3WISVrbrWc9Q4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>🥊 第二步，开始做具体页面工作。</p>
+<p>这步才是把设计真正转成代码实现，但如果前面没有规则，没有组件映射，这一步通常只会变成 “生成一份能跑但不一定符合你们规范的代码” 。Figma 插件官方描述里也把它定位成 design-to-code workflow，而不是脱离系统单独存在的功能。</p>
+<p>🥊 第三步，决定你的插件要不要连 Figma。</p>
+<p>如果你的目标只是让 Codex 在代码阶段遵守设计规范，那你只需要 plugin + skills 就够了。<br>但如果你的目标是把这套规范真正跑进 <strong>Figma → 代码</strong> 工作流里，那你就应该把 Figma 相关能力也一起打包。</p>
+<p>最终，最理想的插件实际上应该是：</p>
+<ul>
+<li>一个 design-system-rules skill</li>
+<li>一个 generate-ui skill</li>
+<li>一个 check-tokens skill</li>
+<li>再配上 Figma 连接能力</li>
+</ul>
+<p>这样它就不是一个“文档插件”，而是一个 <strong>真正能跑设计到代码闭环的插件</strong> 。</p>
+<p>🥊 第四步，等这条链路跑顺之后，你再考虑把它变成自己的插件。</p>
+<p>其实就是给插件套壳子。插件适合 “跨团队、跨项目、可安装、可分发” 的场景。如果你现在还在一个项目里频繁改规则，官方更建议先用 local skills 迭代，再打包成 plugin。</p>
+<h3>我估计看完有些人还是有点懵，还是不知道怎么下手，然后就去和 Codex 聊天了，聊到什么准备什么... 于是我又补了一段：</h3>
+<hr>
+<h2>如果你要做“自己的设计规范插件”，你现在最该准备的内容清单</h2>
+<p>你至少要先准备这六样：</p>
+<p><strong>1. 设计原则</strong><br>比如你的系统最强调什么：一致性、组件复用、token 严格映射、页面结构优先。</p>
+<p><strong>2. token 规则</strong><br>颜色、字号、间距、圆角、阴影，哪些必须来自 token，哪些绝对不能硬编码。</p>
+<p><strong>3. 组件规则</strong><br>哪些组件是基础组件，哪些组件允许组合，哪些组件不允许 AI 随意新造。</p>
+<p><strong>4. 页面模式</strong><br>比如 dashboard、列表页、表单页、详情页，各自的结构骨架是什么。</p>
+<p><strong>5. 代码落地规则</strong><br>组件目录、命名规则、props 约束、样式方案、文件组织方式。</p>
+<p><strong>6. 校验规则</strong><br>生成后要检查什么：是否复用现有组件、是否违反 token、是否出现硬编码。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazGqM12xUxDaYqX05CNZOYc3jkqpqOGXVc0NYNeia5MxddOzFjYBSVS6ib5PY77c3HqxMpwQR0vbmLSTsDxHPgmcNUHOxib93OA9Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>这些内容准备齐了再去搞插件，放心，不用你自己写，但是也不要直接就开始去 Codex 让它写，先去找免费的聊天软件聊，让它帮你完善，然后给你生成可以直接执行的 Prompt，比如我就喜欢先去用 GPT 聊，聊到最终要干的时候，再发给 Codex，很多人喜欢上来就开始和 Codex 聊天，当然也没问题，但是烧 Token 啊，土豪随意了。这个方法你也不用担心会不会两边聊的对不上，你只要把最终执行发给 Codex 后，你觉得它执行后的内容符合你的要求，你就让它把当前内容总结成一份 rule，就等于是保存一下目前核心内容的上下文。就可以了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaz7euwQfd1qat4q1KXicnGhvHSFupAKuHOsvpGJ783gPzVIPJj5sWm28K0ROl6V8c51O4E4JNXZV6Gvd0wfHJkjptPz6ZFZurVc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>下面是我测试的我生成的 SaaS Design Spec</p>
+<p>直接在对话@插件名称，输入：  </p>
+<pre><code class="language-js">按我的 SaaS design spec，设计一个用户管理后台首页，要有概览卡片、筛选、表格和批量操作。
+</code></pre>
+<p>接着就会开始执行，自动连接 Figma 插件，需要你确认</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxJmuyAu1XDkZibquicoiaBJJGv4gSA56OpQVnVMV8LIH4StmNLdmBxVKaEk4KKYXvpbV0syA9bibrBRUgQEkOFmbmth7EPK1YxsGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>Figma 文件在这里：SaaS Design Spec - User Management Homepage</p>
+<p>我这次实际完成了：</p>
+<ul>
+<li>新建了一个设计文件</li>
+<li>画了完整后台首页壳层：顶部导航、左侧菜单、内容区</li>
+<li>放了 4 张概览卡片</li>
+<li>做了筛选区</li>
+<li>做了表格工具栏和批量操作</li>
+<li>做了用户表格和状态标签</li>
+</ul>
+<p>这是我用 SaaS Design Spec 没有连接设计系统生成的界面，纯靠文档的口头约束，这比我上个月研究半天生成的要好太太太多了啊，别说 AI 味了，一点点味道都没有啊。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxWH7GKgWUW4LO6QuiaM5yN1ctSm8m3Rq82HvSico72l9TSLcG53z1MdnLc5jwfMP1phcZNj0xTRlQqr75QfDIL9HUPSgrYiaM05M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>临时我随便着了个组件库，试下最终效果。注意一下三点：</p>
+<ol>
+<li>把组件库放到你有可写权限的团队里并发布为 Library</li>
+</ol>
+<ul>
+<li>最好放在你有 Full 权限的团队里面<ul>
+<li>如果只是文件，很多时候Codex 是只能看内容，但不一定能当成团队库自动导入</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>在组件库文件里开启发布</li>
+</ol>
+<ul>
+<li>确保组件是正式组件/组件集，不只是普通 frame<ul>
+<li>确保样式、变量、组件都发布到团队库</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>在目标设计文件里启用这个 Library</li>
+</ol>
+<ul>
+<li>打开我刚创建的这个文件：启用这个组件库</li>
+</ul>
+<p>中间会多次调用 Figma MCP MCP Use Figma 工具</p>
+<p>它的执行步骤跟设计师的思路一样，不会一次给你来个大而全，而是一步一步，一个模块一个模块的去搭建。</p>
+<p>最后大概花了 7 分钟左右，处理各别组件，基本都调用了组件库的组件，但是部分细节还是有点小问题，我也让它反馈原因，主要还是名称没有对齐，以及md 里面没有涉及的描述信息。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazKLqQNv4sicbto0nRt3KWsaicJoYT82Uc5HrEc1YpWqyoDEXhnjyjVltQrz09oyDjLfdK2ibx1cWbdIycvxVxicx54x2R46iaLrNNo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>最后，还有试过其他方向的小伙伴可以分享一下。</p>
+<p><strong><strong>总结：</strong></strong></p>
+<h2>插件、Skill、MCP，到底啥关系？这么理解：</h2>
+<ul>
+<li><strong>Skill：怎么做事（方法）</strong></li>
+<li><strong>MCP：怎么连工具（通道）</strong></li>
+<li><strong>插件：把这两者打包成一个可以直接用的流程</strong></li>
+</ul>
+<p><strong><strong>好了别光看，得动手，现在都不要动脑子了！</strong></strong></p>
+<hr>
+<p><strong><strong>👉 如果觉得不错，随手点个赞、在看、转发三连吧，</strong></strong></p>
+<p><strong><strong>👉 如果想第一时间收到推送，也可以给我个星标⭐～</strong></strong></p>
+<p><strong><strong><strong>👉 我们组了一群热爱探索的设计师→「设计师的 VibeCoding 实验室</strong></strong></strong></p>
+<p>」 欢迎私聊来加入。</p>
+<p>继续滑动看下一个</p>
+<p>RaDesign</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/hHTUowcmb6HfpS-N0fXOBg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

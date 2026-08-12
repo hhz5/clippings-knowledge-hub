@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT Images 2.0 超详细介绍+提示技巧和案例 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">ChatGPT Images 2.0 超详细介绍+提示技巧和案例</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=ChatGPT%20Images%202.0">ChatGPT Images 2.0</a><a class="chip" href="../index.html?tag=OpenAI">OpenAI</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90">图像生成</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E6%8A%80%E5%B7%A7">提示技巧</a>
+    <span class="date">2026-04-22</span>
+  </div>
+  <p class="lead">这是 OpenAI 第一次把「会思考」装进图像模型，之前只有 Google 的 Nano Banana Pro 做到了这件事。</p>
+  <article class="content"><p>原创 小互 小互 小互AI</p>
+<p><em>2026年4月22日 11:04</em> <em>安徽</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>ChatGPT Images 2.0 (OpenAI 最新图像生成模型，内部代号 GPT-Image-2）</p>
+<p>正式发布，定位从「创意工具」转向「可用输出的视觉工作流平台」。</p>
+<p>这是 OpenAI 第一次把「会思考」装进图像模型，之前只有 Google 的 Nano Banana Pro 做到了这件事。</p>
+<p>先让 GPT 根据它对我的了解生成一张自我介绍，哈哈哈</p>
+<p>看看其能力...</p>
+<p>注意：本文章下面的所有图像全部由ChatGPT生成！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPy7yKJpZcU3Z0BGrLCDwuaTCRLR92vA0Q9A5wSOKJusu4nfM9yHuqqIjAwgv55aFJ055fssawQmEIYkjNu0yTmEIeTxlTjlUI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><strong>核心变化</strong></p>
+<p>•<strong>会思考了</strong>：先推理再生成，复杂任务可以边想边上网查资料，不是一步出图</p>
+<p>•<strong>一次出 8 张连贯图</strong>：人物、物体、风格跨图保持一致，多格漫画、故事板、多图系列一次搞定</p>
+<p>•<strong>文字不糊了</strong>：小字、UI 元素、图标能精确渲染，TechCrunch 实测做餐厅菜单直接能用</p>
+<p>•<strong>中日韩印孟语排版稳了</strong>：非拉丁字符渲染明显改进，海报里可以直接嵌日语、印地语、孟加拉语</p>
+<p>•<strong>尺寸任你选</strong>：从 3:1 超宽幅到 1:3 超高清全覆盖，横幅、竖屏、手机截图、书签直接出</p>
+<p>•<strong>2K 高清能送印</strong>：API 上限 2K 分辨率，大尺寸图比老版 GPT Image 1.5 还便宜</p>
+<p>•<strong>Arena 三榜全 #1</strong>：第三方评测平台 Image Arena 上文生图、单图编辑、多图编辑全部登顶，文生图比第二名 Nano Banana 2 高 242 分，官方说是历来最大差距</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMicRhmALLAwd4kovorckWaBK5lfy56kRR6jDegcGrPURFfcGOU7rq3wWC0CtHOy6bquqwaAnMjtTEhZBQZ8y2Zq8flwyic3FibGc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>OpenAI 在官方博客里给这次升级的定调是：「图像是一种语言，不是装饰。一张好图做的事跟一句好话一样，选取、排列、揭示。」</p>
+<p>下面这张图是GPT 自己介绍自己，也是它自己生成的↓</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMzibLUQBVV5n2yM5B3nI3EgW8mUMo6OmVyMSD4bkRblia8wKiaxia81MMsScGa3JPdlzsCBBaeiaic8vTq3maeaO90Oy90S5lv6vzaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h2>把「思考」塞进画图里</h2>
+<p>思考模式是这次最大的变化。以前的图像模型是一步到位，你给 prompt，它渲染成像素。ChatGPT Images 2.0 的思考模式不一样，它会先把任务拆开分析，必要时打开搜索查资料，然后再生成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPrSiaInciaCAUor1Pm99VwdH54YrX9LlgJP4q10ymfLIL0dTVNJyhI8VoV5DM2ibXbWsLxzbV3Jo6QXNKqOs3dJnibhs1sS4kRicHo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>打开思考模式之后，能做以前做不到的三件事。</p>
+<p><strong>一次出最多 8 张连贯图</strong>。过去做一套故事板，得一张一张出，最后人脸风格对不上、物件不一致再手动 P 图。现在一个 prompt 丢进去，8 张图里的主角长相、服装、画风都能保持一致，像一本小册子一次印出来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPGzK1iaafPwvboI6cz0WvJSYnCiaibwAcdeHHvtNOIkYWtC1gLHJZ9mA4qX9m91FQOjthZ1PeBKfyMxpEdYXJstU5RicLFQJAicdOY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><strong>生成前搜网</strong>。思考模型可以边想边联网查最新信息。官方演示里有一个 prompt 是「帮我做 OpenAI 最新的周边商品海报」，模型会先搜一下官方商店有哪些新货，再画成一张产品拼图。这把图像生成从「凭记忆画」推到了「现查现画」。</p>
+<blockquote>
+<p>提示内容：生成一张图展示生成前搜网能力，比如大疆刚发布的 pocket 4 新产品，你生成下它的详细介绍和图像展示。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPklnTkSdEW6Iu5lC5iaBiaUGHeF8MoSPx7Dpkg2aYfyJeMgqg4GibX6EMy2NCkFb5b8ibBEPzEZGlBrBblOQofx3kCbjiaicMmWUmnQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><strong>自我检查</strong>。思考模式会在生成前后做多轮核对，比如问自己「我画的这个英文菜单有没有拼错字」，然后修正。有媒体在采访里问 OpenAI，ChatGPT Images 2.0 到底是扩散模型还是自回归模型，OpenAI 没回答。这跟之前 GPT-4o 那代图像模型一样，官方对底层架构一直没松口。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNYTFNnls99l8KgUHTWDTu3AoKgQ48hdKBSmEutPVgaYcaHX59ics0nVn6SVYmOVUbJaeDiaWxQicvz8GwtPAgkbdGHFcSKtgiaZDg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<h2>文字不糊了，多语言也稳了</h2>
+<p>早期图像生成模型普遍存在文字乱码问题，根本原因是扩散模型学到的是视觉纹理模式，文字只占图像极小一部分像素，模型没有真正理解文字结构。Images 2.0 把这个问题系统性地解决了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOdibNLgYoXLuVsmrNibL8MjRZOmhpq9N49yuHBN6x3EnX5UNVuoTlrGIehkn6LCVWPLMibVeucrxQB49uBlM0j1Wbb4JkgHgMWM0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>具体覆盖范围：</p>
+<p>•<strong>小字</strong>：标注文字、说明文字、图表标签，不再变形或拼错</p>
+<p>•<strong>图标文字</strong>：按钮标签、徽章文字、界面元素中的文字</p>
+<p>•<strong>UI 界面元素</strong>：模拟截图、产品界面图、应用原型图中的文字内容</p>
+<p>•<strong>密集排版</strong>：多段落、多列、高信息密度的版面，字符间距和行间距保持正确</p>
+<p>•<strong>微妙风格约束</strong>：不同字体风格、手写感、印刷感的还原</p>
+<p>•<strong>分辨率</strong>：API 端最高支持 2K 输出，文字清晰度得到保障</p>
+<p>OpenAI 官方表述是「能够遵循指令、保留细节、渲染那些经常让图像模型崩塌的精细元素」。</p>
+<p>Images 2.0 对非拉丁语系文字的支持是专项升级，覆盖语言包括：</p>
+<p>•日语（平假名、片假名、汉字）</p>
+<p>•韩语（Hangul）</p>
+<p>•中文（简体、繁体）</p>
+<p>•印地语（天城文）</p>
+<p>•孟加拉语</p>
+<p>重点不只是把字符「写对」，而是让语言作为设计元素自然融入整体排版，标签和说明读起来像原生设计，不是翻译后硬塞进去的。这对做海报、教育图表、多语言品牌物料的用户来说是实质性的能力扩展。</p>
+<blockquote>
+<p>提示词：生成一个超多文字的图像，多种语言在一起，展示你文字不糊了、多语言的能力，你自己发挥下，而且要好看、美观、整洁，有审美。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMPsgwnV2BC8gO7PPiaxNluWqmLz4nGibqUAHrib18UKK7vckpdhJandOcJOubH6abHz7c5JgLRb43l8DOic3GLz57koQ4UPekP0LQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>TechCrunch 拿同一个 prompt 测了 ChatGPT Images 2.0，画一张墨西哥餐厅菜单。出来的菜单直接能拿去餐厅用，拼写没错，价格合理，排版规整，顾客看不出来是 AI 画的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtOaaChPtVHz0HbaROg4xSviaJ6tYzCia7MuBd3lzqqMo5g8fjUPUFGBCibnO6ictLq1zFy6Kq0C2uic9iaXfgiaFfV6QHUBexgXMMDvbs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="墨西哥餐厅菜单实测"></p>
+<p>这次在非拉丁文字上的改进更显著。日语、韩语、中文、印地语、孟加拉语这些以前经常糊成一团的文字，现在能直接嵌进海报和漫画里。OpenAI 给的一个案例是整页日语漫画，对白、拟声词、标题文字都清晰可读。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMAiamcq7qIVGhPYH0hdXCvwmibtOVBmDeEL1faLKJ8hj6eBXP2FErUcddiavj1ANic1MQGsMGibSBwBbNqxQcLiapokEfwAATg4W1cM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="整页日语漫画"></p>
+<p>PetaPixel 的评测里指出，这不是单纯翻译能力变强，而是模型能把文字当成视觉设计的一部分来生成。比如一张印度语书店展示图，书脊上的南亚语言字体看起来是印刷排版出来的，不是贴图。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtM7RKpFybV0032PbbJU1ZqcUJVLaUx7DSSJEdq2A0mIiac9ArpFFTIYxDW12YR6Dee3kjKiaEmDde2AyCCIRZQMkUGAwxibJqGWRs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="印度语书店展示图"></p>
+<h2>宽高比、分辨率、知识截止</h2>
+<p>具体参数层面有三个改动。</p>
+<p><strong>宽高比</strong> 从 3:1 超宽幅到 1:3 超高瘦全覆盖。做横幅广告、演示文稿幻灯片、海报、手机竖屏、书签、社媒图，不用再手动裁剪拼凑。</p>
+<p><strong>分辨率</strong> API 上限给到 2K，超过 2K 的输出还在 beta，质量可能不稳。</p>
+<p><strong>知识截止</strong> 是 2025 年 12 月。这个参数影响模型对近期事件、新品牌、新 meme 的生成准度，2026 年之后的内容它不知道，所以涉及最近新闻的生成要靠思考模式联网补。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPIKm7fdNUXS9HkWUId3XZgriaJtknGMibhRXZCSdTSMYlIjVZ13cpJkfiawNwV6smXsuN8iaczvVb8qgB1WS1AufP73msyS9dGar4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<h2>Image Arena 评测：三榜全 #1，文生图差距史上最大</h2>
+<p>第三方评测平台 Image Arena 在发布当天就把 GPT-Image-2 推到了三个主榜单的第一名。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPHRgqxnp2vhhz4cEwNMiaMgqEJicbFmzThRA61rAFica638T7Sj34vAI2spRTVXN7qDS3xr67JnLNyUbERAtVVZrk4hjchsUZHAw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p><strong>三大榜单 #1</strong>：</p>
+<p>•<strong>文生图</strong>：1512 分，领先第二名 Nano-banana-2 带网页搜索变体（gemini-3.1-flash-image)<strong>242 分</strong>。Arena 官方说这是他们见过的历来最大差距</p>
+<p>•<strong>单图编辑</strong>：1513 分，领先第二名 Nano-banana-pro(gemini-3-pro-image)125 分</p>
+<p>•<strong>多图编辑</strong>：1464 分，领先第二名 Nano-banana-2 90 分</p>
+<p>被超越的模型包括 Nano-banana-2、Nano-Banana-Pro 变体、MAI-Image-2、Reve-V1.5、Grok-Imagine-Image，这几乎是当前图像生成的第一阵营。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtO5OY9xRtVgWTJoFbz6P1zaYraugo5cUnNZNl5u584yLgXXI0iasKkHXmOAiaOlicDVXACY5UV91TAPPu5jUTVgHc8YvxV47faRyk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p><strong>7 个文生图子类全部 #1</strong>，相对上一代 GPT-Image-1.5-High-Fidelity 的分数提升：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNOcp5jGbnt4OjZ52CM07ZcRRLibJXnFYWqRJdmpokowC0fatWZfoQFIeC0eRKE0OeRxcWBagb5hvNUrylOfv2tvK8x73CpmUlo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>文本渲染提升最大，+316 分，肖像、卡通动漫、3D 这几个创作核心类别都有接近 +300 分的跃升，意味着做头像、插画、产品 3D 渲染这些场景，换 v2 差距肉眼可见。</p>
+<p>Arena 给出的是相对位置的信号。OpenAI 在能力层跟进 Google 的思考模式路线，但单看榜单分数，GPT-Image-2 把 Nano Banana 全家以历来最大差距甩开。能力维度跟进、分数维度领先，两件事同时成立。</p>
+<h2>Instant 和 Thinking 两种模式</h2>
+<p>Images 2.0 分两个版本，面向不同场景。</p>
+<p><strong>Instant 模式</strong></p>
+<p>快速出图模式，适合对速度有要求、内容相对直接的任务。生成逻辑和以往类似，不做多步推理。</p>
+<p><strong>Thinking 模式</strong></p>
+<p>Images 2.0 的核心新能力，是 OpenAI 第一个带推理能力的图像模型。它在生成前会先分析任务、调用信息、做多步规划，再出图。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNwm4E5mNib5IqQGOnDSGtXRwgNz42Wic7LSnTfjR4eolTYc8ibIVH8CtQQxe6KvicfVFMxUSia9dXpZHQzeoRC9z3lONianMywWPezE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p><strong>多图连贯输出</strong>(Thinking 模式专有）</p>
+<p>以往生成多张图需要逐张请求，人物外貌、物件外观、色调风格很难保持一致，拼凑起来需要大量手工调整。Images 2.0 可以在一次请求里生成最多 8 张图，并在跨图之间保持：</p>
+<p>•<strong>角色一致性</strong>：同一人物在不同场景中外貌、服装、神态保持连贯</p>
+<p>•<strong>物件一致性</strong>：同一产品或道具在不同图里形态统一</p>
+<p>•<strong>叙事顺序</strong>：8 张图可以按顺序构建、互相衔接，适合分镜板、漫画条、视觉叙事</p>
+<p><strong>视觉风格保真度</strong></p>
+<p>Images 2.0 对各类视觉风格的还原精度全面提升，覆盖风格包括：</p>
+<p>•<strong>写实照片</strong>：包括微小瑕疵的还原，如镜头暗角、颗粒感、景深虚化，增加照片真实感</p>
+<p>•<strong>电影感截图</strong>：宽画幅、色调、光线特征的准确还原</p>
+<p>•<strong>像素艺术</strong>：像素对齐、色块边缘、低分辨率视觉特征</p>
+<p>•<strong>漫画风格（manga)</strong>：线条风格、网点、分格构图等日式漫画视觉语言</p>
+<p>•<strong>其他风格化语言</strong>：各类插画、设计风格的纹理、光线、构图特征更稳定</p>
+<p>Thinking 模式（联网搜索、多图连贯输出、自我校验）仅限付费用户，免费用户只能用 Instant 模式。</p>
+<h2>API 价格，大尺寸变便宜，方图反而贵了</h2>
+<p>开发者可以通过 API 调 gpt-image-2，按 token 计价。</p>
+<p>•图像输入 $8 / 百万 token</p>
+<p>•图像输出 $30 / 百万 token</p>
+<p>•文字输入 $5 / 百万 token</p>
+<p>•文字输出 $10 / 百万 token</p>
+<p>折算成单张图，约 $0.006 到 $0.211，具体取决于输出质量和分辨率。API 端分辨率 2K 标准，4K 目前为 beta。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPEgWf30zOub3PNrh9NAibk55nffmFRfD60FkftLDic4Pd89ZvrJ3NBx8wsgMcc7hyb8Gkc3omskIctP21Ey91Jdsibq34kISGDFM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>单张成本按分辨率和质量分层，The Decoder 列了一张对比表。</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>质量</th>
+<th>1024×1024</th>
+<th>1024×1536</th>
+<th>1536×1024</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GPT Image 2</td>
+<td>低</td>
+<td>$0.006</td>
+<td>$0.005</td>
+<td>$0.005</td>
+</tr>
+<tr>
+<td>GPT Image 2</td>
+<td>中</td>
+<td>$0.053</td>
+<td>$0.041</td>
+<td>$0.041</td>
+</tr>
+<tr>
+<td>GPT Image 2</td>
+<td>高</td>
+<td>$0.211</td>
+<td>$0.165</td>
+<td>$0.165</td>
+</tr>
+<tr>
+<td>GPT Image 1.5</td>
+<td>低</td>
+<td>$0.009</td>
+<td>$0.013</td>
+<td>$0.013</td>
+</tr>
+<tr>
+<td>GPT Image 1.5</td>
+<td>中</td>
+<td>$0.034</td>
+<td>$0.05</td>
+<td>$0.05</td>
+</tr>
+<tr>
+<td>GPT Image 1.5</td>
+<td>高</td>
+<td>$0.133</td>
+<td>$0.2</td>
+<td>$0.2</td>
+</tr>
+</tbody></table>
+<p>看这张表会发现一个反直觉的事，<strong>1024×1024 方图高质量反而变贵了</strong>，0.211 美元比 1.5 的 0.133 美元贵 60%。但大尺寸 1024×1536 和 1536×1024 的高质量变便宜了，0.165 美元比 1.5 的 0.20 美元便宜 17.5%。</p>
+<p>也就是说，做手机端横图、海报、插画这种长宽比偏的场景，用 v2 成本降了；做传统社媒方图，反而比老版贵。这个定价结构说明 OpenAI 想把 v2 推向成品海报、杂志版面这类场景，方图市场留给老模型。</p>
+<p>Codex 里的集成更简单，图像生成直接出现在工作区里，不用另配 API Key。</p>
+<h2>一些案例展示</h2>
+<p>其实使用非常简单，描述你想要的就行，无需复杂的提示词</p>
+<p>要么就是上传你需要的参考图+描述即可↓</p>
+<p>生成一个抖音直播的截图 里面是一个美女在直播，在卖丝袜，她的在线人数是99996，热度是18+，有个叫小互的大哥，给她刷了一个飞机礼物...</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPfBWKy3UgtrEoahhtwJ2ZgL4wg9aSaE5U2H8hbUueDnr0aA3FHRyt5F9sR46pzuMicw6E3UjJ9Ep9MtmaicjwFTFjOuCdKTgSYg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>生成小互90年代在网吧通过ChatGPT 学习的图像</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtO1b3O7To4DjaQKgt4K5cCUib16NictKoicuGTT6hlasoyibABYMAMsD6poRKssnPppyWv7RtgUkTQLFjR4h8WQVZJMnkSu80g7mtI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>生成小互和外星人一起喝咖啡的照片</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOFQOHKicBbLFZ6gy7Amv5ucbCX9xZwZMicJxZYVcTlWMWLCgNCgeLrQAGA4HiaibgibArMPHmmMuiciaNddiaSPXZbt5BlpFgkowePghg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>商品广告照片, 适合夏天的季节商品, 碳酸饮料, 名称=&quot;小互 SODA&quot;, 形状=PET瓶500ml, 研究2025年作为饮料广告的高CTA设计后设计并生成图像规格, 宽高比3:4</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNaJ6s2lFU87lz8eqCzNU1hXhvZcnTsyMxXKuB8icLfWwVNq2psAjbDvyyAbwb7lSnntyMbgMkp0BASFPRQ65AB0Q6cniblQpF0g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>一个超详细图文并貌的信息图 介绍高血压是如何形成的  要有图解</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNW5lMbCevRyv7ZbnDKyqOxnN2gpaTYPg30diaJmIhMYDL5T6B4wMpYUGic0Y2f49EqyxstVdjwSzNxDYUpGu93ltfwib53ubYwKw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>孙子兵法36技，详细讲解</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPQNEFeOekGPRcD6hKiaGvdPcW1htW350dRbjtibDImyPMMJHuqenib4A1kCOhqSgFHWm1FFZ25lKwIQtKIraribUD6RlP9ZYJzLyU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>生成一张日式的茶饮海报</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtMx1J9iaHQGK1TibZ1aQoZIghuYNagry9BWMlFKW9xz9YOZcfSWZxw2jyyF75gOkHdic0fyFXCwibL4FtxkrnSPPCFIW85wTbhMmfQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图像"></p>
+<p>写实的 海报 真人赛龙舟 那种气势磅礴的画面加海报字</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMcvDS3HbY11PsBh8hLuZImcaKtR3QR0xHXP2uicLTK6dOVicuK7LicUmJiaFDmO7gKKxvmCNYibdJYoYk6D4zoxbJgvXhzuLH4v5ss/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>上传照片，生成小互的表情包</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOgibQqZQVJYcgkYwQ6mc5kTqic1tk3icdrGLP8DbibxWa2zxXDuOYWI8n8aO9ULHG583ibpmpWVTpcdGeoOsDpKHTVWBvm8c6rHtM8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>五一举牌标志</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOeCxneNflaicqChTCicFkTH3tY149Nl5SdNqDbmhX2B7cibS489xH4QCNDmZo3RvxicicN6cgxm1C9FGevDW8k2OvnsBJ0RfoK3MLA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>生成一张图像 展示长平之战的战况图 详细介绍长平之战</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNqEmyGleHDeMhcG99qib9iaFtPe3tb3hWZ9VH9LaVciaRJkqS0cwk0Iicr7MYbibPZ6B4dUqIriasRaIIRuArl1t1tXrP5XWhlPTHgQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p>生成小互的一天都在干嘛</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMEclYibME18vsFkItfKeywncHicPLcpo7WpzQwkicfAVicmr0PENEHgaDgQt02tEyWs46ChKmc0aEkYRaKIOCc6EgcrhIvwh66YBw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p>手写给小互的一封信 发自你的肺腑，手写体哦</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNX0ibop84ROiaWIG3w8OymluWJyhKzia7Mdlm3WyIDgUdqphtXPL1vNkvbcYvthXUvDRYavCeGRH19WwDR8jsLLWYV0HjOBDwDcs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<h2>GPT-Image-2 使用技巧和提示词指南</h2>
+<h3>一、基本提示词结构</h3>
+<p>GPT-Image-2 按顺序处理提示词，写在越前面的内容视觉权重越高。把主体埋在段落末尾，模型会失焦。推荐的八段式结构：</p>
+<pre><code>1. 核心主体:画面的主角是什么2. 主体细节:材质、服装、纹理等具体属性3. 动作和空间关系:主体在画面里的位置和状态4. 场景和环境:时间、地点、背景元素5. 光线设置:光源位置、色温、光线类型6. 镜头规格:焦距、景深7. 风格和介质:艺术风格或胶片类型8. 约束条件:明确告诉模型不要做什么
+</code></pre>
+<p>fal.ai 整理的简化版模板(适合快速使用)：</p>
+<pre><code>Scene:[场景位置、时间、背景、环境]Subject:[画面主体是谁或什么]Important details:[材质、服装、纹理、光线、构图、镜头感、情绪]Use case:[editorial photo / product mockup / poster / UI screen / infographic]Constraints:[no watermark / no logos / no extra text / preserve face / preserve layout]
+</code></pre>
+<h3>二、从头生成：核心原则</h3>
+<p><strong>用视觉事实代替模糊赞美</strong></p>
+<p>避免这类词：stunning、incredible、epic、masterpiece、gorgeous、insane detail、ultra-detailed、photorealistic 8K。这些词不描述任何可渲染的东西。</p>
+<p>改用具体的视觉描述：</p>
+<p>•光线：overcast daylight(阴天漫射光)、soft bounce light(柔和反射光)、cyan rim light from the left(左侧青色轮廓光)</p>
+<p>•材质：brushed aluminum(拉丝铝)、frosted glass(磨砂玻璃)、matte black silicone(哑光黑硅胶)、chipped paint(脱漆痕迹)</p>
+<p>•镜头感：85mm feel、shallow depth of field、background heavily blurred</p>
+<p><strong>风格标签要给出视觉目标</strong></p>
+<p>弱(无法渲染)：</p>
+<pre><code>minimalist brutalist editorial luxury cinematic modern premium
+</code></pre>
+<p>强(有具体视觉指向)：</p>
+<pre><code>cream background, heavy black condensed sans serif, asymmetrical type block,one hero object, generous negative space, studio tabletop lighting
+</code></pre>
+<p><strong>说清楚真实意图</strong></p>
+<p>如果必须出现地铁站自助机，就写 transit kiosk；如果必须有可读的登机牌，就写 boarding pass；如果必须保留人脸，就写 preserve the face。情绪化描述会把关键指令埋掉。</p>
+<h3>三、图像编辑：修改已有图片</h3>
+<p>编辑模式(edit endpoint)的核心原则：<strong>先说保留什么，再说改什么</strong>。</p>
+<p>模板:</p>
+<pre><code>Change:[精确描述要改变的内容]Preserve:[face / identity / pose / lighting / framing / background / geometry / text / layout]Constraints:[no extra objects / no redesign / no logo drift / no watermark]
+</code></pre>
+<p>顺序很重要。如果先写要改的，模型容易把「保留」部分当做次要条件随意修改。每次只改一个变量，多轮迭代比一次写一堆指令更稳定：</p>
+<pre><code>Make the light warmer.Remove the extra chair on the left.Restore the original wall texture.Keep everything else the same.
+</code></pre>
+<p>不要这样写：</p>
+<pre><code>Make it more premium, more realistic, more stylish, change the outfit,fix the text, improve the background, and also keep everything.
+</code></pre>
+<h3>四、多图参考合成</h3>
+<p>API 端最多支持 16 张参考图。使用多张参考图时，给每张图标注角色，然后在指令里引用角色标签：</p>
+<pre><code>Image 1: base scene to preserve(基础场景,保留)Image 2: jacket reference(夹克参考)Image 3: boots reference(靴子参考)Instruction:Dress the person from Image 1 using the jacket from Image 2 and the boots from Image 3.Preserve the face, body shape, pose, background, lighting, and framing from Image 1.No extra accessories.
+</code></pre>
+<p>不标注角色直接写指令，模型会猜哪张是内容、哪张是风格参考，结果不可控。</p>
+<h3>五、文字渲染专项技巧</h3>
+<p>文字渲染是 GPT-Image-2 的强项，但有两个需要注意的地方。</p>
+<p><strong>精确文字用引号包裹</strong></p>
+<p>不要写「make a neon sign」，要写：</p>
+<pre><code>A glowing red neon sign reading &quot;Open&quot;, centered at the top of the window
+</code></pre>
+<p>同时指定字体风格、大小、颜色和位置，避免模型自由发挥。</p>
+<p><strong>防止幻觉文字</strong></p>
+<p>如果画面里不该有多余文字，明确写进约束条件：</p>
+<pre><code>Constraints: no extra words, no duplicate text, no additional labels
+</code></pre>
+<p>复杂拼写或容易出错的词，可以在提示词里逐字母拼出来，比如 <code>E-C-L-I-P-S-E</code>。</p>
+<h3>六、光线和材质的专业写法</h3>
+<p>指定具体的光线物理参数，能让模型按正确的物理逻辑计算光线交互。</p>
+<p>光线类型：</p>
+<p>•harsh cyan rim light from the left(左侧强青色轮廓光)</p>
+<p>•soft warm tungsten key light(柔和暖色钨丝主光)</p>
+<p>•bright natural studio lighting from directly above(正上方自然棚拍光)</p>
+<p>材质词汇：</p>
+<p>•caustics(焦散，用于玻璃和液体的光线折射效果)</p>
+<p>•frosted glass / crystal clear water / marble pedestal(具体材质名称)</p>
+<p>•subtle film grain(轻微胶片颗粒感)</p>
+<p>指定材质词汇会让模型计算对应的光物理交互，比笼统写「realistic」效果好得多。</p>
+<h3>七、背景控制</h3>
+<p>写「busy city street」(繁忙街道)会得到混乱抢镜的背景。控制背景的方法：</p>
+<pre><code>shallow depth of fieldbackground heavily blurred to create soft bokehbackground: [具体颜色或简单描述], out of focus
+</code></pre>
+<p>如果要纯背景，直接写颜色和质地：</p>
+<pre><code>clean white seamless backgroundcream paper texture backgrounddark geometric gradient background in deep purples and neon blues
+</code></pre>
+<h3>八、Thinking 模式的使用建议</h3>
+<p>Thinking 模式(付费用户专属)适合以下场景：</p>
+<p>•内容涉及近期信息，需要联网验证(比如某个真实地点、最新产品外观)</p>
+<p>•一次性要多张连贯图(分镜板、品牌系列物料、多格漫画)</p>
+<p>•构图复杂、有多个元素需要精确排版的场景</p>
+<p>不适合 Thinking 模式的场景：</p>
+<p>•简单单张图，不需要推理</p>
+<p>•对速度有要求的交互场景</p>
+<p>•大批量生成(成本会高很多)</p>
+<p>Instant 模式速度快、成本低，日常单张生成首选 Instant，只在真正需要推理和连贯多图时才用 Thinking。</p>
+<h2>彩蛋</h2>
+<p>1985年4月1日的 人民日报报纸 小互登上了头版</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOFkIc74P6Z2vdBUbBRLxuHqbrR7GLic9tkZxWddJMDYWxCibV62QJMjvjicBBoBnRnIDFYsVqVJgI8tChQ8PI3x9tjfb0wy3GrMk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=9" alt="Image"></p>
+<p>____________</p>
+<p>End.</p>
+<h1>感 谢 阅 读</h1>
+<p>点赞，转发，关注关注关注↓↓</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/gLfM-JVOrbEaFhgpmeSYbQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

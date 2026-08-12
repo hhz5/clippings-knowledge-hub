@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我又开源了 - 猫叔的互动影游创作系统 v0.7 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我又开源了 - 猫叔的互动影游创作系统 v0.7</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    
+    <span class="date">2026-04-09</span>
+  </div>
+  <p class="lead">一款面向编剧和互动叙事设计师的 AI 辅助创作工具。</p>
+  <article class="content"><p>原创 猫叔的AI <em>2026年4月6日 18:20</em></p>
+<p>😼</p>
+<p>先说实话，这破玩意问题很多，让我一度不想做了，目前只能算 0.7 版本，原因在于我低估了整个流程中 token 的消耗，偷懒没有做记忆系统，虽然在第四节点我做了分批次产出，但是你们要是能看到样例会发现有些节点衔接不上；</p>
+<p>不过，再怎么样，这玩意竟然也能产出像模像样的结构，也支持人工的调整，所以对做影游的小伙伴应该还是有很大帮助的，至少作为快速概念的deno是没问题的。</p>
+<p>我其实有发布过两个版本AI影游的提示词，目前的应用就是在第二个版本上开发的 <a href="https://mp.weixin.qq.com/s?__biz=MzkyMDcwNjQ3NQ==&mid=2247486598&idx=1&sn=009928f1539d24df6300861c9453f25d&scene=21#wechat_redirect">「量子织梦师2.0」影游全流程设计系统</a> 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/4feVdj5sazW6UtVpAUx3kJhufMVCZia6L6tuzN18EhWxhmuG841XPYaWkTfAjMNzx9nibrw3GbQFrZ5jESUOTzhulRvUL9JkDWicPJpeuPp85g/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>这是一款面向编剧和互动叙事设计师的 AI 辅助创作工具。它将互动影游的创作流程拆解为 5 个阶段，在每个阶段提供 AI 协作，让创作者始终保持对故事的主导权。</p>
+<h2>5 阶段工作流</h2>
+<h3>阶段一：世界锚点</h3>
+<p>定义故事核心、主题、世界规则与主要角色。AI 可一键审查内容一致性、生成角色建议、设计结局方向。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/4feVdj5sazWFJHPcmiabI1sarRicqkbA0Fh1HM42YWOYntE8TIkDibA4Bd1o49pKko51Tfoic7ACSKfbvscgKeItLkavZ4fSHsDqyE7Qc8ver2A/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<h3>阶段二：规模规划</h3>
+<p>选择项目体量——精简版 / 标准版 / 史诗版，AI 生成三套完整方案并估算创作工时，一键确认后进入结构设计。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/4feVdj5sazVdT4ibmrG40TqEUgMWM62sgkmnGxLUndkbxFl2uaZsCud12bY8Sc6ic4wqfXRrYcoqO3L35HeXEkDnAyK1AhptYyKXut0AIBN4s/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<h3>阶段三：结构与分支</h3>
+<p>列表视图：按章→幕→节点的层级管理全部叙事节点，支持添加、排序、设置类型（开场/分支/推进/探索/结局）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/4feVdj5sazWOApyNzib9ia38UgFSZaiaANT7pZvooYbs8RibbEUJDHXPZaw7iaN9e0SF4AXI3U9593TFeT85pbphSkjh84qMny2wwOjoA6YP3CNw/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>流程图视图：基于 @xyflow/react 的可视化叙事地图，节点自动布局，悬停高亮路径，拖拽自由排列。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/4feVdj5sazWvQ5lNsUlickoxPM0MRndflIQob6aPGJicmhANq6XbUqYcMu0kK7aSvUOsbw6p9E2Ru9RRvtMyG8FU9ITYJpSWGNnlFuZyY2fzk/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<h3>阶段四：场景工坊</h3>
+<p>逐节点填充场景描述、情感弧、对白。左侧节点树一览全局进度，右侧工作区 AI 可一键撰写对白、填充情感、建议选项分支。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/4feVdj5sazWbP6SBibJFFFNK58U5m4iaqag0mj6SaOL70wvFSc9TpsYgHibBybbOx0dY1GdMORMHHpHs0ttHn53opXy1f88zpHMWYO2cTToXeI/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<h3>阶段五：全局校验</h3>
+<p>自动检测 8 类结构问题（孤立节点、断连结局、情感浅化等），生成情感曲线、路径时长分布图、叙事地图，支持导出 JSON / ink 格式。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/4feVdj5sazV80bs0s1aEwA6bEmLA6QMakFSKv9oXtxibb6qeCVFWRibxias9Lo1CCeib1OHiaD26NXxPibC5XyflSjcFbzL12UBBaeeUGRiaLI7H4Y/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<h3>预览播放</h3>
+<p>任意阶段均可点击「预览」实时体验完整交互剧情，支持变量追踪、情感面板、历史路径回溯，无需离开创作环境。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/4feVdj5sazUNTBApffT21EF7m8SHFOOToLU03N4Ha6IjDBp8yFOqVibPmJbt3PqF7FtB8pPrvJaXWDQ5IL6DMgADkohW1qffdMzrTK9AZlvU/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<h2>示例项目：量子侦探（这破玩意真费token啊，主要是我重做了好几十次）</h2>
+<p>项目内置示例——《量子侦探》，一部科幻悬疑互动影游：</p>
+<p>一名失忆的量子物理学家在平行宇宙间穿梭，试图找回记忆，却发现每个自己都做出了截然不同的选择。</p>
+<ul>
+<li>规模：3章 9幕 63节点</li>
+<li>结局：3条路径（遗忘·重建 / 融合·新生 / 归零·延续）</li>
+<li>角色：林宇（主角）、阿尔法（反派/镜像自我）、陈晓（支线）</li>
+<li>已填充：54个节点完整对白和情感设计</li>
+</ul>
+<h2>项目地址</h2>
+<p><a href="https://github.com/mmlong818/filmgame">https://github.com/mmlong818/filmgame</a></p>
+<h2>项目结构</h2>
+<pre><code>filmgame/
+├── app/
+│   ├── api/ai/          # AI 网关（调用 Claude CLI）
+│   ├── api/projects/    # 项目 CRUD API
+│   └── project/[id]/    # 5个阶段页面
+│       ├── world/       # 世界观
+│       ├── scale/       # 规模
+│       ├── structure/   # 结构
+│       ├── workshop/    # 工坊
+│       └── validate/    # 验收
+├── lib/
+│   ├── ai/prompts.ts    # 所有 AI prompt 模板
+│   ├── store/           # Zustand 状态管理
+│   ├── types/           # TypeScript 类型定义
+│   └── validation/      # 8类校验引擎（BFS）
+├── data/projects/       # 服务端项目存储
+└── seed-project.mjs     # 示例项目生成器
+</code></pre>
+<h2>License</h2>
+<p>版权所有 © 2026 猫叔（<a href="https://github.com/mmlong818%EF%BC%89">https://github.com/mmlong818）</a></p>
+<p>本项目源代码可用于个人学习与非商业研究，但任何形式的使用、修改或再分发，须在显著位置保留原始作者署名及本版权声明。未经书面授权，不得将本软件或其衍生版本用于商业用途。</p>
+<p>我是猫叔，请积极点赞、分享、收藏、关注</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI</p>
+<p>那么点击阅读全文进到我的文章聚合，那里有群二维码</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p>阅读原文</p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/aBBk5362hKdo1ErYQgU8hw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

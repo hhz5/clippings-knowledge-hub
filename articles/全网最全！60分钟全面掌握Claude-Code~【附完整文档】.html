@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全网最全！60分钟全面掌握Claude Code~【附完整文档】 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">全网最全！60分钟全面掌握Claude Code~【附完整文档】</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A7%8B%E8%8A%9D2046">秋芝2046</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7">效率工具</a><a class="chip" href="../index.html?tag=%E6%95%99%E7%A8%8B">教程</a>
+    <span class="date">2026-05-06</span>
+  </div>
+  <p class="lead">花了很长时间做这期教程，不管是小白还是草履虫！都能从 0 掌握 Claude Code~</p>
+  <article class="content"><p>原创 秋芝2046 秋芝2046 <a href="javascript:void(0);">秋芝2046</a></p>
+<p><em>2026年5月5日 22:08</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>雷猴啊朋友们～</p>
+<p>Claude Code（简称cc），可能是过去一年里持续爆火、也最实用的AI Agent了，不管你是程序员还是其他脑力工作者，都该用它！  </p>
+<p>但 cc 也是公认门槛比较高的工具，所以咱花了一个多星期做了上面这期60分钟的视频，让每个小白都能从 0 掌握 cc！</p>
+<p>🎬视频里知识点最全、操作最完整～从安装、配置模型、跑通第一个项目，到上下文管理、记忆机制、Skill / MCP / SubAgent 等高级扩展，每一步都跟得上、跑得通～很多细节和踩坑提示图文里装不下，全在视频里～  </p>
+<p>想全面掌握cc，强烈推荐先看视频！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/QGcWKfyqKC2tOQO04QXiadPDyc1uFIyAJeNxhpVWIVaQfIhqECK8qYiadW87omw3Yk4K9PnVYZKciaYBTNgJIGzJffXkRvM6c0icVKBE7e5haaM/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>📎配套文档：视频里提到的命令、工具、skill 全都打包好了！跟着视频操作的时候随用随查👇</p>
+<blockquote>
+<p><strong><a href="https://my.feishu.cn/wiki/Takxwov60iO5OOkOmpEcpOGynac">https://my.feishu.cn/wiki/Takxwov60iO5OOkOmpEcpOGynac</a></strong></p>
+</blockquote>
+<p>📖 图文教程：没时间看视频也没关系，你正在读的这一篇就是图文教程～读完知道 cc 整体能干什么、自己该从哪一关入手，适合先建立全局认知，或者看完视频回来查漏～</p>
+<p>那我们现在出发~</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CCcM4uUJCaibBNuvG1cKHibvU6IBc3CUDcbOJDI4ria44WfO228q0TOJZdgsIVy8libQ7yR0ia08LyVarmqqfNz1Txw/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=6" alt="图片"></p>
+<p>什么是 Claude Code</p>
+<p>首先来简单地了解一下Claude Code，</p>
+<p>CC 是 Anthropic 在 2025 年 2 月推出的、原本为编程而生、运行在终端的 agent程序。当然它现在能做的远远不止编程~  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/QGcWKfyqKC05thGqBs1iaGPicC8glb1ae4cdbzu9uEph3h5icFic5bE0cGKw4Hbq57iczEp70KyfEOv2Oic4CE6fnOwcCdNYa5BoeerS5TV7mDWyo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="What&#39;s Claude Code? : r/ClaudeAI"></p>
+<p>1.1 跟对话式 AI 的差别</p>
+<p>跟我们熟悉的对话 AI 一问一答的方式不同，cc 要自主得多。它会自己做计划、自己调用工具、看到结果后再决定下一步，循环往复，直到完成任务。这个机制叫 LLM Loop~</p>
+<p>它的工作流程大概就是下面这张图这样~</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC1byJENicLjXC2HrJcicEM28xRNQYWD6SQozDj1icJo8I8TwzTvG3pMMxIShcF09HVgGxa5AhXYibb63MHdZUXhIDEct1Q8NhZ2gqc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>cc 就是这一整套程序，所以我们其实也不必非得使用Claude模型，也可以替换成其他的模型。</p>
+<p>1.2 cc 凭什么更好</p>
+<p>那有人会问，所有 agent 不都是这样？cc 凭什么更好？两个原因：  </p>
+<p>1.2.1 本地运行</p>
+<p>在有限权限下，可以直接读写本地文件、使用你的终端、执行命令、下载东西到你的电脑。  </p>
+<p>1.2.2 cc 的 harness 工程更好</p>
+<p>harness是最近很火的概念，简单的可以理解为是大模型之外那些让 agent 表现更好的设计。同样一个大模型，harness 不同，效果差别非常大，而cc 是 harness 的集大成者~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC1GY34Aia783J27JDeUSDk2Nmcx3d1zgGDyQnGsJTbpTkNXwvCIhydNpl15HEhVIIaBW2k9QL2m1TARJInqTDvlnyxMHZVAajus/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>1.3 cc 能为你做什么</p>
+<p>首先是开发应用。即便没有编程基础的朋友，也能用它写出真的可用的应用。</p>
+<p>但越来越多人发现，它的能力可以泛用到任何知识工作。Anthropic 内部员工很早就用 cc 处理法律、财务、市场。它可以帮你写文案、查资料、整理数据、做表格、写报告。</p>
+<p>我自己内容创作过程中用得最多的也是 cc，运营和剪辑同事，也常用 cc 做文稿分析和素材匹配。</p>
+<p>光这么说没感觉~咱们直接装上，开始用！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CCcM4uUJCaibBNuvG1cKHibvU6IBc3CUDctbRqfJHpsOMe04hqm0DOKtbmiap8MTPSicsoHbSC20n1ddgvEr0POLpQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=9" alt="图片"></p>
+<p>上手：装上它，用起来</p>
+<p>2.1 安装</p>
+<p>使用 cc 严格意义上有四种方式：claude 桌面应用、网页、ide 插件、终端。最原生、且功能最全最新的是终端。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0LPaG88pIOJ0Y4OiczLz5zxf8xlGcNZY4ibj5yQdcSwvLVW0vH5uhYTJmOBjAtu8Vnj6N7fmlC6lft5oIhmaEpOszKibe6a1xVp8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>虽然小白会认为终端听着陌生，但配合一个 Agent IDE其实非常顺，不需要买会员，薅免费额度就好了，</p>
+<p>我们以 cursor 为例。先去官网下载 cursor，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0gJxM9SsiaDEfumFy339knEXU1icK0OT4JxG5vTwYSX9uD6zibtvCtZRZnhXZe4JnHXSqBNGtCibfmlRXz1EvmsRibF18xvGNeAYRE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>打开后创建一个文件夹作为第一个项目就好了，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3kGb2icSqQwtRXzbnYHQTdLsMZtTaI9vNykHJAnoVicyCwcS1QGgpegzbAoaIzP1MMh1XFObKroVG5XkMaeTtVoPiaPMD8sL4bS0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2ZDoMdoPoVGE9saiaic0zfyV7V0qFcGbegOUQCOsM7gIMr1sBOkyeaxScDRxXAmia9PAicFP7rWkHqoxic0Jiagcl95IoP7ULrZhplE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>cc 安装有两种方式，不管你是Windows或者Mac都可以装~  </p>
+<p>2.1.1 一行命令安装（需魔法）</p>
+<p>在官网<a href="https://code.claude.com/docs/zh-CN/overview%E6%8B%B7%E8%B4%9D%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%9C%A8">https://code.claude.com/docs/zh-CN/overview拷贝命令，在</a> ide 终端里输入回车，自动下载好。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3sqIluKBzKuLyb5gXBgxebDgMcedIAtAQTaJlA3F8MXtv3PhOzK2Jlkh4Qz8PdkdP4u3XtXiaA2sSpf1M8eBJdJng7eDF1SI2I/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>再输入 <code>claude --version</code>，看到版本号就成功了。  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC1TK5l4Svsl4uKjSYIgEVRLUleUd1pSLMfFibDGpsice2ecc7CicBRibVkyskzL21iaLqsShYEk7uo9vcZbPgibTnCL2RMUSIhOojAeI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>2.1.2 让 IDE 的 Agent 帮你装</p>
+<p>第二种更 AI 原生，也是日后更常用的，直接说 </p>
+<pre><code>帮我安装 node 并用 npm 安装好最新的 claude code
+</code></pre>
+<p>它会直接帮你装好，包括依赖和可能网络问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2ZkXoNmFqJPnBiaRD4oxytCoxh7GBEdQ8qe1r2VFwRVooTJHEcjjlz4806rcsrpGVTg9ibkBAj49YrxicrWicQwo2CbdtY17p2QAg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>2.2 配置大模型</p>
+<p>因为cc 是 agent 程序，所以给它配什么大脑可以自己选择。</p>
+<p>最佳的也最划算的方式是 claude 订阅会员，输入 /login 登录就好了，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC2XJWmELDHFL9KibqicicZO6oWEHshZ4RgmLkibTMWfsibtzqwXJZW64jLxE8y1YprmYFOFaLrdnvloa9ZmC79UKdEusbD3xyp4PNUM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>但能用上的人不多，更多朋友会用国产大模型或其他渠道的 api。建议下载 cc switch 来管理多个模型的切换，直接按这个链接去下载👇<a href="https://github.com/farion1231/cc-switch/releases">https://github.com/farion1231/cc-switch/releases</a></p>
+<p>填入 apikey 和 baseurl，随意起名保存就行。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2VyDtRZs8wwOYvtNAyg52weasnWt0kYNnQCgSwlfmria1zlQ5ibIzrDaRpAyxpVMFiazOE5nXaz7wsaledpX0engkbtibpDx9LEY4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<blockquote>
+<p>⚠️<strong>容易踩的坑</strong>：操作cc switch一定要在打开claude**之前，**否则它默认会让你登录。已经在 cc 里面再去切，会切不动。这一步很多新手翻车，记一下~</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/QGcWKfyqKC0tK4wYqn6rfibwl7oJtBtLPpvIQGA9OhVQscNp9K3CaAn1JLvGqkDbHCNI5JWEUZRkL0Bbc7SCaOH64MQbv2rn9rol6OYMiaHgw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>回到 ide，输入 claude 回车启动。一些初始设置（主题色、安全提示、推荐设置、文件夹是否可信），一般全部回车通过就好啦~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0q8nANcSOhCyibz0pibuM30Rawgrm1dJfpADMicrNCjcQqMeSTcvhiavYBwiarzLQn13L7t2EzBqn7JTS0BEx3pKtXGNibKb85sdNCA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>2.3 第一个项目：番茄钟</p>
+<p>我们可以先最简单的跟它说：「帮我做一个桌面番茄钟软件」。</p>
+<p>它没有直接开始做，它发现指令模糊，主动询问技术栈。</p>
+<p>这是 cc 的特点：上下文不清楚时它会主动提问。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC0ZBtm8A68BQzbHPmRCyDMPE1kXIt1BxNz9U9C0MibN67CpMDMW4mFdtndFKMqey0NSJDESicvSPxu0cA6xuufCuicLW74uQWL2yw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>如果我们自己不太懂技术栈，就选第一个。</p>
+<p>它进入了 plan mode（计划模式），先给一个详尽的计划。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC1unQyAhibobgNaIkwqqcvcmZDzFG7Fv6ibicF22OFD2xZcJkhUibBXWwzh5x9iaz2BDaqia4f0xibDS4lRXzicADv4pcvKaKFq2K8CYg8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>这里要讲 cc 的三种权限模式：</p>
+<ol>
+<li>plan mode（计划模式）：cc 不直接动手，先给计划等你确认</li>
+<li>默认模式：cc 自己判断哪些操作要问你、哪些直接做，更智能</li>
+<li>Accept Edits：改文件不再问你，但跑命令还是会问</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC30wlUAs0sVK0ZsgIgtGDH8icqWg1o5mkVQRmMuv1PibD4NdvGQUAicib3N3htibvH6shCPX7eBNhN7XI4RE0eHtamNgbP3q4gbicwCw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>切换快捷键 Shift + Tab，可以在这三种模式循环切换。</p>
+<p>还有一个一路绿灯不问你的危险模式，启动时加 --dangerously-skip-xx 参数。Anthropic 自己发现 97% 情况下用户都是直接同意的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3ECwMFSpz1ibWg0JibBTEoRibyfmY9ZeqDjFB2iaNr3gDC85ndp3R7Bjibzp66UcC6ibmV3NJFa5DQa02iay8RlaZVP8VIss2bwoic2gA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>我个人是用最危险的权限了，新手建议从默认模式起手~</p>
+<p>确认计划后，cc 开始创建代码。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/QGcWKfyqKC1NRMKQCWLXEc7AAbYetSXgXEdaT4hfn0ImzdicJZpYvKRzWecZuSp6PeIdXVcVNm6icMRbpIwpkBcHwfdGsTH34nwKJWgYcZGcs/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>安装项目依赖时它会再问，因为这是终端命令而不仅是文件编辑。这种情况选「同意，并且这个项目以后执行 npm 安装的时候不再询问」最方便。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0q4hE9159tW3XHkw6eicNf3wHoNYBPAOxONaiaOvPDZqxUoiaZBkMKibicUUmbhLbKTCiaicNAgNibiczR3pLD6zm7ibFwZDwVD4RqnFA0Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>2.4 跑起来</p>
+<p>它装好后会告诉我们运行命令。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3aiaxlNhiaGKm9rfZpxm5YYrLbr8Ey34KVzh3CbaIXcjBM8Q30Uu1uqHUAeWVvK68kf2SR7dTbrsny8vTvHrYbZNcoQqzFLqgA0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>但当前的终端直接输入文字是在跟 cc 对话，不是跑命令。两种方式跑起来：</p>
+<p>一是新开一个终端，运行命令。</p>
+<p>二是用cc的特殊命令：在命令前加感叹号 ! 进入 bash 模式，直接运行。</p>
+<p>然后这个番茄钟就跑起来了，还有三种模式可选，可以重计时，外观也很像样~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/QGcWKfyqKC2jxgZXYCZbXOPKLDg7wjJ31NUFYzNFFEFFwaJicvWXHUkdYia1GPu6Qukqu6zUkic0eTOn8diayicuwqsQv3oQuicR8z3rDDoMCNGyI/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>输入 ! 跑了项目会阻塞跟 cc 的对话。可以输入 Ctrl+B 让它在后台运行，不影响继续聊。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0JiaScpnXWRN8ryelx9p43uT87ialLLgiavOn7Lt765xSrSzf2mzsvu3kH26OjsoX1GYYNPjibpTVOS7iaaN1TJQI1AricGCZWAaAl4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>2.5  跟 CC 交互的几种方式</p>
+<p>除了打字对话，cc 还有几种交互方式，  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3DUPUiaGMefESdhOKHvrbQ8GKyAOwsyWVVsYZnUE93tpvWN36gXgS5olP6NgLYDtuPd29wx2F6QEia6AJwFcjYfyy2X6ibNUHCsA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>2.5.1 @文件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC1ibcS4Kefp35z2aqQ1mEZDfAsVJsvCDryxpMAlXFlu9DjlyXDM3brMuUKyrTNnGAUyjeyTgfFlvIdkhMaxAIPP90fiaSpqHxCTo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>作用就是更精准地把上下文给到 cc。因为 cc 不会一直把所有项目文件加载到上下文里，尤其项目大了它也加载不进去，它通常会经过 grep 找文件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3RXhgmjUMsGO3eRER1Jw8sVvHhevpdjaqlUfe9t1zDaD0AHgZibPYTicuMuzr6gT2u0icB54n2BeHbibGVc1SiaX3pBicpD0Rs5hdmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p>所以当我们明确@一个文件的时候是帮cc提高效率，省我们的token~</p>
+<p>很多时候，我们的提示词长了在命令行打字不方便，可以先建一个文档写详细要求，再 @ 这个文档。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0FcLNDoia3G6HITcu6NkR7thndTPqBLUB2gdqtmQLg28zYnvOXSVz0bTOWX92q5atYzT2eadDPgxEHfsQCMtSsq3ltWz7f8jqM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<blockquote>
+<p>⚠️ <strong>cc 命令行里换行****不是</strong> Shift+Enter（那是直接发送，很多人在这儿发送了半截提示词）。Mac 用 <strong>Option+Enter</strong>，Windows 用 <strong>Ctrl+Enter</strong>。</p>
+</blockquote>
+<p>另外有个小冷知识：你给 cc 的指令越短，它花费的 token 可能越长。指令不足时它要花更多 token 探索本地项目文件。描述越具体，效果越准确。  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3XDE3UftwJL2kIWmdM9xicHhiafAQZg1leVKOHRibhygb3pVtPhxgU1LAA2K5bcOpcDC4L2jM2zOZCfHE4k8ttCMlEtmz7RF4f5w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p>2.5.2 贴图片</p>
+<p>直接拖拽图片或粘贴到对话框。比如给一个配色参考让番茄钟做浅色主题，  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC1dFYiciaAlMnmCXRTd8yy09A4QATPAHVu8DQesliaUQJDDLZ3Iic3ibRAI3KMfu3iabibpE1YI7DFjY4zibOBM2ibYq1ibv0ic5Fs78qZ2jA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>利用上它的多模态能力，出来的效果还是很不错的~  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC38ILlNgaviaCsztKK93wVv8ICZymJB7JicIzmwJaSpNacFiapmhaMbdxHwplyD5nSp7JMRjypkV1DmmnbpJCibR02u8Mvt4yviannA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>2.5.3 斜杠命令</p>
+<p>除了上面那两种，cc也支持非常多命令，输入  /  出现命令清单。/help列出所有指令。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC2cnDNQic96muBaIddpez6bwsgFtTHj6AYQcuhTx99gLXQVBRvI1ojHJB9YRhxiaUWMrK9E0xq2SyYaHam7l9NgwU473r1rueQXw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>几个常用的：<code>   </code></p>
+<p><code>/model</code>：切换高中低档模型</p>
+<p>/btw：顺便问一句。问完按 esc 退出，不会污染主上下文</p>
+<p>/simplify：内置 skill，会派 3 个 Agent 从代码质量、运行效率、可复用性三个角度做审核优化</p>
+<p>好，我们先讲到这里，到这里你已经能正常用 cc 了~很多人就停在这一步。但用下去会遇到两个问题：它把文件改坏了怎么办？用久了它怎么变笨了？</p>
+<p>下一关讲怎么管住它~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/wJ9WUc7v9mlmebICCl0HyUMgzBA6SXSoHvMFeOXBY64jtGt6D1rNo6uopdqXYhu8UnBYeFWPMpibn8Gc3o4IeaQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=14" alt="图片"></p>
+<p>掌控：管得住它</p>
+<p>3.1 后悔药</p>
+<p>那刚才我们让 Claude Code 根据图片改了一个主题对吧，但是我们再看一眼感觉不是很喜欢，我们想回到刚才那个我们还满意的版本，怎么办？或者有时候情况更糟，它直接把我们的项目改崩了，我们想回到好的那个版本。</p>
+<p>cc 自带回滚：双击 ESC，或者 /rewind，进入回滚界面。可以选仅回滚对话 / 回滚对话和编辑过的文件 / 只回滚文件。通常选第二个。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2X7tKMh8jiaF2rWoKxTSK9L4qlWzFJl630nIgVkMxAZbdLmpn2j0MzWPF4iaUe1aSoOhoicxicQjtlgf5jn5VhURkHGpHtGEGOia2E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p>但这个回滚有局限：只能撤 cc 自己编辑的文件。它执行的终端命令（安装包、下载东西），撤不了。</p>
+<p>真正靠谱的后悔药是 Git。</p>
+<p>哪怕你不是程序员，只要在用 cc 做项目，Git 都是你的安全网。可以理解成游戏的存档系统，打到一个满意的节点存一档，后面翻车就读档回来~</p>
+<p>Mac 自带 Git，Windows 让 cc 帮你装。最好建个 GitHub 账号，远程仓库可以让你在其他电脑上拉下存档点继续工作，也方便协作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC0DYELwSCFLicgIEacEiaVVy3kJZnMv97dODzAXCaBQjLwkzRv3OQ4xiaI9RTx12ZWRUibUXeADQ3ic2hic60v4iaXhIdjSQpY1icPicXUg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=36" alt="图片"></p>
+<p>git 的下载、安装、登录、提交、回滚，都可以让 cc 用自然语言帮你完成。比如说「帮我下载 Git 并跟我的 GitHub 账号绑定」，跟着操作就好。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3p5fREZ11qXIlt8dQAIobS6g0k6ZSjibfqqBYWdPHzkqkZzsBJKSbGV3zFSemYldB3zDVBgjleW0ZlySIFRszwplALRHOlrkz8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=37" alt="图片"></p>
+<p>还有「帮我把现在的分支提交到远程仓库」，GitHub 上就多了一个项目。</p>
+<p>之后哪怕你手动改坏了文件，让 cc「回滚到上一个存档版本」就能回去，诸如此类~</p>
+<p>cc 不管是写代码还是其他文档操作，都有不确定性。建议在使用过程中养成版本管理的习惯，每做完一步就让 cc 存档一步。</p>
+<p>有 Git 兜底，也更安心地让 cc 去尝试各种方案~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC2SU2UJdt4jzEpJwHia35oYloOLvtf55iclzqOfVDH9T8SkyPfxs7Veic7QE5ztmcMGtMbYPs0W109iacHqtLlia8j4ciaQBeyaXpJ0w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="图片"></p>
+<p>3.2 上下文管理</p>
+<p>用 cc 一段时间会发现回答变慢、质量下降。这是上下文窗口有限的问题。</p>
+<p>cc 的「大脑」是大模型。你聊的每句话、它读的每个文件、它执行的每个操作的结果，都在挤占上下文空间。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC1icXxcPvR6BIZbNO4IbibPhAUpBhtjHmFqMJ6tX5sviaObzZAJ8zKia9rAO6FibobSmb3kgoMeUv1cyib8HGRzgqKHQ3pOlLJ32DSXA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=39" alt="图片"></p>
+<p>模型上下文 1M 听着大，实际有效比例只有 60%-80%，且会随上下文增多能力下降。脑子里塞多了东西，容易把握不住重点。</p>
+<p>那我们有两个命令可以来应对：</p>
+<ol>
+<li><strong><code>/compact</code></strong>：主动压缩上下文。把之前的对话精简总结，保留关键信息，释放大部分上下文。cc 自动也会在快满时压缩，但建议手动在结束某个任务后主动压缩，省 token 也让 cc 更专注。</li>
+<li><strong><code>/clear</code></strong>：彻底清空，相当于重开对话。</li>
+</ol>
+<p>观察上下文情况：/context 详细展示上下文占比，包括各个 mcp、skill 占用了多少 token。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3yklS0IgjsYPIaImnX1ZH4eaXz7OufsyEuxvDbWBmQbQ6ibTicx5HOqoNbpong5v7ibO2CPeuCIjKkS0lGdSGXdiczm5N2AvtAxN8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=40" alt="图片"></p>
+<p>每次手动输入太麻烦的话，让 cc 帮你打开常驻显示，重启终端后底部就会显示上下文余量。</p>
+<p>恢复对话的话可以进入 cc 后输入 /resume 选择历史对话；或者启动时加-c 或 --continue。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC1MQfm6hfoe72TdibaIwxhoFhaQhZ9G4mbIMfvIGnmqqDE0FKv6UM5ulNCQ1NnWqTuWLYiau8sHHcd9bWLsu7ib4p9VTbJBdXUM9c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=41" alt="图片"></p>
+<p>我的习惯是看到上下文高于 60% 了，就 /compact 一下~</p>
+<p>到这里，你已经对 cc 有了一定的掌控~但它现在对每个人都一样，下一关讲怎么让它个性化服务你。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/wJ9WUc7v9mlmebICCl0HyUMgzBA6SXSocKVd14Agv6riaEV4UvpCS4lftQ22wKhFO0cfMpw6SUxL2h8GE7j9yPw/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=24" alt="图片"></p>
+<p>个性化：让它越用越懂你</p>
+<p>虽然你能稳定用cc做事了，但你会发现一件事：它对每个人都一样。</p>
+<p>它不知道你叫什么、做什么工作、有什么偏好。每次都得从头给它说背景，每次都得提醒它别用某种风格、别犯某种错。</p>
+<p>理想的工具不该是这样，应该得是你越用，它该越懂你——记得你是谁、记得你做的项目、记得你不喜欢什么、记得它上次踩过哪个坑。这一关讲的就是怎么让 cc 真的做到这件事。</p>
+<p>cc 现在有 2 类记忆机制，加上自建，有 3 类。共同目标都是让 cc 记住你是谁、你在做什么、有什么要求。</p>
+<p>4.1 claude.md</p>
+<p>第一优先级，永远先读入上下文。三个层级我们可以来看看~  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC199KGMm1tUEVRtD23O7RE6ByUalOzCyWXxeWJRtZpibc9GLLiae7aY7D9Cy1HLpwvQiaNkQmaBOt9XNYwo3qKhsjGU0dJIDZJCpw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=43" alt="图片"></p>
+<p>4.1.1 全局 claude.md</p>
+<p>放在 ~/.claude/CLAUDE.md，对所有项目生效。写跟你个人习惯有关的规则，比如永远用中文回答、永远记住你是谁。</p>
+<p>4.1.2 项目级 claude.md</p>
+<p>放在项目根目录，团队共享，可提交到 Git。比如做番茄钟，希望它记住技术架构、文件结构、开发规范、风格。这些信息写在项目根目录下。</p>
+<p>4.1.3 文件夹级 claude.md</p>
+<p>放在子文件夹中，仅对这个文件夹的修改生效，也可以提交到 Git。</p>
+<p>三层叠加生效，不冲突。</p>
+<p>创建项目级最常用的方式：输入 /init，cc 自动初始化、扫描项目、生成 claude.md。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3ibQVP0IsZFF1bfW316iciaFNpxLbxkgZbqTbAVDGZM8eyP4o0fFbtdgGopm3b72xCrV4RLIG7FoZYxRUYAyKv7o0SVyNmuOkpDg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=44" alt="图片"></p>
+<p>那Anthropic 内部也建议，项目有一定规模再用 /init，效果更好。新开对话时 cc 也能第一时间知道整个项目在干嘛，省得它再去扫一遍文件。</p>
+<p>创建全局 claude.md 两种方式：直接让 cc 写入，或者输入 /memory 选择全局选项编辑。修改全局后需重启 cc 生效。</p>
+<p>大家随着实践，可能会发现 claude.md 不应该塞太多内容，理想情况下它写最顶层基本不变化的原则~比如最近很火的卡帕西 skill 就是几百行通用规则，但已经有10万多 star了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC0axWkRmco5tpyiauBVfvdLW121Rw99cX59T0ibz3gxa7ut7hjZxy2AAeMibxQhNhUBWp12icUWpuMFtICbMqRpYMS3MhadAV1en2M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=45" alt="图片"></p>
+<p>项目级 claude.md 应该是动态的：项目加了功能、踩了坑，就同步更新。积累的错误经验越多，犯错越少。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC3II9k1N8svc1Lprt8heclJjOFUcoKkoQUfmyzcsqt2hgwvRxVlE9mKy0Y1J6BM1rLMcCW6sLlNfBnawJBsfiaJMcOe3p2WoTh8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=46" alt="图片"></p>
+<p>4.2 Auto Memory：cc 自己的笔记本</p>
+<p>第二层记忆。没显式写进 claude.md 的习惯、错误、经验，会被一个跟主会话无关的后台 agent 默默记录下来。</p>
+<p>需要手动开启：/memory → 第一个选项打开。打开后会多出「打开自动记忆文件夹」的选项。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC1h29Xq5F2dewEnkn4kz3iay3p2RSNlcIia51aC3P1Ok8XX1nIgkh0TbicRKcQT1LxoYhV4ibiaouVGiciblW8VibnqstC8qmic2Dya441U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=47" alt="图片"></p>
+<p>它一般会记住这几种类型：</p>
+<ol>
+<li>user：关于你（角色、偏好）</li>
+<li>feedback：你给过的反馈（&quot;不要这样做&quot;、&quot;对，就这样&quot;）</li>
+<li>project：项目相关（进度、决策、技术选型）</li>
+<li>reference：外部资源的索引（某个文档在哪里）</li>
+</ol>
+<p>比如说「我不喜欢做深色 UI」，cc 会改 UI 同时把这条记下来。Ctrl+O 显示具体内容。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2ia5bCUTBWhgaBzf7sWqMBd1wjMfeUBedx7mNsMPibNdeAFv7769kGFuTsHwoibDGtsu4DPNygQ6R9HfUyL8N3uS4icawMUStGiao0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=48" alt="图片"></p>
+<p>注意 Auto Memory 存在项目目录下，只作用于当前项目，换项目的话就需要重新积累了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2g3lribtqQujmWhMMaPsaUUt78kjeIjXD6ebnUedDdg0oLZzCiciczgHKACj9991bEZmBxgSFjRI7TOI163X1YVhPc7VwiaO7hvAo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=49" alt="图片"></p>
+<p>它也不是每次全部加载。每次打开项目，cc 只读 memory.md 这个索引，遇到具体问题时才按索引读对应文件，不会占用太多上下文。</p>
+<p>如果记得不对，直接说「忘掉刚刚说的不喜欢深色主题」，它就删掉了。</p>
+<p>小总结：</p>
+<p>CLAUDE.md 是第一优先级，全部注入上下文，由你主动立的规矩。</p>
+<p>Auto Memory 是第二优先级，在工作过程中由 cc 自己记录、按需注入的规则。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC12CEZqmlv3ZlBiapAnx7icibkXVpGCR8foSfXkJI5cDllnzlyjhIAegoDWhvF0q3ia8EiaicX9ibAQG7RqfqQUeKSp59vm8Qym421eyw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=50" alt="图片"></p>
+<p>两者配合，cc 越用越懂你~</p>
+<p>4.3 自建参考文档：让 cc 必读的资料</p>
+<p>第三层。模仿 skill 的渐进式披露机制，把不同功能的记忆拆成不同文档，让 cc 按需读取。</p>
+<p>比如做番茄钟，希望有具体的品牌视觉规范，建一个品牌视觉规范文件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC0CCthVRtJibKBSZI97lU3aMoyYVFFCcQwgVhicDate2qA1l0b81Bn1DVxRHW2Mdr8iaJ7P5kwZfwZbLIzdhTrnwicIgpssjRoYr2c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=51" alt="图片"></p>
+<p>如果还有文字风格上的要求，再建一个语言规范文件就行~</p>
+<p>然后我们可以在 claude.md 里写：当你需要修改前端视觉时去参考这个文件，写产品文字时参考那个文件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC3TNN8LUbLLgibEe85yHWAXAqcYOicKpHdZNuQ6aqWQFtpIuYP72ArygdnHbYOtLyb4dEibtajljAI9LKx8SMjiautBlzAwycC64IE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=52" alt="图片"></p>
+<p>这就是给 cc 自建的记忆。</p>
+<p>agent 的持久&quot;记忆&quot;，本质上都是在合适的时候向大模型注入压缩过的上下文。  </p>
+<p>所以粗暴地理解，我们也可以说出那一句经典的&quot;这不还是提示词嘛&quot;~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/wJ9WUc7v9mlmebICCl0HyUMgzBA6SXSo69W4C9uO11iaRJhbu9CAXecUaX1D7r2Y2LfSLH6m1vZFZ08jDia1sYpQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=31" alt="图片"></p>
+<p> 高级扩展：让它越来越强</p>
+<p>ok，到这里，cc 已经是一个能稳定服务你的助手了，但它还能更强~</p>
+<p>如果你只把 cc 当作聊天助手，那走到上一关就够了。如果你想真的把它变成一个工作系统——能在特定领域比你更专业、能调动外部工具、能同时干几件事、能在合适的时机自动触发——那这一关就是关键。</p>
+<p>这一关讲六样东西，每一样都让 cc 多一种「分身能力」。它们也是 cc 真正区别于普通对话 AI 的地方~</p>
+<p>5.1 Skill：给 cc 装技能包</p>
+<p>可以理解为给 AI 各式各样子领域的专业说明书、操作手册。当前非常重要的扩展工具。  </p>
+<p>那 skill 为什么这么重要？因为大模型再聪明，也不可能把所有领域的最佳实践都塞进训练数据。但有了 skill，你可以把任何专业知识、任何操作流程，变成 cc 在需要时按需调用的「外接大脑」。</p>
+<p>skill一般分四类：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC33ia2IMYfyItYuAaaMVLicjiaaykfQGMyj2X4PBe3iaEEeKIcF7oqDBIQicYcJJaMicXVcu3ltEM6vcx9xHOZ1dMPR9LqCayicOhsb9c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=54" alt="图片"></p>
+<p>这些操作手册不适合全写进 claude.md，但又不止一次会用到。所以 skill 的设计是每次运行 agent，只发给大模型几行元信息（skill 名称和何时调用），让大模型自行决定何时去看说明书。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC2kSia6VbyB5RYYmqDSXdBicicVjmn6AIIWTsjn7qTibuWicn4NykNq0ibx8cDmzN30uNRzNQu7J5Zv84p01DePlvugd205H4k6KEyR0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=55" alt="图片"></p>
+<p>安装：放进对应 skills 文件夹（全局或项目级）就好了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC1xaaxjslXdxfk3fbichKxZJ6qOezfiaDPo2c7aoku1d0CRjfDAUQXZXxaL8gL1V2jrSIT0fVyjpQDkOKM7vzW1kfuZZVjUJqyco/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=56" alt="图片"></p>
+<p>比如 Anthropic 出的 frontend-design 是个非常好用的前端优化 skill~</p>
+<p>调用方式：大模型主动调用、/skill 名称 直接调用。</p>
+<p>找 skill 最快的方式：用 find-skill 这个 skill 帮你找。让 cc 帮你装好它，之后说「我想要个能生成图片的 skill」，它会推荐并安装。</p>
+<p>自己创建 skill 用 Anthropic 出的 skill creator，让 find-skill 帮你下载，然后跟 cc 对话就好了~</p>
+<p>5.2 MCP：连接外部服务</p>
+<p>MCP是为了解决 AI 跟外部工具、外部服务连接的转接头。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC35unxUDjiaUyyBN8IZvw2HT6VoyAL3I1oq2Y5GVOiaGqC0C7xkSO3cH30eVwJrt2jAjVjQbpI2Se8LchgyPCLruZvxwEodwEp1k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=57" alt="图片"></p>
+<p>比如让 cc 看到你 NotebookLM 的资料、让 cc 读 Figma 设计稿生成代码。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC244X6osQCx8E9usbO6EeSicJ0tzDxAWfm9xLy7rwmc4RneaATaT07DNJUd7CmCL4r1Zw9BYsxFofWp5taSvEZSC29giaS93BMB0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=58" alt="图片"></p>
+<p>不过 MCP 服务占用 token 较多，难以同时存储很多。所以现在很多外部工具，轻量的转向了 skill，重量的转向了 CLI。</p>
+<p>我个人现在只保留了少量几个 mcp，这次不展开了。</p>
+<p>5.3 CLI 工具：今年最火的趋势</p>
+<p>CLI（Command Line Interface，命令行工具）很早就有，原本是方便程序员操作，比如下载软件、压缩视频，普通用户走网页，程序员一行命令搞定。</p>
+<p>那普通用户不会用，但 AI 很会用。比起让 agent 模拟操作浏览器去截图点击，输出命令精准又高效~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC2IXl6KZ2ibxITUpcoOkTJs2zNENfaB0y9jQ2gyDgGyvHWw3qG5mb6cbibfZhrx367wl9cVBHOgmwfkuXgmMAvTC5Kfl6nP1LLog/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=59" alt="图片"></p>
+<p>cc / Codex / Gemini cli 都跻身命令行，便于使用 CLI 工具完成各种任务。</p>
+<p>很多厂商把原本提供给人类的 GUI 功能也做成了 CLI。比如飞书 CLI 把创建文档、写多维表格、发邮件、建日历都变成命令。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC03fqMGxdpwnD4BQBXTscEVic226dAKiamtRd8q6ferCj68dR55I5BGEq96bwlQgaPa1ibBQV0npciaKJVEoJ9qNYCavpH6ZHVYoW4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=60" alt="图片"></p>
+<p>可以直接说「帮我创建文档然后把链接发到邮箱 xxx」。</p>
+<p>还有opencli 是个流行的工具，把常用网页和社交媒体接口都做成了 CLI。安装让 cc 帮你做就行。装好后让它「查现在社媒上深圳必吃餐厅」，它真的去查社媒，图片也能下载下来~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC1xwf1ww99ENzsLicqM2H69gFYo3EhuFSzsW92riajjJibhkjenqT09YOvzDto4bKZjLuBPsiaLIsQCbzCXpRnRImP9CroUCceKY0o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=61" alt="图片"></p>
+<p>5.4 SubAgent：让 cc 派出分身</p>
+<p>cc 越能干，你越希望它多干、快干、精干~</p>
+<p>比如做番茄钟想正经上线，让 cc 调研其他番茄钟项目都是怎么做的、有什么优缺点。直接让写代码的主 agent 去做的话，它得停下编程一个个调研，串行耗时；第二，原本写代码的 agent 上下文里会充斥调研细节，但它最终只需要结论。</p>
+<p>这种情况就适合派 SubAgent。子 agent 有单独的上下文空间，多个并行同时干活，最终把结果给主 agent。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/QGcWKfyqKC0f1VtfPGERgp4CEf3ZFqicEAibicqqFRxfib8xHLAhfyaFicSJbfZ5Tba8dsXSV4epEYUIAVJU1pfCaAiakFWCcc7FuPfYX5JL9NDq0/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=62" alt="图片"></p>
+<p>两种创建方式：</p>
+<ol>
+<li>自动派生：任务复杂可并行（如调研），cc 会自动派生子 agent。</li>
+<li>手动创建：输入 /agent 进入创建流程。</li>
+</ol>
+<p>当我们有了子Agent之后，主Agent也会自己决定把活派给哪个子Agent去干，你也可以直接提示「让某子 agent 去干」或「自己生成几个子 agent 分头查」~</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/QGcWKfyqKC0bEywOUFQ8IbBKnPqeKdRPHRiaicOOzDUVOnQRKkx6utmeRXZ0whXQ4sxkzs6k69hsuSxZpO4jhH1MrDKhFyzLDE5zFzJE1WRDM/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=63" alt="图片"></p>
+<p>5.5 Hook：让 cc 自动执行固定动作</p>
+<p>Hook是自动触发器，设定好 cc 怎么样的时候，自动执行什么。</p>
+<p>两个例子：</p>
+<ol>
+<li>让 cc 每次完成任务后自动发出提示音，叮 ～ 提醒你</li>
+<li>让 cc 每次提交代码前自动触发代码格式检查</li>
+</ol>
+<p>就是给 cc 定的「条件反射」。配置原理不展开，比如我跟cc说「我想让你每次完成任务后发提示音和飞书消息」，它会给你方案。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QGcWKfyqKC0fOO7Kh8NHpaguIEsXcZTl8LCkt7ibMq2LVwRib6s1BwIBv8tHIXLGFd4QNHKibzd7ibFfS72jYbOytUVSia9xYR3Iv8DEMZibdCwKg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=64" alt="图片"></p>
+<p>5.6 插件：一键安装全家桶</p>
+<p>把 Skill、SubAgent、Hook、MCP 打包在一起。有的插件没打包什么，里面就是一个 skill 或一个 mcp。</p>
+<p>输入 /plugin 进入插件管理界面：discover（发现新插件）、installed（已安装）。看到喜欢的，选安装范围，确认就好啦~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QGcWKfyqKC3Rlhtc0W84UQxrgvyUBZWHAY024t7CZDFiaVmfYocLQ05Fg0URwiaIQhvGqETGXKrC7iacjGgAQSqXOicS6S6WduPasMFPLAKocho/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=65" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/wJ9WUc7v9mk4KZZzKrMw8VhnGibOPq5zBYz5sUeIRDicSIwXEFK5TfBtj7caJlOdNH508HfQbtRN5GicNX25m9Pow/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=18" alt="图片"></p>
+<p>好啦，从 0 到 1 的 cc，你已经摸爬清楚了～</p>
+<p>我们再来简单回顾一下：</p>
+<ol>
+<li>上手：安装、ccswitch 配模型、shift+tab 切换三种权限模式、基本交互方法、斜杠命令，做出第一个番茄钟。</li>
+<li>掌控：双击 esc 回退、git 后悔药、主动管理监控上下文。</li>
+<li>个性化：claude.md + Auto Memory，让 cc 记住你的要求和它犯过的错。</li>
+<li>高级扩展：Skill、MCP、CLI、SubAgent、Hook、插件</li>
+</ol>
+<p>走完这四关，你脑子里应该已经有了 cc 的整张地图。  </p>
+<p>但真正把 cc 用起来，还得动手跟着练～所以如果你看到这儿还没看视频，强烈建议点开视频，跟着练一遍！👇</p>
+<p>视频里每一步都演示得很细，遇到细节命令再翻文档查🔗👇</p>
+<blockquote>
+<p><strong><a href="https://my.feishu.cn/wiki/Takxwov60iO5OOkOmpEcpOGynac">https://my.feishu.cn/wiki/Takxwov60iO5OOkOmpEcpOGynac</a></strong></p>
+</blockquote>
+<p>从泄露的源码看，cc 还有更多能力等待发布，能力边界还在不断扩大。但不必慌，把这些反复用在工作中，今年都很够用。</p>
+<p>最重要的是，你在习惯跟 AI 协作的方式。从一问一答，到构建系统、组织 AI让它自己去干。习惯了它，以后再出什么新的，你也能上手很快！</p>
+<p>最后，我们下次见啦～</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/0Se4i8RHrtQc-wgGmUkfvw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

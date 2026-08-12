@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我把 OpenAI Codex 官方案例全跑了一遍 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我把 OpenAI Codex 官方案例全跑了一遍</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=RaDesign">RaDesign</a>
+    
+    <span class="date">2026-04-01</span>
+  </div>
+  <p class="lead">全文图片来自：OpenAI上一篇我简单介绍了一下 Codex 的新出的“插件”功能，有小伙伴暂时还体验不了，因</p>
+  <article class="content"><p>原创 RaDesign <em>2026年3月31日 15:27</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiawkxvP27gHw0weo4UibP55aI9CRMl6BPY1dRJAicZibWfZYcSwdOWFYLN5V0C7t49ibN9PV6VlZwkFFmlZ2VVerOGqR5ibrZ7dpFHS8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>全文图片来自：OpenAI</p>
+<p>上一篇我简单介绍了一下 Codex 的新出的“插件”功能，有小伙伴暂时还体验不了，因为目前还是在灰度/分批开放，别急，很快都能用上。</p>
+<p>自己造一个说实话不费劲，但是造的好有点难度，所有推荐大家先去看看官方的示例。</p>
+<p>我自己也把官方的这些都跑了一遍，说实话，基本够用，而且其中很多用不上，但是效果其实都不差，关键是基于官方的，我自己改造了两个工作流，因为希望给大家分享一下，快速介绍他们都是解决什么问题的，这样就不用走弯路，合适的就直接拿过来用或者微调，没必要自己再造轮子。</p>
+<p>OpenAI 围绕 Codex CLI 和 Codex Agent 发布了一系列官方示例与实践说明。这些内容并不是简单 demo，而是构成了一套完整的软件工程工作流模型。这也是很多人问的和 MCP 有啥区别，不就是连接器，不就是串一下？</p>
+<p>下面就给大家系统拆解这些官方案例，从以下几个维度分析，看看是不是就是简单串联和连接：</p>
+<ul>
+<li>每类案例在做什么</li>
+<li>解决什么问题</li>
+<li>适用于哪些场景</li>
+<li>设计师最该用的 AI 工作流</li>
+<li>一些使用经验</li>
+</ul>
+<hr>
+<h2>一、官方案例库的本质：从“写代码”到“执行工程”</h2>
+<p>OpenAI 在官方说明中明确指出，Codex 的能力已经从代码生成扩展为完整的软件工程执行能力：</p>
+<ul>
+<li>能理解任务目标</li>
+<li>能拆解步骤</li>
+<li>能调用工具（shell、git、API、MCP）</li>
+<li>能持续执行直到完成</li>
+</ul>
+<p>OpenAI官方页面 <a href="https://openai.com/codex">https://openai.com/codex</a></p>
+<p>Codex Agent 机制说明<a href="https://openai.com/index/unrolling-the-codex-agent-loop/">https://openai.com/index/unrolling-the-codex-agent-loop/</a></p>
+<p>核心机制可以概括为：</p>
+<pre><code>用户目标 → Agent 规划 → 工具调用 → 修改代码 → 循环执行
+</code></pre>
+<p>这也是官方案例库的底层逻辑。</p>
+<hr>
+<h2>二、12 类官方案例</h2>
+<h2>下面我们就简单介绍一下官方的案例，其实官方的才是最好用的，也可以基于这个去改造，如果有现成的，完全没有必要自己再去造一个，这部分不详细介绍，后面重点介绍一下和设计工作流相关的内容。</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazm5eub3sOUhxialyJ4z5HfyEFnjbicw4H0MwHPoYPJ8ltIYKTg0wVjbxQz0uDhazL8agoxW8Hld2YEkKTzLtuQfbTVicGSvicPbOw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h2>1. 数据分析与报告自动化</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例的核心不是“写个分析脚本”，而是让 Codex 去完成一整条数据分析链路：读取原始数据、清洗和标准化、合并多个数据源、探索假设、输出图表和报告，并把整个过程整理成可重复执行的产物。官方用例页还专门强调了目录规范、分析规则、数据校验和 worktree 分支探索这些做法，说明它面向的是“可复现的数据工作流”，不是一次性分析。</li>
+<li><strong>适合什么场景</strong><br>  适合做运营周报、产品埋点分析、销售数据整理、客户报告、研究型分析，尤其适合“每周都要重复做、但每次又要重新清洗和整理”的那类任务。</li>
+<li><strong>解决什么问题</strong><br>  它解决的不是“不会算”，而是“流程不稳定”：原始数据经常被改坏、多个来源难合并、分析逻辑无法复盘、报告格式每次都要重做。这个案例的价值，是把分析过程产品化。</li>
+</ul>
+<h2>2. 将应用接入 ChatGPT</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例是在教你把一个具体业务能力做成 ChatGPT 里的 app。官方描述里明确包括 MCP server、工具 metadata、可选 widget、本地 HTTPS 测试，以及在 ChatGPT developer mode 里验证。也就是说，它不是单纯写代码，而是把“一个任务”封装成“一个可被 ChatGPT 调用的产品能力”。</li>
+<li><strong>适合什么场景</strong><br>  适合已经有明确业务场景的人，比如查询库存、生成报价、处理内部审批、抓取某类数据、执行固定流程等，尤其适合想把内部工具或垂直能力接入 ChatGPT 的团队。</li>
+<li><strong>解决什么问题</strong><br>  很多团队会写脚本，但不会把脚本变成真正可用、可交互、可被模型调用的应用。这个案例解决的是“工具很多，但无法产品化”的问题。</li>
+</ul>
+<h2>3. 构建 iOS / macOS 应用</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例聚焦在 iOS 和 macOS 原生端开发，核心是让 Codex 帮你 scaffold、build、debug SwiftUI 应用。它不是泛泛地说“能写 Swift”，而是围绕真实工程：页面结构、状态逻辑、本地构建、调试闭环来工作。</li>
+<li><strong>适合什么场景</strong><br>  适合快速搭一个 iOS demo、做 macOS 工具型应用、先验证原生端产品概念，或者在已有 SwiftUI 项目里加页面、改逻辑、修问题。</li>
+<li><strong>解决什么问题</strong><br>  它主要解决苹果端开发前期成本高的问题：工程初始化重、页面和状态管理样板多、构建与调试来回切换繁琐。Codex 在这里承担的是“加速原生端工程起步和迭代”。</li>
+</ul>
+<h2>4.构建响应式前端页面</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例是把截图、视觉参考或设计方向，转成响应式前端页面。官方还明确提到，它会结合现有代码库里的组件、设计系统和视觉检查去持续修正结果，而不是只生成一版静态 UI。</li>
+<li><strong>适合什么场景</strong><br>  适合官网页、营销页、活动页、后台页面、参考图还原，以及“我已经有视觉方向，但还没落成代码”的场景。也很适合已有设计系统的团队，把外部灵感翻译成项目里可用的合法页面。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是前端落地中最常见的偏差：还原不像、响应式不稳、和项目组件体系脱节。这个案例的本质是“生成 + 比对 + 修正”的前端实现流程。</li>
+</ul>
+<h2>5. 构建浏览器游戏</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例展示的是，Codex 可以把一个游戏 brief 先变成计划，再逐步做成真正能在浏览器里运行和测试的网页游戏。它关注的不只是界面，而是交互循环、控制逻辑、状态更新和浏览器验证。</li>
+<li><strong>适合什么场景</strong><br>  适合做小游戏 demo、创意交互实验、教育类项目、复杂前端交互验证，也适合用来测试 Codex 处理连续状态系统的能力。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是“想法有了，但很难快速变成可玩版本”的问题。相比普通页面，网页游戏更复杂，这个案例用来证明 Codex 不只是做静态页面，还能做动态交互系统。</li>
+</ul>
+<h2>6. 自动生成演示文稿</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例聚焦在 PPTX 这类演示文稿文件，Codex 可以读取、更新甚至新建 slide deck，并结合图像生成来自动完成幻灯片内容和素材组织。它本质上是在把“内容”自动包装成“可汇报的演示材料”。</li>
+<li><strong>适合什么场景</strong><br>  适合销售提案、咨询汇报、项目周报、投资路演、分析报告包装，尤其适合“已经有内容，但还没变成可展示材料”的工作。</li>
+<li><strong>解决什么问题</strong><br>  它解决的不是“不会做 PPT”，而是“重复排版和组织结构太耗时间”。这个案例的意义，在于把报告生产从文档阶段直接推进到展示阶段。</li>
+</ul>
+<h2>7. 复杂问题的持续优化</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例不是让 Codex 一次给答案，而是给它一个评估系统，让它围绕难题持续迭代，直到结果达到可接受标准。官方强调的关键词是 evaluation system，也就是“有评分、有比较、有持续优化”的循环。</li>
+<li><strong>适合什么场景</strong><br>  适合性能优化、算法改进、复杂逻辑重构、多个方案比较、需要不断调优的工程问题。</li>
+<li><strong>解决什么问题</strong><br>  普通 AI 的问题是“一问一答”，但很多难题不是一次就能做对。这个案例解决的是“复杂任务缺少持续改进机制”的问题。</li>
+</ul>
+<h2>8. 从 Slack 发起开发任务</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例把 Slack 线程变成 Codex 的任务入口。官方描述里包括 Slack app、连接 repo、在频道里 <code>@Codex</code> 、从 thread 发起任务，以及继续在线程里追加上下文。它本质上是把协作聊天直接接到执行系统。</li>
+<li><strong>适合什么场景</strong><br>  适合产品、设计、运营、工程混合协作团队，尤其适合“很多需求都在 Slack 里讨论，但落不到执行”的组织。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是“需求停留在聊天里”的问题。很多任务不是没有人做，而是没有被正式转成可执行工作；这个案例把讨论线程直接转成工程任务。</li>
+</ul>
+<h2>9. 自动 PR 审查</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例让 Codex 在人类 reviewer 之前，先去检查 PR 里的潜在回归、逻辑问题和风险点。官方既给了 use case，也在 workflows 里给了本地 <code>/review</code> 和 GitHub 评论 <code>@codex review</code> 两种入口。</li>
+<li><strong>适合什么场景</strong><br>  适合多人协作、提交频繁、review 压力大的仓库，也适合希望在正式 review 前先用 AI 做第一轮筛查的团队。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是 reviewer 被低级问题和机械检查占满时间的问题。先让 Codex 抓回归和明显风险，人类就能把精力放到更重要的架构和业务判断上。</li>
+</ul>
+<h2>10. Figma 设计转代码</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例是把 Figma 设计选区转成代码。官方写得很明确：Codex 会读取 Figma 的设计上下文、资产和变体，再把它映射到当前仓库的设计系统中，并结合视觉检查持续调整。它不是把 Figma 当一张图，而是把它当结构化输入。</li>
+<li><strong>适合什么场景</strong><br>  适合已有正式设计稿、希望快速落地页面或流程的团队，也适合设计和前端协作密集、对还原质量要求高的产品。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是设计到开发之间最典型的信息损耗：组件状态丢失、变体关系丢失、资产引用混乱、视觉还原不稳定。这个案例的价值，是让 Figma 不再只是交付图，而是工程输入。</li>
+</ul>
+<h2>11. 理解大型代码库</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例是让 Codex 充当大型代码库的“导览员”：帮你梳理模块关系、请求流程、关键入口文件和可能的修改风险。官方 workflows 里对应的是 <code>Explain a codebase</code> 。</li>
+<li><strong>适合什么场景</strong><br>  适合接手老项目、第一次进入大仓库、跨团队协作、修改复杂功能之前先摸清结构。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是“不是不会改，而是不知道从哪儿开始看”的问题。这个案例最大的价值，是显著降低陌生代码库的理解门槛。</li>
+</ul>
+<h2>12. 升级 API 集成</h2>
+<ul>
+<li><strong>这个案例能做什么</strong><br>  这个案例聚焦在把现有应用升级到最新的 OpenAI API 模型和集成方式。重点不只是替换接口，而是盘点受影响范围、修改调用方式、校验兼容性和验证结果。</li>
+<li><strong>适合什么场景</strong><br>  适合已经接入 OpenAI API、但需要升级模型、迁移 SDK、调整参数或适配新接口的团队。</li>
+<li><strong>解决什么问题</strong><br>  它解决的是 AI 集成迭代太快、手工迁移成本高且容易漏改的问题。对于已经在线上运行的应用，这类升级如果没有系统化支持，风险会很高。</li>
+</ul>
+<hr>
+<h2>三、和设计相关的官方工作流</h2>
+<p>这一部分是官方 Workflows 里， <strong>和设计、原型、前端落地最相关的内容，我都试了一遍，效果都还不错</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazazYUqicItxWXWBrBs1X5ibe89GZXM54jMSWfHXwgIBkp9eULJLpJubMcXKJafGeTIgjxBIia02S6FBsjooRMO8eNDPcekNOP2p4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h3>1. 从截图直接做原型</h3>
+<p>这是官方最接近“从需求感知到 UI 雏形”的工作流。</p>
+<p>官方给出的路径是：先把截图保存到本地，运行 <code>codex</code> ，把图片拖进终端，再补充技术栈、交付物和实现约束，例如 React + Vite + Tailwind + TypeScript，并要求新增页面、必要组件和 README。官方还明确提醒：图片只能提供视觉要求，真正影响结果质量的是你是否补充了 hover、校验、键盘交互等非视觉规则。</p>
+<p>对设计工作来说，这条工作流的意义非常大，因为它把“参考图”从讨论材料，变成了可执行输入。尤其适合下面几类情况：你看到一个不错的官网区块、后台布局、活动页结构，想快速做出一个能跑的前端原型，你直接截图给它就能完全复刻，这个也更适合产品同学来用。</p>
+<h3>2. 实时迭代 UI</h3>
+<p>官方给出的流程是：一边开 <code>codex</code> ，一边在另一个终端跑 <code>npm run dev</code> ，然后用小而具体的 prompt 做迭代，比如先让它提出 2 到 3 个样式改进方向，再选其中一条推进，之后继续聚焦到 header、spacing、mobile、颜色噪音、边框冗余等局部问题。对满意的改动及时 commit，不满意的及时回退，并把这些变化告诉 Codex，避免下一轮又覆盖。</p>
+<p>这条工作流像真正的设计调优过程：不是一次生成完美页面，而是持续打磨。对设计师来说，这比“从零编码”更贴近日常工作，因为它本质是在把设计反馈循环直接接到代码上。很多人总想着一步生成自己要的效果，然后直接来一句 AI 生产的效果一般......</p>
+<h3>3. 从 Figma 选区到工程实现</h3>
+<p>这既是官方 Use Case，也是设计相关最重要的工作流入口。它会从 Figma 中提取 design context、assets 和 variants，并用 Playwright 做视觉对比。重点不是“变成一坨前端代码”，而是尽量映射到你现有的设计系统和组件层。</p>
+<p>对于设计团队，这条工作流的价值在于把 Figma 从“交付图”变成“结构化源文件”。当你已经有选区、组件、变体和资源，Codex 可以比截图那条路径更准确地理解页面层次、资产引用和状态差异。</p>
+<h3>4. 从视觉参考到响应式页面</h3>
+<p>这条更偏“前端落地层”。如果已经有清晰组件层，Codex 会优先复用现有按钮、输入框、卡片、字体层级和 token，而不是自造一套视觉系统。换句话说，它非常适合做“把外部参考图翻译成你自己项目里合法的页面”。</p>
+<p>它适合以下情形：你并不是要 1:1 复制一个 Dribbble 图，而是想把某个视觉方向吸收到自己现有项目里，同时保持设计系统一致。对团队项目和正式产品来说，这比纯截图还原更好。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxrhzjrz10rcy7Dw7L6ERzkJZqKmXsE58DWTeqFKoDVrJTPkc1NDuHPY8zFL2qAwuQzNBGWgLDNSYqAoaj1QvpYwf2R0n5hLPI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>一些使用技巧和省 Token 的办法</p>
+<p>1. 把“目标”说清楚，而不是说功能</p>
+<p>一说到提示词，都说简单，都觉得自己会写，但是这几天看见大家反馈，我发现很多人还是不会写，纯聊天了。</p>
+<p>我的建议：之前就说过，如果你要是不确定自己的目标，就让 GPT/Claude 给你输出结构化的提示词。把发散步骤放在前面，让它先干，而不是边猜边干，因为每一次的改动消耗额度都不少。你仔细看对话你会发现它经常说：“那我就不靠猜了，这次我直接进行这样修改......”</p>
+<p>2. 如果是设计相关，一定补“交互规则”</p>
+<p>不管你是给参考还是给设计源文件，都可以先把交互规则描述清楚，这样它会同步完成，如果你担心自己思考的不够全面，同上。</p>
+<p>3. 把“参考”和“约束”分开说</p>
+<p>如果你要是给参考图，同时也想让它按照你的部分规范来做，这两部最好分开说，如果不分开，它有可能把这两个结合成一套新的规范来做。</p>
+<p>4.修改时，一次只改一个维度</p>
+<p>如果你觉得开发或者和设计稿对不上，让它修改的时候，尽量一次改一个维护的，比如只优化 header 区域的层级和间距，不要动其他模块。否则很容易它会自己做决定，根据你要改的给你进行发挥修改。</p>
+<p>5.一定要让 Codex 帮你“整理项目结构”</p>
+<p>很多人说自己做一个页面的时候还行，做的页面越多越乱，做完一个模块或者阶段，一定让它及时整理项目结构，这样它会始终记得目前项目整体情况，基本就不会出偏差：</p>
+<ul>
+<li>整理代码结构</li>
+<li>统一组件命名</li>
+<li>删除无用代码</li>
+<li>优化文件结构</li>
+</ul>
+<p>6.不要一直在一个项目里面的对话窗口对话</p>
+<p>核心原因就是上下文是有限的，而且会变“脏”。我遇到过很多次会莫名其妙反复因为一个问题改来改去。其实就是因为一直在一个对话里面，你以为聊的越多它记得，其实已经不记得了。对话越长，噪音越多，模型就会出现理解偏差、决策混乱、逻辑退化</p>
+<p>7.阶段性让它写Rule文档</p>
+<p>这个同时也解决上面的问题，为什么你随便改改就感觉 token 费了那多，就是因为每一次都在一个对话框里重复拉上下文， 你做了一阶段就让它把目前上下文整理成一份 Rule 文档，后续可以这个文档来继续，你会发现能省点，同时上下文也不会很快满，更不会是不是带着上面的改动，混到新的内容里。直接新建一个新对话，到新对话里面让它读取 Rule 文档，它的脑子和目标会更明确。</p>
+<p>8.利用 AI 扮演“严苛的审查员”来发现问题</p>
+<p>尤其是设计师在不懂代码的情况下，你做完后，一定让它识别逻辑漏洞、分析性能瓶颈或检查代码一致性。比如：“请审阅以下代码/逻辑。指出可能存在的安全漏洞、性能瓶颈，并提出改进建议”。</p>
+<hr>
+<p><strong><strong>👉 如果觉得不错，随手点个赞、在看、转发三连吧</strong></strong></p>
+<p><strong><strong>👉 如果想第一时间收到推送，也可以给我个星标⭐</strong></strong></p>
+<p><strong><strong><strong>👉 我们组了一群热爱探索的设计师→「设计师的 VibeCoding 实验室」</strong></strong></strong> 欢迎私聊来加入一起探索。</p>
+<p>继续滑动看下一个</p>
+<p>RaDesign</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/dMUzfR2qXPuHt77pu3M8rw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>别再一句话使唤 Codex 了，复杂任务要用目标模式 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">别再一句话使唤 Codex 了，复杂任务要用目标模式</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%A6%99%E5%90%9B%E8%B5%9B%E5%8D%9A%E6%B7%98%E9%87%91">香君赛博淘金</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%9B%AE%E6%A0%87%E6%A8%A1%E5%BC%8F">目标模式</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-05-24</span>
+  </div>
+  <p class="lead">你应该遇到过这种情况。让 Codex 修一个 bug，它修到一半开始顺手重构；让它补测试，它写着写着忘了验收标准；让它整理一段代码，最后改出来的东西看着很完整，但不是你真正要的结果。</p>
+  <article class="content"><p>香君赛博淘金 <em>2026年5月23日 22:42</em></p>
+<p>你应该遇到过这种情况。</p>
+<p>让 Codex 修一个 bug，它修到一半开始顺手重构；让它补测试，它写着写着忘了验收标准；让它整理一段代码，最后改出来的东西看着很完整，但不是你真正要的结果。</p>
+<p>这类问题不一定是 Codex 不够聪明。</p>
+<p>很多时候，是你给它的任务太像一句临时指令了。</p>
+<p>普通聊天适合短问题，比如解释一段代码、问一个命令、生成一个小函数。但如果任务要连续推进十几分钟，甚至更久，只靠一来一回的聊天就很容易散。</p>
+<p>这时候就该用 Codex App 的 Goal mode（填一下昨天留的坑 <a href="https://mp.weixin.qq.com/s?__biz=Mzk5MDI3MzM5Mw==&mid=2247484767&idx=1&sn=a30f4d3ea2a0dcbd41c09e08001ee9f2&scene=21#wechat_redirect">Codex 这次更新，有点像给 AI 配了一台电脑</a> ），中文可以直接叫目标模式。</p>
+<p>它不是让 AI 变成全自动工程师，而是给 Codex 一张更清楚的任务卡：这次要做什么，边界在哪里，做到什么程度才算完成。</p>
+<h2>目标模式到底解决什么问题</h2>
+<p>目标模式的核心很简单：给 Codex 一个可以持续围绕的目标。</p>
+<p>这个目标不是一句随口的 prompt。它同时承担两件事：</p>
+<ol>
+<li>它是 Codex 开始工作的起始提示。</li>
+<li>它也是 Codex 判断任务是否完成的验收标准。</li>
+</ol>
+<p>比如你平时可能会这样写：</p>
+<pre><code>帮我修一下登录失败的问题。
+</code></pre>
+<p>这句话太稀松平常了。</p>
+<p>Codex 不知道问题范围、不知道哪些文件能动、不知道什么叫修好，也不知道最后要不要补测试。</p>
+<p>在目标模式里，更好的写法应该是：</p>
+<pre><code>修复登录页在 token 过期后无法重新登录的问题。
+
+范围：只修改认证流程、登录页逻辑和相关测试，不重构路由，不调整页面样式。
+
+完成标准：token 过期后用户可以重新登录；登录失败时显示明确错误；登录成功后跳转回原页面；不影响首次登录流程。
+
+验证方式：补充或更新相关测试，运行现有测试，并总结改动文件和测试结果。
+</code></pre>
+<p>这就不是一句求助了，而是一个可以执行、可以检查、可以收尾的小任务。</p>
+<p>目标模式真正有用的地方就在这里：它不是让 Codex 更自由，而是让 Codex 更不容易跑偏。</p>
+<h2>什么时候应该用目标模式</h2>
+<p>不是所有事情都要开目标模式。</p>
+<p>如果你只是问一个概念、查一个命令、改一小段代码，普通对话就够了。</p>
+<p>当任务出现下面这些特征，就建议切到 <code>/goal</code> ：</p>
+<ol>
+<li>任务需要连续做三五步以上。</li>
+<li>中途可能要读文件、改代码、跑测试、再根据结果调整。</li>
+<li>你希望 Codex 一直记住最终目标。</li>
+<li>你需要明确的完成标准。</li>
+<li>你不希望一个临时追问把主任务打断。</li>
+<li>任务最后需要交付总结、验证结果或修改清单。</li>
+</ol>
+<p>适合目标模式的任务，大概是这些：</p>
+<ol>
+<li>修复一个线上 bug，并补回归测试。</li>
+<li>把一个页面从旧 API 迁移到新 API。</li>
+<li>给已有模块补 TypeScript 类型。</li>
+<li>整理一组 lint 或 test 报错。</li>
+<li>重构某个服务模块，但保持外部行为不变。</li>
+<li>先读项目，再提出计划，然后执行其中一个明确改动。</li>
+</ol>
+<p>它们都有一个共同点：不是一句问答能结束，需要持续推进，也需要最后验收。</p>
+<h2>第一步：打开 /goal</h2>
+<p>在 IDE extension 或 CLI 里，都可以用同一个入口：</p>
+<pre><code>/goal
+</code></pre>
+<p>输入 <code>/goal</code> 之后，把你的目标写进去。</p>
+<p>如果你输入以后没有看到相关命令，不要先怀疑自己用错了，大概率是 goals 功能还没启用。</p>
+<p>可以在 <code>config.toml</code> 里打开：</p>
+<pre><code>[features]
+goals = true
+</code></pre>
+<p>也可以直接运行：</p>
+<pre><code>codex features enable goals
+</code></pre>
+<p>开启后，再回到 IDE extension 或 CLI，用 <code>/goal</code> 创建目标。</p>
+<p>Codex App里面则是点击左下角的加号找到追求目标选项</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/teQhPZBEOpMtgibwzpxCx66ZSpc5BaAn6ibcFJR1f1DC7rQua7zArJoSWohbWZl7UIWnlxoa5ZvVPjar9o4EGoulqnt44Q5vzmzbEAusvMem4/640?wx_fmt=png&from=appmsg&watermark=1#imgIndex=0" alt="图片"></p>
+<p>在 Codex App 里，目标启动后，进度会显示在输入框上方。</p>
+<p>在cli你可以看到当前目标状态，也可以对目标做几个操作：</p>
+<ol>
+<li>pause：暂停目标。</li>
+<li>resume：继续目标。</li>
+<li>edit：编辑目标。</li>
+<li>clear：清除目标。</li>
+</ol>
+<p>这几个按钮比看起来重要。</p>
+<p>目标跑偏了，不要硬聊，先 pause，再 edit。目标已经完成了，就 clear 掉，避免后面的对话继续被旧目标影响。你要离开电脑、网络不稳、需要人工检查，也可以先 pause，回来再 resume。</p>
+<h2>一个好目标怎么写</h2>
+<p>目标模式好不好用，关键不在 <code>/goal</code> 这个命令，而在你写进去的目标质量。</p>
+<p>一个好目标至少包含四样东西。</p>
+<h3>1. 具体结果</h3>
+<p>不要写：</p>
+<pre><code>帮我优化这个项目。
+</code></pre>
+<p>这句话太大，也没法验收。</p>
+<p>可以改成：</p>
+<pre><code>优化用户设置页的保存逻辑，让保存成功、保存失败、刷新后回显三个流程都可正常工作。
+</code></pre>
+<p>结果越具体，Codex 越不容易自己脑补。</p>
+<h3>2. 任务范围</h3>
+<p>告诉它哪些能改，哪些不要动。</p>
+<p>比如：</p>
+<pre><code>只修改 src/settings 目录和相关测试文件，不调整全局路由，不重构公共组件，不改视觉样式。
+</code></pre>
+<p>很多 AI 写代码的问题，不是不会改，而是太积极。</p>
+<p>范围写清楚，就是给它上护栏。</p>
+<h3>3. 完成标准</h3>
+<p>告诉它做到什么程度算完成。</p>
+<p>比如：</p>
+<pre><code>保存成功后展示成功提示；保存失败时保留用户输入并显示错误；刷新页面后能看到最新设置。
+</code></pre>
+<p>没有完成标准，Codex 只能按自己的理解收尾。</p>
+<p>有完成标准，它才知道什么时候该停，什么时候还没做完。</p>
+<h3>4. 验证方式</h3>
+<p>代码任务一定要写验证方式。</p>
+<p>比如：</p>
+<pre><code>补充或更新相关测试；最后运行 npm test 和 npm run lint。如果测试无法运行，说明原因和下一步建议。
+</code></pre>
+<p>Codex 可能会说完成了，但你不能只听它说。</p>
+<p>把验证方式写进目标里，最后再自己检查一遍，才是比较稳的用法。</p>
+<h2>可以直接复制的目标模板</h2>
+<p>你可以先用这个模板：</p>
+<pre><code>/goal
+
+目标：完成【一个明确任务】。
+
+背景：【当前问题、业务背景、已知现象】。
+
+范围：
+- 可以修改：【允许修改的目录、文件或模块】
+- 不要修改：【不希望动的部分】
+
+完成标准：
+- 【标准 1】
+- 【标准 2】
+- 【标准 3】
+
+验证方式：
+- 运行【测试命令】
+- 检查【页面、接口、日志或行为】
+
+输出要求：
+- 总结改动内容
+- 列出修改过的文件
+- 说明测试结果
+- 如果有未解决问题，明确指出
+</code></pre>
+<p>再给一个实际例子：</p>
+<pre><code>/goal
+
+目标：修复登录页在 token 过期后无法重新登录的问题。
+
+背景：用户登录一段时间后 token 过期，点击登录按钮会短暂 loading，但页面没有跳转，也没有错误提示。
+
+范围：
+- 可以修改认证流程、登录页逻辑和相关测试
+- 不要重构整体路由
+- 不要调整页面视觉样式
+
+完成标准：
+- token 过期后，用户可以重新输入账号密码登录
+- 登录失败时显示明确错误提示
+- 登录成功后跳转到原本要访问的页面
+- 不影响正常首次登录流程
+
+验证方式：
+- 补充或更新相关测试
+- 运行现有测试
+- 如果测试无法运行，说明原因
+
+输出要求：
+- 总结问题原因
+- 说明具体改动
+- 列出修改文件
+- 给出验证结果
+</code></pre>
+<p>这类目标比一句修一下登录问题要稳得多。</p>
+<h2>目标还没想清楚，先别急着开 /goal</h2>
+<p>很多人第一次用目标模式，最容易卡在这里：我知道自己想让 Codex 帮忙，但我说不清目标。</p>
+<p>这个时候不要硬写一个模糊目标。</p>
+<p>先用 <code>/plan</code> 。</p>
+<p>比如你可以写：</p>
+<pre><code>/plan
+
+我想把用户设置页迁移到新 API，但还没想清楚具体步骤。请先帮我拆解任务，列出需要确认的问题、可能涉及的文件、风险点和测试方案。先不要修改代码。
+</code></pre>
+<p>等 Codex 把任务拆清楚，你再把计划整理成 <code>/goal</code> 。</p>
+<p>还有一种办法，是让 Codex 先采访你：</p>
+<pre><code>/goal
+
+我想完成一个代码修改任务，但目标还不清楚。请先问我 5 个必要问题，帮助我明确任务范围、完成标准和测试方式。在我回答之前，不要修改代码。
+</code></pre>
+<p>它通常会问你：</p>
+<ol>
+<li>最终想解决什么问题？</li>
+<li>哪些文件或模块可以改？</li>
+<li>有没有不能动的部分？</li>
+<li>怎么判断完成？</li>
+<li>需要跑哪些测试？</li>
+</ol>
+<p>你回答完，再让它整理成正式目标。</p>
+<p>比起憋一个含糊的 prompt，这种方式更适合真实开发。</p>
+<h2>运行过程中怎么控制它</h2>
+<p>目标启动后，不是你只能等它跑完。</p>
+<p>你仍然可以继续补充要求。</p>
+<p>比如：</p>
+<pre><code>不要改公共 Button 组件，只在当前页面处理。
+</code></pre>
+<p>或者：</p>
+<pre><code>测试先覆盖失败提示和成功跳转，样式细节不用动。
+</code></pre>
+<p>这些 follow-up 可以用来校准方向。</p>
+<p>如果你只是想问进度、问原因、问风险，尽量用 side chat，不要打断主任务。</p>
+<p>适合问这些：</p>
+<pre><code>当前目标进度到哪了？
+</code></pre>
+<pre><code>这次改动的主要风险是什么？
+</code></pre>
+<pre><code>为什么选择改 service 层，而不是页面组件？
+</code></pre>
+<pre><code>还剩哪些验证没做？
+</code></pre>
+<p>这样你可以理解它在做什么，但不会轻易把主线带偏。</p>
+<h2>常见问题</h2>
+<h3>目标写错了怎么办</h3>
+<p>不要一路补丁式解释。</p>
+<p>直接用 edit，把目标改清楚。</p>
+<p>尤其是范围和完成标准，最好一次性写明白。</p>
+<h3>Codex 跑偏了怎么办</h3>
+<p>先 pause。</p>
+<p>然后检查它为什么跑偏：是目标太大，范围没写清楚，还是完成标准不明确。</p>
+<p>改完目标以后再 resume。</p>
+<p>如果方向已经完全变了，建议 clear 掉旧目标，重新开一个。</p>
+<h3>网络不稳定或要离开电脑怎么办</h3>
+<p>不要让长任务硬挂着。</p>
+<p>先 pause，等你回来或者连接稳定后再 resume。</p>
+<h3>目标完成后还要做什么</h3>
+<p>至少检查四件事：</p>
+<ol>
+<li>diff 是否符合目标范围。</li>
+<li>是否改了不该改的文件。</li>
+<li>测试是否真的跑过。</li>
+<li>结果是否满足完成标准。</li>
+</ol>
+<p>如果 Codex 说测试通过，你也最好自己再跑一遍关键命令。</p>
+<p>目标模式能让任务更连贯，但不会替你承担最终责任。</p>
+<h2>我建议你从一个小任务开始练</h2>
+<p>第一次用 Goal mode，不要从大项目重构开始。</p>
+<p>找一个真实但边界清楚的小任务：</p>
+<ol>
+<li>修一个 bug。</li>
+<li>补一个测试。</li>
+<li>给一个页面接入新接口。</li>
+<li>清理一组 lint 报错。</li>
+<li>给一个函数补类型。</li>
+</ol>
+<p>先跑一次完整流程：写目标、看计划、补约束、检查结果、自己验收。</p>
+<p>跑完你会明显感觉到，它和普通聊天不一样。</p>
+<p>普通聊天像你随口叫同事帮忙看一眼。</p>
+<p>目标模式更像你发了一张任务卡：做什么、别做什么、做到什么程度算完成，最后怎么验收。</p>
+<p>这才是 Codex App 目标模式最值得用的地方。</p>
+<p>它不会让 AI 突然变成全自动工程师，但它能把一次长任务协作变得更稳、更可控。</p>
+<p>如果你不知道自己的开发任务该怎么写成 Goal，可以在评论区丢一个真实任务。我挑几个改成可以直接复制的目标模板。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>香君赛博淘金</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/MxrYvhdq20P2WHWfdweQIQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

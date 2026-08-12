@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lovart 国内版本上线！藏师傅教提示词大全及教学 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Lovart 国内版本上线！藏师傅教提示词大全及教学</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%98%9F%E6%B5%81%20Agent">星流 Agent</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1">设计</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=Lovart">Lovart</a>
+    <span class="date">2025-07-04</span>
+  </div>
+  <p class="lead">大家好，我是歸藏（guizang），今天带来 Lovart 国内版星流 Agent 的介绍和提示词合集。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年07月03日 17:54</em></p>
+<p>大家好，我是歸藏（guizang），今天带来 Lovart 国内版星流 Agent 的介绍和提示词合集。</p>
+<p>前段时间 Lovart 的推出真的引起了轰动，而且效果也很好，基本是我觉得这波 Agent 热潮中完成度和稳定性最高的垂类 Agent 产品了。我也写过详细的流程拆解文章《 <a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247488952&idx=1&sn=572e9eea8eb20d067e04ed2ceced5a05&scene=21#wechat_redirect">不看这藏师傅篇深度拆解，你永远不知道Lovart AI有多可怕</a> 》。</p>
+<p>现在 Lovart 的国内版本 星流 Agent（ <a href="https://www.xingliu.art/">https://www.xingliu.art/</a> ） 正式上线。</p>
+<p>跟海外功能一样的同时，对中文内容生产更加友好 ，在这段时间还加上了一致性无敌的 FLUX Koontext 模型和可以直接生成语音音效的视频模型，更加强大了。</p>
+<p>同时价格也是 相当划算，首月算力五折，无需要请码！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlSPII4F8bibwsle4ibzx2ZzUEcC5pk4oPW2ojr6MDbib1IRW4KjG1XBGQw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这次我也整理了我专门为这种批量设计 Agent 写的一些提示词：</p>
+<ul>
+<li>国风 Q 版恐怖塔罗牌海报生成</li>
+<li>国风戏曲 MBTI 海报生成</li>
+<li>如何用星流 Agent 生成一整套品牌 VI 设计</li>
+<li>如何使用星流 Agent 的 FLUX Kontext 模型</li>
+<li>批量生产耄耋表情包</li>
+<li>批量根据产品介绍生成 UI 设计图标</li>
+<li>一键生产爆款伪记录类型的视频</li>
+</ul>
+<p>首先是传统艺能，图像海报的批量生成。</p>
+<p>我在海外版本的时候探索了很多适合设计 Agent 用的同体系批量创意图像生成提示词，刚好可以拿来用。</p>
+<p>先来广受好评的 Q 版国风戏曲塔罗牌设计。</p>
+<p>这个提示词除了考察模型对于画风一致性的表现，也可能考量模型对于世界知识的理解，他需要了解每张塔罗牌的意义，然后找到对应的戏曲场景，再将场景还原出来。</p>
+<pre><code>## 任务目标
+请生成一套基于中国古代知名戏曲片段的塔罗牌设计，使场景画面与塔罗牌意义相对应。
+## 内容要求
+1.场景选取:从中国古代知名戏曲片段中提取具代表性的场景画面
+2.场景而非人像:画面需表现完整戏剧场景而非单个人物肖像
+3.服饰真实性:画面中人物必须穿着对应戏曲的正确戏服
+
+##视觉风格
+中式恐怖风格的Q版(Chibi)3D等距场景，色彩丰富，带有诡异氛围。
+##技术规格
+确保观者每张图片上需标注对应的塔罗牌标记，能识别对应的塔罗牌类型。
+</code></pre>
+<p>我让他生成了八张，可以看到风格和场景都很契合，复刻我们对于 Q 版但又恐怖的要求，每个卡片都有对应的英文名称和中文名称。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlS54um7Ya74roxtMfzUz7ibMcoXVqialEvev9dBibjXs5P1AIzxFwbQ3FA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在生成过程中他会先制定计划，然后通过调用知识库内容对计划进行细化。</p>
+<p>比如先识别核心需求，然后进行主要风格的概念定位，最后根据核心需求和概念定位延展出视觉策略。</p>
+<p>这时候提示词的所有内容就都搞定了，开始生成每张图片的提示词，最后按顺序生成图片。</p>
+<p>整个流程非常的专业，而且细致，比一些初级设计师要强，真的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXl5Ikhy6CB6icHoNNDbnTe7cVuicvJxWf77G1XR19pjWoWHpWZUqHCh47g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当然很多人说这个恐怖版本的有点黑，有没有更有设计感，没有那么黑暗的版本。</p>
+<p>有的朋友，有的。</p>
+<p>我还把他从塔罗牌变成了MBTI 卡片。</p>
+<p>风格也变成了非常具有设计感的极简插画版本，整体色调更加明亮，而且排版更加一致。</p>
+<p>每张海报下面还有对应的塔罗牌的一句话介绍。</p>
+<pre><code># 任务目标
+请生成一套基于中国古代知名戏曲片段的MBTI人格类型卡片设计，使戏曲场景扁平插画的情感内涵与MBTI人格特质相对应。
+
+## 内容要求
+1.**场景选取**：从中国古代知名戏曲片段中提取能体现不同MBTI人格特质的代表性场景
+2.**场景意境**：画面需表现完整戏剧场景，通过场景氛围体现对应的人格特质
+3.**服饰真实性**：画面中人物必须穿着对应戏曲的正确戏服
+4.**人格对应**：每个场景需精准对应一种MBTI人格类型的核心特质
+
+## 卡片排版设计
+参考图片样式：
+-**顶部**：MBTI类型代码（如INFJ）
+-**中部**：渐变色彩的抽象几何图形作为主视觉
+-**底部**：
+  - 中文人格类型名称（如&quot;提倡者&quot;）
+  - 英文标语：（如&quot;The world is your oyster&quot;）
+  - 装饰性边框和星形符号
+
+## 视觉风格
+- 采用现代极简设计语言
+- 渐变色彩与几何形状结合
+- 保持神秘感与艺术性
+- 整体色调柔和梦幻
+
+## 技术规格
+- 卡片尺寸采用标准比例
+- 每张卡片需清晰标注MBTI类型代码
+- 保持系列视觉一致性
+</code></pre>
+<p>而且星流 Agent 还给了我个惊喜，他直接把生成的 MBTI 卡片做了一个网页排版的展示，你可以直接导出图片。</p>
+<p>上面有对应的名称和设计方案介绍，过于贴心了，现在也可以访问生成的网页了，不是只有图片。</p>
+<p>我太喜欢里面有描边的这个版本了，那几张紫色带描边的，我觉得是最好看的。</p>
+<p>表意也很好，即使他没说每个对应什么戏曲，你应该也能看出来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlQhk6yswTRcmr2WQYNCKp76Gg2FeAQWcZYpZeX90spdXn40aaje9TKg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>创意设计整完了我们来点正经能干活的，比如很多朋友创业的时候很需要一套不错的品牌 logo 加上物料设计。</p>
+<p>我这里虚构了一个叫“酥月记”的月饼品牌，准备看看能不能通过跟星流 Agent 的沟通产出一套可用的 VI 物料和 logo 设计。</p>
+<p>我先是给他简单的设计需求和品牌理念，要求他生产多个 logo 的设计稿，我进行挑选。</p>
+<pre><code>设计需求：新中式糕点品牌Logo
+
+1. 品牌名称：酥月记 (Sū Yuè Jì)
+
+2. 品牌定位：新中式精致糕点品牌。目标客群为追求生活品质、喜爱文化创意的年轻消费者。
+
+3. 品牌理念：“酥”代表中式点心的酥脆层次与匠心工艺；“月”象征东方美学中的圆满与思念；“记”则意味着记录与分享生活中的每一个甜蜜瞬间。品牌致力于将传统手艺与现代审美结合，让每一块糕点都成为一个可以分享的故事。
+</code></pre>
+<p>他先是生成了四个备选，我觉得第二个不错，就让他在第二个的基础上进行优化，去掉青色部分，然后加上文字。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlib0xgY6hQIibMdBygaf1S9tFAJfUSSEjbXkEZ2Qpg3G9dZzyzUWJqCbw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>之后他给了一个半月的版本，这个寓意不太好，我就让调整成满月，然后搞定了，非常完美了合适的一个 logo。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXly3fU1ounW9W7a21mkqiaT4psrTd3oCApDIicaEUhhlnILUGrqLib192WA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>现在我们需要一些 VI 物料的设计，所以我就跟他说设计一些物料延展。</p>
+<p>这时候我发现他们迭代真的快，已经加上了可以交互的询问组件，你不需要打字，直接选择就行，我先选了包装设计。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlJZ5EXfvAI5aykVRDtoUrovcJLuibaMmfXouvqxJ9zF1sS4EicE0uvQtA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>来看一下结果，给我吓到了朋友们，这已经不是初级设计师的水平了。</p>
+<p>初级设计师这种延展通常是套设计样机实现的，你会发现物料很多都一样。</p>
+<p>但星流 Agent 不是，他完全根据品牌的主营业务判断了需要的物料类型，还有月饼包装和包装纸的设计，这太强了，以前真得会渲染才能 搞。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXl66g1iatOJR40ublaBc4pGxibeVPzSWvSiclAaAYIMyZaDR08EHsJZDIMg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>然后我又让他设计了品牌视觉基础系统，也就是色彩、印刷品之类的东西，搞得也像模像样的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlNJU7FVWew3iaSjLXxhiccXz6ZG5BbWpBs4mh9HZv4eGolnibCtDFH92mA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后是一些数字媒体就是线上广告之类的物料。比如广告图片和网页设计，他还高了一些好像是灯牌的东西。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlDLcsIc4ZHe4icOXf1JNYPpGHGaiaNW3BicPhPFZW6eEeXw3nibOW7qoeyg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>真的看完这些说实话，你都能充个会员去闲鱼之类的地方接 VI 设计的单子了，绝对比平均水平强。</p>
+<p>然后这次 星流 Agent 也支持了FLUX Kontext 这个一致性最强的模型。</p>
+<p>你可以在左上角这里切换，非常适合电商行业的朋友们使用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlUWJUsn5eN1WEywQOR7BO2haEnaictLNVTl9LkiaNias5ia5gXRhKWK14iag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>比如我前几天买了一个小米 AI 眼镜，给他拍了张展示图，但是由于我桌子太小以及打光的原因，我对他不太满意。</p>
+<p>这时候我就直接把原图拖到星流的无限画布，然后输入提示词。</p>
+<pre><code>照片级真实感，充满活力的产品摄影场景，优雅地放在在中央。周围环绕着新鲜的迷迭香枝。明亮清新的灯光突出质感和鲜艳的自然色彩，非常适合高端科技品牌，有人文关怀，风格引人入胜且充满活力，高细节，清晰聚焦，工作室灯光。
+</code></pre>
+<p>只能说不愧是一致性保持最好的模型，眼睛后面的字和细节都还在，甚至原来都看不太清的指示灯也在，但是整个画面结构和光线明显变好了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlib2CGtTOswyiauibnYfsnJlAOibImicOhfdK2GVVMRO5wgicFgAZljve4aUA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当然你要嫌这样操作太慢的话，也可以在右边的 Agent 聊天面板直接让他生成多张图片，这里我就给了两个化妆品展示词的参考和我拍的产品原图，然后他就给了四张不同的展示图。</p>
+<pre><code>帮我给这个眼镜产品生成不同的电商展示图，同时保持商品的一致性。
+
+电商展示图环境参考：摆放在石块上，背景为米白色。代表其温暖的色调，为设计增添优雅感。此海报突显了这些香水的奢华本质，捕捉其独特香味。
+
+照片级真实感，充满活力的产品摄影场景，优雅地放在在中央。周围环绕着新鲜的迷迭香枝。明亮清新的灯光突出质感和鲜艳的自然色彩，非常适合高端护肤品牌，风格引人入胜且充满活力，高细节，清晰聚焦，工作室灯光。
+</code></pre>
+<p>看一下是不是非常高级，一致性保持的也不错，朋友送的礼物自己不会拍展示图，也可以随手拍一张这样搞。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXl3iaWs49m2DPjqlAbILHET3PhAKdEBOduRiad3d0XPQNibsMn4hB107oFg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后是传统艺能表情包生成怎么能少的了呢，最近最火的表情包系列就是那个圆头猫咪耄耋了。</p>
+<p>我就找了一些比较火的耄耋表情包上传之后看看能不能给他们高清化并且换一种表现形式，还得保留那个贱贱的感觉。</p>
+<p>先上传几张耄耋（猫爹）表情包截图，然后输入提示词。</p>
+<pre><code>这是一组最近最火的表情包，这个大家管这只贱贱的橘猫叫耄耋谐音是猫爹，一般是橘猫的各种表情或者猫头搭配下身描边简笔画，参考这组耄耋表情包，生成一套9张图的高清化的可爱风格3D表情包，同时上面加上跟图片匹配的贱贱的文字和表情
+</code></pre>
+<p>可以说非常传神了，尤其是那个“呆住”的表情，太像了 哈哈哈哈。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlyIicmbiajz5uyUdOfl0K3QNRAQ473Gu1VaHV2Ovr0ckkcFgNm7SR1Vibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>耄耋表情包现在变体，很多了，开始出现上面是圆头身子是简笔画，感觉是受到了 Doro 表情包的影响。</p>
+<p>于是我就又让他生成这种上面是写实的脑袋，下面是简笔画绳子的表情，他也 get 到了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlFDdFqmP4L9nib99qT0o92XKomdF3f9OSPf12NEkF5YxkKEUpfWSRHtA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在生成 UI 设计需要的素材比如图标插画上也非常好用，这里分享一下我探索的提示词，把这个提示词和你产品的描述一起给到 星流 Agent 他就会帮你生成非常契合主题的类 Airbnb 3D 写实图标。</p>
+<p>这里我把提示词和我写的星流 Agent 介绍给他，可以看到生成的图标常符合星流 Agent 的定位。</p>
+<pre><code>## 任务概述
+基于产品介绍文章，使用img1模型为宣传图生成功能图标，步骤如下：
+
+## 执行步骤
+1.**内容分析**：根据文档内容分析应生成哪些功能图标
+2.**图标确定**：确定具体图标描述（如&quot;文件夹栈＋播放按钮&quot;）
+3.**图标生成**：将图标描述插入下方提示词的方括号\`[图标描述]\`中批量生成，并参考上传的图片图标样式
+4.**背景处理**：将所有生成的图标图片转为透明背景
+
+## 图标生成提示词
+\`\`\`
+A highly detailed 3D isometric icon of a [文件夹栈＋播放按钮], inspired by a Dieter Rams Braun design.
+Style: Airbnb 2024 icon language — miniature diorama / emoji-like object with crisp edges, realistic textures, and soft handcrafted realism.
+Material: a mix of matte plastic, brushed aluminum, ceramic or leather depending on the original object.
+View: three-quarter front-left isometric viewwith a slight top-down angle.
+Lighting: soft neutral studio lighting from the top-leftwith subtle shadows and gentle gloss highlights.
+Color palette: warm, natural tones with subtle gradients andno harsh contrasts.
+Background: clean white, nodrop shadow or noise.
+Mood: minimal, charming, utilitarian, premium.
+Rendering: hyper-detailed, photorealistic object with depth and tactility, like a designer lifestyle emoji or miniature product model.
+Optional Add-onfor Replication:
+Use the attached photo as a reference for proportions and layout. Do notcopy exactly — reinterpret it in the Airbnb icon aesthetic.
+\`\`\`
+
+## 产品介绍文章
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlc8qmjribwacqpvzicnbH4mnkN8PevyDHovdcZdNFN0GTA1esOUwxKHwA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后就是 Lovart 时期已经很强但现在更强的视频制作能力了。</p>
+<p>现在的星流 Agent 支持直接生成视频的音效以及语音，并且自带唇形同步，原有的配乐能力还在。</p>
+<p>这里我为了考察他的智能程度，直接把我总结的最近很火的第一人称伪纪实爆款视频的万能公式发给了他。</p>
+<p>然后让他根据这个公式帮我生成一个这样的视频，里面没说提示词也没说主题。</p>
+<pre><code>基于下面的创作思路用Video3模型帮我制作一个符合这个思路的爆款视频：
+Veo3 伪纪实爆款视频的万能公式：四大核心要素
+1. 核心引擎：巨大的“反差感” (Contrast Engine)
+这是所有笑点的根本来源。视频的成功在于将两个完全不搭界的元素进行强行碰撞，从而产生荒诞的喜剧效果。
+- 时代反差： 用最现代的形式（Vlog、街头采访）去呈现古老或虚构的内容（泰坦尼克号、维京人、大脚怪、暴风兵）。
+- 身份反差： 让本应神秘、严肃或邪恶的角色（大脚怪、维京人、暴风兵）表现出普通人（甚至“屌丝”）的一面，充满生活气息和人性弱点。
+- 情境反差： 在极度危险或宏大的背景下，角色们关心的却是微不足道的日常琐事。例如，在即将撞上冰山时，乘客关心的是明早的吐司；在炮火连天的战场上，暴风兵在堆雪人。
+2. 表现形式：“伪........
+</code></pre>
+<p>然后他就开始规划每个分镜的内容，他自己发散了一个法老监工自己金字塔的脚本，而且加上了很多现在工作环境中存在的术语，最后生成了视频和语音的提示词。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlibSWOyQJOUV1ZffUqCqUmDFRlld9d7FDEic4B4yXo26b3NVqXG4SS1Fw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>可以看一下结果，相当不错，其实每段可以加两个分镜的这样紧凑点，节奏更好，其他的基本没啥问题，字幕是我后加的。</p>
+<p>今天的测试基本就是这些了，星流相较于 Lovart 的能力完全没有削弱，甚至有所加强。</p>
+<p>而且我看了一下真的超便宜，如果你是 Lib 的会员第一个月标准版甚至只需要 9 块钱，即使不订阅的话也有三次完全免费的试用，非常给力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege2nxbKbMicNlICVxmN9TGXlUQwDLQ76kF9EMVuJmKDFznl0xqGXJRvysynJzzlwvza4LKP35ic2gBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>之前我在介绍 Lovart 的时候就说在构建垂类 Agent 应用的时候，产品在这个垂类的专业能力非常重要。</p>
+<p>只有足够了解这个行业和 AI 模型本身，你才能够通过提示词和工具调度将自己在行业的专业知识转移到 Agent 中，从星流 Agent 来看，国内版本的模型和工具调度依然非常专业，而且更加强大。</p>
+<p>行业知识和 AI 知识两只手都要硬才是垂类 Agent 的真正壁垒。</p>
+<p>这里尝试星流 Agent： <a href="https://www.xingliu.art/">https://www.xingliu.art/</a></p>
+<p>如果你觉得教程对你有帮助的话可以帮我点个赞👍或者喜欢🩷，也可以推荐给你需要的朋友们！</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/X8Y7xF0HTStRWPTIhcWjEg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obsidian+Codex+飞书：搭建AI时代的个人知识库 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Obsidian+Codex+飞书：搭建AI时代的个人知识库</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E8%A8%80%E4%B9%8B">言之</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Obsidian">Obsidian</a><a class="chip" href="../index.html?tag=%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93">个人知识库</a><a class="chip" href="../index.html?tag=%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86">知识管理</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-07-02</span>
+  </div>
+  <p class="lead">这是AI生成的微信公众号文章测试</p>
+  <article class="content"><p>言之 言之AI笔记 <em>2026年6月14日 18:28</em></p>
+<h2>用 Obsidian + Codex + 飞书，搭一个真的能用的个人 AI 知识库</h2>
+<p>如果你和我一样，微信收藏里躺着一堆公众号和好文章，时不时有些灵感想记录，笔记软件里散落着过去 N 年记录的笔记，但真要用的时候还是想不起来、找不到、用不起来，以至于过往的记录和收藏一直躺着吃灰，那你需要的可能不是又一个“收藏工具”，而是一套能被 AI 持续维护的个人知识库。太长不看版：可以把这篇文章发给你的agent助手（Claude/codex/openclaw）让它帮你搭建这套AI个人知识库。</p>
+<p>我现在用的方案包括以下部分：</p>
+<ul>
+<li>Obsidian 负责阅读、浏览、双链和本地 Markdown 笔记。</li>
+<li>Codex 或 Claude Code 负责读写文件、整理资料、生成 wiki 页面。</li>
+<li>飞书负责日常快速记录、临时收集、移动端输入和协作分享。</li>
+<li>Gitee 做主云端同步。</li>
+<li>GitHub 做备份云端。</li>
+</ul>
+<p>这套方案不需要企业级 RAG，不需要向量数据库，不需要一上来就搞复杂系统。它的核心是：先用文件夹和 Markdown，把“原始资料 -&gt; AI 整理 -&gt; 可追溯 wiki -&gt; 问答和健康检查”的最小闭环跑通。</p>
+<h2>▶1. 这套方案的来源：Karpathy 的 LLM Wiki 思想</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/yDI5ibEG7eotov8v1n5YLpk91fbOYBsM8f8ur4kU7OQGPhLgicwdEwoDzzic86ibQzWu4Ka4abKoBia3rByXzics1vTKic7iatZibibuulphuXIdicpUIQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图1：Karpathy 的 LLM Wiki Gist 截图"></p>
+<p>图1：Karpathy 的 LLM Wiki Gist 截图</p>
+<p>AI agent 正在从辅助工具走向知识和研发系统的维护者</p>
+<p>这套方法背后的思想，主要来自 Andrej Karpathy 在 GitHub Gist 里写的 LLM Wiki。</p>
+<p>Karpathy 的核心意思可以用大白话理解：</p>
+<p>大多数人用 AI 处理文件，其实是在做 RAG。你把一堆文件丢给 AI，等你问问题时，AI 再临时去检索片段、拼答案。这个方式能用，但每次都像重新开工：知识不会沉淀，关联不会自动长出来，矛盾也不会一直被记住。</p>
+<p>LLM Wiki 换了一个思路：不要只让 AI 在提问时临时检索，而是让 AI 平时就把资料编译成一个持久的 wiki。</p>
+<p>新资料进来时，AI 要做的不只是摘要，而是：</p>
+<ul>
+<li>读原文。</li>
+<li>提取关键概念和实体。</li>
+<li>创建来源摘要页。</li>
+<li>更新相关概念页、人物页、组织页、产品页。</li>
+<li>发现新旧资料的冲突。</li>
+<li>更新总索引。</li>
+<li>记录维护日志。</li>
+</ul>
+<p>这样，知识库不是一堆被动等待检索的文件，而是一个会持续变厚、变清楚的知识网络。</p>
+<p>Karpathy 把这个结构分成三层：</p>
+<p>1. Raw sources：原始资料层。文章、论文、图片、数据、摘抄都放这里。原则是只读、不可覆盖、不可随意改写。</p>
+<p>2. Wiki：AI 编译后的知识层。概念页、实体页、综合页、来源摘要页都放这里。</p>
+<p>3. Schema：写给 AI 的规则文件。Codex 用 AGENTS.md，Claude Code 可以用 CLAUDE.md。它告诉 AI 这个知识库怎么维护。</p>
+<p>我在自己的实践里，又补了第四个区域：</p>
+<p>4. Outputs：输出层。问答、健康检查、阶段总结、研究报告都放这里。好的输出可以再回流进 wiki。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/yDI5ibEG7eosBtYaibWCPXl5QHc1APrbWe0vAYHWh6RQ1ichZWyNEkC5E4YFezfOWwnSnicgtf8bxcFjdcRSwg1uIejppnpZt8iaxiavONkGDYVvQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图2：Obsidian 知识库关系图谱示例"></p>
+<p>图2：Obsidian 知识库关系图谱示例</p>
+<h2>▶2. 为什么我选择 Obsidian + Codex + 飞书</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/yDI5ibEG7eotplZUPliaYiciauupkeSY2NlcbOafnXpc0WiciaPE5A7jG33QLDGJ4jBhJo4ZGUMXXII8ELibYQVBS6fXWqIaGSfWia0z3w0aGoTvVqg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图3：Obsidian + Codex + 飞书工具组合图标"></p>
+<p>图3：Obsidian + Codex + 飞书工具组合图标</p>
+<p>办公和协作工具正在被 AI 重塑</p>
+<p>这几个工具各有分工，不要混着理解。</p>
+<p>Obsidian 是知识库的前端和阅读器。它最大的好处是：笔记本质上就是本地 Markdown 文件。你不被平台锁死，AI 也可以直接读写这些文件。双向链接、图谱、全文搜索，对个人知识库来说已经够用了。</p>
+<p>Codex 或 Claude Code 是知识库维护工。它们不是拿来聊天的，而是拿来读文件、写文件、重构目录、更新索引、生成总结和做健康检查的。你可以把它理解成一个很勤快的知识库管理员。</p>
+<p>飞书适合做输入入口。很多想法不是坐在电脑前产生的，而是在路上、会后、读书时、聊天时冒出来。飞书文档或飞书妙记可以承担临时收集、移动端记录、语音转写和协作分享。后面再由 AI 把有价值的内容转进 raw/clips 或 raw/articles。</p>
+<p>Gitee 和 GitHub 负责同步和备份。我的策略是：Gitee 作为主云端，用来 pull；Gitee 和 GitHub 都作为 push 目标。这样就算一个平台临时访问不稳定，另一个平台还留着完整备份。</p>
+<h2>▶3. 搭完以后，你能得到什么</h2>
+<p>这套系统跑通后，至少可以实现这些能力：</p>
+<p>第一，资料不再只是“收藏”，而是会被整理进知识网。</p>
+<p>一篇公众号文章进入 raw/articles 后，AI 会生成来源摘要，更新概念页、实体页、综合页，并把它登记到 index 和 log。下次你问相关问题，AI 不需要重新从原文里扒拉，它可以先读 wiki。</p>
+<p>第二，原始资料可回溯。</p>
+<p>raw/ 里保存的是原文、原图、原始摘抄。wiki/ 里的每个重要判断，都尽量指向来源摘要页或原始来源。你发现总结不对，可以回到原文检查。</p>
+<p>第三，灵感和摘抄不会丢。</p>
+<p>你可以随时说“存到 clips”，让 AI 把一个想法、一句摘抄、一段聊天片段存进 raw/clips，再整理到相关概念页。</p>
+<p>第四，知识库可以定期体检。</p>
+<p>health check 会检查：</p>
+<ul>
+<li>哪些 raw 资料还没进入 wiki。</li>
+<li>哪些页面缺少来源。</li>
+<li>哪些概念重复或冲突。</li>
+<li>哪些页面没有链接。</li>
+<li>哪些判断可能过期。</li>
+<li>哪些 raw 标签和目录不一致。</li>
+</ul>
+<p>第五，多台电脑可以保持一致。</p>
+<p>因为整个知识库是 Git 仓库，所以在电脑 A 写完，push 到 Gitee 和 GitHub；电脑 B 或电脑 C 开始前 pull，就能保持一致。</p>
+<h2>▶4. 最小目录结构</h2>
+<p>我的当前结构是这样：</p>
+<pre><code>my_ai_wiki/ ├── AGENTS.md ├── CODEX_SETUP.md ├── raw/ │   ├── articles/ │   ├── papers/ │   └── clips/ ├── wiki/ │   ├── index.md │   ├── log.md │   ├── concepts/ │   ├── entities/ │   ├── syntheses/ │   └── sources/ └── outputs/     ├── qa/     └── health/
+</code></pre>
+<p>这里最重要的是三个分区。</p>
+<p>raw/ 是证据层，只放原始资料：</p>
+<ul>
+<li>raw/articles/：文章、长篇内容、网页文章、博客、微信公众号文章。</li>
+<li>raw/clips/：片段、短内容、随想、临时想法、读书摘抄、金句。</li>
+<li>raw/papers/：论文、期刊、学术作品、研究报告。</li>
+</ul>
+<p>wiki/ 是知识层，由 AI 整理：</p>
+<ul>
+<li>wiki/sources/：每份资料的来源摘要。</li>
+<li>wiki/concepts/：概念页。</li>
+<li>wiki/entities/：人物、组织、产品、项目等实体页。</li>
+<li>wiki/syntheses/：跨资料综合页。</li>
+<li>wiki/index.md：知识库总入口。</li>
+<li>wiki/log.md：维护日志。</li>
+</ul>
+<p>outputs/ 是输出层：</p>
+<ul>
+<li>outputs/qa/：问答、研究备忘、阶段总结。</li>
+<li>outputs/health/：健康检查报告。</li>
+</ul>
+<p>AGENTS.md 是规则层。它告诉 Codex：哪些目录能改，哪些不能乱改，新资料进来要按什么流程处理，标签怎么打，不确定内容怎么标注。</p>
+<h2>▶5. 先做人必须做的准备工作</h2>
+<p>有些事 AI 可以帮你，有些事必须你自己做。</p>
+<h3>5.1 你需要安装的软件</h3>
+<ul>
+<li>Obsidian
+  用来打开和浏览本地 Markdown 知识库。</li>
+<li>Git
+  用来做版本管理、同步和备份。</li>
+<li>Codex、Claude Code 或其他能读写本地文件的 AI 编程工具
+  它能进入你的知识库目录，读写 Markdown 文件。</li>
+<li>飞书
+  可选，但我建议装。它适合做移动端临时输入、会议记录、语音转文字和素材中转站。</li>
+</ul>
+<h3>5.2 你需要注册的账号</h3>
+<ul>
+<li>Gitee 账号
+  用作国内访问更稳定的主云端。</li>
+<li>GitHub 账号</li>
+</ul>
+<p>用作备份云端。</p>
+<ul>
+<li>飞书账号</li>
+</ul>
+<p>用来记录临时想法、剪藏、语音转写和协作分享。</p>
+<h3>5.3 你需要自己处理 SSH</h3>
+<p>AI 可以告诉你命令，但账号登录、SSH 公钥添加、权限确认，通常要你自己配合完成。</p>
+<p>常见流程是：</p>
+<pre><code>ssh-keygen -t ed25519 -C &quot;&lt;你的邮箱或备注名&gt;&quot; cat ~/.ssh/&lt;你的公钥文件名&gt;.pub
+</code></pre>
+<p>然后把公钥复制到 Gitee 和 GitHub 的 SSH keys 设置里。</p>
+<p>测试：</p>
+<pre><code>ssh -T git@gitee.com ssh -T git@github.com
+</code></pre>
+<p>如果你想更严谨，可以给这个知识库配置专用 SSH key，避免和其他项目混在一起。</p>
+<h2>▶6. 手动搭建：一步一步来</h2>
+<p>下面以 macOS 路径为例。公开文章里建议使用占位路径，不要暴露自己的真实电脑用户名：</p>
+<pre><code>/Users/&lt;你的用户名&gt;/obsidian/my_ai_wiki
+</code></pre>
+<p>Windows 可以换成：</p>
+<pre><code>D:\Obsidian\my_ai_wiki
+</code></pre>
+<h3>第一步：创建本地目录</h3>
+<pre><code>mkdir -p /Users/&lt;你的用户名&gt;/obsidian/my_ai_wiki cd /Users/&lt;你的用户名&gt;/obsidian/my_ai_wiki
+</code></pre>
+<p>Windows PowerShell 示例：</p>
+<pre><code>mkdir D:\Obsidian\my_ai_wiki cd D:\Obsidian\my_ai_wiki
+</code></pre>
+<h3>第二步：初始化 Git 仓库</h3>
+<pre><code>git init git branch -M main
+</code></pre>
+<h3>第三步：创建目录结构</h3>
+<pre><code>mkdir -p raw/articles raw/papers raw/clips mkdir -p wiki/concepts wiki/entities wiki/syntheses wiki/sources mkdir -p outputs/qa outputs/health
+</code></pre>
+<h3>第四步：创建核心文件</h3>
+<p>你至少需要这些文件：</p>
+<pre><code>AGENTS.md wiki/index.md wiki/log.md wiki/sources/README.md outputs/health/README.md CODEX_SETUP.md
+</code></pre>
+<p>其中 AGENTS.md 最关键。它要写清楚：</p>
+<ul>
+<li>raw/ 只保存原始资料，不删除、不覆盖。</li>
+<li>wiki/ 放整理后的知识条目。</li>
+<li>新资料进来先生成来源摘要页。</li>
+<li>再更新概念页、实体页、综合页、index 和 log。</li>
+<li>不确定的信息标注“待核验”。</li>
+<li>每次整理完成后说明改了哪些文件。</li>
+</ul>
+<h3>第五步：配置.gitignore</h3>
+<p>建议忽略这些：</p>
+<pre><code>.DS_Store .obsidian/workspace.json .obsidian/workspace-mobile.json *.tmp *.bak *.swp *.log .env *.pem *.key
+</code></pre>
+<p>注意，不要把密码、token、私钥放进知识库。</p>
+<h3>第六步：连接 Gitee 和 GitHub</h3>
+<p>假设你的远程仓库是。注意：这里一定要替换成你自己的仓库地址，不要照抄我的示例：</p>
+<pre><code>Gitee: git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git GitHub: git@github.com:&lt;你的GitHub用户名&gt;/&lt;你的仓库名&gt;.git
+</code></pre>
+<p>配置方式：</p>
+<pre><code>git remote add origin git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git git remote set-url --push --add origin git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git git remote set-url --push --add origin git@github.com:&lt;你的GitHub用户名&gt;/&lt;你的仓库名&gt;.git git remote -v
+</code></pre>
+<p>你希望看到：</p>
+<pre><code>origin  git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git (fetch) origin  git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git (push) origin  git@github.com:&lt;你的GitHub用户名&gt;/&lt;你的仓库名&gt;.git (push)
+</code></pre>
+<p>这样以后：</p>
+<pre><code>git pull --rebase origin main git push origin main
+</code></pre>
+<p>pull 默认从 Gitee 拉，push 会同时推到 Gitee 和 GitHub。</p>
+<h3>第七步：第一次提交和推送</h3>
+<pre><code>git add . git commit -m &quot;init personal ai knowledge base&quot; git push -u origin main
+</code></pre>
+<p>如果 Gitee 或 GitHub 远程仓库已经有内容，先 pull，再处理冲突，不要上来就 reset。</p>
+<h3>第八步：用 Obsidian 打开</h3>
+<p>打开 Obsidian，选择“打开本地文件夹作为仓库”，选中你的知识库文件夹。</p>
+<p>你应该能看到 raw、wiki、outputs 和规则文件。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/yDI5ibEG7eovic6ztdKsOMu8DbXQ8dONAtfRiazNiaibvFhJO180fqmnicfv1SpUvzNapic3Qpukl4lxRLpXnFfE6tjF6jn01shF8AtPzaHib7ib8WSQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图4：Obsidian 左侧目录树截图"></p>
+<p>图4：Obsidian 左侧目录树截图</p>
+<h3>第九步：安装 Obsidian Git 插件</h3>
+<p>如果你希望 Obsidian 自动备份，可以安装 Obsidian Git 插件。</p>
+<p>建议配置：</p>
+<ul>
+<li>Backup interval：5 或 10 分钟。</li>
+<li>Commit message：vault backup: {{date}}</li>
+<li>Pull updates on startup：开启。</li>
+<li>Push on backup：开启。</li>
+<li>Auto push：开启。</li>
+</ul>
+<p>但要记住：自动化越强，越要先养成开始前 pull、结束后看 status 的习惯。</p>
+<h2>▶7. 日常使用：三种资料怎么进来</h2>
+<h3>7.1 长文章和公众号：进 raw/articles</h3>
+<p>公众号文章、博客、长篇网页，都属于 articles。</p>
+<p>标签规则：</p>
+<pre><code>tags:   - article   - wechat
+</code></pre>
+<p>如果你已经有抓取脚本，可以让 AI 做这几件事：</p>
+<ol>
+<li>保存 Markdown 原文到 raw/articles/。</li>
+<li>下载文章图片到 raw/articles/assets/文章标题/。</li>
+<li>frontmatter 保留 source_url、author、created、tags。</li>
+<li>生成 wiki/sources/ 来源摘要。</li>
+<li>更新相关 concepts、entities、syntheses、index 和 log。</li>
+</ol>
+<h3>7.2 灵感、摘抄、金句：进 raw/clips</h3>
+<p>比如你突然想到一句：</p>
+<pre><code>收藏是消费，整理才是资产化。
+</code></pre>
+<p>你可以对 AI 说：</p>
+<pre><code>存到 clips：收藏是消费，整理才是资产化。
+</code></pre>
+<p>AI 应该保存到 raw/clips，并继续整理进 wiki。</p>
+<p>标签规则：</p>
+<pre><code>tags:   - clip
+</code></pre>
+<p>如果是读书摘抄，记得尽量补书名、作者、页码或链接。没有来源就标“待补充”，不要硬编。</p>
+<h3>7.3 论文和研究报告：进 raw/papers</h3>
+<p>论文、期刊、学术作品、研究报告，放 raw/papers。</p>
+<p>标签规则：</p>
+<pre><code>tags:   - paper
+</code></pre>
+<p>论文整理时，建议 wiki/sources 里至少保留：</p>
+<ul>
+<li>title</li>
+<li>year</li>
+<li>source_url</li>
+<li>summary</li>
+<li>key_points</li>
+<li>method</li>
+<li>limitations</li>
+<li>related_concepts</li>
+</ul>
+<h2>▶8. 飞书怎么接进来</h2>
+<p>飞书在这套系统里不一定要做复杂自动化。它最适合做一个“临时收集箱”。</p>
+<p>我建议你建几个飞书文档：</p>
+<ul>
+<li>今日灵感
+  随手记想法、问题、观察。</li>
+<li>读书摘抄
+  记录书名、作者、页码和原句。</li>
+<li>待整理文章
+  放链接、标题、为什么想读。</li>
+<li>会议和语音转写
+  用飞书妙记或会议纪要生成初稿。</li>
+</ul>
+<p>然后每天或每周，让 AI 把飞书里有价值的内容迁移到 Obsidian：</p>
+<pre><code>请把我这段飞书记录整理进我的个人 AI 知识库： 1. 短想法进入 raw/clips/ 2. 长文章链接进入 raw/articles/ 3. 会议纪要如果有长期价值，先作为 raw/clips 或 raw/articles 保存 4. 然后按 AGENTS.md 更新 wiki/sources、concepts、entities、index 和 log
+</code></pre>
+<h2>▶9. 我在实践中迭代出来的几个关键细节</h2>
+<p>这篇教程不只是照搬 Karpathy 的想法，也包括我自己在和 AI 工具一起搭建、试错、修正过程中沉淀出来的经验。</p>
+<h3>9.1 微信公众号文章不要只保存文字</h3>
+<p>一开始最容易遇到的问题是：公众号文章转成 Markdown 后，图片丢了。</p>
+<p>后来我把流程固化成：文章正文保存到 <code>raw/articles/</code> ，图片下载到 <code>raw/articles/assets/&lt;文章标题&gt;/</code> ，正文里使用相对路径引用图片。这样即使原网页以后失效，本地仍然保留原始证据。</p>
+<h3>9.2 图片要过滤，但不要过度消耗 AI 视觉成本</h3>
+<p>公众号文章里常见二维码、关注引导、课程海报、推广图、赞赏图。如果全部保存，知识库会越来越脏。</p>
+<p>我的策略是轻量过滤：</p>
+<ul>
+<li>封面图保留。</li>
+<li>正文核心图保留。</li>
+<li>不确定图片保留。</li>
+<li>明显二维码、进群、关注、赞赏、课程、报名、推广海报、小 logo、占位图和装饰图跳过。</li>
+</ul>
+<p>默认不使用视觉理解模型，而是先用 HTML 上下文、图片位置、尺寸和关键词判断。这样成本低，也不太消耗 token。如果真的误删了重要图，还可以根据原文链接回溯。</p>
+<h3>9.3 raw 的三类资料要提前定义清楚</h3>
+<p>我曾经踩过一个小坑：所有文章都被打上了 <code>clippings</code> 标签，导致长文章和短摘抄混在一起。</p>
+<p>后来我统一成：</p>
+<ul>
+<li><code>raw/articles/</code>
+  ：长文章，标签 <code>article</code> ；公众号追加 <code>wechat</code> 。</li>
+<li><code>raw/clips/</code>
+  ：短想法、摘抄、金句，标签 <code>clip</code> 。</li>
+<li><code>raw/papers/</code>
+  ：论文和研究报告，标签 <code>paper</code> 。</li>
+</ul>
+<p>这个小规范很重要。否则资料一多，AI 也会分不清“这是文章，还是一句临时想法”。</p>
+<h3>9.4 health check 要检查“孤儿资料”</h3>
+<p>有时候我们会先把资料保存进 raw，但还没来得及整理进 wiki。这个没关系，关键是要能找回来。</p>
+<p>所以 health check 里要检查：</p>
+<ul>
+<li>raw 里哪些资料没有对应来源摘要页。</li>
+<li>哪些来源摘要还没有挂到概念页、实体页或综合页。</li>
+<li>哪些页面没有入链或出链。</li>
+<li>哪些判断可能过期。</li>
+<li>哪些 raw 标签和目录不一致。</li>
+</ul>
+<p>这让知识库允许“低摩擦先存”，同时又不会永远堆成垃圾堆。</p>
+<h3>9.5 多电脑同步的关键是开始前 pull，结束后 push</h3>
+<p>多台电脑共用一个 Obsidian vault 时，最怕两边同时改，最后冲突。</p>
+<p>我的经验是：</p>
+<ul>
+<li>开始工作前先 <code>git pull --rebase origin main</code> 。</li>
+<li>结束工作后 <code>git status</code> 看一眼。</li>
+<li>确认没问题再 commit 和 push。</li>
+<li>不要用 <code>git reset --hard</code> 处理不理解的冲突。</li>
+</ul>
+<h2>▶10. 给 AI 的一键初始化提示词</h2>
+<p>下面这段可以直接发给 Codex 或 Claude Code。你只需要把路径和远程仓库地址换成自己的。</p>
+<pre><code>请帮我初始化一个个人 AI 知识库，路径是： &lt;你的本地路径，例如 /Users/&lt;你的用户名&gt;/obsidian/my_ai_wiki 或 D:\Obsidian\my_ai_wiki&gt;  目标： 我想用 Karpathy LLM Wiki 的思路搭一个普通人能用的 Markdown 知识库。 这个库不做企业级 RAG，不上复杂数据库，先用文件夹、Markdown、Obsidian 和 Git 跑通最小闭环。  请完成这些事：  1. 创建目录结构：    - raw/articles/    - raw/papers/    - raw/clips/    - wiki/concepts/    - wiki/entities/    - wiki/syntheses/    - wiki/sources/    - outputs/qa/    - outputs/health/  2. 创建 wiki/index.md：    用来说明知识库当前有哪些主题、资料和入口。  3. 创建 wiki/log.md：    用来记录每次新增资料、编译资料、更新页面和健康检查结果。  4. 创建 AGENTS.md：    写清楚以后维护知识库时必须遵守的规则：    - raw/ 只保存原始资料，不删除、不覆盖。    - wiki/ 放整理后的知识条目。    - 每个重要判断都尽量指向来源。    - 新资料进来后，先生成来源摘要页，再更新概念页、实体页、综合页、index.md 和 log.md。    - 不确定的信息标注“待核验”或“待补充”，不要编。    - 每次整理完成后，告诉我改了哪些文件。    - raw/articles/ 使用 article 标签，微信公众号文章追加 wechat。    - raw/clips/ 使用 clip 标签。    - raw/papers/ 使用 paper 标签。    - 不再使用 clippings 作为 raw 类型标签。  5. 创建 wiki/sources/README.md：    写来源摘要页模板，字段包括：    - title    - source    - source_url    - created    - summary    - key_points    - related_concepts  6. 创建 outputs/health/README.md：    写健康检查说明，提醒以后定期检查：    - 哪些 raw 资料没有来源摘要。    - 哪些页面缺来源。    - 哪些概念重复或冲突。    - 哪些页面没有链接。    - 哪些判断可能过期。    - 哪些 raw 文件的目录和标签不一致。  7. 初始化 Git：    - 分支使用 main。    - 创建 .gitignore，忽略 .DS_Store、Obsidian workspace、本地临时文件、密钥和 token。  8. 如果我提供 Gitee 和 GitHub 地址，请配置：    - Gitee 作为 fetch/pull 来源。    - Gitee 和 GitHub 同时作为 push 目标。  9. 完成后告诉我：    - 创建了哪些文件。    - 当前目录结构。    - 以后怎么保存文章、保存 clips、做 health check。
+</code></pre>
+<h2>▶11. 给另一台电脑同步用的提示词</h2>
+<p>如果你已经在一台电脑上建好了知识库，要在另一台电脑同步，可以把这段发给那台电脑的 Codex：</p>
+<pre><code>你现在要帮我在这台电脑上同步我的 Obsidian 个人 AI 知识库。  这台电脑的 vault 路径是： &lt;例如 D:\Obsidian\my_ai_wiki&gt;  远程仓库： Gitee 主云端：git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git GitHub 备份云端：git@github.com:&lt;你的GitHub用户名&gt;/&lt;你的仓库名&gt;.git  请检查本地是否已有仓库。 如果没有，从 Gitee clone。 如果已有，进入目录后先 git status 和 git remote -v。  配置 remote： Gitee 作为 fetch/pull 来源。 Gitee 和 GitHub 都作为 push 目标。  期望 git remote -v 结果： origin  git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git (fetch) origin  git@gitee.com:&lt;你的Gitee用户名&gt;/&lt;你的仓库名&gt;.git (push) origin  git@github.com:&lt;你的GitHub用户名&gt;/&lt;你的仓库名&gt;.git (push)  然后执行： git pull --rebase origin main  如果有冲突或未提交修改，不要 reset，不要删除文件，先告诉我。  同步后请阅读： - AGENTS.md - CODEX_SETUP.md - wiki/index.md - outputs/health/README.md - outputs/health/sync-setup.md  以后在这个仓库工作时，按 AGENTS.md 的个人 LLM Wiki 规则执行。
+</code></pre>
+<h2>▶12. 常见坑</h2>
+<h3>坑一：一上来就想搭 RAG</h3>
+<p>普通人先不要急着上向量数据库。先让 Markdown 知识库能持续整理、能追溯、能回答问题。资料规模真的大到搜不动了，再考虑 RAG。</p>
+<h3>坑二：raw 和 wiki 混在一起</h3>
+<p>raw 是原始证据，wiki 是整理结果。原始资料不要覆盖，整理错了可以改 wiki，但不要把证据层改没了。</p>
+<h3>坑三：只存不整理</h3>
+<p>收藏本身不等于知识管理。真正有价值的是“存进去以后，AI 帮你更新知识网”。</p>
+<h3>坑四：多台电脑不同步就开工</h3>
+<p>每次开始前先：</p>
+<pre><code>git pull --rebase origin main
+</code></pre>
+<p>每次结束后：</p>
+<pre><code>git status git add . git commit -m &quot;vault backup: YYYY-MM-DD HH:mm&quot; git push origin main
+</code></pre>
+<h3>坑五：把 token、私钥放进知识库</h3>
+<p>不要把任何密码、token、私钥放进 Obsidian vault。Git 会忠实保存历史，你不小心提交一次，后面很麻烦。</p>
+<h3>坑六：让 AI 编造来源</h3>
+<p>不确定就写“待核验”。没有书名、页码、链接，就写“待补充”。知识库最重要的不是看起来完整，而是可追溯。</p>
+<h2>▶13. 我的建议：先做一个很小但完整的闭环</h2>
+<p>第一次不要追求完美。</p>
+<p>你只需要做到：</p>
+<ol>
+<li>存一篇文章到 raw/articles。</li>
+<li>让 AI 生成一个 wiki/sources 来源摘要。</li>
+<li>更新一个 concepts 概念页。</li>
+<li>更新 wiki/index.md。</li>
+<li>在 wiki/log.md 记一条日志。</li>
+<li>用 Obsidian 打开看看链接是否通。</li>
+<li>提一个问题，让 AI 基于 wiki 回答。</li>
+</ol>
+<p>这七步跑通，你的个人 AI 知识库就活了。</p>
+<p>后面所有优化都是在这个闭环上加东西：微信文章图片本地化、飞书输入、clips 流程、health check、Gitee/GitHub 双云端、多电脑同步。</p>
+<p>不要把它想成一次性装修，而要把它想成一个会生长的工作台。你负责投喂、判断方向、提出问题；AI 负责整理、链接、归档和检查。</p>
+<p>最后，你会得到的不是一个更大的收藏夹，而是一个越来越懂你、越来越能被你调用的个人知识网络。</p>
+<h2>▶参考和延伸</h2>
+<ul>
+<li>Andrej Karpathy：LLM Wiki，<a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</a></li>
+</ul>
+<p>收录于言之AI笔记</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/cmBTnTfJNxfrFQNnitlDQA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

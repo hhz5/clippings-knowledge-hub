@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测！用 Claude 生成高保真原型, 设计师同事沉默了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测！用 Claude 生成高保真原型, 设计师同事沉默了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E9%AB%98%E4%BF%9D%E7%9C%9F%E5%8E%9F%E5%9E%8B">高保真原型</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86">产品经理</a><a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-12-08</span>
+  </div>
+  <p class="lead">用 AI 提高软件协同效率</p>
+  <article class="content"><p>原创 空格 zephyr <em>2025年3月5日 08:15</em></p>
+<p>自 Claude 3.5 以来，我的 AI工作流中就新增了原型绘制，让 AI 给我产出原型图。</p>
+<p>当然这不足为奇，Claude Sonnet 优秀的代码生成能力，可以让 AI 编程工具如 Cursor、Windsurf、Trae 生成高质量代码，一个人就可以制作一个简单的 APP、网站、游戏。</p>
+<p>上周 Claude 3.7 的出现，让其代码的生成达到了一个新高度，审美更好，输出更长。</p>
+<p>毋庸置疑， AI 可以让产品经理扩展能力边界，向上完成设计，向下完成代码，并且产品这一职位是 AI 技术发展下最为受益的群体之一。</p>
+<p>但目前为止，AI 还难以替代某一职位，作为一个打工的 PM， 工作的交付物是原型图和需求文档 ，不能忽视团队中的其他成员。</p>
+<p>在这个前提下，AI 该如何在传统的软件开发工作中为产品经理提效？</p>
+<p>我通过两个月的 「AI 原型绘制实践」 ，在团队中已经达到了可生产使用的程度，也提升了团队中设计——产品——前端开发的工作效率。我将从两个方面总结此方法：</p>
+<ul>
+<li>如何和 AI 对话启动原型制作？</li>
+<li>对于 AI 输出的原型图该如何交付给 UI 设计师修改？</li>
+</ul>
+<h2>启动原型图创作</h2>
+<ol>
+<li>画草图并发送AI</li>
+</ol>
+<p>用 Axure、Figma 画一个低保真的原型图，甚至可以是用一张白纸绘制，然后告诉 AI 按这个图产出一个高保真的图</p>
+<p>提示词：</p>
+<pre><code>根据上面图片产出高保真原型图代码- iPhone 16Pro 外观，真实的 ios 状态栏- 避免 使用占位符，用真实的 UI 图片- icon 可以使用开源库的生成 Html 代码，模拟真实效果，可以供开发使用
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAIZBfZveo3AKl7O6frqGrRKjVoeoEN7Bxl776DY4AlagMvg8t0AekNg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="loading"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXA66UVsofR0z1CjBf2ERwcicB4njyDC2nOFJZ7fmHibl7PHFUNlLJaPjibg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="loading"></p>
+<p>AI 生成效果</p>
+<p>以上草图生成的原型图，能够将原型图直接导入到 Figma 修改，下文将详细介绍。</p>
+<p>对于 AI 生成的 Html 或 SVG 形式的代码，一般 Claude 或 Monica 这样的工具带有 Airtifacts 可以在对话框预览，但是如果没有预览功能也不担心，可以用以下方式：</p>
+<ul>
+<li>预览html： <strong><a href="https://uutool.cn/html/">https://uutool.cn/html/</a></strong></li>
+<li>预览 svg： <strong><a href="https://uutool.cn/svg-preview/">https://uutool.cn/svg-preview/</a></strong></li>
+</ul>
+<p>2.发送竞品图片+下面提示词</p>
+<p>在网络上搜索些竞品的图片，省去自己绘制过程，尤其是一些 B 端网页产品，大致都差不多，粘贴后发给 AI。</p>
+<pre><code>根据这个竞品图片产出高保真原型图代码- 替换所有设计元素，改成 xx 颜色- web样式，1366大小- 避免使用占位符，用真实的 UI 图片- icon 可以使用开源库生成 Html 代码，模拟真实效果，可供开发使用
+</code></pre>
+<p>插个话题，很多同学可能还在疑问🤔，在哪里使用 claude 3.7，官方不推荐，网络不稳定，这里推荐使用 monica、poe，或者在 cursor、windsurf 、Trae 里用</p>
+<p>3.发送需求文档，描述交互说明</p>
+<p>这一方式需要灵活应对，可以将需求文档里的需求描述、交互描述发送给 AI，获取低保真或高保真带交互样式的图形。</p>
+<p>如下图，可以将图片和文字描述分离发送给 claude，交互描述生成可操作的界面图。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAaoIBG1KPFXric9d2HsU72nlWXzqF6WUHSvGYgGlP4Ez9ge7ehUyZWCw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="loading"></p>
+<p>4.现有产品图+截图工具修改</p>
+<p>如下图，是根据现在的微信电脑客户端改版而来的，在工具里增加了 AI 对话框的能力，提示词：</p>
+<pre><code>下面图片是一个工具页面，修改其中一个 Tab 为对话机器人- 直接显示对话聊天框，聊天对话的页面- 保持原有的界面风格- 使用开源的 icon 组件- 使用英文描述- 直接输出代码，可以供开发使用的程度
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAwsK7UfG86rzj4pxEMOEpicSicd65o9WVochNxSP7YibVsExPBQ0gRnEPg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="loading"></p>
+<h2>优化 AI 产出的原型图</h2>
+<p>现阶段，AI 可以让一个人拥有设计和开发的能力，但还无法取代一个团队中的某个角色，对于个人可以增强能力，对于团队则是提高效率。</p>
+<p>就拿原型图的设计来说，在团队里 AI 肯定不能够替代设计师 ，大多数情况，AI 产出的内容不符合一个企业的视觉系统，各种icon、文案、细节的处理都需要设计师在设计工具里修改，再输出线稿给开发。</p>
+<p>将产出的内容，拿来修改就非常有必要。好在 Figma、Pixso 这样的设计工具有各种插件可以处理代码，下面是我找到的处理方式：</p>
+<p>1.修改 SVG 页面</p>
+<p>对于单个页面的生成，小的改动，就指定让 AI 输出SVG代码，SVG 代码本身就是矢量 UI 图，只需两步</p>
+<ul>
+<li>复制 SVG 代码，注意只要代码，不要任何其他文字</li>
+<li>在 Figma、或 Axure 里，点击粘贴，即可显示图形</li>
+</ul>
+<p>Axure 里需要右键点击转为 SVG 格式，这样就可以用设计工具修改图形的线条，甚至文字。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAOUIDibicCkRqInic9LTTricUm5AWyibeosfoxCia8DWNfINNesXaswh2bjBw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="loading"></p>
+<p>2.修改 Html 代码</p>
+<p>在 Figma 插件库中搜索 Html to Design，将 html 代码粘贴到输入框中，点击Creat 按钮，即可创建 UI 图。如下所示：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAY7RjMtOibsxRicxYzkSe4u3ZqGyJ16AIOAnkVpyaL4J7jsX4A5cxlFAA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="loading"></p>
+<p>再提供两种其他修改 Html 代码的方式：</p>
+<ul>
+<li>截图贴贴补补简单修改，最后传递给设计师一张图片即可。</li>
+<li>或者把代码精准修改，把代码导入cursor 里，修改自己想要优化的元素。</li>
+</ul>
+<h2>对现有工作流程的改变</h2>
+<p>最后总结下，AI 原型图的绘制，对现有工作流程有哪些改变，如何改变团队协作？</p>
+<p>之前原型图的交付物是 Axure 绘制的低中保真图，并搭配设计文档，现在交付设计师 Figma 产出的高保真线稿，UI 设计师拿到图后进行修改，再使用 Figma 的 DesignToCode，将代码交付给前端开发。大大提高团队研发效率。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAIiboPtGk7c14ylg7PEeudFQSVoqbyD45fHVs0QiciaarSzJLSJSuf9s5w/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="loading"></p>
+<p>OK，看了这个流程，你是否清楚了呢？该如何把原型图绘制融合到现有的工作流程中，实际情况还要根据自己的团队情况来看。</p>
+<p>在我看来，产品就是最有效的提效发动机，能够有效的影响团队，产品可以和老板沟通，试着运行这一协作模式，先从设计师的交付物入手，通过提高个人效率来提高团队效率。</p>
+<p>而对于 UI 和前端开发的工作，UI 可以着手使用工具了，前端开发可以转向后端或全站开发了，提高自己的竞争壁垒，也是扩大自己使用 AI 场景，缩小被 AI 替代的场景。</p>
+<p>长期来看，团队内是少不了设计师的， AI 设计内容还不够稳定，icon、颜色的控制还得人来把关， 但是未来 UI 设计师通过工具成为前端开发是极大可能， 本身整个流程都是在处理前端代码。</p>
+<p>目前的 AI 代码和设计工具都是在传统的 IDE 上加 AI 功能， 相信新的设计工具会出现，主流的协作方式将会被改变。</p>
+<p>进一步畅想一下，未来的产品的迭代方式，是不是都不需要产品和开发介入，用户直接提出需求，投票高就能直接修改前端样式，生成代码，用户测试并发版上线。</p>
+<p>今天分享到此结束，后续将分享 AI 写需求文档、流程图、数据分析等提效方式，如果需要沟通交流，请扫码入群交流。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5CvffDZ0eZKob3qPAe1YXAnmx8ibib60q5FSZib7AUw0ib6Xl4GDhxH8Fv7h2F4IiaY1yicP7yNe999V9A/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>帮「空格的键盘」擦擦灰</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/6-14FWVZGeDf0Rcd5B7klA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loop 是什么？怎么用？ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Loop 是什么？怎么用？</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%87%91%E8%89%B2%E4%BC%A0%E8%AF%B4%E5%A4%A7%E8%81%AA%E6%98%8E">金色传说大聪明</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude">Claude</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a>
+    <span class="date">2026-07-09</span>
+  </div>
+  <p class="lead">Claude 干活，你去睡觉</p>
+  <article class="content"><p>金色传说大聪明 赛博禅心 <em>2026年7月8日 21:34</em></p>
+<p>Loop，真乃赛博福寿膏</p>
+<p>Loop 这个东西，最近应该非常非常多的被提到</p>
+<p>如果简单来说，原理大概是这样：</p>
+<p>while:; do cat PROMPT.md | claude; done</p>
+<p>当然，你也可以这么理解：</p>
+<p>while 没融到钱; do 换个名词 | 重新讲故事; done</p>
+<p>从行为上，就是自动把提示词文件反复喂给 Claude，干完一轮后，再问、再干...以前这玩意儿，是个手工活，随着 Agent 到来，这东西变成了正经功能，才有了我们现在「用力蹬」的说法</p>
+<p>本文就让我结合 Claude 的文档，和大家梗细致的说说这玩意儿</p>
+<h2>Loop 是什么</h2>
+<p>Loop 这玩意儿，Claude Code 官方是这么定的：</p>
+<p>Loop 就是 Agent 重复执行工作循环，直到满足停止条件</p>
+<p>就比如最开头的那个 bash，就是在 Claude 外面套循环</p>
+<p>随着 Claude Code 被越用越多，他们自己也做了套；每次你跟 Claude 对话多时候，他都会这么执行：先评估这活能不能直接干，是要输出还是调工具，如果是调工具的话，有了结果后再评估一轮，直到没有工具要调了，把最终结果交给你</p>
+<p>我画了个图，就像下面这个</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdiakY1icY77Orn3ghsUbia3WvVicHoaXRKQlp1aXIxKnUmLzA4XL6FLKgUzJjdFKA4Pc3KcHuibkC8sZ2EutJeRWoZicghtOZ2gWlMpk/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>假设你手头有个项目，bug 跑不起来了，你跟 Claude Code 说一句「赶紧个我修了」，它可能会这么 loop：</p>
+<p>→ <strong>Loop 1</strong> 先跑一遍测试，发现挂了 3 个</p>
+<p>→ <strong>Loop 2</strong> 打开出问题的代码和对应的测试文件</p>
+<p>→ <strong>Loop 3</strong> 改代码，重新跑测试，3 个全过</p>
+<p>→ <strong>Loop 4</strong> 没有工具要调了，跟你说：修好了，测试全过</p>
+<p>当然，这里的 4 个 loop 是虚数，具体多少由任务来定，你也可以给他加上点限制，比如最多 30 个，或者最多花 5 美元等待</p>
+<h2>四种 Loop</h2>
+<p>之前会看到一些文章说，「不要写提示词了，去设计 Loop」</p>
+<p>而所谓「设计 Loop」，就是把这个循环里原本人干的事儿，规划哪些东西让 AI 完成；目前大致上有 4 种 Loop，其区分大致上是由你让 AI 干了多少活定的</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdgfm5sEbuHJB9icgWm5BeCt3IRAibInLCj7wNSamIAdWiaNGBveJ1YuNiclASDHxa03j1wNuZibQQNGbB0r432xIJUDVnj9aECjt3PI/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h2>回合式 Loop</h2>
+<p>绝大多数情况下，我们用 Claude 的方式就是回合式：你发一句，它跑一轮循环，交回来，你看看结果，再发下一句...不断对话</p>
+<p>这里，其实你是一个人肉编译器（emmmmm），然后啥活都没交出去</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdg5ks2mdw5PAibnZTYNSxUUFzOKsGWV0p8Q9GZ3xgWFdIRWn3RnLb2Sjf43AyZYibGQ3WIwBKFcuKj3XfkOlicsU8fojNegeJJVhE/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>比如让 Claude 做一个点赞按钮，它读代码，改代码，跑测试，交回来一个它「觉得」能用的东西。能不能用，还得你亲自打开页面点一遍</p>
+<p>升级的办法是把验收交出去：你平时怎么检查的，写成一个 <code>SKILL.md</code> ，Claude 每次干完活自己照着验</p>
+<p>以前端验收为例，其交付审计可以是这样：</p>
+<p>→ 起本地服务器，亲眼看改过的页面</p>
+<p>→ 亲手点一遍新控件，截改动前后的对比图</p>
+<p>→ 看浏览器控制台，不许有新报错</p>
+<p>→ 跑一遍性能审计</p>
+<p>当然，你还可以额外再加一个：如果挂了就自己修，别给半成品。通过量化检查，让 Claude 更容易的进行自验证工作</p>
+<h2>目标式：/goal</h2>
+<p>这是我最爱的模式：用 <code>/goal</code> 去定义什么时候做完，不达标不许停</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdjH6FoXyibXYrvgtUibt9XibcCwpMwHndJ6RKaAVMNl5Lnnc0siag59Fj0KfdVIP2O8cZbWgNgDJI64qhNfghRZezLXpZmhdGpDlP8/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>每次 Agent 想下班回家的时候，都会有另一个评估模型来进行评估，不行就打回去，直到目标达成（或者把你的额度用光）</p>
+<p>这里比较推荐用确定性的标准，比如通过多少个测试、分数过没过线：</p>
+<p>/goal get the homepage Lighthouse score to 90 or above, stop after 5 tries.</p>
+<p>（把首页的 Lighthouse 分数做到 90 以上，试 5 次还不行就停）</p>
+<h2>定时式：/loop</h2>
+<p>定时任务 /loop 也是一种 Loop，比如每天早上起来让我的 Agent 去签到打卡，当然你也可以用它做 trigge 去盯外部系统，比如看看有没有人开票、提PR、报bug啥的：</p>
+<p>/loop 5m check my PR, address review comments, and fix failing CI</p>
+<p>（每 5 分钟查一次我的 PR，有 review 意见就处理，CI 挂了就修。PR 合并了，活干完，循环自己停）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdiaN6TdRqUXokYicwdrcSlk42xNGlD1FcDC4aa14hDC48MT0hX10e2d2Czf862A0mm3mqibmBDb2OjxAZfZYqGjU0ibpbJ0Qp22Myw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><code>/loop</code> 是跑在本地电脑上的，如果想再云端用，则是用 <code>/schedule</code> 建一个例行任务（routine）</p>
+<h2>主动式 Loop</h2>
+<p>如果 hulman not in the loop，则就叫做主动式 loop，人类彻底啥也不干</p>
+<p>在这里，各种东西和 auto mode、dynamic workflows（研究预览版）组合起来，就能搭一个长期运行、不需要人盯的 Loop</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdgB3VrMUhKcCwZ3DicqAaObqlRhlzCVbicZ47OKQeBWb8IQHjqKen8ZtibQReRaGcx0N3MgC9SSzlBjs2icXLOykicsX1aJOQqyyhKA/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>Claude Code 的作者 Boris Cherny，去年 11 月把 IDE 删了，之后 30 天落地 259 个 PR，全部由 Claude Code 自己写。他 6 月受访的原话：「我已经不提示 Claude 了。有一批循环在跑，是它们在提示 Claude、在决定接下来干什么。我的工作是写循环」</p>
+<p>比如要自动处理用户反馈，可以这么搭：</p>
+<p>→ <code>/schedule</code> （研究预览版）跑一个例行任务，定期检查有没有新报告</p>
+<p>→ <code>/goal</code> 定义什么叫处理完，skill 记录怎么验收</p>
+<p>→ dynamic workflows 编排多个 Agent，分诊、修复、review 各管一段</p>
+<p>→ auto mode 让整个流程跑起来不用停下来要权限</p>
+<p>拼起来，一条提示词长这样：</p>
+<p>/schedule every hour: check #project-feedback for bug reports. /goal: don&#39;t stop until every report found this run is triaged, actioned, and responded to. When fixing a bug, use a workflow to explore three solutions in parallel worktrees and have a judge adversarially review them.</p>
+<p>(每小时查一次反馈频道，查到的每个 bug 都要分诊、修复、回复完才算完。修 bug 的时候开三个并行方案，再让一个裁判 Agent 对抗性地挑毛病)</p>
+<h2>如何保证质量</h2>
+<p>Loop 所生产的任务质量，取决于 Claude 周围的系统（你看...这不就和「上下文工程」、「鞍具工程」穿起来了么），而非取决于人在电脑面前bb，这里有大概 4 件事儿值得多下点心思</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdg1iaywLTs8ricFcQMe8KADHWrpNyjUQjdN0ShG91q5mQ7vVMtTct755ibOZ6lhzIXdMibmtqSfEThWt14bXicNszxgV1bgXjc7WOicY/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p><strong>代码库本身要干净</strong> Claude 会跟着你代码库里已有的模式和惯例走</p>
+<p><strong>给 Claude 自我验证的手段</strong> 用 skill 把你和团队眼里的「好」编码下来</p>
+<p><strong>文档要好拿</strong> 框架和库的文档里有最新的最佳实践，让 Claude 够得着</p>
+<p><strong>用第二个 Agent 做 code review</strong> 带着新鲜上下文的 reviewer 更客观，不会被主 Agent 的推理带偏。可以用内置的 /code-review skill，或者 GitHub 版的 Code Review</p>
+<p>你会发现，这四件事有一个共同点：循环里必须有能说「不」的东西，比如测试、类型检查、真实报错...。没有的话，就是 Agent 自己跟自己复读</p>
+<p>此外还有一条：如果中途结果不达标，可以在修完后再 <strong>把修复编码进系统，让之后的迭代都受益</strong></p>
+<h2>token 省钱大法</h2>
+<p>我有一个暴论：loop 是赛博福寿膏，只有一次和无数次</p>
+<p>而在 loop 之间，你的上下文会越来越长，可能后面说一句“去吧皮卡丘”，一百美金就没了（比如今天的我...）</p>
+<p>对此，Claude 官方给了六条省钱小妙招</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdia5xZZJgniclNatw5mBibdMaTkg2VYdKKnp8J0lrsajLYF61L3nH2iaWcJxPSEm2wcDIWDRtdPkGUCqgSTIt3ic22u328wUkNlrK4g/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p><strong>选对工具和模型</strong> 小任务用不着多 Agent 和 Loop，有些任务用更便宜更快的模型就够</p>
+<p><strong>定清楚成功和停止标准</strong> 「做完」长什么样说得越具体，Claude 到达终点越快（但也别定得太松，提前收工也是问题）</p>
+<p><strong>先试水，在大规模</strong> dynamic workflows 能一口气拉起几百个 Agent，先拿一小片活试试水，看看用量</p>
+<p><strong>确定性的活写成脚本</strong> 跑脚本比推理一遍步骤便宜。比如 PDF skill 里带一个填表脚本，Claude 每次直接跑，不用重新推导代码</p>
+<p><strong>例行任务别跑太勤</strong> 间隔要匹配你盯着的那个东西的变化频率</p>
+<p><strong>盯用量</strong> 用量随时能查，不对劲随时停。/usage 拆得最细（按 skill、subagent、MCP 分开看），/goal 和 /workflows 也各自能看轮数和每个 Agent 的消耗</p>
+<h2>开始吧</h2>
+<p>对于 Loop 的联手，你挑一个你自己是瓶颈的活，然后看看汝与AI孰美，去自问仨问题，如下</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdjCpRv6voI0reIVt5lUhUWictwS6UhVLbGaoIdXR6kGkI1m6GxC9niabdkUEgHCFnt0IC8WSxrTsNXibQ5Ijiach1ReljHicTc7lVGw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>然后选择好了你的方法，大胆的交给 AI 去做，然后观察结果，然后看着他是如何规划的，很快你的 loop 能力就能飞升了</p>
+<p>（谁不想试试赛博福寿膏呢？）</p>
+<p>参考资料：</p>
+<p>Getting started with loops（Claude Code 团队博客，2026 年 6 月 30 日，作者 Delba de Oliveira、Michael Segner）；</p>
+<p>How the agent loop works（Claude Agent SDK 文档）；</p>
+<p>Boris Cherny 2026 年 6 月访谈；</p>
+<p>Geoffrey Huntley 的 ralph 项目</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/odSibIpZ7fcYuxeK_xIA7A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

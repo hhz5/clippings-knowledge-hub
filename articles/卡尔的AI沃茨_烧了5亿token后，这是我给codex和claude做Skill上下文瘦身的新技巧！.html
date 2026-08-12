@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>烧了5亿token后，这是我给codex和claude做Skill上下文瘦身的新技巧！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">烧了5亿token后，这是我给codex和claude做Skill上下文瘦身的新技巧！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Agent%E6%8A%80%E8%83%BD%E7%AE%A1%E7%90%86">Agent技能管理</a><a class="chip" href="../index.html?tag=%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BC%98%E5%8C%96">上下文优化</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=Claude">Claude</a>
+    <span class="date">2026-08-05</span>
+  </div>
+  <p class="lead">又省上下文token了，朋友们</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年8月5日 14:46</em></p>
+<p>Fable5和GPT 5.6 Sol用多了就老想删Skill，</p>
+<p>原因很简单，10天前Claude Code都把自己的系统提示语删了80%。Fable 5够聪明了，很多以前需要写死在提示词里的规则，模型自己就能判断。塞一大堆指令占上下文窗口，还不如让模型自己判断。</p>
+<p>当天我就搓出了一个提示词，用来删像superpower这类辅助思考或者像之前辅助GPT来操作Excel的skill。但是后面我发现，一下子把所有的skill删掉还是有点太草率了。这导致我花了很多时间，将一些我觉得没用但实际上在一些项目中会生效的skill重新装回来。。。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FyAY2DUxa9P2VVDmbAEYPREQV1lC0G5zsyX6ExowZnRNTsLR3UwxlUSM1q1iaw8TWl8GfJeq1EkOZMHG8BknibWcnIKZMMictFqYU/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>所以我做了一个Skill瘦身的Skill，专门来解决选择困难症。</p>
+<p>🔗 github. com/LearnPrompt/carl-skills</p>
+<p>也可以给codex发一句话配置，</p>
+<pre><code class="language-css">npx skills add LearnPrompt/carl-skills --skill skill-slimming -g
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyqCBWOwfd3ApvARJkYia2q6gJiaEj37YJHkzrJNbqpd7nWKWouO7C0EZKzAoraONJD2FdbsPt2vRaC0SJ3Ve286Q8Eaic1PfCCm8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>主要是我的Codex和Claude Code里装了300多个Skill。从写作，设计，部署、浏览器自动化、飞书读写，数据分析，iOS模拟器、视频工具。。。你能想到的方向，我基本都有对应的Skill。</p>
+<p>全是全了，但是量了一下启动上下文才发现，一个全新会话还没说话呢，光是Skill列表就占了约9.9k token，启动上下文10.1k。关掉所有自定义Skill用safe mode启动，只有1.5k到1.7k。</p>
+<p>差了大概8.2k到8.4k。</p>
+<p>用人话说，模型每次开工之前要先读一遍300多个Skill的名称和描述。它还没听到我说话呢，脑子里已经塞满了我会这个，我还会那个。</p>
+<p>然后我翻了一下自己的用量面板，还没算claude的情况，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyicRJTfibvIMOuEH5ChUSqujETUWG8tfKCicw9do114iakGOt5kQkq9pWAloacrhl0azibWjUeXuKibUOkia7oDX7yGM9UpHlNpgiaAow/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>171.1亿累计token，7月是全年用量最重的月份之一。8月4日单日峰值直接砸了9.4亿。</p>
+<p>粗估一下，每次调用多出约8.2k的Skill上下文开销，这个开销随每一轮对话重复发送。哪怕prompt caching能分摊一部分成本，上下文窗口的占用还是在的。按照7月的使用强度粗算，光是多余的Skill列表就大概吃掉了4到5亿token的上下文空间。差不多是我峰值日的一半。</p>
+<p>今有Claude的团队删了80%的系统提示语来释放模型的判断力，现在我也该对自己的Skill动手了。</p>
+<p>说实话一开始我也没想到这件事能做一周多，原来以为就是过一遍清单，把不用的删掉就完了。</p>
+<p>但是300个Skill啊，有些我自己都不记得什么时候装的了。其中很多是试用了一次就再也没碰过的，还有一些是同一个能力被不同插件重复暴露的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FwHZYlJxFreGPbp5szibuCQx6oiajGbenJEBw2bnCxKHOD6dgDs12vmKHXRibwY6GC0mrvrduyD7YZZp4VBebcrTkNEicCrZ5JiaYicg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>而且这里有个很离谱的机制，</p>
+<p>直接跟CodeX说盘点我们现在安装的 Skill，它其实默认会把自己插件上带的Skill也给你统计上来。那如果你在这个时候把这个Skill禁掉删掉的话，会给你的插件带来一些启动的问题。所以真的不建议一口气把自己安装的所有Skill删掉，到时候真的要一个一个安回去的。。。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzhGDKwS8r5JIYlsej7ebtGicRSaicCLx5hAGHibnia1ENhBajIHDJmsqktyE2HrBnn0PDF5vdgRPibnv8tFakn6libvXdO13tQkEqe4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>简单来说，我按使用频率给Skills分了三档。</p>
+<p>高频核心，就是我几乎每天都在用的，22个。</p>
+<p>中频项目化，某些项目会用但不需要全局暴露的，64个。</p>
+<p>低频归档候选，214个。</p>
+<p>还有21个特殊的，我标记为RARE_CRITICAL（少用但重要）。这些能力使用频率很低，但一旦需要就是关键操作。比如发布、回滚、安全审查这类的。不能因为用得少就随便扔。</p>
+<p>所以其实，300个里面真正需要全局常驻的，只有22个。</p>
+<p>剩下的278个，理论上都不需要每次启动都让模型看到。</p>
+<p>不过事情没这么简单。</p>
+<p>我做完第一轮分类之后，又做了一次全量复审。这次换了个口径，不按使用频率，按「全局可发现入口」来数数量。</p>
+<p>结果全局的还有147个。</p>
+<p>我当时就懵了。明明已经精简到22个核心了，怎么全局还有147个？？？</p>
+<p>花了一段时间才搞明白，22是按使用频率划出来的高频核心建议。147是后续复审里所有仍然处于全局可发现状态的Skill，虽说这数字差得有点大，但是这四舍五入怎么就不能说明我的Skill还有很大的优化空间呢？</p>
+<p>到这里我已经意识到，靠一个CSV或者一份Markdown清单，是不可能搞定300多个Skill的复审的。</p>
+<p>信息太多了，需要一个能搜索、能筛选、能折叠、能分类的界面。</p>
+<p>所以我给Skill瘦身做了一个本地网页，一个黑绿配色的Skill Scope Console！</p>
+<p>这个页面能搜索筛选，能按来源折叠，能按用途分类。</p>
+<p>重要的是它能让我看到每个Skill的三种上下文成本，全局入口占多少token，如果我把这个Skill归档，只留下一个关键词，等我下次提到的时候再动态加载的时候占多少token，以及命中后完整Skill占多少token等等等等。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fz4Vcic6EkQbG6c2YV0v2wGIZmXIrITWFPibhhsxBicx50W8OdiaYGAXaRBDvZ514iaYBfARpvqiaJVWDnRhqJPupS3P4HVMZibDSKemU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>这个触发状态就是我这次精心选出来的中间态，</p>
+<p>直接把skill删了不行，但我又不想让它放在上下文里面占地方，那为什么不只留一个触发词呢？</p>
+<p>可能就两三个字，比方说「生成 PPT」这种我工作流里常见的词。这样我在后面的工作流只要里提到这个词，模型就会提醒我，要不要重新加载这个 skill，把它纳入到全局范围内？</p>
+<p>到时候我可以选择单次加载，也可以选择把它全局加载回来。这样既解放了模型的智力，又不影响我原来工作流里的skill，两全其美。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxV5TRbrvfSVozVXSLyVynwR7XXFkKyurCf8icl7Aet68EBPSu0D8WjtDkSrpK3fdk6E6GXm8J7goWVB0l9qveUiaibVmAJTCEtNY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>做这个网站的过程中踩了好多坑，挑几个印象最深的聊聊。</p>
+<p>来源分类是第一个大坑。一开始是按名称前缀来猜来源的。比如看到lark开头的就归到飞书，看到carl开头的就归到自己的Carl Skills。结果完全是乱放的。。。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyaOl6SqyG9KmfibI5gAtpl0z4d2jaia4fz8IVjaBxZafHSgFKic6I2HXEenzAA80AmFgnVmvuj2icYdQG1LjrI8YDNiaibmY09SfXSQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>后来我重新定了来源证据的优先级。安装记录最高，同一个插件来源其次，Github仓库路径再次，路径前缀和内容相似度再往后，成功把这300个skill按照用途，来源，低中高档使用频率，以及是Claude Code专属还是Codex专属来分类了。</p>
+<p>我可以在可视化界面选择把一个skill从全局换到某个项目生效，从全局换到触发中间态，这上面会写清楚每个skill省了多少token。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fzg23cZF0QefsfkHkxy6vPkwiaqu3Lxe7Ziaq2JNRZpXpf2ut6vUMxFomPwl44iciapHAxRnpM478jic9CuEgf1lU3ibdRxbC3Wsw584/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>而且我这次批量整理之后才发现，我之前为了省事，直接把一整个系列的所有的Skill安装下来，这个事情导致了我有很多Skill和功能都是重叠的。</p>
+<p>浏览器自动化相关的Skill又是一个坑。我一开始把所有跟浏览器沾边的都归到一类，后来发现这根本不对。网页访问、浏览器自动化、Chrome调试、网页正文抽取、截图检查、登录态操作，这些是完全不同的能力，都被分类到浏览器自动化。所以我不能要求GPT把浏览器自动化的skill优化到只剩一个，这是一个大类，没有skill是把上面这次能力全覆盖的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwLDzJAkEzNAPJcIrvojMLrTicKZWPibQxbibNO2Q8nEP9NFIacwYE8iapEu5ca6VJ43t8d44MlpI9XniayH5uIrRdTDtNA6myQtgg0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>说到这里，聊聊Skill加载的两阶段。这是整个瘦身过程中我认为最需要强调的认知纠偏。</p>
+<p>新会话启动时，Agent会先加载每个Skill的名称，能力说明书，这一步占的是启动上下文。当请求真正命中某个Skill时，才会读取完整的SKILL.md，这一步占的是调用后上下文。</p>
+<p>全局Skill在每次新会话都要塞自己的名字和说明书，但是把Skill切换到触发状态之后就只露出一个极短的触发词，所以能做到每个skill都扣下来点token，单个Skill轻松省下89%的启动上下文。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyDtj71sr08v54XoQ0ApkZq67giaKibUk37F6zr5fHWZUKEXYMIH7pQUyLHxokIc5y739maWiae9nmgZNWq5zZ1CHrbz5HSwKxaZU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>讲完了原理和踩坑，说说最终产出。</p>
+<p>我把整个治理过程打包成了一个Skill。</p>
+<p>对，用Skill来管理Skill。套娃了属于是。</p>
+<p>它叫Skill瘦身，这个Skill规定了一套完整的治理流程，分成五个阶段，每个阶段独立授权。管理完之后，会出一个单独的报告，告诉你现在保留的全局skill有多少。</p>
+<p>如果你不想选择，模型会帮你判断：</p>
+<ol>
+<li>1.值得放在全局的skill有多少</li>
+<li>2.在项目里生效的skill有哪些</li>
+<li>3.哪些skill被打包归档做成了触发词动态加载</li>
+<li>4.以及最后你在每一次新进对话入口的时候，能够节省多少token</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxoxgjVky5GqswjbWEn3m5iboelMt2OCibeICN2wbcgSQIV8TTrxoIZbKfRKfk2kG3ypxyNQArFE1piasWhzIQr39xmjdkQicAS87k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>还有还有，这里面的skill归档建议是结合了Claude Code的/doctor指令的，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fwic5drobKWDNMwQkIQSMd0HIDDNdUFCCxcITNASOiaRpTHeBiaP5mB6TwvU4ibruslMUV6oCMAiaZ4oZKXH5T0x4KVBuSEFFawpkyo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>最后的最后，</p>
+<p>截至2026年8月4日，我的环境最终状态是这样的。318个唯一Skill，全局可发现的Skill有147个，其中核心全局29个，保守全局118个。项目级14个，触发级157个。RARE_CRITICAL 24个。</p>
+<p>实际删除0个。</p>
+<p>对，一个都没删。</p>
+<p>所有低频能力都只是从全局降到了项目或触发，保留了完整归档和恢复入口。60天观察期内如果再次触发，就恢复到当前项目。多项目持续高频，才建议恢复全局。</p>
+<p>Agent的能力一个没少，模型的智力也被解放了，瘦掉的是无效的全局暴露和上下文负担。</p>
+<p>我自己这两周最大的体会是，安装Skill很容易，一行命令就搞定。</p>
+<p>治理Skill，反而额外花了一周多。</p>
+<p>大家都在往Agent身上堆能力。写作，设计，数据分析等等等等，</p>
+<p>是时候停下来想想该收起来什么了，</p>
+<p>Claude的团队停下来了。他们删了80%的系统提示语。Fable 5够聪明了，规则堆在那里只是在占上下文。</p>
+<p>我也停了。花了几周整理了300多个Skill的作用域。Agent够聪明了，技能清单堆在那里只是在制造噪音。</p>
+<p>下一步应该给我的todo也瘦瘦身了，</p>
+<p>每天打开电脑，十几个项目同时跑着，几十个想法排着队占着我的注意力。</p>
+<p>还没开始干活，脑子里的上下文就满了。</p>
+<p>跟我那个装了300个Skill的Agent，一模一样。</p>
+<p>技能堆到一定数量之后，</p>
+<p>判断力比技能本身更值钱。</p>
+<p>我得好好重启一下。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>310人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/M00UkTSAhowViUAjINurIg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

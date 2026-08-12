@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>设计师如何利用 Codex 做一个“完整产品”，看下我的思路 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">设计师如何利用 Codex 做一个“完整产品”，看下我的思路</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=RaDesign">RaDesign</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=Figma">Figma</a><a class="chip" href="../index.html?tag=%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91">插件开发</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1%E5%B8%88">设计师</a>
+    <span class="date">2026-04-15</span>
+  </div>
+  <p class="lead">这次分享的内容是我用 Codex 从 0 到 1 做的第一个 Chrome 插件，说实话难度不大，但是为什么要</p>
+  <article class="content"><p>原创 RaDesign RaDesign RaDesign</p>
+<p><em>2026年4月15日 09:23</em> <em>河北</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiaxeCL9zGEicEBbKMF8RmsA29GcPPyWSzNvEUaPIwdnHHrKYXrd4qUp1X1OU96XzWPUGM1tko5BzyeuqoMVtxORjCTEZmZ19XGuE/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>这次分享的内容是我用 Codex 从 0 到 1 做的第一个 Chrome 插件，说实话难度不大，但是为什么要分享？因为我已经介绍这个Ai 工具很久了，依旧有很多设计师朋友还是没有思路，就是感觉很厉害，但是玩起来后总感觉这里不对，那里不顺，因此我想分享一下我第一次尝试用它跑完完整流程的思路，只是提供一个简单的思路，鼓励大家都去自己多尝试，都去跑通一次完整流程，总结出适合自己的用法。</p>
+<p>这次分享的是我做一个 Chrome 插件+FIgma 插件：<br><strong>Web to Figma Paste + Web to Ai Prompt Assistant</strong></p>
+<p>功能很简单：</p>
+<p> <strong>Web to Figma Paste</strong> </p>
+<ul>
+<li><strong>👉 把网页内容复制下来</strong></li>
+<li><strong>👉 直接在 Figma 里 Cmd / Ctrl + V 粘贴使用</strong></li>
+</ul>
+<p> <strong>Web to Ai Prompt Assistant</strong> </p>
+<ul>
+<li>👉 把复制进来的网页去除品牌和调性，模块化处理，变成框架图</li>
+<li>👉 根据框架图生成变体框架，可一键提取网页框架提示词</li>
+</ul>
+<p>重要的不是插件本身，而是：</p>
+<p>我第一次完整走通了一个从想法 → 开发 → 打磨 → 可发布的全过程。</p>
+<hr>
+<p> 01 </p>
+<p>选题，其实比实现更重要</p>
+<p>很多设计师开始都会停在想的阶段：</p>
+<p>👉 AI现在能做成什么样？真实项目能不能做？<br>👉 我该做什么？</p>
+<p>其实我建议大家一定要去玩，去动手，当你开始后，你会在使用的过程中有很多想法，而且我之前也建议过，你把自己完全当一个什么都不会的人，每一个步骤都去找对应的AI来做，让自己体验全流程AI在工作流里面到底能发挥到什么程度。下面可以看下我的 “无脑” 过程。</p>
+<p>当时 Figma MCP + Codex 可以互通的消息刚出来，我第一时间去试了一下。<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&mid=2247494972&idx=1&sn=f76efc67cc37cff8231d126a5bd38841&scene=21#wechat_redirect">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a></p>
+<p>很快我发现了一个非常有意思的点：</p>
+<p>👉 Codex 生成的 Figma 文件，是网页版的，然后点击后传送到客户端<br>👉 可以直接选中元素、进行编辑</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiax6IHtTIz68icHsfY6ETia5uMia09kcK4l8uWpMV3s7zoOjwAcqo50zLsuX4vyPKMpcov7L1LmLbYnmibRic6GPQWGCmHLntKuVDMHk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>这和之前很多“生成设计稿”的方式不一样。于是我就去问Codex，为什么现在要这样处理，这是通过什么方案实现的，这个能力我能不能复用？因为我平时自己也有个需求：很多模块类似的，可以直接复用过来，自己再去填充内容和修改，效率会很高，而且它们模块化、图层、约束处理的都很规范，可以极大的提升效率。</p>
+<p> 学会提问：截图+链接+问题 </p>
+<p>Codex 这点比GPT强，它会去帮你扒你提供的底层逻辑和代码，比GPT更容易获得准确答案。</p>
+<p>下一步就是直接问它，这个能力怎么用，让它给你出方案。</p>
+<hr>
+<p> 02 </p>
+<p>先不写代码，先把产品边界说清楚</p>
+<p>很多人会在这里卡住，或者收不住，觉得它做的东西跟我想的和描述的差很多，一开始你得把边界想清楚，它负责发散，你负责掌控，比如：</p>
+<p>我让它发散完后，提供了明确的边界：</p>
+<ul>
+<li>这是一个 Chrome 扩展</li>
+<li>主流程：网页 → 扩展 → 复制 → Figma 粘贴</li>
+<li>次流程：Figma 插件 → 转模块化AI提示词</li>
+<li>不依赖本地 bridge</li>
+<li>输出必须是“可编辑结构”，不是截图</li>
+<li>方案必须合规可通过审核</li>
+</ul>
+<p>这一步对用 Codex 非常重要。如果你不说清楚，它一定会“帮你多做”：</p>
+<ul>
+<li>你想做插件，它可能帮你扩成平台</li>
+<li>你只要复制，它可能建议你做同步系统</li>
+<li>你要结构化，它可能退化成截图</li>
+</ul>
+<p>所以第一原则是：先让 AI 知道“不该做什么”。如图所示，如果你不把边界写清楚，它会无限帮你扩大，做大做强。但是换个角度，它自身的产品能力也是非常强的，很多功能和细节，说实话我自己都没想，它会帮你考虑的非常全面。</p>
+<p>这就是你为什么要做一次，因为它真的越来越比你 “专业” 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiawc37Xv8o8fmN6RarcL3onvc3rfY7hzSiaJtbQZtR3pVwdib7hhvDlowWNvy36kiazwNj7ru7ZgklXZLzcvACfY97jtubnozfsib4E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<hr>
+<p> 03 </p>
+<p>第一版不追求完美，只追求“流程跑通”</p>
+<p>这个阶段就是很多人最容易放弃的，尤其是设计师，不要想着第一次就能做到多么的完美，先只要能用，再到下一步</p>
+<p>不要一开始追求最优解，先跑通闭环。因为我们的任务是跑通一个项目，你不能定位是设计师的角色了。</p>
+<h2>真正的工作，发生在 MVP 之后</h2>
+<p>很多人做到这一步就停了：因为能用了</p>
+<p>实际真正的工作，才开始：初版出来后，我也遇到很多问题，几乎全部来自真实使用：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaxOSISFE4l4oJJOAINRibH7uxWdUXucXFT5j4Kv9r6dhpoEd4nw7q5kbUOxL9mHFmdXbUqDicWyytQRoPW8ZDY6pz6twib6iaVKZBE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<ul>
+<li>用户不知道复制是否成功</li>
+<li>切到 Figma 粘贴有延迟</li>
+<li>工具卡片挡住网页内容</li>
+<li>选择模式不好退出</li>
+<li>深浅色主题不统一</li>
+<li>报错信息太技术化</li>
+<li>插件样式影响网页</li>
+<li>动态网页内容抓取不全</li>
+</ul>
+<p>粘贴到 Figma 效果验收问题等等。</p>
+<p>这一阶段，Codex 的角色发生了变化：</p>
+<p>不再只是写功能，而是开始参与你的产品打磨，用的越多，你会发现它比你专业，给出的解决方案很全面，为什么这么说，例如：</p>
+<p>很多网站图片都是分页加载的，这就导致一开始插件抓不到部分图片，我肯定是不懂这个技术该如何处理的。所以最好的办法就是</p>
+<p>直接问它！它可以解决你遇到的 95% 的问题。</p>
+<p>如下右图，它提供了方案，先模拟人从上到下浏览一次，分批抓取，最后再合成一个整体。具体咋实现的，我还真不懂，你也不用懂，你只需要关注，结果是不是你想要的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazAAab1qe0H8u0XgDyXYQFQzJhIYA1Dp9skdJoqD59V3dxjqzibGH0m82SAT1z2Q8NkAUCmuzrPqASJRAC1ba54hC7EPVQruBW4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>当你发现流程基本没问题，再去解决视觉和交互问题：</p>
+<p>你只需要给它输入：</p>
+<ul>
+<li>“这个 hover 太重了”</li>
+<li>“这个提示太长了”</li>
+<li>“这个模式没法退出”</li>
+<li>“这个 UI 会挡住用户头像”</li>
+</ul>
+<p>就这么简单，唯一的要求就是，你得和它聊得到一块，简单说就是，你说的按钮是它理解的按钮，如果你记不住，你就自己定义，比如你可以把告诉它，“状态显示区域”，后面我们就叫“状态区” ，然后具体怎么改，直接说，基本都能解决。</p>
+<hr>
+<p> 04   </p>
+<p>AI 协作最重要的能力-收敛</p>
+<p>用 AI 做项目最容易失控的一点是：一直加东西，如果一个对话你一直回复好的，你会发现它能给你造个天大的项目出来。</p>
+<p>所以一定要在项目里专门加了一份稳定性文档，明确规定：</p>
+<ul>
+<li>主流程不能被改散</li>
+<li>不引入新路径</li>
+<li>不做 bridge</li>
+<li>样式必须在 shadow DOM</li>
+<li>不影响网页</li>
+<li>不允许退化为截图</li>
+</ul>
+<p>(放心，这些都不用你写，你只需告诉它做这件事就行)</p>
+<p>千万不要小看这个，我经常看到新手用户给我反馈，越修改，本来好好的功能就变了，或者改错了，然后说是模型降智了，要不就是AI生成的还是不够智能......</p>
+<p>一定记住：</p>
+<p>👉 每一次修改，都可能破坏核心价值，AI 不是靠记忆变稳定，而是靠规则。</p>
+<p>可以参考我的步骤，没做一个小版本或者新功能，就让它更新一下规则。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiazUf0mTMI2k6WeTUBLJCYFP58q9F1iaOd4sxx1r1wleRr8lkwBvibic4qObSQde2OQUq7VYrfmlwvaiaMflYlcNrzrQM0GlvooyecM/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<hr>
+<p> 05 </p>
+<p>高效发布，Codex 才真正有长期价值</p>
+<p>一个项目做到能用，和做到能发布，是两回事。</p>
+<p>你想要完整的发布，还有很多杂事要做，但是现在我都扔给Codex 。</p>
+<p>这个阶段，Codex 的价值反而更明显：</p>
+<p>它可以帮你：</p>
+<ul>
+<li>整理版本说明</li>
+<li>写商店文案</li>
+<li>检查版本号</li>
+<li>补齐文档</li>
+<li>做发布 checklist</li>
+</ul>
+<p>AI 不只是帮你写代码，而是在帮你“ 把产品做完整 ”。</p>
+<p>如果只看结果，这个插件其实不难，体量小，没啥可做的，但如果看完整过程，说明了一件更重要的事：</p>
+<p>现在的 AI 是可以参与完整产品流程的，它会全流程协助你推进。</p>
+<p>你要自己去玩，不要听人云亦云现在还不行，还不成熟，还是那句话，你要把它加入到你的队伍，而不是等它让你加入。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiaxnIA9Zt2Lq8ctgOowfyrwCwP8Ztk7Sd6KHU3kZgh1DOVLGz1or5ia1uiapPLxHreuOjrvkhQQBBPia0k5740lL7O8EzRZtmrzbL8/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>插件放在我们的收录网站，感兴趣的小伙伴可以去这里体验：radesign.cn</p>
+<p>近期我发现类似的插件多了十几个，只要有想法，现在大家都可以一个人做到了！</p>
+<h2>最后一句话总结</h2>
+<p>不要把 Codex 当成写代码的工具。把它当成一个可以陪你把产品从 0 做到可发布的搭档吧，快去动起手来。</p>
+<p>最最后，下期分享一下0-1 搭建一个完整的具备前后端网站的实操过程，全程没动手设计～</p>
+<p>就是这个网站，里面收录各位设计师 Coding 的项目： radesign.cn</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiawf4iaCQiaPOibwH5N33rO3sBkjIh5LUqA19MzCpGjzPYNDiaDShSRdf7c4gvQZoq4oW64cvQibRxLhiacmz4qaxe9tUZnFJI32a2G5U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>欢迎大家多尝试，把自己成熟/不成熟的 Vibe 产品分享出来，一起交流进步～</p>
+<hr>
+<p><strong><strong>👉 如果觉得不错，随手点个赞、在看、转发三连吧</strong></strong></p>
+<p><strong><strong>👉 如果想第一时间收到推送，也可以给我个星标⭐</strong></strong></p>
+<p>******👉 我们组了一群热爱探索的设计师→「设计师的 VibeCoding 实验室」******欢迎私聊来加入一起探索。</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/vap5iihmg3ixH1mNLwxA5A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

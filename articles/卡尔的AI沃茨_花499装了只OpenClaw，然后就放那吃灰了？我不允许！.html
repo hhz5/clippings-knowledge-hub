@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>花499装了只OpenClaw，然后就放那吃灰了？我不允许！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">花499装了只OpenClaw，然后就放那吃灰了？我不允许！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    
+    <span class="date">2026-03-07</span>
+  </div>
+  <p class="lead">你的龙虾离真正能用还差3步</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fzmq0sgKNWzFEmyrkORNoE77YCB0IFHbvg4fohAttX3g7heTRHWtSsCpylkAPdaomAxQd22lGYUv2tbn297UrOvme2TdQCyuUM/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a> <em>2026年3月4日 17:47</em></p>
+<p>上门安装龙虾的价格已经从30卷到5000了，</p>
+<p>还能带上门清洁，上门喂猫，而最卷的瑞哥那已经卷到了再加30分钟心理咨询+肩颈按摩，下楼带走一包垃圾了，要是加上喂猫的话我真可以不要龙虾。</p>
+<p>这个套路太熟悉了，DeepSeek那一波，stable diffusion的webUI，GPT，Midjourney提示语手册，给Mac安装Wins虚拟机的都是这群人，价格会光速被打到底价，从上门到远程到最后0.99给你个文档自己安。</p>
+<p>经典的装了就会了，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fz7wel6OFWeA5DhMBUIcGGibte6Xfp97MibGwvQMWicolNdD2L3vTlcKicVfa3gYkaw8icLVEk7v3WIMezohssrc7M3sWlt4H5TA46o/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>而且我聊过的大部分人，他们自己也并不常用OpenClaw，更不会去考虑什么安全不安全的问题。</p>
+<p>但安全就是OpenClaw最大的缺点，它的好用是建立在超高权限带来的，比Claode Code和Codex高权限模式还高，有次都把我的wifi模块删了，没网的状态想用CC修复都不行。</p>
+<p>前段时间才把Meta安全总监的工作邮箱全清空了，虽然你可以通过一些指令来给它设定红线，但在长对话过程中，它还是会为了节省空间而压缩上下文，这样就有概率会忘掉你给它的安全指令。</p>
+<p>除非你把它安装在虚拟机或者云服务器上，不怕被删，随时可以读档重来。这也是为什么我一直建议大家先安在虚拟机上面体验一把，文件互传比云方便，权限也可以控制开大小。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247504469&idx=1&sn=529c3c44419ee375d0dbb3e2cb389058&scene=21#wechat_redirect">Clawdbot超级小白入门指南，不靠MacMini和云，安全用上满血版</a></p>
+<p>那是不是这499就白花了，</p>
+<p>不慌不慌。这篇文章，就是为了解决这个问题。一个给OpenClaw自己读的安全文档和X个新生OpenClaw必装的Skills，最后我把我这段时间写的OpenClaw教程排了一个合理的阅读顺序，让大家的龙虾都可以变波斯顿大龙虾。</p>
+<p>我们先把安全性拉上来，</p>
+<p>部署安全防线这种事，都花499安装龙虾了，就不要自己手动敲代码了，直接让你的OpenClaw自己动手，</p>
+<p>直接把下面这段话发给OpenClaw，</p>
+<p>项目文档： <a href="https://github.com/slowmist/openclaw-security-practice-guide">https://github.com/slowmist/openclaw-security-practice-guide</a></p>
+<ol>
+<li>下载项目里的核心文档 OpenClaw 极简安全实践指南.md</li>
+<li>仔细阅读这份安全指南，评估它是否可靠，跟我沟通确认可靠后</li>
+<li>完全按照这份指南，为我部署防御矩阵。包括写入红/黄线规则、收窄权限，并部署夜间巡检 Cron Job。 ”</li>
+<li>部署完成后，请按照项目里的 验证与攻防演练手册对 Agent 进行突击测试，确保红线生效</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fwm8ibWnF03qYsVHAwnysWAeicAEialdwqHEf7nuwh2jUsm7RHlZeG2OZ9W3y9qTPaoBxGR0QVRoCib5v7eD9hy5LVK1DKT3nrCmcQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>还有一个非常紧急需要设定的步骤，</p>
+<p>最近有黑客正在全网扫描那些直接暴露在公网上的OpenClaw地址，</p>
+<p>如果你的小龙虾有私钥权限，一定要赶紧关闭公网访问，不然下一秒就可能有人带着最高权限的OpenClaw在你的电脑上乱跑脚本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FynQ73OuGzbuva5VdqtI1oyiaXuJPkicxRo3zeMVicnC2tOIpdZFZnmibSgduzOsUwOZrx7LxMjhGWUaXiatSicXBYLbRREXM5KJfj9w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>解决方案也很简单。</p>
+<p>最直接的就是在你的防火墙或者云服务器的安全组里，把18789这个端口给封掉。但是很多人都有需求用手机来远程指挥龙虾，完全封死端口也不行。</p>
+<p>这时候，你有几个层层收紧的选择。</p>
+<p>最基础的，是强制开启OpenClaw自带的认证。在它的配置文件里，把 GATEWAY_TOKEN 设置成一个足够复杂的密码。只要设置了这个网关令牌，就算地址暴露了，没有这个令牌的人点进去也什么都干不了。</p>
+<p>又或者是把你的OpenClaw跑在自己的Mac mini，家里的NAS，或者个人服务器上，只监听本地地址。这样，你的指令通过聊天软件的加密通道发送，而你的龙虾本身，在互联网上是完全隐身的。</p>
+<p>这个任务也是可以交给OpenClaw自己做的。</p>
+<p>帮我检查18789这个端口有没有暴露到公网，如果有，按照安全系数设置复杂的Gateway Token，或者安装Cloudflare Tunnel / Cloudflare Zero Trust建立IP白名单</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fz7DLTdZM8zVVyhYVgYNgvtvM0OYgsUxjEN5b5eEOy9AWpxHDNCYr18zV0KQnXw5FkEoIHjA1mZcnl3LLTRTlBxeah9vnf5pzs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>提升了安全性之后我们还要安装一些Skills让小龙虾转起来，安装的命令很简单，</p>
+<p>帮我安装这个Skills，跑通所有流程，【有github链接就带，没有就直接贴名字】</p>
+<p>PS，地址太多了我就打包成文档了，公众号回复 吃龙虾 就好了。</p>
+<p>首先装的还是安全插件，skill-vetter，在安装新的Skills前，都可以先用它来扫一遍代码，防止有潜在风险。</p>
+<p>然后就是联网搜索和新Skills搜索，</p>
+<ul>
+<li>tavily-search， 每个月1000次免费调用，不用绑卡。好处就是它本身就是专门给Agent做的搜索API，返回的内容处理过了。</li>
+<li>find-skills， 遇到解决不了的任务时，Agent 能自己去ClawHub检索并安装合适的Skills。</li>
+</ul>
+<p>那怎么给OpenClaw装一个好脑子呢？</p>
+<p>我选择self-improving，proactive-agent，memory-setup三件套，</p>
+<ul>
+<li>self-improving， 是让Agent记住执行中的错误并自我修正，用的越多逻辑就越顺。</li>
+<li>proactive-agent ， 主动规划模块，这样OpenClaw就有了自主拆解和多步任务的权限。</li>
+<li>memory-setup， 用来构建长期记忆的，能跨对话记住你的核心偏好和关键信息。</li>
+</ul>
+<p>最后就是一系列使用频率超高的生产力Skills，</p>
+<ul>
+<li>gog (Google 全家桶)， 支持读取邮箱（我订阅的日报就是靠这个总结）和日历排期。</li>
+<li>summarize， 用来做高密度信息摘要的，把长篇的URL，PDF或音视频丢个OpenClaw，它能快速提取核心论点</li>
+<li>automation-workflows， 工作流编排，可以把多个技能串起来干更复杂工作流。</li>
+<li>obsidian， 把本地的Obsidian做成第二大脑，OpenClaw可以把资料分类存起来。</li>
+<li>qmd， 超级省token，每次跟OpenClaw对话的时候，它都要读一些背景资料才回答你，一般的做法是把整个文件都塞给他读。 qmd是先把你所有的文档读一遍，建立索引。当你问的时候，他会找出最相关的那一段，天然省token。</li>
+<li>agent-browser， 浏览器自动化，很多时候会跟tavily-search混淆，以为都是做联网搜索的，但擅长的是做点击滑动打开子页面等操作，比方说一个比较经典案例就是在X上搜索like大于100的OpenClaw教程作者，把follow都点了<br>  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwdibyALb3dNwHtTBpic7OQ5mCWUqsHhf9NnSz0CULibZpElNeViaXJjvFdqxrd2Bk7N1yECSDOTU3efLu9DoicOzWdP7SK2nR38YxU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></li>
+</ul>
+<p>安装的方法照样非常朴实无华，你只需要把我上面的这段文本发给openclaw，让他出一个安装计划。</p>
+<p>还有一个超简单的新玩法，</p>
+<p>使用 r.jina.ai链接就可以获取大部份网页正文，不需要登陆，jina很久之前就有个功能了，当时就是专门给大模型提供网页文本的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxtUQS87Wc0vpBjQGzBCZ5jJAf62wmI5qR93f853pW6IiaSCKbDymBjGdQJkNy27ZUZXlclAjh2Yr93zcQ0UDBlfPSceeLy3Va4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>如果你觉得Skills还不够多的话，也可以从这里淘淘， github.com/VoltAgent/awesome-openclaw-skills，还有 clawhub.ai</p>
+<p>如果安装了一大堆Skills不知道用来跑什么好的cases的话，也可以看看这个</p>
+<p>github.com/hesamsheikh/awesome-openclaw-usecases</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxltBlTdB5icfSIG0Q7RupI4AafSRTLPicibW9ialufe8riaB6jnmGkWHZCicW01E5k9nluWDXqQuMz2qj9sHnich2DZQarDZfYg446e8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>部分的case截图</p>
+<p>最后给我之前写的OpenClaw基础系列排个序，</p>
+<p>想要立省499自己动手的，省下那几百块钱安装费的，可以看 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247504469&idx=1&sn=529c3c44419ee375d0dbb3e2cb389058&scene=21#wechat_redirect">这篇</a> 。  </p>
+<p>想要进一步提升OpenClaw联网搜索能力，搞定某书某音某站视频的，看 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247505306&idx=1&sn=752593d3c077af729c7b3ec5542956bf&scene=21#wechat_redirect">这篇</a> 。  </p>
+<p>想要用Obsidian加上OpenClaw，搭建自己第二大脑知识库的，看 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247505302&idx=1&sn=d0cc0321dfc5963f2bb55b980d51e077&scene=21#wechat_redirect">这篇</a> 。  </p>
+<p>想要用手机连接你已经安装好的OpenClaw，做定时任务，邮件总结的，看 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247505084&idx=1&sn=ff88347682ae4f4240b8593409ea9891&scene=21#wechat_redirect">这篇</a> 。  </p>
+<p>我其实还蛮共情那种感觉的，</p>
+<p>花499买个心安，</p>
+<p>这不就是望梅止渴的现代版嘛，</p>
+<p>每天醒来，</p>
+<p>看到大佬A拿OpenClaw做了个十万加爆款，</p>
+<p>大佬B做了个工具推荐成了万赞，</p>
+<p>有时候就直接不想做了，或者觉得自己要是做得没他们快就不做了。</p>
+<p>然后看到A火了就去学A，B爆了就去学B，</p>
+<p>结果学了个四不像。</p>
+<p>我在这种状态里挣扎了很久。</p>
+<p>现在想明白了，</p>
+<p>我觉得不需要去追求什么平常心，</p>
+<p>看到了，觉得有意思，就去做。</p>
+<p>你教会OpenClaw的第一个技能，</p>
+<p>你让它帮你完成的第一个定时任务，</p>
+<p>那个瞬间的获得感是完全属于你自己的，</p>
+<p>这是十个499都买不到的。</p>
+<p>小彩蛋：本文正确打开方式是丢给OpenClaw提取里面能安装的都装了😎</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏 如果喜欢这篇文章，不妨顺手给我们 <em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>捐一笔</p>
+<p>178人捐赠</p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/EjYKsoTxskxDAMiJFctXfA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

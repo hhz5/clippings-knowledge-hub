@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用 LiblibAI 实现完整的工作流程 · 从图像到视频第 2 期 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用 LiblibAI 实现完整的工作流程 · 从图像到视频第 2 期</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=RaDesign">RaDesign</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=LiblibAI">LiblibAI</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90">图像生成</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90">视频生成</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1%E5%B7%A5%E4%BD%9C%E6%B5%81">设计工作流</a>
+    <span class="date">2026-01-04</span>
+  </div>
+  <p class="lead">大家好，2025年已过，首先谢谢大家把时间作为最宝贵的礼物送给了我们，让我们每篇文章都有所意义，那么今年第 1</p>
+  <article class="content"><p>原创 RaDesign <em>2026年1月4日 12:26</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibj9edWycmtZt2SXlsurHBQrXfTt6szp7jVrGM5fuGibEAiaA2tGgAxm7wZnIPtadGMPrjamiafqMFRbg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>大家好，2025年已过，首先 谢谢大家把时间作为最宝贵的礼物送给了我们，让我们每篇文章都有所意义，那么 今年第 1 篇文章给 LibLibAi 的第 2 期吧，上一期讲了从图像到视频，应该都有所了解学习，这期作为补充。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEkZUxwsKVhygZh8azicicyJsTSsN3EnZupAaR31eQ8RA6QZ4jgWWgdKZQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>LibLibAI</p>
+<p>依旧是老配方，新用户的传送门，老用户的旋转木马，防止转丢。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEsvJZmxhiatSMR6FB7icsu6FPnh0s8T2csqQDHicpCsd79iaOxJdWH5k7pQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>地址： <a href="https://www.liblib.art/inspiration">https://www.liblib.art/inspiration</a></p>
+<hr>
+<p>1.马年海报</p>
+<p>做海报目的是我个人觉得 LiblibAI 模型里的 添加风格模型 是个神奇小工具，设计这个的真是天才！我们先进入首页，在 发现灵感 里选择一张参考，点击 做同款 弹出输入框。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yENXxdiaqkfFpMDB9QwNkw3eHgTc06cZC6CqJ9vAE8SUZcK0RTVxbBzLg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yE1ykYLcxaL6TevhkFQkZINTibicHYLibsG6OTEXT9ZvWSv2lRvlHkkznibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>注意：生图模型 Qwen-Image ，比例 3:4 ，右侧是选择的 风格参考模型 ，我们先按照原始未变的生成一下看看效果。</p>
+<p>根据选择的模型，下方弹出输入框，我们复制提示：</p>
+<hr>
+<p>Gilded Art, A festive Chinese New Year poster illustration for the Year of the Horse 2026 顶部文字为“ 春节 ”。高品质、艺术化、喜庆的氛围。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yENDx7PhzzW3o6icmh4dgD4F8u0iazmD7sNgU2jNo70bZbpbo7mqdAW7eg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>文字有些问题，我们用 全能图片模型V2 「香蕉模型」进行测试，提示词不变看看效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEPpEEtbYsa8M1K5A2zAcb3LlNzicia9ib7ib81cdajHwZb9iao3YlPeBPFAw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEUl5jNE9AsSwS44AWRxwSKhNLuREibVjbVtP5PiaGRVmzIXG8J8gaxDIQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>选择好香蕉模型后，再来选择右侧风格模型，在里面搜索 2026马年 ，选择第一个风格尝试。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEibjIzcYlXhPgD4oLD0csYeOJJILPJVch1fwXgshWgMTLcWmRjNjse3Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yE5vqYEIPEbYVs7HKyVW5FcfqYsITCXnDZH3I0B4LJODCJOYnick8vRQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>个人很喜欢，我想看看和第 1 张生成的图像作为参考，再次生成出来是什么样子，点击左侧添加上方的参考。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEuf8a6Yx20uVuLibTHTATqdHgcR9jxC0ibpkxGpfN9Nbofhs39mpy2OWw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEcia5ooOJeibx9UOm7ZawjibcPr5nGXLkibaI4GX206HibsaFnDVJpROy6icA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>选择图像生成器「生成的图像作为参考」第 1 张，点击生成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEcguXDibc4ia9yZhMtB621zrwM0SoiaU7iaD2XSWfvw1mjOyW5r6Zkaghqg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>真不错啊，哈哈哈哈</p>
+<p>再多换个风格模型看看「 可以换很多个风格模型真是个宝贝 」，大家可以多多尝试各种风格～</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEEHZSicibkTtr4o1uEUfzibJmrLGzpYjODop1oEZjUwuQ8bOvvKgQ8m48Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/ekECa2J6aibglic2zzUEic6TEC5RvVicxmUknf48RCNAff2BCXeSYAIjJS27LvWvWlBwZxp3za8llLJWrm1TBKibEHQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>真的很有意思，我决定还是用原来的第 2 版吧，哈哈哈哈哈。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEpzvg11vnLa29wtJJa0Fjicyx80pBHXsknSL4v33IPDjCbs8t95sRenQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<hr>
+<p>2.品牌之灯</p>
+<p>X 上有个 Nova Li 用户做了一个杜蕾斯效果的品牌之灯，相当有意思哈哈哈哈，这里作为引子拿过来给大家做个参考。</p>
+<p>提示词： 这张创意海报以 杜蕾斯 安全套包装盒为中心，将其巧妙地转化为一盏柔和的夜灯。包装盒表面和边缘散发出淡淡的光芒，照亮了背后的墙面，并为 杜蕾斯标志 投下温暖的黄色光晕 。标志下方用白色小字写着“ 24 小时营业 ”，清晰地传达了杜蕾斯随时随地提供的保护和亲密体验。海报右下角印有杜蕾斯标志，底部中央也印有杜蕾斯标志。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEGaWpiaEolwCjBU1o2hWL9IuQ2r7075owASpgkxLnndNickbk2gz3Z0oQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEj87EXOuTAO5wibgMicwHNLYyufdtsv7NyeT9lib2M5S9Kurr09ZYTs8jQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<hr>
+<p>3.产品包装版面成品</p>
+<p>做包装版面的有福了，根据下面这套提示词上传未完成的版面设计，可以把成品包装组成起来：  </p>
+<hr>
+<p>在简约高端的摄影棚布景中，以柔和的中性背景、 漫射光和微妙的阴影渲染盒子，无需任何额外道具。以精致的四分之三角度竖直展示盒子 。呈现超逼真的细节、真实的色彩、哑光纸板纹理、清晰的折痕，以及高端的编辑美感。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yE6a5ViaBywgNxiavePJ238P5nKqq6eLrqVPzJEGh8aQnly6LMkZElCHOQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEuOYwOAicDcDoLQPUSbFv3tSAd2VCPbmITdsgCse3s9Qh9t8RQw9KIyw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yERUlMhq8A10Rfyf22pSyiaDXv3MUqsZzu6AywWaDeSW8IJErcdHz9dZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEUomibicrPDUhicN0hqIibpaRfImCj89CibGj9vo5ibFSPw2e3pxov4wolHOg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<hr>
+<p>4.产品图像</p>
+<p>这绝对是小型企业福音，高清且有氛围感的高质量图像，可用作视频模型的原图来使用，这里分享两套提示：</p>
+<p>第1套</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEklkSOwkA97arY6TlcnqiaDRcH3uvpm7rmuZ501ETyp3HHhfS1CGHd9w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>{</p>
+<p>&quot;id&quot;: &quot;strawberry_mountain&quot;,</p>
+<p>&quot;type&quot;: &quot;照片写实广告照片&quot;,</p>
+<p>“主题”： {</p>
+<p>“物品”: “草莓汁瓶”，</p>
+<p>&quot;label_text&quot;: &quot;NFC 草莓汁&quot;,</p>
+<p>“详情”：“产生冷凝水”</p>
+<p>},</p>
+<p>“环境”： {</p>
+<p>&quot;地点&quot;: &quot;山脉&quot;,</p>
+<p>“地面”：“被雪亲吻过的岩石”，</p>
+<p>“氛围”： “雾蒙蒙的寒冷山间空气”</p>
+<p>},</p>
+<p>&quot;surrounding_elements&quot;: [</p>
+<p>“草莓散落在底部”</p>
+<p>],</p>
+<p>“灯光”： {</p>
+<p>“描述”：“温暖的阳光轻轻地穿透了冰冷的雾气”，</p>
+<p>“效果”：“柔和的镜头光晕”</p>
+<p>},</p>
+<p>&quot;style_descriptors&quot;: [</p>
+<p>“电影式特写镜头”</p>
+<p>“高细节”，</p>
+<p>“自然环境”，</p>
+<p>“柔和的粉红色调”，</p>
+<p>“平静清新的氛围”，</p>
+<p>“超逼真纹理”</p>
+<p>}</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEKHSOl497vcb9gozCvZX7PbRoX9fLeqB4JUSyibibovTlgdRKHFKS9Y5A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<hr>
+<p>第2套</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEBr7y28YVJJlicoJ0g3g4rdqdiaBz6ZZZkMXcHKibQEuYtCoXmoF3jvCaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>{</p>
+<p>&quot;production_manifest&quot;: {</p>
+<p>&quot;元数据&quot;: {</p>
+<p>&quot;series_id&quot;: &quot;CIN-FOOD-2025&quot;,</p>
+<p>&quot;aspect_ratio&quot;: &quot;9:16&quot;,</p>
+<p>&quot;resolution_target&quot;: &quot;8k_uhd&quot;</p>
+<p>},</p>
+<p>&quot;technical_stack&quot;: {</p>
+<p>“硬件”： {</p>
+<p>“相机”： “ARRI Alexa 65”</p>
+<p>&quot;lens_profile&quot;: &quot;大画幅电影定焦镜头&quot;</p>
+<p>},</p>
+<p>&quot;film_emulation&quot;: {</p>
+<p>“库存”： “柯达 Portra 400”，</p>
+<p>“特点”：[“细腻颗粒”、“自然肤色”、“暖色调高光”]</p>
+<p>},</p>
+<p>&quot;lighting_rig&quot;: {</p>
+<p>“风格”：“电影般的柔光”，</p>
+<p>“氛围”：“永恒的室内”，</p>
+<p>“扩散”: “高”</p>
+<p>}</p>
+<p>},</p>
+<p>“艺术指导”：{</p>
+<p>&quot;visionary_style&quot;: &quot;格蕾塔·葛韦格&quot;,</p>
+<p>&quot;composition_rule&quot;: &quot;图形中心对称&quot;,</p>
+<p>&quot;physics_engine&quot;: &quot;悬浮动画/零重力&quot;,</p>
+<p>&quot;background_specification&quot;: &quot;平光米白色/工作室骨色&quot;</p>
+<p>},</p>
+<p>&quot;variant_registry&quot;: [</p>
+<p>{</p>
+<p>&quot;id&quot;: &quot;VAR-001&quot;,</p>
+<p>&quot;flavor_profile&quot;: &quot;黑巧克力片和燕麦&quot;,</p>
+<p>&quot;tonal_emotion&quot;: &quot;俏皮、活泼又不失时尚&quot;,</p>
+<p>“原料”： {</p>
+<p>&quot;primary_solids&quot;: [&quot;黑巧克力曲奇&quot;],</p>
+<p>&quot;fluid_fx&quot;: [&quot;燕麦奶飞溅&quot;],</p>
+<p>“碎屑”：[“饼干屑”]</p>
+<p>}</p>
+<p>},</p>
+<p>{</p>
+<p>&quot;id&quot;: &quot;VAR-002&quot;,</p>
+<p>&quot;flavor_profile&quot;: &quot;红丝绒蛋糕&quot;,</p>
+<p>&quot;tonal_emotion&quot;: &quot;大胆、俏皮的时尚&quot;</p>
+<p>“原料”： {</p>
+<p>&quot;primary_solids&quot;: [&quot;红丝绒蛋糕块&quot;],</p>
+<p>&quot;fluid_fx&quot;: [&quot;奶油奶酪糖霜漩涡&quot;],</p>
+<p>“碎屑”：[“可可粉”、“细小的红色蛋糕屑”]</p>
+<p>}</p>
+<p>},</p>
+<p>{</p>
+<p>&quot;id&quot;: &quot;VAR-003&quot;,</p>
+<p>&quot;flavor_profile&quot;: &quot;开心果马卡龙&quot;,</p>
+<p>&quot;tonal_emotion&quot;: &quot;精致、俏皮的时尚&quot;</p>
+<p>“原料”： {</p>
+<p>&quot;primary_solids&quot;: [&quot;开心果马卡龙&quot;],</p>
+<p>&quot;fluid_fx&quot;: [&quot;奶油填充漩涡&quot;],</p>
+<p>“碎屑”：[“碎开心果”]</p>
+<p>}</p>
+<p>},</p>
+<p>{</p>
+<p>&quot;id&quot;: &quot;VAR-004&quot;,</p>
+<p>&quot;flavor_profile&quot;: &quot;草莓酥饼&quot;,</p>
+<p>&quot;tonal_emotion&quot;: &quot;甜美、俏皮又不失时尚&quot;,</p>
+<p>“原料”： {</p>
+<p>&quot;primary_solids&quot;: [&quot;新鲜草莓片&quot;],</p>
+<p>&quot;fluid_fx&quot;: [&quot;鲜奶油漩涡&quot;],</p>
+<p>“碎屑”：[“酥饼碎屑”]</p>
+<p>}</p>
+<p>}</p>
+<p>]</p>
+<p>}</p>
+<p>}</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEqZp66b9YwTlbUIMdNNTxM3gg1SQHZPUnEfJkFgyicm3ficpCOzVNLaRA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<hr>
+<p>5.高级海报</p>
+<p>该海报样式比较固定且高级。核心提示词可以修改，我测试了三组，分别上传了 3 张 3D 图像进行生成。</p>
+<hr>
+<p>提示词： 一张高端时尚杂志封面。 {年轻女性时尚模特} ，气质自信前卫，身体张力强，动态姿态，直视镜头。镜头为略低机位仰拍。模特双手比起取景框手势，仿佛与一个矩形选中框有互动，选中框覆盖脸部和肩部。视觉规则：只有选中框内部清晰且为自然彩色；选中框外完全灰度强像素化，无任何颜色或清晰区域。柔和漫射棚拍光。现代编辑感穿搭。版式文字：顶部居中粗体大写扁宽型无衬线标题“FOCUS”，上方小字“DECEMBER 2025”；标题左下“VOL + 随机两位数”；左下角文字块（简短时尚自信标题、短段落、条形码）；右侧“FASHION INTERVIEW”；右下角衬线体小号“THE EDIT”及大号“01-09的随机数字”。<br>模特对标题有遮挡叠加，前后景关系，层次分明，干净现代。字体均为白色，蒙太奇风格字体，文字与图像形成强烈对比。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEicLsEibsRXSpuRJ5awsuHa02O3HkfJxV2dPthIc7ZyeCy48ITicib5c4aA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>-</p>
+<hr>
+<p>提示词： 一张高端时尚杂志封面。 {年轻男性时尚3D角色} ，气质自信前卫，身体张力强，动态姿态，直视镜头。镜头为略低机位仰拍。模特双手比起取景框手势，仿佛与一个矩形选中框有互动，选中框覆盖脸部和肩部。视觉规则：只有选中框内部清晰且为自然彩色；选中框外完全灰度强像素化，无任何颜色或清晰区域。柔和漫射棚拍光。现代编辑感穿搭。版式文字：顶部居中粗体大写扁宽型无衬线标题“FOCUS”，上方小字“DECEMBER 2025”；标题左下“VOL + 随机两位数”；左下角文字块（简短时尚自信标题、短段落、条形码）；右侧“FASHION INTERVIEW”；右下角衬线体小号“THE EDIT”及大号“01-09的随机数字”。<br>模特对标题有遮挡叠加，前后景关系，层次分明，干净现代。字体均为白色，蒙太奇风格字体，文字与图像形成强烈对比。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yElfqAXjDEEg63QMI8BsRQcPqv0COvYQAEW8gSAGsYJibNtiahRAqbvH3A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p>-</p>
+<hr>
+<p>提示词： 一张高端时尚杂志封面。 {年轻时尚的3D角色} ，气质自信前卫，身体张力强，动态姿态，直视镜头。镜头为略低机位仰拍。模特双手比起取景框手势，仿佛与一个矩形选中框有互动，选中框覆盖脸部和肩部。视觉规则：只有选中框内部清晰且为自然彩色；选中框外完全灰度强像素化，无任何颜色或清晰区域。柔和漫射棚拍光。现代编辑感穿搭。版式文字：顶部居中粗体大写扁宽型无衬线标题“FOCUS”，上方小字“DECEMBER 2025”；标题左下“VOL + 随机两位数”；左下角文字块（简短时尚自信标题、短段落、条形码）；右侧“FASHION INTERVIEW”；右下角衬线体小号“THE EDIT”及大号“01-09的随机数字”。<br>模特对标题有遮挡叠加，前后景关系，层次分明，干净现代。字体均为白色，蒙太奇风格字体，文字与图像形成强烈对比。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibhn6Hsx9pBxNMhQbAu1E3yEAibG1A7SdTlH3na063AmXHDbmJ9wcCtrgGoxue7tFSibVp4E6bK1agdA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibglic2zzUEic6TEC5RvVicxmUks0aaWjLhUzZyCe8tR3jcQnzcfjLCBNfCXKX7EYQmCQMib7IUlmvaSkA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p>视频新模型</p>
+<p>最近有两个 最新模型 Wan 2.6/PixVerse V5.5 ，第一时间在 LiblibAI 解锁，在相同提示词下我测试一组图像。</p>
+<p>从左往右依次为 PixVerse v5.5 ，可灵o1 、 wan 2.6 、 seedance 1.5 pro，分别说下自己使用的感受：</p>
+<p>· PixVerse v5.5 首尾帧过渡时不是很柔和且角色衣物变化过大，配声为衣服的摩擦声。</p>
+<p>· 可灵o1 首尾帧过渡很顺滑，一气呵成但没有配声。</p>
+<p>· wan 2.6 没有首尾帧，视频生成较为规矩相对于其他模型有刻制性，配声有车床数控声。</p>
+<p>· seedance 1.5 pro 首尾帧视频直接切换，配音动感能卡点音效。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibglic2zzUEic6TEC5RvVicxmUkONPrbymfutribat5ERTShUV47vaEA0o1E9YZFv2K60SmRu4pa6gHH5g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibglic2zzUEic6TEC5RvVicxmUkvPAR8sIdIpKl6LL9cznNOaJMqnPVEQlZibKvQgF1Rjt1anykcTyXvtQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>提示词： 主体：该角色很酷的比手势，环境：高级且和原图保持一致，风格：保持不变，总体有微动态效果。</p>
+<hr>
+<p>结尾</p>
+<p>可以看到视频模型和生图模型有很多， LiblibAI 优势很明显，所有模型通用且能形成完整的使用闭环，在一个平台上即可完成，不得不说有点东西的。</p>
+<p>最近又有活动： 期间开通 旗舰版 或 大师版年会员 ，以及 旗舰版年会员 有效期内可 0 积分畅玩 PixVerse V5.5 视频模型 ；其他会员积分消耗7折。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibglic2zzUEic6TEC5RvVicxmUkky3QKH42hWDYI4zGysddEMt9AkdiagLzlle4Qric8exic2Y9aHKibT2M4w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>地址： <a href="https://www.liblib.art/viphome">https://www.liblib.art/viphome</a></p>
+<hr>
+<p>历史文章</p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925877792105037831#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=adxnvt2m&tp=webp#imgIndex=18" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925882854227312641#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=6du8fus1&tp=webp#imgIndex=19" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925887427964829708#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnyxekKjZGTauzZM1tnGU8XhMe8cQ8kPtK35fawroYY7ybu0LkYiaibW8g/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=yk6gkdmw&tp=webp#imgIndex=20" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925889414856966155#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnlePXhuwMKJ6yCnsZM4zdUQOXwdCwHy5dibrW2hKIrTCDb4263utLJuA/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=ldmkfp07&tp=webp#imgIndex=21" alt="图片"></a></p>
+<p>有意向或者感兴趣的小伙伴欢迎加入AI [MJ · DeepSeek · 4o·Gemini ]交流</p>
+<p>继续滑动看下一个</p>
+<p>RaDesign</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 文件，大小 958.1 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/fH-ol5G8_uwpcElsSf94rg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

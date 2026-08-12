@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAS实现听书自由，极空间部署小说智能转语音神器『EasyVoice』 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">NAS实现听书自由，极空间部署小说智能转语音神器『EasyVoice』</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=Stark-C">Stark-C</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=NAS">NAS</a><a class="chip" href="../index.html?tag=%E6%9E%81%E7%A9%BA%E9%97%B4">极空间</a><a class="chip" href="../index.html?tag=EasyVoice">EasyVoice</a><a class="chip" href="../index.html?tag=%E5%90%AC%E4%B9%A6">听书</a>
+    <span class="date">2025-11-18</span>
+  </div>
+  <p class="lead">NAS实现听书自由，极空间部署小说智能转语音神器『EasyVoice』哈喽小伙伴们好，我是Stark-C~</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIwgia09bFTL9xOJAF8TneHhtkv10WaQhnNSlsOesEYRR7lOuDaiaJb6icw/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 Stark-C <a href="https://mp.weixin.qq.com/s/">Stark324</a> <em>2025年9月23日 20:59</em></p>
+<h2>NAS实现听书自由，极空间部署小说智能转语音神器『EasyVoice』</h2>
+<p>哈喽小伙伴们好，我是Stark-C~</p>
+<p>说实话在这个快节奏的社会，我们已经很难抽出时间安静的看书了，也是因为如此，很多小伙伴开始选择听书。</p>
+<p>听书可以充分利用碎片化时间，比如说在通勤路上、做家务时、锻炼身体时，甚至是上班摸鱼的时候，我们都可以在不影响手头工作的前提下，通过听书来获取阅读同样的快乐。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AI7UXRZibW6GMxnfT8Qaj5lxw5wQ9DwcpD1wdcPto71tpATWNTQjY7EHA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>🔺极空间NAS也是知道各位书虫不易，在很早之前就为我们安排了专为听书而生的应用套件“有声读物”，它不仅支持常见的AAC、AIFF、APE、AU、FLAC、M4A、MMF、MP3等多种格式，还支持快进/后退、多倍速播放，以及多平台进度同步等。</p>
+<p>也就是说，只要我们将自己收集到的有声资源添加过来，就能通过这个应用愉快的听书了！问题是：电子书资源到处都是，有声资源哪里找？</p>
+<p>所以，针对这个问题，为大家分享一个将电子书资源转换成语音的项目『EasyVoice』，从此让大家实现听书自由。</p>
+<h2>关于EasyVoice</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AI8ic9HErG71Bo0JXrqNwM75sS56oByTbUq2skUlDbsPMdAibgCugM8hibA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>🔺EasyVoice是一个免费开源的文本、小说智能转语音解决方案，可以让我们轻松将文本内容转换为高质量的语音输出，同时还同时生成字幕，方便创作者们用作视频制作或者字幕翻译。</p>
+<p>项目Github主页（记得Star支持作者呀~）：<a href="https://github.com/cosin2077/easyVoice">https://github.com/cosin2077/easyVoice</a></p>
+<blockquote>
+<p>项目的核心功能：</p>
+<ul>
+<li><strong>文本转语音</strong> 📝 ➡️ 🎵 一键将大段文本转为语音，高效又省时。</li>
+<li><strong>流式传输</strong> 🌊 再多的文本，都可以迅速返回音频直接开始试听！</li>
+<li><strong>多语言支持</strong> 🌍 支持中文、英文等多种语言。</li>
+<li><strong>字幕支持</strong> 💬 自动生成字幕文件，方便视频制作和字幕翻译。</li>
+<li><strong>角色配音</strong> 🎭 提供多种声音选项，完美适配不同角色。</li>
+<li><strong>自定义设置</strong> ⚙️ 可调整语速、音调等参数，打造专属语音风格。</li>
+<li><strong>AI 推荐</strong> 🧠 通过 AI 智能推荐最适合的语音配置，省心又贴心。</li>
+<li><strong>试听功能</strong> 🎧 生成前可试听效果，确保每一句都如你所愿！</li>
+</ul>
+</blockquote>
+<h2>EasyVoice部署</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIMkZIIElLWFT7B5n9PShibibzHs9CI7qB512MkXGhM5TibZIzXvLcgH9sQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>🔺先在文件管理器的Docker目录新建一个easyvoice的文件夹，然后在该文件夹下再建audio子文件夹用来保存生成的音频、字幕文件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIObxqavRyia07w6Osicr76E11hp2hsuw8tMCrUz3HTibcicnWhgVMrSIsyQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>🔺接着打开极空间NAS的“Docker”应用，点击【Compose】 &gt; 【新增项目】。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIlKanHQh76fqotXz9PpWMz1Rv5ibRXupSvGHsQN6WUTbWfzPiaaict7uhQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>🔺在新增项目页面自定义项目名称，输入以下 Docker Compose 配置信息后点“创建”按钮：</p>
+<pre><code>services:
+ easyvoice:
+  image: cosincox/easyvoice:latest
+  container_name: easyvoice
+  ports:
+   - 3112:3000   # 项目WebUI打开端口，冒号前面请勿和本地冲突
+  volumes:
+   - ./docker/easyvoice/audio:/app/audio    # 映射media文件夹实际路径
+  restart: always
+</code></pre>
+<p>以上代码需要根据注释自行修改，没有注释的默认即可，镜像的拉取需要自行解决网络问题，粘贴到自己的NAS这边之前建议使用AI工具优化一下，以防止格式问题造成的部署失败。</p>
+<p>顺便说一下，volumes映射的路径需要在当前界面使用“查询路径”查找到真实路径直接复制粘贴就可以了，个人觉得极空间这里对于新手小白已经是相当友好的操作了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIGG22tNHInEROIRtn98yY3PAQYoIUzodWFfywaMVvsRicP2JUJdMmcCQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>🔺如果说有其它需求的，比如说 AI 智能推荐，可以根据作者给出的方案添加环境变量。目前它仅限于OpenAI模型，我没有该模型的API Key，所以部署的时候就没使用环境变量。如果有OpenAI模型的API Key，可以自己添加上去。（其实也可以在项目部署好之后在设置中添加）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIKy9icZ8SBZaooABEXv7ZLVBu7MnqT7e81XgHpK4AzxXjf4oyQFibWicWQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>🔺部署好之后就能看到容器显示“运行中”就可以使用了。</p>
+<h2>EasyVoice体验</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AILYPUAKKpGvj3ehUr1ia3Q2htQAPR59RjCZF4kbDMJMcSrfX3kQknqXQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>🔺打开方式依然是浏览器状态栏【IP:端口号】的方式。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIpNL1HgD0jzMfiaekib13co1hWYbUEZeRz5BJibd7SLNiaTy3sEB5FNIrDA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>🔺文本转换页面还是很简洁的，左边是文本内容，可以直接粘贴文本，也可以直接上传自己下载的txt电子书，右边则是转换语言相关的设置选项，包括语言、性别、配音角色、语速、音量、音调等，设置项还是非常丰富的。</p>
+<p>PS：它目前只支持txt的文本确实有些不便，毕竟我们收藏的电子书基本上都是EPUB、MOBI这些，TXT纯文本几乎很少。所以如果确实想体验该项目的小伙伴建议找个文本转换工具将其它格式的电子书转换成TXT吧~</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AI9Q1ibQVS5aBMkrYwMHgMF5uZwv0es04ax3n1rsDv876NLscIic98feAw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>🔺支持的声音选项还挺多的，不仅可以选择男女角色，甚至还有地方口音，从而满足大家更个性化的语音需求。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIm3VuYTUoUED6CaPYmSGwnib16FN9ThnB1Iua8H8QgUjD4fpSRC9F5FA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>🔺我这里直接上传了一本金庸先生的《天龙八部》，文本文档统计的有差不多130万的字数。将“天龙八部.txt”拖过来之后项目上面的文本框是正确的显示。我们在右边设置好自己需要的语音相关信息就可以直接点下方的“生成语音”按钮开始转换了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIXSbYu7icqJ7Pl3DEY9xzqhu06qs28uAFQY3JhEzbEHBibCwHMN2PoImQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>🔺这里需要强调的是，我们上传到这里的txt小说的编码格式必须为“UTF-8”，要不然该项目是无法识别，具体表现为乱码，自然也就无法转换语音了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AI0Cia8yc55cB7vFuV51GiciaKsiaeARXicBEGV3VkToLV0vYQ8aSwt2PNOhg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>🔺转换的时候下方有一个进度条，但是其实显示是不准的，不过此时已经可以点击“播放”按钮开始试听了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIKqRkqQQ72TSVbAIGJAtdFxqtfpC8LIE61a2K2ZsT5zRyLthRwicBJVA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>🔺日志中也可以看到转换的情况，不过从显示的信息可以看到它显示的其实是生成字幕文件的进度。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIbYdOiaUKg35GUhyibCbsB1TXnzGyRooRwQ8tQJUoD7386EpxOgSE8rbw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>🔺转换的时候几乎没有占用资源，毕竟它默认调用的是Edge-TTS API，也就是微软Edge的在线语音服务，所以也能理解它为什么不会占用本地资源了，唯一的不便就是转换的时候需要保持当前页面一直在线~。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIhY7TbgDEJBIBOBM3HSBhL14reEicBicNMGFmtlEQ5QaFPHV2ic7VhXRnw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>🔺大文本转换用时确实有点长，我已经转换了差不多5个时间，一直都是显示的99.99%的进度，转换好的语音时间都已经1335分钟，但是时间仍然在增长，说明语音生成依然在继续。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AI9g6Or7XWkK1zt0FicXxb5FTVBoRSyPxpxGibvf8AcR0f8mxeHkuRbxBw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>🔺转换后的语音文件在我们刚开始创建的audio子文件夹中，文件格式为MP3，大小为919MB。说实话比预想中要小得多，毕竟当前已经是一段超过20个小时的语音文件了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AI8kqH5yicAaI0ViaEd2ibWVASPAcYvyJodZKNtbhovPYHhLibbgFGnuHROA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>🔺双击可以直接打开，试听了下没有任何问题，语气自然，语速适中，每一句话都清晰可辨，也没感觉到机械感或生硬感，效果确实还不错。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/hLacRGGu1wrXgYQiakqnjqiajZwsBF55AIBicbJrrbjA6WPAmlPnnqQkWbicpSlPe5w2X9kn72Mf6GwQia6cmn9R6Pg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>🔺因为我目前还不确定它还要转换多久，并且本来也只是为了演示，所以我也就没继续了。转换好的语音文件可以直接添加到极空间的“有声读物”应用中，之后就能愉快的听书了！</p>
+<h2>最后</h2>
+<p>今天分享的这个项目对于喜欢听书的小伙伴来说还是非常不错的，它能够非常轻松的将文字类的txt小说转换成效果不错的mp3文档，在配合极空间的“有声读物”，就能非常安逸的实现听书自由了！</p>
+<p>极空间NAS作为国产家用与轻办公市场的新兴力量，凭借简单易用、高性价比的特性，以及功能丰富、娱乐性强的优点，迅速成为众多NAS需求用户的不二之选。其产品线更是覆盖广泛，从百元级的入门款，到千元级的旗舰款应有尽有，能够满足不同用户群体的多样化需求，有兴趣的小伙伴可以关注下！</p>
+<p>好了，以上就是今天给大家分享的内容，我是爱分享的Stark-C，如果今天的内容对你有帮助请记得收藏，顺便点点关注，咱们下期再见！谢谢大家~</p>
+<p>继续滑动看下一个</p>
+<p>Stark324</p>
+<p>向上滑动看下一个</p>
+<p>Stark324</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/OkBOUguLAyfa6-UWmQhsSg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源个 Skill｜彻底解决小红、小绿书配图难题 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源个 Skill｜彻底解决小红、小绿书配图难题</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%B0%8F%E7%BA%A2%E4%B9%A6">小红书</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7">设计工具</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-05-28</span>
+  </div>
+  <p class="lead">开源个 Skill｜彻底解决小红、小绿书配图难题</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 歸藏的 AI 工具箱 <a href="javascript:void(0);">歸藏的AI工具箱</a></p>
+<p><em>2026年5月28日 08:30</em> <em>北京</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DW5olXdhQoFySLPSzHzVDYUr8NiaxGf5bicChSAkft0puc8RArOGvwmKXgTmtw1lIPbBtMQibHMfjreia7LS3cpeRrDsXaylpDYoAs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="封面图"></p>
+<p>前段时间开源了 guizang-ppt-skill，之后我自己用它做内容的时候发现一件事。</p>
+<p>用它出的网页，单张截下来发到图文平台，反响和数据比我手工排版还很多。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVmNsiamv3f23mx3QCW9z7wNlvK4ZIKGWz7rWQktHtShfEI0gbdxxmbkpkLexR9e7STLVL0eQYjw7Zgicr2UADxAiae7vZYwlwEgY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="PPT截图"></p>
+<p>我相信你之前也找到过一些这种生成3：4 卡片图的提示词或者 Skill。</p>
+<p>他们几乎都是一个味道：Tailwind + 大色块 + emoji 堆砌 + 中规中矩的字号层级。</p>
+<p>看完之后，我大致能理解为什么 AI 出的图文卡片那么容易被一眼识破，它们做的是网页，不是杂志。</p>
+<p>它们做的是网页，不是杂志。</p>
+<p>图文卡片对比 PPT 完全是另一种生物：竖屏、信息流里 1 秒钟决定停不停下、靠图说话而不是靠字。</p>
+<p>版式不同、节奏不同、读者不同。</p>
+<p>于是我把它从 PPT Skill 里拆了出来，单独做成了 guizang-social-card-skill（<a href="https://github.com/op7418/guizang-social-card-skill%EF%BC%89%E3%80%82">https://github.com/op7418/guizang-social-card-skill）。</a></p>
+<p>下面讲讲它好在哪、我为什么愿意在它身上花这么多时间。</p>
+<h2>二、到底好在哪里</h2>
+<p>先把目标说清楚：3:4 竖图是图文卡片的主战场。</p>
+<p>这个 Skill 的绝大部分设计精力都在 3:4 上，字号层级、版式比例、断行规则。</p>
+<p>全部按 3:4 在手机信息流里被滑过的真实场景校准过。21:9 和 1:1 公众号头图也都支持。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DUEk4uHsNZn3icRSsyybdIkx569TvLNGQfMUBibGuScgLW1LAxF7JB0pmH4velmjdkRud69O6VLN1Xp74plLALXXgicKA8hZNlbQs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>下面从图文创作者最关心的事开始讲。</p>
+<h3>2.1 它分得清你在写什么，然后用对的方式去配</h3>
+<p>图文平台上的内容是分门类的。一篇影评和一篇产品测评，需要的视觉语言完全不一样；</p>
+<p>一篇旅行散记和一篇职场干货，该用的版式也不是同一回事。</p>
+<p>但绝大多数 AI 工具不管这件事，你写什么内容它都用同一套模板套出来。</p>
+<p>结果就是所有人发的卡片都长得像一个公众号的封面流水线。</p>
+<p>这个 Skill 内置了 11 个常见图文品类的适配规则：</p>
+<p>•</p>
+<p>旅行 / 生活方式：杂志风为主，暖色板，大图压全屏，衬线大标题；</p>
+<p>•</p>
+<p>职场 / 干货 / 商业洞察：网格风为主，深色背景，数据大字报版式；</p>
+<p>•</p>
+<p>影视 / 文化：偏冷色调的杂志风，电影海报式版式，人物特写优先；</p>
+<p>•</p>
+<p>产品测评 / 数码：网格风，对比矩阵，设备框美化截图；</p>
+<p>•</p>
+<p>读书 / 笔记：杂志风，衬线字体，引文居中版式，留白拉满；</p>
+<p>•</p>
+<p>美食 / 探店：高饱和杂志风，俯拍图优先，文字向四角让位；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DXdTqW0jNUFoQ7LL1a3UXL4gKTIiaMQUXYD8VHb4GfNFVKkZxKGQY21o9PQuibDlG8ogXgicYNQxv1t1YWWQN3aITY91NmRiagl3NM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="品类适配示例"></p>
+<p>我甚至专门为旅行博主做了地图组件。你可以把店的位置和旅行路线都标注在上面，AI 会自动帮你生成标注。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUr3rHpY2N108O9icMAYTK0oCiaI7DGP1eXaKnqyzBX1fNTNoiaibzKqCmI0Tia3hAKYUqSXicVweWhfSuic1U2PGpyvn5WMV2lupuIYM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="地图组件"></p>
+<p>同一段文字喂给它，你说这是影评，它给你电影海报式的卡片；</p>
+<p>你说这是产品测评，它给你带设备框的对比图。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVmMekTDaQmQ8IWZbT07lGTCsagUMniaKucRWAfhbYUDXjPLxQicx7JHz1Mfcl8yvibub7bOCWUxhYrYIic9DKiaNwnvd1bVZU0vvLw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="不同品类效果对比"></p>
+<p>更重要的是，它有明确不接的活：</p>
+<p>•</p>
+<p>追星粉丝向，需要的视觉语言完全是另一脉；</p>
+<p>•</p>
+<p>纯促销硬广，违背它强调内容性的设计哲学；</p>
+<p>•</p>
+<p>超过 12 屏的长教程，图文形态不是长教程的最优载体。</p>
+<p>碰到这些场景，Skill 会在开头就告诉你&quot;你可能想用别的工具&quot;。</p>
+<p>这是我故意留的。能力边界比能力本身更能定义一个产品，一个什么都能做的 Skill 最后通常什么都做不好。</p>
+<p>一个什么都能做的 Skill，最后通常什么都做不好。</p>
+<h3>2.2 文字怎么压在图上，这件事我啃了很久</h3>
+<p>文字压图是图文卡片里最难的一件事，也是最容易暴露&quot;AI 感&quot;的地方。</p>
+<p>压不好就会出现三种翻车：</p>
+<ol>
+<li></li>
+</ol>
+<p>文字盖在人脸或产品中心位置上</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>白字压浅色背景或黑字压深色背景读不清</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>文字横跨整张图把本来好看的构图毁掉。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DX73RM6WJXJZCQshDSjDQhFRzicoeBXjUxup1WDWnkhd8XgVFS7WibqwricNS1biascMVd7JjzJiaRBD02DSz2xTc6J9KT85gfzYlX8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="文字压图示例"></p>
+<p>Skill 处理这件事用了三步：</p>
+<ol>
+<li></li>
+</ol>
+<p>识别图里的主体：人脸、产品、文字密集区，版式上自动避开；</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>算落点区域的色和明度：决定字色、要不要加蒙版、阴影该多深；</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>字号和断行自适应：根据落点区域大小动态调整字号和换行位置，而不是写死字号让它溢出。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DU2Lk01cJiaiak1aTDEicrGJwUPBiar8GdEtbNYX2fpqRRgU7dOTK1kGibaBMGOlblIuDrMmMfqKTAJWicq5Y2RhNbxQRVTcwg8yMRbw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="文字压图效果"></p>
+<p>这套规则跑下来，卡片的&quot;高级感&quot;基本就立住了。读者看不出&quot;被压上去的字&quot;和&quot;图本来就在那里的字&quot;的区别。</p>
+<h3>2.3 图片从哪来：这是和市面上 AI 卡片工具最大的差别</h3>
+<p>绝大多数 AI 生成图文卡片的工具，要么让你自己上传图，要么用 emoji 顶替，要么生成一些一眼 AI 的插画。</p>
+<p>结果就是手工补图很累，或者堆 emoji 显得很假。</p>
+<p>这个 Skill 默认接入了三个免费可商用图库：</p>
+<p>•</p>
+<p>Pexels，支持中文搜索，大众化场景够用；</p>
+<p>•</p>
+<p>Unsplash，摄影质感最强，人物、生活、空间类内容首选；</p>
+<p>•</p>
+<p>Wallhaven，游戏、摄影、壁纸之类的图都在这里，版权混乱。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUSu6weuVCNYJIgXicjsGeMntwtG4hctCLibB56eK3Fvh0aBrjAzib4dZmO0AiayDR6SsFEuGbXTS287Qp00HAicDo5BJI1tUfBibRto/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图库示例"></p>
+<p>它会根据正文段落的语义自动派发搜索词、拿回图、按版式裁切到位、避开人脸或主体被切掉。</p>
+<p>你拿到的是一张配了真实摄影图的卡片，而不是一张色块卡片。</p>
+<p>而且它也不会死板地去寻找绝对没有版权问题的图。</p>
+<p>能拿到的图都会告诉你，由你自己来判断要不要放版权不明确的图片。</p>
+<p>另外，现在各个平台对 AI 带水印的问题管得很严。</p>
+<p>目前你用的大部分 AI 生图都会有水印，而有水印就会被平台标注，一旦被标注就容易被限流，这是大家非常困扰的一个问题。</p>
+<h3>2.4 截图也是图：四件套美化</h3>
+<p>我们的很多内容用不了摄影图，得是软件截图、聊天记录、产品界面。</p>
+<p>Skill 内置了一套截图美化：</p>
+<p>加 macOS / iOS 风格的设备外框（browser chrome 或手机边框），用不同材质的背景托住截图，格纸、点阵、暖白或深色，让截图不再白底飘在白底上；</p>
+<p>同时根据视觉风格自动匹配阴影层次和圆角参数，两套风格各有一套截图配方，前后一致不用手动调。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWjFGDZ4OUtIiaHEVHbaqSesd69rfoV8pYt9FKYjwpuqVo28xXddSiaFGic3Nibth82YA0nOXmrBRS0Z1ibNdUZ29JibWIicbBFibQRiaGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="截图美化示例"></p>
+<p>简单一句，你随手截的图，过它一道，看上去就像产品官方做的宣传图。</p>
+<h3>2.5 AI 生图：克制地用</h3>
+<p>只有前面所有找图渠道都拿不到合适素材时，Skill 才会调用 AI 生图。</p>
+<p>生图时会强制带上风格约束词，避免出现&quot;一眼 AI 插画&quot;那种平庸视觉。</p>
+<p>我宁可它少用 AI，也不想它把 AI 用成那个让所有图文卡片长得都像姐妹的元凶。</p>
+<p>也避免你使用 AI 图片导致内容曝光受影响。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWicOkX2HolrnY2H0ArdoqKOFntfKaR6g7pfqsuW2us4q2jAtuq8dVDKKAXSq11wA209nm1bD2eJoOaABl8JibBATmnPgeoVHTwg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="AI生图示例"></p>
+<h3>2.6 视觉系统：两套风格 + 28 个版式骨架</h3>
+<p>熟悉我之前的 PPT 的人会觉得眼熟。</p>
+<p>这两套视觉系统和版式骨架，是从 PPT Skill 那边沿用并重新校准过来的。</p>
+<p>我就不重复展开，简单说一下它在图文卡片场景下的样子。</p>
+<p>两套视觉系统：</p>
+<p>•</p>
+<p>杂志风：你在《The New Yorker》和上海译文社的封面上看到的那种排版。大留白，衬线大标题，版式不对称，文字有呼吸感。</p>
+<p>•</p>
+<p>网格风：Massimo Vignelli 和 Helmut Schmid 瑞士平面设计那一脉。强网格，无衬线，几何感，用色克制但精准。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWqo66URrU1lqJicdibCbpaeO9Mqnp3Y1tJNmNN5piahbj0GfLxPOkHuCbFRrjXTWGPSSJ12xeibH4OD58bJBCicwWmI87BBMricPF9A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="两套视觉系统"></p>
+<p>28 个版式骨架，是我从过去十年看过的杂志、海报、专辑封面、电影海报里挑出来，经得起放大看的那些。</p>
+<p>AI 在&quot;自由版面设计&quot;上现在还是平庸的，给它一个被验证过的骨架，它的任务就从&quot;设计&quot;降级成&quot;填充&quot;，成品稳定性立刻上来。</p>
+<p>10 套主题色板、固定字体搭配、有限图标库，这些细节就不一一列了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVFoHmRSWWMDWC8MgqRGyeUu7RPuVrKuxtKFGrEKVvlxrCE8yMriaRMkGv07xvicNribkWaBdiaxncnicXslZ86sqQicyVnjTGibXny1g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="版式骨架"></p>
+<p>它们的逻辑是同一个：限制不是阻碍，是底线。</p>
+<p>给一个内容创作者无限的颜色选择，他更容易做出难看的东西；</p>
+<p>给他 10 套被验证过的色板，他做出能看的东西的概率会接近 100%。</p>
+<h2>三、为什么要这么做</h2>
+<h3>3.1 设计角度：杂志感非常有效</h3>
+<p>为什么走杂志风和网格风，而不是更&quot;现代&quot;的卡片设计?</p>
+<p>图文卡片的本质，和印刷海报、画报、专辑封面是同一种东西。</p>
+<p>用一张静态图，在 1 秒钟里说服一个陌生人停下来。杂志和海报在过去一百年已经把这件事研究透了。</p>
+<p>网页设计语言是为可滚动、可交互的场景做的，搬到一张静态图上，会显得用力过猛、信息平淡。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DXnBibswqUmkSRfyWrpornNOWnh8N6yYU0kia8mCNqb5BtniaIOxkIglN9upVZrkWWUziaIaibYOL8P4he724mUVk9BPH29jTxeI1TI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="杂志感对比"></p>
+<p>所以这个 Skill 在视觉决策上的所有&quot;为什么&quot;：</p>
+<p>**为什么大留白？**留白是杂志告诉你&quot;重点在这里&quot;的方式；</p>
+<p>**为什么衬线字体优先？**衬线字体在大字号上有印刷品的重量感；</p>
+<p>**为什么版式不对称？**不对称会制造视觉节奏，让眼睛知道先看哪；</p>
+<p>**为什么用色克制？**社交信息流里，克制的色板反而比饱和度高的更显眼，它和周围所有&quot;喊得很大声&quot;的卡片不一样。</p>
+<p>这些决策听起来都很&quot;虚&quot;，但它们落到代码里全是具体的常量。</p>
+<p>字号阶比例、留白比例、网格列数、对比度阈值、断行规则。这些常量才是这个 Skill 真正的护城河。</p>
+<h3>3.2 产品角度：它是一个产品，不是一段 Prompt</h3>
+<p>做了这么多 Skill 之后，我对&quot;Skill 这种东西到底是什么&quot;形成了一个判断：</p>
+<p><strong>Skill 这种东西，本质上是一个小产品。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWecQoibjjLPnVzgClyGw6w7oR2SnDGIcYgc1CueAo7Ih71fpqAdBOFbERBDWmozZ1icmxL8QS9OPfswZQvVPz82lk8EWnxkeW9Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Skill是产品"></p>
+<p>落到这个项目里：</p>
+<p>我给它写了 PRODUCT.md，讲清楚它解决什么问题、给谁用、不做什么。</p>
+<p>是为了逼自己把&quot;我到底在做什么&quot;想清楚。我自己说不清的时候，这个 Skill 就不该被发布。</p>
+<p>我给它打 版本号(v0.5 / v0.9 / v0.10 / v0.12)，每一版都有 CHANGELOG。</p>
+<p>我能告诉你为什么 v0.10 是一次失败的尝试，以及 v0.12 怎么把它修回来的。</p>
+<p>我给它写 HANDOVER.md，讲清楚交付物长什么样、能力边界在哪、什么场景该用别的工具。</p>
+<p>我希望任何人接手它，都能在 30 分钟内对它有完整理解。</p>
+<p>我会提前列出它不擅长的事，省得用户试错三次才发现。</p>
+<p>为什么要费这么大功夫?</p>
+<p>因为 Skill 生态最大的问题，是绝大多数 Skill 满足于&quot;我能做一个&quot;，很少有人在追求&quot;把这件事做到极致&quot;。</p>
+<p>绝大多数 Skill 满足于&quot;我能做一个&quot;很少有人在追求&quot;把这件事做到极致&quot;</p>
+<p>一个 Skill 应该是能站起来的小产品。Prompt 十分钟会被同行复制走，产品不会。</p>
+<p>这件事的反面是，如果我连自己 Skill 的能力边界都说不清，我就没资格让别人把工作流交给它。</p>
+<h2>写在最后</h2>
+<p>这个 Skill 让我反过来理解了我的 PPT Skill 真正做对的是什么。</p>
+<p>真正做对的，是它从一开始就被当成产品对待。</p>
+<p>模板多、规则细、颜色好看，都是这件事的副产品。</p>
+<p>以后再有人问我 Skill 是什么，我会用两句话回答：</p>
+<p>Skill 是一个产品。判断一个 Skill 好不好，看它有没有被它的作者偏爱过。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DXhZTaRmUlUSs3QkJhrVWto7fmvqCZsoliaeh36lsTdEjroavDBMaIZDYszuZnJh6LCAy0ibVYjGNKHBSWb9RI6ibmF9gguZ1tq9k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="结尾配图"></p>
+<p>如果你也在做图文内容，希望它能帮你省掉那些被排版毁掉的好选题。</p>
+<p>如果你也在做 Skill，希望它让你重新想一想，你做的那个东西，值不值得有 PRODUCT.md。</p>
+<p>GitHub：<a href="https://github.com/op7418/guizang-social-card-skill">https://github.com/op7418/guizang-social-card-skill</a></p>
+<p>跟你的 Codex、小龙虾、ClaudeCode、Workbuddy 说：</p>
+<p>帮我安装这个 Skill：<a href="https://github.com/op7418/guizang-social-card-skill">https://github.com/op7418/guizang-social-card-skill</a></p>
+<p>✦</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/KWtnToEa7K-13k002K-nRw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linear 发布 Loops：用大白话写一条指令，让普通人也能玩转 Loop Engineering · 小互 · AI 解读站 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Linear 发布 Loops：用大白话写一条指令，让普通人也能玩转 Loop Engineering · 小互 · AI 解读站</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%9C%AA%E7%9F%A5">未知</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Linear">Linear</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C">团队协作</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E5%8F%91%E5%B8%83">产品发布</a>
+    <span class="date">2026-07-22</span>
+  </div>
+  <p class="lead">Business 和 Enterprise 套餐可用，按运行次数扣钱，一次 0.07 到 0.2 美元。</p>
+  <article class="content"><p>产品发布 · 小互解读</p>
+<h2>Linear 发布 Loops：用大白话写一条指令，让普通人也能玩转 Loop Engineering</h2>
+<p><em>Business 和 Enterprise 套餐可用，按运行次数扣钱，一次 0.07 到 0.2 美元。</em></p>
+<p>一分钟速览</p>
+<ul>
+<li>loop engineering 今年 6 月在开发者圈火起来，但用它的基本是开发者：产品团队那些要人盯着的重复活，工程师逐条读 bug 报告、项目经理通知范围变动、市场跟着改发布排期，还得人干。</li>
+<li>Linear 7 月 20 日上线 Loops：用大白话描述一件事，选定时或者事件触发，Linear Agent 就在整个工作区里反复跑这件事。</li>
+<li>每次跑，它重新读一遍指令再决定这次该做什么，能调 Linear 里的 issue（工单条目）、项目、文档，也能调接进来的代码库、挂上的外部工具，还有这个 loop 之前几次运行的结果。</li>
+<li>权限是一排单独的开关：网页搜索、看代码库、开编码会话写代码、往外部同步的线程里发言，逐个开。开了网页搜索，工作区内容就可能被送到外部服务；从 Slack 消息、邮件这类 Linear 之外建出来的 issue，默认不会触发 loop。</li>
+<li>按次计费：不开编码会话的一次运行 0.07 到 0.2 美元，一旦它决定动手改代码，一次编码会话修个小 bug 要 3 到 5 美元。Business 和 Enterprise 套餐可用，现送每席位 20 美元促销额度、8 月 20 日到期。</li>
+</ul>
+<p>⚑这是 Linear 自家的产品发布页。本文另查了 Linear 官方 Loops 文档和 Addy Osmani 的 loop engineering 长文补资料，正文里的产品界面图有四张来自官方文档，出处在文末。</p>
+<h2>Linear 上线了 Loops</h2>
+<p>Linear 在 7 月 20 日上线了 Loops，让 Linear Agent（Linear 自家那个能在你工作区里动手干活的 AI）按定时或者事件反复跑一件事。</p>
+<p>你用大白话把一件想让它反复做的事描述清楚，再选一个触发方式：到点跑，或者某条 issue（Linear 里的工单条目）被建出来、被改动并且符合你设的条件时跑。它就在整个工作区里跑下去，每次跑之前重新读一遍你的指令，自己决定这一次该做什么。</p>
+<p>◆ <strong>为什么值得看：</strong> 这种定时和事件触发的 Agent 循环，此前主要长在 Claude Code、Codex 这类给个人开发者用的编程工具里，围着一个人手上的活转。Loops 把同一套东西挪到了团队层面：一个 loop 属于某个团队或者整个工作区，有访问权的人都能翻它的指令、配置，以及它每一次运行做了什么。</p>
+<p><img src="https://best.xiaohu.ai/media/linear-loops/6902521b8d5f52eaa4f8cbc3ac9c98d547b3a27a-8666f673.png" alt="Linear 侧边栏里新增的 Loops 入口"></p>
+<p>侧边栏顶层导航里多了 Loops 入口，空状态页面上可以直接新建。页面上的一句自述：让 Linear 在 issue 满足一组条件时自动动手，用来减少人工分派、让活别停在那儿、处理例行的后续跟进。来源：Linear 官方文档</p>
+<h2>以前只有写代码的人在搭这种自动循环</h2>
+<p>今年 6 月起，写代码的人里流行起一种做法：搭一套会自己跑的循环，让循环去催 AI 干活，人不再一句句对着 AI 提要求。这套做法有个名字，叫 loop engineering。Addy Osmani 在 6 月那篇长文里把一个循环拆成了五样东西，再加一份记忆。</p>
+<p>定时自动化</p>
+<p>到点自己去找活、分活，不用人开工。</p>
+<p>worktree</p>
+<p>给每个干活的 Agent 一份自己的代码副本，几个一起改同一个仓库时不会打架。</p>
+<p>skill</p>
+<p>把项目知识写下来存成文件，省得每次开新会话都从头讲一遍。</p>
+<p>连接器</p>
+<p>把 Agent 接到你已经在用的那些工具上，让它能真的动手而不只是给建议。</p>
+<p>子 Agent</p>
+<p>一个出主意，另一个专门挑毛病。写东西的那个给自己打分，分数都虚高。</p>
+<p>记忆</p>
+<p>第六样。一个活在单次对话之外的地方，记着做完了什么、下一步是什么。他给的例子就是一个 markdown 文件，或者一块 Linear 看板。</p>
+<p>这六样东西全长在编程工具里，用它们的人也基本是开发者。Loops 换了对象，接的是产品团队每天在干的那些重复运营活。</p>
+<p>开发者已经能自动跑的</p>
+<ul>
+<li>到点扫一遍昨天的构建失败、新 issue 和最近提交</li>
+<li>发现值得做的，派一个 Agent 去改，另一个去审</li>
+<li>连接器替它开代码改动申请、更新工单、往频道里发消息</li>
+</ul>
+<p>产品团队还在人肉盯的</p>
+<ul>
+<li>工程师得逐条读进来的 bug 报告，再去查是怎么回事</li>
+<li>项目经理得在范围变动发生的时候，通知受影响的团队</li>
+<li>市场得跟着目标日期的变化，改发布排期</li>
+</ul>
+<p>右边这三件事的流程本身都是清楚的，卡的地方在于：得有人盯着进来的变化，做一次判断，然后动手。那 Loops 要怎么把这类活接过去？先看它长什么样。</p>
+<p>[</p>
+<p>站内相关解读</p>
+<p>最近很火的 Loop Engineering 到底是什么</p>
+<p>想先把循环工程这套方法本身看明白，站内有一份完整拆解，走的是另一条拆法：从发现任务、交接执行、独立验证，到状态怎么存、调度怎么排。</p>
+<p>](<a href="https://best.xiaohu.ai/article/loop-engineering-playbook/">https://best.xiaohu.ai/article/loop-engineering-playbook/</a>)</p>
+<h2>一个 loop 是由哪几样东西拼起来的</h2>
+<p>建一个 loop 只要两步：用大白话把这件事描述清楚，然后选它是到点跑还是被事件叫醒。展开看，一个 loop 身上挂着四样东西。</p>
+<p><svg viewBox="80 0 520 320" role="img" aria-label="loop 的五个环节：等触发、读上下文、判断这次干什么、动手、留下运行记录，循环往复"><circle cx="340" cy="172" r="140" fill="none" stroke="#c9cde6" stroke-width="1.5" stroke-dasharray="5 7"></circle><g><circle cx="340" cy="32" r="7" fill="#4b53c4" opacity=".85"></circle></g><g font-family="-apple-system, PingFang SC, sans-serif" font-size="13" text-anchor="middle"><rect x="285" y="12" width="110" height="40" rx="10" fill="#ffffff" stroke="#4b53c4" stroke-width="1.2"></rect><text x="340" y="37" fill="#1b1c24">等触发</text> <rect x="411" y="109" width="124" height="40" rx="10" fill="#ffffff" stroke="#c9cde6" stroke-width="1.2"></rect><text x="473" y="134" fill="#1b1c24">读上下文</text> <rect x="355" y="265" width="134" height="40" rx="10" fill="#ffffff" stroke="#c9cde6" stroke-width="1.2"></rect><text x="422" y="290" fill="#1b1c24">判断这次干什么</text> <rect x="205" y="265" width="106" height="40" rx="10" fill="#ffffff" stroke="#c9cde6" stroke-width="1.2"></rect><text x="258" y="290" fill="#1b1c24">动手</text> <rect x="145" y="109" width="124" height="40" rx="10" fill="#ffffff" stroke="#c9cde6" stroke-width="1.2"></rect><text x="207" y="134" fill="#1b1c24">留运行记录</text> </g><g font-family="-apple-system, PingFang SC, sans-serif" text-anchor="middle"><text x="340" y="168" font-size="15" font-weight="700" fill="#4b53c4">一个 loop</text> <text x="340" y="192" font-size="12" fill="#62647a">建一次，之后一直转</text></g></svg></p>
+<p>一次运行走完这五步，然后回到等触发。图上那个亮点会一直绕着环转，说明这套流程跑完一次不会停。</p>
+<p>触发器</p>
+<p>两种。一种是排程，到点跑；另一种是 issue 被建出来或者被改动、并且符合你设的条件时跑，比如某个团队的 Triage 队列（新问题进来先落进的待分派队列）里出现一条新问题。「被改动也算」这条容易被忽略，它直接决定了这个 loop 一天会被叫醒多少次。</p>
+<p>指令</p>
+<p>一段大白话，写清楚你要的结果。也可以让 Agent 帮你把这段写出来，指令框右上角就是这个入口。</p>
+<p>工具</p>
+<p>可选。让它在别的服务里取信息或者动手，比如从 GitHub、Notion、Sentry 里查东西，往 Slack 里发消息。</p>
+<p>权限</p>
+<p>控制它能摸到哪些数据、能做哪些动作。这一块单独一节讲。</p>
+<p><img src="https://best.xiaohu.ai/media/linear-loops/500613e72b5c9e1637feffd6c4c0e7e331770fdf-8fa0aad5.png" alt="Linear 里一个定时 loop 的配置面板"></p>
+<p>一个叫 Product standup prep 的 loop，挂在 Product 团队下。触发方式选的是排程：从 2026 年 7 月 15 日起，每 2 周晚上 9 点前后跑一次。下面 Instructions 框里就是一段大白话指令。来源：Linear 发布页</p>
+<p>定时 loop 的指令示例 · 每两周准备一次产品站会议程（截图可见部分）</p>
+<p>为下一次产品团队站会准备议程。回顾过去 2 周的产品动态，把团队需要当面讨论的关键事项挑出来。重点看这几样：要做的决定、还悬着的问题、有风险的假设。</p>
+<pre><code>Prepare the agenda for the next Product team standup.
+
+Review the last 2 weeks of product activity and surface the key things the team should talk about live.
+
+Focus on:
+- decisions to make
+- open questions
+- risky assumptions
+</code></pre>
+<p>归属与版本</p>
+<p>一个 loop 可以配给某个团队、一组团队，或者整个工作区。有访问权的人都能查看它的指令、看它是怎么配的、翻它每一次运行发生了什么。改动先存成草稿，点了 Publish 才一次性生效；发布过的每个版本都留着，随时能恢复到之前任意一版。有一个例外：被移除的工具恢复不回来，得重新走一遍授权。</p>
+<h2>它跑一次到底做了什么</h2>
+<p>每次触发，Linear Agent 重新读一遍这个 loop 的指令，自己决定这一次该做什么。它能拉的上下文包括 Linear 里的 issue、项目和文档，接进来的代码库，挂上的 MCP 工具，还有这个 loop 之前几次跑的结果。所以它能处理例外、能在信息不全的时候先去问、能在几条路里挑一条。</p>
+<p>官方文档里有个现成的例子，看得比较全：一个叫 RideShare 的工作区，一个叫 Bug investigation 的 loop。先看它的指令。</p>
+<p>事件 loop 的指令示例 · 新 bug 进 Triage 时自动排查分派（截图可见部分）</p>
+<p>当一条 issue 进入 Triage 时，只在它带 Bug 标签或者用了 bug 报告模板的情况下才跑。  </p>
+<p>把这条 issue 的描述、标签、评论、附件、关联 issue、相关的客户请求，以及整个工作区里最近的相关 issue 都看一遍。  </p>
+<p>先判断信息够不够继续分派。最少要有这几样：期望的行为、实际的行为、复现步骤、设备和系统信息。  </p>
+<p>如果缺了实质性的信息，就留一条简短评论，向用户要缺的那部分。  </p>
+<p>如果信息够了，评估这几项：严重程度（critical、high、medium、low 四挡，附一句理由）、回归风险（likely、possible、unclear）、重复风险（likely、possible、none found）、最可能归哪个团队、最可能的负责人。</p>
+<pre><code>When an issue enters Triage, run only if it either has the Bug label or uses the bug report template.
+
+Review the issue description, labels, comments, attachments, linked issues, related customer requests, and recent relevant issues across the workspace.
+
+First, determine whether there is enough information to continue triage. The minimum needed is:
+- expected behavior
+- actual behavior
+- reproduction steps
+- device and OS information
+
+If materially important information is missing, leave a short comment asking the user for the missing information.
+
+If enough information is present, assess:
+- severity as critical, high, medium, or low, with a short justification
+- regression risk as likely, possible, or unclear
+- duplicate risk as likely, possible, or none found
+- the most likely team
+- the most likely owner
+</code></pre>
+<p>这条指令值得多看两眼，因为它示范了写 loop 指令的三个手法。第一个是 <strong>前置门</strong> ：开头那句「只在带 Bug 标签或者用了 bug 模板的情况下才跑」，把不该它管的 issue 直接挡在外面。第二个是 <strong>把输出锁成有限选项</strong> ：严重程度只能选 critical、high、medium、low，回归风险只能选 likely、possible、unclear，不给它自由发挥的余地，结果才能被后面的流程直接拿去用。第三个是 <strong>信息不够时不许硬猜</strong> ：先列清最少需要哪四样，缺了就去评论区问人，而不是凭想象填一个严重程度。</p>
+<p>再看它跑一次的结果。7 月 9 日晚上 11 点 04 分那次，它干了 3 分钟。在 RIDE-10663 这条 issue（飞行模式重连之后加载不出行程历史）上发了一条分派总结，把它关联到 RIDE-10639，按评估结果改了团队、负责人、优先级和工作量预估。这两条 issue 的标题一字不差，属于疑似重复。然后它多走了一步：拿现有的那个修复去验报告里说的 iPhone 17 加 iOS 27 重连路径，结论是修复看着没问题、不用改代码，合并之前还差一次构建加一次真机上的飞行模式复现。</p>
+<p><img src="https://best.xiaohu.ai/media/linear-loops/fd188bde19309e260dd9c92798b3a89b5cf2a1d8-52613230.png" alt="Linear 里一个 loop 的运行历史界面"></p>
+<p>Bug investigation 这个 loop 的运行历史。左边一列是每一次运行的时间，上方那个开关叫 Show successful runs，控制成功的运行要不要一起列出来；右边上半部分是它的指令，下半部分是这一次做了什么，末尾挂着那条对应的修复分支。来源：Linear 官方文档</p>
+<p>这张图里还有个容易被漏看的细节：这个 loop 是被事件叫醒的，所以跑得相当频繁。光是 7 月 9 日那一天，图上能看见的运行就有 16 次，从下午 5 点 49 一直排到晚上 11 点 12。每一次都单独留一条记录，事后想知道它当时读了什么、动了什么，逐条翻得到。这个频率后面还会再提一次，因为 Loops 是按运行次数收钱的。</p>
+<h2>你能给它开多大的口子</h2>
+<p>这是一个没人盯着的 Agent，跑在公司的工作区里。所以权限这排开关决定了两件事：它能摸到多少东西，以及它能不能把里面的内容送出去。建 loop 的时候逐项开，用不上的就别开。</p>
+<p>团队访问</p>
+<p>它能读写哪些团队的数据。工作区级的 loop、以及公开团队里的 loop，默认能访问所有公开团队；私有团队里的 loop 只能访问那个团队。能访问所有公开团队的 loop，同时也能访问 Initiative、Customer 这类工作区级的对象。</p>
+<p>网页搜索</p>
+<p>开了之后它能查任意网站，用来做的事比如盯竞品发了什么、翻你们接入的服务的文档。</p>
+<p>开这项等于允许工作区内容被送到外部服务。会碰敏感数据的 loop 别开。</p>
+<p>Code Intelligence</p>
+<p>Linear 自己的代码库理解能力。开了之后 loop 能翻工作区里已经接入的代码仓库，查 bug 根因、回答代码相关的问题都要靠它。</p>
+<p>编码会话</p>
+<p>开了之后它能直接起一个写代码的会话，改完开出一个草稿状态的 pull request 等人看。把实现工作真交出去的 loop 才需要这项。</p>
+<p>开了之后它能在跟外部应用双向同步的 issue 或者评论线程里写东西。</p>
+<p>这些线程有可能被工作区外面的人看到。比如你在一个公开仓库上开了 GitHub 同步，它就能往那个仓库的 GitHub Issues 里发评论。</p>
+<p>外部来源触发</p>
+<p>issue 可以从 Linear 之外建出来，比如一条 Slack 消息、一封发到指定地址的邮件。出于安全考虑，这类 issue 默认不会触发 loop。要让它触发，得在每个 loop 上单独打开指定的外部来源；允许哪些外部来源，由工作区所有者在安全设置里定。</p>
+<p>改触发它的那条 issue 之外的东西</p>
+<p>关着的时候，一次运行只能写它被触发的那一条 issue。开了之后，它能写团队访问范围内的任意 issue。</p>
+<p><img src="https://best.xiaohu.ai/media/linear-loops/1e2a0a3a5f883454fdf4c77f8eb02d63cf8ea227-e8a5b60a.png" alt="Linear 新建 loop 时的权限面板"></p>
+<p>新建 loop 最后一步的权限面板，图上是六项，上面列的第七项「改触发它的那条 issue 之外的东西」不在这个面板里，只写在文档正文中。另外这张图上第二项的开关名写作 Web search，官方文档正文里把同一项叫 Web access。图上外部同步线程和外部来源触发两项是关着的。来源：Linear 官方文档</p>
+<p>工具是另一条口子，但它的边界比权限开关窄。给 loop 挂一个工具，等于授权这个 loop 到那个服务里去动手；能动到哪一步，取的是两个范围的交集：那个集成本身被配置成能干什么，以及这个 loop 的数据范围有多大。另外每个工具还得工作区先批准才能用，工作区管理员在安全设置里定一份允许清单。</p>
+<p><img src="https://best.xiaohu.ai/media/linear-loops/883b8bcdb37d7008c82978e00b39120e3bee7b01-69cbb874.png" alt="Linear loop 的工具配置界面"></p>
+<p>这个 loop 挂了 Datadog、GitHub、Intercom 三个工具。下面灰条里那行提示：用个人凭据接一个 MCP 服务器，等于让这个 loop 拿到你的个人数据。来源：Linear 官方文档</p>
+<h2>团队现在拿它干什么</h2>
+<p>上一节那个 bug 排查 loop 就是第一个场景，这里不再重复。除它之外，发布页和官方文档一共给了这几种，其中带标记的四条在文档页面上是现成的，点一下「Build this loop」就能照着建一个。</p>
+<p>派生后续任务 · 可一键建</p>
+<p>新的功能需求建好之后，loop 判断要不要分别做 iOS、Android 和 Web 的改动，需要的话建出对应平台的 issue，分给对应的团队。</p>
+<p>让计划和文档跟上</p>
+<p>每天结束的时候，loop 拿在跑的项目和 Initiative（比项目更大一级的规划单元）去核一份中心发布计划。发现时间或者范围变了，它改文档，并留一条说明为什么改。</p>
+<p>事故收尾 · 可一键建</p>
+<p>一条带 incident 标签的 issue 被标成完成之后，做一次根因分析，把该跟进的事建成新的 issue。</p>
+<p>生成对外说明 · 可一键建</p>
+<p>一条 issue 关闭之后，读关掉它的那个 PR（代码改动申请），生成一段给客服用的对客户说明。</p>
+<p>官方文档举的三条 loop 写法示例（在文档开头的 Overview 里，不是那四条一键建的）</p>
+<p>当一条 issue 进入这个团队的分派队列时，用 Code Intelligence 查它可能的根因。如果你觉得能修，就起一个编码会话。  </p>
+<p>每周一下午，回顾一下上周有过第一次更新的项目，或者在 @Weekly sync document 里被提到刚启动的项目。往 #product-marketing 频道发一条 Slack 消息，让他们知道接下来有什么。  </p>
+<p>当 Mobile 团队里建了一条 issue，如果有必要，分别为 iOS 和 Android 团队建出单独的 issue。</p>
+<pre><code>When an issue enters this team&#39;s triage queue, investigate its likely root cause with Code Intelligence. If you think you can fix it, start a coding session.
+
+Every Monday afternoon, review projects that had their first update in the last week or were mentioned as newly kicked off in @Weekly sync document. Send a Slack message to the #product-marketing channel so they&#39;re aware of what&#39;s coming.
+
+When an issue is created in team Mobile, create separate issues for the iOS and Android teams, if relevant.
+</code></pre>
+<h2>跑一次 Loops 要花多少钱</h2>
+<p>Loops 在 Business 和 Enterprise 套餐上可用。从 7 月 20 日起，跑一次要扣工作区的 AI credits。这池钱不是套餐里包的，得管理员另外充；也不是所有 AI 功能都在用它，只有编码会话和 Loops 走这池，其余 AI 功能算在套餐里。它按实际用量扣，不按人头收。</p>
+<p>0.07 – 0.2 美元</p>
+<p>跑一次 loop，前提是这一次没有开编码会话</p>
+<p>3 – 5 美元</p>
+<p>一次编码会话修个小 bug；改文案和样式这种轻活是 0.5 到 1 美元</p>
+<p>20 美元/席位</p>
+<p>给 Business 和 Enterprise 工作区的促销额度，按工作区汇成一池、自动抵扣，8 月 20 日到期</p>
+<p>10 / 50 美元</p>
+<p>手动充值一次最少 10 美元，开自动补额一次最少 50 美元</p>
+<p>把这个价目表和上一节那个数字放在一起看，才知道一个事件触发的 loop 实际会花多少钱。那个 bug 排查 loop 光 7 月 9 日一天就被叫醒 16 次，按不开编码会话算是一天 1 块 1 到 3 块 2 美元；可它的指令里明写着「路子清楚就直接起编码会话去修」，只要有一次真动手，那一次就是 3 到 5 美元。这也解释了那条指令为什么开头就写「只对带 Bug 标签或者用了 bug 模板的 issue 跑」：前置过滤既是为了结果准，也是为了别乱花钱。</p>
+<p>还有几件跟钱有关的事：用 AI credits 是自愿的，工作区一直不充值，就用不了 Loops 和编码会话，也永远不会被扣钱；额度归零或者促销额度过期之后 loop 会暂停，除非管理员开了自动补额或者另外买了额度，只有开了自动补额工作区才会被自动扣款；充值走 Stripe，跟 Linear 订阅账单分开开票；花在哪个功能、哪个人身上，在设置的账单页能看到实时明细。</p>
+<h3>建一个 loop 有两条路</h3>
+<p>第一条路是先在聊天里试出来，满意了再把它定成 loop：按 ⌘/Ctrl + J 打开 Linear Agent 聊天，把你想要的结果先调对，不满意就继续提要求，直到产出的东西格式和内容都合适，然后让 Linear 把这段变成一个 loop，缺的字段它会提示你补。文档给了一段现成的开场白，场景是每周四要开项目 check-in 会的负责人：</p>
+<p>先在 Agent 聊天里试出结果，再变成 loop 的开场白</p>
+<p>去看看这个项目的 Slack 频道、上一次更新里还没解决的问题，以及任何看起来相关的 issue 讨论串。在 Meetings 这份项目文档里新加一节，把这些内容按 [某某格式] 写进去。</p>
+<pre><code>Check the project Slack channel, open questions in the last update, and any issue threads that seem relevant. Add a new section in the Meetings project document with those details, using a format like [...]
+</code></pre>
+<p>第二条路是直接在界面上建：侧边栏工作区那一组里点 Loops，建的是工作区级的；点团队名进去再选 Loops 标签页，建的是这个团队的。之后依次选触发器、写指令、可选挂工具、过一遍范围和权限。</p>
+<p>谁能建和管 loop 也是可控的：工作区所有者在安全设置里管工作区级的 loop，团队所有者在团队的访问与权限里管本团队的。</p>
+<p>以后 Linear 打算再加更多触发方式和上下文来源，以及给工作区和团队管理员的治理控制。</p>
+<p>🧰 上手卡 · Linear Loops</p>
+<p>入口 <a href="https://linear.app/docs/loops">linear.app/docs/loops</a> ；产品里的入口在侧边栏，没有 Business 或 Enterprise 工作区看不到</p>
+<p>价格按运行次数扣 AI credits：不开编码会话一次 0.07 到 0.2 美元，开了编码会话另算（修小 bug 3 到 5 美元）；现送每席位 20 美元促销额度，8 月 20 日到期</p>
+<p>门槛要有 Business 或 Enterprise 工作区；AI credits 得管理员主动充值才开通，手动一次最少 10 美元，余额归零 loop 会暂停</p>
+<p>🎒 这篇的带走包</p>
+<p>四段真实的 loop 指令，中英对照，改改就能拿去用（其中两段抄自官方截图里能看清的部分）</p>
+<ul>
+<li>4 条可直接抄的 prompt / 命令</li>
+<li>1 张上手卡</li>
+</ul>
+<p>来源</p>
+<p>Introducing LoopsNan Yu（Linear）· <a href="https://linear.app/now/introducing-loops">发布页原文</a> ·2026-07-20</p>
+<p>本站说明</p>
+<p>正文里的产品界面图，调度面板那张来自发布页，其余四张来自官方 Loops 文档。权限面板图上第二项的开关名为 Web search，文档正文里同一项写作 Web access，本文两处并列保留。所有价格数字来自 Linear 的 AI credits 计费文档，发布页和 Loops 文档里都没有。第二节里循环的六件构成拆法来自 Addy Osmani 2026 年 6 月的长文，不在 Linear 发布页里；把一天 16 次运行乘上单次价格得出的日成本，是本站基于官方价目表做的推算。</p>
+</article>
+  <p class="orig"><a href="https://best.xiaohu.ai/article/linear-loops/" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

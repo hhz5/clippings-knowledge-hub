@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源神器Cua登场：让AI替你操作电脑，告别重复劳动 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源神器Cua登场：让AI替你操作电脑，告别重复劳动</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%A5%BD%E6%9C%8B%E5%8F%8B%E4%B9%90%E5%B9%B3">好朋友乐平</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Cua">Cua</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-11-18</span>
+  </div>
+  <p class="lead">最近在GitHub上发现了一个非常有意思的开源项目，叫做Cua（读作&quot;koo-ah&quot;），这可能是我见过的最具革</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/qyBoz9lUosxTkSnJrIf4oMFCSj9ic1n3K9nxuOe2KqOODzw7Ql27snfyWcbJJMWBBgMv2TTQI9iby2cvcga8yP6w/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 好朋友乐平 <a href="https://mp.weixin.qq.com/s/">好朋友乐平</a> <em>2025年11月18日 09:00</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUosxTkSnJrIf4oMFCSj9ic1n3KahjOhXaqGFJdcvQLvRia2CiallO32OdoBGp2Zh2h6avlj7Dz73KLyTrQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>最近在GitHub上发现了一个非常有意思的开源项目，叫做Cua（读作&quot;koo-ah&quot;），这可能是我见过的最具革命性的AI自动化框架了。想象一下，如果AI能像人一样&quot;看&quot;屏幕，理解界面内容，然后自主操作电脑，那会是什么样的体验？Cua就是为了实现这个梦想而诞生的。</p>
+<p>作为一个长期关注自动化工具的人，我必须说，传统的自动化方案都有一个致命弱点：太脆弱了。稍微改个UI布局，整个脚本就废了。但Cua完全不同，它让AI直接&quot;看&quot;屏幕，就像人一样理解界面，这种全新的思路真的让人眼前一亮。</p>
+<h2>什么是Computer-Use Agents</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUosxTkSnJrIf4oMFCSj9ic1n3KNZ0KFsFLN33Uu8ebFp8fEEPcC0v1cYvBj74FLlLVLplwAuYJ6ohFnw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>在正式介绍Cua之前，我们先聊聊什么是Computer-Use Agents（计算机使用代理，简称CUA）。简单来说，这是一种全新的AI系统，能够像人一样通过视觉理解和动作执行来自主操作计算机界面。</p>
+<p>传统的自动化工具通常依赖于脆弱的CSS选择器、元素ID或者API接口。一旦网页或应用更新了界面，这些工具就彻底失效了。我相信很多写过网页爬虫或者UI自动化脚本的朋友都深有体感，维护成本简直是噩梦。</p>
+<p>但CUA完全不同，它使用视觉语言模型来感知屏幕内容，就像人一样&quot;看&quot;屏幕，理解按钮在哪里、输入框是什么样子、菜单如何展开。这种方式让AI能够适应UI变化，处理复杂的多步骤工作流程，跨应用程序工作。</p>
+<p>想象一下，你告诉AI&quot;帮我处理这些发票并整理到表格里&quot;，它就能自动打开相关软件、识别发票内容、输入数据、保存文件，整个过程完全不需要预先编程的规则。这就是CUA的魅力所在。</p>
+<h2>强大的双SDK架构</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUosxTkSnJrIf4oMFCSj9ic1n3KBrcLCCnyHaJ0ia14jQQZH8Jbn1TlID6QVqsQiaO5JZzfkrDiaNianYETsQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>Cua的架构设计非常巧妙，主要分为两个核心SDK：Computer SDK和Agent SDK。这种分离式设计让整个框架既灵活又强大。</p>
+<p>Computer SDK负责底层的计算机控制，提供了一套类似pyautogui的一致性API，可以控制Windows、Linux和macOS系统。无论你是想在本地虚拟机里操作，还是使用云端环境，Computer SDK都能提供统一的接口。它支持截图、点击、输入文本等基础操作，但比传统工具更智能。</p>
+<p>Agent SDK则是上层的AI代理框架，这里是真正的黑科技所在。它能够运行各种计算机使用模型，支持统一的响应格式，最重要的是支持模型组合。什么意思呢？你可以用一个专门的UI理解模型来识别屏幕元素，然后结合一个强大的推理模型来制定操作计划，两者配合工作。</p>
+<p>比如你可以这样配置：使用GTA-7B模型来进行UI元素识别，同时使用GPT-4来进行推理和规划，写法很简单： <code>ComputerAgent(model=&quot;huggingface-local/HelloKKMe/GTA1-7B+openai/gpt-4o&quot;)</code> 。这种组合式的设计真的很聪明，让你能够充分利用不同模型的优势。</p>
+<h2>丰富的模型生态</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUosxTkSnJrIf4oMFCSj9ic1n3Kufqv49wJrnstg5n9eaHXYqCicgHND46mCACLYoNNfURmcyW4dpoQrUw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>说到模型支持，Cua的生态真的很丰富。目前支持的模型包括Claude Sonnet/Haiku、OpenAI的Computer Use Preview、Qwen3 VL、GLM-V、Gemini等主流模型。每个模型都有不同的能力特点。</p>
+<p>有些模型擅长完整的计算机使用流程，包括规划和执行；有些专门做UI元素检测；有些支持工具调用；有些在视觉理解方面特别强。Cua把这些能力都整合到一个统一的框架里，你可以根据需要选择合适的模型，甚至组合使用。</p>
+<p>特别值得一提的是，Cua还支持人工在环（human-in-the-loop）模式。当AI遇到复杂情况无法决策时，可以请求人工协助，这种设计很实用，确保了系统的可靠性。</p>
+<p>框架还内置了一些专门的UI理解模型，比如Moondream3、OmniParser等。这些模型专门针对界面理解进行了优化，能够准确识别按钮、文本框、菜单等UI元素，为AI提供精确的视觉信息。</p>
+<h2>实际使用体验</h2>
+<p>使用Cua的体验确实很棒，安装过程很简单，基本的使用只需要几行代码。我试了一下基础功能，首先安装Agent SDK：</p>
+<pre><code>pip install cua-agent[all]
+</code></pre>
+<p>然后初始化一个计算机代理：</p>
+<pre><code>from agent import ComputerAgent
+
+agent = ComputerAgent(
+    model=&quot;anthropic/claude-sonnet-4-5-20250929&quot;,
+    tools=[computer],
+    max_trajectory_budget=5.0
+)
+
+messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Take a screenshot and tell me what you see&quot;}]
+
+asyncfor result in agent.run(messages):
+for item in result[&quot;output&quot;]:
+if item[&quot;type&quot;] == &quot;message&quot;:
+print(item[&quot;content&quot;][0][&quot;text&quot;])
+</code></pre>
+<p>代码写法很直观，就像在和一个真实的助手对话一样。你只需要用自然语言告诉AI要做什么，它就会自动理解并执行。</p>
+<p>Computer SDK的使用也很简单：</p>
+<pre><code>from computer import Computer
+
+computer = Computer(
+    os_type=&quot;linux&quot;,
+    provider_type=&quot;cloud&quot;,
+    name=&quot;your-sandbox-name&quot;
+)
+
+await computer.run()
+screenshot = await computer.interface.screenshot()
+await computer.interface.left_click(100, 100)
+await computer.interface.type_text(&quot;Hello!&quot;)
+</code></pre>
+<p>这种设计让开发者能够专注于业务逻辑，而不用担心底层的实现细节。</p>
+<h2>基准测试和评估</h2>
+<p>作为一个严肃的开源项目，Cua在评估方面下了很大功夫。它集成了多个权威基准测试，包括OSWorld-Verified（369个任务）、SheetBench-V2和ScreenSpot。</p>
+<p>最牛的是，你可以用一行代码就运行完整的基准测试，通过HUD（Human-Understandable Diagnostics）工具还能实时可视化代理的执行轨迹。这对于研究人员和开发者来说非常有价值，能够直观地看到AI是如何一步步完成任务的。</p>
+<p>项目在今年9月的Hack the North比赛中，获胜队伍在OSWorld-Tiny基准上达到了68.3%的成绩，这个表现相当不错了。要知道，这些任务都是真实的计算机操作场景，能达到这个水平说明技术已经相当成熟。</p>
+<h2>云端和本地部署灵活性</h2>
+<p>Cua在部署方式上非常灵活，既可以本地运行，也可以使用云端服务。对于个人开发者，可以在本地虚拟机或Docker容器中运行；对于企业用户，可以使用Cua Cloud进行弹性伸缩的生产部署。</p>
+<p>本地部署支持Windows Sandbox、macOS的Lume虚拟化、以及Linux的Docker容器。这种多样性确保了无论你的技术栈是什么，都能找到合适的部署方案。</p>
+<p>云端服务则提供了开箱即用的环境，不需要自己搭建基础设施，这对于想快速验证想法的团队来说很有价值。而且云端服务支持弹性伸缩，可以根据工作负载自动调整资源。</p>
+<h2>活跃的社区和持续更新</h2>
+<p>Cua的社区非常活跃，GitHub上已经有超过11000颗星，650个fork，39个贡献者参与开发。项目的更新频率也很高，几乎每个月都有重要的新功能发布。</p>
+<p>最近几个月的更新包括：复合代理支持（可以混合使用不同模型）、一键基准测试、人工在环模式、基于Web的计算机使用、Windows Sandbox支持等。每个更新都很实用，可以看出团队对用户需求的响应很及时。</p>
+<p>项目的文档也很完善，有详细的教程和API文档，还有一个专门的博客系列&quot;Build Your Own Operator&quot;教你如何构建自己的操作代理。对于想深入学习的开发者来说，这些资源非常宝贵。</p>
+<h2>开源生态的重要意义</h2>
+<p>Cua采用MIT许可证开源，这对整个AI自动化领域意义重大。传统上，这类先进的AI能力往往被大公司垄断，个人开发者和小团队很难接触到。Cua的开源让这种技术民主化，任何人都可以基于它开发自己的应用。</p>
+<p>项目的模块化设计也很值得称赞，不同的组件可以独立使用，这样你可以只集成需要的部分，而不用引入整个框架。这种设计哲学符合开源社区的最佳实践。</p>
+<p>而且，Cua的出现可能会推动整个行业向更开放、更标准化的方向发展。当有了一个高质量的开源参考实现，其他工具和框架也会向这个标准靠拢，最终受益的是整个技术社区。</p>
+<h2>未来发展潜力</h2>
+<p>从技术趋势来看，Computer-Use Agents绝对是未来的方向。随着AI视觉理解能力的不断提升，这类工具的准确性和可靠性也会越来越高。Cua作为这个领域的先行者，有很大的发展潜力。</p>
+<p>我特别看好它在企业自动化方面的应用前景。很多公司都有大量重复性的电脑操作工作，比如数据录入、报告生成、系统监控等，这些都是CUA的完美应用场景。相比传统的RPA（机器人流程自动化），基于视觉理解的方案更加灵活和可靠。</p>
+<p>另外，随着多模态AI模型的发展，CUA的能力边界还会不断扩展。未来可能不仅仅是操作电脑界面，还能理解更复杂的上下文，进行更高层次的推理和决策。</p>
+<p>如果你对AI自动化、桌面应用开发或者机器人流程自动化感兴趣，Cua绝对值得深入了解。即使只是作为学习材料，它也能让你深入理解现代AI系统是如何设计和实现的。这个项目代表了计算机自动化的未来方向，早点掌握绝对不会错。</p>
+<h2>下载</h2>
+<p>本公众号发送 8228 获取下载资源<br>顺手点个“ 点赞 👍”和“ 在看 ❤️”，谢谢啦~</p>
+<blockquote>
+<p>关注我们的公众号，更多软件尖货持续为你揭秘</p>
+</blockquote>
+<p>继续滑动看下一个</p>
+<p>好朋友乐平</p>
+<p>向上滑动看下一个</p>
+<p>好朋友乐平</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ooS3gPojjRFKyr8TNyTOvA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分享一个Skill，帮你把电影画面拆成可复用的视觉系统。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">分享一个Skill，帮你把电影画面拆成可复用的视觉系统。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%98%BF%E7%9C%9F">阿真</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%94%B5%E5%BD%B1%E5%88%86%E6%9E%90">电影分析</a><a class="chip" href="../index.html?tag=%E8%A7%86%E8%A7%89%E7%B3%BB%E7%BB%9F">视觉系统</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a>
+    <span class="date">2026-07-21</span>
+  </div>
+  <p class="lead">轻松整理电影截图+场景色卡+风格提示词。</p>
+  <article class="content"><p>阿真 阿真Irene <em>2026年7月21日 12:51</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s904Gp5hgUEt2jk6jq9XVyhTLldc65Mf41uvibrtvo4ACvabuyr2sELSW9qiboAQ2WUS6ghwUy2jTCGjGSpiaRPlK7uNMJwwgYT7o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>嗨大家好！我是阿真！</p>
+<p>刷短视频就是这点不好，上次看到一个 AI 视频拆解分析的教程，感觉很有意思，刷完了过两天忘记在哪里刷的了。</p>
+<p>那个视频，博主大意是说他分析了某位创作者的视频提示词，对方让生成的视频风格统一的方式，是在生成视频的参考图里直接给到同一张色卡，锁定电影色调。我当时直想拍大腿，妙啊。</p>
+<p>正好最近比较忙没什么时间写教程和分享好玩的技巧，给大家分享一个收集整理电影截图的工具。</p>
+<p>比如如果刚好你的Work Buddy积分花不完，就挺适合做这个的。</p>
+<h2>风格包Skill简介</h2>
+<p>我们平时看到喜欢的电影，会收藏剧照、截图、摄影分析和配色参考。图越存越多，真正开始生成时，写进提示词的可能还是电影感、复古、对称、低饱和，然后憋不出话了。</p>
+<p>模型拿到这些模糊描述以后，只能自由发挥。第一张看起来还不错，第二张开始偏色，第三张换了构图，做成一组以后像来自好几个不同的项目。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sickuBEYvpZ7xOlJFpbpoOK7YHsl0vWqIp1dkib2cFwXdC0mDZkD4hw1vTZzJ6dXJZiaoL4CpbePV70sS5mwBAqkJwdRcCh51OXkc/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/02.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/02.png</p>
+<p><strong>我做的这个 Skill 叫【风格包Skill】，只需要告诉它电影名称，它就会专门为我收集指定电影的不同场景的批量电影截图，并按照不同场景分文件夹收集，同时会生成这个场景色色卡和风格提示词。</strong></p>
+<p>同时它会把一组电影剧照或视觉参考，整理成参考图分组、风格规则、色彩光影、镜头语言、分组提示词和可直接调用的提示词模板。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibQZ9wyZKWNiaxCUJiaPRHMyMRRsy1OKMetsugIR0fEsKbLLCw9jpDz9JaocLsualqVX1vephibQR1aNlW7YR35V8FCOPQRu7q2u0/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/03.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/03.png</p>
+<p>安装也很简单，压缩包或者路径给到 Codex、 Work Buddy 或者其他任何 AI Agent 工具安装。实测Codex收集图片更多质量更好，Work Buddy 的提示词输出颗粒度更细。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9eWMiadXIkPjCGEC7tnicFtlJlQiaDKQSfcUEbGSdbCmslaXicpPjGGuSsCwhoQbicEUbgMsiaU1euNmSAY4ZuiaUL5fNJZ94U7Nm3Zs/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/04.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/04.png</p>
+<p>接下来给到电影片名就可以了，温馨提示，正在上映的电影一般来说不太行哈。</p>
+<h2>输出结果展示</h2>
+<p>安装了Skill 后，我想收集《穿越大吉岭》的风格包，就这样搜索就好了。👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicTicjXIPPH9iaibia6QibCbzYBWTntKVZrZjUFiaLxXDscVf5W6Xobiajh76tViaAmUIFT91hqQicxxYAy2MCBTbJgeJwWLYxRwKiaEmicnU/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/05.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/05.png</p>
+<p>输出的内容如下👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s97PcxCpmAKOJCiaszKAgb417z0QfHcPVLaibc4icJMMY46iatHWTg1rZhY0jEcWHKfqH2JHaBqeW39Q6ycKUN3cB4qqtTXv3icQVpA/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/06.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/06.png</p>
+<p>【说明】会说明这个文件的包里面有哪些内容，以及一些风格总览的提示词。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicE3oUzkDdjkvNFDHgCdNJr4GEpYFIUYuWynl1eGGpDNZnABOb6u0xlgBdRpl7XOvibjncQ7nLsr8Nmxoicwd7HTUicD5FruicuKjk/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/07.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/07.png</p>
+<p>【参考图】也是总分结构，收集的通常是剧照截图和电影海报。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicBA3hSnGnNOehUUoBlGbS7p4icrFvGo1AVw3C0YcHx3zhbcUcAia8IBx1WfXYYWHrbibRYiaMwwPQibCBy2SCmE6h8Vg4Wsqe1gouo/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/08.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/08.png</p>
+<p>第一步是收集和整理参考图。参考图数量要能覆盖不同空间、景别、光线和人物关系。电影风格只看几张图比较片面，容易失真，剧照之间的重复规律才是更重要的信息。</p>
+<p>下面是总览图，也就是它收集的电影海报的完整图片展示，另外还有分组，或者单张图原图，都在文件夹中了。👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9BCUBC8FmTqa0RpqN3Mgtb1Ihx0rXXO3VX26EFSOJ38ZHsibAibmaIzPUbYHOoNDS6tQcKJ0rrkKTp04iamoD0CmTUnhyXhtudrs/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/09.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/09.png</p>
+<p>第二步是逐图打标签，再按照视觉功能分组。这个案例的新版核心分组包括蓝色火车车厢、沙漠轨道与旅途外景、车站市集与行李、多人横向肖像、暖黄旅馆与私密室内、河边村落与仪式段落等等。</p>
+<p>上面的【分组】文件夹，会整理不同场景下、不同构图的电影截图，毕竟同一个电影的不同场景色调通常也不会统一。👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9UBB0qhSCX06S7tlJkkTVdy2EYHLiabxSybwiaXGGgicB83Lam5vZTQDoMM1WjDW0NTUPhD3psoCLsO1CyFgujU7r4wHmJFO48A4/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/10.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/10.png</p>
+<p>比如看看下面的【01-蓝色火车车厢】场景。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/m1eibvmmT3sib6AKPP0Gn9U9aqZmkqB9RS5WjQPxYyzR9YsZ7bhiaR3g5wZAh28FqibH7KvgWw4L58IvxaImKpCA0HOotMdfYVI7I9hlmX0iaHD0/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/11.jpg"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/11.jpg</p>
+<p>除了图片以外，它还会生成每个分场景下的一张色卡和一组提示词。</p>
+<p>色卡每张图统一为 1920×1080，固定 10 个色位：3 个主色、5 个辅助色、2 个点缀色，并标注中文色名和 HEX 色号。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicib3sibVtj3IUTsciczF6CkIcK7N8kon9sNFbBhvT4Rfriacjo2spRFrbrEcAJqn8z6faSsZFyG5bva3xL6WlQV6Qk3EFc2WTQOicU/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/12.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/12.png</p>
+<p>每个场景的单张色卡，也可以单独提出来，用于视频生成的时候，为同一个场景做色调参考和规范。</p>
+<p>第三步是把共性写成总规则。提示词文档里会记录一句话定位、视觉 DNA、构图规则、色彩与光影、镜头语言、材质颗粒、可迁移模块和禁用的原片元素等等。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9DqzxbCkiaDg2YdmwIt0VH8PFE5icv5ZfLsvYmoRzMAROyOLo7Zf3hBc5yCc4TdEKaD0h6x8kpmFggDyhYUK4I2DYsMMKLSjuQM/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/13.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/13.png</p>
+<p>每个分组还会有一份独立提示词 Skill。里面包含视觉锁、可替换变量、完整文生图提示词、视频运动方案、适用镜头、常见跑偏点和自检清单。单独拿出其中一组，也可以继续用于新项目。</p>
+<p>我个人建议，如果你更想要更好更全面的电影截图，就用 Codex，如果想要更全面的风格提示词，就用 Work Buddy。不是完全挪动，主要是参考。</p>
+<p>Codex👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibqSLPdjPQjYwS2O8K9JY0P05R9kicQY9c50amFpqZ2hwnOfGwwSrEXdIwlPLlJaxT6jSDPl0gOPVA6Af1QkLwHGSY7J2ln79JY/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/14.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/14.png</p>
+<p>Work Buddy👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8bibdehCngPC9YoRqXzicWN7ziawqicrGvZAZibso4t4CHMofyiagznKG7GdLsCkB409ZvWiamInNrLrAFJRh5BvW72vcUb59JUPtugI/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/15.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/15.png</p>
+<p>还可以把风格包用于新故事。Skill 会先生成提示词表格，每一镜都绑定一个视觉模块，并把原创元素和风格借用点分开。确认表格后，再进入图片和视频生成。</p>
+<p>风格包最后得到的文件，大致会是这样：</p>
+<pre><code>电影名-风格包/├── 00-说明.md├── design.md├── 参考图/│   ├── 原图/│   ├── 总览-contact-sheet.jpg│   ├── 分组总览/│   └── 分组/│       └── 分组名/│           ├── 参考图│           └── 00-分组名-色卡.png└── 分析/├── 单图标签-第一版.json├── 风格规则-第一版.md├── 分组总结.md├── 分组提示词/├── 色卡数据.json├── 提示词模板.md└── 提示词表格模板.md
+</code></pre>
+<h2>为什么要做风格包？</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9rXPC5ojr9biatUCdTPntQNKmcKHmFAGPKRIfMia42RpkjGDHfFdIBic6RSoniadFtiaRgTq8446BM1BzoFsIRP2y5NESicicI3O51nA/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/16.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/16.png</p>
+<p>我最早做电影风格参考时，经常会遇到几个问题。</p>
+<p><strong>第一个是，单张参考图的信息太偶然。</strong> 一张图可能刚好是夜景、特写或某个特殊段落，直接拿它反推，很容易把单个镜头的内容误认为整部电影的稳定风格。</p>
+<p><strong>第二个是，哪怕很精确的长提示词，风格也会漂。</strong> 把各种颜色、镜头、材质、光线词都塞进去，看起来很专业，实际生成时缺少优先级。模型不知道哪些必须保持，哪些可以替换。</p>
+<p><strong>第三个是，风格借鉴很容易滑向元素复刻。</strong> 喜欢一部电影的颜色和构图，最后却连人物造型、服装、场景、道具和名场面一起带进了新画面。这样既限制创作，也增加了使用风险。</p>
+<p>而这里整理的风格参考提示词，颜色归颜色，构图归构图，光线归光线，镜头运动归镜头运动。原片里可识别的角色、地点、服装、道具和剧情事件会进入规避清单。真正能带到新项目里的，只保留视觉语法。</p>
+<p><strong>第四个是，自己整理很麻烦也不规范。</strong> 我自己之前会看电影的时候单张单张去截图，但是到了后面既没有认真去整理，真的要使用的时候，又常常找不到当时那个场景的图。</p>
+<p>风格包 Skill 要做的就是一劳永逸，直接整理归档。</p>
+<p>它很适合这些场景：</p>
+<blockquote>
+<p>1. 做一组统一风格的 AI 图片或海报。</p>
+<p>2. 给短片、短剧、动画和 MV 建立视觉方向。</p>
+<p>3. 把文字脚本拆成分镜、文生图提示词和视频提示词。</p>
+<p>4. 给品牌内容寻找电影感的色彩、构图和材质参考。</p>
+<p>5. 建立自己的电影风格库，后续做课程、提案和项目时继续调用。</p>
+</blockquote>
+<p>大家每一次认真做过的视觉研究，也都能留下来成为下一次创作的起点。</p>
+<h2>这个Skill怎么工作？</h2>
+<p>目前风格包 Skill 有两种模式。</p>
+<p>一是 <strong>提取模式</strong> 。你给它一组参考图、一个电影名称、一个截图文件夹或一段视频，它会先收集和整理素材，再逐图打标签。标签会记录空间、景别、光线、构图、主色、情绪、可迁移点和需要规避的原片元素。</p>
+<p>接下来，它会按照可迁移的视觉模块进行分组。每一组都要解决一种明确的画面需求，方便后面按镜头功能调用。</p>
+<p>然后它会生成总览拼图、分组拼图、风格规则、 <code>design.md</code> 、提示词模板和每个分组的独立提示词 Skill。</p>
+<p>还有色卡扩展。每一组参考图都会多一张纯色卡，只展示主色、辅助色、点缀色和 HEX 色号，方便快速判断这一组的配色关系。</p>
+<p>提取时可以直接这样说：👇</p>
+<pre><code>调用风格包 Skill，把《穿越大吉岭》的公开剧照整理成一个完整风格包。
+</code></pre>
+<p>第二种是 <strong>使用模式</strong> 。当风格包已经存在，你可以把自己的新剧本或创意需求交给它。它会先读取总风格规则和目标分组，再把新故事拆成镜头节点。</p>
+<p>每个镜头都会明确两类信息：一类是来自新剧本的主体、地点、道具和事件；另一类是从风格包借用的色彩、构图、光线、镜头和材质。完成原创迁移检查以后，再输出文生图提示词和视频提示词。</p>
+<p>使用时可以参考这个这样说：</p>
+<pre><code>调用风格包 Skill，读取《穿越大吉岭》风格包。把下面的新故事拆成 6个镜头，每个镜头选择一个合适的视觉分组。先输出包含原创元素、风格借用点、文生图提示词、视频提示词、衔接方式和时长的 Markdown 表格。所有人物、地点、道具和事件都来自我的新故事，只借用风格包里的视觉语法。
+新故事：[在这里粘贴你的剧本或创意需求]
+</code></pre>
+<p>这两个模式连起来，对于电影视觉审美的学习和视觉规则的参考都是有帮助的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8mjNEDibO1vzvn2h7tHc8Dm7OsBKFnK3qgFtTZJib9bGo8W6ibjXxjia4yM9ZUKr6cTPu4EnsFH9reNk76lM4wh4Y6yziacdLF7LrE/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/17.png"></p>
+<p>附件/分享一个风格包 Skill，帮你把电影画面拆成可复用的视觉系统/17.png</p>
+<h2>怎么真正用起来？</h2>
+<p>色卡最适合用来固定系列画面的颜色方向。主色决定画面的大面积基调，辅助色负责空间和材质之间的过渡，点缀色用在道具、服装细节、标识或局部光源上。</p>
+<p>你可以把整张色卡作为视觉参考图上传，也可以把其中的色彩关系写进提示词。例如提取一部分放进去：👇</p>
+<pre><code>整体以深靛蓝和赭石棕为主色，深墨绿、黄褐和灰褐作为空间辅助色，焦糖橙只用于小面积灯光与道具点缀。保持暖冷对照，避免平均分配所有颜色。
+</code></pre>
+<p>提示词可以帮我们完成一次生成，整理好的风格资产也可以多次复用。</p>
+<p>链接在下方，喜欢的话请 ⭐️ 一下！拜托拜托非常感谢~</p>
+<pre><code>https://github.【去掉此括号和括号里的文字】com/irenerachel/style-pack-skill
+</code></pre>
+<h2>小结</h2>
+<p>好了今天的分享就到这里，忙忙忙啊啊啊虽然也不知道到底在忙啥。等忙过了这阵再好好分享很多有趣的工具和 AI 产品啊啊啊下期见！</p>
+<p>如果你也有一部很想拆解的电影，或者想尝试某个风格包怎样进入新剧本，可以试试这个 Skill。也期待大家猛猛三连鼓励阿真，非常感谢～</p>
+<p>下期见~</p>
+<p>阿真Irene</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>流浪动物的回家之路</p>
+<p>52人捐赠</p>
+<p>工具教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/g1toHimbD7bMqJVrc-z6Iw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

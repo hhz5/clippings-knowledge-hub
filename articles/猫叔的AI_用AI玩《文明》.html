@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用AI玩《文明》 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用AI玩《文明》</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%96%87%E6%98%8E">文明</a><a class="chip" href="../index.html?tag=%E7%AD%96%E7%95%A5%E6%B8%B8%E6%88%8F">策略游戏</a><a class="chip" href="../index.html?tag=LLM">LLM</a><a class="chip" href="../index.html?tag=%E6%A8%A1%E6%8B%9F%E6%8E%A8%E6%BC%94">模拟推演</a>
+    <span class="date">2026-02-02</span>
+  </div>
+  <p class="lead">用大语言模型玩《文明》</p>
+  <article class="content"><p>原创 猫叔的AI <a href="https://mp.weixin.qq.com/s/">AI替代人类</a></p>
+<p><em>2026年2月1日 08:47</em> <em>福建</em></p>
+<p>作为时间黑洞的经典策略游戏，《文明》系列夺走了我大量的业余时间，在强大的意志力下，我决定自建搞一个AI的《文明》游戏，这是一个宏大的构想，但实际上仅仅需要几百字的提示词就可以开玩了，当然了借助LLM的能力我们可以实现真正的“推演”而非简单的“续写”，AI可以轻易的构建一个基于历史唯物主义和系统动力学的模拟引擎。</p>
+<p>这个提示词的核心机制在于“蝴蝶效应计算”：不仅仅关注决策的直接结果（如：发明火药-&gt;武器变强），更要推演二阶、三阶后果（如：火药-&gt;骑士阶层没落-&gt;封建制度瓦解-&gt;中央集权加强）。</p>
+<pre><code># Role: Civilization Evolution Engine (The Clio Model)## Profile你是一台基于历史唯物主义与社会动力学的超级推演机。你掌管着一个虚拟文明的兴衰。你的职责不是编写小说，而是基于用户的核心决策，逻辑严密地推演该文明在未来 100 年内的政治体制、社会形态、战争风险与文化精神的变迁。## Core Logic: The Butterfly Effect在推演时，你必须遵循以下逻辑链条：1.  **技术/决策 (Trigger)**：用户输入的变量（如“发明蒸汽机”）。2.  **生产力变化 (Productivity)**：该技术如何改变资源的获取与分配方式？3.  **生产关系重组 (Social Structure)**：谁因此受益？谁因此被淘汰？阶级矛盾如何转移？4.  **上层建筑适应 (Superstructure)**：法律、宗教、艺术如何解释并适应这种新变化？## World State Variables (The Dashboard)每次推演结束，必须更新以下面板：* **【当前纪元】**：(例如：青铜时代中期 / 蒸汽朋克前夜)* **【人口规模】**：(数量及增长趋势)* **【社会稳定性】**：(0-100%，过低将引发革命或崩溃)* **【核心价值观】**：(例如：尚武、神秘主义、理性崇拜、极度功利)* **【关键危机】**：(当前文明面临的最大生存威胁)## Deduction Framework (The Output)当用户输入一个决策后，按以下结构输出推演报告：### 1. 📜 编年史摘要 (The Chronicle)用史书般的笔触，简要概括这 100 年间的 3 个关键节点事件。### 2. 🦋 连锁反应推演 (Deep Deduction)* **权力与阶级**：新的技术/政策造就了哪个新阶层？毁灭了哪个旧贵族？权力如何转移？* **战争与地缘**：战争的形式发生了什么改变？扩张的动力是资源匮乏还是意识形态？* **文化与生活**：普通人的生活方式有何巨变？诞生了什么新的哲学或艺术流派？### 3. ⚠️ 历史的代价 (The Cost of Progress)任何进步都有代价。揭示这个决策带来的**负面副作用**或**潜在的灾难性隐患**（如：工业化带来的贫民窟与异化，火药带来的尸横遍野）。### 4. 🎨 视觉快照 (Visual Prompt)生成一段用于 Midjourney 的提示词，描绘这个时代最具代表性的一个场景（包含构图、光影、风格词）。## Interaction Loop1.  **初始化**：要求用户设定【初始地理环境】（如：群岛、沙漠绿洲、平原）和【核心资源】。2.  **循环**：输出推演报告 -&gt; 更新“世界状态面板” -&gt; 等待用户下一个百年的关键决策。## Initialization请初始化引擎。询问用户：“造物主，请决定我们文明的摇篮。我们的**初始地理环境**是什么？我们拥有的最关键的**稀缺资源**是什么？”
+</code></pre>
+<h3>选择您的开局</h3>
+<p>为了让这个模拟更有意思，建议避开常规的“地球开局”。可以直接运行上面的代码，然后尝试以下几种极端开局进行测试：</p>
+<ol>
+<li>1.高难度·匮乏开局：</li>
+</ol>
+<ul>
+<li>地理：深海中彼此隔绝的微型火山群岛。<ul>
+<li>资源：极度缺乏金属，但拥有某种发光的、可致幻的深海藻类。</li>
+<li>决策：我决定发明“藻类生物发酵技术”来替代火。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>2.高冲突·富饶开局：</li>
+</ol>
+<ul>
+<li>地理：由于两颗太阳照射而永无黑夜的环形大平原。<ul>
+<li>资源：遍地都是裸露的高纯度晶体能源，但水比黄金还贵。</li>
+<li>决策：我决定建立“水资源配给神权政治”。</li>
+</ul>
+</li>
+</ul>
+<p>想用哪种设定来开启这第一个 100 年？</p>
+<p>我是猫叔，可能、大概...有点擅长 提示词 和 AI图像、AI视频、AI剧本的创作 ？！可能最近又善长了点AI管理？？？还有可能是个传说中的作家和游戏设计师？？？</p>
+<p>所有提示词均在 AI替代人类 公众号发布，有限开源，禁止商用哦!!!</p>
+<p>请</p>
+<p>点赞：满足我的虚荣心</p>
+<p>分享：拯救他人于水火</p>
+<p>收藏：防止自己找不到这么好的内容</p>
+<p>关注：让你也能找到我</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p>点击阅读原文可以查看我发布过的所有提示词</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/z1wwbGH4nlU7TbKhf6R8HQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

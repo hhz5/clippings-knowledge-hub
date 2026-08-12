@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>21 个 Skill，用 Codex 做产品经理全流程工作 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">21 个 Skill，用 Codex 做产品经理全流程工作</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81">产品</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a>
+    <span class="date">2026-07-30</span>
+  </div>
+  <p class="lead">留给垂类 Agent 的机会不多了。这是我最近使用 Codex 最大的感受。</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年7月30日 12:29</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozXzwnM1Zib4yB5xNKF1yxwNg2zgRaQ8AdMJXvxkYjwocnym3ibkiaezC5oTcxCIxb1wKgPasINyINHzedx14PSTeFn20r7o8UK84/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>留给垂类 Agent 的机会不多了。</p>
+<p>这是我最近使用 Codex 最大的感受。</p>
+<p>一个应用，已经同时满足了我的 <strong>内容创作、软件开发和产品经理工作</strong> 。</p>
+<p>它的内置浏览器，已经让我不太需要单独打开 Chrome 了。</p>
+<p>有了 Codex，写作 Agent、设计 Agent、产品经理 Agent都可以定制化。</p>
+<p><strong>一个通用 Agent，加上一组 Plugin 和 Skill，就能自己组装出特定职业的工作台。</strong></p>
+<p>这次，给大家演示下我在 codex 是如何实现需求调研、竞品分析、原型、PRD、评审、埋点和数据分析的。</p>
+<p>从打开网页到发布站点，全程没离开 Codex，下面案例也可以代入到 Workbuddy、Qoder 这类通用 Agent 中。</p>
+<p>01</p>
+<p>先装上产品经理的 Skill</p>
+<p>这次使用的是我做的 PM-Skill 2.0。</p>
+<p>地址：github.com/SpaceZephyr/pm-skills</p>
+<p>目前一共 21 个 Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozppBc3L17DFAfzQDh05Mia8bZwGw9PNUhaVcSESE8bgCJVLkwg6Vqx1Hm16J1Xr0H6qSAJxJAawXbgpVjZoczY71d8Tc6rEIcc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>复制上面地址，告诉你的 Agent，让它帮你安装，安装完成后，你可以指定 Skill，也可以直接告诉 <code>pm-master</code> ：</p>
+<pre><code>帮我把这个需求从调研、原型、PRD、评审、埋点一直推进到上线。space
+</code></pre>
+<p>下面我用腾讯云的一个界面做案例，简单演示一下。</p>
+<p>第一步：调研和竞品</p>
+<p>根据下面界面设计来进行调研，再出原型。</p>
+<p>界面可以直接在 codex 里打开，方便 AI 阅读。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozNqy0OM6E19XTZkiaKvUKtX4tbchmTibodEEW2armM2ib7psoQyPq2g3XGK8dNTf0fGdWia6YRBbzI0J9YEj2dEibNetsgNZJcecvA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>用 <code>pm-survey-designer</code> 生成问卷。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowTprnEEqMXicVviaiaqOO66JibKW2ggPkGNBEA4QnpLIINPOSxWJ9qwUqdib9y8bKIt3DC5xbO5Wrcer5ungmhmGXMXXsRpLWRZVsw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>第二步：把网站变成原型</p>
+<p>原型有两种做法：图片转原型，或者网站转原型。</p>
+<p>只要网页能打开，我更推荐网站转原型。</p>
+<p>Codex 有内置浏览器，不需要像以前那样先把网页 download 成 HTML，再丢给模型识别，也不用在终端和 Chrome 之间反复横跳。</p>
+<p>我直接在 Codex 里打开腾讯混元控制台，然后说：</p>
+<pre><code>代码块Plain Text 自动换行复制使用 pm-url2proto 复刻当前页面。
+</code></pre>
+<p>它自己识别页面、创建 Next.js 项目、启动本地服务，再把结果打开在旁边。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxZ0UB1libWRj6F4e0PWlic42Wz58we5Fb2j9QjPKb8nO9vibWburs93278o1Ph83FcHxR2Y0wGC81K04H8iaicCzm4TVQmXyTiaFbicE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>下面是复刻后的界面，和原图差别不大，也可以再对话，做的更精细一些。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz0jYNShs59epoWg20XEFBmgwsVt6olk77btEicNDAjicsCHu3FTEEnDmHgiaQRZZoE3HptdcAOexJCBTzTxPGxE1hRMynt7YiaicUs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>如果手里只有截图，就用 <code>pm-image2proto</code> ；</p>
+<p>要是还要交给设计师编辑，就用 <code>pm-image2pencil</code> ，可以转成可编辑的设计稿。</p>
+<p>第三步：PRD、评审、埋点和问卷</p>
+<p>原型完成后，继续调用 <code>pm-prd-writer</code> 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxXugTJIh7of6kbPehUj3BYSWzGMv6Pq4tdu5hqHVt9NG6MQ7duHv7B1wiaadZn3Ribwjse1VnuznvK31fso4ibJ2w0mKcNVkjrvY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>PRD 会直接写进原型，不需要再单独打开文档。</p>
+<p>页面里可以切换查看产品目标、用户角色、功能清单、异常流程和非功能需求。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxI7xvw5uhmzqZFhia4icK2BzTVmoeTiaccIRlpqExgwVzTZ4xZJ2W4ib1E8ol2vdBXzYCB9PeDadGNBBtGnxicEMAFxibJ4hGkZbGag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>然后用 <code>pm-review-board</code> 让产品、设计、前端、后端、测试和业务六个角色先喷一遍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoytxvYg1QxvKZZ30cILfgibrCTUkqO143DjsQaUvMHu7NL61RYiasNtz62ibFIybrRC6mx5aR5zjVFhPIJrz3tNHUPNLslubk8KWw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>这次它直接给了「暂不进入正式开发」，并找出 3 个阻断项和 7 个问题</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyVMvLIa38IWypOR2CAmJ6zdogkEVb0HR0VktNe1vqDEtT2oK5sDajN9fDcjssR8IbgXiaqUibo75hU9cculJFCnGPO6LrE7abUk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>最后调用 <code>pm-tracking-spec-writer</code> ，生成 15 个埋点事件、字段字典、QA 清单和验收 SQL；再把前面的 10 道问卷一起放进去。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoySODaojxACVuwLTXK0bDsKOiaVh1ewvluAO6gYKInsy2b2q670hJiah1x5AkSCibUibh7xMr0byxGFvBORyKD68rP4KWmwCWJMpUo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>最后，它输出了一份完善的埋点方案。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCow6t1N6pAMlqIJSLuKZFv91NcJovhiaWicQIFwrvtsQORf0Oy6kpEV4Iycp0qStO5Zrut42esB5bmLRicjkicC4D0oz6SdjgNNvXLo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>AI 让问题和分歧提前出现。</p>
+<p>第四步：把所有产出变成一个站点</p>
+<p>最后，我让 Codex 调用了 Sites 插件，把原型制作成同事可访问的网站。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozViaY15FBJLzgsgUfxjlQWFqZlViba4G0JdVQqwsCQGzJAUciaVnxlru9ErktTTwvRY48zz7Btzjq19LPoeMdHbxibibBvxxwIj1t0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>它在页面底部加了一个默认收起的悬浮入口，可以切换原型、PRD、评审、埋点和问卷。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoza9lcWFABGpaWIXW3TGCTufWfAbrC4v7YjdL6VWWa9VuYsQerQux3N57gUdKx6iaUNG7xSpEyQsVe9siapuoZcnfHd6xkwQk3CA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>然后自己完成构建、测试、保存版本和发布。</p>
+<p>最终效果：hunyuan-product-hub.wzfh520.chatgpt.site</p>
+<p>我最后拿到的是一个可以直接发给团队的链接， <strong>给</strong> 到别人能打开、能看懂、能继续讨论。</p>
+<p>02</p>
+<p>上线以后，还能继续</p>
+<p>上线后数据跌了，就把数据表交给 <code>pm-analytics</code> ；</p>
+<p>想验证新方案，就接 <code>pm-experiment-designer</code> ；</p>
+<p>项目结束后，再让 <code>pm-postmortem-writer</code> 做复盘。</p>
+<p>整条链路可以一直往下跑：</p>
+<pre><code>代码块Plain Text 自动换行复制调研 → 竞品 → 原型 → PRD → 评审 → 埋点 → 实验 → 分析 → 复盘
+</code></pre>
+<p>上一环的输出，直接成为下一环的输入。</p>
+<p>产品工作成了一条可以持续运行的工作流。</p>
+<p>03</p>
+<p>最后</p>
+<p>以上就是我在 Codex 内跑通的一套产品经理工作流程。</p>
+<p>你不一定要用 Codex。</p>
+<p>如果你在用 WorkBuddy、Qoder 或其他支持 Skill 的 Agent，也可以照着这条流程搭一遍。</p>
+<p>如果你是其他职业，也可以试着把自己的工作拆成几个环节，给每个环节配一个 Skill，再让它们共享同一份上下文。</p>
+<p>当办公流程真的在一个工具里打通之后，你会发现：很多垂类 Agent，原来只是通用 Agent 里的一个工作流。</p>
+<p><strong>留给「模型套壳型垂类 Agent」的机会不多了，留给工作流、数据和界面的机会才刚开始。</strong></p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+<p>你还希望我把哪个职业的工作流搬进 Codex？欢迎评论区分享。如果有用，点赞转发支持一下。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/kowd3dOGCIm2IHf4wdceUw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

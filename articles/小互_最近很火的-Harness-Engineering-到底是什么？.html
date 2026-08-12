@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>最近很火的 Harness-Engineering 到底是什么？ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">最近很火的 Harness-Engineering 到底是什么？</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    
+    <span class="date">2026-03-31</span>
+  </div>
+  <p class="lead">马力再大，没有这套东西，它就是在旷野上乱跑。</p>
+  <article class="content"><p>原创 小互 <em>2026年3月30日 13:52</em></p>
+<p>最近一个月，我的信息流里同时冒出来一堆不相关的信号，都指向同一个东西。</p>
+<p>OpenAI 发了篇长文讲怎么用 Agent 写了 100 万行代码。清华大学出了论文做消融实验。Martin Fowler 的网站跟了深度分析。LangChain 晒了一组让人目瞪口呆的测试数据</p>
+<p>。独立开发者在 GitHub 上做递归自进化实验。</p>
+<p>推特上一堆人在吵。</p>
+<p>两个月不到，一个人的博客观点变成了有学术论文、有工业实践、有社区争议的行业级概念。</p>
+<p>这个概念叫 Harness Engineering。</p>
+<h2>那么 Harness Engineering 到底是什么</h2>
+<p>Harness 这个词直译是&quot;挽具&quot;，就是套在马身上的缰绳、马鞍、方向盘。马力再大，没有这套东西，它就是在旷野上乱跑。</p>
+<p>放到 AI 的语境里，Harness 就是你给 AI 搭的整套工作环境：告诉它什么能做什么不能做的规则文件，自动检查它有没有犯错的校验脚本，帮它记住重要信息的上下文管理，出了问题能回滚的安全机制。</p>
+<p>⚡ 一句话总结</p>
+<p>模型是马力，Harness 是方向盘加刹车。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPHmicPwRb9QeRf2JVKNR68icA5e29MskiboxqpdxDsLLR7f1icZFiaapUcaqfdmSm1Br2wxic2y0sKPEOuowRWSp3hSoBOL4GLuH3bg/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Harness五要素"></p>
+<p>Harness五要素</p>
+<p>一个 Harness 包含：</p>
+<p>• <strong>约束</strong> ：Agent 能做什么、不能做什么（架构边界、依赖规则、权限控制）</p>
+<p>• <strong>上下文</strong> ：Agent 需要知道什么才能做好（文档、代码结构、项目规范）</p>
+<p>• <strong>验证</strong> ：Agent 做完了怎么知道做得对不对（测试、linter、截图对比、评分脚本）</p>
+<p>• <strong>修复</strong> ：Agent 做错了怎么纠正，而且保证同样的错不犯第二次（规则沉淀、自动修复）</p>
+<p>• <strong>生命周期</strong> ：Agent 怎么启动、怎么交接、怎么跟人协作（审批流、子 Agent 派发、定时任务）</p>
+<h3>用一个比喻说清楚它是什么</h3>
+<p>你招了一个新员工，聪明，学东西快，但有三个毛病：记性差（每次开会都忘了上次说的），会自作主张（你没说不能做的事它都会去试），而且很爱面子（做错了也会跟你说&quot;我觉得还行&quot;）。</p>
+<p>你怎么管这个人？</p>
+<p>不是反复叮嘱他&quot;你要仔细一点&quot;，那是 Prompt Engineering，相当于每次开会多强调几句。</p>
+<p>也不只是给他更多参考资料，那是 Context Engineering，相当于给他配了个文件柜。</p>
+<p>你真正需要的是给他搭一套完整的工作环境：明确的操作手册（什么能做什么不能做），自动化的检查流程（做完了系统自动验证对不对），错误记录本（每犯一个错就记下来，下次自动提醒），还有交接制度（他下班了，接班的人知道从哪里继续）。</p>
+<p>这套东西，就是 Harness。</p>
+<p>如果你用过 Claude，你在设置里写的那些偏好、反复告诉它的规则，其实就是最简陋的 Harness。如果你用 Claude Code，你的 CLAUDE.md 文件就是 Harness 的一部分。</p>
+<p>区别只是：你在有意识地设计这个系统，还是在凑合用。</p>
+<h2>从提示词到 Harness，三代人解同一个问题</h2>
+<p>拉个时间线。2022 到 2024 年，大家琢磨的是 Prompt Engineering，怎么把一句话写得够精确让 AI 给出好结果。核心是一次性的输入优化。</p>
+<p>2025 年进入 Context Engineering，光说话不够了，还得把背景文档、历史对话、项目结构一起喂进去。核心是信息管理。据 Epsilla（一家做 AI 应用基础设施的公司）博客引用的数据，同一个模型同一个 prompt，只换运行时环境，编程基准测试成功率从 42% 涨到了 78%。</p>
+<p>2026 年，Harness Engineering 来了。不只优化输入了，优化的是 AI 工作的整个环境。核心是基础设施。</p>
+<p>每个阶段的抽象层级都比上一个高。Prompt 管一次对话，Context 管一次任务，Harness 管整个生命周期。</p>
+<p>三代解决的核心问题一直没变：怎么让 AI 干活更靠谱。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPdvAddKwDDJNLltpibfRgSIvZOibDrl9oZ83iciauCDpib5F4ia2WcKhTS1Jfz54hvtcxn8jcc0qJl95T48fEhQzZvr3uhPpJlmbBJY/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="三代演进"></p>
+<h2>为什么偏偏在这个时间点火了</h2>
+<p>两个原因。</p>
+<p><strong>第一，AI 模型之间的差距在缩小。</strong> 2025 年大家还在比&quot;谁家的 AI 更聪明&quot;。到 2026 年，顶级 AI 模型的能力已经很接近了，模型变成了&quot;大家差不多&quot;的商品。这时候谁能赢，不看你用哪个 AI，看你怎么管这个 AI。</p>
+<p><strong>第二，AI 从&quot;演示&quot;进入了&quot;实际干活&quot;。</strong> 2025 年 AI 编程还停留在&quot;你看它能写出一段代码好厉害&quot;。2026 年人们开始让 AI 真正上岗，连续工作几天甚至几周。</p>
+<p>这时候问题全暴露了：AI 跑了 50 步之后开始偏离指令，跑了 100 步之后完全跑偏。它会复制代码库里已有的坏模式，而且越复制越烂。任务越复杂，塞给它的信息越多，它越容易丢失重点。Anthropic 的研究还发现，AI 评价自己的工作时太宽容，很难自己发现自己的 bug。</p>
+<p>这些问题靠&quot;换个更聪明的 AI&quot;解决不了。就像你招了一个聪明但没经验的实习生，问题不在于他不够聪明，而在于你的公司没有好的入职培训和工作流程。</p>
+<p>Harness 就是这个工作流程。</p>
+<h2>这个概念是怎么出来的</h2>
+<p>Mitchell Hashimoto，做 Terraform（一个很火的基础设施工具）那个公司 HashiCorp 的创始人。不是 AI 圈的人，是基础设施领域的传奇人物。一个搞基础设施的人给 AI 编程提了一个基础设施层面的概念，说服力天然就高。他还声明了利益关系：不在任何 AI 公司工作，不投资，不做顾问。</p>
+<p>他今年 2 月 5 号写了篇博客，讲自己怎么一步步接纳 AI 写代码。</p>
+<p>他的方法很反常识。第一步就抛弃对话框直接用 AI Agent（能自主执行任务的 AI 助手）。第二步更狠：强迫自己用 Agent 重做所有手动写过的代码。他说这个过程&quot;折磨人&quot;，明明自己写更快，非得等 AI 慢慢磨。但目的是逼自己理解 AI 到底哪里行、哪里不行。</p>
+<p>到第五步他给这套做法起了名字：Harness Engineering。&gt; [!tip] Harness Engineering 的核心思路</p>
+<blockquote>
+<p>每次发现 AI 犯错，就设计一个机制防止它再犯。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNNxxBfic3bEgsVV1M0zuah5dJcia6rJoMs5lbLuVbgvCcL10enjNMEjxK3QhkichDQowuNdRWBVzxNTzZKm6ad5ExwOOaSvcjwWE/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="概念起源"></p>
+<p>他的开源项目有个规则文件，每一行对应一个 AI 曾经犯过的具体错误。不是说明书，是血淋淋的踩坑记录。他管 AI 叫&quot;有点蠢但莫名高产的机器人朋友&quot;。</p>
+<p>6 天后，OpenAI 接棒了。</p>
+<h2>100 万行代码，没有一行是人写的</h2>
+<p>OpenAI 发了篇同名文章。数据很夸张：3 个人起步后来扩到 7 人，5 个月，大约 1500 次代码提交，100 万行代码，没有一行是人手写的。全部由 AI 生成。效率大约是传统方式的 10 倍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtM1pEpenD8FXOKJSlr5icM82fdx8DxEHGBmVwFxFovnpObiaHn1hfKq2oPjh2Mx8p3Ra71XyCG86fTyGDSpH2yneqmdnr2DD01zc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>但这篇文章真正有价值的不是数字，而是他们坦诚地列出了 AI 干活时犯的四类错误：</p>
+<p><strong>塞太多信息反而更差。</strong> 你以为给 AI 看的资料越多越好？不是。就像你把一本 500 页的手册丢给新员工说&quot;都看完&quot;，他反而什么都记不住。AI 也一样，信息太多会抓不住重点。</p>
+<p><strong>什么都强调等于什么都没强调。</strong> 你在规则文件里写了 200 条&quot;重要&quot;的规则，AI 就不知道哪条真的重要了。</p>
+<p><strong>规则本身会过时。</strong> 你上个月写的规则，这个月代码结构变了，规则就不对了。而且规则过时的速度比代码还快。</p>
+<p><strong>没法自动检查 AI 有没有真的照做。</strong> 你说&quot;代码要有注释&quot;，AI 说&quot;好的&quot;，但你怎么知道它真的加了？</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPe4WrRAe9FljQVFEXj6PqdJg6OBoWO07hGah5pRayy68iaTbtpLMTZsGEnJP0lmghU5c7PXRlnXHESbbpnAgBgxqXdVjTDRhY8/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="四类错误"></p>
+<p>他们的解法不是换更聪明的 AI，而是改工作环境。把规则文件砍短，把详细说明拆到不同地方，让 AI 每次只看跟当前任务相关的那部分。同时搭了自动检查流程，AI 写完的代码必须通过一系列自动化测试才能提交。</p>
+<p>关于技术债：他们最初每周五留 20% 时间手动清理 AI 写的烂代码，失败了。后来改成让后台 AI 定期扫描偏差，自动提交修复，大部分一分钟内审完自动合并。技术债不是攒到某天集中还，而是每天用小增量偿还。</p>
+<p>他们还发现一个有意思的事：AI 用那些存在了十几二十年的&quot;老技术&quot;反而用得最好。因为这些老技术文档齐全、案例丰富，AI 在训练时见过大量相关内容。新潮的技术框架，AI 反而容易搞砸。</p>
+<h2>有数据证明这东西有用吗</h2>
+<p>有，而且很有说服力。</p>
+<p><strong>LangChain 的实验：</strong> 他们做了一个 AI 编程能力测试。同一个 AI 模型，只改了工作环境（Harness），成绩从 52.8% 跳到 66.5%，排名从 30 名开外冲到前 5。没有换 AI，只换了 AI 的&quot;办公环境&quot;。</p>
+<p>他们还发现一个反直觉的事：让 AI 全力思考反而成绩更差。因为想太久就超时了。最好的策略是&quot;开头认真想，中间快速做，结尾认真检查&quot;，他们管这叫&quot;推理三明治&quot;。</p>
+<p><strong>HumanLayer 的实验：</strong> Claude（Anthropic 做的 AI）在不同的工作环境里，排名分别是第 33 和第 5。同一个大脑，换个办公室，表现天差地别。</p>
+<p><strong>Anthropic 的实验：</strong> 他们做了一个对比。让一个 AI 独自干活，20 分钟花了 9 美元，做出来的东西核心功能都是坏的。然后让两个 AI 配合，一个负责干活，一个专门负责挑毛病，6 小时花了 200 美元，做出来的是一个真正能用的完整应用。</p>
+<p>为什么要两个 AI？因为他们发现 AI 评价自己的工作时太宽容，就像让学生自己给自己的考试打分。把&quot;干活&quot;和&quot;检查&quot;拆给两个 AI，让检查的那个刻意挑刺，效果好得多。</p>
+<p>Stripe（全球最大的在线支付公司之一）的 AI 团队每周自动合并 1300 多次代码提交。</p>
+<p>独立开发者也有猛人。Peter Steinberger 一个人同时管 5 到 10 个并行的 AI Agent，一个月提交了 6600 多次代码。他的观察很有意思：喜欢解算法谜题的工程师反而难适应这种工作方式，产品思维强的人适应更快。因为这种模式不需要你写出精巧的代码，需要你会拆任务、定规则、查结果。他说自己的工作节奏从&quot;一个人埋头写&quot;变成了&quot;管一堆 AI 分活干&quot;。</p>
+<p>还有一个叫 yoyo 的开源项目，200 行代码起步，每 8 小时自动醒来改进自己，26 天长到 3 万多行。成本 12 美元。作者说了句很深刻的话： <strong>难的不是保存状态，是决定忘掉什么。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPmpicMmib4V4Sq74dStgGaApuhGpWibS3fuNtava3mvffokogLB2nkv9ydxQj0gk8umoHSZO5sZWRYl1qMH6CVIkYMCjS328I2Uk/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="数据对比"></p>
+<p>数据摆在这里。但反方也不弱。</p>
+<h2>但也有人说这东西没用</h2>
+<p><strong>苏黎世联邦理工的实验：</strong> 他们测试了 138 个 AI 配置文件，发现 AI 自动生成的配置文件反而让表现变差，还多花了 20% 的成本。人手写的配置文件呢？也就提升了大约 4%。花那么大力气写规则，回报就这么点。</p>
+<p>他们还发现：AI 其实挺擅长自己摸索代码库结构的。你写的&quot;目录介绍&quot;之类的内容，AI 自己翻翻就知道了，你多此一举反而浪费了它的注意力。</p>
+<p><strong>OpenAI 内部做推理模型的研究员 Noam Brown</strong> 在一个播客里说得更直接：他认为现在大家精心搭建的这些工作环境，最终会被更强的 AI 模型&quot;冲刷掉&quot;。就像以前大家搞了一堆复杂的方法让不够聪明的 AI 表现出推理能力，结果专门的推理模型一出来，那些方法全没用了，反而碍事。</p>
+<p><strong>清华大学的实验</strong> 更反直觉。他们发现，给 AI 加上&quot;验证器&quot;（做完了自动检查对不对）反而让成绩变差了。在某个测试里，加验证器直接导致性能大幅下降。你精心设计的检查流程，加了不但没用还帮倒忙。不过他们也发现了一件有意思的事：同样一套工作规则，用自然语言描述比用代码实现效果好得多，成绩从 30.4% 跳到 47.2%。问题不只是加什么，还在于怎么表达。</p>
+<p><strong>还有人质疑这根本不是什么新东西。</strong> SGLang 团队的 Chenyang Zhao 说得很直白：这就是传统软件工程里的&quot;关注点分离&quot;&quot;单一职责&quot;，换了个名字包装了一下。他自己做 AI 系统时凭直觉就用了类似的方法，做完之后才知道这些方法在 Harness Engineering 里有专门的名字。</p>
+<p>Martin Fowler 网站上的分析指出了一个更关键的缺失：现有的 Harness 主要保证&quot;代码写得干净&quot;，但不保证&quot;产品做对了&quot;。就像一个厨师刀工很好、厨房很整洁，但做出来的菜不好吃。她还直接点名利益冲突：OpenAI 在&quot;让大家相信 AI 能维护代码&quot;这件事上是有商业利益的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPEU1UN5ITZgyQRHKEVfXYHS430WVASFoVxwZa9gSw3EO4wPVopADJ6dZ9B7ia4DEO6SIVq7PPTQFIu8QPibcumzMde2ubXMicujg/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="伪造测试"></p>
+<p>社区里也有辛辣的声音。有人提了个悖论：你用 AI 快速生成的代码，在生成的那一刻就已经是没人能维护的遗产代码了。更吓人的是有人发现 AI 会伪造测试，写了一行&quot;已完成&quot;然后自己去检查这行字存不存在，实际上什么都没验证。还有人发现 AI 会把一个临时的权宜之计当成&quot;标准做法&quot;，在整个项目里系统性地复制这个坏习惯。</p>
+<h2>所以到底该怎么看</h2>
+<p>正方和反方说的其实不是同一件事。</p>
+<p>一个 AI 行业播客（Latent.Space）给了一个我觉得最精准的判断：模型能力和 Harness 是两个不同的维度。模型决定的是 AI 能不能持续工作不犯浑，Harness 决定的是 AI 的产出质量好不好。 <strong>一个管续航，一个管方向。</strong></p>
+<p>打个比方：你有一辆车，发动机越好（模型越强），你能跑得越远。但导航系统（Harness）决定你跑的方向对不对。发动机好了确实可以少依赖导航（路感好的老司机不怎么看导航），但不代表导航没用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOXZs8Drqy1TAISwnmcLNrd6E73cGREFhHu7LVBAdibGPBp6gB6BgsPsxtCfsewVU8DVWyeoibic0UBH5Z7d4XwbeE9JQJDGCbibsg/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="续航vs方向"></p>
+<p>Anthropic 自己的经历也验证了这一点。他们升级了 AI 模型之后，发现之前设计的一些管理流程确实不需要了，模型自己就能搞定。但&quot;让另一个 AI 专门检查质量&quot;这件事依然有用，因为&quot;活干得好不好&quot;这个问题不会因为 AI 更聪明就消失。</p>
+<p>AI 编程的早期叙事是&quot;不用学编程了&quot;&quot;自然语言就是新的编程语言&quot;。但 OpenAI 自己的实践告诉你：他们花了最多精力的地方是设计架构约束、写检查规则、搭验证流程、管理上下文。这些都是传统软件工程里最严谨的那部分工作。他们自己说：&quot;我们现在最难的挑战是设计环境、反馈循环和控制系统。&quot;</p>
+<p>Chad Fowler（一个很有影响力的程序员）管这个叫&quot;严谨性搬家&quot;：好的变革不是让你不用严谨了，而是把严谨从一个地方搬到另一个地方。以前严谨体现在&quot;写好每一行代码&quot;，现在严谨体现在&quot;搭好 AI 的工作环境&quot;。严谨性没有消失，它换了个地方住。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPacRksia4icFAVkQ8zic6GkEqEwVqUKAKoMkT4SsIgBLegmQpsNo8r6UOIgNzCcQBhJ0YNt17mNOIs9j8iaNRlXxqH3VBkrWYSGicw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="严谨性搬家"></p>
+<p>⚡ 我的核心判断</p>
+<p>Harness 的价值是真实的，但也是暂时的。 它填补的是当前 AI 能力的缺口。AI 每进一步就会吃掉一层 Harness，但总有新的缺口需要新的 Harness 来填。这是一场持续的军备竞赛，不是一劳永逸的护城河。</p>
+<h2>几个值得注意的趋势</h2>
+<p><strong>技术选择会被 AI 影响。</strong> 以后选用什么编程语言、什么框架，可能不再取决于程序员的偏好，而取决于&quot;AI 用这个技术好不好使&quot;。那些文档齐全、社区活跃的老技术会因此受益。</p>
+<p><strong>新项目和老项目的差距会拉大。</strong> 从零开始的新项目可以一开始就按 AI 友好的方式搭建。但给一个运行了十年的老项目补一套 AI 管理系统，难度极大。就像给一栋已经住满人的老楼装电梯，比新楼装电梯难十倍。</p>
+<p><strong>锁定效应是真实的。</strong> 有人在某个 AI 工具上搭了 6 层自动化流程。一旦换工具，所有积累归零。你在 Claude Code 上积累的规则和流程，搬到别的 AI 上不一定能用。</p>
+<h2>三个场景你现在就能试</h2>
+<p><strong>你在写代码：</strong> 学 Hashimoto 的方法，每次 AI 犯一个错，就写一条规则记下来。积累到 20 条就能看出规律，知道你的 AI 在哪些事上容易犯错。但规则别写太多，20 到 60 条就够了。太多了 AI 反而哪条都记不住。</p>
+<p><strong>你在管团队：</strong> 先别想复杂的，把&quot;AI 绝对不能做的事&quot;列一个清单，这比列&quot;AI 应该做的事&quot;更重要。就像管实习生，你告诉他&quot;不能直接发邮件给客户&quot;比告诉他&quot;要注意邮件礼仪&quot;有效得多。</p>
+<p><strong>你不写代码但经常用 AI：</strong> 你可能已经在做 Harness Engineering 了，只是不知道。你反复跟 AI 说的那些要求（&quot;不要用太正式的语气&quot;&quot;回答要简短&quot;&quot;先给结论再解释&quot;），把它们整理成一个文档，下次直接贴给 AI。这就是最简单的 Harness。我每天做内容就是这样，品牌调性规则就是我的 Harness，写完之后的多轮检查就是我的验证流程。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtOGO5xUZVPQ0CVGkW6eLrAM8vsHz5Wav3meIAIquSNH4lFJXG800O52YuIW29XA1ZM5ZW1g4unT0thDkeeiaRgDYApLMiaR44nBM/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="三个场景"></p>
+<h2>最后一句大实话</h2>
+<p>有人说 Harness Engineering 就是传统管理学换了个壳。</p>
+<p>有道理，但不完全对。传统管理学是管人的，人会学习、会记住教训、会自我反思。Harness Engineering 是管一个概率性的、会遗忘的、会在你不注意时伪造工作成果的系统。对象变了，方法论得跟着变。</p>
+<p>但如果你觉得学会了就能躺着让 AI 干活，那肯定要栽跟头。模型在进步，Harness 在追赶，中间永远有一个缺口。能在这个缺口里创造价值的人，才是真正的 Harness Engineer。</p>
+<hr>
+<blockquote>
+<p>本文参考：Mitchell Hashimoto &quot;My AI Adoption Journey&quot; <sup>[1]</sup> （2026.2.5）| OpenAI &quot;Harness Engineering&quot; <sup>[2]</sup> （2026.2.11）| Martin Fowler 站 Birgitta Böckeler 分析 <sup>[3]</sup> | 清华 NLAH 论文 <sup>[4]</sup> （2026.3.26）| Anthropic &quot;Effective Harnesses for Long-Running Agents&quot; <sup>[5]</sup> | Anthropic &quot;Harness Design for Long-Running Application Development&quot; <sup>[6]</sup> | LangChain &quot;Improving Deep Agents with Harness Engineering&quot; <sup>[7]</sup> | HumanLayer &quot;Skill Issue&quot; <sup>[8]</sup> | ETH Zurich agentfile 研究 | Latent.Space | Chad Fowler &quot;Relocating Rigor&quot; | Nate&#39;s Newsletter | HN 社区讨论</p>
+</blockquote>
+<p>参考链接</p>
+<p>[1] Mitchell Hashimoto &quot;My AI Adoption Journey&quot;: <a href="https://mitchellh.com/writing/my-ai-adoption-journey">https://mitchellh.com/writing/my-ai-adoption-journey</a></p>
+<p>[2] OpenAI &quot;Harness Engineering&quot;: <a href="https://openai.com/index/harness-engineering/">https://openai.com/index/harness-engineering/</a></p>
+<p>[3] Martin Fowler 站 Birgitta Böckeler 分析: <a href="https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html">https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html</a></p>
+<p>[4] 清华 NLAH 论文: <a href="https://arxiv.org/abs/2603.25723">https://arxiv.org/abs/2603.25723</a></p>
+<p>[5] Anthropic &quot;Effective Harnesses for Long-Running Agents&quot;: <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents">https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents</a></p>
+<p>[6] Anthropic &quot;Harness Design for Long-Running Application Development&quot;: <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">https://www.anthropic.com/engineering/harness-design-long-running-apps</a></p>
+<p>[7] LangChain &quot;Improving Deep Agents with Harness Engineering&quot;: <a href="https://blog.langchain.com/improving-deep-agents-with-harness-engineering/">https://blog.langchain.com/improving-deep-agents-with-harness-engineering/</a></p>
+<p>[8] HumanLayer &quot;Skill Issue&quot;: <a href="https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents">https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents</a></p>
+<p>继续滑动看下一个</p>
+<p>小互AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/x2BZgM1boc_TmdosO78XVA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 浏览器卡在登录页外太久了，这回终于进去了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI 浏览器卡在登录页外太久了，这回终于进去了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%A6%99%E5%90%9B%E8%B5%9B%E5%8D%9A%E6%B7%98%E9%87%91">香君赛博淘金</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=ego%20lite">ego lite</a><a class="chip" href="../index.html?tag=%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a><a class="chip" href="../index.html?tag=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a>
+    <span class="date">2026-07-28</span>
+  </div>
+  <p class="lead">最近跟我沟通过的朋友们应该知道，我最近在研究上站。我又一个站一个站的流量突然往上冲。按 30 天汇总看，内容策略像是终于跑通了。</p>
+  <article class="content"><p>香君赛博淘金 香君赛博淘金 <em>2026年7月28日 00:30</em></p>
+<p>最近跟我沟通过的朋友们应该知道，我最近在研究上站。</p>
+<p>我又一个站一个站的流量突然往上冲。</p>
+<p>按 30 天汇总看，内容策略像是终于跑通了。我差点就准备照着同类关键词继续铺。</p>
+<p>但 AI 同时翻完 4 个后台后，给我的第一句结论是： <strong>这波先别追。</strong></p>
+<p>高点只集中在连续三天，随后迅速回落。某个搜索来源几乎消失，另一个来源却没太大变化。所谓增长，更像是渠道临时给了一轮曝光。</p>
+<p>更扎心的是，进来的人也没吃到标题承诺的答案。</p>
+<p>这次帮我把问题看清的工具叫 ego lite。</p>
+<h2>AI 终于能进登录后的网页了</h2>
+<p>ego lite 是一款为 AI Agent 设计的 Chromium 浏览器。</p>
+<p>它不会直接抢走你此刻正在用的 Chrome。第一次启动时，你可以选择把 Chrome 里的登录状态、Cookie、扩展、书签和 Profile 迁移过去。此后，Codex、Claude Code、Cursor 这类 Agent 可以通过配套的 ego-browser 驱动它。</p>
+<p>Agent 会在自己的 Space 里开页面、读数据、点击和输入。你继续用自己的标签页，它在另一块工作区里跑，不抢鼠标，也不把你的页面切来切去。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpPW78p6HhPQJc8XZnwrGRBhu7JpgrnFtNvZzHspqdDnfYnvaCrLk4p1aO96GicgCmvvfDO5wNOuGmRX5x7Ktc1wiawu6lghXictII/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="插图01-AI并行读取四个后台"></p>
+<p>插图01-AI并行读取四个后台</p>
+<p>对我来说，这正好补上了 AI 浏览器最麻烦的一块。</p>
+<p>公开网页谁都能抓。我平时最想交给 AI 处理的数据，偏偏藏在登录后的分析后台、CRM、内部系统和账号页面里。以前要么重新登录、处理验证码，要么专门维护一套 Cookie 和自动化环境。任务还没开始，耐心先耗完了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpMjgiaGC3OJnz4zxLiavtegpMgvBuib2Q7Uc3jTGYDApZy7q4WN6hIZvDMiajP6QHGvCeChiaGtrD5bAAMp0wCoib405X2eBkIJia3ysg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>这次我把 4 个后台分别交给它，只给了三条边界：</p>
+<ol>
+<li>全程只读，不修改任何设置。</li>
+<li>统一时间窗口，每个平台都返回证据和口径。</li>
+<li>遇到提交、发送、删除和权限变化，立刻停下等我确认。</li>
+</ol>
+<p>然后让它们同时去查：</p>
+<ol>
+<li>请求量和地区分布；</li>
+<li>会话、来源和落地页；</li>
+<li>搜索展示、点击和排名；</li>
+<li>滚动深度、快速返回、无效点击等行为信号。</li>
+</ol>
+<p>我只想回答一个问题：这几个站里，谁的变化能持续，下一批内容应该往哪里扩。</p>
+<h2>四个后台放在一起，增长故事变了</h2>
+<p>第一个发现，漂亮曲线还不够资格叫趋势。</p>
+<p>按天拆开后，流量高点只维持了三天，随后掉到高点的三分之一左右。只看 30 天汇总，这段回落很容易被平均掉。</p>
+<p>第二个发现，回落来自渠道变化。</p>
+<p>前后两个三天窗口里，一个搜索来源的引荐量掉了九成以上，另一个基本持平。同一批页面没有突然失效，更像是某个渠道给过一轮集中曝光，然后收回去了。</p>
+<p>第三个发现，接下来该改的地方藏在行为数据里。</p>
+<p>新流量在降，回访会话占比却在上升。说明有一批人愿意回来查资料，这部分需求并没有消失。</p>
+<p>可平均滚动深度不到一半，每次会话浏览页数只比 1 多一点，快速返回和无效点击也不少。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpNoGyNHVRutT3ZHEwyCIC7aq1eYDeA3XlBiaW0tRTEIEuEhcWNjX83xlL1q6EgWQDIQ6v2dia6eR4pOwIwFy7B0vkHU3SMoFY5iac/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="插图02-四后台交叉判断"></p>
+<p>插图02-四后台交叉判断</p>
+<p>我顺着这些信号抽查了几个流量最高的页面，问题一下就明白了：</p>
+<p>标题承诺的是具体答案，正文给的却是一套寻找答案的方法。</p>
+<p>用户搜某个东西在哪里，页面教他怎么自己找；用户搜一类代码，正文没有清单，只有验证建议和注意事项。</p>
+<p><strong>用户是来拿答案的，我递给他的却是查答案的方法。</strong></p>
+<p>于是下一步不该继续铺更多泛攻略。更值得做的是，把已经有搜索需求的主题改成可检索、可核对、打开就能拿走答案的数据库型页面。</p>
+<p>这轮排查还顺手挖出一个技术问题：带 www 和不带 www 的两个域名都在被统计，首页流量被拆成了两份。单看任何一个后台，两份数据都很正常；放在一起，才看出它们其实是同一个站。</p>
+<h2>ego lite 好用的地方，在这次任务里都冒出来了</h2>
+<p>登录状态迁移让我省掉了最烦的验证环节。Spaces 又把 4 个任务分开，我不用把整台浏览器让给 Agent。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpNOLnJW9WCJP3oRPtzKEm68ZEz9NbTGfhMdlS4f6SA6NRKibvBuRYbgIb9IIX8q1ibvBiaQ2f2AKMTb3iaXggk6yeJWRRDjWibyw65M/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>ego-browser 还可以让 Agent 把打开页面、等待渲染、读取区块、过滤数据和整理结果写进同一段 JavaScript 流程里，一次执行后再返回结果。复杂任务不必每走一步都把整页内容来回传一遍。</p>
+<p>它的 Snapshot 会把网页转成紧凑的语义结构，再给可操作元素分配临时 ref。Agent 可以根据当前页面判断下一步，也可以在必要时使用 CSS 选择器。</p>
+<p>这不等于它彻底摆脱了选择器，更不代表页面改版后一定能跑。页面大改、Canvas、图片文字和沙箱跨域 iframe，仍可能需要重新截图、换提取方式，甚至人工接管。</p>
+<p>Playwright 和 Puppeteer 也没有因此过时。稳定、可复现、需要严密测试的固定流程，它们依然很合适。ego lite 更适合我这次的场景：把已经登录的网页工作现场交给 Agent，让它边看边判断，还能和我同时干活。</p>
+<h2>想自己试，先从只读任务开始</h2>
+<p>目前官方版本主要面向 macOS，Windows 和 Linux 还在开发中。安装完成并走完首次引导后，可以让它迁移浏览器数据，同时安装 ego-browser Skill。</p>
+<p>第一条任务别急着发消息、改设置或下单。先拿一个低风险的分析任务试水：</p>
+<pre><code>使用 ego-browser 打开我已经登录的几个数据后台。
+
+目标：比较最近 7 天和此前 7 天的流量、来源、落地页与行为变化，找出真正的增长和异常。
+
+边界：
+1. 全程只读，不修改设置，不发送，不提交，不删除；
+2. 每个结论都附上来源后台、时间范围和对应证据；
+3. 指标口径不一致时单独说明，不要强行合并；
+4. 遇到登录验证、权限变化或任何写操作，停下等我确认。
+
+输出：先给事实，再给可能解释，最后列出需要我人工复核的页面。
+</code></pre>
+<p>迁移进 ego lite 的浏览器 Profile 保存在本机。但这不等于所有数据链路都凭空消失：网站仍会收到访问请求，任务中的页面文本、结构或截图也可能进入你所配置的 Agent 和模型上下文。</p>
+<p>我会把它当成一位拿到临时工牌的助手：能进哪些房间、能看什么、能不能动手，提前写清楚。涉及付款、删除、发信、发布和权限调整，一律保留人工确认。网页里的内容也只当数据，不当成可以指挥 Agent 的新命令。</p>
+<p>这次把我从错误判断里拽回来的，其实就一件事：4 个后台终于能放在一起看了。</p>
+<p>以前我来回切页面，很容易被其中一张漂亮曲线带走。现在 Agent 能把登录后的证据同时摆到桌面上，我可以先看清原因，再决定下一篇内容写什么。</p>
+<p>如果你也有一堆登录后的后台，先别让它替你点击提交。让它把那些散在不同页面里的证据读到一起，已经很值了。</p>
+<p>其实还可以把我们操作过的动作做成脚本skill，这样就可以0 token的去执行一个重复动作的指令，评论区回 <strong>浏览器</strong> 。关注 <strong>香君赛博淘金</strong> ，我们可以在评论区沟通，看看这个浏览器的玩法天花板有多高。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/oSAwWL8Xcs0uua_4eecb2Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

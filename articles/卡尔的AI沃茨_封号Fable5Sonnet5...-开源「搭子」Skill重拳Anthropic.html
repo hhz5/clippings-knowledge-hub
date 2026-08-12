@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>封号/Fable5/Sonnet5... 开源「搭子」Skill重拳Anthropic · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">封号/Fable5/Sonnet5... 开源「搭子」Skill重拳Anthropic</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Anthropic">Anthropic</a><a class="chip" href="../index.html?tag=Claude">Claude</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a>
+    <span class="date">2026-07-06</span>
+  </div>
+  <p class="lead">我不信还能封我哈哈哈哈哈</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月3日 09:56</em></p>
+<p>A社是真的狗啊，</p>
+<p>还想通过发新模型来控评，那被封7次号的封号斗罗的我必重拳出击。</p>
+<p>这两天新尝试了一种方法开新号，也做一个新的skill，名字叫搭子。要是之后只能通过API来调用Claude模型的时候，怎么最大化利用额度，让Codex或者其他模型分摊掉一部分活。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fx6bFmxpyvWzf4Bj0k93D2ZcALC1Hxcy2OshLbtGoth4jXwcbhf7cnHNnL4RnBOHmM4aBV0v0ynYgFnadHaj2Vt6IYMUdhgbpI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>🔗 github. com/LearnPrompt/partner-skill</p>
+<p>我们先来光速回顾一下这两天都发生了什么，</p>
+<p>先是Anthropic的封号邮件加地址追踪这个问题，大家可以用一个叫做thunderbird的邮件客户端，它是开启了自动防护追踪的。也可以跟我一样，我的新方法就是用一台iPhone登录北美Apple ID，通过Apple ID的「隐藏邮件地址」功能生成一个全新邮箱，用这个邮箱注册Claude，最后通过礼品卡订阅。</p>
+<p>不需要手机号，不需要Google账号。</p>
+<p>如果账号被封，还可以通过苹果把钱退回来。</p>
+<p>至少，不让Anthropic赚这钱。</p>
+<p>还有就是Claude Code偷偷通过时区和代理域名来识别中国用户的骚操作，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FwXjP4Hx9hljbp44jQ3oOG476lh2dNaqyjn6DHdp700ErFuvKArlENYphyABbUKxsnngLicMUlZqFnXfwic8QDsvmY0xAkW7ibHics/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>传统的套路是IP检测，IP在哪个地方，Anthropic就觉得你是哪里的用户。但Claude Code这次不看IP了，看的是操作系统里的时区和ANTHROPIC_BASE_URL环境变量。</p>
+<p>时区好解决，手动改一下系统语言和时区就行。</p>
+<p>但环境变量就比较难办了。</p>
+<p>只要你是通过中转站用的Claude，base_url就要换成中转站的地址。Claude Code拿到这个地址，会跟它收集到的各种已知中转站地址、国内大厂内网地址做比对。</p>
+<p>然后，通过隐写术（Steganography），把这些信息包装成一个肉眼看不出任何区别的日期格式，悄悄传回服务器。。。</p>
+<p>按A社顶不住压力的说法，他们在7月2号的Claude Code新版本里会把这个检测代码删掉。坏消息是，他们同时部署了更强的缓解措施。</p>
+<p>所以现在基本是二选一，</p>
+<p>开一个新号，或者期待常用的中转站别挂。</p>
+<p>毕竟我是个被封过七个账号的人了。</p>
+<p>这次选择了极限开局，新号和API我都要。</p>
+<p>当然新号也是有被封的概率的，我现在能够想到他们新方式的核心，应该还是会围绕我们用Claude的方式，希望不会有更新的骚操作吧。</p>
+<p>如果Anthropic觉得你不是在正常使用，它一样会封你的号。</p>
+<p>之前我就试过用手机登录了一次Claude，第二天就被封了，有一次是凌晨在用，估计是时区的问题被封的。还有一次我终于从Plus一步步升级到Max，因为刚升级的那天就把5小时的额度打满了，第二天又被封了。</p>
+<p>所以这次看看这个号能活多久吧，这已经是我最大程度能做的努力了，</p>
+<p>实在不行熬过这一周让我跟Fable5多聊几次也行，在7月7号之前，我们可以选择把一周额度的50%用在Fable5上，之后就只能用credit了。</p>
+<p>所以接下来这几天，能用Fable5的尽量用，先把量打满再说。</p>
+<p>Fable5有几个提示语模板是真好用的，我从Anthropic给开发者放出来的指南里提炼了一下，直接拿去用，</p>
+<p>第一个，/loop 查询长时间运行的目标,</p>
+<pre><code class="language-bash">/loop 15 分钟，检查我的构建是否通过，如果失败则通知我。
+</code></pre>
+<p>第二个，写goal提示语的五段式格式，越简单越好，五个部分说清楚就行，</p>
+<pre><code class="language-js">背景：我在准备一篇给AI产品经理看的教程，主题是如何写出更好用的Agent提示词。用途：读者需要看完后能直接套用到自己的工作里，而不是只理解概念。请做：把下面这段英文提示词模板改写成更地道、更适合中文用户的版本。交付：给我1个通用模板、1个简洁版、2个真实使用示例。边界：不要逐字翻译，不要写得像论文，也不要加入原文没有的复杂框架。
+</code></pre>
+<p>还有一个记忆更新提示语，因为被封次数太多，我直接把它设置成hook了，只要说记一下就自动触发，</p>
+<pre><code class="language-markdown">每条经验单独存成一条记录，开头用一句话概括。
+只记录两类东西：1. 被我纠正过、下次不能再犯的点2. 已经验证有效、以后可以复用的方法
+每条记录要写清楚它为什么重要。不要记录仓库、文档或聊天记录里已经有的信息。如果已有相似记录，就更新旧记录，不要重复新建。如果后来发现某条记忆是错的，就删掉或标记废弃。
+</code></pre>
+<p>还有还有，如果账号被封了，记得第一时间先把数据导出来，然后用这个提示词让Codex或者新的Claude读取对话记录，</p>
+<pre><code class="language-swift">从Claude导出的JSON数据包中批量提取对话：解析conversations.json、zip包内嵌套的conversations/projects/design_chats，按内容量过滤空对话，按主题分类（工具/创作/设计/闲聊），导出为可读markdown，最后筛选出可复用的知识（个人画像、技术决策、风格规范）存入持久化memory。
+</code></pre>
+<p>以我自己的经验来说，能留下来百分之百对话记录的成功概率真的不高，看脸。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzraibdFTic9ibZCV6XOAeibWNIujcZNeFIASyp3em3bMymaSsdibngEYGvgFmygXHt7RGvak5DcW4qY4NUCHLQUAH73jicHaT7gNtcY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>新号能开多久不好说。</p>
+<p>如果有一天只能通过API用Claude，我想象过那个画面，说实话有点像在沙漠里找水喝。</p>
+<p>所以我给自己留了一条退路，分两个部分，</p>
+<p>一个是搞清楚Sonnet5到底值不值得用，</p>
+<p>另一个是和Fable5一拍即合做了搭子skill。</p>
+<p>先说Sonnet5。</p>
+<p>昨天Anthropic上了这个新模型，同时还带了一个新的Tokenizer，简单说，Tokenizer 就是把我们输入的文字先切成模型能读懂的小块，模型通过看这些小块来理解和生成内容。</p>
+<p>从API价格上看，Sonnet5变便宜了。</p>
+<p>但A社会是那么好的人吗？</p>
+<p>新Tokenizer切出来的token比之前多了，同样长的英文语句是上一代的1.4倍，用起来反而贵了。</p>
+<p>因为我基本上Opus起步，切回Sonnet4.6还不如用GPT5.5，</p>
+<p>所以我对比了一下几个基准，</p>
+<p>首先是SWE-bench Pro（编程），Sonnet5是63.2%，Sonnet4.6是58.1%<br>，Opus4.8是69.2%。</p>
+<p>多学科推理，Humanity&#39;s Last Exam不用工具时，Sonnet5是43.2%，Opus4.8是49.8%，开了工具之后Sonnet5直接跳到57.4%，非常接近Opus4.8。</p>
+<p>计算机使用能力，OSWorld-Verified，Sonnet5是81.2%，Opus4.8是83.4%。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxbLW81dD5dN9jE9b5LLRqG4c8R5XAk3lxvic5GrGXuSJ2csB9mWeQkb1icNk44JpX6KAq3qPxDkfFZZMjYVwz3mKic7W7hD6OqaA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>反正这两天用下来，Sonnet5确实是修复了Opus4.8常见的工具调用失败和思考时候卡住的问题，如果推理强度到了xhigh和max档的话，费用就跟Opus4.8差不多了。</p>
+<h3>搭子skill：我和Fable5一拍即合做的省钱搭子</h3>
+<p>这个Skill的出发点就是一个很实际的焦虑。</p>
+<p>Claude Max Plan，$200一个月，等同于官方0.2折，每月可以消耗价值$10000的Token。</p>
+<p>如果只能走API，每一分钱都得花在刀刃上，就算走中转，质量好点的在消耗同样价值的Token上还是要多花7-8倍的价格，</p>
+<p>所以搭子skill的原理说起来很简单，就把Claude Code和Codex各自最擅长的事拆开来。</p>
+<p>Claude Code只负责贵的事，前期的头脑风暴和规划，UI和交互，还有最后的代码审查。</p>
+<p>Codex负责耗额度大但对模型能力要求没那么高的事，比方说从零建项目，浏览器自动化，长上下文代码实现等等等等，量大管饱。</p>
+<p>这两个Agent左脚踩右脚的循环优化，达到比纯用Claude更好的开发效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwnAwiaqJNeoZgYFibAkKtju87NpOrNYBeZuzEz0KmRLNicHVrwLj7bIy8Qcic4ePicdW3TESrAZ3NIZDSFN9pz1rtcH54UeuYgLHdE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>目前，我测试出来可以把成本降到原来的30%。</p>
+<p>这里有个比较反直觉的点。</p>
+<p>刚开始我以为省钱的关键是少用Claude，能不用就不用，</p>
+<p>实际上最贵的是直接让Codex直接去调用Claude Code的话，它基本上会用Claude -P当一次对话去完成。</p>
+<p>在一个长时间的Goal期间，Codex是完全有可能调用多次Claude Code的。这个时候每一次新建Claude对话都要重新读一次项目，重新理解我们开发的目标，重新建上下文。</p>
+<p>这才是真正在烧钱的地方。</p>
+<p>搭子解决的就是这件事，让同一个Claude Code会话贯穿「计划→实现→review」整个流程，不反复冷启动。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fxmbkgic5IU2Tl3JN2xHBxXQic1iaicxyrFicuvqv8L5QQIhv69pVfDBRpz8icnd3pLWWyrgtVYDayVics0V82njGyojY3lk6g3zAw4lY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>触发搭子，也就一句话，</p>
+<p>指定不同阶段会用到哪个Agent就行，</p>
+<pre><code class="language-css">搭子！我要开发一个新的点子王skill，目标是把我的思路转成Goal提示语。先用Claude Code规划，让Codex实现代码，再交回Claude Code做UI优化
+</code></pre>
+<p>每次跑完，搭子会给你一张收尾小票，统计有没有多次重启Claude Code对话，证明这次有没有乱烧钱。</p>
+<p>接下来我还要Fable5继续做一件事。</p>
+<p>把搭子变成双向搭子。</p>
+<p>现在大多数时候是在Codex里给Claude Code发任务，让它帮我改UI。</p>
+<p>但反过来也有需求，在Claude Code里有时候会遇到一些网页，很难被Markdown Skill转化，还容易丢失素材。这种情况可以让Claude Code反过来指挥Codex，用浏览器自动化去拿到页面内容。</p>
+<p>总的来说，</p>
+<p>这几天过得有点太魔幻了。</p>
+<p>封号邮件，隐写术数据回传，</p>
+<p>Fable5窗口期，Sonnet5的坑，API退路规划。</p>
+<p>全部赶在一起了，</p>
+<p>我半被动给自己的AI工具链全翻新了一遍。</p>
+<p>此时此刻我的愿望很淳朴很简单，</p>
+<p>OpenAI和Anthropic怎么撕我不管，</p>
+<p>我就想把Claude Code和Codex凑成搭子，</p>
+<p>让它们两个天下第一好。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>289人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/nmwdMbEyodEv4Hpdy_ANbw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

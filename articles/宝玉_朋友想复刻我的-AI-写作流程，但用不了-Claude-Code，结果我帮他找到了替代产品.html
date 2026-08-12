@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>朋友想复刻我的 AI 写作流程，但用不了 Claude Code，结果我帮他找到了替代产品 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">朋友想复刻我的 AI 写作流程，但用不了 Claude Code，结果我帮他找到了替代产品</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%AE%9D%E7%8E%89">宝玉</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a><a class="chip" href="../index.html?tag=%E6%89%A3%E5%AD%90">扣子</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-01-22</span>
+  </div>
+  <p class="lead">关注我时间长的朋友都知道，最近一段时间我“高产”了很多，文章配图也漂亮了不少。私下里不少朋友问我：怎么做到高产还不那么有 AI 味的？</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Sib7IezOlBcvLJVK9vPPIo1I0CMIfJgXI013ia9U2ic6ibOghuPbRLapkBibt08ia8ZAhYkxeFwfuv97WulhhgpPAndg/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 宝玉 <a href="https://mp.weixin.qq.com/s/">宝玉AI</a> <em>2026年1月22日 10:26</em></p>
+<p>关注我时间长的朋友都知道，最近一段时间我“高产”了很多，文章配图也漂亮了不少。私下里不少朋友问我：怎么做到高产还不那么有 AI 味的？配图提示词是什么？能不能分享一下？</p>
+<p>我把自己用的 Skills 分享给了几个朋友。结果很快就有人反馈：Claude Code 用不了，要么是网络问题，要么是觉得命令行太折腾。</p>
+<p>Claude Code 对非程序员确实不太友好，而且对一些需要后台长时间执行的任务或者定时任务也不方便。</p>
+<p>这几天扣子上线了技能（Skills）功能，可以作为很好的替代产品。我的大部分技能在扣子上都能跑起来，而且更容易上手： 内置了画图和脚本执行能力，沙盒环境也更安全，不用担心 AI 把电脑搞坏，还可以直接把技能分享给朋友一起用。</p>
+<p>所以今天这篇文章，就是帮那些用不了 Claude Code 的朋友，梳理一下如何用扣子来复刻我的 AI 写作流程。</p>
+<p>先说说写作的痛点，如果你做过专业写作，哪怕是半专业的，或者只是偶尔写点东西，你一定知道我在说什么。真正让人筋疲力尽的，是写作周围那一圈琐碎活儿：整理素材、查资料、试不同的文章结构、找配图、做封面、校对格式、发布到各个平台……</p>
+<p>这些事情重要吗？当然重要。但它们会吃掉你大量的时间和精力，让你根本没心思专注在写这件事上。</p>
+<p>作为一个业余自媒体，我深受其苦。每天花在这些杂活上的时间，比真正思考和写作的时间还多。这就是为什么我经常吐槽公众号编辑器难用，甚至不愿意发，因为太费时间！</p>
+<p>但是当我借助 AI 辅助后，我发现自己从这些琐碎的事情上解放出来了，如果用一个形象的比喻，我从一个“内容创作者”变成了一个“内容导演”。</p>
+<p>导演做什么？选剧本、定调性、把控最终效果。但导演不会自己扛摄像机、不会自己打灯、不会自己剪片子。这些事情交给专业团队。</p>
+<p>现在我的工作流也是这样： 选题自己定，核心观点自己想，最终呈现效果自己把关——但具体的执行环节，交给 AI Agent。</p>
+<p>这样下来，产出效率高了很多。</p>
+<p>下面具体说说我的工作流。</p>
+<h2>1. 素材和选题：像导演选剧本</h2>
+<p>我的素材来源有两种：一是有感而发，比如学习了某个 AI 的新技巧，或者某个网友有价值的提问、点评；二是阅读网上的资讯和文章获取灵感。</p>
+<p>以前我每天要花不少时间刷信息流、收藏文章、整理笔记。现在我设置了一个定时任务，让 AI Agent 每天帮我在网上找相关素材，整理成一份简报。以扣子为例，可以使用它的 “长期计划” 功能，添加一个每日 AI 资讯搜集与整理任务。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcvLJVK9vPPIo1I0CMIfJgXIcuayKotY2hibDN0VaMYWA0DicHOGNnzYvLMpNU0JGOgIfb1hJSJakFBA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>早上起来，咖啡还没喝完，素材已经躺在那里等我挑了。</p>
+<p>这就像导演选剧本。一堆本子摆在面前，我只需要决定“这个有意思，值得深挖”， 但素材的选择非常重要，这是 AI 替代不了的，需要你自己的眼光和品味。</p>
+<p>对了，创建也挺简单，从左侧点击添加按钮，输入你想要它做的任务即可。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcvLJVK9vPPIo1I0CMIfJgXI6XxwnsCSS7ThlXuglQohwnBMcCSxUdCukp5TCBibL7sJVpq5Cu1zVtA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<h2>2. 分析和找资料：让 AI 做功课</h2>
+<p>有了素材和话题，不是马上开写。先分析，先搜资料。</p>
+<p>这一步很关键。好的分析能让文章更有深度、信息量更丰富。更重要的是，能帮你避开一些错误信息的坑——网上的东西，你懂的，不能全信。</p>
+<p>我专门做了一个分析技能（Skill），让 AI 对素材进行全方位的拆解：</p>
+<ul>
+<li>核心论点是什么？</li>
+<li>作者是谁，有什么立场？</li>
+<li>论证有没有漏洞？</li>
+<li>哪些地方需要额外查证？</li>
+</ul>
+<p>AI 还会自动联网核查关键事实。发现问题会标注出来：“原文称 XXX，经查证实际为 YYY”。这里是我用到的提示词： <a href="https://space.coze.cn/s/RaIsDTytL3A/">https://space.coze.cn/s/RaIsDTytL3A/</a></p>
+<p>分析完成后，自动保存成一份报告。这份报告就是后续写作的素材。</p>
+<p>作为“内容导演”，我需要对素材有全面的了解，才能做出正确的创作判断——但调研的苦活，让 AI 去干。</p>
+<p>比如说我上次看到一篇鸡汤文，让它分析了一下，马上发现很多问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcvLJVK9vPPIo1I0CMIfJgXICyDsF6jpctRgswJxMwDoAu8KrXnVdXgYjM79fNFnJQbROOricV56U1g/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<h2>3. 写大纲：一次出三个版本，无需确认直接开写</h2>
+<p>有了素材和分析结果，接下来就是写大纲。</p>
+<p>我写作尽量不会用固定格式。如果每篇文章都用同一个套路，读者会觉得无聊。而且不同类型的文章，适合的结构也不一样。</p>
+<p>所以我让 AI 根据素材和分析结果，一次生成 三种左右不同风格的大纲 ：</p>
+<ul>
+<li>一种可能是时间线叙事</li>
+<li>一种可能是问题 - 解决方案结构</li>
+<li>一种可能是观点碰撞的辩论体</li>
+<li>或者 AI 觉得适合素材的大纲</li>
+</ul>
+<p>参考提示词： <a href="https://www.coze.cn/s/srreDBJpo1w/">https://www.coze.cn/s/srreDBJpo1w/</a></p>
+<p>最开始我还手动挑选和修改大纲，后来找到了一个更加偷懒的方式，那就是 不选只抽卡 ，直接 让 Agent 按照三种大纲风格去同时写作 ，写完后我再介入，从中选一篇最好的，再融入其他几篇好的部分。有时候都不满意，就重开一个会话再来一遍。这样虽然更费 Token，但效率更高。</p>
+<p>这就好比你是个不差钱的导演，一次性找几个编剧，让他们直接开始写稿子，写完再看谁写的最好，或者融合一下。</p>
+<h2>4. 写初稿：用“我的风格”写</h2>
+<p>写稿这一步很关键。</p>
+<p>如果让 AI 直接写成品，出来的东西可能很流畅，但不像“我”写的。每个人都有自己的写作风格，这是区分你和别人的核心。</p>
+<p>所以我创建了一个“宝玉写作风格技能”，像扣子上创建这类技能很简单，上传我之前写的文章，让它学习我的风格：用词习惯、句式结构、讲道理的方式、开玩笑的尺度……</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcvLJVK9vPPIo1I0CMIfJgXIzRS4um746OcThEZ4u9OJiakLVOAA8x4OsH2vovsEcxFdroI0FBmIDQQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>而且这个风格是不断迭代的。每次 AI 写完初稿，我会手动修改。改完之后，让 AI 看我改了哪些地方，分析为什么这么改。下次它就会写得更像我。</p>
+<p>作为“内容导演”，我在把关这件事上从来不偷懒。 每一篇都花了大量时间去选择、修改，确保最终内容是我满意的。AI 是工具，但审美和判断力是我的。</p>
+<h2>5. 润色和校对：脚本 + AI 双管齐下</h2>
+<p>初稿写完，需要润色。</p>
+<p>AI 帮我检查语法、拼写错误，调整句子结构，让文章更通顺。但 AI 写的内容经常有一些格式问题：中英文之间没空格、标点符号不是全角的……</p>
+<p>这些机械性的问题，我用脚本自动处理。一键运行，格式全部统一。</p>
+<p>润色这一步也做成了独立的技能。AI 负责内容，脚本负责格式，配合得很好。</p>
+<p>作为“内容导演”，我负责最终的质量把控，但具体的打磨工作交给专业工具——就像后期团队帮导演调色、混音一样。</p>
+<h2>6. 配图：从封面到插图全覆盖</h2>
+<p>文章写完，还需要配图。</p>
+<p>封面图是读者第一眼看到的东西，直接影响打开率。插图能让长文章不那么枯燥，还能帮助读者理解复杂概念。</p>
+<p>以前配图是最头疼的环节。现在我做了一个配图技能：</p>
+<ol>
+<li>1.AI 根据文章内容分析需要哪些插图</li>
+<li>2.为每张图生成详细的提示词</li>
+<li>3.调用绘图工具一张张生成</li>
+<li>4.自动把图片插入到文章的合适位置</li>
+</ol>
+<p>配图技能提示词参考： <a href="https://www.coze.cn/s/yo0i7Mtfs8g/">https://www.coze.cn/s/yo0i7Mtfs8g/</a></p>
+<p>或者我还有一个开源版本： github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator</p>
+<p>这个 Skill 已经上线扣子的技能商店： <a href="https://www.coze.cn/?skill%5C_share%5C_pid=7597258323414614050">https://www.coze.cn/?skill\_share\_pid=7597258323414614050</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Sib7IezOlBcvLJVK9vPPIo1I0CMIfJgXIYdcCoORgYErwZCBgrH8yhZLgibhU9jFfjtw1FAqXqSUK9WNCErxWiaFQ/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>作为“内容导演”，我只需要最后审一眼，确认视觉风格和内容调性是匹配的。</p>
+<h2>7. 发布：最后一公里自动化</h2>
+<p>发布也有一堆琐碎事：写摘要、加标签、选分类、SEO 优化……</p>
+<p>我用一个独立的技能帮我生成这些元信息。然后通过浏览器自动化，AI 会帮我打开发布平台，填写标题、粘贴内容、上传配图。</p>
+<p>发布到微信公众号和 X 的 Skill 我都开源出来了： github.com/JimLiu/baoyu-skills/tree/main/skills</p>
+<p>作为“内容导演”，我需要做最后的确认，然后亲手按下那个发布键，一方面避免 AI 犯错误，另一方面总还是保留一点仪式感。</p>
+<h2>最后说几句</h2>
+<p>有人可能会问：这样写出来的东西，还是“你”写的吗？</p>
+<p>我的回答是： 核心的东西——选题判断、观点输出、审美把控——全是我的。AI 只是帮我处理了那些机械性的执行工作。</p>
+<p>就像导演拍的电影，你不会说“这是摄影师拍的”或者“这是剪辑师剪的”。导演对最终作品负责，导演的风格贯穿始终。</p>
+<p>我现在就是这样一个“内容导演”。</p>
+<p>这种工作方式让我能把更多时间花在真正重要的事情上：思考、判断、创造。那些本来会消耗我大量精力的琐碎执行工作，现在都有 AI 兜底了。</p>
+<p>如果你也被写作周边的杂活折磨得够呛，不妨试试这个思路，可以直接在扣子上试试我分享的那些技能。</p>
+<p>最重要的是 用 AI 把自己从“创作者”升级成“导演” ，让自己去做更重要的事。</p>
+<p><a href="https://mp.weixin.qq.com/s/">#扣子</a> Coze <a href="https://mp.weixin.qq.com/s/">#职场</a> AI 就用扣子 <a href="https://mp.weixin.qq.com/s/">#扣子技能</a></p>
+<p>继续滑动看下一个</p>
+<p>宝玉AI</p>
+<p>向上滑动看下一个</p>
+<p>宝玉AI</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/oNoH_Wbm9HSNv8Chr-jong" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

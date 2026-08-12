@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent可算开始明码接单了，但我发现最难的不是标价 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Agent可算开始明码接单了，但我发现最难的不是标价</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=ClawHunt">ClawHunt</a><a class="chip" href="../index.html?tag=%E9%A1%B9%E7%9B%AE%E4%BA%A4%E4%BB%98">项目交付</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a>
+    <span class="date">2026-06-16</span>
+  </div>
+  <p class="lead">难的是怎么证明它把活干完了</p>
+  <article class="content"><p>原创 AI沃茨 AI沃茨 <a href="javascript:void(0);">卡尔的AI沃茨</a></p>
+<p><em>2026年6月16日 10:45</em> <em>浙江</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<h2>最近我在升级之前做的教程网站LearnPrompt，</h2>
+<p>这次升级里有一些主页动效，还有教程会全做成wiki的形式。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/VNz1x8bH8Fw5F7mMVFWJwxic5jQv3z4ZHicoAjTnmepE3H52kc5eZ50KmEGdzRFmldtcibFqL8ibSC8ObkQ3ibSx6gChic2qAV2xfEDI27Ar9BzLc/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>就这个转动的wiki 3D透明材质球</p>
+<p>现在用Claude做起来已经比两年前快非常非常非常多了，</p>
+<p>当时我看了不少好看的参考，桌面端看起来都挺漂亮，但一到移动端适配，就开始各种别扭。</p>
+<p>在tb上搜一圈，能找到很多人说自己会做动效，会做响应式适配。</p>
+<p>但是因为都是一锤子买卖，很多时候就会出现各种邪修，甚至出现动画不停循环来模仿动效的。</p>
+<p>当时我们找了一个朋友认识的JS工程师来做。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/VNz1x8bH8FwOp0SEjAEtsa8ehLzmphNhLT5Cbicqe37TYtw7rkph5BuPbxX0kNUtINicM7NlYp4gMRzsibibMpMJjUicTEA98HQh5OhNr3XVyvqU/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>就这个页面滑动适应不同尺寸</p>
+<p>这其实就是一个很朴素的信任问题。</p>
+<p>人和人之间都这样。</p>
+<p>你找一个真实工程师，都要担心他是不是理解错了需求，交付的时候是不是只给你一个看起来能跑的demo。</p>
+<p>如果连人都很难让人完全相信交付，我凭什么相信一个Agent？</p>
+<p>更进一步说，我凭什么相信一个Agent能接单，能完成任务，甚至让另一个Agent根据它的交付结果去支付？</p>
+<p>这也是我看ClawHunt时真正被吸引的点。</p>
+<p>表面上像是一个AI Agent赏金市场，跟之前火的renthuman差不多，</p>
+<p>但它有意思的点是在尝试回答一个问题，</p>
+<p>Agent干完活以后，怎么证明？</p>
+<p>真要我一行行看，不就回到古法编程时代了吗，让Agent看的话怎么避免幻觉？</p>
+<p>所以我在ClawHunt上找到一个真实赏金任务，顺着它把对应GitHub仓库clone下来跑了一遍，尝试来拆解一下Agent完成之后是怎么验收，怎么证明，怎么安全顺利交付的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzG0ZlECQSrQftLzuSicE7gibm4lWb60tIYib7nkn8r6pMLLgH3TM8lH5CCSsfLhUCOcp0P15icLsqXPjw3OOddJg6ic5fxcuxHibicBw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>简单来说，整体的流程就是，</p>
+<p>需求方发布任务，挂出赏金，Agent或开发者来竞标，最后把成品提交上去。</p>
+<p>但点进去后，发现它没有停留在让Agent做一个东西这么简单。</p>
+<p>任务栏不仅给了对应的GitHub仓库，还要求了一份完整的ClawHunt L1 Delivery Protocol Manifest。用人话说就是明确到每个文件的输入清单。</p>
+<p>于是我把仓库克隆到本地，按官方Sample跑了一遍。</p>
+<p>能读取quotation，抽取字段，填进contract template，最后生成一份docx。</p>
+<p>但也正是跑通之后，才发现了ClawHunt背后要求的交付条件有多么严格。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyOOXiaGZpMia3iaibtWIRx8O8sjM5dc2O6cFKuQBQmiajZlv4OzJUhfSwib9WibeRsibCFlzjIIcPU4DZPDicnhB6YJHBxkibXD8CpibOLKU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>他们是采用了多重交付验证以及文件检查的方式来确保项目的完整性。</p>
+<p>有点抽象，但其实是一个Manifest目录文件</p>
+<pre><code>{
+</code></pre>
+<p>source_repo是这次任务指向哪个项目。</p>
+<p>standalone_artifact是拿来验收的独立脚本。</p>
+<p>inputs是测试用的数据和模板。</p>
+<p>outputs是跑完以后应该生成的东西。</p>
+<p>smoke_command是验收方需要复制运行的那条命令。</p>
+<p>expected_output是这条命令跑完以后，应该看到的结果。</p>
+<p>public_safe是告诉大家，这个交付包可以公开看，不会泄露 token，主机名，本地路径，真实客户数据这些东西。</p>
+<p>Manifest明确的告诉验收方，</p>
+<p>这次交了哪些文件，输入输出是什么，要跑哪条命令，跑完应该看到什么结果，以及这个交付包能不能公开检查。</p>
+<p>像Claude给我交任务结果的时候最容易让我不放心的地方没有检查的方向以及方法。</p>
+<p>ClawHunt这套流程想解决的，正是这个中间层问题，不只让交付方说我完成了，而是让验收方知道我应该怎么验证你完成了。</p>
+<p>为了了解ClawHunt的当前生态，</p>
+<p>我实际测试了个任务来看效果，Problem # 196。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fza3ia6AIFib2PyYL0qFLoSoMtVTxFYAZpkLuZbAAaFCofMnlicpemC04QWy1aG8FypOJTCxWY6hLRtoYMcCA7B7XIund8rs56skk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>标题 Add contract AI autofill mapping and redaction verifier，指向 Arxchibobo/contract-ai-autofill 这个公开 GitHub repo。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzMF8BJELCAP7gTBwqRcUjecw7KsXGCePvEDZpE8sKGA5fMH7po1LDmBtQQqSyNqlOYmDsgg1KicHibiaEVBqeU6BF8qplgW4fLb4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>页面上显示它处在bidding状态，当前也有7个出价，并且要求 L1 Delivery Protocol manifest。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyEIIHwxtPD543ibkxYpfWQ5WvFibEv5n6tuQTJKMgQOlvxbGZpagjPPJFyFpqx4hZJ12ErDbzoI2MMH2PXU5WAmxP5oO2Ex7msA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>这次任务的目的是，让Agent做一个合同填充工具。</p>
+<p>对于制定输入的内容做定制化的文档输出。</p>
+<p>步骤很清楚也很简单。</p>
+<p>输入一份引文Quotation，再选一个合约模版Contract Template，把两者结合成一份制定输出Output Doc。</p>
+<p>我把官方仓库拉下来，跑官方Sample测了一下效果</p>
+<pre><code>python3 -m contract_autofill \
+</code></pre>
+<p>输入文档</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fx1tCFeIaHWIg9XjawJPfseeSU3pic5HiaBysTJxsr6dCT5iaK3x2p6nicI5f5liam9jg7iagX5P3aj5r5QRafjaKXnqHfMzIxWVBbCI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzXFvlGuDIahZdUnBZWtmw4SYg3NrMA3MveI6O4YfteYic3uJwlls7iaTg0vXlIApdCxog9fQEcBTlia6LiaoQXYmA0iaicV7q63dSMM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>跟着范例指示走，也成功生成了结果test_output.docx。</p>
+<p>如果只看到这一步，可能会觉得，很方便啊还挺好，任务一下就完成了。</p>
+<p>但问题以及风险也就恰恰出在这里。。。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzBOELxtyhtwBjRNSQUI52cpsNDzE1hiboQgT3FPVY91IL1iaDVNaFFyiaxWyLtv2trdbkpOzFExAL9HtbvIratvodTrCs9vNHjTk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>为了理解项目，我看了两层完整讯息。</p>
+<p>一层是ClawHunt上的任务讯息以及项目的manifest的细节提供。</p>
+<p>一层是GitHub官方Repo的本地内容。</p>
+<p>项目是跑通了，结果是出现了，但疑问以及不完善也跟着一起浮出水面了。实际上我跑的时候，就踩了四次坑，  </p>
+<ul>
+<li>没有OpenAI API Key时，fallback到纯正则模式。</li>
+<li>合同确实生成了，但一些地址，项目名称都没有填上。</li>
+<li>Email和Phone提取到了错误位置，供应商以及客户位置反过来了就离谱。</li>
+<li>教程运行以及README的API KEY Prerequisite边界不一致。</li>
+</ul>
+<p>所以说AI真的很会骗人，在规则范围内骗人，</p>
+<p>仅仅能读Quotation，抽字段，填Template，最后生成Output。</p>
+<p>基础链路成立，就被视为跑通了。</p>
+<p>也正因为这样，交付后的成效才显得格外重要。</p>
+<p>生成结果但没能走完验证以及完整完成交付是大多Agent的困境。</p>
+<p>过去我们聊Agent，</p>
+<p>基本都在聊它聪不聪明。</p>
+<p>会不会Make Plan，会不会改bug，会不会调用外部工具。</p>
+<p>但真的靠Agent开始接活，问题就都变了。</p>
+<p>它交付了什么？能做什么？谁来验收？</p>
+<p>和我们平时的demo完全不是一回事。</p>
+<p>Agent只要展示一个漂亮结果就行。</p>
+<p>在真实交付中，别人怎么复现怎么使用，都得清晰。</p>
+<p>当然ClawHunt现在还是很早期的阶段。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fw4Ftex0Yibdh1iaE3ibuMB3tOKrES3nXmXo6ibQQNL3eDbuZgJh3lnHqEIGYNQxfr2ozeQTWMcNlMJlibJicOb2aqelcb7A67MMnUicA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>页面，任务，协议，交付格式，都没有特别成熟。但它把几条以前分开的线以规定的方式拧在了一起。</p>
+<p>任务市场，赏金托管，Agent 接单，交付协议等等等等。</p>
+<p>甚至还有一点Agent验证Agent的味道。</p>
+<p>它现在更像是一个压力测试场，</p>
+<p>提前暴露了Agent从demo走向真实交付的时候会遇到的问题。</p>
+<p>这些问题现在还没有满分答案。</p>
+<p>哦对了，</p>
+<p>他们7月3号到5号还在深圳整了个三天的黑客松，</p>
+<p>现场做出来的Agent直接上线接任务挣钱，</p>
+<p>早期的token也包了，VC也包了，</p>
+<p>我也不贪，</p>
+<p>让Agent把每个月花我的400刀挣回来就行。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Ntdr5eA_gbPcIr55LAqSEA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

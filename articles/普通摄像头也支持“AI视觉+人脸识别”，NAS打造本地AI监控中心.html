@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>普通摄像头也支持“AI视觉+人脸识别”，NAS打造本地AI监控中心 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">普通摄像头也支持“AI视觉+人脸识别”，NAS打造本地AI监控中心</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=Stark-C">Stark-C</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=NAS">NAS</a><a class="chip" href="../index.html?tag=Docker">Docker</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%83%BD%E7%9B%91%E6%8E%A7">智能监控</a><a class="chip" href="../index.html?tag=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB">人脸识别</a>
+    <span class="date">2026-08-06</span>
+  </div>
+  <p class="lead">普通摄像头也支持“AI视觉+人脸识别”，NAS打造本地AI监控中心</p>
+  <article class="content"><p>Stark-C Stark324 <em>2026年8月5日 16:58</em></p>
+<h2>普通摄像头也支持“AI视觉+人脸识别”，NAS打造本地AI监控中心</h2>
+<p>哈喽小伙伴们好，我是Stark-C~</p>
+<p>应该有很多使用NAS的小伙伴都有监控的需求吧？就是将NAS当做摄像头的本地 NVR（网络录像机），借助NAS的大容量硬盘，来实时存储摄像头的录像文件。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz5fY0tiaVIpGetbHia52opv83HUOv5BLfz71dvIJ2YmzOmtqX54Ozsvj4RDa9ick3ubNANlecUKq85ARzoU4fkdqRFDbbEzm0E9Go/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>🔺极空间NAS私有云在很早的时候就上架了针对用户这个需求的“监控中心”，只需要一个普通的支持ONVIF/RTSP协议摄像头，就能轻松接入进来，不仅可以将摄像头的录像文件实时保存到NAS本地，还可以实时查看和录像回放，这可比花钱买网络摄像头的云服务器要划算的多，并且还更安全</p>
+<p>我目前也是一直在用，使用了一个200块钱左右的TP-LINK摄像头就可以了。不过有一说一，极空间目前的“监控中心”功能还很基础，虽说已经满足绝大多数用户，但是对于进阶用户的需求，比如说当前正火的AI和人脸识别它还是不支持的。</p>
+<p>既然官方目前没给到，咱们折腾佬也不能干等着呀！所以今天我就来为大家分享一个方案，专门搞定这个事~</p>
+<p>提前说明：</p>
+<p>1，今天的这个方案同样需要我们的摄像头支持ONVIF/RTSP协议，据我所知绝大多数TP-LINK、海康摄像头都支持这个协议，且都不贵。</p>
+<p>2，项目相对来说还是很吃资源的，建议入门级的NAS不要尝试~</p>
+<h2>关于项目</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz5U3gibjZKDJaibSbgQZzq25dHWtyNJGt8xFquGAs6YYhOgKMKkwcEUfG4jtuyp5Dt7Rwm6AZic8QdXNwJRGNWibJ57oogwyc1oGlk/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>🔺使用的项目其实是一个老项目--Frigate。这是一个专门为本地部署而生的开源智能监控系统，我们可以简单的把它理解为一个“具备实时AI检测能力的本地 NVR”，它能实时检测人、车、宠物等目标，并与智能家居平台Home Assistant深度联动，实现很多智能场景。Frigate的功能也非常强大，支持 24 小时录像、按事件保存视频、RTSP 重流减少摄像头压力，并提供低延迟的 WebRTC/MSE 实时观看。</p>
+<p>项目Github地址：<a href="https://github.com/blakeblackshear/frigate">https://github.com/blakeblackshear/frigate</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz5sWvkDANibnjZqDbKcPwbvT1R6UOL9nzSxjRPN190ibv7s5FbSLiblWzT543XXrN1ojs0EGWH10eibAbjGvwMgFkFs3MfLZQia6vmw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>🔺另外这次我们还需要用到另外一个老项目--Double‑Take。它是一个开源的面部识别系统，通过统一的界面和 API，整合了多种先进的人脸识别引擎，能够根据内置的识别模型（ 比如说DeepStack、CompreFace、FaceNet 等），自动处理人脸裁剪、比对、匹配、标记等流程，将识别结果提供给下游系统（比如说Home Assistant使用）。</p>
+<p>项目Github地址：<a href="https://github.com/skrashevich/double-take">https://github.com/skrashevich/double-take</a></p>
+<h2>项目部署</h2>
+<p>今天的这个方案会用到4个Docker容器：frigate、 double-take、deepstack、frigate-mqtt。它们的分工如下：</p>
+<ul>
+<li>frigate：负责接入摄像头、检测人和物体、保存录像，是整个系统的核心。</li>
+<li>double-take：负责所有人脸识别相关的工作。</li>
+<li>deepstack：给double-take提供 AI 算力，负责人脸识别推理。</li>
+<li>frigate-mqtt：负责消息通信，把检测到的事件实时推送出来。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz5Nbj6jKwCib2dWMa1ibMRbHbS2NMrTEVHcaxlZmZ4DSLVial8Vkn6YXXyGickrLoEI42yeA1jVb9N0nxlAHRib9eTbum056a50YNSU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></li>
+</ul>
+<p>🔺此次部署依然以极空间NAS为例，打开文件管理器，在Docker目录下新建一个“frigate”的文件夹。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz6yI9f6e9tqtOd5smRL1Asz7NcM5eIjzt44v9CZSILSwdyKatyHmTPQLgnM9QqN3ibTiaDia1FTaBCy6vOWBhicYSaIPqvgpYH4M7A/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>🔺接着点击极空间NAS的“Docker”应用，点击【Compose】 &gt; 【新增项目】。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz4me9WeGEIGp5nvkOcChHr4Ms0pebhPazq4fKGIxicHukicNicG3QIQqw6eyJBHibd2RIGia8JIdGoxJvQoD7h49nWcQktlW1wKZrGw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>🔺在“创建项目”页面自定义项目名称，“存储位置”需要手动选择我们前面新建的“bookorbit”文件夹，在方框中输入以下 Docker Compose 配置信息:</p>
+<pre><code>services:
+  frigate:
+    container_name: frigate
+    privileged: true
+    restart: unless-stopped
+    image: ghcr.io/blakeblackshear/frigate:stable
+    shm_size: &quot;256mb&quot;
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./frigate/config:/config
+      - ./frigate/media:/media/frigate
+    ports:
+      - &quot;8971:8971&quot;  # 冒号前面请勿冲突
+      - &quot;5555:5000&quot;  # frigate打开端口，冒号前面请勿冲突
+      - &quot;8454:8554&quot;  # 冒号前面请勿冲突
+      - &quot;8555:8555/tcp&quot;  # 冒号前面请勿冲突
+      - &quot;8555:8555/udp&quot;  # 冒号前面请勿冲突
+    networks:
+      - frigate_net
+
+  double-take:
+    image: skrashevich/double-take:latest
+    container_name: double-take
+    restart: unless-stopped
+    depends_on:
+      - frigate
+      - deepstack
+    ports:
+      - &quot;3050:3000&quot;  # double-take打开端口，冒号前面请勿冲突
+    volumes:
+      - ./double-take/config:/.storage/config 
+    environment:
+      TZ: Asia/Shanghai
+      MQTT_HOST: frigate-mqtt
+      MQTT_PORT: 1883  # frigate-mqtt的打开端口
+      FRIGATE_URL: http://192.168.31.122:5555  # frigate打开链接，别抄我的
+      DETECTOR: deepstack
+      DETECTOR_URL: http://192.168.31.122:5051  # deepstack打开链接，别抄我的
+      MATCH_THRESHOLD: 0.60
+      SAVE_UNKNOWN: &quot;true&quot;
+    networks:
+      - frigate_net
+
+  deepstack:
+    image: deepquestai/deepstack:latest
+    container_name: deepstack
+    restart: unless-stopped
+    ports:
+      - &quot;5051:5000&quot;  # 冒号前面请勿冲突
+    volumes:
+      - ./deepstack:/datastore
+    environment:
+      VISION-FACE: &quot;True&quot;
+      TZ: Asia/Shanghai
+    networks:
+      - frigate_net
+
+  frigate-mqtt:
+    image: eclipse-mosquitto:2
+    container_name: frigate-mqtt
+    restart: unless-stopped
+    ports:
+      - &quot;1883:1883&quot;  # 冒号前面请勿冲突
+    volumes:
+      - ./mqtt/config:/mosquitto/config
+      - ./mqtt/data:/mosquitto/data
+      - ./mqtt/log:/mosquitto/log
+    networks:
+      - frigate_net
+
+networks:
+  frigate_net:
+    driver: bridge
+</code></pre>
+<p>以上代码需要修改的地方就看我给到的中文注释，其它的直接保持默认即可。镜像的拉取需要自行解决网络问题，粘贴到自己的NAS这边之前建议使用AI工具优化一下，以防止格式问题造成的部署失败。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz75k9mehuDrZEzoxibUC6AG9mHjdhm1SWDlao4F9dnrJnJnfF4ZExdqEc3ibBRx2ynbPBJicjUibOJicsPm17WWT2FHUJblBfY3v1xY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>🔺镜像有些大，部署的时候需要有些耐心，多等待一下。部署好之后可以看到frigate-mqtt一直显示重启中，这是正常情况。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz6UnI4ySLXOe28Fpw8gQrHfoQ3FUmvnZTakicVjQyHLCq0k2Nxa1sKZLvxYQP198xAB7EhFW7wmiarfGVPmZ4Jm5OJbZxPnXSPxA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>🔺我们需要依次打开“frigate--mqtt--config”文件夹，在里面新建一个文本文件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz7LAxkRwvuFTNPjQe8LZ2khhuf4VXJiaw17iaZQ1UmbmicRJib3WYCTg4WDzeKC26rt4YEDaib14BLUjeIgsjLpAHB97qfDSOlHCicdg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>🔺在文本文件内输入：</p>
+<pre><code>listener 1883
+allow_anonymous true
+</code></pre>
+<p>完成之后记得保存。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz4UxIYkxFyUuSVDicvF37xesh8v2tQx0Yrm45dqwUHzVLtetsTBLVNP9PC6Wice9ibLwa3G7aTBTonwhriaZueSPvaHgDGQ69vBxTg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>🔺接着将这个文本文件整个重命名为“mosquitto.conf”后“确定”。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz5umVjGbbQv6l80aA0EKGMvribyN74ph2sYxwWic3X3LoibXS6V3r5HDUUgs72jcZDnCb0VLe1YDQmok2x4j4tGqUkASpsdP3Adz4/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>🔺再回到Compose这边，可以看到所有的4个容器已经全部运行正常了。</p>
+<h2>项目体验</h2>
+<p><strong>double-take设置：</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz5qJOHFj2edKdOqsiaslicylicNlaYSaxOBiaAVzeSXLu2lRvpOib6zTLeM5WMpfaxPCVLRyLucl2z1CBhJWImOQERCJmInspdnmFyU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>🔺项目虽说都正常跑起来了，但还不能立即使用。我们先来设置double-take，直接通过极空间的远程访问打开它的后台Web页面（当然你也可以直接通过浏览器输入“IP:端口号”的方式）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz5q4KUtnfo6nOMqNtLrQ55YgyFpFuPosURD1VqXDeawGiaJ9diaY1UYdqe7HiaLSdw7G7WrMK2wic2IlPv6SbuASHMv2NWI9ibupwjE/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>🔺然后点开“Config”配置页面，输入以下信息（不要直接抄我的，根据红字修改成你自己的配置）：</p>
+<pre><code>detectors:
+  deepstack:
+    url: http://192.168.31.122:5051
+
+frigate:
+  url: http://192.168.31.122:5555
+
+mqtt:
+  host: frigate-mqtt
+  port: 1883
+
+save:
+  unknown: true
+</code></pre>
+<p>完成之后记得保存。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz5lHiaC2Elr8he3VzU0av95kqcPTKKXhKO0lOt7fDyj4icGKdaFzVB3qqNAFHsTEfvTTbJib4fBwHs2mkTpvW86lBtV9kvib1eGx2E/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>🔺如果配置没有问题，可以看到页面显示项目用到的4个Docker容器的连通性都能通过。</p>
+<p><strong>frigate配置：</strong></p>
+<p>首先当然是打开frigate的Web页面，这里建议大家使用浏览器输入“IP:端口号”的方式，而不是极空间的远程访问。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz4VpbS4GbZORLTZEUcHjNz55wxh0YXY708xPIRvDiaCfvfU3YyS494jTH0grClH4BjodVdBec3sAliaOZfVvHWNymS1zQWS7cfgQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>🔺现在最新frigate的配置比之前可要友好太多了！首先它现在已经原生支持中文显示，另外现在添加摄像头不用再NAS端自己写配置，而是在页面直接根据向导图像化操作即可。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz4hAO89nSzkkClhT80P0Yia4BQF9RJUhZ7Xs4V6OhnyblqhleiaI9cotz6m4OtJWYzIzvKdBKWRwjcyem8Iibk2STq7iculCCgicybs/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>🔺摄像头的添加非常简单，只要是我们的摄像头支持ONVIF/RTSP协议，设置直接输入摄像头的IP地址、用户名和密码即可。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz44DsDZic4Rc14JpVjHdPO099tak7bKXdYdDbcKGGQIs3icgDDD6APcFESvSicWhRnejgzTYl6VOGBf1hrfaHoyIKlRK1Hn78ebfg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>🔺然后frigate会自动连上摄像头。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz4SnVlzNRicV7ET2TVAjhotibhKEJIGdd06ibajvj9bEVUj1j0G394XwuvFQhiaQaIia0bg12l4lhiaCHWtyic7KGIg5t6GvDyianGkziaM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>🔺下一步根据自己的需求选择功能，我反正是全都要~</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz43bXKibNsYRJjaOLkuURlNdQJTxWegK3ZfqJKUnH17icgNDgAlEsF28a3Sz6sK3bjEjDCkePY6eicYEOtlH8iboQ7O5P9zLDGE6PY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>🔺最后看到摄像头显示没有问题，就直接“保存新摄像头”即可，是不是很简单。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz74PMDibx02ugnPKhKguYkoEL958iau5R5ZLdUoib8V3JLhp7EVuG8e9IPKXmzIwJgxkBOE2gAjeZ5Aic5OZeVhs8SVsP7uHQCrB9Q/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>🔺回到主页可以看到这里已经有一个摄像头显示了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz6ibMaPvI54UKBoOfxMcYmakKruP2bho3LLK4UpByq3VF2Jf6gu1qqE3lKOBTbLDXBESNtxOicPSj4KttmibCJia5w1icibYtkNzwlIg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>🔺点进去可以看到详情。这里不仅可以看到当前的实时画面，并且实测它的延迟也非常低，几乎是秒级响应。但是目前有两个问题：一个是它的录像功能还不能使用，另一个是double-take那边的人脸识别还没有连通。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz5FeQY4vZibibeadd4VwUDbVDQibJOHrPb0P5CxesprKEVQhfcjkkAXk983peayLicbiaicqW5JnXcIKKZvVibo2UYyV3KddlEoC3Bfks/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>🔺解决起来也很简单，我们需要打开“设置--配置编辑器”。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz5C2XdFNS8bNtDNccpreorQJArmXwg5wPtjQ2QUTn9KpcrqYA0BA8gsGVCMibSgicIrD4VPQz8tyYy13jsGaru4ovDibgDmnpMCfM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>🔺然后复制自己当前的cameras配置，替换掉我给的代码中：</p>
+<pre><code>mqtt:
+  enabled: true
+  host: frigate-mqtt
+  port: 1883
+
+record:
+  enabled: true
+
+go2rtc:
+  streams:
+    cam_a71de0d8:
+      - ffmpeg:rtsp://admin:xxxxxxxxxxxx@192.168.31.184:554/stream1
+
+cameras:
+  cam_a71de0d8:
+    enabled: true
+    friendly_name: 客厅
+    ffmpeg:
+      inputs:
+        - path: rtsp://127.0.0.1:8554/cam_a71de0d8
+          input_args: preset-rtsp-restream
+          roles:
+            - detect
+            - record
+            - audio
+    detect:
+      width: 1280
+      height: 720
+
+semantic_search:
+  enabled: true
+  model_size: small
+
+face_recognition:
+  enabled: true
+  model_size: small
+
+lpr:
+  enabled: true
+
+classification:
+  bird:
+    enabled: true
+version: 0.17-0
+</code></pre>
+<p>完成之后记得保存。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz68VhJXdmHUp9m4RzWkGaqpn9MnHyFQwUBUDic0icyicP8MZBftrUsITArNS8S6233yNfCia6ONVwXsWf4E5CnzJhzFk3Qc9FGtwTM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>🔺还有一个建议大家设置的地方，那就是打开设置中，摄像头设置的“增强功能”，将里面的所有功能全部打开，这里才是frigate的硬核功能。</p>
+<p><strong>体验方面：</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz7rjx6z9j5rmHiaF9MCAjib4xSojiaIyp8SzVyKlrfjhbPrownlggSoob3icJEeUJ1yoia0lx2K6kQ1gfIQVfhj4mNAicWIDodTk6tVg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>🔺现在再回到摄像头的详情页面，可以看到它已经能正常录像了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz6lQgTnfcaZtFxTeJGy0wXLvoTIgMibXoIxNEmpEic5BrXlfib7PWl0XEyAgvegCj7tgql9wNUry8LwZp4LCK8v8aU4lTaSVEib3ibQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>🔺如果说画面有变动，比如说人或者宠物进入，它画面的左上角还有一个移动监测的标识出现。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/pCibibjPINaz7e5DanzAr6r85hKIqo1Buc7xTPZMsDYicU6t2wSr99NRNKEeHzwHD1ib52PoDwsBNzdEsnHeEdTTpZYfSJEicBTufsGPYZr9LOTo/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="Snipaste_2026-07-26_08-22-55"></p>
+<p>Snipaste_2026-07-26_08-22-55</p>
+<p>🔺我们还能打开“历史”查看监控画面回放。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz46LTgQelWzoHJRJHmwlOUMWyIMNiauD6ChYtDFfb9UIqmxrsovXb9jSMj9OKviaA6zk7qzBVGY6BI1JypDkXD55ywMgqxXFShc0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>🔺另外double-take这边也完美的保存了所有识别到的人脸数据，包括每一次出现的截图、匹配结果、识别置信度以及对应的事件记录。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/pCibibjPINaz6v73zK4ichTicobQ8zWkuriaa1FHZaED7TP1Iia7iam2ibs8sicmnTMjOzW9OCiaBBJiaNey31WA20sWAvVC86AicfmicmicImGodPCcgwCXM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p>🔺录像的所有文件都自动保存在“frigate/media/recordings”中。</p>
+<h2>最后</h2>
+<p>其实这套系统的能力远不止文中介绍的那些。Frigate还能与智能家居平台Home Assistant无缝集成，当检测到一些特定事件的时候，会自动触发各种自动化场景，实现真正意义上的“智能监控联动”。比如说当看到我们回家时会自动开灯，识别到我们的车牌会自动打开车库，或者检测到陌生人在门口会自动发出警报，并为我们推送通知到手机等等。</p>
+<p>好了，以上就是今天给大家分享的内容，我是爱分享的Stark-C，如果今天的内容对你有帮助请记得收藏，顺便点点关注，咱们下期再见！谢谢大家~</p>
+<p>NAS&amp;Docker · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/uZQggFXa29yEhpBP3DmDzg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

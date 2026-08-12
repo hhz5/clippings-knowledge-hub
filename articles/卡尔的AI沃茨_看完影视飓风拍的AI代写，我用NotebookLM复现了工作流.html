@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>看完影视飓风拍的AI代写，我用NotebookLM复现了工作流 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">看完影视飓风拍的AI代写，我用NotebookLM复现了工作流</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=NotebookLM">NotebookLM</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a><a class="chip" href="../index.html?tag=%E5%BD%B1%E8%A7%86%E9%A3%93%E9%A3%8E">影视飓风</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a>
+    <span class="date">2026-01-09</span>
+  </div>
+  <p class="lead">7个我没告诉过别人的真实技巧！</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHKIGkZzicQqHfIQP8RPxMTwTvdzias0U5VF1LoeYYAWF1tcCrhAmbiaEOQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a> <em>2026年1月8日 18:42</em></p>
+<p>十天前影视飓风发了期AI代写的视频，</p>
+<p>在肯尼亚的内罗毕有4万个写手，每天二十四小时两班倒。甚至有自己的一套职业发展路径，从工作站（一天30-50美元）到工作室再到独立写手Teriki，他甚至可以写哲学论文，在视频里他把工作流大概分享了出来，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHs2bd3Z1A8JQnANBx64Y9Mib8JaYyHX6lOKUWvI84KlAiaJZR8htVfbnA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>非洲我这一下子是去不了了，</p>
+<p>但工作流我可以用NotebooKLM复刻一下，先叠个buff，做这个绝对不是鼓励用AI代写，写只是这个工作流的最后一步，90%的时间我们都应该花在</p>
+<p>归类，理解和二次输出</p>
+<p>留个小彩蛋，Claude Code还有NotebookLM Skill，可以把本地文件跟NotebookLM做高度联动，挖个坑看看这篇讲不讲得完。直接要求AI写一篇4000字的报告的时候，它会像一只无头苍蝇，管你信息源对不对，管你信息有没有重复，我先写了再说。最后得到的只有一个结果，在各种AI检测器上，70%到100%的AI率。</p>
+<p>就算能中译英英译意意译西西译日日译中降下来，</p>
+<p>这段文本也基本不是人话范围了。</p>
+<p>这时候可以用两种方法来把可信度高的信息源收录到NotebookLM，</p>
+<p>我就拿我最近做的2026设计趋势调查的笔记来说明一下，Fast Reserach不要直接问“2026设计趋势”，这样就跟我搜索引擎搜十个相关但没啥意义的网页放进来一个样，要加上指定信源，比方说arxiv，yt，google scholar</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHmg0JCrSYe3DnC6aOValhY3n7FYoBMSK5iauDopzribtNBCYRVcwLRzhw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>用Deep Research的话就会出来一个报告，可以选择要不要把报告引用到的信息源也加到NoteBookLM里，省下额外找论文的时间。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHDicV2f7wAgQ9vBVzJOiba3vtiaHBznhuPpdicsvZsAPKCmr8Z19t3ibMwlw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>如果这是一个比较新的领域，论文储备不够，或者说我已经有论文数据了，缺的是创新内容，这时候就可以让Gemini 3.0 Pro找人，</p>
+<pre><code>帮我找10篇2026设计趋势的观点内容，作者对设计领域有自己独特的理解，内容来自blog/yt/X/reddit等，带上原始链接。
+</code></pre>
+<p>这时候出来的信息就是长文和多次对话的讨论</p>
+<p>OK啊，到这一步我们已经把靠谱的东西喂给NotebookLM了，</p>
+<p>我个人的习惯是先导入音频，视频类需要多模态信息读取的文件，跟NotebookLM简单聊几句，确认它真的看到了视频内容，而不是网页的文本信息。</p>
+<p>但这样的步骤循环2-3次之后就会带来信息过载，免费版的单个Note限制50个信息源，Pro版300个，实际上超过50个信息源后，生成的PPT就已经开始乱了，反而没有内容聚焦，这时候不要急着问问题做笔记。</p>
+<p>先让NotebookLM做个思维导图，看目前整个知识库的结构，点到子节点的时候，Gemini会解释这个节点的所有内容，我可以选择性把我不需要的节点的信息源删掉，这比一个个看快很多！！！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AH4qsmMezhMpictHRfnBIy549t6S8qtOgC0qCVmkTWBC0MQ0NrqBicib3lA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>我这里会有一个习惯，把每次我在中间栏跟Gemini的对话做成笔记，虽然现在Gemini 3.0 Pro网页版可以引用NotebookLM作为数据库，但是这种情况对话过程不能直接保存成笔记，没那么顺手。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AH0AJDpiaYdIvXVryebtyo04icco6v6DlR1pgicQiaBJQicibTIWxmCBm9lxUg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>NotebookLM最近还添加了Data Table（数据表），我主要用来盘点论文的实验方法和数据去重</p>
+<pre><code>创建一个表格，列出这些研究论文的主要发现，表格列包括：标题、作者、关键结果。从材料中提取最重要的引文，并按主题和作者进行分组。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHdOzK9ibKfkzib5DhVeTNppEJh9aYL0HRZcn9uwDZw9x52dtE8VHjhG3g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>PS，NotebookLM最右侧的播客，音频，思维导图，PPT，数据表等生成功能默认是会用上所有来源的，所以要不就是去重后再全局生成，要不就是手动勾选部分来源再生成。</p>
+<p>一般来说到这一步就已经可以直接让Gemini3出个大纲开始写作了，但是如果想要达到写论文级的严谨程度的话，还可以加两个实用技巧。</p>
+<pre><code>我的朋友是一名智力低下的博士生，请用傻子都能懂的语言详细给我讲一下，我好教教他
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHOJEUgN25MAiauPFOa6YP4PVuRRP5CD5BYomEnY4ZxxG6p1KaickCLTAA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>这样可以快速了解你信息来源里最重要的源。</p>
+<p>可算到 写 这一步了，先忘掉一大堆AI写作神级提示语，拿起手机自言自语五分钟思路，我日常就是天马行空把所有的点都聊到位了再传到NotebookLM，</p>
+<p>搓了一个提示语模版，可以按照这个思路修改，</p>
+<pre><code>我会给你两块内容：
+
+音频形式的零散想法 + 信息源。
+
+  
+
+1. 1\. 写一篇篇幅适中的博客草稿
+2. 2\. 基于信息源提出并回答12个追问（展开角度、补充案例、论证漏洞与回应）
+3. 3\. 把这些追问与回答整理成可保存的markdown笔记
+4. 4\. 输出一份文章大纲，缺资料就标注缺口并给我该补什么和搜索关键词。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHAngyb0icuWic3dYDic24Ca26D2G1vZOt4bISIoLutMZ0ZcBy3J3qbiandQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>别的不说，这次收集到3D设计我是真喜欢，</p>
+<p>很快就会用在我的视频背景了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlHvdBzqwmptibFKcib7aK8AHIVTSQEibyZkasYHpyS9WrFTKthPiaS3rM2m2AOJnqdDjZqf5Kos40s5w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>到这一步，焚决都交出来了，</p>
+<p>我最近还在测更有意思的玩法，</p>
+<p>把微信读书or Google图书和NotebookLM结合起来。正常阅读划线，读完后把电子书全文导入NotebookLM，再用Fast Research收集资料，</p>
+<p>又或者，Google图书里的笔记标注都会同步到Google Drive，NotebookLM可以直接读取，这样写作的时候还能用上你平时真的在读在经历的事情。</p>
+<p>说了这么多，核心就一句话，</p>
+<p>我用AI，是辅助我输出自己思考的，</p>
+<p>是帮我把想法打磨得更锐利的，</p>
+<p>辅助这两个字要排在首发。</p>
+<p>如果只是被动地接受AI输出的内容，</p>
+<p>把自己当成一个传声筒，</p>
+<p>那不管怎么修改，</p>
+<p>用多少个神级提示语，</p>
+<p>那股AI味都散不掉。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏 如果喜欢这篇文章，不妨顺手给我们 <em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区和我聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>捐一笔</p>
+<p>78人捐赠</p>
+<p>修改于 2026年1月8日</p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>| |  | MP4 File 1.33 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.33 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Dzc99t9uHdex9FOfzxfwrg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

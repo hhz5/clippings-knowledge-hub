@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>视频制作的终极形态，就是你说话，AI干活。完全不需要剪辑 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">视频制作的终极形态，就是你说话，AI干活。完全不需要剪辑</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%A6%99%E5%90%9B%E8%B5%9B%E5%8D%9A%E6%B7%98%E9%87%91">香君赛博淘金</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C">视频制作</a><a class="chip" href="../index.html?tag=Remotion">Remotion</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-01-26</span>
+  </div>
+  
+  <article class="content"><p>原创 香君赛博淘金 <a href="https://mp.weixin.qq.com/s/">香君赛博淘金</a></p>
+<p><em>2026年1月25日 02:02</em> <em>北京</em></p>
+<blockquote>
+<p>视频制作的终极形态，就是你说话，AI干活。</p>
+</blockquote>
+<p>今天晚上我干了一件超级有意思的事——用 <strong>Claude Code + Remotion</strong>，嘴炮出了一个15秒的可口可乐宣传片。8个场景、Logo爆发、瓶子旋转、液体飞溅、品牌主张，全套专业级动画。</p>
+<p>你猜我花了多长时间写代码？</p>
+<p><strong>零。</strong></p>
+<p>我就跟 Claude 说了句话：</p>
+<p><em>&quot;帮我做个15秒可口可乐宣传片。要有Logo爆发、瓶子360度旋转、液体飞溅效果、瓶子雨、品牌主张、产品展示、行动号召，最后加上署名。用可口可乐的品牌红，要专业、要炸裂。&quot;</em></p>
+<p>然后，Claude 开始疯狂写代码。</p>
+<p>不到10分钟，它写出了 <strong>540行 React 代码</strong>，创建了8个场景、20个粒子效果、5层液体波纹、8个从天而降的可乐瓶。浏览器里自动弹出预览窗口，播放键一按——一个完整的品牌宣传片就在眼前。</p>
+<blockquote>
+<p>以前做视频是体力活，现在做视频是嘴皮子活。</p>
+</blockquote>
+<p>废话不多说先给大家看看效果。（请大家自动忽略没扣干净的白边）</p>
+<p><video data-v-6b6a00a5="" src="https://mpvideo.qpic.cn/0bc3jyaaqaaa3uaa4bdvk5uvatwdbbhaacaa.f10002.mp4?dis_k=081550ce2bd465ef2d02d0fb77197e8e&amp;dis_t=1769397934&amp;play_scene=10120&amp;auth_info=IaLRhNEOM2A75LrahQNeM24HLmY8HEYxYxx7NWJKcTgQKUsFciAoLUxvKWwHbFMTeg0=&amp;auth_key=350911d2e28b7266d9b212d2bfdec937&amp;vid=wxv_4356788064631865346&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/GGtEicTEYOz0R7ytLapeD83yMgSLGnViaibX6Taic5oOfYv0LI8tEUoQ6QXoX8tics7MP0zV2G3R3tCrrRGmFUOSM8g/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 613px; height: 345px;" jm_neat="680008706">您的浏览器不支持 video 标签</video></p>
+<hr>
+<h2>口喷流程拆解</h2>
+<p>我们来拆解一下这个&quot;口喷流程&quot;到底有多爽。</p>
+<h3>第一步：搭环境（15分钟）</h3>
+<p>这是唯一需要动手的部分：</p>
+<ol>
+<li>装个 <strong>VS Code</strong>、<strong>Node.js</strong>、<strong>Git</strong></li>
+<li>在终端输入 <code>npx skills add remotion-dev/skills</code></li>
+<li>给 Claude 装上&quot;视频制作技能包&quot;</li>
+</ol>
+<p>全程15分钟，跟装游戏一样简单。</p>
+<h3>第二步：准备素材（5分钟）</h3>
+<ul>
+<li>把可口可乐的 Logo 和瓶子图片扔进文件夹</li>
+<li>如果 Logo 有白色背景，让 Claude 帮你写个 Python 脚本去背景</li>
+<li>30秒搞定</li>
+</ul>
+<h3>第三步：开始&quot;口喷&quot;（20分钟）</h3>
+<p>这是最爽的环节。视频的底子打好了就可以开始精修了</p>
+<h4>场景1：Logo爆发（0-2.5秒）</h4>
+<p>我跟 Claude 说：</p>
+<p><em>&quot;场景1，黑色背景，Logo 从黑暗中爆发出来，要有20个红色粒子从中心向外扩散，Logo 要弹性放大，带红色发光效果。持续2.5秒。&quot;</em></p>
+<p>它立刻写出代码：</p>
+<ul>
+<li>用 spring 动画创建弹性效果</li>
+<li>用 interpolate 控制粒子扩散</li>
+<li>用 filter 添加红色发光</li>
+<li>精确控制时长到75帧（2.5秒 @ 30fps）</li>
+</ul>
+<h4>场景2：瓶子360度旋转（2.5-5秒）</h4>
+<p>我继续说：</p>
+<p><em>&quot;场景2，白色渐变背景，红色圆形从小到大，可乐瓶360度旋转特写，右上角要有 Logo 角标。&quot;</em></p>
+<p>它继续写：</p>
+<ul>
+<li>渐变背景从白到浅灰</li>
+<li>红色圆形用 scale 从0放大到1</li>
+<li>可乐瓶用 rotation 从0到360度</li>
+<li>Logo 角标固定在右上角，半透明</li>
+</ul>
+<blockquote>
+<p>当你不再写代码、不再拖时间轴，视频制作就真的民主化了。</p>
+</blockquote>
+<h4>场景3-8：一口气&quot;嘴炮&quot;完成</h4>
+<p>8个场景，我就这样&quot;嘴炮&quot;完了：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>时长</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>场景3：液体飞溅</strong></td>
+<td>5-7秒</td>
+<td>5层白色圆环从中心扩散，&quot;畅爽&quot;两个巨大文字，红色背景</td>
+</tr>
+<tr>
+<td><strong>场景4：瓶子雨</strong></td>
+<td>7-9秒</td>
+<td>8个可乐瓶从天而降并旋转，白到红渐变背景</td>
+</tr>
+<tr>
+<td><strong>场景5：品牌主张</strong></td>
+<td>9-11秒</td>
+<td>&quot;经典永恒 畅享快乐&quot;文字滑入，两侧半透明可乐瓶</td>
+</tr>
+<tr>
+<td><strong>场景6：产品展示</strong></td>
+<td>11-13秒</td>
+<td>左侧瓶子特写，右侧 Logo +&quot;百年经典·品质传承&quot;</td>
+</tr>
+<tr>
+<td><strong>场景7：行动号召</strong></td>
+<td>13-14.5秒</td>
+<td>白色卡片写着&quot;即刻畅享&quot;，红色背景</td>
+</tr>
+<tr>
+<td><strong>场景8：结尾署名</strong></td>
+<td>14.5-15秒</td>
+<td>Logo + &quot;made by 香君&quot;，底部装饰瓶子</td>
+</tr>
+</tbody></table>
+<p>每说一个场景，Claude 就写一段代码。</p>
+<p>我不需要懂 React、不需要懂 TypeScript、不需要懂动画函数。</p>
+<p><strong>我只需要能描述画面。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz0R7ytLapeD83yMgSLGnViaibhzbGPDMRkeD8icOUQccg4F5wzOUibF0dZ4xphFJkGWOqRTWvRt77Gt2w/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<blockquote>
+<p>技术的进步，就是让复杂的事情变成&quot;说句话&quot;的事。</p>
+</blockquote>
+<hr>
+<h2>微调优化（10分钟）</h2>
+<p>预览不满意怎么办？继续&quot;口喷&quot;。</p>
+<ul>
+<li><em>&quot;Logo 爆发的弹性效果太弱，把 damping 参数从15改成10，让它更有冲击力。&quot;</em></li>
+<li><em>&quot;瓶子旋转太快了，从2.5秒延长到3秒。&quot;</em></li>
+<li><em>&quot;液体飞溅的圆环间距太小，从50调整到80。&quot;</em></li>
+</ul>
+<p>每次修改，代码实时更新，预览窗口自动刷新。</p>
+<p><strong>你改的是意图，AI 改的是实现。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz0R7ytLapeD83yMgSLGnViaibQrUGGKyLz4tx9B8N1h45hlIpiaVv5psRagFtC5P98ZPLiaibvxjIsEtZg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<hr>
+<h2>渲染导出（3分钟）</h2>
+<p>最后，我说：</p>
+<p><em>&quot;渲染成 1080p 视频。&quot;</em></p>
+<p>Claude 自动执行渲染命令，<strong>450帧</strong>（15秒 × 30fps）逐帧生成，3分钟后，一个专业级的 <strong>MP4 文件</strong>就躺在 <code>out</code> 文件夹里了。</p>
+<p>这就是口喷时代的视频制作。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz0R7ytLapeD83yMgSLGnViaibrWeclAnYdaklVkorebI8TuBrcvASoa8Xn1uXzJspQicPOzNpSx4Svow/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<hr>
+<h2>⚡ 传统流程 vs 口喷流程</h2>
+<h3>传统流程的痛苦</h3>
+<p><strong>以前</strong>：</p>
+<ol>
+<li>打开 AE</li>
+<li>导入素材</li>
+<li>创建合成</li>
+<li>添加图层</li>
+<li>手动打关键帧</li>
+<li>调缓动曲线</li>
+<li>预渲染，等半小时</li>
+<li>客户说改一个参数？<strong>重新来一遍</strong></li>
+</ol>
+<h3>口喷流程的爽快</h3>
+<p><strong>现在</strong>：</p>
+<ol>
+<li>说句话</li>
+<li>等10分钟</li>
+<li>视频出来了</li>
+<li>客户要改参数？<strong>再说一句话</strong></li>
+</ol>
+<h3>门槛对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>传统流程</th>
+<th>口喷流程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>技能要求</strong></td>
+<td>熟练掌握 AE、Premiere、懂关键帧、懂曲线、懂图层</td>
+<td>会说话、有审美、能描述画面</td>
+</tr>
+<tr>
+<td><strong>核心能力</strong></td>
+<td>操作软件</td>
+<td>描述画面</td>
+</tr>
+<tr>
+<td><strong>修改成本</strong></td>
+<td>高（重新操作）</td>
+<td>低（说一句话）</td>
+</tr>
+<tr>
+<td><strong>学习曲线</strong></td>
+<td>陡峭（数月学习）</td>
+<td>平缓（即学即用）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>口喷时代的核心能力，不是会操作软件，而是会描述画面。</p>
+</blockquote>
+<hr>
+<h2>导演思维</h2>
+<p>这个能力叫什么？我叫它 <strong>导演思维</strong>。</p>
+<p><strong>你不再是执行者，而是导演。</strong></p>
+<ul>
+<li>你只管说我要什么效果</li>
+<li>AI 负责怎么实现</li>
+</ul>
+<p><strong>传统视频制作</strong>：你在学软件的语言。</p>
+<p><strong>口喷时代</strong>：软件在学你的语言。</p>
+<p>这才是真正的范式转变。</p>
+<hr>
+<h2>适合谁？不适合谁？</h2>
+<h3>适合使用的人群</h3>
+<p>如果你是：</p>
+<ul>
+<li><strong>品牌运营</strong>：需要快速做宣传片、广告变体</li>
+<li><strong>内容创作者</strong>：批量生产图文动画、数据可视化</li>
+<li><strong>产品经理</strong>：想给产品做 Demo 但不会剪辑</li>
+<li><strong>独立开发者</strong>：需要快速迭代营销素材</li>
+</ul>
+<p>那么，<strong>Claude Code + Remotion</strong> 就是你的口喷神器。</p>
+<h3>不适合的场景</h3>
+<p>如果你需要：</p>
+<ul>
+<li>复杂的3D建模和渲染</li>
+<li>精细的调色和后期</li>
+<li>真人拍摄的剪辑和叙事</li>
+</ul>
+<p>那传统软件依然不可替代。</p>
+<p><strong>但是</strong>，如果你的需求是&quot;快速生成、批量迭代、数据驱动&quot;——<strong>口喷时代已经到来</strong>。</p>
+<hr>
+<h2>完整时间流程</h2>
+<p>我做的可口可乐宣传片，完整的技术流程是这样的：</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>时长</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1️⃣ 装环境</td>
+<td>15分钟</td>
+<td>安装工具和技能包</td>
+</tr>
+<tr>
+<td>2️⃣ 准备素材</td>
+<td>5分钟</td>
+<td>Logo + 瓶子图片</td>
+</tr>
+<tr>
+<td>3️⃣ 口喷场景描述</td>
+<td>20分钟</td>
+<td>8个场景的语言描述</td>
+</tr>
+<tr>
+<td>4️⃣ 微调参数</td>
+<td>10分钟</td>
+<td>说话调整细节</td>
+</tr>
+<tr>
+<td>5️⃣ 渲染视频</td>
+<td>3分钟</td>
+<td>自动生成 MP4</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td><strong>53分钟</strong></td>
+<td><strong>从0到成片</strong></td>
+</tr>
+</tbody></table>
+<p><strong>对比传统 AE 流程</strong>：保守估计要 <strong>3-5小时</strong></p>
+<p>而且如果客户说&quot;改一下背景色&quot;：</p>
+<ul>
+<li><strong>传统流程</strong>：重新来一遍（又是1-2小时）</li>
+<li><strong>口喷流程</strong>：说一句话，<strong>30秒搞定</strong></li>
+</ul>
+<hr>
+<h2>生产力范式的转变</h2>
+<blockquote>
+<p>视频制作的本质，从&quot;手工剪辑&quot;变成了&quot;规则定义&quot;。</p>
+</blockquote>
+<p><strong>你的角色</strong>：定义规则和意图</p>
+<p><strong>AI 的角色</strong>：负责执行和优化</p>
+<p>这就是口喷时代的生产力模式。</p>
+<hr>
+<p>最后说一句：<strong>别光收藏，今晚就试试。</strong></p>
+<ol>
+<li>装个 <strong>VS Code</strong></li>
+<li>装个 <strong>Claude Code</strong></li>
+<li>给它装上 <strong>Remotion 技能包</strong></li>
+<li>然后对着它说：<em>&quot;帮我做个XX品牌的15秒宣传片。&quot;</em></li>
+</ol>
+<p>当你看到 AI 自己写代码、自己生成动画、自己渲染视频，你会明白——</p>
+<blockquote>
+<p><strong>口喷时代，不是未来，而是现在。</strong></p>
+</blockquote>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/AC_4k-hVUGOsPoqsYKvtCQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

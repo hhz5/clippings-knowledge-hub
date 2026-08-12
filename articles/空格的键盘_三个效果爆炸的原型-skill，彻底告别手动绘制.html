@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三个效果爆炸的原型 skill，彻底告别手动绘制 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">三个效果爆炸的原型 skill，彻底告别手动绘制</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    
+    <span class="date">2026-04-08</span>
+  </div>
+  <p class="lead">作为在一线工作了快七年的产品经理，这一年我几乎没再用过设计工具画原型。根据我这一年用 AI 画原型的经验，我提炼了3个画原型的skill。</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年4月8日 11:26</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozOQRKyLRNoKEoq3U5iaQarBHBpDnzHdqc3DykUibc8O5FooicAqBVvSMNzBiaoMNc1ApXZahAKlpCy32qHc6u8K50pPxX7PgAbGh8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>作为在一线工作了快七年的产品经理，这一年我几乎没再用过设计工具画原型。</p>
+<p>根据我这一年用 AI 画原型的经验，我提炼了3个画原型的skill。</p>
+<p>在之前分享的那个画原型的基础上，我又基于反馈，新增了两个。</p>
+<p>效果好到爆炸，几乎可以覆盖所有的画原型需求。</p>
+<p>在分享之前，我们先回顾下传统的画原型的流程：</p>
+<p><strong>打开</strong> <strong>Axure/</strong> <strong>Figma→从组件库里拖控件→对齐间距→标注交互→导出切图→写设计说明→</strong> <strong>评审</strong> <strong>。</strong></p>
+<p>现在的流程变成了：</p>
+<p><strong>截图→Agent 处理→原型和设计文档一起出来→口头描述调节细节→</strong> <strong>评审</strong> <strong>。</strong></p>
+<p>整个过程从半天压缩到几分钟。提升至少 10 倍。</p>
+<p>01 三个 Skill 做三件不同的事</p>
+<p><strong>1 image2proto：</strong></p>
+<p><strong>截图进去，</strong> <strong>输出</strong> <strong>可运行的 HTML 原型出来</strong></p>
+<p>一张截图丢给 AI，直接生成一个单 HTML 文件，浏览器打开就能交互。Tab 能切换、弹窗能开关、筛选栏能展开，所有 CSS 和 JS 打包在一个文件里，发给任何人都能直接打开，不用装环境。</p>
+<p>适合快速验证、单页面、轻量修改。老板说&quot;下午开会先看看效果&quot;，这个最快。</p>
+<p>下面是我用它做了一个拼多多页面的原型，左边是原图，右边是修改后的：</p>
+<p>输入：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxUkmFF0zq14tWD7EpepSAw4M9yQBABovshs03PLRty4qlju989ibn7kBxwFeqnT3QEMRdu2qvDKKGMaCjOibBopv2o1a0UgjEg0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>输出：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozo5hNzyjbITWzAzd9N3ZKiaU4ATYjdYslfiaHrxcN6ict5PTUFxIDynSziapDxHcibPiaCMCXSTEvLTkcK9MtJz0FU88pTIfZ1AGibl4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p>skill 地址：github.com/zephyrwang6/pm-skills/tree/main/pm-image2proto</p>
+<p><strong>2 image2pencil：</strong></p>
+<p><strong>截图进去，</strong> <strong>输出可修改的</strong> <strong>Pencil 设计稿</strong> <strong>。</strong></p>
+<p>Pencil 是前段时间火起来的给Agent使用的设计工具。</p>
+<p>同样是一张截图，但输出的是 Pencil 格式的.pen 设计文件， <strong>同时在画布旁边自动生成结构化的设计文档。</strong></p>
+<p>生成之后可以直接用 Pencil 工具打开，手动微调每一个细节。</p>
+<p>适合需要人工介入精修的场景。AI 先出 80%，人再改 20%。交付的不只是设计图，还有字段说明、交互规则、视觉规范，评审时一目了然。</p>
+<p><strong>示例：</strong></p>
+<p>我用了一张腾讯云的页面截图，这种适合 B 端场景的原型。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyHtiazZtxliaqricPibLY7JqzNZbTTkNXdLdsm9A8htDYHv4nOBJ2DHDnONC75brPyU56icTCwLicDmYqkicHR8icqHfOseJy9mx08hms/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>输入：把这个列表的字体改成蓝色。，同时增加一个按价格筛选的框。</p>
+<p>输出：每一个元素都支持在 pencil 里修改</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozxjvImznYhwEAcSbIyia64yIwYNTbdgD8PmEaU1ELTwlHXv8U9uTRbC4w2UpI4F1sokXCPzQ2tqibs4nJrtO8JCliadIzeMOnQck/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>还有一个完善的可编辑的设计文档</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCox97V67QKe7Z2N24wBQZlY0uOCo0hGBNIF64FN5VUlga6k3wBWrt84lfHuuZH9VPQZbdWCuXRo1pIicH4yIR2ck2XbkzolPAhBo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p>Skill 地址：github.com/zephyrwang6/pm-skills/tree/main/pm-image2pencil</p>
+<p>pencil 的使用教程</p>
+<ul>
+<li>安装 pencil 客户端：可以在这里下载安装，openpencil.dev，也可以在 cursor 这样 IDE 插件里安装</li>
+<li>安装 pencil 的 mcp，在你的终端命令行输入：</li>
+</ul>
+<pre><code>bun add -g @open-pencil/mcp
+</code></pre>
+<ul>
+<li>使用 Agent 调用 MCP 就能在 pencil 里绘图</li>
+</ul>
+<p><strong>3 url2proto：</strong></p>
+<p><strong>网址进去，</strong> <strong>输出</strong> <strong>Next.js 本地项目</strong> <strong>。</strong></p>
+<p>给一个网址或图片，AI 自动抓取页面结构、设计 token、组件层级，然后用 React 组件重新搭建成一个完整的 Next.js + Tailwind CSS 项目。</p>
+<p>工程化代码，能在本地跑、能改、能持续迭代。</p>
+<p>适合大型项目、多页面协同、持续迭代的场景。竞品分析、新产品原型、前端快速启动，都从这里开始。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowjSKBibr9Fgyz8JMiaAlLYk7PoEdM7ewbIQT5JTUMiblunyrBbrNyw9AfexEKdbsECybJcToJ0mzF1E70C64bVlZfI7M7UdTIS9s/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>原页面，这里用了小红书的网页端页面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyLH76UgEc2HEa514ClaEdpwuQAe2tEwqV3aiar9M2vnnDOOZ2mVRLNThhROOKl7kNSqvBYOfAOkWd3zZ16tlq6eBbbasEoLF8U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片"></p>
+<p>它先读取了完整的页面结构和样式信息。然后自己规划了项目架构，初始化了 Next.js 项目，配置 Tailwind CSS，开始逐个组件拆分还原。导航栏、侧边栏、卡片列表，一块一块地写。</p>
+<p>下面是它复刻的本地化工程文件，几十个代码文件，很全面。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy7UvmSDOP7QAUMeyZOfHuVlOxaGrsSJfibeVDGLcBrfqnwR1pzRkhhT7bm2JCibuxTcOkmpReJKIqnQsRnhiarqSflrEicicJicdJkY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p>中间遇到了几次样式对不上的情况，它自己对比了原页面和本地渲染的差异，调整了布局参数。有一个组件的响应式断点没处理好，它也自己排查修掉了，全程没问我。</p>
+<p>大概跑了半个多小时，任务完成。本地项目部署好了，浏览器打开直接能看到效果。出来的东西超出预期。项目结构清晰，组件拆分合理。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCox73dcgiaK6ia0ZUqcE2oRSMibAt6jN2Y7w1Me7gb2NJagwkibAu7BibwicDyaCchyj9Uwl08OXAOKbic2WbxWAKuK8uQiaibaAmPErW5yk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片"></p>
+<p>还附带了一份设计文档，记录了页面的布局逻辑、组件层级、交互说明。拿来做产品原型完全够用，甚至可以直接在这个基础上继续开发。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowPibMibbntyPlY8Aic1pE7Wt0FTmXKCa0KXeekdV8uOGDsBWWJfuhFBR5LxTLSGG1A0HnELe1JKF9BCYwP0UvFHR7RZzKqWq76SM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片"></p>
+<p>Skill 地址：github.com/zephyrwang6/pm-skills/tree/main/url2proto</p>
+<p>如果这个设计文档的格式不满意，可以随便修改 skill，把你常用的模板整理发给Agent说：请按照这个模板修改 skill 里的设计文档，以后都按这个 格式输出。</p>
+<p>这几个 skill怎么选，具体来说：</p>
+<ul>
+<li>会议前 5 分钟出个 Demo → image2proto</li>
+<li>需要精细化修改原型→ image2pencil</li>
+<li>新产品原型搭建，多页面持续迭代 → url2proto</li>
+<li>竞品截图快速出可交互 Demo → image2proto</li>
+<li>竞品网站深度复刻 → url2proto</li>
+<li>多状态设计稿交付 → image2pencil</li>
+</ul>
+<p>02 不只是画原型</p>
+<p>关于产品经理的相关的 skill，包括竞品分析、数据分析、绘制流程图，我都做了 skill，</p>
+<p>全在这个仓库：<a href="https://github.com/zephyrwang6/pm-skills">https://github.com/zephyrwang6/pm-skills</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy2MDl7M1xFaGxadCOoTpTfT4zJdiaibh8kNLicibsBulWg52eEkZ4WdVmhuzt32xxRRcftDoRwSws5w8KHxqTSV2mpkOfsy11Lvic4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片"></p>
+<p>03 最后</p>
+<p>三个 Skill 解决的是同一个问题：缩短从想法到可沟通原型之间的距离。区别只在于输出物的形态不同，适配的工作流不同。</p>
+<p>一年前画一个弹窗原型要半天，现在截一张图，说一句话，原型就好了。省下来的时间用来想需求本身，这才是产品经理该花时间的地方。</p>
+<p>关于 skill 和生产力提升的系统学习，如果需要，可以订阅专栏加入社群：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxP1nZVnPTby0aJ3QUXfxRZeicsqvMIs9q8uycvPf8vCSSKDiaT4yd7hjTLub9HKpflibDGk66HVeibicG2eOa4N0zS8ic3fJWWrlibRo/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=13" alt="Image"></p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/EQ75yuJ7bNK28j_IXG-X9A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

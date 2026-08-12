@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一个人，管理开发5款产品，而且80% 时间不在写代码，靠这一步... · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">一个人，管理开发5款产品，而且80% 时间不在写代码，靠这一步...</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E5%A4%8D%E5%88%A9%E5%B7%A5%E7%A8%8B">复利工程</a><a class="chip" href="../index.html?tag=Every">Every</a>
+    <span class="date">2026-06-30</span>
+  </div>
+  <p class="lead">Every 用「复利工程」（Compound Engineering）方法论，以基本单人的工程团队维护旗下 5 款产品...</p>
+  <article class="content"><p>小互 小互AI <em>2026年6月30日 10:54</em></p>
+<p>深度 · 小互解读</p>
+<h2>被所有团队跳过的第四步，才是 AI 工程的关键</h2>
+<p>Every 单人团队运营 <strong>5 款产品</strong> ，核心是每次完成功能后多做的一步：把解法存进系统，让 AI 下次自动避坑。</p>
+<p>速览</p>
+<p>01 Every 用「复利工程」（Compound Engineering）方法论，以基本单人的工程团队维护旗下 5 款产品，核心是 Plan → Work → Review → Compound 四步循环。</p>
+<p>02 传统工程走到 Review 就停了，第四步 Compound 把每次解决的问题变成系统知识，让 AI 下次自动避开同类错误，效率差距就来自这里。</p>
+<p>03 这套方法主张工程师 80% 的时间花在 Plan 和 Review，只有 20% 用来实际写代码。</p>
+<p>04 配套插件已开源，支持 Claude Code / OpenCode / Codex，含 26 个专项 agent、23 条工作流命令、13 项技能，零配置即用。</p>
+<p>05 /workflows:review 一次调用并发 14 个专项 agent 审查代码，/workflows:plan 开 ultrathink 模式可并发 40 多 个研究 agent。</p>
+<p>⚑ 立场提示</p>
+<p>本文是 Every 团队自述其「复利工程」方法论与自家开源插件的实践，文中的并发规模、时间分配、产品数量都是官方口径。下面只讲它怎么运作、每个数字代表什么。</p>
+<p>▸ 先认识下 Every</p>
+<p>Every（every.to）是一家 2020 年成立的 <strong>媒体 ＋ 软件公司</strong> ，CEO 兼联合创始人是 Dan Shipper。它每天发一份讲「科技下一步」的付费 newsletter， <strong>同时自己动手做软件产品</strong> ——文中的 Cora、Monologue、Sparkle、Spiral 都出自它，另外还做 AI 课程和咨询。所以「复利工程」不是纸上谈兵，是一家又写又做、天天泡在 AI 里的公司，从自家实战里攒出来的方法。</p>
+<h2>01一个人撑五款产品，怎么做到的</h2>
+<p>Every 团队最近公开了一套叫「复利工程」（Compound Engineering）的方法论，外加一个配套的开源插件，讲他们怎么用基本是单人配置的工程团队，同时维护旗下五款产品。</p>
+<p>五款产品 Cora、Monologue、Sparkle、Spiral，加上官网 Every.to，每个产品的工程团队基本只有一个人。撑住这套规模的不是更长的工时，而是一个四步循环里被大多数团队省掉的最后一步。</p>
+<p>Cora</p>
+<p>Monologue</p>
+<p>Sparkle</p>
+<p>Spiral</p>
+<p>Every.to</p>
+<p>◆ 为什么值得看</p>
+<p>Every 把平时只在内部跑的东西开源了，包括 14 个 AI 同时审一段代码、计划阶段并发 40 多 个研究 agent，外加 26 个专项 agent。这是目前公开的多 agent 并行工程实践里，数字最具体的开源参考之一。</p>
+<h2>02代码越写越难碰，根子在哪</h2>
+<p>大多数代码库随时间越来越难维护，原因不复杂：每加一个功能，就往系统里注入一份新的复杂度，新功能要和所有旧功能「谈判」。十年下来，团队花在跟历史代码较劲上的时间，比花在造新东西上的还多，代码变得越来越难懂、难改、难信任。</p>
+<p>复利工程把这条曲线反过来。功能不再是往系统里加负担，而是教会系统一项新本领；修一个 bug，顺手消掉未来一整类同类 bug；一个解法被固化下来，就变成下次能直接复用的工具。迭代越多，系统越好用。</p>
+<p><svg viewBox="0 0 360 196" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" role="img" aria-label="插图"><path d="M34 22 L34 158" stroke="#DCE5DD" stroke-width="1.5"></path><path d="M34 158 L344 158" stroke="#DCE5DD" stroke-width="1.5"></path><path d="M44 132 C140 128 210 96 250 70 C285 48 312 36 336 30" fill="none" stroke="#B3402F" stroke-width="3" stroke-linecap="round"></path><path d="M44 132 C140 134 220 142 280 146 C305 148 322 149 336 150" fill="none" stroke="#2A6B48" stroke-width="3" stroke-linecap="round"></path><circle cx="44" cy="132" r="3.4" fill="#1C2420"></circle><circle cx="336" cy="30" r="3.6" fill="#B3402F"></circle><circle cx="336" cy="150" r="3.6" fill="#2A6B48"></circle><text x="248" y="56" fill="#B3402F" font-size="11.5" font-weight="700"><tspan leaf="">传统：改一处越来越费劲</tspan></text> <text x="158" y="172" fill="#2A6B48" font-size="11.5" font-weight="700"><tspan leaf="">复利工程：越来越顺手</tspan></text> <text x="16" y="20" fill="#5A6B5E" font-size="10"><tspan leaf="">改动代价</tspan></text> <text x="232" y="190" fill="#5A6B5E" font-size="10"><tspan leaf="">功能 / 迭代越来越多 →</tspan></text></svg></p>
+<p>同一条横轴（功能 / 迭代越来越多），两种走向：传统代码库改一处越来越费劲，复利工程让每次迭代都把系统垫得更顺手。</p>
+<h2>03四步循环：80% 的时间根本不是在写代码</h2>
+<p>支撑这套规模的，是一个四步循环：Plan（计划）、Work（执行）、Review（审查）、Compound（固化），然后重复。不管你是花五分钟修个 bug，还是花几天做个功能，走的都是这四步，只是每步花的时间多少不同。</p>
+<p>前三步任何开发者都熟，第四步 Compound 才是复利工程和普通工程的分界线。跳过它，你做的就只是「有 AI 助手的传统工程」。</p>
+<p>1</p>
+<p>Plan</p>
+<p>计划</p>
+<p>2</p>
+<p>Work</p>
+<p>执行</p>
+<p>3</p>
+<p>Review</p>
+<p>审查</p>
+<p>4</p>
+<p>Compound</p>
+<p>固化</p>
+<p><strong>传统工程到此收手</strong><br>走到 Review 就停</p>
+<p><strong>复利工程多走一步</strong><br>把这轮学到的留给下一轮</p>
+<p>传统工程到 Review 收手，复利工程多走 Compound 一步，把这一轮学到的东西留给下一轮。</p>
+<p>▪ 反直觉的地方：写代码只占两成时间</p>
+<p>Plan 和 Review 加起来占工程师 80% 的时间，真正动手写（Work）加上固化（Compound）只占 20%。大部分思考发生在代码被写出来之前和之后。</p>
+<p>80%</p>
+<p>计划 ＋ 审查</p>
+<p>20%</p>
+<p>执行＋固化</p>
+<p>▪ 四步各自在做什么</p>
+<p>Plan计划</p>
+<p>把想法变成蓝图。弄清需求和约束、研究代码库里同类功能怎么实现、查框架文档和最佳实践、设计方案、再校验方案是否站得住。</p>
+<p>Work执行</p>
+<p>先用 git worktree（你仓库的一个隔离沙盒副本，多个任务可以各开一份并行跑、互不干扰）开出隔离环境，agent 按计划逐步实现，每改一处就跑测试、linting（自动代码检查）和类型检查。</p>
+<p>Review审查</p>
+<p>多个专项 agent 并行审，把问题标成 P1（必须修）/ P2（应该修）/ P3（可以修），修完再校验，并记录这次出了什么问题。</p>
+<p>Compound固化</p>
+<p>把解法抽成可复用的知识写回系统，下面一节专门讲。</p>
+<p>▪ 几个 Every 建议丢掉的旧观念</p>
+<p>✕ 「代码必须手写」 你的职责是产出可维护、解决对问题的好代码，谁敲键盘不重要。</p>
+<p>✕ 「第一版就该写好」 他们的经验里第一版 95% 是垃圾、第二版还有 50%，这是过程，目标是迭代够快让第三版落地比第一版还省时。</p>
+<p>✕ 「不亲手敲就学不到」 今天理解比肌肉记忆重要，审 10 个 AI 实现比手敲 2 个学到的模式更多。</p>
+<p>✕ 「代码是自我表达」 代码从来不属于你个人，它属于团队、产品和用户。</p>
+<h2>04第四步具体怎么做：把解法变成系统的记忆</h2>
+<p>前三步（计划、执行、审查）产出的是「一个功能」。第四步 Compound 产出的是「一个每次都能把功能做得更好的系统」。它落到地上是四个动作。</p>
+<p>1 <strong>记录解法</strong> 什么管用、什么没用、可复用的点是哪个。</p>
+<p>2 <strong>加元数据</strong> 用 YAML frontmatter 打标签，方便日后检索。</p>
+<p>3 <strong>更新 CLAUDE.md</strong> 把新模式写进 agent 每次启动都读的文件。</p>
+<p>4 <strong>验证学到了</strong> 下次它能自动接住同类问题吗。</p>
+<p>▸ 顺带科普 · YAML frontmatter</p>
+<p>它是文档顶部的一段元数据标签（标题、分类、关键词），让这条解法日后能被按条件搜到、精确取回，而不是写完就埋进一堆文档里找不着。</p>
+<p>复利的来源</p>
+<p>传统开发停在第三步审查，复利工程多走这一步：把刚解决的问题写进系统。这一步不产出代码，产出的是 <strong>「系统下次自动避开同类问题」</strong> 的能力。效率差距就来自这里。</p>
+<p>▸ 打个比方 · CLAUDE.md</p>
+<p>CLAUDE.md 就是放在项目根目录的「AI 操作手册」，agent 每次启动都会先读它。它像新员工入职必读的 SOP 手册：每当有人解决了一个之前没遇到的问题，就往里加一条规则，下一个人来就自动懂了，不用再踩一遍同样的坑。</p>
+<p>下面这个对照，能直观看到这条规则攒下来之后的差别：</p>
+<p>✕没有积累，纯靠现场排</p>
+<p>agent 不知道这个坑，你和它一起调试、定位、修好。修完，Compound 步骤把「为什么会出、怎么避开」写进 CLAUDE.md，并存一份带 YAML 标签的文档进 docs/solutions/。这一次多花了点时间记录。</p>
+<p>✓系统已经记住了</p>
+<p>agent 一启动就读到了那条规则，docs/solutions/ 里也能搜到上次那份解法。于是在 Plan 计划阶段，它就主动绕开了同类问题，根本走不到出 bug 那一步。前面那次记录的时间，在这里连本带利赚回来。</p>
+<p>▪ 每完成一次 Compound，CLAUDE.md 就多一条知识</p>
+<p>迭代 1</p>
+<p>1</p>
+<p>条知识</p>
+<p>迭代 3</p>
+<p>3</p>
+<p>条知识</p>
+<p>迭代 5</p>
+<p>8</p>
+<p>条知识</p>
+<p>每完成一次 Compound，CLAUDE.md 就多一条知识，系统越用越聪明。</p>
+<p>▪ docs/solutions/ 怎么攒成一座机构知识库</p>
+<p>每个解决过的问题都被存成一份带 YAML frontmatter 的 markdown，自动归类打标签。Every 用 /workflows:compound 命令跑这一步，它会并发派出六个子 agent，日后任何一次会话，都能自动从这堆文档里翻到过去的解法，而不用靠某个资深工程师记在脑子里。</p>
+<p>/workflows:compound · 并发六个子 agent</p>
+<p>1　理解问题</p>
+<p>2　抽取解法</p>
+<p>3　找出相关旧文档并互链</p>
+<p>4　写「怎么避免复发」</p>
+<p>5　做分类标签</p>
+<p>6　排版成文档</p>
+<h2>0514 个 AI 同时帮你审代码</h2>
+<p>一条 PR（代码改动提交）进来，/workflows:review 这条命令会一次性派出 14 个专项 agent，同时开跑，每个只盯一个维度：安全、性能、架构、数据、代码质量、框架规范等。它们各查各的，最后把结果合并成一份按 P1（必须修）/ P2（应该修）/ P3（可以修）排好优先级的清单。</p>
+<p><svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" role="img" aria-label="插图"><path d="M180 150 L30 120" stroke="#B3402F" stroke-width="1.4"></path><path d="M180 150 L52 84" stroke="#B9822A" stroke-width="1.4"></path><path d="M180 150 L78 54" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L110 34" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L146 24" stroke="#B3402F" stroke-width="1.4"></path><path d="M180 150 L180 20" stroke="#B3402F" stroke-width="1.4"></path><path d="M180 150 L214 24" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L250 34" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L282 54" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L308 84" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L330 120" stroke="#2A6B48" stroke-width="1.4"></path><path d="M180 150 L116 150" stroke="#B9822A" stroke-width="1.4"></path><path d="M180 150 L244 150" stroke="#B9822A" stroke-width="1.4"></path><path d="M180 150 L90 150" stroke="#2A6B48" stroke-width="1.4"></path><circle cx="30" cy="120" r="6" fill="#B3402F"></circle><circle cx="52" cy="84" r="6" fill="#B9822A"></circle><circle cx="78" cy="54" r="6" fill="#2A6B48"></circle><circle cx="110" cy="34" r="6" fill="#2A6B48"></circle><circle cx="146" cy="24" r="6" fill="#B3402F"></circle><circle cx="180" cy="20" r="6" fill="#B3402F"></circle><circle cx="214" cy="24" r="6" fill="#2A6B48"></circle><circle cx="250" cy="34" r="6" fill="#2A6B48"></circle><circle cx="282" cy="54" r="6" fill="#2A6B48"></circle><circle cx="308" cy="84" r="6" fill="#2A6B48"></circle><circle cx="330" cy="120" r="6" fill="#2A6B48"></circle><circle cx="116" cy="150" r="6" fill="#B9822A"></circle><circle cx="244" cy="150" r="6" fill="#B9822A"></circle><circle cx="90" cy="150" r="6" fill="#2A6B48"></circle><circle cx="180" cy="150" r="22" fill="#2A6B48"></circle><text x="180" y="155" fill="#fff" font-size="13" font-weight="700" text-anchor="middle" font-family="monospace"><tspan leaf="">PR</tspan></text> <text x="180" y="183" fill="#5A6B5E" font-size="10.5" text-anchor="middle"><tspan leaf="">1 条提交 → 14 个 agent 并发</tspan></text></svg></p>
+<p>一条 PR 同时辐射给 14 个 agent，颜色对应维度分组（砖红＝风险/数据完整，琥珀＝性能/运维/前端，森林绿＝架构/质量/Agent-native）。它们并发跑，不是排队跑。</p>
+<p>01security-sentinel· 安全</p>
+<p>扫 OWASP Top 10（公认最常被利用的十类网络安全漏洞）、注入攻击、认证与越权。</p>
+<p>02performance-oracle· 性能</p>
+<p>揪 N+1 查询、缺索引、可缓存点、算法瓶颈。</p>
+<p>03architecture-strategist· 架构</p>
+<p>评估系统设计、组件边界、依赖方向。</p>
+<p>04pattern-recognition-specialist· 架构</p>
+<p>识别设计模式、反模式、代码坏味道。</p>
+<p>05data-integrity-guardian· 数据</p>
+<p>校验数据库迁移、事务边界、引用完整性。</p>
+<p>06data-migration-expert· 数据</p>
+<p>检查 ID 映射、回滚安全、生产数据校验。</p>
+<p>07code-simplicity-reviewer· 质量</p>
+<p>执行 YAGNI（别为可能用到的功能提前写代码），揪多余复杂度。</p>
+<p>08kieran-rails-reviewer· 质量</p>
+<p>Rails 规范、Turbo Streams、模型与控制器职责划分。</p>
+<p>09kieran-python-reviewer· 质量</p>
+<p>PEP 8 规范、类型注解、Pythonic 写法。</p>
+<p>10kieran-typescript-reviewer· 质量</p>
+<p>类型安全、现代 ES 写法、整洁架构。</p>
+<p>11dhh-rails-reviewer· 质量</p>
+<p>37signals 风格：简单优先于抽象。</p>
+<p>12deployment-verification-agent· 部署</p>
+<p>生成上线前检查单、上线后验证步骤、回滚预案。</p>
+<p>13julik-frontend-races-reviewer· 前端</p>
+<p>揪 JavaScript 和 Stimulus 控制器里的竞态。</p>
+<p>14agent-native-reviewer· Agent-native</p>
+<p>确保功能不只人能用，agent 也能用。</p>
+<p>▸ 顺带科普 · N+1 查询</p>
+<p>02 号 agent 专盯的 N+1 查询，是数据库性能里的常见陷阱：查一张 100 条的列表，写法不对就变成每条再单独查一次，一共 101 次请求。像去超市买 10 样东西却跑了 11 趟，先去看看有什么（1 趟），然后每样东西再单独去取一次（10 趟）。</p>
+<p>▪ 14 路并发结果合并去重，归到一份带优先级的清单</p>
+<p>P1 · 必须修</p>
+<p>☐ 搜索查询有 SQL 注入漏洞 security-sentinel</p>
+<p>☐ 创建用户缺少事务包裹 data-integrity-guardian</p>
+<p>P2 · 应该修</p>
+<p>☐ 评论加载有 N+1 查询 performance-oracle</p>
+<p>☐ 控制器里塞了业务逻辑 kieran-rails-reviewer</p>
+<p>P3 · 可以修</p>
+<p>☐ 有一个未使用的变量 code-simplicity-reviewer</p>
+<p>▪ 清单出来之后怎么处理</p>
+<p>/resolve_pr_parallel 自动处理全部问题，先修 P1 再修 P2，每个修复各自隔离跑，互不踩脚，最后由你人工过一遍生成的改动。</p>
+<p>如果想先筛再修，用 /triage：逐条让人决定批准（进待办）、跳过（删掉）或改优先级，批准的标成 status: ready，再交给 /resolve_todo_parallel 干。</p>
+<h2>06插件里有什么，装上怎么用</h2>
+<p>整套流程打包成一个插件，装上就能用，零配置。支持 Claude Code，也实验性支持 OpenCode 和 Codex。</p>
+<p>26专项 agent<br>每个只精一件事：14 个 review 专家，外加研究型、设计型、自动化、文档型。</p>
+<p>23工作流命令<br>主循环命令（plan / work / review / compound）加一批实用工具命令。</p>
+<p>13技能<br>即取即用的领域知识，比如 agent-native 架构技能、风格指南技能。</p>
+<p>▪ 各个文件管什么</p>
+<p>CLAUDE.md — agent 每次启动必读的操作手册：偏好、约定、踩过的坑。</p>
+<p>docs/solutions/ — 每个解决过的问题存成可搜索文档，下次会话自动找到。</p>
+<p>docs/plans/ · brainstorms/ — /plan 与 /brainstorm 的产出。</p>
+<p>todos/ — review 查出的问题，带优先级和状态。</p>
+<p>▪ 两行命令装好（Claude Code）</p>
+<p>claude /plugin marketplace add <a href="https://github.com/EveryInc/every-marketplace">https://github.com/EveryInc/every-marketplace</a></p>
+<p>claude /plugin install compound-engineering</p>
+<p>▪ OpenCode / Codex 安装命令</p>
+<p>bunx @every-env/compound-plugin install compound-engineering --to opencode</p>
+<p>bunx @every-env/compound-plugin install compound-engineering --to codex</p>
+<p>▪ 一条命令跑完整条流水线</p>
+<p>/lfg：你只描述功能，它把整条流水线串起来自动跑，全程派出 50 多 个 agent，最后交给你一个能直接合并的 PR。中途只在计划批准处停一下。</p>
+<p>计划</p>
+<p>›</p>
+<p>深化计划</p>
+<p>›</p>
+<p>执行</p>
+<p>›</p>
+<p>审查</p>
+<p>›</p>
+<p>修问题</p>
+<p>›</p>
+<p>浏览器测试</p>
+<p>›</p>
+<p>录功能演示</p>
+<p>›</p>
+<p>固化</p>
+<h2>07关键数字：并发 agent 的规模到底有多大</h2>
+<p>把这套系统的规模落到几个具体数字上。</p>
+<p>5 款</p>
+<p>Every 用这套方法维护的产品数量，工程团队基本为单人配置。</p>
+<p>80 / 20</p>
+<p>计划＋审查占工程师 80% 时间，执行＋固化只占 20%。</p>
+<p>14 个</p>
+<p>/workflows:review 一次调用同时运行的专项审查 agent 数量。</p>
+<p>40+ 个</p>
+<p>/workflows:plan 开 ultrathink 模式后派出的研究 agent 数量。</p>
+<p>26 / 23 / 13</p>
+<p>插件包含的专项 agent 数 / 工作流命令数 / 技能数。</p>
+<p>“</p>
+<p>每一份工程工作，都应该让后续的工作更容易，而不是更难。</p>
+<p>Every《Compound Engineering》</p>
+<p>本文为 Every 团队自述其「复利工程」方法论与开源插件实践，文中并发规模、时间分配、产品数量均为其官方口径。</p>
+<p>原文：Every《Compound Engineering》</p>
+<p>every.to/guides/compound-engineering</p>
+<p>插件开源地址：</p>
+<p>github.com/EveryInc/compound-engineering-plugin</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/wj243Upu0QoTF1e1qS6z9Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

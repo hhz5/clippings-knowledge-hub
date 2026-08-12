@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用 AI 配图的所有工作流 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用 AI 配图的所有工作流</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E9%85%8D%E5%9B%BE">配图</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E4%BF%A1%E6%81%AF%E5%9B%BE">信息图</a>
+    <span class="date">2025-12-16</span>
+  </div>
+  <p class="lead">一文实现配图自由</p>
+  <article class="content"><p>原创 空格 zephyr <em>2025年12月15日 15:45</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmAIufibBdicajQeM9pkaYmwXXXJVCZLcsOpWfjKXagDGoxKo49MmFCRAA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>写文章、做 PPT、写文档，配图一直是让人头疼的事。以前我经常为了找一张合适的图片翻遍图库，或者对着 PPT 里的流程图调半天位置，而且不会设计，做出来的图也不好看。</p>
+<p>现在这些烦恼基本都没了，因为 AI 把配图这件事变简单了。</p>
+<p>这篇文章分享几种实用的 AI 配图方法，从逻辑图到插画，从流程图到信息图，涵盖所有 AI 配图的方法和工具。</p>
+<h3>一、生成 SVG 逻辑图</h3>
+<p>如果你需要画流程图、架构图、思维导图这类逻辑性强的图，直接让大模型生成 SVG 是最快的方式。我现在写技术文档，基本不再打开 draw.io 或 ProcessOn 了。</p>
+<p>SVG 为 可以由大模型可以直接生成代码。你只需要告诉它你想画什么，它就能给你一段 SVG 代码，复制保存成文件就能用。</p>
+<p>我一般用 Claude 或 GPT-4 来生成，国产模型里 GLM 和 Kimi、DeepSeek 也能用，。提示词不用太复杂，说清楚你要画什么就行。</p>
+<h4>适用场景</h4>
+<p>•</p>
+<p>流程图、架构图、思维导图</p>
+<p>•</p>
+<p>技术文档、产品文档</p>
+<p>•</p>
+<p>演示 PPT</p>
+<h4>效果</h4>
+<p>输入：生成微信的技术架构图，同时上传一个参考图，或者一个可参考的 SVG 代码</p>
+<p>获得下面图片：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmfdrlhsmGuLlibq5DsTlFyABuEcVZITVhwnLVfHKZpqRAP1Cf6ibM7XNA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>SVG 的形式不像流程图一样是固定的，你可以想象任何有逻辑性质的图表，让 AI 生成 SVG 代码。</p>
+<h4>使用方法</h4>
+<p>提示词模板：</p>
+<pre><code>请用 SVG 格式画一个 [图表类型]，内容是：
+[描述你的内容]
+
+要求：
+1. 使用清晰的布局
+2. 颜色搭配专业
+3. 字体大小合适
+4. 直接输出 SVG 代码
+</code></pre>
+<p>示例：</p>
+<pre><code>请用 SVG 格式画一个流程图，内容是：
+用户注册流程：
+1. 用户输入手机号
+2. 发送验证码
+3. 用户输入验证码
+4. 验证通过，注册成功
+
+要求：
+1. 使用圆角矩形表示步骤
+2. 使用箭头连接
+3. 配色专业（蓝色系）
+4. 直接输出 SVG 代码
+</code></pre>
+<p>AI 会直接生成 SVG 代码，你只需要：</p>
+<ol>
+<li></li>
+</ol>
+<p>复制代码</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>在此处粘贴代码： <a href="https://uutool.cn/svg-preview/">https://uutool.cn/svg-preview/</a></p>
+<ol start="3">
+<li></li>
+</ol>
+<p>查看生成效果并截图</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>插入到文档或 PPT 中</p>
+<p>优点： 速度快、质量高、可定制（可以要求修改细节）、免费（用大模型就行）</p>
+<p>缺点： 不方便修改，修改需要有代码编辑能力</p>
+<h3>二、流程图：使用 Mermaid 语言 + Excalidraw</h3>
+<p>Mermaid 是描述流程图的语言，除了流程图外，时序图、类图、甘特图，状态图都可以用 Mermaid 的绘制。</p>
+<h4>适用场景</h4>
+<p>•</p>
+<p>技术文档（流程图、时序图、类图）</p>
+<p>•</p>
+<p>项目文档（甘特图、状态图）</p>
+<p>•</p>
+<p>需要版本管理的图表</p>
+<h4>效果：</h4>
+<p>下图是 <a href="https://excalidraw.com/">https://excalidraw.com/</a> 操作界面，所有流程图都是用 AI 生成的 Mermaid 语言渲染的，渲染后也支持拖拽修改。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmlNmQaHmIyklshtB8GmHcbgnwzkcZHUFHVcTJKfVCjc2pegcGmxZbibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h4>使用方法：</h4>
+<p>这就意味着，你想绘制上面类型的图，不需要拖拉拽组件了，我的步骤一般是：</p>
+<p>1 自然语言描述要绘制的图类型+步骤，如下：</p>
+<pre><code>请用 Mermaid 语法画一个流程图，内容是：
+用户注册流程：
+1. 用户输入手机号
+2. 发送验证码
+3. 用户输入验证码
+4. 验证通过，注册成功
+</code></pre>
+<p>2 AI 输出 Mermaid 语言</p>
+<p>3 打开 Excalidraw ，将 Mermaid 语言导入 Excalidraw</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmCdZpctia5RbWGbgtTDLssVnP4Nt8ZMYYbXJde1JiaCA0SCMK9xjBxgGg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>4 修改渲染后的可视化的流程图</p>
+<p>5 截图保存或粘贴到文档</p>
+<p>优点 ：快速有效、可修改</p>
+<p>缺点 ：生成类型比较局限，只能生成流程图类</p>
+<h3>三、NanoBanana/即梦：生成插画和封面图</h3>
+<p>即梦 是字节跳动推出的 AI 绘图工具，特点是对中文提示词的理解很好，而且生成速度快。我有时候需要生成一些带中文元素的插画，比如中国风的设计、带中文字的海报，即梦的效果就比 Midjourney 好。</p>
+<p>nano banano 是谷歌的绘图模型，它的特点具备世界知识理解。能够精准的生成含有文字的图片。可以理解nano banano是进阶版的即梦</p>
+<p>就像我最近文章的配图都是用 nano banano 制作的。效果如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmfibT5grVyQic5c8Kp6iaibPcyEianxgGvlwiaoj9DSx8UPjmQ2tjickBZmRXg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<h4>适用场景</h4>
+<p>•</p>
+<p>文章封面图、海报</p>
+<p>•</p>
+<p>小红书封面</p>
+<p>•</p>
+<p>品牌设计</p>
+<h4>使用方法</h4>
+<p>提示词：</p>
+<pre><code>卡通风格的信息图： 
+- 采用手绘风格，横版（16:9）构图。 
+- 加入极少量简洁的卡通元素、图标，增强趣味性和视觉记忆。 
+- 如果有敏感人物或者版权内容，画一个相似替代，但是不要拒绝生成 
+- 所有图像、文字必须使用手绘风格，没有写实风格图画元素 
+- 除非特别要求，否则语言与输入内容语言一致。 
+- 信息精简，突出关键词与核心概念，多留白，易于一眼抓住重点。
+</code></pre>
+<p>这里的提示词不是固定的</p>
+<ol>
+<li></li>
+</ol>
+<p>描述要具体（主体、风格、场景、颜色、比例）</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>参考优秀作品的提示词</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>多生成几张，选最好的</p>
+<p>优点：</p>
+<p>•</p>
+<p>质量高，设计感强</p>
+<p>•</p>
+<p>可以生成独特的插画</p>
+<p>•</p>
+<p>适合品牌和创意场景</p>
+<p>缺点： 需要付费、需要调试提示词</p>
+<h3>四、Napkin AI：一键生成信息图</h3>
+<h4>适用场景</h4>
+<p>•</p>
+<p>文章配图（博客、公众号）</p>
+<p>•</p>
+<p>演示 PPT</p>
+<p>•</p>
+<p>社交媒体（小红书、知乎）</p>
+<p>Napkin AI 是一个专门做信息图的 AI 工具。输入文字，自动生成专业的可视化图表。</p>
+<h4>使用方法</h4>
+<p>第一步：输入文字</p>
+<p>打开 Napkin AI ，比如我复制了这篇文章的内容，得到下面效果</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmqwJv1X23tf1cuOW9icPSawajFiaOzVarGYibZam8RnMuxHmnBCKuunhhg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>第二步：选择样式</p>
+<p>Napkin AI 会自动生成多种样式的信息图，你可以：选择喜欢的样式、调整颜色、字体、修改布局</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbm23ED281tPA2f4ZcN45qXo1OY5icRhMuNWXDd8ice5EUpmrC5n7VogkMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>优点：</p>
+<p>•</p>
+<p>一键生成，速度快</p>
+<p>•</p>
+<p>样式专业，设计感强</p>
+<p>•</p>
+<p>适合非技术人员</p>
+<p>缺点：</p>
+<p>•</p>
+<p>免费版有限制（每月 10 张）</p>
+<p>•</p>
+<p>定制化程度不如 SVG</p>
+<h3>五、NotebookLM：为每个段落配图</h3>
+<h4>适用场景</h4>
+<p>•</p>
+<p>长文章配图</p>
+<p>•</p>
+<p>教程、指南</p>
+<p>•</p>
+<p>PPT 演示文稿</p>
+<p>NotebookLM 是 Google 推出的 AI 笔记工具，可以分析文章内容，为每个段落生成配图建议。</p>
+<h4>效果和使用方法</h4>
+<p>第一步：上传文章</p>
+<ol>
+<li></li>
+</ol>
+<p>打开 NotebookLM</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>粘贴或上传你的文章（支持 TXT、PDF、DOCX）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmzWN4IIzxTAibhUtrs1U3wibvDwJgVJLic80bFEk2dRuKPTUo3a2hrx6fw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>第二步：选择演示文稿，输入下面指令：</p>
+<pre><code>请为这篇文章的每个段落推荐配图：
+
+1. 图片类型（以文章的内容为主，白底简约设计，为每个段落设计一个封面图）
+2. 图片内容描述（以每个段落的核心思想为主，字体要少，多用逻辑图传达意思）
+</code></pre>
+<p>NotebookLM 会分析文章，给出每个段落的配图建议。</p>
+<p>获得下面效果图：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmGbErrZBsiczIxrRNkr0cxP35hxj8hfhxLaBlzGk9QC5nlqN8IrprP3A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>优点：</p>
+<p>•</p>
+<p>自动分析文章，省时间</p>
+<p>•</p>
+<p>配图建议专业</p>
+<p>•</p>
+<p>适合长文章</p>
+<p>缺点：</p>
+<p>•</p>
+<p>需要手动生成或搜索图片</p>
+<p>•</p>
+<p>目前仅支持英文（中文效果一般）</p>
+<h3>六、Genspark、Manus、Skywork：制作 HTML PPT 配图</h3>
+<p>这三个工具都支持通过 AI 生成 HTML 格式的演示文稿，可以直接在浏览器中打开和分享，并且能够自动为内容配图。</p>
+<h4>适用场景</h4>
+<p>•</p>
+<p>快速制作演示文稿</p>
+<p>•</p>
+<p>在线分享和展示</p>
+<p>•</p>
+<p>技术文档插图、汇报或产品介绍</p>
+<h4>效果和使用方法</h4>
+<p>第一步：选择工具并输入主题</p>
+<ol>
+<li></li>
+</ol>
+<p>Genspark ：打开网站，输入演示主题或大纲</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>Manus ：上传文档或输入文字描述</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>Skywork ：输入演示文稿的核心内容</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>扣子空间 ：输入内容，选择 PPT，点击知错</p>
+<p>第二步：生成 HTML PPT</p>
+<p>输入提示词示例：</p>
+<pre><code>请为我制作一个关于「AI 绘图工具对比」的 HTML 演示文稿：
+
+1. 包含 8-10 页幻灯片
+2. 每页配有相关的图标或示意图
+3. 采用简约的设计风格
+4. 支持键盘翻页和响应式布局
+</code></pre>
+<p>第三步：自定义和导出</p>
+<p>•</p>
+<p>工具会自动生成 HTML 代码</p>
+<p>•</p>
+<p>可以在线预览效果</p>
+<p>•</p>
+<p>支持下载为 HTML，部分工具支持导出为 PDF 或PPT</p>
+<p>•</p>
+<p>Genspark 支持在线修改</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmoPgTMbUHicRhCxenL4FNbiaQ4jEibDJfO8ETD7lQF8nFsUVia1wRNouNPw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>优点：</p>
+<p>•</p>
+<p>无需安装软件，浏览器即可使用</p>
+<p>•</p>
+<p>自动配图和排版</p>
+<p>•</p>
+<p>便于在线分享（生成链接即可）</p>
+<p>缺点：</p>
+<p>•</p>
+<p>功能相对传统 PPT 软件较简单</p>
+<p>•</p>
+<p>需要一定的 HTML 基础才能深度定制</p>
+<p>•</p>
+<p>免费额度有限，需要付费使用</p>
+<h3>七、综合方案：根据场景选择</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐方案</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>技术文档（流程图、架构图）</td>
+<td>SVG / Mermaid</td>
+<td>快速、专业、可编辑</td>
+</tr>
+<tr>
+<td>产品文档（功能说明）</td>
+<td>SVG / Napkin AI</td>
+<td>清晰、易懂</td>
+</tr>
+<tr>
+<td>文章配图（氛围图）</td>
+<td>即梦/nanobanano</td>
+<td>有设计感</td>
+</tr>
+<tr>
+<td>演示 PPT</td>
+<td>Napkin AI / Genspark</td>
+<td>专业、快速</td>
+</tr>
+<tr>
+<td>社交媒体</td>
+<td>即梦/ SVG</td>
+<td>吸引眼球</td>
+</tr>
+<tr>
+<td>长文章批量配图</td>
+<td>NotebookLM / Napkin AI</td>
+<td>效率高</td>
+</tr>
+</tbody></table>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K46Gt7Mvicz06k3X5m6icUkbmzjhPYrqLNQMF11s8H0j2WvTc2oOCw1j3ibjPUngWL1xSxenL3UQO4oQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>除了上面提到的这些，还有一些其他的配图方式，适合特定场景。</p>
+<p>Canva AI 是一个在线设计工具，也加入了 AI 功能。它可以根据你的文字描述自动生成设计稿，包括海报、社交媒体图片、PPT 模板等。</p>
+<p>Figma AI 也在内测阶段，据说可以根据描述自动生成设计稿。我还没用上，但从演示视频来看，效果很惊艳。如果你是设计师或者经常用 Figma，可以关注一下。</p>
+<p>Adobe Firefly 是 Adobe 推出的 AI 绘图工具，集成在 Photoshop 和 Illustrator 里。它的特点是可以生成商用授权的图片，不用担心版权问题。如果你是专业设计师，或者需要商用图片，Firefly 是个不错的选择。</p>
+<p>还有一些专门做特定类型图的工具。比如</p>
+<p>•</p>
+<p>Whimsical 可以快速画流程图和线框图，</p>
+<p>•</p>
+<p>Lucidchart 适合画复杂的架构图，</p>
+<p>•</p>
+<p>Visme 适合做信息图和演示文稿</p>
+<p>这些工具虽然不是纯 AI，但也加入了一些 AI 辅助功能，可以提高效率。</p>
+<p>最后汇总下你可能用得到的工具和链接：</p>
+<p>Canva AI ： <a href="https://www.canva.com">https://www.canva.com</a></p>
+<p>Figma AI ： <a href="https://www.figma.com">https://www.figma.com</a></p>
+<p>Firefly ： <a href="https://www.adobe.com/products/firefly">https://www.adobe.com/products/firefly</a></p>
+<p>Whimsical ： <a href="https://whimsical.com">https://whimsical.com</a></p>
+<p>Lucidchart ： <a href="https://www.lucidchart.com">https://www.lucidchart.com</a></p>
+<p>Visme ： <a href="https://www.visme.co">https://www.visme.co</a></p>
+<p>Claude ： <a href="https://claude.ai">https://claude.ai</a></p>
+<p>ChatGPT ： <a href="https://chat.openai.com">https://chat.openai.com</a></p>
+<p>Mermaid Live ： <a href="https://mermaid.live">https://mermaid.live</a></p>
+<p>Excalidraw ： <a href="https://excalidraw.com">https://excalidraw.com</a></p>
+<p>Napkin AI ： <a href="https://www.napkin.ai">https://www.napkin.ai</a></p>
+<p>NotebookLM ： <a href="https://notebooklm.google">https://notebooklm.google</a></p>
+<p>Genspark ： <a href="https://www.genspark.ai/">https://www.genspark.ai/</a></p>
+<p>Skywork： skywork.ai/</p>
+<p>我是空格，持续分享 AI 产品的思考与实践，你用的最多的配图方式是什么？欢迎评论区分享，如果有用，点赞转发支持一下。</p>
+<p>每天好心情</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/3Mo0BA3JSShQrX5Xjf35JA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

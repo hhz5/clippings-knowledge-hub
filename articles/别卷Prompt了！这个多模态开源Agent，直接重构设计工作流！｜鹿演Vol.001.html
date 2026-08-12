@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>别卷Prompt了！这个多模态开源Agent，直接重构设计工作流！｜鹿演Vol.001 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">别卷Prompt了！这个多模态开源Agent，直接重构设计工作流！｜鹿演Vol.001</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=WaytoAGI%E5%B0%8F%E8%B0%B7">WaytoAGI小谷</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Jaaz">Jaaz</a><a class="chip" href="../index.html?tag=%E5%A4%9A%E6%A8%A1%E6%80%81Agent">多模态Agent</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1%E5%B7%A5%E4%BD%9C%E6%B5%81">设计工作流</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a>
+    <span class="date">2025-07-17</span>
+  </div>
+  <p class="lead">全球首个开源本地多模态Agent，Canva+Lovart本地版。</p>
+  <article class="content"><p>原创 WaytoAGI小谷 <em>2025年07月16日 19:04</em></p>
+<p>你有没有想过，不用写 Prompt，画几笔就能让 AI 出图？</p>
+<p>最近社区里被一个 AI 工具刷屏了。</p>
+<p>它叫 Jaaz ，是我们目前见过 最像“魔法”的开源 Agent 工具 ！</p>
+<p>我们今晚 8 点特别邀请了Jaaz 主创团队， 一起来直播间聊聊 Jaaz 的故事。 点击预约占座 👇</p>
+<p>你只需在一块画布上随便涂涂写写，它就能自动生成一张完整的图，连 prompt 都不用敲。</p>
+<p>比如，你想把labubu二创一下，只需甩两张图，画上符号，一个新IP就出来了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqW05ic3q1Ak4ZHn5ILkYFXVC9L8iaukY3ic9ISGx3kcibKZXwTd93Wt1w5LA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>放背景图，画个箭头，角色就无缝闪现到沙滩上。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWyuktLZUKbGyXoNPG9z6eBibIIC03xzRgJVVSR2922AI8ic3GTGJRNhkw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>或者，你想生成一张图，只需简单画几笔，Jaaz 就能准确理解前景、背景、风格、人物位置。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqW0WQ2xwlmh8riabAbiclukhMVibroOvbOhmWGReiatn0048wzGfOqz2iclUA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>用动物替换图中的人，也十分丝滑。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWOosIT6QY9Vwuk3B2ISEDrmRuGIGZSl3OZsnsEaU1grMFy8rQ0yl7ibQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>你还可以随意拼贴，在画布放上所需元素，画个箭头，马上出图海报大片。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWFTibnXpQIRYMibBT1x0FQnB2Y1k8PMibjWdwiboKibUibicyEGoOnBbAT9b1w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>Jaaz 这种全球首创的交互形式，完全刷新了以往的创作方式。</p>
+<p>这只是 Jaaz 的特色功能之一： 魔法画布 。随便画，随手写，AI 全懂！</p>
+<h2>📺 今晚8点，Jaaz 深度揭秘</h2>
+<p>为了让你更直观地感受 Jaaz 的强大， 今晚 8 点 ，「通往AGI之路」直播现场，不仅会拆解魔法画布，还会展示：</p>
+<ul>
+<li>一句话批量生成绘本
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWgqCYOrVSkhv7ZZ1gD7icG1YNTbWvtdVaOwSxdUAFMbhVbgrBEmiarQHg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>一句话做整套表情包
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWhyiaqKv9nz5rGXygnhnSIn3RTUFJCkXryZmtRRA3icVPIEQrIibBUEejQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>一句话跑出多个模型对比图
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWfIP5LJIeZAnOPksY1wM1qorCavZazMWybFUl9THv1qmQPsCXWcfLEA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>一句话批量生成脚本分镜
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWRyEZibSkibz3icjwibhqO4twKs5ucr6AVerMbVzERrfmNuPmX7TAg6GhVQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>一键批量生成多个背景
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWaXjibX8yicRaIJqX50icledw6E3eawJFRoD1G1aYS8C5x5ZsbmjZsGFsg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>制作 AI 虚拟偶像 MV</li>
+</ul>
+<p>这些以前要找设计师、剪辑师、画师……才能做的，现在你只要会打字、画几笔，Jaaz 就能替你搞定。</p>
+<h2>🌟 Jaaz 是什么？</h2>
+<p>看完上面这么多案例，你可能会好奇：Jaaz 到底是怎样一款工具？它还能做什么？和 Lovart、星流这种创意设计 Agent 相比又有哪些优势？</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWB18yOXTUF07ldDQuAfLxQY0Ja7P2TjpnlP4fvthw6hlvWddT08EuuA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h3>优势1：Agent 批量生成，效率拉满</h3>
+<p>Jaaz 最大的爽点之一，就是自研的 Agent 能力。</p>
+<p>只需要简单和它聊几句，1-2 分钟就能批量出图，新手小白也能做出高质量的内容。</p>
+<p>而且，你还可以自定义系统提示词和 Agent 知识库，高度可控，让它更懂你。</p>
+<h3>优势2：本地+云端混合，省钱又安心</h3>
+<p>担心 API 模型太贵？追求数据本地化的安全感？Jaaz 为你提供了完美的解决方案。它支持 Ollama、ComfyUI 等本地部署，也能与远程 API 配合使用。</p>
+<p>这意味着，你不仅可以在本地免费、无限次地运行模型进行批量生成，还能连接到云端，无缝接入业内最新的顶级模型（如 GPT-4o、Flux、Google Veo 等），非常灵活。</p>
+<h3>优势3：魔法画布，重塑创意工作流</h3>
+<p>这是 Jaaz 的全球首创交互形式。它不是一张简单的画板，而是一个可视化的创意沙盘。</p>
+<p>你可以直接拖角色、换背景、加道具、布局场景，甚至用笔划几笔写几个字，AI 就能明白你的意思。</p>
+<p>不用写复杂提示词、也不用来回调整细节，你只管动手，Jaaz 负责还原你的脑洞。</p>
+<h3>优势4：视频批量生成</h3>
+<p>它支持集成 Seedance、Veo3 等主流视频模型，想做 AI 动画、短视频、视觉 MV，完全没问题。</p>
+<p>而且还能智能调用你设定好的 ComfyUI 工作流 ，创作功能更全面高效。</p>
+<h3>优势5：本地素材管理方便</h3>
+<p>生成的图太多不好找？</p>
+<p>Jaaz 在本地素材管理上也十分贴心，它会显示生成模型、Prompt 信息，一目了然。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqW3pjricC9Gpt9TSrZ1G8RaPpUBvN5RoABRbDGSd39ltn5ABbflBWic5QA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>还有更多新功能，例如一键同款、MCP 等正在路上，敬请期待！</p>
+<h2>🔧 Jaaz 如何使用？</h2>
+<h3>第一步：下载 Jaaz 最新版本</h3>
+<p>下载自己电脑对应系统的版本，或在网页使用。</p>
+<ul>
+<li>本地部署： <a href="https://github.com/11cafe/jaaz/releases">https://github.com/11cafe/jaaz/releases</a></li>
+<li>官方网站： <a href="https://jaaz.app/">https://jaaz.app/</a> （网页暂不支持批量生图）
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWofp1Ob0gb4yeCkAzAHYTkU2HounHjYVDWe4GIia4bBb3hibTnZ5GoxfQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+</ul>
+<h3>第二步：登录获取各模型使用权限</h3>
+<ol>
+<li>1. 目前软件已经可以登录，登录后即可获得免费生图次数，用完后在登录的网站续费即可，直接可使用各种主流模型。当前新登录用户送一小部分额度可以直接生图，名额有限，先到先得～
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWEfU5ib0n2kQyNSJvicIpeuffo8dibHF62u7P0nnOJRP0oebzAr7UUN1Rw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>2. 登录后跳转到官网，用 google 邮箱登录即可（后续会支持其他邮箱登录）；
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqW2u6A0wm6YOlWuQTUmib608gRuIWyreIicV3QQuliaObvQd3n9OhoLj3Xg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>3. 可以直接充值任意额度（支持微信、支付宝）进行生图，内测阶段 API 没有差价，无需月费，可任意使用。
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWdwibyvTccFo54Hxcwwhh2vycqRCicBiaicCH8HonphmIVvQAERX6j5uG5Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+</ol>
+<h3>第三步：对话轻松批量生图</h3>
+<p>然后返回程序中，需选择一个文本模型，再选择 Jaaz 下的一个生图模型，输入提示词就可以制作啦！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWysvYgLBuP11eicrzeDHGr5icPpUW5nnfUr531ux3qXiauTAMctK8xic1aw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>以上，就是 Jaaz 的完整使用教程，期待你做出满意的作品！更加详细的使用教程，请移步 Jaaz 新手使用说明书查看。</p>
+<ul>
+<li>网页体验链接： <a href="https://jaaz.app">https://jaaz.app</a></li>
+<li>本地部署下载地址： <a href="https://github.com/11cafe/jaaz">https://github.com/11cafe/jaaz</a></li>
+<li>Jaaz新手使用说明书： <a href="https://waytoagi.feishu.cn/wiki/UZCCw8ZEsiRNOCkIpV9cOuWsn5g">https://waytoagi.feishu.cn/wiki/UZCCw8ZEsiRNOCkIpV9cOuWsn5g</a></li>
+</ul>
+<h2>🤳🏻 “我们为什么要做 Jaaz？”</h2>
+<p>看完这些，Jaaz 有没有满足你对一款 AI 创意设计工具的全部幻想？</p>
+<p>Jaaz 的诞生，其实源自主创团队在创作中的痛点。</p>
+<p>从一开始探索 AI 图像工具、开源 ComfyUI 插件，到尝试做线上平台搭建，他们一路上踩了不少坑：</p>
+<p>工具门槛高、素材不好管理、模型调用太贵、流程还割裂……</p>
+<p>每次灵感来了，还得在好几个平台之间来回跳，创作的效率和体验都被严重拖慢。</p>
+<p>后来他们试用了 Manus 这类工具，虽然很有启发，但也发现还远远不够。于是他们决定亲自下场，打造一个 真正开源、多模态、一站式 的创作入口。</p>
+<p>Jaaz 就是他们给出的一种解法：</p>
+<p>对新手来说，一句话就能出作品；</p>
+<p>对高手来说，可以在魔法画布上随心所欲地发挥；</p>
+<p>对所有创作者来说，它都在努力降低“将想法变为现实”的门槛。</p>
+<p>他们不只想做一个“能用”的 AI 工具，而是要打造成 下一代创作者的首选多模态创作平台， 一个真正意义上的“全模态创作入口”。</p>
+<p>不管你灵感来自文字、图片、声音，还是 3D，只要你有想法，Jaaz 都能帮你无缝转化为超预期的作品。</p>
+<p>想了解更多产品故事和案例，记得预约直播间占座👇</p>
+<h2>也欢迎加入 Jaaz 用户交流群，为新产品内测多多提建议~</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/qzK6DeboBS0IFJPg9aAE0B69DWwvZMqWw72fl1ANAeeDLpttI2H2fz0HW5gxKb7bnUtdAXtTQd64LwgL9DtROg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<h2>🦌 下一个 AI 爆款，正在路演</h2>
+<p>顺带说一句，这次直播我们还正式上线了一个新栏目 「鹿演」 ！</p>
+<p>这个名字是不是有点眼熟？</p>
+<p>没错，“鹿”其实是我们社区 IP 小鹿的谐音，它的全称也可以理解成“ AI 项目的线上路演 ”。</p>
+<p>以后我们会 每两周的周三晚上 8 点 ，带大家看看那些，正在社区里悄悄搞大事的 AI 创作者。</p>
+<p>如果你也觉得某个 AI 产品很酷，欢迎上手试用、转发扩散，甚至勾搭主创团队聊聊合作！  </p>
+<p>作为一个 AI 开源社区，我们很高兴能见证 Jaaz 这样的项目从想法变成产品，从探索者成长为创造者。</p>
+<p>Jaaz 团队的主创们因 WaytoAGI 结识，也在这里不断打磨、迭代自己的作品。</p>
+<p>所以，我们也希望通过「鹿演」，助力 Jaaz 被更多人看到、使用、传播。</p>
+<p>📢 <strong>「鹿演」项目正在招募</strong></p>
+<p>如果你正在开发 AI 应用、有意思的模型能力，或者一个刚起步但很有潜力的创作工具，欢迎来投递给我们！</p>
+<p>WaytoAGI 社区将为你提供展示舞台， <strong>一场定制直播 + 社区传播支持</strong> ，让更多人看到你的产品、想法和故事。</p>
+<p>期待你的作品，也许下一期主角就是你！  </p>
+<p>📬 投稿通道：扫描下方二维码，提交项目信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/qzK6DeboBS0sYASmiaHO7bWr0ZSM8hWSqAupqNULVlVBnEHCauGLLT6t2z1icEpBWP21AibJQCc5uLVqHAX2pkiaWQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>收录于 鹿演</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>修改于 2025年07月17日</p>
+<p>继续滑动看下一个</p>
+<p>通往AGI之路</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 7.28 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 3 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.68 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 5.93 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/-7sb4OYQNuQBjZjLcHMjmg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

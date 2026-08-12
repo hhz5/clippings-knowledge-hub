@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 学会了和你视频通话 而且跟真人一样 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI 学会了和你视频通话 而且跟真人一样</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Wan%20Streamer">Wan Streamer</a><a class="chip" href="../index.html?tag=%E5%AE%9E%E6%97%B6%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D">实时视频通话</a><a class="chip" href="../index.html?tag=%E9%98%BF%E9%87%8C%E9%80%9A%E4%B9%89%E5%AE%9E%E9%AA%8C%E5%AE%A4">阿里通义实验室</a><a class="chip" href="../index.html?tag=%E7%AB%AF%E5%88%B0%E7%AB%AF%E6%A8%A1%E5%9E%8B">端到端模型</a>
+    <span class="date">2026-06-30</span>
+  </div>
+  <p class="lead">它能跟你视频通话，你这边有摄像头和麦克风，它那边实时生成一张会说话的脸，看着你、回应你。</p>
+  <article class="content"><p>小互 小互AI <em>2026年6月27日 16:40</em></p>
+<p>阿里通义实验室 Wan 团队放出 Wan Streamer 模型，一个能跟你实时视频通话的真人 AI。</p>
+<p>我们已经习惯了跟 AI 打字、语音聊天。</p>
+<p>Wan Streamer 往前走了一步，它能跟你视频通话，你这边有摄像头和麦克风，它那边实时生成一张会说话的脸，看着你、回应你。</p>
+<p>效果展示：</p>
+<p>⚑这是 Wan Streamer 官方发布页（厂商通稿）。文中的延迟、能力对比、「唯一」等定位措辞都出自官方，部分对比数字混合了不同测量边界，相关处已随文说明。</p>
+<p>1这是什么</p>
+<h2>一个模型跑通实时音视频对话</h2>
+<p>Wan Streamer v0.1，其实是一个实时音视频交互模型。能实时对话的 AI 现在不少，但能一边看你的脸、一边听你说话、一边开口回应、自己还自带一张会动的脸的，几乎没有延迟。</p>
+<p>Wan Streamer 把这件事压进了一个模型里。</p>
+<p>它可以在 Transformer 模型里同时处理语言、音频、视频的输入和输出，做到亚秒级的全双工音视频对话：模型自己算出一段回应大约只要 200 毫秒，加上网络往返后总延迟约 550 毫秒。</p>
+<p>⚡ 为什么值得研究</p>
+<p>现在能实时对话的系统分两类一类响应快但只出声音、没有可见的脸（GPT-4o Realtime、豆包、Gemini Live），另一类有脸但靠外部 ASR、语言模型、TTS、动画一串模块拼出来。官方称 Wan Streamer 是 <strong>唯一用单个端到端 Transformer 同时吐出同步音视频、且总延迟压在 1 秒内</strong> 的模型。</p>
+<p>~200 ms</p>
+<p>模型侧响应延迟</p>
+<p>~550 ms</p>
+<p>总交互延迟＝200ms 模型侧＋350ms 网络</p>
+<p>160 ms</p>
+<p>25fps 下最短的流式处理单元</p>
+<p>192p</p>
+<p>v0.1 分辨率，端到端设计的概念验证</p>
+<p>总延迟 550ms 拆开看</p>
+<p>模型侧 200ms双向网络 350ms</p>
+<p>模型本身只占 200ms，剩下 350ms 是网络往返。也就是说，纯模型的反应速度比读出来的总延迟更快。</p>
+<p>2先看效果</p>
+<h2>先看一段，它长什么样</h2>
+<p>先看最日常的一段：一次中文视频通话。其余几段演示，会随后文一段段穿插着看。</p>
+<p><strong>看之前先说清楚：</strong> 这些都是 <strong>未经剪辑的预录模型输出</strong> ，不是在线实时体验；当前 v0.1 分辨率只有 192p，用来验证端到端设计是否跑得通。官方称后续扩到更高分辨率较容易，但那是计划，不是 v0.1 已实现的。</p>
+<p>▶ 视频位 ① · 中文日常通话</p>
+<p>中文 · 暖色室内视频通话：聊刮胡子、在家办公、想看一部特效不错的新动作片。清晰自然男声。</p>
+<p>，时长00:34</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3cacyuaaflqapyeb235vfkegdriialcqa.f10002.mp4?dis_k=e04e35dfc3f4a0130e64fda1d6c50d96&amp;dis_t=1782802008&amp;play_scene=10120&amp;auth_info=Jf2UgeQHH3oU3NjhqW00Sx5ZRSVwYVE1SRV0XS5uJE8eN39JYigEN2N+EWgXAjlrClM=&amp;auth_key=de3cea6deb5615e0617e3fc06c7b5de8&amp;vid=wxv_4579369246920654848&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>3旧办法卡在哪</p>
+<h2>旧办法为什么慢：一道道接力，每步都在等</h2>
+<p>旧办法慢，是因为它们是一串独立模型拼起来的流水线：语音先转成文字（ASR），文字喂给语言模型想答案（LLM），答案再合成语音（TTS），最后驱动一张脸动起来（动画渲染）。每过一道工序都要等上一道交货，等待时间一段段累加，识别和口型对不齐的误差也一路累积。</p>
+<p>旧办法 · 级联流水线</p>
+<p>音视频输入</p>
+<p>↓ 等待</p>
+<p>ASR 识别</p>
+<p>↓ 等待</p>
+<p>LLM 想答案</p>
+<p>↓ 等待</p>
+<p>TTS 合成语音</p>
+<p>↓ 等待</p>
+<p>动画／渲染</p>
+<p>↓</p>
+<p>输出</p>
+<p>每个箭头都是一次等待＋一次误差累积；模块之间靠文字当中转桥；多数系统只出语音，或者把一张脸勉强拼出来，且不报告端到端时延。</p>
+<p>Wan Streamer · 端到端单模型</p>
+<p>音视频输入</p>
+<p>↓</p>
+<p>一个 Transformer</p>
+<p>感知 · 推理 · 规划 · 生成 一起做</p>
+<p>↓</p>
+<p>同步音视频输出</p>
+<p>没有接缝，等待时间坍缩；轮次管理、被打断、长程一致性，作为一个连贯行为一起学出来。</p>
+<p>打个比方</p>
+<p>端到端像一个人自己听完直接开口；级联像传话游戏，每过一手都慢一拍，还可能把话传错。中间那层把语音／视频先转成文字、再用文字去驱动下游，文字就是各模块之间隐藏的中转桥（传统级联里文本是独立训练的几个模块之间的中间表示；Wan Streamer 不要这个中间桥，模态之间直接耦合），桥越多越慢、越容易错。</p>
+<p>原文给这件事下了一个判断：实时音视频交互不是「多模态理解」加「多模态生成」的简单相加，它本质上是全双工的，所以可流式性是一种建模约束，而不只是上线后的工程优化。建在离线编码器、双向解码器、回合制对话之上的系统，光靠工程调优也补不出真正的低延迟全双工。这正是下一节要拆的核心。</p>
+<p>4核心创新</p>
+<h2>它的办法：一个模型从听到说全包了</h2>
+<p>Wan Streamer 的内核只有一句话：把视觉、音频、文本的输入 token 和输出 token，交错排成同一条序列，交给一个 Transformer 处理；用 block-causal attention 协调，让它边来边算地往外吐。</p>
+<p>HERO · 共同根源</p>
+<p>单个端到端 Transformer 取消了外部的 VAD、ASR、语言模型、TTS、动画、视频生成等模块，把感知、推理、回应规划、语音与视觉生成、响应时机、轮次管理全放进同一个持久状态里联合优化。低延迟、全双工、同步音视频这三件事，根都在这里。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOtgvl7bl6nVhDxkic8ykpAaCKxYLrOVCLZFibibvl7JEBdFbn8QMaeicKYH5I9TaRUL1CfCoLR0mCJhcbrV6ZFLGGDrNYxM0LIibOI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="token 序列招牌图"></p>
+<p>token 序列招牌图</p>
+<p>视觉 token 音频 token 文本 token</p>
+<p>一条交错的彩色 token 序列（视觉／音频／文本），块内双向、块间只看过去，每块 160ms。</p>
+<p>模型把交互看成一条连续的因果流：你的观测和它的回应，一起更新当前上下文。每个流式单元里，它编码当前能拿到的用户观测，再根据双方完整的因果历史预测下一段回应。语言回应是一串离散 token，用 next-token 预测训练；音频和视频回应活在连续的 latent 空间里，用条件 flow matching 联合生成，以同一份干净上下文为条件，让语音、动作、外观、场景演化作为一个耦合整体一起去噪，而不是各生成各的再拼。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOLxUlVsjUb9eumiaD4wJqaSFAdnmarAWx36wsvPV9owa9ANz6OLrHWuwzSZlYKWr76J7hAba0yNiaKib3iaAsrzDvcO6rwCTM4IJ4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Wan Streamer 总体框架图"></p>
+<p>Wan Streamer 总体框架图</p>
+<p>Wan Streamer 总体框架：语言、音频、视频在同一个 Transformer 里同时作为输入与输出建模，由 block-causal attention 协调，边来边算地流式生成。来源：Wan Streamer 官方</p>
+<p>为了撑住这条流，整栈从设计之初就是因果的：用于流式 latent 编码的严格因果音视频 VAE、因果音视频编码器、因果音视频解码器，以及由 block-causal attention 协调的时序因果 Transformer。去噪后，估计出的干净 latent 直接追加进历史，作为后续单元的上下文；因果解码器再把它们渲染成最终的音视频。被这套设计抹掉的外部模块是：</p>
+<p>外部 VADASR 识别外部语言模型TTS 合成动画模块视频生成模块</p>
+<p>这套「一个模型全包」落到画面上是什么效果——它能聊娱乐八卦，还能即兴模仿：</p>
+<p>▶ 视频位 ② · 即兴模仿</p>
+<p>中文 · 明亮白色室内。聊 CP、娱乐圈八卦、周星驰《功夫》，最后模仿经典笑容。轻松愉快女声</p>
+<p>，时长00:34</p>
+<p><video src="https://mpvideo.qpic.cn/0bc32edbsaagteag7pjzdzvfnuoddhiqmgia.f10002.mp4?dis_k=b47a2c66f64ccc669db284648e84f1f4&amp;dis_t=1782802008&amp;play_scene=10120&amp;auth_info=eeCbrrtSQHgT2NvlqDtmGxtcF3JyMlYwQBQgW3A+c0pCZCRINH1bNWR6EmwWVGs7D1Y=&amp;auth_key=244cec3fc9472225c172ee3621bcf1ac&amp;vid=wxv_4579369181892263942&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>5怎么做到边听边说</p>
+<h2>怎么做到边听边说、随时能打断</h2>
+<p>人和世界的交互天生是流式、全双工的：我们不是先听完、再单独想、最后才答，而是一边看一边听一边说、随时停顿和打断，感知和表达在音视频的时间尺度上重叠发生。实时交互模型也得长成这样。</p>
+<p>HERO · 重写出的全双工</p>
+<p>因果编码器＋因果解码器＋低延迟多模态 token 调度，让 25fps 下的流式单元短到 160ms：输入的语音视频立刻影响输出，生成的音频和视觉状态在解码之前就耦合好，而不是事后修补；每个吐出来的单元都写回交互历史。于是它能边听边说，你说话时它仍在听、被打断还能调整。</p>
+<p>半双工（回合制）· 说完才能听</p>
+<p>单通道听说听</p>
+<p>全双工 · 听和说重叠</p>
+<p>感知持续感知用户</p>
+<p>回应 同步生成语音＋视频＋动作</p>
+<p><strong>重叠区</strong> 就是关键：用户说话时智能体仍在听，所以能被打断、能即时调整；每个生成单元都写回交互历史，成为下一步的上下文。</p>
+<p>全双工 · 打个比方</p>
+<p>全双工像正常打电话：你能一边听对方说一边插话。对讲机那种「说完松手才能听」是半双工。</p>
+<p>这套机制能成立，靠的是 block-causal attention。它把一小块（比如 160ms 的音视频片段）当成一个处理单位：块内部的 token 可以互相看（双向），但一个块只能看见过去的块、看不到未来的块。这样既保住了块内上下文，又能边来边算，不用等整段说完。</p>
+<p>块 1<br>160ms ↔ 块内双向←块 2<br>160ms ↔ 块内双向←块 3<br>160ms ↔ 块内双向←块 4<br>160ms ↔ 块内双向</p>
+<p>块内 token 互相看，块之间只往左看过去：块 3 一到就能开算，因为它只依赖块 1、块 2，不用等未来的块 4。这就是流式生成。</p>
+<p>block-causal · 打个比方</p>
+<p>像说话时以「词组」为单位思考：一个词组内部一起斟酌，但你不能预知还没出口的下一个词组。这里还有两个配套的因果件，因果编码器／解码器（只看过去、不看未来：普通编码器要拿到完整一段才能编码，因果版可以边接收边编码，像同声传译边听边译，不必等演讲讲完），让感知和生成都能边来边走。</p>
+<p>展开 · 部署细节</p>
+<p>thinker–performer 怎么把延迟压到 200ms</p>
+<p>Wan Streamer 训练时是单个端到端模型；实时部署时，同一个模型拆成跨两张 GPU 的 thinker–performer 流水线，尽量让计算重叠。系统 prefill 完成后，thinker 把初始 KV-cache 广播给 performer，两边共享同一份全历史状态，统一模型的行为被完整保留。</p>
+<p><strong>thinker</strong> 负责因果音视频编码器、一次用于语言预测与状态更新的短计算、KV-cache 构建，以及把上一单元的 latent 解码成音视频并立即输出。 <strong>performer</strong> 只负责 latent 生成，基于共享的全历史 KV 上下文，为下一段音视频单元跑 flow-matching 求解器。因为 performer 从不跑解码器、thinker 从不跑高成本的求解器，解码和生成互不阻塞。</p>
+<p>只要 performer 耗时加通信耗时能塞进一个 160ms 单元，就维持实时吞吐。而「编码 → 状态更新 → latent 生成 → 解码」这条信号到信号的路径，就是约 200ms 的模型侧延迟，靠 CUDA graph 捕获、编译、优化算子压在预算内。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPErWNVibzKSGxECmnRiahoTS0m0WjqwFTTUVuKhpGAFl97raIeZ1P9VjzzuHcMC4iciacmDsicmlVeibyMucRicymk7yCEWsfCXaYgYo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="thinker-performer 重叠图"></p>
+<p>thinker-performer 重叠图</p>
+<p>thinker–performer 流式推理重叠：第 k 个单元，thinker 编码当前观测、更新 KV-cache 并把上一单元 latent 解码后立即输出；performer 只跑 flow-matching 求解器生成下一段 latent，下一单元返回。感知、解码、通信、去噪在相邻单元间重叠。来源：Wan Streamer 官方</p>
+<p>边听边说、随时能被打断，落到对话里就是这种自然感。这两段都是英文实时对话：</p>
+<p>▶ 视频位 ③ · 英文车内</p>
+<p>英文 · 车内近景。女生说自己很累，感谢对方耐心陪伴，疲惫真诚女声</p>
+<p>，时长00:49</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3wqdeyaag6aadvozztfvfnngdjs2amtaa.f10002.mp4?dis_k=1d9d4dc44b4be137ae8defb419a162b0&amp;dis_t=1782802008&amp;play_scene=10120&amp;auth_info=cOD62dxTRHxAiNXgrjwzGUkIF3N0YFMxGBV6DS1sJ0pLOH1NZH5fMTcqHGkQUz45XQI=&amp;auth_key=68d34d55dbc993132d7210c5ed7cbf3a&amp;vid=wxv_4579369115001503749&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>▶ 视频位 ④ · 英文室内</p>
+<p>英文 · 浅色室内近景。聊无意识刷手机、自动化习惯、关掉通知，自然女声</p>
+<p>，时长00:49</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3qycwgaaf7uabqgb2bvvflbwdmodakyya.f10002.mp4?dis_k=dfd5e1216b3b66b3d6196d097a91f641&amp;dis_t=1782802008&amp;play_scene=10120&amp;auth_info=dt7M4qVSEn0Vioix/2liHEsIEHMnZwI1HUZzUH5udUdNYCVNNHoJMGIoQThBBm88XwI=&amp;auth_key=fddc8392e0b543cfa27ff9cda747ee83&amp;vid=wxv_4579391514815856640&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>6数据对比</p>
+<h2>和别的系统比，快在哪、能做什么</h2>
+<p>下面两组延迟数字测的不是一回事，得分开看。上方一组是完整的端到端交互闭环（感知用户并产生回应），其中只有 Wan Streamer 同时输出视频；下方一组是数字人／音视频渲染器，只计到渲染阶段，不含它们依赖的外部语言模型、ASR、TTS，所以用户实际感受到的延迟比图里更高。</p>
+<p>端到端交互闭环 · 感知→回应（含网络，越短越好）</p>
+<p>Wan Streamer</p>
+<p>语音＋视频</p>
+<p>0.55s</p>
+<p>模型侧 0.2s</p>
+<p>GPT-4o Realtime</p>
+<p>仅语音</p>
+<p>~0.8s</p>
+<p>模型侧 0.23s</p>
+<p>豆包语音</p>
+<p>仅语音</p>
+<p>~1.0s</p>
+<p>模型侧 0.7s</p>
+<p>Gemini Live</p>
+<p>仅语音</p>
+<p>1.2–3.6s</p>
+<p>仅渲染阶段 · 不含外部 LLM／ASR／TTS（真实延迟更高）</p>
+<p>LPM 1.0</p>
+<p>仅渲染</p>
+<p>~0.35s</p>
+<p>OmniForcing</p>
+<p>仅渲染</p>
+<p>~0.7s</p>
+<p>Hallo-Live</p>
+<p>仅渲染</p>
+<p>0.94s</p>
+<p>StreamAvatar</p>
+<p>仅渲染</p>
+<p>~1.2s</p>
+<p>两组刻度各自独立，不能横跨两组直接比大小。下方一组的数字不包含外部「大脑」，把那部分加回来后真实延迟会明显更高。数值取各系统公开报告中最接近的口径，混合了不同测量边界，具体定义见论文。</p>
+<p>能力维度的覆盖如下，Wan Streamer 是唯一一行全部打勾的：</p>
+<p>Wan Streamer</p>
+<p>感知视频✓输出视频✓全双工✓端到端✓一秒内响应✓</p>
+<p>豆包语音</p>
+<p>感知视频✓输出视频✗全双工✓端到端✗一秒内响应~</p>
+<p>GPT-4o Realtime</p>
+<p>感知视频✓输出视频✗全双工~端到端✗一秒内响应✓</p>
+<p>StreamAvatar</p>
+<p>感知视频<del>输出视频✓全双工</del>端到端✗一秒内响应✗</p>
+<p>LPM 1.0</p>
+<p>感知视频<del>输出视频✓全双工✓端到端✗一秒内响应</del></p>
+<p>✓＝是　<del>＝部分支持／未公开　✗＝否。全双工指系统生成时仍在持续感知，也就是边理解边回应。标「</del>」的格子，要么是部分支持，要么是该指标没有公开。</p>
+<p>最后我们再看一遍一开始的那个视频，这是一个完整的真实链路：一次真实联网对话的屏幕录制，能看到从感知到回应的全过程。</p>
+<p>▶ 视频位 ⑤ · 实时录屏</p>
+<p>真实联网对话录屏：左边是本地用户画面，右边是 AI Agent 实时回应，下方同步滚动文本流。视频已为网页压缩。来源：Wan Streamer 官方</p>
+<p>，时长00:49</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3nadfmaagk4acazjzqnvfm2gdkzuamvqa.f10002.mp4?dis_k=b9fb3c9ce0067f04676a1474b8e35d4d&amp;dis_t=1782802008&amp;play_scene=10120&amp;auth_info=I+jVrrEDEigT1YrmqTtpThhaEycmN1AyT0d0CHk+ckoYOXlPZygJZWR3Q28XVGRuDFA=&amp;auth_key=9b0de8608ac83fc6f487112f05891659&amp;vid=wxv_4579369037574389762&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>可流式性是建模约束，而不只是部署优化：建立在离线编码器、双向解码器或回合制对话之上的系统，仅靠工程优化也很难拿回真正低延迟的全双工能力。</p>
+<p>Wan Streamer · 全双工挑战</p>
+<p>来源：Wan Streamer v0.1 官方发布页（wan-streamer.com），论文 arXiv:2606.25041，2026 年 6 月。本文根据厂商公布的内容解读，延迟与能力对比数字均按官方注释口径标注，混合测量边界与未验证预测已随文说明。文中演示视频与框架图直引自官方站点。</p>
+<p>注意：本项目还处于研究阶段，并没有上线，没有开放使用入口，只能当成&quot;技术验证&quot;看。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.56 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 3.05 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.17 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.02 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.32 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/T-BImqYy0ZxiUmaXyLVL2A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

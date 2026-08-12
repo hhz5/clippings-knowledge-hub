@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【干货教程】让AI替你打电话，解锁AI电话员工，实时语音，智能打断，真人体感！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">【干货教程】让AI替你打电话，解锁AI电话员工，实时语音，智能打断，真人体感！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BC%A0%E6%A2%A6%E9%A3%9Ei">张梦飞i</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=AI%E7%94%B5%E8%AF%9D%E5%8A%A9%E6%89%8B">AI电话助手</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E5%A3%B0%E7%BD%91">声网</a><a class="chip" href="../index.html?tag=%E7%81%AB%E5%B1%B1%E5%BC%95%E6%93%8E">火山引擎</a>
+    <span class="date">2025-07-25</span>
+  </div>
+  <p class="lead">初心不改 教程依旧，让AI电话助手真正的能为你所有且为你所用，成为你的数字员工！</p>
+  <article class="content"><p>张梦飞i <em>2025年07月25日 14:42</em></p>
+<p>来了！小伙伴们，初心不改 教程依旧，咱们的每月干货教程虽迟但到！特别的是这次的教程终于是我们团队小伙伴写的了！</p>
+<p>这次给大家带来的是我们团队开发的项目demo， 能够把AI智能体接入到电话中，让用户通过电话进行沟通。</p>
+<p>与手机上自带的AI助手不同，这是 完全自主可控的智能体接入，你可以自由的为智能体配备知识库和工具，让AI电话助手真正的能为你所有且为你所用。</p>
+<p>我们先看效果：</p>
+<p>可实现 在用户说话时，随时打断ai说话、模拟真人对话节奏，并且具有很好的扩展场景，比如接入到电话中，成为你的ai电销助手、同声传译、智能家居语音控制、健康咨询等。</p>
+<p>整个项目并不难，只要跟着教程就可以完成，一共四个步骤：</p>
+<p>1、环境安装，代码部署</p>
+<p>2、项目配置，账号注册</p>
+<p>3、启动项目，搭建语音机器人</p>
+<p>4、接入电话，完成。</p>
+<p>- 注意： 接入电话这一步骤是需要有企业才可以申请线路的。 不过如果只想体验动手的快乐，那么可以忽略接入电话，先自己搭建一个在电脑上的语音问答机器人。</p>
+<p>本次教程由我们团队小伙伴完成，  </p>
+<p>创作不易，建议大家收藏、点赞、加关注，给他点鼓励</p>
+<p>话不多说，开始教程</p>
+<p>（教程已同步在通往AGI之路飞书知识库，点击底部的阅读原文可以跳转查看）</p>
+<hr>
+<p>本项目可以在服务器上长期运行，也可以在个人电脑（windows、mac）上进行搭建、体验。本文主要以windows电脑为例。</p>
+<p>01
+安装node
+如果要在服务器上运行，则可以使用命令行拉取：sudo apt install nodejs npm</p>
+<p>如果要在自己电脑上运行,下载地址：<a href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a>
+选择你的电脑系统后，点击安装程序按钮开始下载。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR8sBa3lx4vm3w8glPnXQsWJicYmBMRJIV4SKgUpdXTjsxHuF8zP4sN8Q/640?wx_fmt=png&from=appmsg&randomid=xwbs5fwx&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+下载node js
+安装过程与安装其他软件类似，注意不要安装在C盘即可。
+安装可能会有点慢，安装过程中继续往下走，不用刻意等安装完成。
+安装完成后会有【Type ENTER to exit:】的字样。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRuovPGmao9TFbUCvOdv1icN6twsxXZOXINfrU4vMqeUXibKibhXCktoPRw/640?wx_fmt=png&from=appmsg&randomid=ckc4fhyi&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<hr>
+<p>安装nodejs 
+<strong>02</strong>
+<strong>下载及运行项目</strong>
+<strong>2.1、项目内容介绍</strong></p>
+<p>项目分为两部分：
+1、声网token的获取、更新（后端程序）
+2、网页（前端）</p>
+<p>项目下载，下载地址（ 项目下载时，可以先继续往下进行，后续会用到）：
+<a href="https://github.com/15093083169/Agora_AI/archive/refs/heads/main.zip">https://github.com/15093083169/Agora_AI/archive/refs/heads/main.zip</a></p>
+<p><strong>2.2、注册声网账号，前期准备</strong>
+<strong>2.2.1、前往声网：</strong>
+<a href="https://console.shengwang.cn">https://console.shengwang.cn</a> ，前往链接进行注册、登录、个人认证。
+<strong>2.2.2、认证完成后：</strong>
+<a href="https://console.shengwang.cn/settings/projects">https://console.shengwang.cn/settings/projects</a> ， 前往链接，新建一个项目。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRzlEtD6Qg8d0doCOjicalyoDrYKh0QQahAMJzJzdic5PibL0gDqvNQpodw/640?wx_fmt=png&from=appmsg&randomid=jzl0b8c5&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><code>项目类型选择通用项目项目名称取一个方便区分的即可。场景标签选择【其他】鉴权机制选择【安全模式：app id +token】开启【开通RTM】开启【开通即时通讯IM】</code></p>
+<p><strong>2.2.3、创建完成后：</strong></p>
+<p><a href="https://console.shengwang.cn/product/ConversationAI?tab=config%EF%BC%8C">https://console.shengwang.cn/product/ConversationAI?tab=config，</a> 前往链接，点击开通服务，在弹出窗口点确认。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR1fOHgGN7EE95gCBeGfCsC2AydzRafoNOI6sYjQZPOWlpZm9GMRzbgg/640?wx_fmt=png&from=appmsg&randomid=cpll10q6&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRMnkibE9forSFlSy1wicsyNLNCcQF1p3auFuEUCuXQXzB7lgCKw84LRFA/640?wx_fmt=png&from=appmsg&randomid=c2lv6g9e&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<hr>
+<p><strong>2.3、声网token获取。（非必须）</strong></p>
+<p><code>如果是为了尝鲜，可以跳过该流程，查看2.4,会讲获取有效期为一天的token。</code>
+<code>如果是为了长期使用，长期获取token，建议走该流程。</code></p>
+<p>**2.3.**<strong>1、获取声网APP ID 和主要证书的值</strong></p>
+<p><a href="https://console.shengwang.cn/overview">https://console.shengwang.cn/overview</a> ，选择你的项目，复制 APP ID 和 主要证书 的值。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR1wq1Mx2rH3TO4OyNYE3HblMNqj57S4F3fuicwpAfH8Vwxz9LdNCjXHg/640?wx_fmt=png&from=appmsg&randomid=dzgw7xll&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>2.3.2、解压【步骤2.1时下载的项目】</strong></p>
+<p>打开项目文件夹，在token文件夹找到里面的.env文件。（.env文件默认无法打开，可以右键点击打开方式，选择记事本即可 ）
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRT5k4Vshzibw4MU9MY4LgA6ibQSqft8lNq85uiaSwWFrVBPUUm5viaTqlmA/640?wx_fmt=png&from=appmsg&randomid=a6e6gtws&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><code>将&lt;your_appid&gt;修改为复制的APP ID的值</code>
+<code>将&lt;your_app_Certificate&gt;修改为复制的主要证书的值。</code>
+<code>注意: &lt;&gt;也要一起改掉，＝后面只有复制的值。修改后需要保存。</code></p>
+<p><strong>2.3.3、运行项目：</strong>
+①、打开项目文件夹，进入token文件夹，在地址栏输入cmd，回车。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRPGhA6JsUpXA9HEj2IQaYksWbj0ibx9ZWaKS6pXO03W3shibN7pjicV2icg/640?wx_fmt=png&from=appmsg&randomid=8fphr2j5&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>②、在弹出的终端中，输入：
+<code>npm i</code>
+<code>node DemoServer.js</code>
+<code>注意：上面的这是两行，每行输入完成后要按回车键。除首次运行外，后续运行，只需要执行第二行命令即可。</code></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRv7GFub5tiaNicGAQLKwHia9QpSibUhsjoxpJ4P9dhThlLOkMlRSAHGGwIg/640?wx_fmt=png&from=appmsg&randomid=bnjpagas&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>看到：AgoraSignServer starts at 8081，证明运行成功了 。</p>
+<p><strong>2.4、网页（前端）</strong></p>
+<p><strong>2.4.1、添加密钥</strong>
+<a href="https://console.shengwang.cn/settings/restfulApi%EF%BC%8C%E7%82%B9%E5%87%BB%E6%B7%BB%E5%8A%A0%E5%AF%86%E9%92%A5%E6%8C%89%E9%92%AE%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E5%AF%86%E9%92%A5%E3%80%82">https://console.shengwang.cn/settings/restfulApi，点击添加密钥按钮，添加一个密钥。</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRux9v29Cz58aIdgM5kpgpaMmSJsyiaibkdoj4CT22dicM3LvjH1nlf67KQ/640?wx_fmt=png&from=appmsg&randomid=n5iciwsx&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>①、 添加完成后，客户密钥会有一个下载按钮，下载你的key和密钥。 ==下载后密钥无法再重新获取，请注意妥善保管。==
+②、下载后打开，如下图，复制 ==客户ID/key== 和 ==客户密钥/secret== 的值。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRozhfkIibpMQq7PNMJkqN6yiciaibefvSIcib0G8FURJ50giaSdgnLF3E1Q0A/640?wx_fmt=png&from=appmsg&randomid=hgja98i8&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>2.4.2、获取APP ID的值</strong>
+<a href="https://console.shengwang.cn/overview%EF%BC%8C%E5%A4%8D%E5%88%B6">https://console.shengwang.cn/overview，复制</a> ==APP ID== 的值。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRAdLM0NNic6x02Sl8JrCvoEdanTHCicVg3UYUXyloHdZX7gNqxcQ3aADw/640?wx_fmt=png&from=appmsg&randomid=gfntl02g&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>2.4.3、解压【步骤2.1时下载的项目】</strong></p>
+<p>打开项目文件夹，进入到web文件夹，找到.env文件。 （.env文件默认无法打开，可以右键点击打开方式，选择记事本即可）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRT5k4Vshzibw4MU9MY4LgA6ibQSqft8lNq85uiaSwWFrVBPUUm5viaTqlmA/640?wx_fmt=png&from=appmsg&randomid=xp5phlta&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-xml">将&lt;your_appid&gt;修改修改为APP ID的值
+将&lt;your_client_id&gt;修改为key的值
+将&lt;your_client_secret&gt;修改为secret的值注意: &lt;&gt;也要一起删掉，＝后面只有复制的值。修改后需要保存
+</code></pre>
+<p><strong>2.4.4、运行项目</strong></p>
+<p>①、进入到web文件夹，在地址栏输入cmd，回车。<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRwROZnO8VOFqxIDjaNibEXlk9BTMgT7DgcEyIU539XKklR6FrbtMZFbA/640?wx_fmt=png&from=appmsg&randomid=cy395xtg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>②、在弹出的终端中，输入：</p>
+<pre><code>npm i
+npm start
+注意：上面的这是两行。每行输入完成后要按回车键。
+除首次运行外，后续运行，只需要执行第二行命令即可。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRWhKZHWhoiaTubfYFCLhWUAmAATuQxBNRm0Lgt5U1GPV6ToMLxI1o3cg/640?wx_fmt=png&from=appmsg&randomid=tkm6gf4t&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>2.4.5、运行成功后可打开浏览器，输入localhost:3000,即可访问。</strong></p>
+<p><code>注意不要用微信浏览器，要用系统的浏览器。</code>
+<code>能够访问后继续往下走。接下来我们要配置的内容，都是要在这个页面里进行配置</code></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRAgfKfcXzTsINPXYuiaWVmftxdA5Du3sWAuD0xFkgfibEhdnZrGIId95Q/640?wx_fmt=png&from=appmsg&randomid=ie0r3rl6&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<hr>
+<p><strong>03</strong>
+<strong>项目配置</strong>
+<strong>3.1、声网token</strong></p>
+<h3>3.1.1、如果你没有按照2.3做，要使用临时token：</h3>
+<pre><code>https://console.shengwang.cn/overview，前往链接，点击临时token生成器，选择产品RTC，频道名写一个方便区分的。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRREPrbibwKDp5snZBU8RfnI6auNu9hVkGG2dD45TxadSCicOKlE6zicw45A/640?wx_fmt=png&from=appmsg&randomid=0o6b7buf&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+生成后，复制你获取到的临时token，以及你的频道名。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRkClRibHVJBIsHF72dXuQeRQnHianCbJVh06EAVryhbJtKPBXNkibDeSUg/640?wx_fmt=png&from=appmsg&randomid=ge2ntiih&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+输入到【步骤2.4.5打开的网页】的声网token选项卡的临时token输入框中。 <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRREVHOevb9Vf5HoHq5K8uua7ZCQusQHJnnyjW2fklPSB5RI3JPrXIJVQ/640?wx_fmt=png&from=appmsg&randomid=i5um779x&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>3.1.2、如果你按照2.3做了：</strong></p>
+<pre><code>选择【后端获取token】
+如果你是在windows电脑上运行，地址我已经预设过了。
+如果是放在服务器上的话，要把localhost改为服务器ip或域名。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRb6BjvAdEynpx6fPqfQkgKYpckrvaAjCdptS7O5h3yJ7rlz9wFibfSPQ/640?wx_fmt=png&from=appmsg&randomid=gkytnwro&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>3.2、llm（大语言模型）</strong></p>
+<p>大模型的接入，采用标准化ai的api接入方式。理论上所有平台均可，包括工作流平台、中转站、ai提供商。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR6o4qSgibGx4icBOwoM7nggI0lkdtJlLdKSsibNTLcykkuT2450HH4WPicg/640?wx_fmt=png&from=appmsg&randomid=v7wmh8wm&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>本文以火山平台的大模型的接入为例，其他平台填入内容的方式一致，各个平台获取方法可能会有差异。</p>
+<p><strong>3.2.1、注册、登录、认证</strong>
+<a href="https://console.volcengine.com/ark/">https://console.volcengine.com/ark/</a> ，如果没有使用过的话，需要先进行注册、登录、认证。</p>
+<p><strong>3.2.2、认证完成后：</strong>
+①、 前往在线推理，创建推理接入点：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRiaH84YmRGwFQUicPtsXhzX1001pxtl1IKkPvEbxj32CcTLxicYsFZqcBw/640?wx_fmt=png&from=appmsg&randomid=rffcfiil&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>②、 接入点名称方便后续区分即可。模型选择，选择你想使用的模型。（模型的速度会影响语音回复的速度，如果希望更快速，可以选择doubao1.5lite）然后点击右侧的开通模型并接入。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRTic3eOwhGKahhkqMIZVlS8SfTaPDAIEm7icWCABpSeBXKRBZb8PDjOUA/640?wx_fmt=png&from=appmsg&randomid=x18ty3qq&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>创建时，如果已经实名认证过了，开通按钮仍然置灰，悬停提示先进行实名认证，刷新页面即可。
+③、创建完成后，复制 接入点id 的值。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR9kVo9aEqSd3j6FLre8oKHLusj1yz9G4NzE2yFTDVnVWCjTdPG8JbaQ/640?wx_fmt=png&from=appmsg&randomid=4mr6ra9z&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>3.2.3、创建API Key</strong></p>
+<p>①、 前往API Key管理，创建 API Key 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRCUYq6YRwltWFnHGEMdKDK1apZvowoiaibgHYS4EOAvlrMzvGEtuFE5cA/640?wx_fmt=png&from=appmsg&randomid=x4yq7su0&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>②、 名称方便后续区分即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRiaGbUBicaFeBPORvEWQBRI4OM3hHNxsDMuuUCgMZ3XzbbXCDzS0A9eibQ/640?wx_fmt=png&from=appmsg&randomid=6cqbx8kk&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>③、 创建完成后，先点击apikey后面的小眼睛，使你能看到apikey的值，然后点击复制。获得 apikey 的值</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRE5KktdKsxicKiaTHNZno8qEw8ic3wRCwpP9X4UQ6RwA89eQ2fnH7LI3dQ/640?wx_fmt=png&from=appmsg&randomid=mzhvusew&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>3.2.4、将获取的值写进项目中</strong></p>
+<p>回到 我们 之前打开的网页，将获取到的值输入到对应位置</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR6o4qSgibGx4icBOwoM7nggI0lkdtJlLdKSsibNTLcykkuT2450HH4WPicg/640?wx_fmt=png&from=appmsg&randomid=vp62rt2y&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-bash">API地址：
+https://ark.cn-beijing.volces.com/api/v3/chat/completionsAPI
+密钥：前面复制的&#39;apikey&#39;的值
+模型名称：前面复制的接入点&#39;id&#39;的值
+系统提示词，填入你的&#39;提示词&#39;。
+问候语，ai首次打招呼的话术。
+</code></pre>
+<p>其他平台接入原理也一致，只要获取到对应的api地址、api密钥、模型名称即可。</p>
+<p><strong>3.3、VAD（语音活动检测）配置</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRSejebVRLr0YjKNV6AYsRV8MxUZ6NTxsfXlYwY1o6JfqN3j2BicDvubw/640?wx_fmt=png&from=appmsg&randomid=j4l6zghz&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>这些参数是对ai灵敏度的参数配置，默认值是我调试后我认为合适的值。每个字段具体含义，在项目中也有气泡解释，悬停可以查看具体介绍。</p>
+<pre><code>人声持续阈值 (ms)：持续检测到人声信号的最小时间长度，人声持续时长超过该数值时视为有声输入，避免误打断。取值120-1200
+前缀填充阈值 (ms)：开始新的语音片段所需的最短语音持续时间，避免非常短的声音触发语音活动检测。取值0-5000
+静音持续阈值 (ms)：语音结束时的最短静音持续时间，确保短暂的停顿不会过早结束语音片段。取值0-2000
+灵敏度：ai识别人声的灵敏度，越低越灵敏，取值0-1启用
+优雅打断：启用后，会允许用户说话时，打断ai说话
+</code></pre>
+<p><strong>3.4、tts(文本转语音)</strong></p>
+<p>我预设好了【火山引擎、腾讯云】的tts模板，可以按照你想用的平台来配置。3.4.1和3.4.2任选其一即可。</p>
+<p>*<em><strong>3.4.1、火山引擎：</strong></em>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR6evyKwK2OoSDC7Xiam4zLcjVLc7Yb3qdmL7bReY02Ktn8calEv0vx8g/640?wx_fmt=png&from=appmsg&randomid=ppbucfy5&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+1、<a href="https://console.volcengine.com/speech%EF%BC%8C%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E3%80%82">https://console.volcengine.com/speech，登录认证。</a>
+2、在语音合成大模型板块，创建个应用。应用名称方便区分即可，选择服务中，要勾选语音合成大模型，语音合成。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR7fyianQrRWYpicKQgr1QWGeutM4jeThWKQ1oFiac5g9NGc8znb7L6HpFg/640?wx_fmt=png&from=appmsg&randomid=kr15uw7h&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+3、侧边点击语音合成，获取【APPID、AccessToken、ClusterID】的值。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR1p4t0o6WTLWbNACJ3n51FUMAjp6zNIXLlL7MNRxNskh7Am5ibBIZib7w/640?wx_fmt=png&from=appmsg&randomid=ygwgto8r&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+4、语音类型，可以前往<a href="https://www.volcengine.com/product/tts%EF%BC%8C%E8%83%BD%E5%8A%9B%E4%BD%93%E9%AA%8C%E6%9D%BF%E5%9D%97%E8%BF%9B%E8%A1%8C%E8%AF%95%E5%90%AC%E3%80%82%E9%80%89%E6%8B%A9%E5%A5%BD%E5%90%88%E9%80%82%E7%9A%84%E9%9F%B3%E8%89%B2%E5%90%8E%EF%BC%8C%E5%89%8D%E5%BE%80https://www.volcengine.com/docs/6561/1257544%EF%BC%8C%E6%89%BE%E5%88%B0%E4%BD%A0%E9%80%89%E6%8B%A9%E7%9A%84%E9%9F%B3%E8%89%B2%E6%89%80%E5%AF%B9%E5%BA%94%E7%9A%84voice_type%E7%9A%84%E5%80%BC%E3%80%82">https://www.volcengine.com/product/tts，能力体验板块进行试听。选择好合适的音色后，前往https://www.volcengine.com/docs/6561/1257544，找到你选择的音色所对应的voice_type的值。</a>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRMGyHibaOv0tdojfNJQILaxJk6vIJ2nCaic2Ho28jW7ibc2T3ZpYuib60ibQ/640?wx_fmt=png&from=appmsg&randomid=vqldgtkh&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+把这几个获取到的值，填入到项目中，调整你想要的语速等。点击保存配置。</p>
+<h4>3.4.2、腾讯tts：</h4>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRp9zmq4CO8Q1uYPHvyf7s1wffkufJ7KOiaHEt51UZ3CvOVNn4doX2Gaw/640?wx_fmt=png&from=appmsg&randomid=fkz8flw8&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<ol>
+<li><a href="https://console.cloud.tencent.com/cam/capi%EF%BC%8C%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E3%80%82">https://console.cloud.tencent.com/cam/capi，登录认证。</a></li>
+<li>新建密钥，获取【 APPID 、 SecretId 、 SecretKey 】， 下载后密钥无法再重新获取，请注意妥善保管。
+ <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRYJSXoV6c5ibluBdQW3pib98qqtWrCdaR1V4Z4FDcCb8ibOzEMu9ia4vvHg/640?wx_fmt=png&from=appmsg&randomid=bberzpkq&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRNwd8U1LEHickszU6Hic7Z0Oh2mibA56c1T2ianKLvia8hOibOicibq0XGh0mJw/640?wx_fmt=png&from=appmsg&randomid=4q0rjrsr&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></li>
+<li>语音类型，可以前往<a href="https://console.cloud.tencent.com/tts/complexaudio%E8%BF%9B%E8%A1%8C%E8%AF%95%E5%90%AC%EF%BC%8C%E9%80%89%E6%8B%A9%E5%A5%BD%E5%90%88%E9%80%82%E7%9A%84%E9%9F%B3%E8%89%B2%E5%90%8E%EF%BC%8C%E5%89%8D%E5%BE%80https://cloud.tencent.com/document/product/1073/92668%E6%89%BE%E5%88%B0%E4%BD%A0%E9%80%89%E6%8B%A9%E7%9A%84%E9%9F%B3%E8%89%B2%E6%89%80%E5%AF%B9%E5%BA%94%E7%9A%84">https://console.cloud.tencent.com/tts/complexaudio进行试听，选择好合适的音色后，前往https://cloud.tencent.com/document/product/1073/92668找到你选择的音色所对应的</a> 音色 ID 的值。</li>
+</ol>
+<p><strong>把这几个获取到的值，填入到项目中，调整你想要的语速等。点击保存配置。</strong></p>
+<h3>04开始体验网页ai语音对话：</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRvuBq0gNyuqboHmibRoYIPJuPJ5zSvtc4iadEIa5CeyiaVIAianU40Pb0dA/640?wx_fmt=png&from=appmsg&randomid=r300yd83&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片">
+我们先点击创建智能体，点击创建智能体成功后。再点击开始对话，即可开启与ai对话内容。
+创建智能体，实际是通过声网创建了一个我们与ai对话的通道。这里使用声网的频道连接，会消耗
+声网资源，所以使用完成后记得点击停止智能体。声网赠送的有部分免费额度，测试使用时无需担心付费问题。
+点击开始对话，首次会请求麦克风权限，需要同意权限。同意后即可开始与ai对话。</p>
+<p><strong>05</strong>
+<strong>接入电话：</strong>
+将ai语音接入电话的能力，需要 对接线路运营商 。需要 公司资质、服务器、一定的开发能力 ，以下教程会基于有一定开发能力来讲：</p>
+<p><strong>5.1、接入线路运营商，资质申请：</strong>
+以声网官方提供的供应商【小樱桃科技】为例。
+【小樱桃科技】官网：<a href="https://xswitch.cn/">https://xswitch.cn/</a>
+联系【小樱桃科技】进行申请资质以及线路，获取账号密码。</p>
+<p><strong>5.2、接口对接：</strong>
+<strong>5.2.1、获取【小樱桃科技】的token。</strong>
+<code>①调用/api/sessions接口。</code>
+<code>②传参为账号（login）,密码（password），从而获取token。</code>
+<code>③获取到的token需要放在外呼接口的header里，作为接口外呼时鉴权。</code></p>
+<p><strong>5.2.2、进行外呼。</strong>
+调用小樱桃/api/agora/callPSTN接口：</p>
+<pre><code>`hearder需要传刚刚获取到的token的值。`
+`传参：`
+`声网频道（channnel）`
+`主叫号码（cidNumber）`
+`进入声网顺序（dialPhoneFirst）（true为先呼叫手机，手机接听后才进入声网）`
+`被叫号码（destNumber） 声网token(token)`
+</code></pre>
+<p>调用声网/join接口。</p>
+<pre><code>`小樱桃呼出时，我们需要将ai的频道提前准备好。所以在呼出的同时，需要调用声网的创建频道的接口。`
+`声网详细内容可参考声网开发文档：https://doc.shengwang.cn/doc/convoai/restful/get-started/quick-start`
+</code></pre>
+<pre><code>声网接口调用示例：
+curl --request post \
+  --url https://api.agora.io/cn/api/conversational-ai-agent/v2/projects/&lt;your_app_id&gt;/join \
+  --header &#39;Authorization: Basic &lt;credentials&gt;&#39; \
+  --data &#39;
+{
+  &quot;name&quot;: &quot;unique_name&quot;,
+  &quot;properties&quot;: {
+    &quot;channel&quot;: &quot;channel_name&quot;,
+    &quot;token&quot;: &quot;token&quot;,
+    &quot;agent_rtc_uid&quot;: &quot;0&quot;,
+    &quot;remote_rtc_uids&quot;: [
+      &quot;*&quot;
+    ],
+    &quot;asr&quot;: {
+      &quot;language&quot;: &quot;zh-CN&quot;
+    },
+    &quot;llm&quot;: {
+      &quot;url&quot;: &quot;https://api.xxxx/v1/xxxx&quot;,
+      &quot;api_key&quot;: &quot;xxx&quot;,
+      &quot;system_messages&quot;: [
+        {
+          &quot;role&quot;: &quot;system&quot;,
+          &quot;content&quot;: &quot;You are a helpful chatbot.&quot;
+        }
+      ],
+      &quot;greeting_message&quot;: &quot;您好，有什么可以帮您？&quot;,
+      &quot;failure_message&quot;: &quot;抱歉，我无法回答这个问题。&quot;,
+      &quot;max_history&quot;: 10,
+      &quot;params&quot;: {
+        &quot;model&quot;: &quot;xxxx&quot;,
+      }
+    },
+    &quot;tts&quot;: {
+      &quot;vendor&quot;: &quot;vendor_name&quot;,
+      &quot;params&quot;: {
+        &quot;key&quot;: &quot;xxxx&quot;,
+        &quot;voice_id&quot;: &quot;xxxx&quot;,
+      }
+    }
+  }
+}
+</code></pre>
+<p><strong>5.3、外呼项目示例</strong>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRdjRWY3ic5ibEWAI8a4TANJKWPoGFNypjiaeSwHKHG2KSNJyibOFIQ4NK1Q/640?wx_fmt=png&from=appmsg&randomid=imsa4ast&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code>我已经做好了外呼demo，申请好资质后，将小樱桃账号密码，以及声网接口中所需的内容填入代码中，即可开始使用。
+</code></pre>
+<p><strong>06 结语：</strong></p>
+<p>以上便是整个搭建过程，遇到任何任何问题，都可以评论区留言，尽力解答~</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>Equity AI</p>
+<p>向上滑动看下一个</p>
+<p>set 限制解除</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/nx6EsFs1MORuDd-udEHnDA?scene=1" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

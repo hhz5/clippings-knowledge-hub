@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测Macaron V1，还真给我GLM5.2调成0.8个Fable5了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测Macaron V1，还真给我GLM5.2调成0.8个Fable5了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Macaron%20V1">Macaron V1</a><a class="chip" href="../index.html?tag=GLM5.2">GLM5.2</a>
+    <span class="date">2026-07-24</span>
+  </div>
+  <p class="lead">抢不到Kimi K3还抢不到这新模型嘛！</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月24日 11:46</em></p>
+<h2>完胜了，超越了，逼近了，</h2>
+<p>每次有新模型发布，介绍基本都长一个样。</p>
+<p>推理更强了，代码更稳了，上下文更长了，Agent更聪明了。</p>
+<p>榜单一排，柱状图一拉，每一项都比上一代强20%。所以我现在看模型，已经越来越不关心它在某张榜单上高了几分，不涨也不会放出来。</p>
+<p>我更关心一件事，</p>
+<p>稳定。</p>
+<p>哪怕不是个全能水桶模型，只要能在我高频使用场景上一直有效，我很乐意冲个plan，很多时候这比我去openrouter扣扣搜搜挑一个免费模型要好得多得多。</p>
+<p>还有67小时后Kimi额度才重置，Fable5用着API的我刷X看到了一个新模型Macaron V1，这也是我第一次看到公开的GLM5.2后训练模型，能一句话直出鹈鹕游戏，主打一个前端能力拉满，还把上下文扩展到了原生2M。</p>
+<p>，时长00:04</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3dmacwaaayaapyg3cyrvfag6dfmnqakya.f10002.mp4?dis_k=7d7f77dd50be1bd87ef0d7ace299e63e&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=FaSf6e9QFSxI9LOO6goMEUMOcGYWUxl1ITMVZh5De1AuPHYcS30OYT8rO0QwZQExVwQ=&amp;auth_key=698863585731e9bbe3aa492ff71afd4b&amp;vid=wxv_4618271174995214339&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>🔗 macaron. im/mindlab/research/introducing-macaron-v1</p>
+<p>接入到Claude Code，加上taste skill之后一把出来的效果也挺能证明这模型UI水平的。待会我发发这个离谱的提示语，专门来测模型UI创意力的。</p>
+<p>，时长00:10</p>
+<p><video src="https://mpvideo.qpic.cn/0bc32ebuaaade4ajppdbqrvfhuodidiqgqaa.f10002.mp4?dis_k=d7356d5e4d932849c8bab766b53ad95c&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=FNjH76EBEX9Jp+KP615XR0BUIGdCDh0kJzNCMxlEcQgvM3AaGC4KMj54akUxMVpnVF4=&amp;auth_key=a8e0dbea91abbef3d77e8f5b15eaa4ec&amp;vid=wxv_4618271628215549953&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fz22EtibKaNbxhcRsh3dbgicwK1wdySUvgF7K6QlhYnnW0xIaEZoQboKkl3qVniaIkKiaZeicoY2n3Q3IeHSN2rJeQfmtEUnMuZzCUE/640?wx_fmt=png&from=appmsg#imgIndex=0" alt="图片"></p>
+<p>Macaron V1这次提出了一个新框架，MoL，</p>
+<p>说穿了做了一件事，把基座模型整个冻住，一个参数都不动。所有后训练全发生在 LoRA 空间里。用人话说，就是同一个公司共用一套知识库，但客服，项目经理，程序员和设计师，各自保留一颗专业脑袋。</p>
+<p>MoL想做的，就是让相近的任务互相强化，差得太远的任务各练各的。</p>
+<p>像聊天需要理解你的语气，记住上下文，还要知道什么时候承认自己错了。</p>
+<p>Agent要拆任务，调工具，处理意外，原来的路走不通了还得自己拐弯。</p>
+<p>Coding更死板一点，语法，依赖，测试，终端，一个地方出错整段代码都跑不通。</p>
+<p>UI又是另一种脑回路，视觉得好看，交互得能用，代码还不能只负责把首屏糊出来。</p>
+<p>以前这些能力都挤在同一组后训练参数里，很容易优化跷跷板，代码提升来了情商就低了，情商上来了写作就都是幻觉了，所以我至今还怀念GPT5.4。</p>
+<p>Macaron团队甚至专门做了一个插件来给UI打分，也就是测试AI模型的A2UI（Agent-to-User Interface） 能力，测的就是模型在对话中，除了回复文字外，能不能在合适的地方生成UI组件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzuDCz66jFgGicwqZljjejTriae2ZXQotJej1HRP6Od1bzQ6d1MIcEXkkyV1L2b6911pG85Y2U8ucJ5gMahgibQX0iayib6SrV6IMsQ/640?wx_fmt=png&from=appmsg#imgIndex=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwBXn8icRYIHTxZoiabPXuG4g8iagJicIR0F19q5Iy68X2ce2z9hMqqpMxKlk2siarq9X2ordU7RHGaaeeXbK2IdTHVibVD4rlgVVjdM/640?wx_fmt=png&from=appmsg#imgIndex=2" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxDC4eD2lDcD32m8EK8N5ibn6k6Uf5xQxr2rLRJ3HOL035lvo4iboDIYhfOCHkOYMe35Chl8cyUvaNqK70dHuIfbKdUT31s9DyNY/640?wx_fmt=png&from=appmsg#imgIndex=4" alt="Image"></p>
+<p>对于不爱用CLI命令行页面的人，马卡龙也一个Skill，也把问题解决了。</p>
+<p>也就是说我可以直接看到之前的内容还不用/resume的一次次的开新视窗。相当于一个不用下载可装可关的Desktop App了已经。</p>
+<p>🔗 github. com/mindverse-ltd/macaron-artifacts</p>
+<p>，时长00:05</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3vubykaadsuaf3ytb4vvfhlodqwwqhbia.f10002.mp4?dis_k=1bc720887c25e48178806128459ccd60&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=E7OtnqhSQX1N8+/S6FlcQRdYLG8WDkd1czVGPU9EewoobnNJTXtaMDosZxgyNlFhA1I=&amp;auth_key=0272b4066886215566aeafff8e0753f8&amp;vid=wxv_4618272723046547458&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>，时长00:06</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3cybnoaaciiaa7vla2bvfefwd24lafvya.f10002.mp4?dis_k=43704cf10a52a6c31397944f0aa6d579&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=FPqMiYYEFXpLoLHb71tbRhNad20QBUZyfDBAY0sQI18vP3JASCoONzx/ORE1NFZmB1A=&amp;auth_key=48485346da83651f08dc337931685b37&amp;vid=wxv_4618273200425336837&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>纸面实力和新插件都看差不多了，是时候上真实任务了。</p>
+<p>Kimi K3和Macaron V1都说自己UI好UI妙，那我就好奇了，在同样的任务下的表现会是怎么样。所以我给了一段精简提示词，</p>
+<p>让V1来个自我介绍，没有额外提供技术栈限制，也没有让skill做场外辅助。</p>
+<pre><code>创建一个名为 web_design 的文件夹，并制作一个介绍 Macaron-V1-Venti 模型的交互式网页。
+确保该网站达到生产级质量标准，并可直接部署上线。
+</code></pre>
+<p>总共花了十分钟左右，从0开始，一个没啥AI味带模块化设计还有可视化图表的介绍站出现了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwgH9UCD4WE4FuvyNZ7Xh60rCDXWWsKZcAic5hlT1JZ1ll8efdRNeaicN6QVPIDqK15q3Rl6hQwaca3B5k2j8lOvykBw9Tzrl9Pc/640?wx_fmt=png&from=appmsg#imgIndex=5" alt="Image"></p>
+<p>，时长00:10</p>
+<p><video src="https://mpvideo.qpic.cn/0b2ef4aaiaaawmanzllc7zvfal6daqxqabaa.f10002.mp4?dis_k=9f6f59c58609ebc0e3f2649510bb7807&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=R+S+splUFCxK+rTf5wxeTRcOd25EBRl3czBNMEpBIAt8MnVORX8PYT0lPBU9Y1NtAwQ=&amp;auth_key=2cee1a3748ab1b5ad6c3746b2c572d4d&amp;vid=wxv_4618274400331546625&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>总的来说，里面带的特效，没有压过文字要表达的信息，还嵌入了加入Agent后的聊天UI对话，这是我在其他模型用一样的提示语还没见过的效果，还挺新颖的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FxSQysyNt8KRNiaqkGbRmDpbNmfKtHUC3DYTbcvFavAaLNrejUerdyrfElLeSDHn1PvkcOHnSDrqzZqK2b1kf5Mzu7US1QIdRibM/640?wx_fmt=jpeg&from=appmsg#imgIndex=6" alt="图片"></p>
+<p>也是借由Agent聊天框的想法，让我萌生了实测个Agent聊天室吧的想法。</p>
+<p>一样是短短的几句Prompt</p>
+<pre><code>创建一个名为 chat 的新文件夹，并在网页中展示一个多智能体聊天室。
+确保各个智能体能够相互交流，同时我可以随时终止它们的对话。
+整体氛围可以像一个“AI 议会”，围绕人工智能的未来展开讨论。
+</code></pre>
+<p>再等个十几分钟，它又又又出了结果</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FywYnw4VfsgcEof6oJBcPxl0A92BY7g1DciapKhvGFLJp9cib56satuYzHicfeA7ichXbrhAQfYwrPQq5TDGVjiaYT9c7t7VpZvCEh0/640?wx_fmt=png&from=appmsg#imgIndex=7" alt="Image"></p>
+<p>不同Agent各司其职，</p>
+<p>有统筹者，有研究员，教育家和工程师也都进入了这个对话</p>
+<p>让他们开始聊天后，消息源源不绝</p>
+<p>大家都符合自己人设的疯狂表达。</p>
+<p>，时长00:16</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3vqavsaabdiaicjddtbvfdlgdlgwacwia.f10002.mp4?dis_k=9e8094aa2cb5283603a34701cc4840a7&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=RJeblsBTGnpG97aL7VkMQUBUJ2gRBR52cTNENBgSdlF/OiRORXwBNzEoPkE3NgFhVF4=&amp;auth_key=470930005c73fd7eb030f6b639f41a1b&amp;vid=wxv_4618274839962025990&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>在每轮对话主题过后还都有总结以及意向在边上让我做参考</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzKxOs1fFS2cuibyxD5Qs50m8tDks8J8UveGkGkLWA8HfoWsSQWH82ZbiawkDGq6NyjzJ9h3A5a2zXTVLw3uibFWcfFqtAkY0IOXg/640?wx_fmt=png&from=appmsg#imgIndex=8" alt="图片"></p>
+<p>从平时自己在家里跟Fable5斗智斗勇到现在看着Agent们内部间辩论的战火朝天，</p>
+<p>这也就是三行提示词出来的效果。。。</p>
+<p>再来再来，身为大模型，会点物理不过分吧，那让V1来做一个物理课教学页面，再考考模型的世界知识。</p>
+<pre><code>创建一个名为 gravity 的文件夹，并制作一个名为 Gravity Particle Lab（引力粒子实验室） 的精致单页 HTML 交互体验。
+仅使用 HTML、CSS 和原生 JavaScript。所有代码都放在同一个 index.html 文件中，不使用任何外部库或框架。
+
+## 核心概念
+在一个大型交互式画布中展示动态粒子系统。画布中设有一个可以移动的引力源，用于吸引或排斥粒子。整体体验应更像一个轻量级的交互式物理实验室，而不是单纯的装饰性背景动画。
+
+## 主要交互
+在画布中渲染 100～300 个持续运动的粒子。
+在画布中心附近放置一个引力源。
+用户可以通过鼠标或触控拖动引力源。
+粒子会加速朝引力源移动。
+添加可选的排斥模式，将粒子推离引力源。
+粒子碰到画布边界时应产生柔和的反弹效果。
+限制粒子的最大速度，确保模拟过程保持稳定。
+防止粒子被困在引力源内部。
+保持动画流畅，并确保运动具有足够的稳定性和可预测性，避免出现失控或不稳定的情况。
+</code></pre>
+<p>从运动轨迹到不同参数导致的反应，都展现的稳定还正确。</p>
+<p>，时长00:07</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3lmbeuaactiaje4da3vvfew6djjnqesqa.f10002.mp4?dis_k=f7f2b540413f0e6f5591d8f963d083a9&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=SOrK3dQCRHgd9uPa6wtdEkIJIjgUA0Z0ITwSPE1CJllzOSRAGi5fNWopaxAxZFAyVgM=&amp;auth_key=5b0b1ab8a5746d4548db8c444d6a76ef&amp;vid=wxv_4618275033453379589&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>因为是大项目的缘故，在没有调用任何Skill的情况下，V1还能在接受后还自己加上了个内测。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzaibQhkv2ux1fFtSS7OVy9JAxggqvvCe4kGSR3SnSLZgZvQzdCcKwfibtGKYaCZRcmr261OwrgxbuG6ibH3QLN0wnicK7BsLWg3jI/640?wx_fmt=png&from=appmsg#imgIndex=9" alt="Image"></p>
+<p>而为了继续测它的 Coding 能力，我又想到了一个看着简单，实际上特别容易出Bug的经典大一作业噩梦：2048。</p>
+<p>这个游戏大家应该都玩过，页面本身并不复杂，</p>
+<p>无非就是一个 4×4 的格子，几个数字方块，再加上滑动和合并动画。</p>
+<p>但真要把它写对，里面的坑一点都不少。</p>
+<p>比如连续四个2应该合成两个4，而不是直接变成8，</p>
+<p>同一个方块在一轮移动中只能合并一次，</p>
+<p>无效移动不能生成新方块，</p>
+<p>好多好多都是之前其他Agent踩过的坑。所以它表面上是个小游戏，实际上更像是一场状态管理和边界条件考试。我给它的提示语还是很直接：</p>
+<pre><code>创建一个名为 2048 的新文件夹，并制作一款功能完整且可以正常游玩的 2048 游戏。
+使用自适应的4×4棋盘，并正确实现原版 2048 的全部游戏规则。
+支持方向键、WASD 键以及移动端滑动手势。加入流畅的方块移动与合并动画，并提供当前分数、持久化保存的最高分、重新开始、获胜、游戏结束和继续游戏等状态。
+需要特别注意方块的合并顺序，防止同一回合重复合并，同时正确处理无效移动、重复输入和响应式适配。
+确保所有交互均可正常使用，最终完成的游戏中不得包含占位控件或明显错误。
+</code></pre>
+<p>等它一次性生成结束后，整个游戏已经可以直接玩了。</p>
+<p>从键盘操作，到数字方块移动和合并的反馈都做得很完整。</p>
+<p>分数，最高纪录，重新开始，胜利提示和游戏结束状态也都有对应处理。</p>
+<p>，时长00:09</p>
+<p><video src="https://mpvideo.qpic.cn/0bc35ybukaad5majy6dbsjvfh3wdixxagria.f10002.mp4?dis_k=49692f95d360e9fd4dc952e435cf760f&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=R8iRyLwPFHNNpe7fuwlYRBdVcjoVUhx8cDYRMUhEIQ98PHUfSCAPPjp6ZhVhZlVkA18=&amp;auth_key=89e3c31522720482816b7103306d4ba9&amp;vid=wxv_4618276164372119558&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>最后的最后，我一个真正的魔王任务来了。</p>
+<p>这一次，直接把我们一直在做的AI学习网站，LearnPrompt交给它，现在重构之后长这样，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8Fz46X9ycbKPpNjOGRaNQ0r7PvUK8HeNyjNRddsjoxUW5vxMxIrOXejeAp0hCC1zvFjgh23lWZ0wGnBgS8dpK3Bke6uv8Rqg9Kw/640?wx_fmt=jpeg&from=appmsg#imgIndex=10" alt="Image"></p>
+<p>让它把原本偏内容型的学习页面，重新做成一个具有3D特效，可交互，还能清楚解释课程体系的展示网站。同时，我也允许它根据需要自行调用合适的 Skills。接到任务之后，V1没有说直接套一个常见的科技网站模板，是先读取了现有内容和项目规则，随后主动选择了Taste Skill，把它作为视觉与交互设计上的参考规范。</p>
+<p>最终生成的结果，就是刚刚我发的第一个case，提示语也就是，</p>
+<p>，时长00:10</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3cibnaaacaiaat5dayzvfeewd2ajafuaa.f10002.mp4?dis_k=8fa08cf4ad2cb207b3db9a502d59605e&amp;dis_t=1784874428&amp;play_scene=10120&amp;auth_info=BsfIkm9EK0/7tIzrWwpGEQ4mbhZUTCEnPRUwS0MmXHI8dUwZIV9mOCQ8RjE0B2YFBA==&amp;auth_key=e91a25433789c85d1755e9473d39c854&amp;vid=wxv_4618276350649548802&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>说实话，整体完成度比我预期中高不少，莫名有种我学习之前还可以看一个过场动画的感觉。</p>
+<p>它使用了大量展开，收缩，切换和空间层级变化，把原本比较平面的学习内容重新组织成可以探索的页面。</p>
+<p>不同内容之间不是简单地一段接一段往下堆，是通过交互和动画逐步呈现，让我在查看页面时有一种进入课程地图、逐层了解内容的过度感。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fx2RZ9qsCvZJWTicGqwic8XHnX7PYPpFYaU3W45GZPa4KmWuVfuDcdH5gr2bliaCYa2MziaJLmvJtqkV5icWnhWTMhZcQwjTpXE5FUU/640?wx_fmt=png&from=appmsg#imgIndex=11" alt="Image"></p>
+<p>OK啊，就测到这儿，</p>
+<p>聊点技术的，Macaron V1的2M上下文是怎么做到的，直接让glm5.2上下文翻了一倍。</p>
+<p>他们发了个叫LongStraw的训练方法。现在强化学习训练有个硬墙，大概卡在256Ktoken。</p>
+<p>模型学习的时候要同时记住刚才算了什么，反复比较好几个答案哪个更好，再把经验攒起来一起更新。</p>
+<p>这三件事同时干的话，上下文再长一点显卡内存根本扛不住。</p>
+<p>LongStraw的核心想法其实挺直觉的，一道题的题目大家都一样对吧，那题目只读一次，存个快照，后面只重播做题的过程。省下来的内存全拿去撑更长的上下文。实际效果上8 张H20上就把27B模型训到了 2.1M token，32 张H20上，GLM-5.2这种78层256路MoE的满血大模型也跑通了2.1M。</p>
+<p>还有一个点我觉得有意思但容易被忽略的，他们的训练框架 MindForge 把上线后用的整套 Agent 环境原封不动搬进了训练。路由怎么分发、工具怎么调用、内存怎么排，训练和上线完全一样。</p>
+<p>这也解决了一个老问题，训练环境和真实环境不一样导致模型上线就拉胯。</p>
+<p>再说个更骚的，他们搞了个递归自我改进的闭环。模型自己出题，自己做，做完审计轨迹，改进harness配置，再拿优化后的数据更新自己。更新完的模型又能出更难的题。这个循环能一直转下去。</p>
+<p>左脚踩右脚起飞了属于是。</p>
+<p>从benchmark上看，Venti在大部分赛道上跟Opus 4.8、GPT5.5、Gemini 3.1 Pro打得有来有回，同时还是开放权重可以自己部署的。而且他们部署的GLM-5.2推理速度比智谱还快，这个我自己体感也对得上。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzStCHyADbSib6kye0IggZtuSmWSpgFaxIeYoBa7GoZ9tBia6Aj2MysI6Y9OXbic8aBU2GXUDic1PU08MUeGvr56fY0qeewVTyeeWQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>问题是现在按 API 调用收费，跑多了钱包扛不住。</p>
+<p>我直接在线催更，</p>
+<p>Mint Coding Plan 什么时候出？</p>
+<p>出了我就是一个订订订。</p>
+<p>@ 作者 / 卡尔 &amp; yc星辰</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>299人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>7 Files</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.19 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 649.6 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.47 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.07 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 519.1 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.20 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/yx4CUgvwMiAltUGrgRUlRA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

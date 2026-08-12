@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillForge：我开源了一个 AI Agent Skills 生成器 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">SkillForge：我开源了一个 AI Agent Skills 生成器</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    
+    <span class="date">2026-03-11</span>
+  </div>
+  <p class="lead">SkillForge：我开源了一个 AI Agent Skills 生成器</p>
+  <article class="content"><p>原创 猫叔的AI <em>2026年3月11日 14:39</em></p>
+<p>从&quot;让 AI 帮我写个 Skill&quot;到&quot;让 AI 帮我锻造一个生产级 Skill&quot;，中间差了什么？差了一套方法论。</p>
+<h2>先说结论</h2>
+<p>我开源了一个叫 SkillForge 的项目，它是一个完整的 Web 应用，能够自动将你的一句话需求，经过 7 步结构化流程，锻造成符合行业最佳实践的 Agent Skill 完整包——包含 SKILL.md 主文件、脚本、参考文档、模板，打包成 ZIP 即装即用。</p>
+<p>GitHub 地址： github.com/mmlong818/skillforge</p>
+<p>许可证是 CC BY-NC-SA 4.0，个人学习和非商业使用完全自由，欢迎 Fork 和改进。</p>
+<p>😼</p>
+<p>请忽略截图上那么傻的名字，我懒得改了</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/4feVdj5sazXsjQcfVMiaqcMBQxouKk20PpOMlhS6bqpWXAqHsWkPsCWxTknDuUhohy74ciceJOiaPIhial6egkiaTURsBXtF101ic4MZ2GvL3ZCR0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<h2>为什么要做这个</h2>
+<p>很多人其实并不了解 skills 是啥玩意，所以更多的都是直接用别人推荐的，或者用 find-skills 之类的自动寻找，但这世界上有很多事没有人把它写成skills，你找也是徒劳，那能不能AI自己生成呢？</p>
+<p>听起来很美好，但用了多个声称可以完美生成skills的服务： 质量参差不齐。</p>
+<p>有的 Skill 看起来格式规范、内容详实，但实际使用时根本无法被正确触发。有的 Skill 把 AI 本来就知道的常识写了一大堆，真正需要的领域知识反而没有。还有的 Skill 动辄上千行，把应该放在参考文档里的内容全塞进了主文件。</p>
+<p>问题出在哪？出在 AI 模型并不天然理解&quot;什么是一个好的 Skill&quot;。它知道 Markdown 格式，知道 YAML frontmatter，但它不知道 description 字段其实是一个&quot;触发器&quot;，不知道 SKILL.md 应该只包含 AI 不知道的知识增量，不知道渐进式披露的分层策略。</p>
+<p>所以我做了一件事：系统性地分析了 Anthropic 官方 17 个 Skills 的实现、100 多个社区优秀 Skills、以及 Agent Skills 开放标准规范，把&quot;好 Skill&quot;的共性提炼成了一套可复现的方法论，然后把它工程化成了一个 Web 应用。</p>
+<p>😼</p>
+<p>弹幕请打出：猫叔最好了！</p>
+<h2>7 步锻造流程</h2>
+<p>SkillForge 的核心是一个 7 步生成引擎。每一步都有明确的输入、输出和质量约束，不是简单的&quot;帮我写个 Skill&quot;，而是一个有纪律的锻造过程。</p>
+<p>Step 1：需求深度挖掘。 不是直接开始写，而是先用 5 维框架分析需求——核心定位、功能边界、使用场景、知识缺口、依赖约束。其中&quot;知识缺口分析&quot;是最关键的一步：明确区分 AI 已经知道什么、不知道什么、容易犯什么错。这直接决定了 SKILL.md 应该写什么、不应该写什么。</p>
+<p>Step 2：架构决策引擎。 做出 5 个关键决策——结构模式（工作流型还是指南型）、自由度级别、资源文件规划、渐进式披露策略、质量保证方案。这一步相当于画建筑图纸，后面的生成都在这个框架内进行。</p>
+<p>Step 3：元数据精炼。 生成 3 个候选 description，从触发精准度、能力覆盖度、信息密度三个维度自评打分，选出最优的那个。description 是 Skill 的&quot;触发器&quot;，写得好不好直接决定 Skill 能不能被正确匹配到。</p>
+<p>Step 4：SKILL.md 主体生成。 按照 Step 2 的架构决策，生成 150-450 行的精炼指令主体。全程祈使语气，代码示例优先于文字说明，必须包含反面案例。</p>
+<p>Step 5：质量审计与优化。 这是整个流程的质量关卡。10 个维度逐项打分，低于 8 分的维度自动修复，然后输出优化后的完整 SKILL.md。</p>
+<p>Step 6：配套资源生成。 根据 Step 2 的规划，生成 scripts/、references/、templates/ 等配套文件。每个文件完整可用，没有占位符。</p>
+<p>Step 7：最终组装与交付。 格式验证、内容验证、最佳实践验证，三重检查后打包交付。</p>
+<h2>不只是提示词，是一个完整的工程</h2>
+<p>😼</p>
+<p>你可能会想：这不就是一套提示词吗？</p>
+<p>是，也不是。</p>
+<p>提示词是核心，但光有提示词还不够。SkillForge 是一个完整的 Web 应用，解决了从&quot;有提示词&quot;到&quot;能用起来&quot;之间的所有工程问题：</p>
+<p>上下文管理。 7 步流程中，每一步都需要前面步骤的输出作为上下文。手动操作时你需要不断复制粘贴，而且容易丢失关键信息。SkillForge 自动管理上下文传递，确保每一步都能看到它需要的信息。</p>
+<p>结果提取。 LLM 的输出是自由文本，从中准确提取 SKILL.md、资源文件等结构化内容并不简单。SkillForge 内置了多策略提取引擎，通过 YAML frontmatter 验证、PART B 标记定位、内容校验等手段，确保提取的准确性。</p>
+<p>任务控制。 7 步流程需要多次 LLM 调用，可能需要几分钟。SkillForge 支持实时进度展示、任务取消、失败重试、历史记录管理。</p>
+<p>一键打包。 生成完成后，SKILL.md + 所有资源文件自动打包成 ZIP，下载后直接放到 ~/.claude/skills/ 目录即可使用。</p>
+<h2>技术栈和部署</h2>
+<p>SkillForge 的技术栈是 React 19 + Express 4 + tRPC 11 + MySQL，前后端类型安全，开发体验很好。</p>
+<p>LLM 调用使用 OpenAI-compatible API 格式，意味着你可以接入任何兼容的提供商——OpenAI、DeepSeek、Together AI，甚至本地部署的 Ollama。只需要在环境变量中配置 API URL 和 Key 即可。</p>
+<p>部署很简单：</p>
+<pre><code>git clone https://github.com/mmlong818/skillforge.git
+cd skillforge/webapp
+pnpm install
+cp .env.example .env  # 编辑填入数据库和 API Key
+pnpm build &amp;&amp; node dist/index.js
+</code></pre>
+<p>仓库里有完整的 .env.example 和数据库迁移文件，照着做就行。</p>
+<h2>一些设计决策的思考</h2>
+<p>为什么是 7 步而不是 1 步？ 因为&quot;一步到位&quot;的 Skill 生成质量不可控。把流程拆成 7 步，每一步有明确的质量约束和验证点，最终产出的质量远高于一次性生成。这和软件工程中&quot;分阶段交付&quot;的思路是一样的。</p>
+<p>为什么要做知识缺口分析？ 这是我在分析大量 Skill 后发现的最关键洞察。大部分低质量 Skill 的通病是：把 AI 已经知道的常识写了一大堆（比如&quot;Python 是一种编程语言&quot;），真正需要的领域知识（比如某个 API 的特殊参数格式）反而没有。知识缺口分析强制 AI 先想清楚&quot;什么该写、什么不该写&quot;。</p>
+<p>为什么 description 要自评打分？ 因为 description 是 Skill 的触发器，是整个 Skill 最重要的 30-80 个词。通过生成 3 个候选并从多维度打分，能显著提高触发精准度。</p>
+<h2>开源说明</h2>
+<p>项目采用 CC BY-NC-SA 4.0 许可证——个人学习、非商业使用完全自由，可以修改和二次创作，但不允许商业用途。</p>
+<p>代码中没有任何硬编码的密钥或凭证，所有敏感信息通过环境变量配置。你克隆下来后需要自己准备数据库和 LLM API Key。</p>
+<p>如果你觉得这个项目有用，欢迎：</p>
+<ul>
+<li>在 GitHub 上给个 Star</li>
+<li>Fork 后根据自己的需求改进</li>
+<li>把你用 SkillForge 生成的优质 Skill 分享出来</li>
+</ul>
+<p>😼</p>
+<p>Web 应用的提示词已经内置在 webapp/server/prompts.json 中，给不想部署 Web 应用的用户</p>
+<p>我是 猫叔</p>
+<p>请</p>
+<p>点赞 ：满足我的虚荣心</p>
+<p>分享 ：拯救他人于水火</p>
+<p>收藏 ：防止自己找不到这么好的内容</p>
+<p>关注 ：让你也能找到我</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p>如果发现二维码过期就找我最新的文章，一般会有新的</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/4feVdj5sazWwPXoJf1wLQprf0kTiarhqia8tHicoLo7XnxWJuBDzo1axmvfddm97OwqCfg13UuXylibZyvG9533u5DLjg6j7Rm8NB8Wr9R2CE3c/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>点击阅读原文可以查看我发布过的所有提示词</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/D5OhY0s-lJt4H_Cf1rPz8Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

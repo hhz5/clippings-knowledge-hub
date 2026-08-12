@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>想用Codex做科研，可以先从这9个Skills开始 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">想用Codex做科研，可以先从这9个Skills开始</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%A7%91%E7%A0%94">科研</a><a class="chip" href="../index.html?tag=%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C">论文写作</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Codex">Codex</a>
+    <span class="date">2026-07-21</span>
+  </div>
+  <p class="lead">全方位覆盖</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月21日 08:34</em></p>
+<p>事情是酱黄瓜的。</p>
+<p>上周有个读硕的朋友吐槽了一大轮他用的科研Skill，大意是他写综述的时候引用了一篇文献，导师审稿时一查，发现那篇文献根本不存在。</p>
+<p>AI纯编的。</p>
+<p>我当时随口回了一句，你去ClawHub上看看Claude Code的学术skill就好了。</p>
+<p>他问我哪个好用，我没答上来。</p>
+<p>上次写学术已经过去小一年，而且学术科研这个垂直领域的skill，我确实没系统性地测过。我知道GitHub上有一堆，star从几百到上万都有，但到底哪些的真能打的，我心里没底，评价不了一点。</p>
+<p>所以我周末做了一件事，把GitHub上能找到的学术科研类skill全部拉下来，一个一个试。最后筛出九个比较有代表性的，从学科覆盖到功能设计到质控水平，认真过了一遍，做出来的视频也有20万播放了。</p>
+<p>我发现，这个名单比我预估的要有料得多的多。</p>
+<p>我复用了一下「从夯到拉」的排名，给这九个Skill排了五个档位，夯、顶级、人上人、NPC、拉。夯就是底子扎实换不同的Agent不同模型表现也够稳定，NPC嘛。。。就是装了和没装区别不大的存在。至于拉，拉就是拉了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fxm2Cf7Z3K5CUEOg37gmiaibh6qX1V6HnpaqNYO0VCqwVGL6DibrZE2s3uLM2hOoLShdK3ibCB4UD2PVfCWoicsuod93NAztfZoaIiak/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>先说个好消息，这九个里面没有拉的，起码我这次筛出来的，最差也就NPC水平，不至于一坨。</p>
+<p>Here we gogogo。</p>
+<p>1，Academic Research Skills，给到夯</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxJufkSFHtHCEeiaWj0QJmGfOibCjPMsvhaDCBFNDCmpOzhGibJB4FpSv6icgJHGRMRq10U0EnjDD0pr1uj78LAAuwDA0trqwkvPvY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>回到开头那个假引用的话题。</p>
+<p>这个skill的杀手锏就是引用验证。每一条引用都要过Semantic Scholar、OpenAlex、Crossref、arXiv四个数据库交叉验证，查不到的直接阻断，不让你把假引用混进论文。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxbQsrXxba5Qj9C0pHvrnWXIicicHNnwvv9Kw8z4KvaSzkrFz1BcSmvibdORnJasGKSmf9bQgUUqoGE10dCibU94GbbUV1MiaiawsmzA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>我测的时候故意给它塞了几条AI编的假引用，试试它能不能抓出来。</p>
+<p>全被抓了。</p>
+<p>不光全被抓了，它还会告诉你这条引用在哪个库能查到，在哪个库查不到，帮你判断到底是真的找不到还是你格式写错了。</p>
+<p>这个功能对那些被AI幻觉坑过的人来说太刚需了，开头提到的那个硕士朋友现在就在用这个。</p>
+<p>2，Research Paper Writing Skills，NPC</p>
+<p>这个skill起的调贼高，就是直出论文不需要担心了，实际上我点进去项目看的时候，就发现底层其实是某位教授的公开笔记打包成的，一堆规则和提示语攒在一起。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwS1xrRZib4IesObjSWR044oYGib9o1bIw8Fib5a9IyVqNaxLAxG1ZrRBZmKXrpIr4szcbGOKmdNApf293CIgHT5o2icqqBLEmAru0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>怎么说呢，就像有人把自己的考试笔记复印了一份给你。你照着来不会出大错，但它不会根据你的具体情况调整策略，也不会在你写到一半卡住的时候给你一个灵感。</p>
+<p>就是一套规矩。所以只能给到NPC。还不如我们自己搜几篇论文写作规范的帖子，手动喂给codex。</p>
+<p>3，codex-claude-academic-skills，给到人上人</p>
+<p>这个它更适合工科背景的同学，尤其是天天跟MATLAB打交道的留子。信号处理，论文画图，数据可视化这一套，在其他skill里我还真没见到过。</p>
+<p>我试了一下它的MATLAB信号处理模块，确实比通用skill深。你跟Claude说「帮我跑一个FFT然后画个频谱图」，普通Claude可能给你一段正确但很基础的代码。用了这个skill之后，它会考虑窗函数选择、频率分辨率这些细节，出来的东西是明显更专业。</p>
+<p>但问题也明显，没什么质控。</p>
+<p>它不是一个设计严谨的学术工作流，就是一个人的个人工具箱，刚好这个人是做工科的。</p>
+<p>4，Claude Scholar，顶级</p>
+<p>写文献综述的同学的福音来了。这个拿来做做PPT之前的背景调查也是非常好用的</p>
+<p>这个skill的核心能力是管理和阅读文献，它能接Zotero，所以说首先文献库直接就通了，能支持按DOI、arXiv号导入论文，批量读文献做笔记，还能连Obsidian。</p>
+<p>我试了一下，给它丢了十篇论文，它帮我做了一份结构化的文献笔记，标注每篇的核心贡献，方法论差异和引用关系。光是省下来的时间就值了。我自己之前还是去arxiv上先下pdf，再导入Zotero，然后再更新信息啊，打标签去重啊，一篇篇文章看着做标注啊，非常痛苦而且Zotero的搜索做真的太烂了，做综述的时候平均一两句话就引用论文的场景简直就是痛苦中的痛苦面具。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwRVoY9KbGWKypbk0cscIfdK8ib8jvSoEc1BAibWYhIQWYKh4hKQiaCLWjLcPgxHxbPkT36ENs5MiaOHibVJnlfLlz2gPt0fnBbuc1I/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>Claude Scholar相当于把这个苦力活包圆了，把文献批量导入，自动做摘要笔记，标注方法论差异。我可以拿着这些笔记再去做判断和综合。</p>
+<p>5，Scientific Agent Skills，夯</p>
+<p>这个skill帮我跑科学计算。</p>
+<p>它封装了RDKit、Scanpy这些专业工具库，处理实验数据的时候特别顶。如果是搞信息学等这些方向，这个skill能省配环境的功夫。</p>
+<p>我试的时候让GPT5.6给我出了一个题，用这个skill跑了一个比较经典的空气流体力学计算模型，基本上就是开箱即用的，没有什么说要先配两小时环境，手动调整数据参数什么的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwLspKlvbfzXibmlddAlweSfj5icwKqyEoMOQdmbhUahkQEwzdGnvGRqsosoSJgwdSjHjoyf0QKcF2z2ho99ZjbusGP3mcYIvI4k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>6，AI-Research-SKILLs，顶级</p>
+<p>这个名字容易让人误解。它翻译过来很容易以为是「用AI做研究的skill」，其实它的定位是「给做AI研究的人准备的skill」。</p>
+<p>属于是遇到我专业对口了。模型架构，微调，RAG，九十多个skill全套覆盖。如果你是做深度学习的，这基本就是一个开箱即用的工具箱。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwNxUkcEmiahYyulGTSW4uPeORKaaKPdsV5h7t0xMJAVBPht2VXeqF5fxOichM9kzo25XWaDPhgUNwKQAbESRDqv5YTlVwpDgIoI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>我试了一下微调相关的skill搓了一下GPT2的微调，跟它聊训练策略，它会根据你的数据量和硬件条件给出合理建议，是能直接拿去跑的配置。</p>
+<p>理科同学做AI方向的，基本不白来，九十多个skill质量都挺硬。</p>
+<p>7，Auto Empirical，顶级</p>
+<p>这个是有斯坦福背景的，是给社科同学跑实证的。</p>
+<p>七十个skill，从数据清洗到建模到表图输出全覆盖，Auto Empirical把这个流程工具化了。质控是全场最扎实的，它不会跳过任何一个环节。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzmeSo19krQbwrZKx9wv2hnxr605OomBkL6cHg3nkNnvYE7dWiaQFcsYDPP1cl5IG7bpibMESrrMNZ5B5MNA7JX3agG25OaXqTUY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>如果还在手动写Stata，python代码跑回归真的可以试试看。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxibgXKvNsCuXq8ZFERmh7iat8wU3zhpNaotmfiatfDw9iafeGw4yo3ATYngcfJQJibftFJRSLPI2m5qM74nplujOLSibZYniaR4v97Ao/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>8，nature-skills，顶级</p>
+<p>说到写论文最大的痛点，英文写作在我心目中绝对排前五。</p>
+<p>虽然已经有humanize这个经典skill给我平时写英文邮件兜底去翻译腔味，但距离Nature腔还差点意思，我直接上一段文本就能看出来了，给它丢了一段写得比较中式英语的论文段落。</p>
+<pre><code class="language-cs">## 修改前Humans can infer how objects are likely to move from passive observation: a cup may be lifted, a drawer may slide, and a lid may rotate shut. Such predictions expose the physical consequences of interaction needed to act in the real world. We study how to learn this anticipation from ordinary monocular videos of human-object interaction. 
+## 修改后Humans can infer from passive observation how objects are likely to move when manipulated: a cup may be lifted, a drawer may slide and a lid may rotate shut. These predictions reveal the physical consequences of interaction that underpin action in the real world. Here we investigate how such anticipatory knowledge can be learned from ordinary monocular videos of human–object interactions.
+</code></pre>
+<p>【这个片段摘要自MotionForesight: Re-purposing Video Models for Future 3D Scene-Flow Prediction】</p>
+<p>我把这段丢给我托福老师看了，来转达一下，</p>
+<p>确实不一样，不像Grammarly那种简单的语法修正，nature-skills针对的是整个段落的表达方式。用词和句式更符合学术风格。</p>
+<p>除了润色它还能做发表级别的配图，给到顶级可能都有点低了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FymPicvcCFbf47tBcBAfHIVbW03ANTQ5xsNjcnWgRicudvJXxq4YhVg74kHicMnp0PqLhI7G14nxd3tmymxSJJqYyX8bUsjC7EOHY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>9，ARIS，给到人上人</p>
+<p>ARIS这个skill，思路跟前面8个都不一样。</p>
+<p>它的核心玩法是，无人值守，跟Codex目标模式差不多。</p>
+<p>你把论文稿子扔给它，设好参数，然后直接原地睡觉。它帮你跑一整晚。改稿、查文献、调结构、优化表达。早上醒来打开电脑的时候，稿子已经被改了好几轮了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fy4iaeS1WE6ABJkxf6nQIGb32A1hwz7TLzLtHezeDJGQln2hgkn3dMib9VsH0sTTqXG85YaSmgzvwOXfOxmDyN5osgR0XlQVicGcA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>看一眼就不信的我实际测了一下，它确实能做到无人运行。但离谱的是开发者自己也承认了，无人值守的时候，这框架遇到需要数据支撑的地方，如果API没有实时联网搜索能力，它就会现场编一个数据。。。</p>
+<p>所以你早上起来看的稿子不能直接用，得自己过一遍，验证它晚上改的东西靠不靠谱。</p>
+<p>我现在能想到的就是把ARIS跟前面第五个聊的Academic Research Skills可以搭配用。ARIS晚上改完稿，你早上拿Academic Research Skills跑一遍引用验证，把假引用全揪出来。两个配合，基本就是一条半自动的流水线。</p>
+<p>OK啊，九个说完了。</p>
+<p>本来还以为会遇到几个凑数的水货，但实际上能在GitHub上积累到一定关注度的学术skill，质量比我想象的高。</p>
+<p>而且我注意到一个事儿，这些Skill里质量最好的，都不是那些技术公司做的产品，都是真正在做科研的人自己做的，是他们用Skill的形式把自己的方法论开源出来了。</p>
+<p>今天科研skill自带的争议性，让我联想到了17年微信推出小程序的时候。</p>
+<p>很多人不看好，觉得这玩意能干嘛，手机上装个App不就完了。后来发生了什么大家都知道了，就是因为小程序把开发和分发的门槛降到了一个临界点以下，让更多人能参与进来。</p>
+<p>Skill对于学术研究来说，可能也一样。有人担心论文注水，有人担心学术诚信，有人担心大家变成AI的提线木偶。</p>
+<p>这些担心我觉得都合理。</p>
+<p>但仔细想想，计算器刚出来的时候，也有人说学生会变得不会算数。Excel刚出来的时候，也有人说会退化成只会按按钮的纯纯工具人。</p>
+<p>这些变化都发生了。但结果是什么？是那些学会用新工具的人能做的事比以前多了，行业整体的上限也被拉高了。</p>
+<p>所以，当AI能帮我们搞定90%的格式化工作，对有想法的人来说其实是好事来的，能有大把的时间去想论文了，再不用把时间花在调论文格式上。</p>
+<p>最后的最后，给大家留一个速查表，</p>
+<p>写论文防假引用，Academic Research Skills。</p>
+<p>跑数据做实验分析，Scientific Agent Skills。</p>
+<p>润色英文到发表水准，nature-skills。</p>
+<p>想让AI替你通宵改稿，ARIS。</p>
+<p>管理和批量阅读文献，Claude Scholar。</p>
+<p>跑社科实证，Auto Empirical。</p>
+<p>做AI和深度学习研究，AI-Research-SKILLs。</p>
+<p>工科MATLAB信号处理，codex-claude-academic-skills。</p>
+<p>以及，如果你实在不知道装什么，装个Research Paper Writing Skills当个氛围组也行。</p>
+<p>这个Skills清单会越来越长的。</p>
+<p>我坚信。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>297人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/v_RzRaiYc-Yk4X8d1WhzWg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

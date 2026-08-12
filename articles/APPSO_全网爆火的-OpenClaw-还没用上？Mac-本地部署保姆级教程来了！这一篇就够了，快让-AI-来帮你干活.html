@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全网爆火的 OpenClaw 还没用上？Mac 本地部署保姆级教程来了！这一篇就够了，快让 AI 来帮你干活 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">全网爆火的 OpenClaw 还没用上？Mac 本地部署保姆级教程来了！这一篇就够了，快让 AI 来帮你干活</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%98%BF%E6%85%95">阿慕</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=OpenClaw">OpenClaw</a><a class="chip" href="../index.html?tag=Mac">Mac</a><a class="chip" href="../index.html?tag=%E9%A3%9E%E4%B9%A6">飞书</a><a class="chip" href="../index.html?tag=%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2">本地部署</a>
+    <span class="date">2026-02-09</span>
+  </div>
+  <p class="lead">附OpenClaw 技能库</p>
+  <article class="content"><p>原创 阿慕 <em>2026年2月9日 10:16</em></p>
+<p><strong>AppOS</strong></p>
+<p><em><strong>AppOS：</strong></em> 始于 Mac，却远不止于 Mac。 <em>点击上方蓝字关注，跟随 AppOS一起探索更广阔的 AI 数字生活。</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tu6KLQX2GR6qI0wKu5HF3uukcYtRs3WlWRH2AMa9DXoWS75ebKlhZlnCdc4wXFFrGhrSlHOffOo4ZicZwSibf6thkX7vcCZBmggs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="OpenClaw"></p>
+<p>OpenClaw 是 Moltbot/Clawdbot 的最新正式名称。经过版本迭代与改名后，2026年统一以「OpenClaw」作为官方名称，核心定位是通过自然语言指令，替代人工完成流程化、重复性工作，无需用户掌握编程技能，适配多场景自动化需求。  </p>
+<p>该项目经历 了多次更名 ， Clawdbot → Moltbot → <strong>Open</strong> <strong>Claw</strong> （当前 名称）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TtoRajN6WLS7KJcP2jPoqBI3qiaic02BWxgQQicYTduj7BTiaVAG1oEa50dpy7EWCsmqNgCfVDQVTvINV9S7eRZk8FVibEPVRExalrI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p># OpenClaw 是什么？</p>
+<p><strong>OpenClaw</strong> 是一个开源的 <strong>个人 AI 助手平台</strong> 。</p>
+<p>简单来说，它是一个可以 将 <strong>你</strong> <strong>自己的 AI 助手接入你已经在用的即时通讯工具</strong> （Telegram、WhatsApp、飞书等）的系统。你可以自己挑选 AI 模型进行连接，添加各种工具和技能（如飞书等），构建专属工作流。 说白了如果应用的够好，它就是一个能帮你干活的“员工”。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TvMXjGddTOKCEBTqKqh9y18aaBiaZQYHMPw1epibicQ0nlBb1SeVjUGviciancnfUZvdsv2t6tKGnqk0CfoHBzynm6ZXLaW4LsZEeTs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p><strong>△</strong> OpenClaw 采用模块化设计，其核心架构如图所示</p>
+<p>注意： <strong>OpenClaw 需要访问不少本地权限和文件</strong> 。 建议找一台没有数据的 Mac 来试水，避免自己的隐私数据泄露 。</p>
+<h2># 准备工作</h2>
+<p>在开始之前，请确认你的 Mac 满足以下条件：</p>
+<p><strong>macOS Sonoma 或更新版本（推荐使用 Apple Silicon M1及以上芯片，性能会更好）。</strong></p>
+<p>流畅的网络环境，必要时可能会需要梯子（部分依赖库需要从 GitHub 下载）。</p>
+<p>一颗爱折腾的心，其实很简单，跟着做就行了！不用担心自己是小白，本文会手把手教你成功部署 OpenClaw ， 同时还会教你和飞书互联。</p>
+<p>官方网站： <a href="https://openclaw.ai/">https://openclaw.ai/</a></p>
+<p># 官网版本区别</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TtXtf9uOFL1ey5cSc9hMHib1iafyC3tj56fvgcyNWCIHZmbD5NU6HAhyCgMcxksjwmSQLI1ibThwd9AwVicen1yfg1yce9vrfriaeib4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>对于新手小白来说，看到官网给出的四个安装方式到底有什么区别？</p>
+<p><strong>One-liner：</strong> 一键脚本安装， <strong>最简单、官方推荐（这也是放在第一页的原因）</strong> 。它会自动检测系统并安装依赖。适合 <strong>个人用户</strong> ，想快速在 Mac/Linux 上体验完整功能。缺点是如果你对系统环境有洁癖，脚本方式侵入性太强， 不方便后期更新维护。</p>
+<p><strong>npm：</strong> 全局安装方式， 需要依赖Node.js 包管理器安装，适合 <strong>前端开发者</strong> 或已熟悉 Node.js 的用户（有一定计算机门槛），通过它安装，你知道自己在装什么，依赖了什么，不会弄乱你的开发环境。 版本控制方便，更新更容易，本文选用此安装方式。</p>
+<p>Hackable： 源码安装方式， <strong>可任意魔改 ，</strong> 下载源代码到本地。适合想要修改核心逻辑、自己写复杂插件、或者给项目提 PR 的人 （小白请直接忽略） 。</p>
+<p>macOS： GUI 界面应 用， 这是一个 Mac 端应用，提供了一个 <strong>菜单栏图标 ，</strong> 原生体验并 提供语音交互、快捷指令等原生 Mac 功能 。但是它通常是为了 <strong>配合</strong> CLI（命令行版）使用的 ，而不是完全替代命令行，想用此应用还是需要先安 装前三中任意一个。</p>
+<p><strong>经过上面的解释你应该很清楚各个安装方式的区别了， 只是想玩玩 <strong>OpenClaw 并且</strong> 懒得装 Node 环境，玩完重装系统也无所谓，那就一键部署选One-liner。如果</strong> <strong>想把它当主力工具，</strong> <strong>长期稳定使用，</strong> 出了问题好修、版本好管、系统干净，那就选 <strong>npm 安装</strong> 。</p>
+<p># 环境配置（npm安装）</p>
+<p>OpenClaw 依赖于 Node.js 环境。如果你不懂这是什么，没关系，照着输命令即可。</p>
+<p>官方下载地址：</p>
+<p><a href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a></p>
+<p>1. 复制官网链接到浏览器打开，然后点击macOS 安装程序（.pkg）下载安装包如果你更熟悉 用Homebrew下载，那会更方便，官网下载可避免一些未知错误 ；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtRkKqicNRzukm5Zd5tyudVBDC3ntZWqjoRjJ0T1b7djM9KWgAk5v3q5zqkZzAs4nz96ibOBFwEXcIKPA3HtjWAvh9uhBAuOqnpY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<h3>2. 然后打开下载后的安装包，按照安装包的直接正常安装即可；</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tt94yqWQtIA8H5ibibmF5pITfuywCeVuAlXIWjUtCf7LFfnmRuAHmW7dbnIiaTXIribOEqDdTJDFTS92zamlBotP4nZhPZ3qzEueq8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>3. 安装完成，点击「关闭」即可；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Ts16SbmMwfX42CDFxIQtIZA9XgFJWZyTo39KTM8Z62tfD4tRCdnIicvqQicjU4zaWlhic1Mc2BbDmZWickibXavdZAibwc87xE4OguHc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>4. 打开「终端」；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tsscp5ad8PicRaAvEU55xe0CGUx1ydhHHUjHwIOfMRbUvGSfSwLokr0PYVzVUmFDOpNSBI5uib7jamib0Kk8p9uib1fBbicEyZicnicBw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<h3>5. 在终端内输入：</h3>
+<h3>sudo npm i -g openclaw</h3>
+<h3>然后回车，输入开机密码后再回车；</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TtZI9HTDTHQEOCBZbIEI3KOHb4iagUAZmSQbxDT7ia48dkyYmYUxjkr6D1o8LBlv9yY9dlpzMGCfW7y93MuJ2POEwPsg5hgSoqfM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<h3>6. 如果出现如图错误，修改 Git 下载协议 （强制使用 HTTPS），复制下方代码到终端，回车执行即可解决；</h3>
+<pre><code class="language-javascript">git config --global url.&quot;https://github.com/&quot;.insteadOf ssh://git@github.com/
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtMDrMyPU508yibNibADXufnyDGgu5us1jlAL3R2nKWrnkdKicHIibfSGPsLBAbRzwWhToHTqkVD8rn7XcMYNjF8icGyT7cG0nGGVEc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<h3>7. 重新输入</h3>
+<h3>sudo npm i -g openclaw</h3>
+<h3>出现如图界面表示安装成功；</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TsDC4fccVYfH4xkY4h7lLMPSyHo4RGEbg2MakPgQvDWBlicbs1HSEXbKq0WydoBfdXOicG59JgcpCjAP5kozVKS5y39z8pTNAAkk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<h3>8. 启动 OpenClaw 的初始化向导，输入下方代码，然后回车；</h3>
+<h3>openclaw onboard</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Ttd4FveIPcr5TnQo4rLiceLnYicFAib9hAq80arjYdh6RYChGvickDsK6cTicJcE63R0pJrKNS7fshltu6QOKZxHIEGZNIUoiblib02Ho/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>9. 这一步主要是提醒你，使用 OpenClaw 可能会有一些风险。请问你是否继续？按向左方向键 ←，选择 <code>Yes</code> ，按 <code>Enter</code> 回车确认；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TvA5eG8WnicurPRwBdt3iaKEcg5jPgbbicAeFLtDmktUIwjmk6KhkCnmibllB6paXictyQBQCBMjictC8l1qVzjt1X91AOqFRwkNH8bI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>10. 选择选择 QiuickStart（快速开始模式），回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Tv9BHODSKQbmrsfNf8s1VNbb3cInpib2N6mEuibFibYMwhCiaJzGf2MYMCHMa2kMKYTr3licRsfp6zg5cECk6aFJcics9ibAB0jF4jngg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>11. 这里是配置 AI 模型 API Key，OpenClaw 需要连接到大语言模型才能工作。Openclaw 比较 费 token，国外模型成本较高，新版本已经支持 KIMI K2.5 ，小编以KIMI为例；  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TvOwM1ib5UABP0Lg001tf4EYuabHJpSzZmc047rt9A3iaJrPIdFQGsJvaxTaZZa5YAVth5FkadmyyxS2c88WsWlUqiatCAyAuA1jg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>注：其他任意模型均可，也可以用 <strong>Ollama</strong> 本地运行的 DeepSeek 的蒸馏版，即可免费使用 AI 模型，点击下图查看本地化部署 DeepSeek 教程；</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU3MzkzNDMxNw==&mid=2247507377&idx=1&sn=4dae347fb15a307fd30e0e8506ac1e9e&scene=21#wechat_redirect"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/QjqibJTT3VJslwdWtvwNPzIQHNicYaibC7K4oMP0HQ2Du1tQBDOiau7ZzibSbwTgXdbY5aYaLjcibv774u2OB6HqECpw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></a></p>
+<h3>12.如果没有 KIMI 的API Key，打开下方官方地址注册账号获取API key，KIMI 认证后的账号可以获得15元的免费代金券；</h3>
+<p><a href="https://platform.moonshot.cn/console/api-keys">https://platform.moonshot.cn/console/api-keys</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TubceaxzrM97TwX5QUDhrYrI4Vslgm4iawlwn0ZfIOAVcJQpq121WKWaPYveiaZp4sOcEgqlHxPCwhZPlH1uu6MAot66RSDd11pU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>13.然后复制你的API key，请保存好自己的 API；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuFFJdsVy1DkTOImxRIbrPUSPcuAgFUHQw21kcH0fVkvXoKdbIU4rLKF0HP8P8wTx1ckz3AayeU24E4AgmXuYO96ouHn0Ceq6Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p><strong>14. 选择Kimi API key (.cn)，回车；</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuxOE7r469n7LSr7wWUaZ0AjCI9PUOKlib8bq8Ndia3r0iaFpT3icpOsBoNKLlKI7dgTWz3HuUUXcFjxWmLetmNPT27QkibcqUaLscE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p><strong>15. 然后输入你的API Key，回车；</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TuibdGARgFPiczvwlwy58ueVKS4tjfEtQqnyyCBliaYF6jt48Cz095CdcKs7IycAggT4HdmnensCWclXX73ZMxmViaYTsrtRdahx3U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p><strong>16. 选择保持当前（moonshot/kimi-k2.5），回车；</strong> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bfx5lafC9Tu0mhbQfxCZMQtjAIXDbq6hD2x6wYibW2AM0zfRvKJlUQCo5nERYQGliaofCp7iaFl7fEzYOiclyCYicJNHgn8HVLfDOrTYMmL7H3AY/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p><strong>17. 接着 你会看到选择聊天选择工具的选项。这里你建议先「暂时跳过」，先在终端（Terminal）里把 OpenClaw 跑起来，确认它的 AI 大脑、文件读写权限都正常工作，后面再单独部署；</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtpMMR01SAribC8icD8fhhCe2tzukia253lP9HN7sJBDDicpA8u2rZNibwrD0oJCEkicr0Kz8e6w3ibkFSOMIiaMSEX061CcGFouibqMpsY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<h3>18. 这里选择「Yes」，也可以暂不配置选择「No」，后面通过UI界面再进行配置；</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuC1nbRH7gicVnVpdlyRpZicYATRXxRTUbuOW8RibHW5FtcdJUPlIiaBfWTcgsiaxB5BlxonYbwZjfUcDfbv3M2XFv3BOtZDUqrNQzs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<h3>19. 选择「npm」；</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TuvfsnejMzaB9ULicJMlkBoTNz3UoUbiaK3dqohpjT7GDBVRQ1qwTNsVb2r45SuNoHWGbXEve2HFeKOmRsDfMqSHYkGtJ4BMgD7U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<h3>20. 关于技能，你可以先跳过选择此步骤，或者使用空格键您需要的技能，可多选；</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsLq8V8E1kNOFOFiaia1y1wKtUYyJF85Vx0DyK3gGWJgRyIkamQAmlKYIrsxAW15UgOH7qCmhMqwCBYWv5T6Kf0cac4cgoCIU1Q8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>21. 这里可以配置备用 API，如果不想配置就都选「No」即可；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtHMfFDibpxeruwc6gCV3Ymbk7OkzuozCT8tB5h3sY8lial4SDs3ic3HXLqPeib5dW0blOKDFbtNic6ZibOI7LibmCd2xNw5tdx0cIjtQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<h3>22. 正在完成最后的启动服务配置，大约30秒左右；</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TtV77ERXFib96m3zYeO4UIic6sjiaSHB2tS2LsicszMqVzfWfnQUBTLLNh7hUPrL4TT6AE0ibNpUoC7zC0WG8C71V88OgEv2Tnwia4gs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>23. 配置完成，选择「Open the web UI」，打开可视化页面；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Ttl1DDdYC89Q0rRA0IhjsqvrgnYRz6mwZQncITIG2icSOpqHuIs2JsFTicxENHJJxP4FxC0nfnh4vHXULdIRQ4QhicbiayK0q9Be68/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<h3>24. 安装完成，浏览器自动打开 Web UI 界面；</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuqwBl4xrkibGmQsYeExARqeIqhwowewANlruma60Sv4lRhyjickNoiaoib3mnZicxjOhN6y53nFbrZKorogYdfyN80X3kjP8A8ib5hA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<h2># 把 OpenClaw 接入飞书机器人</h2>
+<p>1. 首先进入飞 书开放平台 。登录成功后，点击 <strong>创建企业自建应用；</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuS72RVfsXltchcXIQovniahjDMck7dfw9N7TNe5gkuZ1fZiaclQpkTEYjQzVSI06MQ6NzpzTXJbNVmdZ7UGJgic6R8WibDicehghS8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p>2. 接着填写 <strong>应用名称</strong> （如 “ AppOS-OpenClaw 助手”）、 <strong>应用描述</strong> ，选择 <strong>应用图标</strong> ，点击 「 <strong>创建应用」</strong> 按钮，进入应用管理页面；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Tsl0dOaJv3IzibPhI5vdrfH4BCsnSFV7850WZsx2Wx0K4Fonnj1ZXu9EWKX3IRpxVztYx7E5JHibDMyJaUn4Ifgj1DicfnXia31lxs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<h2>3. 在添加应用能力中选择「机器人」→ 点击「添加」；</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TudXg0iadxh1pibwXVkuVmWJlic03lmIVScibYeDNJ3iaRUtzialgWuHg5cJRCMyp8aIsIJdYxUN8Iuru4Iy8vSLLgy2GzsS2rHssO44/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>4. 在开发配置中点击「权限管理」→「开通权限」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtiaerV4tnZxQbzXc4Q4hl7O63Swu2h8nqZNa2LPKF13GciaMJoVHicyq1ysc7icK1Kz9cVkQ5phJJB1icfsNu1niaibmoEMJHZDL84IU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>5. 在搜索框内搜索 「im:」 勾选全部相关权限名称，最后点击「确认开通权限」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtrAhL2MsENftpibPfoHVSwZmEoezBuuxYYdicuw8YAw6UibKQhmag5U1WcxZ1mr05Kfn13jwfTeEjciaG50ytQM5gsLDvH7xIW83w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>6. 点击左侧「云文档」 勾选全部相 关权限名 称，最后点击「确认开通权限」；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuP3tdgibWBrykIlmVtgBpicHqkvtN2Kl3HmwWcBX1X6ohMKI7fibLa6PtT8z2fRibB82nCXibkoqRqH6pPzjAMhIiaiauj5bznhviaW2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></p>
+<p>7. 点击顶部「创建版本」按钮；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsLCFTjmX7zS36VzXrSxW46GicPDsooGiclCibGB1vhDBpqGicoAaAIhCvusTZ9ykiaKmWYnMUOydcE12zLMRiardX0Vs155UpwZspkA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p>8. 简单填写相关内容，然后点击「保存」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TuWL2ickxnRTSDf3Q7ZFVBMibpEcaxnZPugEsz8HtsJtiaT75ZCV93qoMPPUw5T186NaOwIZIznNFD1Tjlyfve4pte2iaYTtnvicAGM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=36" alt="图片"></p>
+<p>9. 点击「确认发布」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Tuc2mia8pYESXDSjycblib4AL9G87eZsgbg7xJW4vQuicvPiaAia8ibk2a1GAd19n02lHPgKuecvzL7LjYlxOibuMWIUnVunQ5NHQKNX0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=37" alt="图片"></p>
+<p>10. 机器人发布完成，开始配置 OpenClaw</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tu2eGbrEFiaNoNlVcVuajEib5ic5EfngvEe8iaia2d9AEgJLGk0ZHGbBMLQ175CMtYXXXQs02NrEM2Bx3mr5JuNuDeWgl1ic0s5Mn5MQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="图片"></p>
+<p>11. 为了防止与自带的飞书文件夹冲突，我们直接把之前的先全部删掉，方便后面顺利安装，输入下方代码到终端内，然后回车，输入开机密码执行；</p>
+<pre><code class="language-bash">sudo rm -rf ~/.openclaw/extensions/feishu
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TtsjMLEbyZ4Zz0Aj3INV08mibrkjEph5gD0G6rbdLgs2gU0Vkhu0zEOb3jXK8PmCTWUvxF2thgXs1myT46BD7GCqSYlayZOVfPI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=39" alt="图片"></p>
+<p>12. 清理完成后，接着 下载飞书插件， 在终端输入下方代码， 然后回车，输入开机密码执行 ；</p>
+<pre><code class="language-nginx">openclaw plugins install @m1heng-clawd/feishu
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TunkqY6icnFsFkMnSGWMYge5Y2Lsxht4AUsiaMQmOcePGzH0eUQWiapLiab4P0aGMNXngEJ83nnOvomgZx2w7XBOsZ1h0wATyHsfA0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=40" alt="图片"></p>
+<p>13. 正在下载飞书插件，耐心等待即可；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tv4ZW2mEzr6HhRDTr8ABMnnXiae4o09icP1sic9sXoia7tP7qn3kRGBIbgfQw8Mia5iaiaV8ibo0ibYjTydaGvlZVRb7mcOZ377Pm9pyhds/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=41" alt="图片"></p>
+<p>14. 出现下面界面表示飞书插件安装成功；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TvHzRf54purLrJLASQt2ERibGvgazXxAyAEej93WjSiaCuzGDZwXWmhjcpMlUqZibiaYeChMqKYPKfUZGjsy405oaAl0XluLdQgKO8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=42" alt="图片"></p>
+<p>15. 在输入下 方输入代 码，然后回车，输入开机密码执行 ；</p>
+<pre><code class="language-nginx">openclaw config
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TuibtsqHWbib4EwuHM0WWBRRjXB6ngYw23Cvgmyh5hQnQJ3BiaiciaexIwRjoRS7NbF0AicGuN3VgcwAfQLwb9YZEwiaR1mMKcTMpeAV0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=43" alt="图片"></p>
+<p>16. 选择「Local (this machine)」，然后回车;</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TvvlzMdesaWFjr3MQQhrQgaR42iazicdvMVIwlluLwUNJr5Nnkn8aCj8ayPDZ6f8Nx35qZcqXlK67dqvBxgoA6O2pyhRRUI2sXFU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=44" alt="图片"></p>
+<p>17. 选择「Cha nnels（ 渠道）」，然后回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsRxBJibPRQPA8ees5IE0m0Q21atiajuJT7X9JMaZbBqZaDynjLb17NqUfhCr47KePx9exJTwibvvq8NibMeicbvTKkPAfrfmKgYu14/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=45" alt="图片"></p>
+<p>18. 选择「Configure/link（ 配置链接 ）」，然后回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TvW7MrLHiaAmmZBOCYU2BIGAzHHWQlTBKCWmaibHsF7C8VeSjQu71fSuYNEEB54tDuK8WkhiahprnGD6912CGCv1eempPnabQibZDo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=46" alt="图片"></p>
+<p>19. 选择「Feishu/Lark（飞书）」，然后回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TtLficlSibhPYRoR4I1c9yyjQ0PCcEJy7kyaBf9D7scJybmicPD6O4blfUHWpBqeLcCFfxBOyDNXBFt9ndjdPvQmM7q2hjoltHvbk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=47" alt="图片"></p>
+<p>20. 打开飞书开放平台，在「应用凭证」里，复制 AppID 和 AppSecrect；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Ts9QYaH4Z4KeibY5h6ic9GcnaeygXIG1tXo2xwROxR0iaNCmcicHEMBBuaibGufPKCjckZ0jyibOQExvggkqrTAP8m8Zakt1Y7NpSG4Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=48" alt="图片"></p>
+<p>21. 在终端对应位置分别 输入飞书的 AppID 和 AppSecrect；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsMNBME4OCS6uvZDsptwXPGHyO6htiaFLHjkWhRtfnhMxA1OPrJS05DzMNtKZKNpuz9ibz9bTnEll0Io4CcuxweJnPSluHOibyn5M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=49" alt="图片"></p>
+<p>22. 选择「Feishu（feishu.cn）- China 」，然后回车；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tuw3uaMrLwy87uHBkr9yAd8BXxyn6GrPgic0hAcnibsvA6nicMTbibwAW9B2SM0RuQ1gMsLicMfdvKUBKIzVzIlraS3qKQa8Wgw5lr8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=50" alt="图片"></p>
+<p>23. 选择「 Open - respond in all groups（requires mention） 」， 然后回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsjBgZ7rBO6ia660APqicEVYHpLp8v0HJF7SE8icQCESqnDbSkCp06OREYPB0Hjw2Qic9C7ZibLf5icLYKUGn2g6Uian8gicnzliblcZPVo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=51" alt="图片"></p>
+<p>24. 选择「Finished」 然后回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TujUWicfzbHewhNrDkF8xHNGr6HnHkOF9fpGhtSic2oQhS32RfwFlQUFp9q3uyicwJEhX8S2k1jnr3scSXuXf2l8JEcS5kbZ4EtAY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=52" alt="图片"></p>
+<p>25. 选择「Yes」，回车；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TsaTXicEmjUIw3NgJFu3OyqWP9SlNfEYk1th7UicmrMlgKjoCooXeSnpMvlV4h17ZbdCEhUTbd5c81brWav2V6xxwPCHMRqRXh0A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=53" alt="图片"></p>
+<p>26. 选择「Open...」，回车；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TsOBGyr4fLdIXzDsr36VzLiaQfBE2yMOoT1rOmribUQNOuUUS9KaItaxASIqg3dpSVhH4XtuwGicqRKDGYPVNbqXIibCl8UhqfP0kI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=54" alt="图片"></p>
+<p>27. 选择「Continue」，回车；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Tuv7hM4frb7bh98rYQXyaJIdreTCEOBN86K6ysIia5M5OgBbtabtlkldcXclicUn0IAEgQ6icD1tSsc3ZTWBmCceIrYcORMl9EGYI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=55" alt="图片"></p>
+<p>28. 配置完成，关闭终端；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9Tvic7xaLibnVJ8icicYpkBLpeicGNicJ0NqEXnPwWpaNAjeiarYgmqnicfJ1icEdFRYiaxbMaHiaXS6CSmYF6lYOicqtaA68jMhJeQKGz6kNLo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=56" alt="图片"></p>
+<p>29. 重新打开终端，然后输入下方代码，重启配置；</p>
+<pre><code class="language-nginx">openclaw gateway
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tviav5BWVbWaRxjHYf7OTTfAqCGMOx24jdpiaNkR1R3B5jWfnrwjumbpaWEZCgNqxwcPZeXY8vsIN7hz6ox5Mnmcqdq2FXMYo1NU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=57" alt="图片"></p>
+<p>30. 打开飞书开放平台，选择「事件与回调」→「订阅方式」→「使用长连接接收事件」→「保存」；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TvczOChQ9Rkiaj3rfEYTdibOHtLlibrjiaDtibQ1mz8WIPq6iacambYBJicJP4udZ6FicxH1hg7Sd4YJoSQTsNdkGA5yJicXPfT4D5xhEwk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=58" alt="图片"></p>
+<p>31. 然后点击同一页面内的「添加事件」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsMiaUyIPxlfK6ewqmQWxgY8Q7oDhic81xgM8qOSx0l3dnhtdQ2iauVYTiaET3j739ryXkS5ABBjU4thN1exLPNvyAOWC0W0FE7v1k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=59" alt="图片"></p>
+<p>32. 在弹出的列表中，搜索并添加 「接收消息」、「消息已读」、「机器人进群」、「机器人被移出群」 ，最后点击 「确认添加」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TuU1niaZ5tr1LpfgqnTwddAgpsqFNH7E4Je8rGKk0XZI6QeA08Mc8TD4WVW2yKk0KWVEzzp5G7KopxFqzXic2V67wIuArCvicfSib0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=60" alt="图片"></p>
+<p>33. 添加完成后如下图所示；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TtkJHF73icibOVIeDXO1h6CCLhhZ0MhvwqsoC89oOicicibJNVtqqXbDibaLIUcQ6SPt9BgCoA8uOaSpMoXEqgaUfRKIGnmwwibYqdvNA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=61" alt="图片"></p>
+<p>34. 点击「权限管理」→搜索「通讯录」→选中「获取通讯录基本信息」→「确认开通权限」；</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsTtdkPmVibBaffEtLgGVqZmyRp3KIgbKWyMLtQKyNIlje5T2yibicLVoqB1PGK8Sglj8t3vYibiafdQKR8JC0KPcVuOsWibDTwdlJIE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=62" alt="图片"></p>
+<p>35. 配置完成后我们需要重新发布新版本，点击顶部「创建版本」；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TuWHCEe2dt01cQGy4UZG9JUia78yvc0boxazMxFaUf3NkxiaX20etfI357dpYtp89J8Y8a4dJocPAZdF2Wcto3zIciafdQeem0Tu4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=63" alt="图片"></p>
+<p>36. 按如图所示输入；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9Tusy2W1pQW5w6dfwdia4aiagicbBL4WaQG5UuUYVIUqMAER5xAbX3qXZ37BnV1w9qiaJqicTORPjXGIskVmIQoytiaTCnyicx4h7LU1sM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=64" alt="图片"></p>
+<p>37. 点击「确认发布」；</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TvibMMOFywtr4UByPFxUTiaz1B9KLws7MjQEht3picicbsB0Y0WaJRaDEbee3vUZDia2SfJDdbczDLPZTyV9EbWv5BjStzoXqynNQWo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=65" alt="图片"></p>
+<p>38. 打开手机端「飞书」，搜索机器人的名字，给机器人发消息， 如果机器人以AI的方式进行回复，那么恭喜你配置成功（太不容易了）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/bfx5lafC9TvSFVuic95JcCgWHYBqQWSIscxTBaM5sK7Kdpcia5IaTOXa8MFH4re2Hp1BTXGZDNcuEZjQNvglkq0NQbPdEHNDuwic0tsf7ZxiafY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=66" alt="图片"></p>
+<h2># OpenClaw常用命令</h2>
+<pre><code class="language-nginx">openclaw onboard #重新进入配置向导openclaw status #查看运行状态openclaw health #健康检查openclaw gateway start #启动服务openclaw gateway stop #停止服务openclaw update #更新到最新版本openclaw doctor #诊断问题openclaw uninstall #卸载 OpenClaw
+</code></pre>
+<p># OpenClaw 技能库</p>
+<p>最后再推荐两个 OpenClaw 技能库 <strong>，</strong> <strong>它就是给你的 AI 装上一堆「</strong> <strong>技能插件」</strong> ， 让它从“动嘴皮子”变成“真能干活”。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TvZLIicYBcncOJhEMtah7NNSfz85GBlxrxNYsQhLAlk3icYYC9gAhbahu6icwEwKWdB0AOico16w4sHj2m6ZA5X2CKU1pbWibxoQAqs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=67" alt="图片"></p>
+<h3>1. 宝藏仓库地址 GitHub 地址：</h3>
+<p><a href="https://github.com/VoltAgent/awesome-openclaw-skills">https://github.com/VoltAgent/awesome-openclaw-skills</a></p>
+<h3>里面包含内容众多，可根据自身需求进行安装；</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TsicoGZR98qUUWC8xmDGwOzpkADMZggGhZTJbgRr8yyrVjssRNldwVXNroj707JCB9J7YGmw9M2l4cVkGauljkAMFTqUM0YqDy4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=68" alt="图片"></p>
+<p>2. ClawHub，精英特工的技能平台。  </p>
+<p>官方网站： <a href="https://clawhub.ai/">https://clawhub.ai/</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bfx5lafC9TspA0n9grC2cb0u3uicG9icT79lZhibkFg9Ny9hGXiaic8kQfgMmav2LmLWlnUMfIFFhFLo97f7GAxlJrzkyyjicVRkSwGwAujfGrYuc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=69" alt="图片"></p>
+<h3># 写到最后，我想说点什么</h3>
+<p>其实 OpenClaw 刚发布时，就有朋友催我出教程。但我当时犹豫了很久，甚至想劝退大家。</p>
+<p>为什么？  </p>
+<p>因为它太「初级」了， OpenClaw 代码是由 AI 生成的，这也导致了它存在很多 Bug，安全性也没有得到验证，而且运行起来非常消耗 Token。</p>
+<p>对大多数人来说，它现阶段更像是一个昂贵的玩具，而非能完全承载日常工作的自动化神器。</p>
+<p>但今天我为什么还是决定写这篇教程？</p>
+<p>因为我意识到， <strong>不完美，不代表没有价值</strong> 。</p>
+<p>OpenClaw 代表了未来 AI 操控电脑的雏形，是通往全智能 AI 的必经之路。我也许无法向你推荐一个完美的成品，但我希望能带你体验一种全新的 <strong>人机交互方式</strong> 。</p>
+<p>在这个 AI 更新快到令人眩晕的时代，对于我们普通人不必成为造车的工程师，但一定要做最早学会驾驶的司机。</p>
+<p>希望我们持续保持好奇，紧跟这个时代，</p>
+<p>和 AI 一起，</p>
+<p>无限进步！</p>
+<p># 参考文章</p>
+<p><a href="https://docs.openclaw.ai/zh-CN">https://docs.openclaw.ai/zh-CN</a></p>
+<p><a href="https://cloud.tencent.com.cn/developer/article/2626160">https://cloud.tencent.com.cn/developer/article/2626160</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/2626151">https://cloud.tencent.com/developer/article/2626151</a></p>
+<p><a href="https://developer.aliyun.com/article/1709772">https://developer.aliyun.com/article/1709772</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/2624973">https://cloud.tencent.com/developer/article/2624973</a></p>
+<p>点击公众号名片 关注 AppOS</p>
+<p>更多实用教程我们下期见~</p>
+<p>作者提示: 素材来源官方媒体/网络新闻</p>
+<p>继续滑动看下一个</p>
+<p>AppOS</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/1afJtdZxnj04G1S4lzf5-A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

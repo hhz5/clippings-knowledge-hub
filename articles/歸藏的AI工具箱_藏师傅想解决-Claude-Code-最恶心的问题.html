@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>藏师傅想解决 Claude Code 最恶心的问题 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">藏师傅想解决 Claude Code 最恶心的问题</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude">Claude</a><a class="chip" href="../index.html?tag=%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%AE%A1%E7%90%86">环境变量管理</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a>
+    <span class="date">2025-10-15</span>
+  </div>
+  <p class="lead">向大家介绍一下我最新的开源项目：ai-claude-start。让你轻松从不同的 AI 模型启动 Claude Code。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年10月14日 21:10</em></p>
+<p>我不知道你们有没有遇到过这个问题。</p>
+<p>因为 Anthropic 的恶心操作，我们使用 Claude Code 必须使用代理 API，同时国内模型比如智谱、Kimi 的新模型对于 Claude Code 的支持。</p>
+<p>我们需要维护的 Cluade Code 环境变量越来越多了，更别说还有 Qwen 或者 Codex 的代理这种非原生支持 Claude 的模型。</p>
+<p>导致我换一个模型就得清理一下 Cluade 的环境变量，对于我这种不会命令行的菜逼来说，每次更换环境变量都非常痛苦，每次都得询问 GPT。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuEibQjNEIt8LM5KFicTk9gwXfia8eHwzHVibDWnHk92elibpTiaXNZBuXsBGg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>这次为了更换原生的 Claude 4.5 代理 API 甚至跟环境变量搏斗了半小时，于是我急了，想要写个软件彻底解决这个问题。</p>
+<p>经过跟 GPT-5 的指导以及赛博黑奴 Sonnet 4.5 的辛苦劳作，我终于搞定了！</p>
+<p>向大家介绍一下我最新的开源项目： ai-claude-start （ <a href="https://github.com/op7418/ai-claude-start">https://github.com/op7418/ai-claude-start</a> ）。</p>
+<p>这个项目可以让你快速配置多个 Cluade Code 模型的 API 数据，在通过 Cluade-Start 这个命令启动 Cluade Code 的时候会让你选择从哪个模型和服务商启动，Cluade Code 更换模型启动的时候费劲的问题。</p>
+<p>你也可以用这个项目快速启动多个不同模型驱动的 Claude Code 进程，非常爽。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIu9tBryg8hmnHF7feoB07WmhTb1EM1eVL3LWvQXtEA3DUHicVPRicPTAMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>而且这个配置还是写在 Cluade Code 环境变量之外的，只会在每次启动的时候临时注入，不会影响 Claude Code 原始的设置，非常安全。</p>
+<p>接下来我们看一下如何安装和使用这个项目，非常简单。</p>
+<p>后面我会大概说一下我是怎么做的，基本全程都是 GPT-5 和 Claude Sonnet 4.5 写的我只做了一下测试和描述需求。</p>
+<p>项目支持 npm 和 npx 安装，如果你已经撞了 Node.js 的话直接在终端里面输入下面任意一个命令就行。</p>
+<p>如果还没有安装 Node.js 可能需要在这里（ <a href="https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a> ）下载安装包先把 Node.js 装上。</p>
+<pre><code>npm install -g ai-claude-start
+</code></pre>
+<pre><code>npx ai-claude-start
+</code></pre>
+<p>如果你是小白，安装过程中有任何报错问题可以直接跟 GPT 讨论，大部分问题他都能解决，记得把你的报错内容给他，类似我刚开头那样。</p>
+<p>然后我们就可以开始最基本的配置了，输入 ai-claude-start setup 这个命令就会启动初始配置，一般 Cluade Code 模型环境变量的替换主要是三部分内容，模型 API 地址、API Key 以及模型名称。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuteBkWJ3X4MIbM2A0vupQ8ibQqtVDDicUpKPa7jTdMZOSo2ySmb8XLR1w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>我这里内置了Anthropic、智谱和 Kimi 的三个 API 地址你如果是这三个之一的话可以直接选择，地址这里就别管了，只需要写一下模型名称和 API Key 就行，这个在开发者后台都有。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuunR2AyzPWH4Z3LzpIKXqsUvcC4OUDQrU6dxfd7ILHiaLDmyRLnFliawg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>如果你需要的不是我预置的三个 API 的话，可以直接选择 Custom 这个时候配置名称、API 地址和模型名称和 API Key 就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIu6RZUcUw3k2NIkLWAdmIhPhAnTqeH6ibo9RXyU5F6d2z6AupgJexJOiaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>最后将你所有的 API 都配置完成之后下次启动 Claude Code 的时候输入 Cluade-Start 就行，项目会先让你选择模型，非常方便，也解决了小白用户不会配置 Cluade Code 环境变量的问题。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuo1yicDeOahCCTalbV30n1iaNHJ4buIhgvcb5l8WUH69yJgm1ea1DXPHg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>这就是基本使用教程了，如果你想要修改或者看更多自定义的命令的话可以来这里看 Cluade Code 写的 Readme 文档，这里更加详细（ <a href="https://github.com/op7418/ai-claude-start/blob/main/README%5C_CN.md">https://github.com/op7418/ai-claude-start/blob/main/README\_CN.md</a> ）。</p>
+<p>后面大概说一下这个项目大致的构建过程。</p>
+<p>GPT-5 发挥了很大的作用，刚开始我是跟他讨论如何解决我自己的 Claude Code 环境变量污染问题的，后面虽然解决了。</p>
+<p>但是我想到我已经跟他讨论了好几次这种事情了，我不想每次都这么麻烦，于是就想能不能写个项目存这些环境变量每次启动的时候让我选择。</p>
+<p>它先是给了我一个临时的本地存储的命令行方案，后面我就说我不想要临时方案，我想给他做成一个项目，具体的要求是 XXX。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuzwZ8iaP5Fxxw6a9Yjs4W4rsK5N9wByiaSqbu2ictWswabGSe9zZMceziag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>最后跟他说我想要给另一个 AI 让他写代码完成，应该如何跟那个 AI 描述需求，他就给了我一整套提示词，考虑的非常全面。</p>
+<p>你是 Node.js CLI 工程师。请基于我提供的脚手架文档，建立一个 npm 包 ai-claude-start（可改包名），满足：</p>
+<p>npx 包名 首次运行进入向导，内置 3 个预置：Anthropic、Moonshot、IMDS + 自定义；</p>
+<p>Profile = { name, baseUrl, authVar(= ANTHROPIC_AUTH_TOKEN | ANTHROPIC_API_KEY), model? }；密钥安全存储（优先 keytar，不可用则本地明文 fallback 并告警）；</p>
+<p>子命令：setup | list | default <name> | delete <name> | doctor；</p>
+<p>运行时清空子进程中所有 ANTHROPIC_*，仅注入所选 Profile 所需项；若既含 token 又含 key，则默认保留 token；</p>
+<p>支持 claude-start <profile> [传给 claude 的参数…]；</p>
+<p>额外加一个测试用开关：--cmd <binary> 或环境变量 CLAUDE_CMD，用于在没有 claude 时用 node -e 或自定义命令替身；</p>
+<p>提供 README、LICENSE(MIT)、.gitignore；</p>
+<p>加最小自动化测试（Jest 或 Vitest）：对 URL 清洗、环境注入冲突消解、配置读写 做单元/集成测试；</p>
+<p>输出完整项目结构与关键文件内容，确保本地 npm link 能直接跑通。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuzwZ8iaP5Fxxw6a9Yjs4W4rsK5N9wByiaSqbu2ictWswabGSe9zZMceziag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>之后就是启动 Claude Code 把第一条大指令给他，一次输出的结果已经可以跑了，后面我人工测试了一下，发现几个功能理解的问题，又修复了一下，就可以了，因为每次他自己会进行测试，所以简单的问题都自己修复了。</p>
+<p>最后还让 Cluade Code 指导了一下我该如何把项目发布到 npm 让大家可以顺利的安装。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeJvX4MS0jJfCf1jLkroCIuKzXwvOibwjxSsZgfoKErnYCaFR6K7gzYzib2wqiaribUMEjgocO2G5dqjQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>以上就是这个小项目的使用方式和构建过程了，如果你有其他想法和功能的话欢迎提交 Pull Request 。</p>
+<p>由于我对这部分代码一窍不通都是 AI 写的所以不可避免的可能会有问题，如果有问题建议优先跟 AI 沟通，也可以发我，但我水平有限可能修的很慢。</p>
+<p>感谢各位可以看到这里，如果有帮到你希望帮我点个赞👍或者🩷，也可以分享✈️给你的朋友，感谢🙏</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/INo8KNGOaR2wFXtUish07Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

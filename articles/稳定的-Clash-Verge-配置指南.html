@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>稳定的 Clash Verge 配置指南 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">稳定的 Clash Verge 配置指南</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%90%A2%E4%B9%88%E7%90%A2%E4%B9%88">琢么琢么</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Clash%20Verge">Clash Verge</a><a class="chip" href="../index.html?tag=DNS%E9%85%8D%E7%BD%AE">DNS配置</a><a class="chip" href="../index.html?tag=%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86">网络代理</a>
+    <span class="date">2026-01-04</span>
+  </div>
+  
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/gFqMuec2dZLx08XAGS1rnmiaMjVL0x9ld8ybKg31pJGOPzxvbcRx6x32BxIvia187u3lhnv0wHzZ99xibPYicIxLYg/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 琢么琢么 <a href="https://mp.weixin.qq.com/s/">琢么琢么</a> <em>2025年12月20日 13:47</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuVPTGEcubvs1S5MIkwmspfMWzibe5BCjVkolsdEsFHicQv3sHB3LOCILA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuyM2BUQa4VPniaN6cZicQRPI2OHrEz9E8jm54lIgSjoiaW1TBtiaDvx46ibw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuxGdCo2c7P5aG8RnmuBVwMc3xqKCcdBichyUEuJCm9ESyRibT5weAiaRWQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPu65CQMv7cc9CvZLTPniaibeETJXB2fZMTbjDjX6Dc3fgfy3pf27RWeB4Q/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuTSdrYhbp9pu2BAF6QUAQaDcXsTUbgqm5icV9gJ3yA8ccD344E77D5Cw/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPur3hOMo5REFhYXV7bicsbrtS9fO8icqLpgiaPtEkF0jW3aBk7LwXrhWo9Q/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuiaaJJ0QhzDRNjh17Dm6EjnwlsPQU7rNYkvF5SySyylIuMxgS26Aq7eg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuALGfxnsicVjy8YiaBhYBIBTVtbS5V0ia1dt92Qv5O4FMaWicJ5eGG60hWQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>日常版：</p>
+<pre><code>dns:
+  enable: true
+  listen: &#39;:53&#39;
+  enhanced-mode: &#39;fake-ip&#39;
+  fake-ip-range: &#39;198.18.0.1/16&#39;
+  fake-ip-filter-mode: &#39;blacklist&#39;
+  prefer-h3: false
+  respect-rules: false
+  use-hosts: false
+  use-system-hosts: false
+  ipv6: false
+  fake-ip-filter:
+    - &#39;*.lan&#39;
+    - &#39;*.local&#39;
+    - &#39;*.arpa&#39;
+    - &#39;time.*.com&#39;
+    - &#39;ntp.*.com&#39;
+    - &#39;+.market.xiaomi.com&#39;
+    - &#39;localhost.ptlogin2.qq.com&#39;
+    - &#39;*.msftncsi.com&#39;
+    - &#39;www.msftconnecttest.com&#39;
+  default-nameserver:
+    - &#39;223.5.5.5&#39;
+    - &#39;119.29.29.29&#39;
+  nameserver:
+    - &#39;https://doh.pub/dns-query&#39;
+    - &#39;https://dns.alidns.com/dns-query&#39;
+  direct-nameserver-follow-policy: false
+  fallback-filter:
+    geoip: true
+    geoip-code: &#39;CN&#39;
+    ipcidr:
+      - &#39;240.0.0.0/4&#39;
+      - &#39;0.0.0.0/32&#39;
+    domain:
+      - &#39;+.google.com&#39;
+      - &#39;+.facebook.com&#39;
+      - &#39;+.youtube.com&#39;
+      - &#39;+.github.com&#39;
+  fallback:
+    - &#39;https://8.8.8.8/dns-query&#39;
+    - &#39;tls://1.1.1.1:853&#39;
+    - &#39;tls://dns.google:853&#39;
+  proxy-server-nameserver:
+    - &#39;tls://1.1.1.1:853&#39;
+  direct-nameserver:
+    - &#39;223.5.5.5&#39;
+    - &#39;119.29.29.29&#39;
+
+</code></pre>
+<p>纯净版：</p>
+<pre><code class="language-bash">dns:
+  enable: true
+  listen: &#39;:53&#39;
+  enhanced-mode: &#39;fake-ip&#39;
+  fake-ip-range: &#39;198.18.0.1/16&#39;
+  # 关键：停用所有非必要功能，简化配置，减少变量
+  fake-ip-filter-mode: &#39;blacklist&#39;
+  prefer-h3: false
+  respect-rules: false
+  use-hosts: false
+  use-system-hosts: false
+  ipv6: false
+  # 精简但必要的 fake-ip-filter，仅保留防止系统误判网络的条目
+  fake-ip-filter:
+    - &#39;*.msftncsi.com&#39;
+    - &#39;www.msftconnecttest.com&#39;
+  # 默认DNS解析器，仅用于解析下面nameserver/fallback的域名，使用全球通用DNS
+  default-nameserver:
+    - &#39;8.8.8.8&#39;
+    - &#39;1.1.1.1&#39;
+  # 核心：所有常规查询均使用可信加密DNS
+  nameserver:
+    - &#39;https://8.8.8.8/dns-query&#39;   # 谷歌 DNS-over-HTTPS
+    - &#39;tls://1.1.1.1:853&#39;           # Cloudflare DNS-over-TLS
+    - &#39;tls://dns.google:853&#39;        # 谷歌 DNS-over-TLS (备用)
+  # 关键：必须清空 fallback 和 fallback-filter
+  # 在全局模式下，所有查询无需再分流
+  fallback: []
+  fallback-filter: {}
+  # 代理节点域名也使用纯净DNS解析，防止订阅链接被污染
+  proxy-server-nameserver:
+    - &#39;tls://1.1.1.1:853&#39;
+  # 关键：清空直连DNS，因为全局模式下不应有“直连”流量
+  direct-nameserver: []
+</code></pre>
+<p>====== 结束 ======</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p>继续滑动看下一个</p>
+<p>琢么琢么</p>
+<p>向上滑动看下一个</p>
+<p>琢么琢么</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Xk4he-9ODXnwDXtetqm3VQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

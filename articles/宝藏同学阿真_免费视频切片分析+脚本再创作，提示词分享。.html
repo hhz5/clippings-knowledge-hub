@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免费视频切片分析+脚本再创作，提示词分享。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">免费视频切片分析+脚本再创作，提示词分享。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%AE%9D%E8%97%8F%E5%90%8C%E5%AD%A6%E9%98%BF%E7%9C%9F">宝藏同学阿真</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C">视频制作</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E9%98%BF%E7%9C%9FIrene">阿真Irene</a>
+    <span class="date">2026-01-06</span>
+  </div>
+  <p class="lead">视频拉片小妙招get~</p>
+  <article class="content"><p>原创 宝藏同学阿真 <a href="https://mp.weixin.qq.com/s/">阿真Irene</a></p>
+<p><em>2026年1月5日 21:32</em> <em>广东</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/HibrYDJehdiafM10Picic2SfWyzyq0Wiagfiac6tajYHze0Cfq6TaC7IrP4UHz0iacUxIEcnjjbgeRRIo7DPj7ZIQwzhA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>嗨大家好！我是阿真！</p>
+<p>本来想刚到2026年一开始就给大家卷个大的，没想到一躺平就完全起不来，于是到了今天才回归，而且发的还是个备用稿哎嘿。</p>
+<p>顶锅盖防骂声明：你会看到我的提示词很长很长，这时候可能有朋友要说我是不是装*了，不是的，主要是想更自动还稳定所以要求多了点。还是那句话，<strong>提示词或长或短都没有错，按自己的习惯来，我分享的也不一定比你自己的好，适合自己的才是最好的。</strong></p>
+<p>今天分享的视频拆解与复用提示词的工作流程如下，一次发送即输出，后续只要输入关键词就可以无限复用👇</p>
+<p>优质视频 → 分析拆解 → 元提示词模板 → 输入关键词 → 批量生成同类视频分镜脚本</p>
+<p>因为我自己最近也在学习很多视频，发现虽然看完了，拆解完，下次还是不会用。如果是做AI视频的话，每个镜头都要重新写提示词，效率也比较低。</p>
+<p>于是我就做了一个这样的分镜反推的提示词，只要上传视频，就可以进行非常详细的拆解，并且可以把一条爆款视频变成无限可以复用的架构模板，模板在对话中进行继续的进一步的调整也可以。</p>
+<p>提示词发送以后，上传视频就会产出角色设定表，包含绘图提示词的角色设定表以及完整的分镜表、结构的拆解与分析。最后还有一个元提示词的模板，这个元提示词模板就是核心资产，因为它还可以在下一次进行同类视频生成的时候复用。</p>
+<p>那么以后的工作流就可以变成这样👇</p>
+<p>第一阶段：分析（做一次）     </p>
+<p>爆款视频 → 拆解 → 元提示词</p>
+<p>第二阶段：创作（无限次）     </p>
+<p>关键词 + 元提示词 → 新分镜</p>
+<p>第三阶段：制作     </p>
+<p>角色图 + 镜头图 → 成片</p>
+<p>使用的工具建议是Gemini和Qwen Chat二选一，因为它俩分析视频很方便。我这里用的是Qwen Chat（<strong><a href="https://chat.qwen.ai/">https://chat.qwen.ai/</a></strong>），完全免费，用过了才知道多好用呜呜，咱们的大模型也是越来越好了。</p>
+<p>关于如何使用，不想看下面的图文可以直接看这个视频👇</p>
+<p><video data-v-6b6a00a5="" src="https://mpvideo.qpic.cn/0b2er4aryaabzuakatk2nvuvdd6ddshqchaa.f10002.mp4?dis_k=6e753bd6f80a46434f4d17847720b198&amp;dis_t=1767673347&amp;play_scene=10120&amp;auth_info=CrHipOcJcEhByKD0zAgORjg9HTdmHWxIVCMnT1hBPHk7R2cYRSBrBTYlEBFsZwNmLDc=&amp;auth_key=c6607b887462e3709708b282cd29a864&amp;vid=wxv_4328981086463574021&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/HibrYDJehdiafM10Picic2SfWyzyq0Wiagfiac7uiaYCticCpfycgteyiclSOF0V76wibibakzgbL6ibv9mejx3VhKDMibH0ZibA/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 657px; height: 370px;" jm_neat="238302210">您的浏览器不支持 video 标签</video></p>
+<p>打开Qwen，模型选Qwen3-Max，发送提示词。一时没反应过来，写成2025了。虽然不重要但是没关系，我已经改过来了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacX7VayX3RpRWJq8EzxAXVAsQ2LNMibcZ4HX09mxRKY1FsLB3k8rE8BQA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>等Qwen回复后，发送视频给它分析。这里不管它回复了什么，都不影响你发送视频让它分析。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacuFlXZWoTyUW8iagDTHwqKv01SRuA9tYJdeKev1JMmW3ClD17hVsP8LQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>然后他会输出一个详细的分析报告，首先是视频的简介。</p>
+<p>第一部分是角色设定表，就是这个视频中有哪些角色，包括人物角色和道具等，也会反推出提示词和保持一致性的关键词👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacibQZ5hAsL0QH9yKzL6ibgwRdiaMNwfpSecCVNUf27xJRQJ4gVrYwAico8A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>第二部分则是分镜表，这是比较重要的一部分。我们可以把视频给到它，让它自动切片和分析，输出镜号时间、时长、出镜角色、画面内容、画面提示词、文案台词、镜头类型和镜头的功能，给到我们作为参考和学习。</p>
+<p>需要更详细，或者有其他比如灯光、剪辑分析要求也可以在对话中补充👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacxadnNyK8QRc3icdriaXeAibib1dVkoMmhgdxkPw3brgVvvukbQPkiaG7phQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacfJpVdcSXClRWmNDxmAUjeLDA9yibgwicbOUiaOF2kzc4OVVCzGicPSRNlg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>第三部分是对视频内容和结构的拆解，包括了整体结构、钩子设计、节奏和视觉分析等，也可以作为参考👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacsAc7PTEHHptVAA9rTXCKXYXrgDicghAwYiajn2xeHrAZmic570MsH5NVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>第四部分是基于前面的视频生成一个可复用的提示词模板，下次只需要给关键词就可以直接生成新的广告分镜脚本了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0Wiagfiacc6tgvFJibL27xYHKcoqKmCBGJ9EZhkktVRkl76WMYiagOz1m0VHDicfWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p><strong>向上滑动查看所有内容</strong></p>
+<p>另外，口播视频也可以上传分析，比如我分析我自己的视频👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0WiagfiacEicXriaTiavfrH87uXia4SYqsSnJg3J9iapnaM2YofbTk05mzqr4X8IzFUw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p><strong>向上滑动查看所有内容</strong></p>
+<p>不过视频不管好坏默认情况它都会说好话，多少有点迎合我们了哈哈哈，所以还是要有自己的判断。</p>
+<p>上面是分析拆解+模板，接下来是复用，输入参考资料和关键词，生成同类视频分镜👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/HibrYDJehdiafM10Picic2SfWyzyq0Wiagfiacn5mGu26yf76HZISqyksFpRyvlSyo0TxhTHibkkQuTQ2IQlI07bJ2qKg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><strong>向上滑动查看所有内容</strong></p>
+<p>可以基于这个方式进行进一步修改调整，比如多场景多角色、更多功能置入场景，或者觉得这个镜头不好实现也可以更换。</p>
+<p>如果要快速搓出视频框架，就是这么轻松啦。接下来是视频提示词的完整版，**超超超长，**如果觉得格式乱了不好看，可以直接去这个网址下载和复制这个完整提示词的markdown文件👇</p>
+<p><strong><a href="https://ai.feishu.cn/docx/RDdUdszZDo51utx031MctUgwnLb?from=from%5C_copylink">https://ai.feishu.cn/docx/RDdUdszZDo51utx031MctUgwnLb?from=from\_copylink</a></strong></p>
+<pre><code class="language-Plain"># 视频分镜反推系统 V3
+
+`作者：阿真Irene ｜ 更新：2026.01 ｜ 推荐工具：Qwen Chat · Gemini`
+
+---
+
+## 系统说明
+
+**两阶段工作流**：
+1. 【分析阶段】输入视频 → 输出角色设定表 + 分镜表（含画面提示词）+ 结构拆解 + 元提示词模板
+2. 【创作阶段】输入关键词 → 元提示词自动生成角色设定 + 新分镜表（含画面提示词）
+
+**画面提示词使用方法**：
+- 角色部分用代号（如{角色A}）占位
+- 实际使用时，将{角色A}替换为角色设定表中的「一致性关键词」
+- 这样保证角色外貌跨镜头一致
+
+---
+
+# 第一阶段：视频分析提示词
+
+&gt; 复制使用，把{视频内容}替换成转录文本
+
+```
+# 角色
+你是视频分镜反推工程专家，擅长将视频拆解为可复用的分镜模板，并为每个镜头生成AI绘图提示词。
+
+# 任务
+分析以下视频，输出：
+1. 角色设定表（含AI绘图提示词）
+2. 完整分镜表（含每镜画面提示词）
+3. 结构拆解
+4. 可复用的元提示词模板
+
+# 待分析视频
+{粘贴视频转录文本/字幕/详细描述}
+
+---
+
+# 输出要求
+
+## Part 1：角色设定表
+
+为视频中出现的每个角色/元素生成设定卡片：
+
+### 角色A：{角色名称}
+
+**基础信息**
+| 属性 | 设定 |
+|-----|-----|
+| 角色类型 | 主角/配角/产品/道具 |
+| 身份定位 | |
+| 外貌特征 | |
+| 服装风格 | |
+| 性格标签 | |
+
+**AI绘图提示词**
+
+&gt; 角色设定图提示词（英文）
+```
+[完整外貌描述], [服装描述], [姿势],
+full body, character design sheet, white background,
+multiple views, front view, side view,
+[风格词], high quality, detailed
+```
+
+&gt; 一致性关键词（用于分镜替换）
+```
+{精简核心特征，15-25词，用于替换分镜表中的{角色A}}
+```
+
+---
+
+### 角色B：{角色名称}
+（同上格式）
+
+---
+
+### 产品/道具：{名称}（如适用）
+
+**产品信息**
+| 属性 | 设定 |
+|-----|-----|
+| 产品类型 | |
+| 外观描述 | |
+| 核心视觉特征 | |
+
+&gt; 产品一致性关键词
+```
+{产品核心视觉描述，用于替换分镜表中的{产品}}
+```
+
+---
+
+## Part 2：分镜表
+
+| 镜号 | 时间 | 时长 | 出镜角色 | 画面内容 | 画面提示词 | 文案/台词 | 镜头类型 | 功能 |
+|-----|------|-----|---------|---------|-----------|----------|---------|-----|
+| 1 | 00:00-00:02 | 2s | 角色A | （中文画面描述） | （英文提示词，角色用{角色A}代替） | （逐字文案） | 近景 | 钩子 |
+| 2 | 00:02-00:04 | 2s | 产品 | （中文画面描述） | （英文提示词，产品用{产品}代替） | （逐字文案） | 特写 | 展示 |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+**分镜表字段说明**：
+- 画面内容：中文描述，说明这个镜头拍什么
+- 画面提示词：英文AI绘图提示词，格式如下：
+  ```
+  {角色A}, [动作], [场景], [构图], [光影], [风格], [镜头]
+  ```
+  - 角色/产品部分用花括号代号，如 {角色A}、{产品}
+  - 使用时将代号替换为Part 1中对应的「一致性关键词」
+- 出镜角色：标注哪些角色/元素出现，对应Part 1的代号
+
+---
+
+## Part 3：结构拆解
+
+### 3.1 整体结构
+```
+[阶段1: 名称] XX秒 (占比XX%)
+  └─ 功能：
+  └─ 主要角色：
+  └─ 包含镜号：
+
+[阶段2: 名称] XX秒 (占比XX%)
+  └─ 功能：
+  └─ 主要角色：
+  └─ 包含镜号：
+...
+```
+
+### 3.2 钩子设计
+- 前3秒钩子类型：
+- 钩子话术原文：
+- 视觉钩子设计：
+
+### 3.3 节奏分析
+- 平均镜头时长：
+- 节奏变化点：
+
+### 3.4 视觉风格
+- 整体画面风格：
+- 配色倾向：
+- 推荐AI绘图模型/风格：
+
+---
+
+## Part 4：元提示词模板
+
+基于以上分析，生成一个【元提示词】：
+
+&#39;&#39;&#39;
+# 角色
+你是{视频类型}分镜脚本专家，擅长创作{风格}的视频分镜，并为每个镜头生成AI绘图提示词。
+
+# 任务
+用户给出1-3个关键词，你生成：
+1. 角色设定表（含一致性关键词）
+2. 完整分镜表（含每镜画面提示词）
+
+---
+
+# 角色设定模板
+
+## 角色A：{角色类型}
+
+**模板**：
+| 属性 | 填充规则 |
+|-----|---------|
+| 身份定位 | 根据关键词推断 |
+| 外貌基调 | {原视频外貌风格} |
+| 服装风格 | {原视频服装风格}，根据主题调整 |
+
+**角色设定图提示词模板**：
+```
+[身份描述], [外貌], [服装], standing pose,
+full body, character design sheet, white background,
+multiple views, {风格词}, high quality
+```
+
+**一致性关键词模板**：
+```
+[核心外貌], [核心服装], [风格词]
+```
+
+---
+
+## 产品/道具（如需要）
+
+**一致性关键词模板**：
+```
+[产品名], [核心外观特征], [材质/颜色]
+```
+
+---
+
+# 分镜结构模板
+
+## 结构框架（固定）
+
+[阶段1: {名称}] {时长} (占比{X}%)
+  └─ 功能：{功能}
+  └─ 角色配置：{角色}
+  └─ 镜头数：{X}个
+
+[阶段2: {名称}] {时长} (占比{X}%)
+  └─ 功能：{功能}
+  └─ 角色配置：{角色}
+  └─ 镜头数：{X}个
+...
+
+---
+
+## 分镜表模板
+
+| 镜号 | 时长 | 出镜角色 | 画面内容模板 | 画面提示词模板 | 文案模板 | 镜头 | 功能 |
+|-----|-----|---------|-------------|---------------|---------|-----|-----|
+| 1 | {X}s | 角色A | {画面框架} | {角色A}, [动作], [场景], [构图], [风格] | {文案框架} | {镜头} | {功能} |
+| 2 | {X}s | 产品 | {画面框架} | {产品}, [展示方式], [背景], [光影], [风格] | {文案框架} | {镜头} | {功能} |
+...
+
+---
+
+# 智能填充规则
+
+**角色相关**：
+- {角色身份}：从关键词推断
+- {外貌}：基于{原视频风格}，根据身份微调
+- {服装}：基于{原视频风格}，根据场景调整
+
+**画面提示词相关**：
+- {动作}：根据功能推断合适动作
+- {场景}：根据主题推断场景
+- {构图}：根据镜头类型确定（close-up/medium shot/wide shot）
+- {光影}：{原视频光影风格}
+- {风格}：{原视频画面风格}
+
+**内容相关**：
+- {主题}：从关键词提取
+- {痛点}：根据主题推断
+- {卖点}：根据产品/主题推断
+
+---
+
+# 风格锁定（固定）
+
+**画面风格**：{原视频画面风格描述}
+**通用风格词**：{如：realistic, cinematic lighting, 8k 或 anime style, vibrant colors}
+**通用质量词**：high quality, detailed, professional
+
+---
+
+# 输出格式
+
+## 输出1：角色设定表
+
+### 角色A：{名称}
+
+**基础信息**
+| 属性 | 设定 |
+|-----|-----|
+| 身份定位 | |
+| 外貌特征 | |
+| 服装风格 | |
+
+**角色设定图提示词**
+```
+（完整英文提示词）
+```
+
+**一致性关键词**
+```
+（用于替换分镜中的{角色A}）
+```
+
+---
+
+### 产品：{名称}
+
+**一致性关键词**
+```
+（用于替换分镜中的{产品}）
+```
+
+---
+
+## 输出2：分镜表
+
+| 镜号 | 时间 | 时长 | 出镜角色 | 画面内容 | 画面提示词 | 文案/台词 | 镜头类型 | 功能 |
+|-----|------|-----|---------|---------|-----------|----------|---------|-----|
+（填入具体内容，画面提示词中角色用{角色A}等代号）
+
+---
+
+## 输出3：提示词替换指南
+
+使用分镜表中的画面提示词时：
+1. 找到提示词中的 {角色A}、{产品} 等代号
+2. 用角色设定表中对应的「一致性关键词」替换
+3. 获得完整可用的AI绘图提示词
+
+示例：
+- 原始：{角色A}, sitting at desk, medium shot, soft lighting, realistic
+- 替换后：[一致性关键词内容], sitting at desk, medium shot, soft lighting, realistic
+
+---
+
+## 输出4：创作摘要
+
+- 总时长：
+- 角色数量：
+- 镜头数量：
+- 结构概览：
+&#39;&#39;&#39;
+
+---
+
+## Part 5：验证测试
+
+用1个关键词测试元提示词：
+
+**测试**：关键词「___」
+
+角色A一致性关键词：
+```
+___
+```
+
+分镜表前3行：
+| 镜号 | 画面内容 | 画面提示词 | 文案 |
+|-----|---------|-----------|-----|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+```
+
+---
+
+# 第二阶段：使用元提示词创作
+
+**使用方法**：
+1. 复制 Part 4 生成的元提示词
+2. 输入关键词
+3. 获得：角色设定 + 分镜表（含画面提示词）
+4. 用一致性关键词替换分镜画面提示词中的角色代号
+5. 生成图片 → 制作视频
+
+---
+
+# 画面提示词使用指南
+
+## 替换流程
+
+**Step 1**：从角色设定表复制一致性关键词
+
+角色A一致性关键词：
+```
+young woman, long black hair, white blouse, confident smile
+```
+
+产品一致性关键词：
+```
+golden cheese pizza, melted mozzarella, steaming hot
+```
+
+**Step 2**：替换分镜表中的画面提示词
+
+原始提示词：
+```
+{角色A}, holding {产品}, excited expression, kitchen background, medium shot, warm lighting, realistic style
+```
+
+替换后：
+```
+young woman, long black hair, white blouse, confident smile, holding golden cheese pizza, melted mozzarella, steaming hot, excited expression, kitchen background, medium shot, warm lighting, realistic style
+```
+
+**Step 3**：投入AI绘图工具生成
+
+---
+
+# 完整工作流
+
+```
+┌─────────────────────────────────────────────────────┐
+│                    第一阶段：分析                      │
+├─────────────────────────────────────────────────────┤
+│   [输入] 爆款视频转录                                 │
+│      ↓                                              │
+│   [输出]                                            │
+│      ├── 角色设定表（含一致性关键词）                  │
+│      ├── 分镜表（含画面提示词，角色用代号）             │
+│      ├── 结构拆解                                   │
+│      └── 元提示词                                   │
+└─────────────────────────────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────────────┐
+│                    第二阶段：创作                      │
+├─────────────────────────────────────────────────────┤
+│   [输入] 关键词                                      │
+│      ↓                                              │
+│   [元提示词]                                         │
+│      ↓                                              │
+│   [输出]                                            │
+│      ├── 新角色设定（含一致性关键词）                  │
+│      └── 新分镜表（含画面提示词）                      │
+└─────────────────────────────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────────────┐
+│                    第三阶段：生成                      │
+├─────────────────────────────────────────────────────┤
+│   1. 用角色设定提示词 → 生成角色设定图                 │
+│   2. 用一致性关键词替换分镜画面提示词中的{角色}         │
+│   3. 逐镜生成画面 → 组装视频                          │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+# 示例：广告视频风格
+
+**角色设定**：
+
+角色A（滑雪推销员）一致性关键词：
+```
+energetic young man, ski instructor outfit, red jacket, goggles on head, cheerful expression
+```
+
+产品（比萨）一致性关键词：
+```
+pepperoni pizza, golden crust, melted cheese stretching, steam rising
+```
+
+**分镜表示例**：
+
+| 镜号 | 时长 | 画面内容 | 画面提示词 | 文案 | 功能 |
+|-----|-----|---------|-----------|-----|-----|
+| 1 | 2s | 推销员面对镜头提问 | {角色A}, facing camera, questioning expression, ski slope background, medium close-up, bright daylight, commercial style | 你知道什么比滑雪更刺激吗？ | 钩子 |
+| 2 | 2s | 比萨特写，芝士拉丝 | {产品}, extreme close-up, cheese pull, steam effect, dark background, dramatic lighting, food photography | （无台词） | 产品展示 |
+| 3 | 3s | 推销员做文字游戏 | {角色A}, playful gesture, holding imaginary ski poles, snowy mountain background, medium shot, dynamic angle, commercial style | 黑钻芝士，比黑钻雪道还让人上头！ | 谐音梗 |
+| 4 | 3s | 推销员夸张摔倒+字幕 | {角色A}, dramatic fall pose, exaggerated expression, snow splash, wide shot, comedic timing, text overlay space | 不行了不行了太上头了！ | 反转 |
+| 5 | 7s | 产品展示+推销员收尾 | {角色A} and {产品}, presenter holding pizza, confident pose, studio background, product showcase lighting, commercial style | 必胜客黑钻芝士比萨，现在下单立享优惠！ | 结案 |
+
+**替换后的镜头1完整提示词**：
+```
+energetic young man, ski instructor outfit, red jacket, goggles on head, cheerful expression, facing camera, questioning expression, ski slope background, medium close-up, bright daylight, commercial style
+</code></pre>
+<p>![[视频分镜逆向系统V3 1]]</p>
+<p>批量产视频，UGC / TVC又可以猛猛分析起来了。搓AI广告视频也更有劲了。</p>
+<p>放假后遗症啊朋友们，想搓个视频不太想动，好不容易哄自己来干活，发现好几个工具都没积分了，下次一定啊下次一定。还有个很不错的点子还在优化，等做到我满意了再分享。</p>
+<p>今天的分享就到这里了哎嘿，希望对大家有帮助，<strong>如果觉得有趣有用，欢迎猛猛三连鼓励阿真~</strong></p>
+<p>下期见朋友们~</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/4k8OE1xAX3nOJVDyXdGcmA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分享一个把200k的Github项目转成元Skill工作流的方法！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">分享一个把200k的Github项目转成元Skill工作流的方法！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=Token%E6%B6%88%E8%80%97">Token消耗</a>
+    <span class="date">2026-06-08</span>
+  </div>
+  <p class="lead">又一种新的省API额度的姿势</p>
+  <article class="content"><p>原创 AI沃茨 AI沃茨 <a href="javascript:void(0);">卡尔的AI沃茨</a></p>
+<p><em>2026年6月5日 20:30</em> <em>美国</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>两天前，我在朋友圈分享了把Superpowers这个20万的GitHub项目做成垂直Agent的方法。</p>
+<p>没多久就收到一句吐槽，这14个Skill组合起来太啰嗦了，还烧Token。</p>
+<p>确实这是我这段时间一直在想解决问题，</p>
+<p>好的Skill很多，但很多时候都是让Agent去盲选调用顺序。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxiayhiczDKerk9oAwSQHXOMldaN8xYSmxaBnLnNknDPeJX1ibQshl8mEGhEebl1LzbApnBacYgt2mfaQiaQPibIvR56JJDAVTY8LicU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>Superpowers三个月前还是10万star，现在又翻倍了</p>
+<p>虽然它在Readme里面塞了一个基本工作流，但是我并不是每一次调用都需要那么多skill的。</p>
+<p>想来想去，还是每个人按照自己的习惯，安排一套这个skill的调用顺序最合适。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwTmJXIr4EP3fXM1TTPqclKBsZFAJgD5nibAjDQ9svIGh4odtbGJnHYpiaLGVdicZP0evUUsx4iarBlZGXc5az6rQoj6DEXKrSic6ko/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>而且把Skills定好调用顺序之后，我还可以把其他框架上跟它重叠但不重复的技能纳入到这个工作流里面。</p>
+<p>比方说我就很喜欢在开发流程的最后一句触发compound里面的持续学习。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwYojUUD7kPux521vZEIXzPniax4fkj9D96BhuXYMibDBK1EPAD2iabPU6GhjLiaTRXNB27EE5JjQbJoYqgdIWSgJ3AuH9x1nJhJcw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>这个问题可以被具体化成，  </p>
+<p>到底该怎么用这一组Skill？</p>
+<p>一组Skill就像一个百宝工具箱。你知道我知道大家都知道里面有好东西，但每次执行的时候，还是得判断今天该用哪个，顺序是什么，要不要全塞进上下文，哪些步骤可以跳过等等等等。</p>
+<p>更麻烦的是，每读一个Skill的说明烧的都是我的TOKEN啊，Agent自己不心疼，我心疼。</p>
+<p>这种麻烦在最近狂用Codex的/goal命令的时候达到了顶点，我的周额度居然在周五就没了，重生之72小时我成古法手写程序猿了属于是。</p>
+<p>这两天在GitHub上大搜特搜省TOKEN还不降模型智商和体验的项目，</p>
+<p>Bad case是这个，说是会给Claude Code剩下65%的TOKEN，结果给我Claude干成呆瓜了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwmzLxClu3niasocr2ZrJqPczrctN3FzgEECacJicbHR54jjnnKu37EtTZe4g4sBAXsVgFS22rQicFXe82g2s86IX8H2LCVpvSq5U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>还有一种新玩法是从Skills的组织入手的，</p>
+<p>叫做，OpenSquilla</p>
+<p>他把多个Skills组织抽象成了Meta Skill。</p>
+<p>普通Skill解决的是，我会什么。  </p>
+<p>Meta Skill解决的是，现在这个任务，我该怎么把这些能力串起来。先做哪一步，后做哪一步，哪一步依赖前一步，哪一步没完成就别往下跑。</p>
+<p>不过这个项目跟OpenClaw比star差了快两百倍，所以我们还是先来看看纸面实力，在PinchBench 1.2.1上，三个模型混着用的OpenSquilla跟Claude Opus 4.7版的OpenClaw得分几乎一样，但Token少了将近一半，成本不到1/9。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzMZdCGj1oDicxBE9ibJnO0br9l5Q5RL3UwGwpNx9icnicXeErPGrZiad0EX9XEKK6vvibAfobXhwSt11E9WjibrlVs4oNicbl9VLGU0to/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>超光速看了一下项目代码，一个很突出的差异点是，OpenSquilla的Meta Skill会让我们多写一份SKILL.md。</p>
+<p>这份文件不是一段提示词。</p>
+<p>它是在用YAML定义Meta Skill的步骤、顺序和依赖。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fz7PWVGia3TpDiamnkAAUx6OnKWPiaYc2SaH2BlCnchN5cDDg1G1ibvHUmP2aU7Cpkqa4gemuEtGCCGjeWibHCKIjos56ZQUgdw7nJg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>看到depends_on: [classify]了吧，</p>
+<p>翻译成人话，就是先给输入做分类，是bug，提问，还是其他情况。</p>
+<p>没分完类，就不准往下走。</p>
+<p>看到的时候我第一反应是，这不就是写了一套rules吗？</p>
+<p>区别在硬约束，</p>
+<p>rules靠模型自觉，上下文一长，模型就可能突破约束。MetaSkill不一样，它会在Runtime层先检查一遍。步骤顺序对不对，依赖有没有闭环，权限够不够。</p>
+<p> 通不过校验，0次API调用，一分钱都花不着。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fw88ic2vxXfvJNJBjIz3TkXAYJxQQGAkUa3xTBgZWKiaibRQkqqaaEoW1KVgQ6h5pzEUiaxEVh67NdK592VndEHDqMNLeQ3Hibp3kD4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>为了测试我故意写了一个坏依赖，depends_on: [missing_step]，指向一个不存在的步骤。真就直接在Plan Validation阶段拦截了，连LLM调用都没发出去。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzpLX4jNtSMuGVysAUHr17vUVPUoBkOKqFbhAibXD9JicpQiaZuYT5VveIiafJ4LCnYib4DaR0VtAe2uwZEiaW9cpeR3fvBxZmJuxT3k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>以前我们是靠写Rules让模型遵守约定。</p>
+<p>现在变成了先用代码转一圈看看，这条工作流本身成立吗？</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fz09NJibkthpCmictsDQHicWBMMTZFV78ib5CRRWXgdxNiaQH7FZH4OnUFYZ4yiaSrWjJVz2O6qobFVeLydP2icLH2CreNdbfL0635NuM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>那我直接上手把把Superpowers底下Skills组合做成Meta Skill，</p>
+<p>brainstorm负责想需求，write_plan负责写计划，verify负责检查风险，作为我日常的固定搭配流程。</p>
+<p>打包成一个Meta Skill后就不需要Agent每次来考虑这次需不需要，一套流程定下来，跟着规定走，不能遗漏也不能跳步。</p>
+<p>用同一个提示语任务测了三轮，提示语都是搜索3个2026年AI agent跑生产环境的风险，再写一段给工程经理看的总结。</p>
+<p>能看出来有没有Meta Skill差距还是蛮大的，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxhP5bvxWh550NKgYf79ibmYrKU5ThNDxl79L7eGpNrRPYS4PTJmPsmDO6p3wertX11ZuLia5RdwPp0H5lFPoD9PPICwV1lRukvo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>同样是成功跑完了内容，Meta Skill把输入TOKEN就压到67%。</p>
+<p>每一步思考过程减少了，也不再把Token消耗在迁移途中的说明上，</p>
+<p>用人话说的话，它用更长的前置运行时间，换来更少的重复上下文消耗。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxYPFjgBs5OlAZg6VYv5LkN6kgbgRyBjRGAIqiaZRotCgmoLc1ENXXypliaEgsh77OgTib9M2Y9SRNnll2L5VDtrZB7Jo63HyWqiaE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>对于模型切换 ，OpenSquilla支持多家模型，自带了一个本地小模型，我发的请求在要发给干活的大模型之前会先做个分类是简单还是复杂任务。</p>
+<p>不过这个模型切换只能在是在新开session或者新建立对话情况下才实现。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fy3mTL7QaAFVcIvktTp7VoNloBmQyAW7EJ3uZvNffLeY5sLccPMaHiamR2wFc5icNM5ncib4Sicj4uwPaNqZE9z8QA1zSthvBiafJX8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>我觉得还是为了切起来够稳定，</p>
+<p>如果在同一个Session中频繁换模型，很容易就会出现上下文缓存，工具格式和日志混乱等等问题。主要是我心痛我Claude的一小时缓存。</p>
+<p>还有，我留意到一个细节，</p>
+<p>OpenSquilla用子Agent去理解和压缩上下文，也就是说在一个上下文是 400K左右的模型，到了300多接近400K的时候，还是能够能记住我之前说的点。提示语长这样，</p>
+<pre><code>我：设计一个 AI Agent 的测试计划，
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fz3L0rJSiaHyx7OeHU6yh1Enpy8Giau6JmPgqk2wRHAdp18MQkPibmUn0X5wyuUXxuq70ricdeEsLbc0HhVD1aib8I98E6DMAAgA8Uk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>同一个对话里，从你是谁到写一份8个框架的调研报告，全跑通没有忘记上下文。并且在话题结束，给出一份巨巨巨详细的花销明细。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzheNuZvfnkia2dJVYneibgBicPgGPj5Fm0cPgArmpv3Zk8lpXf2yloTiaDud7MibFxyx8ffg8RHodUsshj9tB4z7c49pl60gHeGujQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>从自我介绍到8框架竞品报告，</p>
+<p>同一会话花了7美分都花在哪了。</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzMDibkP2DajlaoQTxpdZA08UHkIFnEbW4agediaIVel351BQiacwqluJfiaatSGP3eVUVq8rYicYpM5ibRu7yQYrFsUAAQdUJmnd6hI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&retryload=3#imgIndex=14" alt="图片"></p>
+<p>OpenSquilla把这一切都摊开了。</p>
+<p>每个Session的Token数和成本精确到小数点后四位。这一轮测下来，只能说星不可貌相啊，全是狠活。</p>
+<p>过去半年，</p>
+<p>Agent是先卷模型，再卷MCP，接着卷Skill。</p>
+<p>Skill都卷到Clawhub上有6w多了，</p>
+<p>正常一个Agent也就常用的也就50个70个。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwMOwicjia9bWj6oHpW75xDc3cGujoZz7ico8uN1ibnZ1ylj5zYkSV7sAKyicGT5jtkEJHujpAU7lAU8gG6JmY3j8I1XQvG4BPNnNSg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>可能挑了很久，终于选了一个Skill带回家，</p>
+<p>但过几天，新的又来了，旧Skills也就被忘了。但Agent每轮都还是会读旧Skills的说明书，</p>
+<p>对我来说过多的Skills只是散落在仓库里的文件，但Agent会因为Skills里内置的各种规则误导，</p>
+<p>规则加太少，Agent容易失去了方向，</p>
+<p>规则加太多，Agent就左脑打右脑了。</p>
+<p>真正拉开差距的，从来都不是谁的Skill更多，</p>
+<p>这跟一周能不能烧掉一亿token一样没有意义。</p>
+<p>能不能把Skill串成一条稳定的工作流，</p>
+<p>别让Agent在完全没有限制的空间里临场发挥。</p>
+<p>我们真正需要的是让它知道,</p>
+<p>第一步做什么，要不要继续。</p>
+<p>哪一步没必要，能不能省略。</p>
+<p>这一步的问题，要怎么定位。</p>
+<p>每次对话的下一次都能跑更稳定，</p>
+<p>把好的步骤做的更好，</p>
+<p>坏的Bug也不再发生。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Bfo4TnoT5jcX-lJUzuSnvw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源TODO Skill，我这三年用AI做知识管理和代办的经验都在这了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源TODO Skill，我这三年用AI做知识管理和代办的经验都在这了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86">知识管理</a><a class="chip" href="../index.html?tag=%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86">任务管理</a><a class="chip" href="../index.html?tag=LLM">LLM</a><a class="chip" href="../index.html?tag=Obsidian">Obsidian</a>
+    <span class="date">2026-07-15</span>
+  </div>
+  <p class="lead">谁不想有一个自己的管家阿福呢？</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年7月15日 09:52</em></p>
+<p>5 个月前，我用OpenClaw做Obsidian知识管理的文章到现在已有20万阅读了。</p>
+<p>5个月后，我的Obsidian的使用方法经历了Karpathy大神的LLM-wiki改造，又经历了Claude Fable 5做目录结构优化，又又又经历了因为每天收件箱太多文件，让模型自动整理后找不到原文件的不aha moment。</p>
+<p>我觉得最大的卡点不在整理，把文件从目录A转移到BDC一点用都没有，解决方法是排期，把代办做了，文件就可以归档了。</p>
+<p>所以我跟自己的钱包一拍即合，用API版Fable5（太贵了我一定要加个前缀）和不停重制额度根本用不完的Codex新搓了一个LLM TODO Skill，我给它取名叫管家阿福。毕竟，谁不想像蝙蝠侠那样有个万能的管家阿福，天天帮自己处理一大堆消息，晚上睡觉前优雅点开一个可视化页面，然后看看TODO就把排期做了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyxcswcM8iaUHfxUFG2BwAXT6w0UazFUVV7bGiciaT3s32TmRqwUHH7U31vp75k5B7xpV4UDwgx9tAbymKTRDzftYic71S9LHUdIDk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>🔗 github. com/LearnPrompt/afu-llm-todo</p>
+<p>这个TODO Skill其实很久之前就已经做出来了，但我考虑到要兼顾不用Obsidian的朋友，所以尽可能地做了简化。只要你有一个存了很多待办资料的文件夹，就可以用Codex把它们转成对应Markdown文件，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyWbH1WTAN0Pmd8KvymGkIzznLiaeXd7uiboI2YNPfJqMcibdkjGEQfTXviaNpxJFAqzPAKGbZKlQu7sWfCmlmjaG7tTtuexrfRcms/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>然后阿福就能自动扫描文件夹里所有的Markdown文件，识别出可以继续推进的候选素材。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fy4mHayIkICxlMamvRmwxOn4ZCMCG8EiauAOjryU6RGvzDJkbLrHgia4ZzsW1SfsicQKTCjbNNO5IIPKXK5b1pCrMILSHiaYoQWzfQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>大家可以从图里看到，这个Skill会识别哪些Markdown文件信息不完整。</p>
+<p>比如我直接发的某书和某音的视频链接，因为没有获取到视频里面的完整内容，阿福就会给你一个提醒。这个时候我可以用脚本重新获取，脚本里用的是yt-dlp加上本地Whisper语音识别模型，所以它会把视频里面的字幕内容都识别出来，让你更好地判断这个选题到底要不要做。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxaibhplFia0oIM6vyEvTNoQPXl0zwfUDTIE8FhMaYpIHf4h2CNSMNgsfUOPhdl0CYz6hc4WoIZH1TvZzLNxV0DPiaBGjUOjZ51vo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>OK，有了完整信息的任务卡片之后，排期环节就开始了。</p>
+<p>我可以批量勾选多个任务卡，把我觉得信息量已经足够的放到排期池里。</p>
+<p>在排期池里，我可以直接拖动的方式放到底下的周排期里面。写入的时候，还可以选择同步到Mac的本地日历或者是飞书日历上。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxqaQo6gevGhXA2WZKXYT2K85ThBkVJShpfjgEHe3S9prljrkAIxeibYpLHicMwU3Fbfe5TBwIINa2BvAcIJIte19rq5MpaaD2lE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>有点太高兴了，提前把日历同步都说出来了。</p>
+<p>但在同步日历之前，其实还有一个我打磨了很久的功能。在反复使用的过程中我发现，就算我在一开始从任务卡转成排期卡的时候，就已经觉得内容足够丰富了，但还是会出现一种情况。</p>
+<p>可能中间隔了三四天或者一周，有两个非常相似的选题同时被收录到排期池里面。</p>
+<p>这个时候我可以直接用DeepSeek出的AI分组建议，把多个类似选题卡片再融合。像我的话，相似的素材融合之后可以做成一个大选题。如果它是一个待办的话，也意味着你可以一口气把同类型的全部完成了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzhBSZwUFsrDMqW5S6ybUzccR5WQxk27pVyU5fPMU5hUuOLdWUbqE4yr3Xa9apqywU4ib5XqvgVI9a1NpdODbtOGbIgNOOib5TKQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>当然还有更厉害的，如果你觉得AI分的这个组不合适，还可以勾选多个组，再把它合并一轮。这个功能解决了一个我之前反复踩坑的问题。就是那种回头复盘才发现自己同一个方向囤了五六个素材，结果因为没合并，每个都写了个半成品，最后一个都没发出来。</p>
+<p>说到这个，我觉得最爽的还是把排期拉到周视图的过程。</p>
+<p>因为我自己之前建待办的时候，也试过让Claude Code直接帮我排期到日历里。它确实能做。但有个问题，有的时候改期了，或者因为某些事情耽误了需要去修改，如果设一个定时任务让它扫描我备忘录看同标题的TODO有没有时间差，我还得费神去维护这个定时任务本身。</p>
+<p>但当我以周为单位的时候，拖动日程其实是一个代价非常小的动作。</p>
+<p>所以在阿福的周视图里面我打磨了很久，它会提示已经过期的排期，你可以直接选择删掉或者移动。外面的Mac日历和飞书日历也会同步进行移动。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/VNz1x8bH8Fxqib2ib9bXHznYFxGXJJzmtXxLspS5xoMM9HEIa5rVOhciagVRlWoaR2kHy3XYPpkrNuCOXGuhAWJ992MpVLtib81icw4x4ggjTDZQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>说了这一大轮之后，要怎么去配置阿福这个TODO SKill呢？</p>
+<p>其实我已经给阿福的可视化界面装了一个配置界面。还是那句话，因为要兼顾本身不怎么用Obsidian的朋友，所以这一套流程不是Obsidian特有的。</p>
+<p>简单来说，它只需要三个文件夹，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fzlqd6VbQrYu1Lk4MN7lz89fjGqqwlsYv2w6VOOJrxglZxL5iaRKaq93Jaicl6pdco3e7TkSSMDVRWBKamSmMYvx3eSwrCv0EllY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>第一个是收件箱目录。</p>
+<p>我们尽可能不要去动原文件，这样方便后续查找。因为有些时候丢到收件箱里的视频和图片，可能马上就要用到。现在Claude Code和Codex的回答速度都在变慢，我不想每次都让模型检索。</p>
+<p>第二个是选题目录。</p>
+<p>选题目录会把多个资料的markdown组合成一个新的markdown，也就是说它不会移动原资料，是把原资料的路径都写到一份新的markdown里。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FywgzdyV38icgYQOUNVln3ERJkric39fDnm0B0DhAicibBYft1xOIp7rQU5Ys7cTWBcD8Ric3jGyK3zTvuyiaamK7jjkd1gALvoO0sv0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>第三个是归档目录，</p>
+<p>之所以要留一个归档文件夹，是因为有些过期的排期，有可能是热点过了，或者我已经做过这类代办了。这个时候我更希望先把它归档起来，可能以月或者一个季度为周期，再判断要不要完全删掉。之前就出现过类似的情况，我把一个材料删掉后，结果几周后发现它其实可以被扩展成一个更好的选题。</p>
+<p>那种后悔的苦不亚于我codex重置额度过期了没用。。。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwP97912Wiaqic7vkDibKeae1LHqXzEVicdicUCFoN93OHldBpzSUJ1XBwqhcAbGKCHaocZkPXRr1m9icNt0BzyLPpN816H5MWk0zcx8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>那毕竟阿福TODO是个skill，安装就是一句话的事。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzeDZZadVRfGic3Giah0ib26VQasVDHhWia3X7PichfoZKpuykyGfy7HiajkVJiawGFibowo2eIczg8gEpFOlM1qzoZNKsx3spyxibsEs7g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>最后的最后，</p>
+<p>中途其实我有好几次尝试放弃开发阿福skill。</p>
+<p>因为开发时间真的不短，中途也遇到了很多问题。素材太凌乱，所以又加了AI合并功能，有些素材之前没处理好就浪费掉了，后来又重新做了获取。排期没做好，又加了回撤和多日历排期同步。</p>
+<p>所以一优化到这版我比较满意的都立刻开源出来了，毕竟一个skill只有开源出来了，它的生命周期才真正开始。</p>
+<p>写着写着，我突然想到了一个很老的概念。</p>
+<p>GTD，Getting Things Done。</p>
+<p>David Allen在2001年出这本书的时候，核心理念其实就一句话，</p>
+<p>把你脑子里的东西全部清空到一个可信赖的外部系统里面去。</p>
+<p>25年过去了，我们的外部系统从纸质笔记本变成了Evernote，变成了Notion，变成了Obsidian，变成了各种各样的Agent和Skill。</p>
+<p>工具一直在进化，但那个底层焦虑一直没变。</p>
+<p>我们害怕遗忘。</p>
+<p>我们害怕那些曾经打动过自己的东西，因为时间的流逝，因为排期的混乱，因为一时半会来不及做完，就变成了一堆没有用的文件和数据。</p>
+<p>如果它们起到的作用仅仅是记录我曾经读过，</p>
+<p>那就太可惜了。</p>
+<p>明明当下看到这个选题的时候，我觉得很有意思才会设成待办的。</p>
+<p>所以我希望有了阿福管家之后，</p>
+<p>大家可以少一点这种遗憾，</p>
+<p>能够自由自在去完成自己真正想做的事。</p>
+<p>毕竟，谁不想要一个管家阿福呢。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>296人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/QcGHxKohg0gW9e84Nd_9jA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

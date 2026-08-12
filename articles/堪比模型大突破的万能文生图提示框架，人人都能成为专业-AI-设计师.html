@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>堪比模型大突破的万能文生图提示框架，人人都能成为专业 AI 设计师 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">堪比模型大突破的万能文生图提示框架，人人都能成为专业 AI 设计师</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E4%B8%80%E6%B3%BDEze">一泽Eze</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%96%87%E7%94%9F%E5%9B%BE">文生图</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1">设计</a>
+    <span class="date">2026-04-18</span>
+  </div>
+  <p class="lead">在人类模糊的创作意图与 AI 的生成能力之间，尝试建立一种更高效的沟通机制。</p>
+  <article class="content"><p>原创 一泽Eze 一泽Eze <a href="javascript:void(0);">一泽Eze</a></p>
+<p><em>2025年4月7日 00:13</em> <em>浙江</em> <em>标题已修改</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnuowdu6ACCOZFESywbThGNwcAxIPTTe3uF9KHkgjZKPKQJYnrJ8pmq81GicPWrnFX662icgicxg1ATaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>最近各家文生图 AI 都在不断升级。</p>
+<p>但小白、专业创作者，在文生图时仍会觉得脑中虽有万千想法（maybe 也可能是一团浆糊 🤣），却很难确定用哪些“提示词”激发模型能力上限，实现更高效、专业的 AI 设计。</p>
+<p>最近一泽研究了一套万能文生图提示框架，我希望它能对你的创作方法有所启发，提供一座创意与 AI 生成能力的桥梁，真正“用想法驱动设计”。</p>
+<p>下面是用该提示框架直出的效果图，覆盖「游戏、产品、影视、家装、UI、艺术、摄影」等全设计领域：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMwF0eIibqicWa62W9cLCAicVKcN9wDcMgvWmsZ1ibZbSMyxF0SevXRIVtzA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>先自行总结一下优势（朋友们内测反馈很一致）：</p>
+<ol>
+<li>1. 用上这套方案后，哪怕是完全不懂设计、不会 AI 的纯小白，也能完全解锁专业级 AI 创作能力（无需学习，就让每个人都会文生图“嘴炮魔法”）</li>
+<li>2. 对于专业 AI 创作者、设计师，能无脑让 AI 根据意图，自动编写与优化提示词，大幅提升文生图创作的效率与质量（还能让所有模型外挂精准的多模态提示/垫图能力）</li>
+<li>3. 缓解文生图“黑箱”，提升文生图提示词的可解释性，方便手动微调提示词，也能边用边学，快速提升文生图提示工程能力</li>
+<li>4. 自动同时生成中、英文双版提示词，不再手动翻译，避免提示词失真</li>
+</ol>
+<p>膨胀一点说，在实测中，用上这套框架带来的文生图水平提升，堪比模型迭代。（真膨胀了 hh）</p>
+<p>OK，那么接下来将完整介绍 1 套核心提示词模板、配套的文生图提示流程，以及 8 个生成实例，帮你掌握专业级 AIGC 创作能力。（感谢点赞、转发、在看）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjM7G5dnzBMVMO9X6JHzexyg6ypTzEJLsj18iavvH0TbDIibYcN9BdpWAnQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<hr>
+<h2>👉 万能文生图提示框架</h2>
+<p>以往写文生图提示词确实辛苦，不仅要想象出完整的图像场景，还要拆解意图，从“贫瘠”的文学储备里，找出最适合的描述。</p>
+<p>不仅容易写的前后冲突、词不达意，还非常反绘画、设计的创意流程</p>
+<p>——没有随便涂鸦、脑暴的过程，就要你直接用最“压缩”的方式，精准表达你脑子里的那团“浆糊”是什么。</p>
+<p>天，我怎么想得起来想生成的像素游戏里，画风叫做“16-bit 像素风格”，血条还要有“古典纹样边框”？</p>
+<p>不过没关系，只需要复制这份万能提示框架，再加你一句简单的“嘴炮”，就能让模型替你扩展出非常专业、精准的文生图提示词：</p>
+<pre><code># Role: 万能 AI 文生图提示词架构师
+// Author：一泽Eze
+// Model：Gemini 2.5 Pro 优先
+// Version：1.0-250405
+## Profile
+你是一位经验丰富、视野开阔的设计顾问和创意指导，对各领域的视觉美学和用户体验有深刻理解。同时，你也是一位顶级的 AI 文生图提示词专家 (Prompt Engineering Master)，能够敏锐洞察用户（即使是模糊或概念性的）设计意图，精通将多样化的用户需求（可能包含纯文本描述和参考图像）转译为具体、有效、能激发模型最佳表现的文生图提示词。
+
+## Core Mission
+- 你的核心任务是接收用户提供的任何类型的设计需求，基于对文生图模型能力边界的深刻理解进行处理。
+- 通过精准的分析（仔细理解用户提供的文本或图像）、必要的追问（如果需要），以及你对文生图提示词工程和模型能力的深刻理解，构建出能够引导 AI 模型准确生成符合用户核心意图和美学要求的图像的最终优化提示词。
+- 强调对用户完整意图的精准把握，理解文生图模型能力边界，并采用最有效的文生图提示词引导策略来处理精确性要求，最终激发模型潜力。
+
+## Input Handling
+- 接受多样化输入: 准备好处理纯文本描述/关键词列表/参考图像，或文本与图像的组合。
+- 图像分析: 如果用户提供参考图像，你需要根据用户需求，详尽分析其对应特征，判断哪些元素是用户真正想要参考的关键点，以及哪些可能需要调整或忽略。
+
+## Key Responsibilities
+1.  需求解析: 全面理解用户输入（文本和/或图像），洞察任何隐含要求，识别是否存在歧义、冲突。
+2.  意图澄清: 如果用户需求模糊、不完整或存在歧义（无论是文本还是图像参考），主动提出具体、有针对性的问题来澄清用户的真实意图，以确保完全把握用户的核心意图。
+3.  提示词构建与优化（特别的，明确知道文生图模型难以精确复现的要求，进行精确性引导: 对于需要相对精确的形状、布局或特定元素，优先使用更形象、具体的词汇或比喻来描述，而非依赖模型可能难以精确理解的纯粹几何术语或比例数字。）
+4.  输出交付:
+    *   提供最终优化后的高质量中文提示词与英文提示词（两个版本）。
+    *   简要说明关键提示词的构思逻辑或选择理由，帮助用户理解。
+    *   若用户需求存在多种合理的诠释或实现路径，可提供1-2个具有显著差异的备选提示词供用户探索。
+
+## Guiding Principles
+*   精准性:力求每个词都服务于最终的视觉呈现。
+*   细节化:尽可能捕捉和转化用户需求中的细节。
+*   结构化:提示词应具有清晰的逻辑结构。
+*   用户中心:最终目标是如实反映用户的设计意图。
+
+## Interaction Style
+专业、耐心、细致、具有启发性。在必要时主动引导用户思考，以获取更清晰的需求。
+
+## 参考输出格式示例
+以下为一个优秀的输出格式的示例：
+
+一件意式浓缩咖啡机艺术品，融合了流线型现代主义的优雅曲线与未来主义的极简精准。其主体采用大面积、无缝连接的镜面抛光铬金属，呈现出流体雕塑般的形态，侧面过渡至细腻拉丝纹理的钛灰色不锈钢面板，形成微妙的光泽对比。底座与散热格栅采用哑光黑色阳极氧化铝，增加了视觉的稳定感与深度。
+咖啡机上一个悬浮式设计的冲煮头，仿佛从主体优雅地延伸出来；一个复古风格、精密如瑞士钟表表盘的圆形模拟压力表，带有柔和的内部背光；控制旋钮采用实心金属打造，边缘点缀一圈极细的温暖黄铜环，转动时提供令人愉悦的物理阻尼感。水箱巧妙地隐藏在机身侧后方，通过一条狭长的烟熏色玻璃视窗显示水位，玻璃表面带有垂直的微棱纹理。蒸汽棒关节处采用精密球形接头，转动顺滑。Portafilter（咖啡手柄）采用与主体一致的抛光铬金属，搭配经过人体工学设计的黑色胡桃木握柄。
+整体造型极简，无多余装饰，所有线条和接缝都经过精心处理，体现了“少即是多”的设计哲学与顶级的制造工艺，散发出一种冷静、专业、又饱含温度的永恒奢华感。
+白色背景，陶瓷质感桌面，采用柔和的、略带方向性的工作室灯光（营造更强的立体感和光泽），高分辨率，3D建模渲染，光影效果极其逼真，太阳光暖光质感，自然光泽，清晰逼真，细节丰富到微米级别。中性背景下的清晰产品摄影风格。
+
+## 请用户在此处输入原始设计意图与图像
+【在此处输入】
+</code></pre>
+<p>💎 你唯一需要做的就是：把你脑子里能想到的、用来描述脑子里那些模糊想法的碎片词汇，随手替换到这份框架的最下方，然后发给任意一个 AI。</p>
+<p>当然，AI 生成的提示词水平也和模型本身能力正相关。</p>
+<p>推理模型在揣摩人类意图上，好于普通模型，聪明的推理模型又比笨的推理模型效果更好。</p>
+<p>一泽自己会首推 Gemini 2.5 Pro 或更好的推理模型。</p>
+<p>效果会非常不错，你将会看到原始碎片想法被 AI 扩展为了专业提示词（它们被放入文生图 AI 中就可以取得当下最一流的生成效果） ⬇️</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMb2OfsibF0fhK4zbuVERD8tia5fKMZ4wyE1qw72j9iafpS1Bjib1eSWqP6w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<hr>
+<h2>🧭 人人都能学会的操作说明</h2>
+<p>整个流程非常符合直觉（甚至无脑）：</p>
+<h3>1）用 AI 一键扩展专业提示词</h3>
+<ol>
+<li>1. 打开任意一个推理模型（当然，就像之前所说，我会用 Gemini 多一些）</li>
+<li>2. 复制「万能提示框架」，在末尾填入自己模糊的创作意图，发送给 AI。得益于多模态能力的提升，你也可以贴上需要参考的图片，提示它参考图中的某些设计特征。</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjM0ic44xrZe9rsh3Owa58TumHs2AbibmoP7spphNaQ8rPJXcrcbVjVujVg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<ol>
+<li>3. AI 会对你的原始意图进行推理，替你生成中英双版的专业级文生图提示词。你可以看到，用它生成的提示词，不再是单纯的提示词堆砌，而是力出一孔地多维度描绘了一个生动的场景～</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMxQb9CIs1wvxUjiaY7WIRyIHH4qDlQy5QtdtCp5rcEm6hfr5qwchdGuQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<ol>
+<li>4. AI 还会对提示词的设计进行解释说明，缓解文生图“黑箱”问题，提升文生图提示词的可解释性，方便创作者根据需要，非常方便微调提示词中的细节，精细控制生成效果；也能边用边学，理解文生图提示工程要点</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMTH84HVBlhxTsnQwn86brvxJkUBLk8rlLlHI9cPqlEFGUibJeqxtrnMw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>注：当设计意图过于缺失时，AI 还能主动向你确认一些设计要求，一起完成专业提示词的共创。</p>
+<p>另外，AI 也会根据它自己的理解，一次性输出多种可能符合用户意图的提示方案。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMA6w0Nicibic9TAk8eJWwpF6srsjWibZcxN8JS3bFFptFv2m4wsx6H03XjA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMiciamVHKc4bCibhJlRcQqOst8yoqYBEIRXlLYC8EONhibGEBsy95W0iaWfw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<hr>
+<h3>2）发送给文生图 AI ，查验初始生成效果</h3>
+<p>不得不说，不同的文生图 AI 的擅长风格确实有所不同。</p>
+<p>整体测试下来，我会推荐用 Google Imagefx 覆盖偏产品、家装等实用设计场景，Midjourney V7 则会更擅长大场景、精细的创意艺术生成。</p>
+<p>（啊对，测下来当红的 4o 反而优势不显）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjM6MRXuSydh4S6jp8edhhZcx9JhklbpoxNib1Q3pGzpQ4EZOElvV2jZwA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>那沿着之前的第一步，继续演示 ⬇️</p>
+<p>复制模型给我们扩展的专业提示词，粘贴到文生图模型中（我以 Imagefx 为例），点击创建后查看效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMu7LjfDSn2w0aRZb3GcptWppfZfdXG6UJcc65sFAQVgPc4ia10h11aSg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>确认过提示词原意，生成的画面全对上了！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMXnTQia76pMtNCWL5oLhiapKQcBHYuBtpgptGPu5gN7Th47DKvRWes9Rg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>而且，虽然在没有真正垫图（Imagefx 不支持垫图），但也抓住了参考图中的多模态提示的关键元素（就等于给模型外挂了一套精准的多模态提示/垫图能力）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMicr8zY3jXQtJ3HIBxehkoR1Qhm7kWjiaOAJS2HJlkpv9z1grHG06g5AA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMDgxBxRc9LmCJtgFvuTOMfCJDKfhjX34ib863HsibbqGBkVVKWQYlWtBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>左为生成效果（非垫图，纯提示词生成），右为间接参考图</p>
+<p>生成的效果图完成度极高，相同时间下很难想象一个人类设计师能靠自己就能完成如此快速、专业的概念设计输出。</p>
+<p>——而这专业的文生图创作的起点，只是不成完整句式的碎片想法。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjM6BcYtTqzl9bmWSAUNSlNf7ZI3YibnkaWkicbib7R9Fj9cPQWSG8tRicyIQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>真的太酷了！</p>
+<hr>
+<h3>3）如果想要修改、优化文生图效果，怎么办？</h3>
+<p>有办法的，还是用“嘴炮”就行！</p>
+<p>如果你用的是 ChatGPT-4o、Gemini 2.0 flash-Image、豆包这些支持连续改图的，最方便的当然还是直接在 AI 对话窗口直接提要求。不过由于意图表达不完整、用词不精准、与原有提示冲突，可能效果不是很好。</p>
+<p>最推荐的方法还是在原来的万能文生图框架的对话窗口，直接继续发送你想改的要求（也可以继续使用多模态垫图提示）</p>
+<p>比如我觉得生成的效果，天空颜色太暗沉，想更像参考图明媚一点：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMjQxyvjeenicc6Zsx4rfb43iaanu3AzvFTVVUs1ric6BR1bO1bYsiapdYmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>模型帮我改进了一版提示词，比人类文生图创作者调整起来快多了：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMDS0TKTgBWKj5cnnqf3RiajDgSGxcw192hsAhuAVC8a7LaPMjBlF9GrA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p>最终也获得了相对稳定，且调整生效的成果 ⬇️</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMe7SwDSepZEf5D3JbdiapssaevUvaK2JW5DFsTibwnwAEC97zJXVpiblicw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Image"></p>
+<p>另外，你甚至还可以用这套提示框架，去逆推已有图像的文生图提示词。</p>
+<hr>
+<h2>🙌 从各场景生成效果来看，真的很不错</h2>
+<p>正如本文首图，一泽也提前邀请了 @阿真irene 、@San-山雨 等在 AIGC 领域颇有研究的好朋友，一起对这套万能文生图提示框架进行测试。</p>
+<p>以下是一些生成的高清效果图，相信也能给你以启发：</p>
+<h3>家居设计</h3>
+<p>来自 @一泽Eze ，使用 Imagefx</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjM98neyIR9odmEQq3H58bNic2stWyfFLXcicUynChPARsU9PTSEEGpuQicA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Image"></p>
+<pre><code>## 原文120 平横厅，客厅设计，奶油风，简洁，无主灯，落地窗## 扩展提示词宽敞明亮的120平方米横厅客厅，采用温馨舒适的奶油风格设计。整体空间简洁、开放，以柔和的米白、奶油、燕麦色和浅木色为主色调。一面巨大的落地窗占据了主要墙面，引入充足的自然光线，窗边垂挂着轻盈的白色纱帘。天花板平整，采用无主灯设计，通过巧妙嵌入的线性灯带、若干个防眩光的筒灯以及角落处一盏造型简约的落地灯提供照明，营造出均匀、柔和且富有层次感的光环境。一套米白色的圆润造型布艺沙发（可能是泰迪绒或棉麻质感），搭配一个低矮的浅色木质圆形或椭圆形咖啡桌，旁边点缀一张同色系的单人扶手椅和边几。地面铺设浅色木地板或大地色系的短绒地毯。墙面保持简洁的奶油色乳胶漆，可能有一面墙做了微妙的肌理感艺术漆处理。点缀少量绿植和极简风格的装饰画。宁静、放松、温暖、通透。视觉焦点集中在落地窗外的景色以及室内柔和的光线和舒适的材质上。室内设计效果图，广角镜头，强调空间感和自然采光，光线柔和弥散，温暖的午后阳光感，高质量渲染，细节清晰，照片级真实感，氛围温馨宁静。
+</code></pre>
+<h3>珠宝设计</h3>
+<p>来自 @一泽Eze，使用 Imagefx</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMo5ictrTxcicMxjkHd0Igld4OK8Kry0hV7YmWwjBOG54OjNu3C8ic1hqhA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<pre><code>## 原文珠宝设计，项链，钻石与银，极具美感，轻盈## 扩展提示词一条充满自然灵动美感的项链设计。采用柔和扭转、仿佛清晨藤蔓般的拉丝纹理925银作为主体结构，形成一个开放式的、不对称的环绕形态。在银质藤蔓的几个节点或末梢，点缀着数颗大小不一、露珠般晶莹剔透的圆形小钻石，采用爪镶或埋镶方式，如同凝结在植物上的晨露。链条为极细的银色绞丝链，与主体有机连接。整体造型追求流畅的曲线和不对称的平衡，体现自然造物的精巧与生命的活力。银材质部分拉丝部分抛光，形成丰富的光影层次。柔和的浅绿色或米白色背景，模拟清晨柔和的自然侧光，光线穿过设计中的空隙，产生微妙的光影效果，突出设计的立体感和钻石的点点光芒。高分辨率，超现实珠宝摄影，细节丰富，质感逼真，整体氛围清新、脱俗、充满生机与轻盈感。
+</code></pre>
+<h3>游戏设计</h3>
+<p>来自 @一泽Eze ，使用 Imagefx</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMAUNOBD21Vqx4UdGAsR6qPoycpibhYPnOZJjWcys8SRcB71iab4ObClNg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="Image"></p>
+<pre><code>## 原文3D 黏土风格、横版 RPG  界面，正在和 NPC 交谈、柔和、中式仙侠，清新色调
+</code></pre>
+<h3>产品渲染图</h3>
+<p>来自 @一泽Eze，使用 Imagefx</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMjEITDONF4CnVEwjhdubpugarmHBMupYjniaQXu1ckUKUSRUcYlxoCNg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="Image"></p>
+<pre><code>## 原文Logitech 键盘包装盒，绿色包装，侧面有 logo，正面印着有键盘渲染图## 扩展提示词一个简洁高级质感的罗技（Logitech）键盘包装盒，采用鲜明饱和的多巴胺绿色硬质纸板材料。盒子形状呈现为极其细长且非常扁平的长方体，具有显著的纤薄外形，视觉上远长于宽，远宽于高，暗示其为键盘包装。盒子表面光滑，质感良好，边缘线条挺括、干净利落。包装盒主体（最宽的面）上印刷有一个简约风格的黑色键盘图形轮廓或线条画。罗技（Logitech）的 Logo 以简洁的方式印刷在其中一个狭长的侧面上。整个包装盒处于未拆封的闭合状态，水平放置在一个桌面上。设计风格现代、极简、高端。白色背景，陶瓷质感桌面，采用柔和的工作室灯光，巧妙融合了通透的太阳光暖光质感，高分辨率，3D建模，光影效果精致，自然光泽，清晰逼真，细节丰富。中性背景下的清晰产品摄影风格，凸显产品的现代美感和高级感。
+</code></pre>
+<h3>电影画面</h3>
+<p>来自 @San-山雨 ，使用 Midjourney V7</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMJslLoLllLYkStiagx3Eh9Dfoy2UWDDPuS412vlibQibhUEnRPoBDWIvkg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="Image"></p>
+<pre><code>## 原文我看见敌人的冲向我，我无能为力的延时摄影 多重曝光## 扩展提示词第一人称视角 (POV)。黑白画面，效果类似于延时摄影与多重曝光的结合。一名德军士兵正凶猛地朝我冲锋，他的身影在画面中留下了数道半透明的、重叠的残影，清晰地勾勒出他快速逼近的轨迹，仿佛时间在这一刻被凝固又拉伸。最近处的那个残影最为清晰，面目狰狞，刺刀闪着寒光。周围的战场背景（烟雾、障碍物、倒下的战友的模糊轮廓）也因多重曝光效果而显得混乱、破碎且相互渗透。我的视角固定，带着强烈的眩晕感，能看到自己无力垂下的步枪枪口和因恐惧而微微颤抖的手指边缘。整个画面充满了超现实的噩梦感，捕捉了面对死亡威胁时，那种大脑空白、身体僵直、彻底无能为力的瞬间。高对比度，颗粒感强，光影破碎。
+</code></pre>
+<h3>人物摄影</h3>
+<p>来自 @阿真 irene ，使用 Midjourney V7</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMa5Xh6Xo6icibaLicsP3qbuArtMjKlG9J4hu4twBIURiaMsjX8BCr763njQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="Image"></p>
+<pre><code>## 原文浅蓝色礼服裙年轻女性，开心大笑，闪光灯胶片，都市夜色背景## 扩展提示词a joyful young woman in a light blue tulle dress standing on a city crosswalk at night, laughing brightly under a direct flash. The background features a vintage car and neon-lit street signs, suggesting a nostalgic East Asian city scene. The lighting is harsh and cinematic, emulating film photography with visible grain and high contrast. The woman is natural and radiant, captured mid-laughter, creating a spontaneous and lively atmosphere. Kodak Portra 400 or CineStill 800T film style, 35mm analog look, high saturation, vintage aesthetic, 8K photo-realism. --p o328hsl --ar 16:9 --c 10 --v 6.1
+</code></pre>
+<h3>概念艺术创作</h3>
+<p>来自 @阿真 irene ，使用 Midjourney V7</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnvogXhxoXL4cwDXWEPIUMjMvcNgjezwY7NEz6z0Gm0yY8DneIwMyXYtl5lCicAP5rICj9WdCBs5MTQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<pre><code>## 原文宇航员坐在废墟中，凝视星空## 扩展提示词a lone astronaut drifting into a swirling iridescent space vortex, surrounded by rainbow-colored light refractions and liquid crystal textures. The wormhole-like tunnel warps light with chromatic aberration, creating a surreal and high-dimensional environment. Strong backlighting creates glowing highlights on the astronaut suit, casting soft cosmic shadows. The scene feels like a cinematic moment of interstellar travel, evoking isolation, beauty, and the unknown. Ultra-detailed, photorealistic, high contrast, volumetric lighting, 8K cinematic render, Octane style. --chaos 10 --ar 16:9
+</code></pre>
+<p>当然，直接使用这套框架，封装在文生图类产品中，也会有非常不错的生成效果与用户创作体验的提升。</p>
+<hr>
+<h2>📝 小结</h2>
+<p>这套万能文生图提示框架，我愿意将它看作是一次&quot;对话实验&quot;——在人类模糊的创作意图与 AI 的生成能力之间，建立起一种更高效的沟通机制。</p>
+<p>Manus 曾以极高的产品完成度，把隔在人和 agent 未来的迷雾吹散了一些。</p>
+<p>同样的，我希望这个框架能成为你手中的一盏灯，照向 AI 文生图能力的边界，让那些曾经隐匿在文生图“黑箱”背后的创意可能性，变得触手可及。</p>
+<p>AI 的能力边界不断拓展，但最终的闪光点，永远源自你独特的视角和不羁的想法。</p>
+<p>在这场&quot;人机协作&quot;的实践中，我们不再是单向地指挥 AI，而是共同参与一场关于创意表达的对话。</p>
+<p>模糊的想法被理解、被精炼，最终呈现为令人惊叹的视觉作品。</p>
+<p>这揭示了未来更多可能性——AI 并非简单地替代人的创造力，而是将我们从表达限制中解放出来，让技术更好地服务于人的原始创造冲动。</p>
+<p>真正有价值的工具，不仅应当降低技能门槛，更应当提升思考的维度。希望这个框架能给你带来一些启发，去探索更多属于自己的创作可能。</p>
+<hr>
+<p>如果觉得这篇文章和框架对你有启发或帮助，欢迎点赞、在看、转发分享，让更多热爱创作的朋友能够受益。</p>
+<p>也期待在评论区看到你的实践和思考。你也可以随意用本文进行二创、发文，如果你能在自己的文章提及来源，那就太好了。  </p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/7ck8FnyVQnuhpQ7c7yicC34IvgeiagR8kg7eq45vAJ8Vc0xR3Ya0xbtnEk6Ode7iaGy7sJuXAVGYLfzzrFvPXiaxNg/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&tp=webp#imgIndex=25" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/tcBjXg0JL2SSF9cTk3LcEPmhbW5EGJVJKInqEyCgKRfYNK0kmbGGa65IIlk05BDCMq7vy6ICOZHnxCcibTcUDkQ/640?wx_fmt=gif&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=26" alt="图片"></p>
+<p><strong>点击下方账号</strong></p>
+<p><strong>👇 关注更多精彩内容分享</strong>👇****</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s?__biz=MzIzNDU0NzY1MA==&amp;mid=2247486198&amp;idx=1&amp;sn=eefa18e33d1918cc31e944611178c9a1&amp;chksm=e943b3c561fc4811d488307c4e8b7cb6d7dd0546db3b926eb69375ae94c0651b7a1aba79688f&amp;mpshare=1&amp;srcid=04070aDNaDV4LEG4iW0SBbg7&amp;sharer_shareinfo=38a1fce014be6dc751de894e85689e9a&amp;sharer_shareinfo_first=7711f915d7ad53b375aa2ca9f3545801&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

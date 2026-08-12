@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Step%203.7%20Flash">Step 3.7 Flash</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91">视频剪辑</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E9%98%B6%E8%B7%83%E6%98%9F%E8%BE%B0">阶跃星辰</a>
+    <span class="date">2026-06-08</span>
+  </div>
+  <p class="lead">来用用这个Skill，高光时刻自动集锦。</p>
+  <article class="content"><p>原创 银海 银海 AI产品银海</p>
+<p><em>2026年6月7日 12:52</em> <em>浙江</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzShR9BicQ47nI04qNEIMZqgRlicqrWytZUgZcbq3zYAicsdRK46Ol8yUia8M9rIibPuNicXbEPZIfBWkjQE0SrEK8ibQiaYxJ7R0h9qcGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>我刚刚用最新的模型 Step 3.7 Flash + Claude Code + 一个自研 Skill，跑通了从长视频到高光成片的完整链路。</p>
+<p>Skill 已开源，地址见开源文末。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzSVNgNibHSIgwvUibFeH0QfNBtP03VHJwHgTJw3psGMdWAg5etxGWNrOwwAchrTJgUfnGwjZYQjGwungEM3ymb0tCVNYPCYvMtpY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>之前看一个比较长的技术分享视频，经常想把里面几个高光时刻快速剪下来，虽然之前做了一个小工具能用，但每次跑起来需要部署下也比较麻烦，流程也比较碎，实际用的次数很少。</p>
+<p>今天技术的不断迭代后，发现直接通过 Agent + Skill 的组合就已经可以把这件事做完整了。</p>
+<p>先看实际跑出来的效果：</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong></p>
+<p>AI产品银海</p>
+<p>0/0</p>
+<p>00:00/00:26</p>
+<p>进度条，百分之0</p>
+<p>播放</p>
+<p>00:00</p>
+<p>/</p>
+<p>00:26</p>
+<p>00:26</p>
+<p>倍速</p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p>0.5倍 0.75倍 1.0倍 1.5倍 2.0倍</p>
+<p>超清 流畅</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3cybtcaadyuan5rzh25vfgfwdgelagmia.f10002.mp4?dis_k=0b04ff8d632cedbff16c029a9bcaaed4&amp;dis_t=1780896893&amp;play_scene=10120&amp;auth_info=Nbqi3vd/F1Q0weuOtVV1PD8QVnJvFwlHd314UmYaDDwOLiJsGFMMGUMla2wTOngcKxo=&amp;auth_key=1cf756eddabf4f0746bdad733c0bc04a&amp;vid=wxv_4550204386622504961&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/thoHNWXYDzQK2UKkXia2xW27WsicntKKpmpbVbQian2Vjmje05sgly5oXzv2UwnZj4q02icJ8cQ3Ef5DstGCPSwynianPM2O1CQa4ELt9piaWCgia8/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 645px; height: 363px;" jm_neat="597657601">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</p>
+<p>转载</p>
+<p>,</p>
+<p>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</p>
+<p>AI产品银海</p>
+<p>已同步到看一看写下你的评论</p>
+<p>视频详情</p>
+<p>上传了一段爆款带货短视频链接，让 Agent 自主完成了视频内容分析、高光判断、自动裁剪、字幕生成，最后输出了一个可以直接分析的复盘在线页面，全程没有人工干预，一次跑通，没有返工。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzQOYUqZnAZxPGIZ7Do2V4QJeLPYnbg3ux1bQsjxfYZ78iba9wsnyu2Yia5UmxDzvPIicUrnrfxeAeYHBZTws59oIibJXBtkdHibOOHc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>这次选的模型是阶跃星辰刚发布的 Step 3.7 Flash，选它主要考虑三个点：</p>
+<p>**快：**Flash 级模型，生成速度能到 400 TPS，视频分析这种需要多轮调用的工作流跑起来不卡。</p>
+<p>**便宜：**实际测试下来跑完一个两小时视频的完整分析链路，总成本大概在几块钱的量级，Step 3.7 Flash 的定价是输入 ¥1.35/M tokens（缓存命中 ¥0.27），输出 ¥8.1/M tokens。</p>
+<p>对于我这种之前已经买过 Step Plan 的用户不用愁直接用就可以，相当于是加量不加价，低至25元/月就能上车：<a href="https://platform.stepfun.com/step-plan?channel=AIchanpinyinhai">https://platform.stepfun.com/step-plan?channel=AIchanpinyinhai</a></p>
+<p><strong>多模态 Agent 能力</strong>：原生支持多模态，视频丢进去就能理解，搜索内置在推理链路里，Agent 可以边分析边联网查资料，工具调用在多轮场景下比较稳定。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzT7u4gd4n6xj1sEcllrTeWjVrL27FDAUTdiaEGflzt3sv2oANkH8PiczvyjHanficqjZu1BDMyLL0mg0ULsIOGJBCFPKIB0QQ19T4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>这次的 Step 3.7 Flash 是开源模型，如果有敏感信息内容可以直接部署一个本地的模型，数据不出域，本地的视频直接也能分析完成之后。</p>
+<p>快速生成一个报告，像我之前下载在本地的跨境电商流量分析的视频，它直接分析完后给我一个相对完整的结论。</p>
+<p>拆开来看，Agent 经历了四轮规划-执行-观察循环，我特意给它使用 CC Switch 加入到了 Claude DeskTop 里面可以更好的看清楚 Step 3.7 Flash 的整个 Agentic 的能力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/thoHNWXYDzSXibURPFLicteW4RGiaHeFrLZRmxGC7OH0vpv7dJoxBJ0nDTianqTaibZXu4KIrp3XgsCekMDrSiaMyVbLuSMI5RI5drQQXMk2hkZ6A/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>第一轮做视频理解，音频转写拿到文字骨架，逐帧分析画面内容，合并成结构化索引，每个时间段在讲什么、有没有代码演示、有没有观众互动，全部标出来。</p>
+<p>第二轮做高光判断，它可以直接根据内容价值筛选，技术亮点、现场反应、关键结论各有权重。</p>
+<p>第三轮对字幕理解，调用Step 3.7 Flash 中对于视频的图片文本进行OCR理解，如果深一些可以直接将文本跟时间轴进行对齐。</p>
+<p>第四轮生成复盘页面，高光片段、字幕、摘要整合成一个网页，也就得到了我们一开头的视频的网页。</p>
+<p>需要说清楚的是，这个工作流不是单靠模型完成的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzQczFdKFLwuRbIR9FD03MZphicDLX7pMh2aCF7woNQPCK5B0AWT0exicZWmtpAR9xd4eicuhkx7YInl6zicE6ZZuVGPnZrOBZVEiaPc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>Step 3.7 Flash 负责理解和决策，这个版本的原生支持多模态的能力，更好的适配了像 Claude Code 这种负责编排整个 Agent loop 的 Agentic 框架层。</p>
+<p>然后结合我自己做的视频分析 Skill 负责把拆帧、内容索引、时间戳标注、片段裁剪这些操作封装成可复用的模块。三者组合在一起才跑得通。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzRbJAicmNicjHjDhNJYlHBXE3whJgOhCeLGPtbRmpBd5vFaRBhunq1K0GRMVCffTkGG8diaC1lMiaQqPQ7yOZiaicibUsbVdicvxXL7yTY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>跑通高光剪辑之后，我把这套组合方案拿去试了几个相近的场景，发现它的泛化能力比我预期的要好。</p>
+<p>底层逻辑是一样的，都得益于本次Step 3.7 Flash的更新，我只要关注：视频输入、多模态理解、内容判断、工具执行、结构化输出，换一下 Skill 的封装逻辑就能适配不同的任务。</p>
+<p><strong>通用的能力是视频内容报告的生成是这个模型+Skill里面通用的能力。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/thoHNWXYDzTkicrMOmbGOWlGTO707JXtdcibrSv7zdicqWJxTia43LWYEkOvDU2RnsSrlRYKxLWVqB8bXoLmxAfzosxwVXRFRUweWQxabQhSTOg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>我们给 Agent 一段发布会录屏或者一场分享的完整视频，它除了剪片段，还可以输出一份结构化的内容报告：<strong>核心观点提炼、关键数据标注、演讲者的论证路径、甚至会联网搜索来验证演讲中提到的数据是否准确。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzSjFoeCJSeicxhoYLkScsnKa4gZObpk0rvRzPIkx3MkP4Z9quoBNDZ93Ftd4tewxBbX8UWgcfVrs8vWJGMyCDgO3F7YDqpVoTFs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>Step 3.7 Flash 天然具备搜索能力，搜索是 Agent 推理链路的一部分，它会在分析过程中自主判断哪些信息需要联网验证。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzT3CgS8DbxNicqh152PqIfMIicemeQeLNcRv6pzYndoZIsasrmiaibkgbDuV3tGpPz2khsqOqhVKzFkic26Picv8aQ5VSWNdiaqhQ2GtM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><strong>赛事、直播回放剪辑也是非常适用。</strong></p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong></p>
+<p>AI产品银海</p>
+<p>0/0</p>
+<p>00:00/00:15</p>
+<p>进度条，百分之0</p>
+<p>播放</p>
+<p>00:00</p>
+<p>/</p>
+<p>00:15</p>
+<p>00:15</p>
+<p>倍速</p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p>0.5倍 0.75倍 1.0倍 1.5倍 2.0倍</p>
+<p>超清 流畅</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2ekiaxwaabxiajj5jfhjvfcuwdpnjac6ya.f10002.mp4?dis_k=33144c00e988aff1e5f5ddcbae6e3ea9&amp;dis_t=1780896893&amp;play_scene=10120&amp;auth_info=Nd7WiNR+FwYxyb/dv18uOD0UAXFrR18TISd7CmFPCG4OKy9vSVIMS0YtPz8ZMCMYKR4=&amp;auth_key=b12beea902005a9334591713c91bb9fa&amp;vid=wxv_4550204737920663555&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/thoHNWXYDzSBaicmBCTF7dnmYOQBoykiavdLDBDRicUObfBhvc01mWz4GUjBz2wemiafnuSkDGN7niae3G9U9HbI03KIBJvwCHDglmoXlwvUtS8s/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 645px; height: 363px;" jm_neat="597657602">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</p>
+<p>转载</p>
+<p>,</p>
+<p>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</p>
+<p>AI产品银海</p>
+<p>已同步到看一看写下你的评论</p>
+<p>视频详情</p>
+<p><strong>一场电竞比赛或者体育赛事的录屏，Agent 可以识别精彩瞬间：进球、关键对抗、观众反应，自动剪辑成集锦，视频输入之后就直接可以拆解出来里面的概览是什么，然后为我主动规划了几个 Task Progress。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzS07YnH348NH6uIYuqdQHZTTChQ1c9KgbA1loTuJicS5IZabm67v8hvBHicRY8b3S2fBtRnCUIUicmRp3FEXtOeGuewQKDtNaNyPk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>这类任务对视觉理解的要求更高，需要准确定位画面中的动作瞬间，不只是依赖音频。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzSwWJG70YBX8XwyE13Lj4Fkiavp8RXxMXQ0XOCzhJc4g0OdEouP3sbyLbjTAXBXeOx5wZMSESibibicPYGqDXqicNy4SFPEuj7szicgo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>Step 3.7 Flash 的原生多模态能力在这里发挥了作用。</p>
+<p><strong>在课程培训视频索引时，这个很实用。</strong></p>
+<p>我们刚开始看见的关于跨境电商业务的一段在线的培训录像，Agent 按知识点自动分段，每段附一句话摘要和关键词标签，生成一个带时间戳的结构化大纲。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong></p>
+<p>AI产品银海</p>
+<p>0/0</p>
+<p>00:00/00:23</p>
+<p>进度条，百分之0</p>
+<p>播放</p>
+<p>00:00</p>
+<p>/</p>
+<p>00:23</p>
+<p>00:23</p>
+<p>倍速</p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p>0.5倍 0.75倍 1.0倍 1.5倍 2.0倍</p>
+<p>超清 流畅</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3rmbsqaadjmamprrh2jvfhc6dfcfqgkaa.f10002.mp4?dis_k=d05245116e917f5b22d183b7977d9801&amp;dis_t=1780896893&amp;play_scene=10120&amp;auth_info=aMLqorN/EQZnyL6O414nbj1HUiZsRVtPdiYuUjNOCWRTeic4SlYKSxAsPmxFMSpOKU0=&amp;auth_key=28678d3a7406ca936f5192246295283a&amp;vid=wxv_4550204071999094786&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/thoHNWXYDzRHcTO8ZKDwMiaKAcbFia11TJR4zHjlnIPnyeWKuZ6dEbzo2T6TTby5E1nZQDwOqxJpcVDDvHeGrzKyMgjFXcZ6OhBPU17547DTI/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 645px; height: 363px;" jm_neat="597657603">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</p>
+<p>转载</p>
+<p>,</p>
+<p>这个 Skill + Step 3.7 Flash，长视频自动变高光集锦</p>
+<p>AI产品银海</p>
+<p>已同步到看一看写下你的评论</p>
+<p>视频详情</p>
+<p>作为学习者可以直接跳转到感兴趣的部分，不用从头看到尾。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzRjEFicvMicpTtZR7hCOrdS7FibkesxibZZPEl1kkRASoqpJtNTscZOWOsGQYe1uUTfn1iaGEVIAfqoHs9lKqG380C0fJzpPwsQfwUk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>这几个场景的共同点是：输入都是长视频，输出都是结构化的内容产品，可以看到这个产物是逐帧分析且对于每块片段的理解进行了拆解。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzS0UDEJyu2TRs2zCBzwcKaUMdY2pooA4vtzibXKA7DzvVs3tgmSBpyLoTU9lyGxjpZJ3dK3DxIUTELibeRocn0RqUibiaMpLNOh3qY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>区别只在于 Agent 的判断逻辑和 Skill 的输出格式。</p>
+<p>Step 3.7 Flash 在这些场景里承担的角色是一样的，理解视频内容、规划分析策略、判断哪些部分有价值、协调工具调用。</p>
+<p>它的原生多模态能力意味着不需要额外配置视觉模块，搜索内置进推理链路意味着它能自主补充信息。</p>
+<p>回到模型本身，Step 3.7 Flash 给我的整体印象是：它并非是那种&quot;单项冠军&quot;型的模型，整体看来在 Agent 工作流里综合表现比较均衡。</p>
+<p>198B MoE 架构、约 11B 激活参数、最高 400 TPS，在 Flash 级模型里也算得上是第一梯队。</p>
+<p>搜索不是外挂的而是内置，工具调用的稳定性在多轮场景下表现不错，开源可部署，我们就能直接它在本地也能跑。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzRPWEApgzJcGJw9hCNHHiauGjCeoJboHkFK4BpKxicLjDPKJDYxw9zapWGSeO6zxEN4jIk1mNSHAWJAnuNsXic2eOkMJtW5In6Xgg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>此外这个模型也已经兼容主流的 Agent 框架，Claude Code、KiloCode、Hermes Agent、OpenClaw 这些都能直接对接，不需要为了换一个模型重写整套编排逻辑，接入成本比较低，并且比之前的 Step 3.5 Flash 版本拉升了至少5%。</p>
+<p>这些特点组合在一起，我觉得让它成为比较适合做「需要反复调工具、需要理解多种信息、需要稳定走完全程」的 Agent 任务。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzQ9PfFPuwzLI9nPRCjhq0tU3uyjoItdY43DsX7TSELzpehQvxbmlOUbChNFVqQXJZdWscRWibhZTggAtU4GWYlQMRBgbica4YEtY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>想要了解 Step 3.7 Flash 模型更多细节的朋友，可以自己阅读下这份官方技术报告，写的非常详细并且配备了不少非常不错的案例。</p>
+<p><a href="https://static.stepfun.com/blog/step-3.7-flash/">https://static.stepfun.com/blog/step-3.7-flash/</a></p>
+<p>上面我自己做的这个视频分析 Skill 已经开源，核心逻辑是：给定一段视频，通过模型做内容分析和时间戳标记，调用剪辑工具完成裁剪。</p>
+<p>最后生成结构化输出，在 Step 3.7 Flash 这种又快又有多模态以及 Agentic 很不错的模型下，可以快速的降低分析时间和成本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzS8vSy8NQjwXANbllrW1JYwXNhic8OtRc6YQubQoOQRr45M6PGsa2aUqwibrKVfTEDzCMIK7DjrZhkMzCr59Ru5lPRr79OC1aIdE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>视频分析 Skill 开源地址：<a href="https://github.com/inhai-wiki/video-highlight-skill/">https://github.com/inhai-wiki/video-highlight-skill/</a></p>
+<p>欢迎使用反馈，当然后续如果做了新的 Skill，也会同步更新到开源仓库里。</p>
+<p>© THE END</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/XBZ8KqgH6Y64iYE8C201rg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

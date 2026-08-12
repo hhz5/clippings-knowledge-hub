@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>如果看了几篇Claude Skill文章还没看懂，看看这篇吧！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">如果看了几篇Claude Skill文章还没看懂，看看这篇吧！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%83%AD%E7%BE%8E%E9%9D%92Andy">郭美青Andy</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B">上下文工程</a><a class="chip" href="../index.html?tag=MCP">MCP</a><a class="chip" href="../index.html?tag=Anthropic">Anthropic</a>
+    <span class="date">2025-10-22</span>
+  </div>
+  <p class="lead">题图：《秋》使用多重曝光技艺拍摄最喜欢造新技术词儿的 Anthropic 最近又整了个活，造了个叫 【Skil</p>
+  <article class="content"><p>原创 郭美青Andy <em>2025年10月21日 22:00</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rIGJ3yAZYQNibEj8qBBH2SOIkJOD4OZ7jLWnficQiccicNLmUSHxCUa1Bow/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>题图：《秋》使用多重曝光技艺拍摄</p>
+<p>最喜欢造新技术词儿的 Anthropic 最近又整了个活，造了个叫 【 Skills （技能） 】的新词儿。 官方给的定义是：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5r742FbevGiby9nic34iat3yQogTleO4MQHzFWPnKkLeMA8qpeHE02SokaA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>各位看官第一眼看完是啥感觉？</p>
+<p>相信不管是懂 AI 的还是不懂 AI 的看完都是一头雾水，每个字都能看得懂，大概意思也能明白，就是不知道这玩意是个啥。</p>
+<p>Anthropic 是非常典型的工程师思维做产品，像极了原来在大厂卷的日子中，在工程上各种抽象、造轮子卷的样子。区别在于赛道的选择，在大厂卷传统工程技术创新大概率是屎上雕花，在AI上下文工程赛道上则是有重大意义的创新。</p>
+<p>以之前Anthropic的各种内部成员的采访播客来判断，这大概率又是一个纯内部技术驱动的新功能。工程师们觉得现在上下文工程大行其道，MCP的门槛又太高，他们通过Claude Code用户使用数据和社区的各种优秀的上下文工程实践，觉得需要定义一套范式，借助Claude这个平台来搭建一个生态，可以让这些优秀的实践，通过开源社区来生产和流通，以提升AI Agent（Claude自家应用）解决问题的能力。</p>
+<p>于是就有了Claude Skill。 那么Skill 到底是个啥？又为什么会在 MCP、上下文工程之后被创造出来？ 本文尝试认真且深入地解答这两个问题。</p>
+<h2>Claude定义的Skill 到底是啥？</h2>
+<p>要正确理解Claude Skill首先必须要建立起对【上下文工程】这个概念正确且深入的认知，如果还不了解，可以先移步之前写的一篇浅显易懂且触及本质的文章《 <a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484454&idx=1&sn=70fd97bb2443cc92132490bc90304f32&scene=21#wechat_redirect">Context is all you need：一文彻底搞懂上下文工程（含牛马实战指南）</a> 》，有个大致的了解，再回来看，会有更深的体会。</p>
+<p>学习新技术的时候，我们很容易陷在技术细节中，大脑会增加非常大的认知负担，导致疲惫和沮丧。一种更好的理解方式是通过和我们所熟悉的常识进行类比。</p>
+<p>接下来我们通过一个演员的类比来捋清楚几个和Skill强相关的核心概念及其关系： SystemPrompt、UserPrompt、MCP、上下文工程、SubAgent 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rsg9Br9J5tenNtjW7QWFpoWoibXCKtdEYAe1ajQhoGoAbvV2OqAHFZ8Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<ul>
+<li><p>SystemPrompt ：一个演员接了个戏，要扮演一个卧底的角色，剧本中通过事件、语言、行为、外貌、职业等综合勾勒了一个角色及其外在和内核。这就是 SystemPrompt——它定义了 AI 的基础人设、能力边界和行为准则。</p>
+</li>
+<li><p>UserPromp t ：这个演员现在要演一出戏，导演临时给了新的场景要求：&quot;现在你要潜入敌营，获取机密文件&quot;。这个具体的任务指令，就是 UserPrompt——它是用户在特定情境下对 AI 提出的具体需求。</p>
+</li>
+<li><p>MCP（Model Context Protocol） ：但问题来了，演员在执行任务时，常常需要调用各种专业工具：开锁器、窃听设备、伪造证件等。这些工具的标准化调用和管理，就是 MCP（Model Context Protocol）——它通过标准化的协议，让 AI 能够按需调用外部工具和服务，就像剧组为演员配备了一套标准化的道具库。</p>
+</li>
+<li><p>上下文工程（Context Engineering） ：随着戏越来越复杂，单纯的角色设定和工具调用已经不够用了。演员需要掌握多种技能：格斗、开锁、伪装、心理学等。每种技能都有自己的理论基础、操作步骤和注意事项。这些技能的系统化管理和按需调用，就是 上下文工程——它是一套让 AI 能够在复杂任务中保持高效和准确的工程方法论。</p>
+</li>
+<li><p>SubAgent ：随着剧情发展，有些复杂场景需要多个角色协同完成，比如一个负责技术破解，一个负责现场警戒，一个负责心理操控。每个角色都有自己的专业领域和行为模式，都可以使用各种工具。这些专业化的角色分工，就是 SubAgent——它是将复杂任务分解为多个专业化 AI 代理协同完成的架构模式 。</p>
+</li>
+</ul>
+<p>Skills 的出现，则是把剧组在长期拍摄中积累的各个环节经验，沉淀成了一套标准化的&quot;演技手册&quot;。比如&quot;如何演好一场潜入戏&quot;这个 Skill，它既包含了角色的基本设定和行为准则（SystemPrompt 部分），也记录了面对具体场景时的应对策略（UserPrompt 部分），还清晰标注了需要调用哪些道具和工具（MCP/外部工具）。</p>
+<p>最关键的是，这些手册是整个剧组的共享资产——任何演员接手类似任务时，都可以直接调用这些经过实战验证的方法论，而不必从零开始摸索。它是上下文工程实践中沉淀下来的可复用经验结晶。</p>
+<p>通过上面的类比，相信大家应该可以对 Claude 定义的 Skill 这个概念有一个比较具象化的认知了。</p>
+<p>回到人类对&quot;技能Skill&quot;的理解本身， 我们能称之为技能的，绝不只是会用一个工具这么简单 。</p>
+<p>一个木匠会用锯子、刨子、凿子，但这不叫木工技能；只有当他理解了木材的纹理特性，掌握了榫卯结构的设计原理，能根据不同需求稳定输出高质量作品，并且这套方法可以传授给学徒——这才是真正的&quot;木工技能&quot;。它是知识、工具、经验、方法论的综合体，强调的不只是&quot;能做到&quot;，而是 &quot;能做好&quot;、&quot;能复制&quot;、&quot;能传承&quot; 。</p>
+<p>AI 领域的 Skills 与此同构。它不是单纯的提示词模板，也不是简单的工具调用配置，而是将某个特定领域的操作知识、执行策略、工具编排、质量标准打包成一个可复用的能力单元。</p>
+<p>当我们说&quot;代码审查 Skill&quot;时，它包含了如何理解代码意图的推理框架（知识）、需要调用哪些静态分析工具（工具）、按什么顺序检查哪些维度（流程），以及什么样的输出才算合格（标准）。</p>
+<p>🌟</p>
+<p>所谓 Skill，本质上是将&quot;如何稳定地完成某类任务&quot;这个隐性经验，显性化为可复用、可分发、可组合的结构化能力单元。它是上下文工程从&quot;手工作坊&quot;走向&quot;工业化生产&quot;的关键抽象。</p>
+<p>理解了这层意思，再回过头去看 Claude Skills 的一些技术细节和设计，你会豁然开朗。这些属于信息类的内容，本文不再赘述，感兴趣的可以公众号搜索一下，或者移步官方文档对照阅读。</p>
+<p><a href="https://docs.claude.com/en/docs/claude-code/skills">https://docs.claude.com/en/docs/claude-code/skills</a></p>
+<h2>为什么 Skills 会在 MCP、上下文工程之后被创造出来？</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rB1ickE90mWxsUN2UnYnu4jpxlNuuUcxCvib3Ux8ibTOX9kccIyq1Jlicicg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>要回答这个问题，需要从一个真实的场景说起。</p>
+<p>在使用 Claude Code 的过程中，我逐渐摸索出了一套百试不爽的工作流程：遇到复杂需求时，不直接让 AI 写代码，而是先让它根据需求生成一份详细的设计文档，人工审核确认无误后，再基于这份设计文档展开实施。这个方法极大提升了代码质量和开发效率，因为它把&quot;理解需求&quot;和&quot;实现细节&quot;这两个容易相互干扰的阶段分离开来。</p>
+<p>这套方法论效果显著，我自然想要传递给团队的其他同学。但问题来了：用什么方式传递最有效？</p>
+<p>方法一：案例分享+口口相传</p>
+<p>最直接的方式是口口相传，加上在项目仓库里留存原始的 Prompt 和生成的产物作为参考。但实践下来发现，这种方式看似简单，效果却差强人意。同学们听的时候觉得懂了，但真正自己上手时，会遇到各种细节问题：设计文档应该写到什么粒度？审核时重点看哪些维度？如何把设计要点准确传递给 AI 以便后续实施？这些隐性的经验很难通过口头描述完整传递，最终导致实践效果参差不齐。</p>
+<p>方法二：自定义Command指令</p>
+<p>第二种方式是在项目仓库中配置 Custom Command。Claude Code 支持在.claude 目录下定义自定义命令，可以预设一些常用的 Prompt 模板。这比口头传递进了一步，至少把&quot;如何描述需求&quot;这部分固化下来了。但 Custom Command 本质上还是一个静态的 Prompt 模板，它无法携带更丰富的上下文：比如设计文档应该遵循的模板结构、代码实施阶段需要参考的最佳实践清单、不同类型需求对应的分析框架等。更关键的是，Custom Command 是项目级的配置，如果我希望这套方法论能跨项目复用，就得在每个项目里重复配置一遍。</p>
+<p>方法三：SubAgent</p>
+<p>第三种方式是创建一个项目级别的 SubAgent。把整套方法论封装成一个专门的 AI Agent，配备完整的指令、参考资料和示例。这种方式的表达能力是最强的，但也带来了新的问题：SubAgent 的粒度往往比较大，适合处理端到端的复杂流程，但对于&quot;生成设计文档&quot;这种更像是中间环节的能力单元来说，有些过重了。而且SubAgent本身的执行过程也是模型驱动的自主循环，可控性和过程透明性比较低。</p>
+<p>那么，我真正需要的是什么？是一种能够将经验方法论封装成可复用单元、可以跨项目携带、按需轻量加载、同时又能承载足够丰富的上下文的机制。</p>
+<p>这恰恰就是 Skills 要解决的核心问题，也是我一直在尝试解决的问题。很开心看到Claude把这个事情给产品化、标准化了。</p>
+<p>回到技术演进的脉络上看，MCP 协议的出现，解决了&quot;如何标准化地调用外部工具和资源&quot;的问题。它让 AI 能够通过统一的接口访问数据库、文件系统、第三方 API 等外部能力，这是一个巨大的进步。但 MCP 主要聚焦在&quot;工具集成&quot;这个层面——它告诉 AI &quot;你可以用什么&quot;，却没有告诉 AI &quot;你应该怎么用&quot;才能多快好省地完成任务。</p>
+<p>一个木匠拥有了全套工具箱（MCP），但如果没有&quot;如何做榫卯结构&quot;的技艺传承（Skills），他依然做不出精良的家具。</p>
+<p>上下文工程提供了方法论框架，教我们如何通过精心设计的上下文让 AI 更好地理解任务、调用工具、保持推理连贯性。但上下文工程更像是一套指导原则，它需要开发者在每个具体场景中反复实践、调优、积累经验。这些经验如果无法沉淀和复用，就会困在个人的&quot;黑盒&quot;里，无法形成团队乃至社区的共同资产。</p>
+<p>这就是为什么 Skills 会在 MCP 和上下文工程之后应运而生—— 它是将上下文工程实践中积累的隐性经验，显性化、模块化、标准化的必然产物。</p>
+<p>如果说 MCP 解决了&quot;能力接入&quot;的问题，那么 Skills 解决的是&quot;经验复用&quot;的问题。MCP 让 AI 能够调用一个 PDF 解析库，但 Skills 告诉 AI 在处理财务报表 PDF 时，应该先提取表头确定报表类型，再定位关键数据区域，最后按照企业财务规范验证数字的合理性——这整套&quot;如何正确处理财务 PDF&quot;的方法论，连同必要的参考模板、验证脚本、最佳实践清单，都被打包在一个 Skill 里。</p>
+<p>从技术架构上看，Skills 巧妙地站在了多个已有概念的交叉点上：</p>
+<ul>
+<li>它既是 SystemPrompt 的延伸（定义了 AI 在特定领域的行为规范）</li>
+<li>又是 UserPrompt 的补充（提供了任务执行的具体策略）</li>
+<li>还可以编排 MCP 工具的调用（指定在什么环节使用哪些外部能力）。</li>
+</ul>
+<p>更重要的是，它以一种轻量级、文件化的形式存在（SKILL.md + 脚本 + 资源文件），天然适合版本管理、跨项目携带、团队共享。</p>
+<p>这也解释了为什么 Anthropic 选择在这个时间点推出 Skills。MCP 协议经过半年多的发展，生态已经初具规模，大量的工具和服务被接入进来。但开发者们很快发现，单纯拥有工具还不够——如何高效地组合使用这些工具，如何把调试出来的有效方法快速复制到其他场景，如何让团队成员之间的经验可以低成本传递，这些问题变得越来越突出。</p>
+<p>Skills 的推出，不是要替代 MCP，而是与 MCP 形成互补：MCP 负责&quot;能力供给侧&quot;的标准化，Skills 负责&quot;能力使用侧&quot;的标准化。两者结合，才构成了完整的 AI 能力扩展体系。</p>
+<p>从更宏观的视角看，Skills 的出现还标志着 AI 工具链的一个重要转向： 从&quot;给 AI 配工具&quot;转向&quot;给 AI 传技艺&quot; 。</p>
+<p>前者关注的是能力的广度，后者关注的是能力的深度和稳定性。一个真正有用的 AI 系统，不仅要&quot;能做很多事&quot;，更要&quot;能把事做好&quot;——而&quot;做好&quot;的关键，就在于那些经过实践验证、可以稳定复现的方法论，也就是 Skills。</p>
+<p>上一篇Skills的小绿书提到了一个观点，此刻值得再次Review下：</p>
+<p>🌟</p>
+<p>Skill设计的本质是让人根据AI实践经验来提供确定性，避免纯模型驱动的无效探索。 这种设计，可以让人（社区）来定义Agent的大Loop中的小Workflow。</p>
+<p>这篇聊的比较宏观和本质，主要是从根本上厘清Skill这个功能抽象在上下文工程中的位置。但还没有 深入到Claude Skills的工程规范和技术实现原理上 ，下一篇继续深入聊聊。点击下面名片关注我，穿透AI迷雾和喧嚣，了解最真实和本质的AI。</p>
+<p>MCP作为Agent时代第一个真正现象级且影响力巨大的通信协议，正在成为从业者必须要了解的技术，随着时间的推移，会渗透到AI基础设施的方方面面。网络上的资料层次不齐，也很碎片化。和朋友合写的这本书集齐了五位作者从不同的视角进行了比较全面系统的阐述，非常适合从业者先建立最扎实的认知。</p>
+<p>点击下方购买按钮即可购买。</p>
+<p>近期原创文章</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484549&idx=1&sn=0eb07573905af4d74702054701ff57c5&scene=21#wechat_redirect">聊聊claude新发的功能Agent Skills的本质</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484454&idx=1&sn=70fd97bb2443cc92132490bc90304f32&scene=21#wechat_redirect">Context is all you need：一文彻底搞懂上下文工程（含牛马实战指南）</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484533&idx=1&sn=5623da3af0c36d42ec35bd1d55c0d9b9&scene=21#wechat_redirect">我在PEC2025中国AI提示词大会分享的完整视频：《Context is All you need上下文工程与MCP协议漫谈》</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484543&idx=1&sn=d55035088757318746279fee668b600b&scene=21#wechat_redirect">我想认真的怼一下近期MCP泡沫论：“MCP开发者比用户多”</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484316&idx=1&sn=e357d902483a7df14e686b73c4c38112&scene=21#wechat_redirect">拨云见日：MCP核心概念（Prompt、Resource、Tool）的设计初心与最佳实践思考</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484305&idx=1&sn=eb8cf18a99c3202e5537008ce687412e&scene=21#wechat_redirect">万物皆可MCP化，但你考虑过必要性吗？</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484275&idx=1&sn=8b644a3e4d036c3f74cfbce9534f202d&scene=21#wechat_redirect">拨开MCP的迷雾，聊聊LLM工具调用的本质（一）：Function Calling</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484292&idx=1&sn=4f56a9a7757c7d9009998f2f7372366c&scene=21#wechat_redirect">拨开MCP的迷雾，聊聊LLM工具调用的本质（二）：Prompt和API限定法</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484265&idx=1&sn=5d3754261bacde9298b8836e32b12cc7&scene=21#wechat_redirect">刚官宣支持MCP，就发布自家Agent协议（A2A），扒一扒Google暗藏的小心思</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484254&idx=1&sn=9b8d24e8d23640be03d910af31fe3585&scene=21#wechat_redirect">MCP时代，Prompt即工作流</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&mid=2247484216&idx=1&sn=614b2b4648d2cb45a423efd2d570436a&scene=21#wechat_redirect">因为Manus爆火的 Claude MCP，90%人的认知可能都是错的</a></p>
+<p>个人观点，仅供参考</p>
+<p>继续滑动看下一个</p>
+<p>郭美青聊AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/cUP5YRrVAkQYB9HoeYEVSA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

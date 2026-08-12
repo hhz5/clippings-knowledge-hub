@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI编码新神登基，藏师傅一手Claude 4实测 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI编码新神登基，藏师傅一手Claude 4实测</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude%204">Claude 4</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a>
+    <span class="date">2025-05-23</span>
+  </div>
+  <p class="lead">之前他们 CEO 说27年所有的代码都会由AI生成，现在看来应该就是看到了Claude 4的潜力。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年05月23日 02:00</em></p>
+<p>Claude 4 就这么低调的发布了，之前他们 CEO 说27年所有的代码都会由AI生成，现在看来应该就是看到了Claude 4的潜力。</p>
+<p>根据 Anthropic 所说 Claude Opus 4 是全球最佳编码模型，在复杂、长期运行的任务和代理工作流中表现持续优异。</p>
+<h2>基础介绍</h2>
+<p>还有一些其他的发布内容，包括：</p>
+<ul>
+<li>扩展思维与工具使用（测试版）：两款模型在扩展思维过程中均可使用工具。</li>
+<li>新模型能力：两款模型均可并行使用工具，更精准地遵循指令，并且在开发者授予本地文件访问权限时，展现出显著增强的记忆能力。</li>
+<li>Claude Code 现已全面开放：Claude Code 现支持通过 GitHub Actions 执行后台任务，并与 VS Code 和 JetBrains 实现原生集成。</li>
+<li>新 API 功能：代码执行工具、MCP 连接器、Files API 以及可缓存提示长达一小时的能力。</li>
+</ul>
+<p>最重要的定价：</p>
+<p>Claude Sonnet 4 会向免费用户开放，这太好了。</p>
+<p>API上定价与之前的 Opus 和 Sonnet 模型保持一致：Opus 4 每百万 token 输入/输出价格为 15/75 美元，Sonnet 4 为 3/15 美元。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcSGqt8MTaJlMkYsicjQvUAIVva36edvjMozB0HJcUecfpu60icPCZj52iaYWU35DTqqZ5EWvVb25QHw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<h2>模型能力</h2>
+<p>Claude Opus 4 的编码能力在 SWE-bench（72.5%）和 Terminal-bench（43.2%）上大幅领先其他模型，而且它在需要集中精力和数千步操作的长时间任务中表现出持续稳定的性能，能够连续工作数小时，这个对于Agent产品非常重要。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcSGqt8MTaJlMkYsicjQvUAIcTOLWG8uek5dsXkSFiajBonPCVpTPR2de6LBumL2qmOK9JpHlibsqNzw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>其他的基准测试两者的能力也都有大幅提升：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcSGqt8MTaJlMkYsicjQvUAIYhuJzk8ajCPhX0MrRel9ybia6xe3z7CibMiaYy81Bns0icjqyNFW1FQJBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>另外 Claude Opus 4 在记忆能力上也显著超越了之前的所有模型。当开发者构建提供 Claude 本地文件访问的应用程序时，Opus 4 能够熟练地创建和维护&quot;记忆文件&quot;来存储关键信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcSGqt8MTaJlMkYsicjQvUAI6QKqjpKe3o80MMWnpPClFLvBypuhFZUS9PDK39ktCbLqYlTdQ73yUg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>藏师傅测试</h2>
+<p>接下来我们对 Opus 4 做一下代码能力的测试，首先是基本的一个藏师傅提示词生成作品集网站的测试。</p>
+<p>这是 Claude 4 一次成功的结果，你可以大致看着跟之前的差不多，但其实细节好了非常多，比如右边的滚动条样式他都改了！</p>
+<p>每个组件的交互样式和逻辑都是一样的，同时图表的 Hover 之后展示的数据卡片样式也被改了，整个页面看起来非常的舒服，这就是细节的力量。</p>
+<ol>
+<li>帮我将这个简历文档生成网页，不要遗漏信息,根据上面内容生成一个 HTML 动态网页<br> 1. 使用Bento Grid风格的视觉设计，纯黑色底配合特斯拉红色 #E31937 颜色作为高亮<br> 2. 强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差<br> 3. 中英文混用，中文大字体粗体，英文小字作为点缀<br> 4. 简洁的勾线图形化作为数据可视化或者配图元素<br> 5. 运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变<br> 6. 模仿 apple 官网的动效，向下滚动鼠标配合动效<br> 8. 数据可以引用在线的图表组件，样式需要跟主题一致<br> 9. 使用 Framer Motion （通过CDN引入）<br> 10. 使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript<br> 11. 使用专业图标库如Font Awesome或Material Icons（通过CDN引入）<br> 12. 避免使用emoji作为主要图标<br> 13. 不要省略内容要点</li>
+</ol>
+<p>然后我又让他写了一个带有逻辑的电商产品后台，我去朋友们这个美学表现太屌了，我根本没有要求特定的样式，而且所有的组件都是可以操作，都是带逻辑的。</p>
+<p>而且我点击加号的时候数据也会变，我其实都没有要求他什么具体的东西。</p>
+<p>从零开始实现一个web电商产品详情页管理工具，包括图片预览、SKU选择、动态定价和性能优化</p>
+<ol>
+<li>强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差</li>
+<li>中英文混用，中文大字体粗体，英文小字作为点缀</li>
+<li>简洁的勾线图形化作为数据可视化或者配图元素</li>
+<li>运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变</li>
+<li>模仿 apple 官网的动效，向下滚动鼠标配合动效</li>
+<li>数据可以引用在线的图表组件，样式需要跟主题一致</li>
+<li>使用 Framer Motion （通过CDN引入）</li>
+<li>使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript</li>
+<li>使用专业图标库如Font Awesome或Material Icons（通过CDN引入）</li>
+</ol>
+<p>之后我又让他做了一个相对复杂的后端页面，展示一些数据，要求里面的都能够交互，结果也非常好。</p>
+<p>确实一次成功所有的东西都能被交互，动效超级丰富。</p>
+<p>从零开始实现一个设计一个广告投放管理系统可配置的数据分析仪表盘，支持多种图表、筛选条件和实时数据更新，数据虚构，但是功能需要可以用</p>
+<ol>
+<li>强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差</li>
+<li>中英文混用，中文大字体粗体，英文小字作为点缀</li>
+<li>简洁的勾线图形化作为数据可视化或者配图元素</li>
+<li>运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变</li>
+<li>模仿 apple 官网的动效，向下滚动鼠标配合动效</li>
+<li>数据可以引用在线的图表组件，样式需要跟主题一致</li>
+<li>使用 Framer Motion （通过CDN引入）</li>
+<li>使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript</li>
+<li>使用专业图标库如Font Awesome或Material Icons（通过CDN引入）</li>
+</ol>
+<p>需要注意的是上面都没有，要求任何具体的逻辑，都是他自由发挥的，非常强。</p>
+<p>比较离谱的是，Opus 我就跑了这几个案例我的Plus会员就达到上限了，太扯淡了，不知道是不是因为刚发布用的人太多。</p>
+<p>Claude Sonnet 4 也很强，我测试了我那个主题自定义，巨长的提示词一次成功，之前3.7的时候我调整了非常多次才完成，尤其是导出那部分，而且现在这玩意免费了。</p>
+<p>首次测试就到这里吧，明天再继续探索 Opus 的上限，希望额度可以多给我一些。</p>
+<p>分享一个他们今天开发者大会说的认知 Agents 的未来主要追求的是三个部分的内容：</p>
+<ol>
+<li>1. 上下文智能 (Contextual intelligence)： 指AI代理能够理解和适应复杂环境及情境的能力，使其决策更加智能和相关。</li>
+<li>2. 长时间执行 (Long-running execution)： 代表AI代理能够持续、稳定地执行复杂任务的能力，而不是仅限于短期互动。</li>
+<li>3. 真正的协作 (Genuine collaboration)： 强调AI代理与人类或其他系统之间建立真实、有效协作关系的能力。</li>
+</ol>
+<p>Anthropic 也是按照这方式来优化模型的，今年的主题或者说未来几年的主题就是这个了，代码能力&amp;Agent能力。</p>
+<p><strong>如果你觉的教程对你有帮助的话可以帮我点个赞👍或者喜欢🩷，也可以推荐给你需要的朋友们！</strong></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>剪存为飞书云文档</p>
+<p>| |  | MP4 File 1.84 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 3 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 4 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/bNN1sdd3szoCL0qrFTfkSQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

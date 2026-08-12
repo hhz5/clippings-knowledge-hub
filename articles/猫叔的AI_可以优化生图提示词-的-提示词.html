@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>可以优化生图提示词 的 提示词 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">可以优化生图提示词 的 提示词</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%94%9F%E6%88%90%E5%BC%8FAI">生成式AI</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90">图像生成</a><a class="chip" href="../index.html?tag=OpenAI">OpenAI</a>
+    <span class="date">2026-04-23</span>
+  </div>
+  <p class="lead">可以优化生图提示词 的 提示词</p>
+  <article class="content"><p>猫叔的AI <em>2026年4月22日 17:07</em></p>
+<p>OpenAI又整了个大活，今早GPT Image 2全量开放，之前灰度开放时我玩了几天了，今天也蹭个热点吧；</p>
+<p>和他们丢一堆提示词给你不同，我习惯于做个工具让你随便就能生成优秀的提示词，</p>
+<p>虽然 GPT Image 2 有了思考模式，本身就可以强化提示词的输出，但作为有独立意志的你，还是希望这玩意能更符合你的要求（毕竟生图是要花钱的，不满意还要重来，你又不是李白）</p>
+<p>Visual Prompt Engine 是一个将“模糊想法”转化为“可执行视觉指令”的智能提示词工具。</p>
+<p>用户只需输入一句简单描述，系统即可自动生成结构化、高质量、可直接用于图像模型的Prompt。</p>
+<p>😼</p>
+<p>它不是提示词模板，而是一套具备自动决策能力的视觉生成系统（我瞎说的，就是提示词</p>
+<pre><code># 【系统名称】
+Visual Prompt Engine v3.0（Universal Creative Engine）
+
+# 【系统角色】
+你是一个多模式视觉创意生成引擎。
+
+你的任务是根据用户输入内容，自动识别最合适的视觉生成模式，并输出对应结构的高质量Prompt。
+
+禁止输出解释，仅输出最终Prompt。
+
+---
+
+# 【核心机制：模式识别】
+
+你必须先判断输入属于哪种类型：
+
+1. 角色类（人物 / 生物）
+2. 场景类（环境 / 世界）
+3. 叙事类（有动作 / 情节）
+4. 产品类（商品 / 设计）
+5. 概念类（抽象 / 情绪 / 教育）
+
+---
+
+# 【模式处理规则】
+
+---
+
+## Mode 1：角色类（Character Mode）
+
+结构重点：
+- 外貌（具体五官 / 身体）
+- 服装 / 材质
+- 姿态 / 表情
+- 背景弱化
+
+镜头：
+→ 中近景 / 特写 + 浅景深
+
+---
+
+## Mode 2：场景类（Environment Mode）
+
+结构重点：
+- 空间结构
+- 地形 / 建筑
+- 氛围 / 天气
+
+镜头：
+→ wide shot + 深景深
+
+---
+
+## Mode 3：叙事类（Narrative Mode）
+
+结构重点：
+- 行为（动作）
+- 情绪冲突
+- 角色 + 环境平衡
+
+镜头：
+→ 中景 + 动态构图
+
+---
+
+## Mode 4：产品类（Product Mode）
+
+结构重点：
+- 产品主体
+- 材质细节
+- 光影展示
+
+镜头：
+→ center composition + clean background
+
+---
+
+## Mode 5：概念类（Concept Mode）
+
+结构重点：
+- 抽象转具象
+- 象征元素
+- 情绪可视化
+
+镜头：
+→ 可自由，但必须强化视觉符号
+
+---
+
+# 【统一生成结构】
+
+一个【完整场景描述】，
+
+主体：……
+环境：……
+光影：……
+色彩：……
+
+镜头：……
+
+风格：……
+
+cinematic, highly detailed, realistic lighting
+
+--negative：low quality, bad anatomy, blurry
+
+---
+
+# 【风格策略】
+
+必须根据内容自动匹配：
+
+- 东方题材 → 东方美术体系
+- 科幻 → 高科技材质 + 冷色光
+- 情绪 → 强化光影对比
+- 产品 → 商业摄影风格
+
+---
+
+# 【约束】
+
+- 禁止抽象词（如“好看”“震撼”）
+- 所有描述必须可视觉化
+- 不允许解释
+- 不允许输出结构标签（如“Mode 1”）
+
+---
+
+# 【输入示例】
+一个孤独的人站在雨夜街头
+
+# 【输出示例】
+一个人在雨夜街头独自站立，身体略微前倾，情绪压抑且孤立，
+主体：普通男性，湿透的外套贴在身体上，头发被雨水打湿，低头站立  
+环境：城市街道，路面反光，远处模糊的霓虹灯与车辆灯光  
+光影：街灯从上方照射形成局部高光，环境低光对比  
+色彩：冷色蓝调为主，橙色灯光形成对比  
+镜头：中景，平视角度，偏移构图，浅景深  
+风格：现实主义电影摄影，夜景街头风格  
+cinematic, wet surface reflections, volumetric rain  
+--negative：low quality, blurry, bad anatomy
+</code></pre>
+<p>我是猫叔，所有发布内容有限开源，禁止商用!!!</p>
+<p>请 点赞、分享、收藏、关注</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p>点击阅读全文进到我的文章聚合，那里有群二维码</p>
+<p>AI · 目录</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p>阅读原文</p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/WeoACQ58hR5AdQP63Z1v0w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>是时候让 Agent 上线你的个人网站了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">是时候让 Agent 上线你的个人网站了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99">个人网站</a><a class="chip" href="../index.html?tag=%E9%9B%B6%E4%BB%A3%E7%A0%81">零代码</a><a class="chip" href="../index.html?tag=Cloudflare">Cloudflare</a><a class="chip" href="../index.html?tag=GitHub">GitHub</a>
+    <span class="date">2026-07-14</span>
+  </div>
+  
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年7月14日 08:13</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozqNfxNPA7WhvD1ic3nGzPpc6icNc1t81LnT8ynRBzNhePpMUib7WbyW4aQxLMASMLQzRRpUzuWAGXEO0GR91a2Fp9Co4VXvmZP7E/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>这两天我的个人网站再次上线了：kongge.space</p>
+<p>做网站的过程就是在整理自己过往的经历，向外界展示自己是谁。</p>
+<p>当然不止这些。</p>
+<p>网站是一个灵活的载体，不同于飞书和 Notion 搭建的模块化页面。</p>
+<p>网站可以传达你的审美，放你的摄影、设计、coding 任何作品。</p>
+<p>一个域名就能让搜索引擎找到你，这是一个实时对外连接的窗口。</p>
+<p>也能展示你 vibecoding 的作品。</p>
+<p>这篇文章我想详细聊一下：</p>
+<p>为什么你现在就该做一个自己的网站，以及怎么用 Agent 口喷实现？</p>
+<p><strong>01 为什么是现在？</strong></p>
+<p>Notion 的创始人 Ivan Zhao 讲过他做 Notion 的起点。</p>
+<p>他在大学的时候学过艺术和计算机专业。</p>
+<p>艺术专业的同学毕业要找工作，人人都需要一个网站来放自己的作品集，但绝大多数人不知道怎么做，也做不出来。</p>
+<p>所以都会找他这样有计算机基础的人来帮忙。</p>
+<p>艺术生有作品，有审美，卡在了技术上。</p>
+<p>于是他想做一个不用写代码也能建网站的东西。</p>
+<p>这就是Notion 诞生的萌芽。</p>
+<p>Notion 帮助数百万人实现了零代码搭建个人网站，这是我曾经用 Notion 制作的网站/知识库。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowRiaLfSvyQanF3ZPGAkN6uqXFic9RcTAmag1Xcz8gJ1tRdCM9iahZkpyVTVOyBKaBxgv4wd75czKUiaiaz28zWGlyufDVWAwxrhDHc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>十几年后的今天，答案已经更换了。</p>
+<p>不再需要 Notion， WordPress，更不用买一套主题模板，往里面填内容。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyDMhw5NPHSrdddyon68mchzBAF20WV87YtXKTzsxXBoDDGDdJZJSQ1u1ZSghoW4qL5MI7WArO7lradFxdsQyEvteyjqakaq0Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p><strong>Vibe Coding 就能实现，不写代码，更不花太多时间和钱。</strong></p>
+<p>整个制作过程就是： <strong>收集资料+指挥 Agent 构建</strong> 。</p>
+<p>其中收集资料最费时间。</p>
+<p>做之前，我先是把和我相关的各种介绍、作品都收集一下，来源于自己的简历、社媒动态。</p>
+<p>我收集到有：我做过的工具、写过的 Skill、上线过的产品，拍过的照片，我运行了三年多的一个产品星球知识库，我在各个平台的原创内容。</p>
+<p>所有资料有了以后，我就可以构建这个网站的信息架构，可以分为 <strong>：工具、SKII、产品、摄影、关于我、合作</strong> ，几个模块。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozYSH513dIQLgg4WKQAVL0tsibdFT9Gib0EcmK54gdyoA9fGCzQnTdb9GGRLVkhQFX9yskHKDhbQ6CFhUGhpSYibbEzWokO4SC8ls/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"></p>
+<p>每个模块在网站顶部显示菜单可以切换。跳转到对应的链接和页面。</p>
+<p>也就是现在这个布局。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozGqLIliaYrFbdULg2XMuBmbVq3TlZIQpW3Kyf8lA6kqlia07SVByQ4WX9J8g0FtfF8XRiboc8WZV5cZpNnabxsXWVu61tcaRwsKA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image"></p>
+<p>所有资料给到 Agent，让它自己根据资料和信息架构来排版这个网站。</p>
+<p>关于网站的设计风格，可以去网上找一些自己觉得好看的站点，发送链接，让Agent 参考。</p>
+<p>不需要写一行代码，你就在互联网上有了自己的一个坐标。</p>
+<p><strong>02 一个网站能给你带来什么</strong></p>
+<p>它可以持续记录你的成长和思考，在夜深的时候翻翻过去写过的东西，比翻朋友圈里发过的图更能认识自己。</p>
+<p>网站可以让别人在搜索引擎找到你，甚至让你的内容能被大模型索引和引用。</p>
+<p>你字体、颜色、留白、结构，全由你说了算，完全体现你的审美和品味。</p>
+<p><strong>但真正让我觉得所有人都该做一个网站的是它可以承载你的作品。</strong></p>
+<p>有了网站，你的每一个 demo 产品都不再是运行在 localhost，他们都有了去处。</p>
+<p><strong>别人看得到、用得到，才叫产品。</strong></p>
+<p>我的网站收敛成了四个模块</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowKica76iaial4AuYQ0A5tKbOuBAeGFPJMTLonvJkF9STs8tUBKTAUzHW5U4zE1F5HOyp8OXCibTDoTLhUwnj31fGNuygvRicKhSib5c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></p>
+<ul>
+<li>我是谁：放在首页，介绍自己</li>
+<li>我做过什么：我的职业经历，我做的产品、工具、Skill</li>
+<li>我想过什么：我的沉思笔记，我创作过的内容</li>
+<li>我能提供什么：寻找商机或合作伙伴</li>
+</ul>
+<p>一个实时对外展示自己的窗口，比社交媒体更能提现自己是谁</p>
+<p><strong>03 完整教程：全程口喷，让 Agent 帮你部署</strong></p>
+<p>技术栈只有两个 CLI：GitHub CLI（ <code>gh</code> ）和 Cloudflare 的 <code>wrangler</code> 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxsCG5VfImo8Xu1f0sSiaibTduOuoibczGUZERUMwAVrkdeeqHINeTWTJtnkYW8xBLicUrcB5ykGa9o7WL3NI7KrQF7ajpSUvwQqc8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image"></p>
+<p>授权一次之后，你就再也不用碰命令行了。</p>
+<p><strong>第 1 步：买域名</strong></p>
+<p>阿里云、腾讯云，哪家都行。</p>
+<p><strong>别在这一步纠结买什么名字。</strong></p>
+<p>很多人的建站热情就是耗死在选域名上的。</p>
+<p>先买一个能接受的（.com&gt;.cn&gt;.net...），网站是活的，域名以后可以再换。</p>
+<p><strong>第 2 步：把域名添加到 Cloudflare</strong></p>
+<p>注册 Cloudflare，登录到控制台，点击左侧菜单域名——添加域名。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozxcuKoZsFtTbZqn4MsD7gKzWkqBic83d9D6UAyQCehagxFVQTJTZVIKHeWRH1g8PeC1okjYK5a3xguPTSf033Bp9Uont9pz0mg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"></p>
+<p>输入你域名地址，点击下一步。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyDVup1Pl7coArdX01ib4mtQ2P21g4am6Hiar1C6aqJIVr1awkm6bJtrhVusdx1DnuDI97MTMH0IVZxfXqUBpncoUtibZaiantlqk8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"></p>
+<p>选择免费套餐。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyeBJjwlWJic2TX7pllW773ncaqwbDvewIkj5LQpqALTXVgTzl3p1SicChkKhTl7cjYylyk8PXkL9pmVV8biabgiayFia1lWbthBN3c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></p>
+<p>一直往下点，直到给到你两条解析地址</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoybGXzjQsicicNdACDfRfIJiceIyKAVkcwHqUqcvMONw8iaDhtBzUOIGwzKCJ4xJFTEMV9wo4C6UJCyxbqtia5iafviaiciaTBj2Zic6mHeg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Feishu Docs - Image"></p>
+<p><strong>第 3 步：拿到 Cloudflare 给你的两条 DNS 服务器地址</strong></p>
+<p>复制上面图片的两个地址，到你购买域名的云厂商，打开域名解析-修改 DNS 服务器</p>
+<p>类似下面是腾讯云的界面，选择使用非腾讯云 DNS，输入上面的两个地址。</p>
+<p>点击提交。</p>
+<p>这里的作用就是把域名的 DNS 解析交给 cloudflare 去处理了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoztkz13u15nGXhOrWrhDHBiaOzS1hgv4hvPJXWbDnEO1JgKd1wVr1YTawfvS5dSzkiaGNn4OVx34f9WwPFyjRDhDsA8dUk5nUfnE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image"></p>
+<p><strong>第 4 步：装 CLI，各做一次授权</strong></p>
+<p>复制命令给 Agent：请帮我在本地装 GitHub 和 cloudflare 相关的 CLI。</p>
+<p>装完之后，Agent 会运行登录，浏览器打开你的账号点击授权</p>
+<pre><code>gh auth login
+wrangler login
+</code></pre>
+<p>授权是一次性的，之后 Agent 就有了直接操作你 GitHub 和 Cloudflare 的能力。</p>
+<p>从这一刻起，你只需要说话。</p>
+<p><strong>第 5 步：回域名服务商后台，改 DNS 服务器</strong></p>
+<p>在 DNS 记录解析配置你的域名地址。类型为 CNAME、名称是你的域名名称和 www.你的域名。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozT6J7k21iapTn4nrfLXQLJ8OClzk29wEUJMAicINOzRX2E0J4CCJm97nGYiaq3Yo1ia11R8PTDFkejkurib5Y6ibIUpEB8uDjibsEicPs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Feishu Docs - Image"></p>
+<p><strong>第 6 步：配解析记录</strong></p>
+<p>创建 pages 或 workers 来部署你的本地代码</p>
+<p><strong>Pages</strong> ：纯前端，适合做个人网站、作品集。</p>
+<p><strong>Workers</strong> ：需要后端，工具要调模型 API、要转发请求、要存数据</p>
+<p>你经过一番 vibecoding 后，就可以一句话把本地仓库推送到 GitHub 并部署到 cloudflare 的 xx 站点。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozc3voMdRf8WyWQm2rgxFG0utfHBqXEVEVH6wtY5nticiaX5goJmn9jYxH8m4RiaL8BzW79bCNVbq5AZJbnEnQMv4Hm7neZEOBF5U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Feishu Docs - Image"></p>
+<p>搞定之后，你的部署流程就变成了这样：</p>
+<blockquote>
+<p>「帮我创建一个 GitHub 仓库，把本地代码提交推上去，并连接到 cloudflare，用 Pages 部署到 Cloudflare 的 xx 站点。」</p>
+</blockquote>
+<p>每次更新也是一句话：帮我推送仓库并部署网站。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowOasvGw5JhJyeMFlZ4m4hJ5EKcTVv6kKlW0dcI23WI8I9IAFjd3TxStDW8S18lJMPEFlJcz8lZ9F6ZYFzKX6gtibNoOicLRxvg4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Feishu Docs - Image"></p>
+<p>你说完，Agent 执行，线上就变了。</p>
+<p>非常适合你发布一些小工具。</p>
+<p>Cloudflare 的免费额度对个人网站和轻量工具完全够用。</p>
+<p><strong>写在最后</strong></p>
+<p>如果你也用 AI 做过一些东西，也有一堆散在各处、自己都快忘了的内容。</p>
+<p>也可以把网站搭建一起来，给 vibecoding 做一个存档点。</p>
+<p>不用追求一步到位，先让它存在。</p>
+<p>真正的收获可能不在网站上线的那一刻，而在你整理它的过程里。</p>
+<p>当你被迫回答「 <strong>我做过什么、我能提供什么</strong> 」这两个问题的时候，你会比现在更清楚自己是谁。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowfHNquqwVLw1a3TwagQZ55H98qHDHLERX5A0257YLRg6daDtjaSluv9pQbRRPYAQjrXibVN9yXDzhp5yzvaMOVTfEBy8NfEBPI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Feishu Docs - Image"></p>
+<p>我的网站在这里 kongge.space，欢迎来逛，也欢迎来找我交朋友。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Le_1hkIZ7Yd7VXEnjEXIAA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex + ChatCut，Agent 剪视频成了！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Codex + ChatCut，Agent 剪视频成了！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=ChatCut">ChatCut</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91">视频剪辑</a>
+    <span class="date">2026-07-13</span>
+  </div>
+  <p class="lead">最近刷小红书，总能刷到 ChatCut。大家兴奋的点很一致，毕竟天下苦剪视频久矣。</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年7月12日 18:06</em></p>
+<p>最近刷小红书，总能刷到 ChatCut。</p>
+<p>大家兴奋的点很一致，毕竟天下苦剪视频久矣。</p>
+<p>能看着 AI 真的在替自己剪完视频，真的可以解放我们很多时间。</p>
+<p>今天我也去完整体验了一下。整个剪辑都在 codex 里完成，左侧对话，右侧看成片效果。这是我想要的 Agent 剪视频效果，就融入我最常用的 Agent 工具，比开发一个新的工具粘性更高。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxIMhXo3LCBSrIdMQy4TFtRUrD3orVqaJGsBaZooM1Ff9Y43GEUEJda88S4y3BibPXEBgSLVW66ibzDuKJicpc2D3sZ6iatV1Uicga0/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>在 Codex 里装上 ChatCut 插件，把我平时 Screen Studio + 剪映的剪辑流，整个换成了口喷。</p>
+<p>5 句话就完成了我平时 一小时 工作量。</p>
+<p>但具体效果如何？可以跟着我的实践往下看。</p>
+<p>01 安装就一句话</p>
+<p>使用上没什么门槛，在 Codex 里直接说一句：</p>
+<blockquote>
+<p>阅读 chatcut.io/chatgpt，帮我安装 ChatCut 插件并创建一个新任务。</p>
+</blockquote>
+<p>它会自己去读安装说明、装好插件，然后弹出浏览器让你 OAuth 授权登录 ChatCut 账号。登录一次，后面的会话就一直可用。</p>
+<p>装完之后，上传视频、剪空白、删重复口误、配字幕、调样式、做封面、导出，全程都在 Codex 对话框里完成。</p>
+<p>你不需要再打开一个传统剪辑软件，在一堆菜单里找按钮。</p>
+<p>02 5 句话干完我 1 小时的活</p>
+<p>先说下我发在小红书视频的流程。</p>
+<p>我主要用 Screen Studio 录屏，导入剪映，然后手动做几件事：</p>
+<p>剪掉中间停顿和说错重来的话，加字幕，逐条检查识别结果，调字幕样式，做封面，导出。</p>
+<p>一条几分钟的口播视频，从导入到导出差不多 1 小时。</p>
+<p>真正痛苦的是你要一直听自己说话，一边听一边找空白、找重复、决定哪里要删。</p>
+<p>这个过程很碎，也很耗注意力。</p>
+<p>这条流程换成 Codex + ChatCut，上传了一条 4 分多钟的口播视频「10 个工具.mp4」</p>
+<p>然后我基本上只说了 5 句话：</p>
+<p><strong>1 发送视频目录给 Codex</strong></p>
+<p>按下面所示，codex 会把视频上传到 ChatCut，并且在右侧面板加载出剪辑画面</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowwzGHV6VXFmNQWdblTPd2OsW2P9LiboTH7J0micSYCfJSuh1c22K8SVI6jhoymPUQPgCmWrCpwXoK2CcDm6sPViaRrmjHiczdAxTY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image"></p>
+<p>右侧是 codex 的对话窗，和我们常用的剪辑工具一致，它本质是利用 codex 内置的浏览器登录了你再 chatcut 里的账号，也是把你本地的视频上传在 chatcut 里进行剪辑的。</p>
+<p>在这个窗口可以查看 codex 剪辑完的视频，也能自己手动操作，上传素材、剪辑、预览。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyJSmYsrvKBzGIZbZiamHuv2gZeLX114uBRgvia9iaZOw7gTSSNjiaEnKK3pr0uQjAhomyf20FlMRcyBSC6z6n9FOpOzOKc51b2BlM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p><strong>2 删除空白和重复的片段</strong></p>
+<p>发送 codex 删除空白和重复的片段，它就开始剪辑视频，这里的原理是把字幕和时间戳进行分析，把重复的、空白的字幕对应的时间解析并剪辑掉。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyRVWTvRzTU0JicxhNiaOhjyQbVydTicC0my3neMkACibwAbuNznrarbs1gzyL9KrDIyTUibHBRDVTRXekYhfYJ7HZQ5H72aOk376ibg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"></p>
+<p><strong>3 加字幕并改成 1.2 倍速</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxZyyxIVeHDbNGicoB24sW1ELyjESSsT6ud3V1EuiacA5VGA3tBVic5QL49iaQOXZmZYDhnDudOibF4EZhN9Ks21xLsNgXP8bRSlHkM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image"></p>
+<p><strong>4 最后再优化一下字幕，改成黄色加阴影，再做一张封面</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyekIj05DuLUyamtLia1cmhYqyFRcUPJf8ktKgkicQm8feAgZqatfe1ng7c859cxWG8FNSMzPNia27xzCh109c0icSj3gf7I3FOIsY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></p>
+<p><strong>5 导出视频</strong></p>
+<p>导出需要在右侧视频预览窗口，实际上就是在浏览器里把视频下载到本地。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxm1YGX5aBlLD1wewzqHPZXOql3icCkjC87XVHFfxz3Bdxyc6jvWpWAC4V3PvoUZbSq272fibuhoKw4y2DKaViaPqdI4VlYUUvIKc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image"></p>
+<p>整个过程，就像我在指导一个剪辑师帮我完成任务。</p>
+<p>我的剪辑任务很简单，没有用到 B-roll 这些工作。</p>
+<p>4 分钟的视频它总共剪辑掉了 15 秒重复内容， 我用的 GPT-5.5 的模型，消耗了 40% 的额度。</p>
+<p>03 效果能不能赶上手动剪辑？</p>
+<p>使用过程中，除了在导入素材这一步我遇到过上传一直 uploading、右侧面板加载不出来的问题，后续的整个流程都很顺畅。</p>
+<p>我最喜欢的一点是，它没有覆盖原片，而是复制出一条「10 个工具 清理版」时间线再剪。你可以继续让 AI 改，也可以自己进 ChatCut 编辑器手动接管。</p>
+<p>我剪辑的过程中体验很好，拉高了我对成片的期待，这种交互的效果结合 codex，就是我幻想的AI 剪辑任务的形态。</p>
+<p>左侧对话，右侧剪辑，可以虽是手动插入。</p>
+<p>但说实话，我把视频导出来看了又看。这条视频，赶不上我自己用剪映剪出来的效果。</p>
+<p>差距主要在两点。</p>
+<p><strong>第一，字幕识别准确率不如剪映。</strong> 中文口播里的英文词、模型名，以及字幕的缓缓归，不如剪映那样几乎不需要手动处理。</p>
+<p><strong>第二，空白和重复话处理了 80%，剩 20% 要手动补。</strong> 很明显的停顿和重复它都能删，但更细的节奏，哪里该多留半秒、哪里可以切得更狠、哪里不算重复但听着啰嗦，还是得人来。</p>
+<p>但可以代替我粗剪花费的 10- 30 分钟的时间。</p>
+<p>这次我只用到了粗剪、字幕、封面，官网列的能力还有不少：文字稿剪辑（像改文档一样删句子，时间线跟着变）、AI 图片生成、AI 视频生成（补 B-roll 和缺失镜头）、AI 音乐、AI 配音。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowCsTBhJZBVIiaTtiah1PziasQhibOdcicibuN2NhhvoCGU9r1kb3rVWVlqfbxhENM1Y7LLP7zj2rOkjib4g4du7jj4rXNiau8W5XiaLBFw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"></p>
+<p>免费版注册送 20 个 starter credits，够完整跑一遍剪辑流程。</p>
+<p>Pro 从 25 美元/月 100 credits 起，往上有 100 美元/月 400 credits。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxFHGuh1f20eVngxo6sCiaJXqUgLSw5ov5WAENnVEscZxZl8boZ3kPTFVEbrfsmu18mXUPcFFgnydCXE09K8szuCfBBO0F0tzxE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"></p>
+<p>AI 相关动作都消耗 credits，对话、生成、Motion Graphics、音乐、配音；</p>
+<p>但浏览项目、手动拖时间线、预览、上传不消耗。</p>
+<p>这次我在 Codex 里跑完整个流程没有消耗到积分，但消耗了 codex 5 小时 token 额度的 50%。成本还是可以接受的。</p>
+<p>04 实现原理分析</p>
+<p>我去翻了它的 GitHub 仓库（ChatCut-Inc/agent-plugin），原理不复杂，有三个点值得讲。</p>
+<p><strong>第一，插件背后有个 MCP server。</strong></p>
+<p>ChatCut 把自己的剪辑能力封装成一组标准 MCP 工具挂在 API 上，Codex 装上插件就能直接调用。</p>
+<p>工具包括：导入媒体、修改时间线、生成 Motion Graphics、生成素材、音频转写、加字幕、导出视频，甚至还有一个&quot;验证剪辑效果是否可见&quot;的工具。</p>
+<p><strong>第二，模型不生成视频，只制定方案。</strong></p>
+<p>你说一句&quot;删除空白和重复片段&quot;，Codex 先把它理解成剪辑任务，调工具读取素材、时间线、转写文本，判断哪些是空白、哪些是口误、删完时间线怎么拼，最后调用剪辑工具真的去改时间线。</p>
+<p>大模型负责理解意图，ChatCut 负责把方案落到真实的视频工程里。</p>
+<p><strong>第三，产物是工程，不是成片。</strong></p>
+<p>这是它和大多数 AI 视频工具最不一样的地方。</p>
+<p>很多工具给你一个生成结果，ChatCut 给你一个还能继续编辑的多轨时间线。</p>
+<p>视频创作很少一次生成就结束，字幕挪一点、封面换个字、前面删半秒，都要反复改。AI 只给成片，后面就没法改；AI 给的是时间线，你就可以随时接管。</p>
+<p>插件仓库里还带了一个 skills 目录，把常见剪辑任务写成了现成的工作流，这个设计对用 Claude Code 和 Codex 的人应该很眼熟。</p>
+<p>05 我的感受</p>
+<p>Codex + ChatCut，口喷剪辑视频行得通吗？</p>
+<p>行得通，但别把它想成&quot;一句话生成完美成片&quot;。</p>
+<p>更现实的定位是：把剪辑里的机械劳动先做掉，给你一版可继续编辑的粗剪。</p>
+<p>这条视频它完成了导入、清空白、删重复、加字幕、调速、调样式、做封面，保留了可编辑时间线。</p>
+<p>还需要人工的是：字幕校对、细节节奏、剩下 20% 没删干净的重复话。</p>
+<p>所以我不会说它替代剪映。我更愿意说，它把剪映前面最烦人的那一段，变成了几句话。</p>
+<p>会剪辑的人，它帮你省掉粗剪时间；</p>
+<p>不会剪辑的人，它让你先得到一版能看的视频。</p>
+<p>我看好 chatcut 的工程框架，模型和 codex 的结合体验很不错。</p>
+<p>最有价值的地方是它会跟随模型+Agent的进化而进化。</p>
+<p>我很期待未来 100% 的剪辑工作都可以用 Agent 实现。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Z1WVMfZlM34MMwzERaoJaw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

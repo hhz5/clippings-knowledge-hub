@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>模型即 Agent 的含金量：Kimi深度研究功能详评 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">模型即 Agent 的含金量：Kimi深度研究功能详评</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Kimi%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6">Kimi深度研究</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E8%AF%84%E6%B5%8B">产品评测</a><a class="chip" href="../index.html?tag=%E6%AD%B8%E8%97%8F">歸藏</a>
+    <span class="date">2025-06-24</span>
+  </div>
+  <p class="lead">大家好，我是歸藏（guizang），今天给大家带来 Kimi 的深度研究能力体验和介绍。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAtc49P36QPhfHg9n56gheYM8Fia6S8ic5ZiawiboytiadGWUSsDueFBTBK4A/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 歸藏的 AI 工具箱 <a href="https://mp.weixin.qq.com/s/">歸藏的AI工具箱</a> <em>2025年06月24日 12:17</em></p>
+<p>大家好，我是歸藏（guizang），今天给大家带来 Kimi 的深度研究能力体验和介绍。</p>
+<p>上周五 Kimi 更新了他们的深度研究能力，收到测试资格之后昨天深度使用了一天。</p>
+<p>发现 Kimi 深度研究在内容丰富度 、准确性和逻辑严谨性上都非常能打。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA7twhd1ibybJZKUOVeU4hHSPTAWLbeJv3fasPI99xT5TKdkM1jjiaF6hg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>与其他近期类似产品不同，月之暗面这个深度研究是 他们自己训练的 基于端到端自主强化学习技术训练的Agent 模型。</p>
+<p>而且他们 会开源基础的预训练模型和后面经过强化学习的模型 ，这个太值得期待了。</p>
+<p>在 HLE (Humanity’s Last Exam) 和 红杉的 Agent 测试 上 kimi 深度研究模型都取得了不错的成绩。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAXrbcEqQw0o3lnMXN5VQyMBPVdc3ZTZnicAraaNicBP8wBfO1iaqoNNHVw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我最近一直在思考这类产出深度研究报告的产品或者模型，他的核心考核指标是什么？</p>
+<p>感觉大家关注的主要是 其信源的质量、信息的覆盖度以及逻辑的严谨性， 刚好 Kimi 深度研究在两个方面的优化上保证了这几个指标。</p>
+<ul>
+<li>首先 Kimi 深度研究 对于信息有自主甄别能力 ，他会自己规划几十个搜索关键词和阅读上百个网页，然后找出可信度靠前的内容进行引用。</li>
+<li>然后在信息覆盖度上，基本上每篇生成的 研究报告都会超过一万字 ，我有个测试有 2.2 万字，当然 LLM 不可能完全避免幻觉，他们也通过文中内嵌、高亮跳转、原文溯源这几个方式让用户自己进行判断。</li>
+</ul>
+<h2>测试1：Labubu 爆火原因分析</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAyxiaZZgK8wF9rKdoXKdC94xUAUiajKIAVcxelEqBsaK0CIJuhy6WThWQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最近 Labubu 真的太火了，当然这几天热度有点下降。</p>
+<p>我不太了解泡泡玛特这个企业和 Labubu 这个 IP，对于这个为什么会爆火完全没概念。</p>
+<p>帮我分析泡泡玛特个旗下IP labubu的发展历程和最近的爆火原因</p>
+<p>他会先进行简单的搜索询问需要分析的细节是什么，我这里选了都需要。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAMibfHlkW5yq1m9Vk6n8EXAecpP5CATGGRicFC1UZIC9uSeIXcjm3Jftg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>开始搜索后看他的搜索逻辑也很有意思。</p>
+<p>先会整体大致搜索所有的内容，然后得出一个笼统的结论之后会开始分别搜索每个部分的内容。</p>
+<p>先搜了粉丝经济，然后是爆火的原因，之后他发现进一轮爆火的原因可能跟在海外的传播有关系，然后就开始搜索海外的推广路径。</p>
+<p>然后他从一篇内容发现 labubu 早期没有那么受欢迎，所以对早期的发展开始感兴趣，从而搜索 IP 的发展历程。</p>
+<p>最后还发现最近的 Labubu 开始暴跌了，所以非常自然的开始检索暴跌的原因。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAubRPUIS5iaOs069tWhbKWQICichUVvqcXP5e4X8o9cNn2KSpnPLvicH9Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAdRgRjaNu2hfIs4IHB5IC3qVR6v8gdaBNpoIs4TIkajrwp15yMHuHLg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>之后经过漫长的内容整理，他给出了完整的报告，我看了一下字数居然有接近 1.9 万字。</p>
+<p>而且从目录看就能看到整个报告逻辑链条非常完整，涵盖了 IP 设计、产品演变、运营推广策略、粉丝经济等多个方面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cATBVcST11gNzgQEQCldA4VibAKBs6OkhoNpemjmxfQgbN7MxTXhFzPiaA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>先描述了 Labubu 这个 IP 的设计理念，然后是产品的迭代和演变，说完 IP 设计之后才说基于 IP 的运营策略，这个时候有了前面的背景信息之后阅读者才能更好的理解为什么这样运营这个 IP。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cARF9iaf6ewiaTa1NwNhFnPZU1caJyr1fxjpffCHslNwy4BANjU5q26tmg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cALmYnAUgrq8uWqicDSek1W68t9zdkaG90CySxy6jO6CKWjlraLdzrcRA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在说完营销推广之后，作为有一定金融属性的产品，自然而然的就会延伸到粉丝经济和二手市场上。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA0MDCEw6z5tZtHmOibPEgl4WATQs3rJnMSh8INIxiaNb9DWXfufQ8svYw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这里的分析和内容检索非常强，从泡泡玛特自己的运营和启动，到最后粉丝自发的生产 UGC 内容都有提及，特别是最重要的娃衣。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAz1icSfnG1dJlBH8HXvr6BeLxEW2sfVVZ6yKLUtdy3ESvNe78zWMmPjA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后在所有的信息都说完之后他终于开始总结爆火的原因，包含了上面说的所有的内容，IP、设计师、市场营销和二手市场炒作共同促成了 Labubu 的爆火。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA7VlLxLBpvvWeyImAAnV6Oo2ECzr6YhP1wPkCMh2xK4WlsCCn7icgnCw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAkltdBTLWLVzuibibOmxwwzv7VYv3kLAIFSmgzhX764PZAAJL1ajh5szQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>经过上面的内容结果可以看到 kimi 深度研究 不只是信息的堆砌，而是通过逻辑链条把信息都放在了该放的地方，说明他 能自主形成分析框架。</p>
+<h2>测试2：小米26号发布会内容检索及分析</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAO4miaicJibC804e51EQppMoyBWRH9aWgaFa7VHBI05sGOQRtmxR2LoWQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>上面这个案例主要看的是 kimi 深度研究在逻辑分析和行文结构上的能力。</p>
+<p>接下来我们看一下他的搜索准确性和他的数据处理能力。</p>
+<p>由于我是个 mi boy 并且小米马上会在 26 号开可能是他们今年最重要的一次发布会，基本上很多信息都看到过了，于是就用这个主题进行检索，这样可以减小我自己核实信息的压力。</p>
+<p>整理并搜索小米 2025 年 6 月 26 日发布会内容，为不同产品打标签，并为每条传闻打出 可信度百分比，把即将发布的产品预估规格与竞品对比，输出雷达图或热力表，结合往年同期销量、宏观消费指数、渠道备货传闻，给出保守 / 基准 / 激进三种销量区间，并解释关键假设，列出最可能受益的 10 家 A-股或港股供应链公司（附业务关联理由、过去 30 日股价表现），并按高-中-低敏感度分级。</p>
+<p>我这个问题已经相当离谱了，Kimi 深度研究除了要找到对应信息以外还要找到竞品信息，还要找到往年同类产品的信息，还得基于这些数据和信息进行合理的预测，最后还得检索相关的供应链上市公司。</p>
+<p>报告总字数依然达到了近 1.7 万字。</p>
+<p>同时通过目录我们可以看到基本上我们提到的要求他都已经输出了对应内容。</p>
+<p>没有行业上类似产品常见的在复杂问题和长上下文上偷懒的问题。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA7xtlPZcxIn028hrCKofYQECajyybiadcHAib4ITH8iaMlSLIuoycNZYEA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>他先是罗列了一下即将发布的主要产品信息，还按可信度做了区分。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA4BdcraxWEgKbRxcW1iaq20tN4GicLc6KLH4X9XWKJeST7Pfavlm7aj2g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>有个很好的设计点是，点击引用来源的时候， 被引用的数据会直接高亮显示 ，方便用户核对，这个非常贴心。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAe25uAqfLUd2ARBOmOAAYehrkVSIx0XAib5qewocicLMa0BkMHibGul9KA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后在竞品对比这里非常详细，基本上手机和电脑主要的购买考虑点都提到了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAG9BYiboCeTgSu4GRLec7mLRtv7j9cFUQic5QXdZWzUtpNKheskAJkKMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这里座舱系统小米 YU 7 使用 骁龙 8 Gen3 这个数据很关键 ，因为很少有目前没有汽车在车机上使用手机芯片，而且这个信息是这几天才发布的，可以看到 Kimi 在内容检索上的准确性和时效性非常高。</p>
+<p>而且对对比结果都进行了分析，优劣势说的非常清晰。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAZlaSHDedLwyTgzeKBX7Jy3fbvTAlODeVRQiaBiaMT3c7qxRWMEuMjtBQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>接下来销量预测这里除了给出每一个预测级别的原因外，还给出了对应的销量的关键假设因素，帮助阅读者进行判断。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAXv8Nl9OLQliaeIgC6MHicHA0Wic4aG9hsM58ricsBHKh5bpvY558NpfB3g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA8qVDicyjuMnEQicWqL3IHz4aSHjPEJguyj5iaaibxtptKzpRiccGR8OIKUg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在最后受益上市公司这里搜索的信息也非常详细，除了跟小米对应的关系以外，还给出了当前股价帮助投资者进行判断，也提供了他对于高中低敏感度的公司进行分类的指标。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cACUuLpiarsJUWR9obSGBuDgk3B5lWlV3Chzp7ic7WHcoUyxztiaTn7vnpw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAib7iaGZQ6nbO4DyTgWvSdWKMZTNah8WEzVDVuKyFpJn89JQWWVdD2gibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>复杂数据检索的全面性、准确性和数据分析上 Kimi 这个深度研究真的很厉害。</p>
+<h2>注入美学，让专业报告“活”起来</h2>
+<p>再强大的功能，如果不能被轻松理解和使用，价值也将大打折扣。Kimi的交付物在“好用”和“好看”上做到了统一。</p>
+<p>除了生成文档之外，kimi 也会同步生成一份研究报告的可视化网页。</p>
+<p>Kimi 的这个可视化网页不是其他同类产品那种信息和报告完全不成比例的玩具，他们的内容非常详细，基本上大纲里面有的网页都有。</p>
+<p>而且左侧还有对应的大纲方便切换到具体的内容。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAMYVCwRWOHxLSuZ2fsYnje436JibEFN5tOibW0Pt6AooGQZoAT1YvePibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>而且整个网页排版清晰，符合当代用户的审美习惯。思维导图、结构化列表等形式，让复杂信息一目了然。</p>
+<p>图表这里每个都可以自由拖动和放大缩小，解决了通过图表组件生成的图表内容不适合预览的问题。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cA7Jf32L1iaZG0hchHYwMib9nib5OADleORHUOpcXJskfCB5Sz9sryX0RHA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>他们也不是一套模板吃到底，每个网页AI 都会根据自己检索到的信息生成符合对应品牌的主题色和设计风格，比如小米这里的橙色。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAwSwOgwfpEm2rLlsqs0UfUetk5cMmhicpiccAptOqaGYfbyCPS87BSL4A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在素材的嵌入上，也不会随便找图，基本上都跟当前描述的内容相关，甚至我在调研 Plaud ai 这个硬件产品的时候他在头图位置放了一个硬件的展示视频！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAicbPvV0oicMia8aQiawjuTLGibBGmmNbBtibXaFKbTqZzjhg6C5OdIXmGRmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在内容展现形式上，Kimi 这个模型也表现出了很强的智能。</p>
+<p>比如小米这个网页竞品对比这里的高亮色和右边卡片里面通过黄色和绿色背景色和图表两个层面来表现优劣势，非常直观，极大提升了 信息获取效率 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgclrqQPmNfh227GDg8os7cAGWMCXXyiao9MvaibszPPzoD7VKKxycu229rLntu9dcz23JDjAjnf4V6A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>你可以在这里浏览我生成的三个网页：</p>
+<p><a href="https://www.kimi.com/preview/d1co3df37oq0og7kv0bg?blockId=108">https://www.kimi.com/preview/d1co3df37oq0og7kv0bg?blockId=108</a></p>
+<p><a href="https://www.kimi.com/preview/d1coajrlmiues17ub29g?blockId=34">https://www.kimi.com/preview/d1coajrlmiues17ub29g?blockId=34</a></p>
+<p><a href="https://www.kimi.com/preview/d1coefmmu6salp01rdn0?blockId=72">https://www.kimi.com/preview/d1coefmmu6salp01rdn0?blockId=72</a></p>
+<p>测试和介绍到这里就结束了。虽然都是深度研究，Kimi 这个基于强化学习的模型还是展现出了跟使用常见模型通过提示词和工具使用上非常不同的结果倾向，让我们看到了复杂检索任务不依赖大 Prompt 工程的的强大之处。</p>
+<p>期待 Kimi 即将开源的预训练与 RL 权重，应该能造福非常多有类似功能的产品。</p>
+<p>如果你觉的教程对你有帮助的话可以帮我点个赞👍或者喜欢🩷，也可以推荐给你需要的朋友们！</p>
+<p><img src="https://mmbiz.qlogo.cn/mmbiz_jpg/FHoZCAjrvqgWLlBljDrYWKz1Ye6EYz33ukAVcyMBsRVbMqbfUibViadbnEGQmq4UkIoTodgambExicYdObJmQ8ZeA/0?wx_fmt=jpeg" alt=""></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p> <a href="https://mp.weixin.qq.com/s/">喜欢作者</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/TYWQRn_0MB1-bnqZ-8aZ0Q?clicktime=1750738783&amp;enterid=1750738783&amp;scene=90&amp;subscene=236&amp;xtrack=1" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

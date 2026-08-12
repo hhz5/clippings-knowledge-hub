@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从0到1，用飞书多维表格打造全自动公众号“AI情报站” · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">从0到1，用飞书多维表格打造全自动公众号“AI情报站”</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BC%A0%E6%A2%A6%E9%A3%9Ei">张梦飞i</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E9%A3%9E%E4%B9%A6%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC">飞书多维表格</a><a class="chip" href="../index.html?tag=%E5%85%AC%E4%BC%97%E5%8F%B7%E8%BF%90%E8%90%A5">公众号运营</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91">插件开发</a>
+    <span class="date">2025-11-10</span>
+  </div>
+  <p class="lead">使用飞书多维表格+智能体，自动获取内容，推送飞书通知，以及总结内容，写作思路，直接生成选题参考的AI情报站教程</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EXA7sqISbmnr8BYSvqzP0lVs103VnWXsqwDd3xT0Z2qX8Sc9pRHTczg/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 张梦飞i <a href="https://mp.weixin.qq.com/s/">梦飞 AI</a> <em>2025年11月7日 18:04</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EmC7okvCrYG2WWpgsFicsMuTH0x3K1qgVqWwJBRGJj8iagca2WCY3HJWQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>之前一直想汇总一下我关注的博主，一旦更新了就自动给我推送文章总结，来掌握资讯。但是一直没有什么好的能抓取公众号文章的方案。</p>
+<p>最近看到了一个技术分享，发现还挺好用， 于是专门做了一个飞书多维表格插件。</p>
+<p>现在我用这个插件自动帮我抓取博主发布的内容，然后利用飞书多维表格的公式，设置数据好坏的判断标准。如此一来， <strong>某篇文章数据好质量高，这个插件就会自动给我推送飞书通知，以及帮我总结好文章内容，写作思路，甚至直接帮我生成一个选题参考。</strong></p>
+<h3>「 插件开发思路 」</h3>
+<p>1、利用公众号后台的「超链接」功能，以此可以获取到任何公众号的文章标题+封面+链接。</p>
+<p>2、利用「飞书多维表格」的强大表格和插件的能力，调用「超链接」功能完成提取和录入。</p>
+<p>3、利用「飞书多维表格」的字段捷径和AI能力，对文章链接进行内容提取，进而完成分析和总结</p>
+<p>4、利用「飞书多维表格」自动化流程能力，将消息推送给我自己。</p>
+<p>不得不说，飞书多维表格在这类的 工作流/复盘/AI功能 场景提效使用非常方便，我们在做这些任务的时候，第一反应都是使用它， <strong>而且现在飞书多维表格无需下载飞书，在 base.feishu.cn 上就可以直接使用，很方便。</strong></p>
+<h4>「 第一步，获取公众号参数 」</h4>
+<p>我是从网上看到的这个方法，原理模拟公众号后台写文章时插入其他公众号链接的操作来获取的。所以这里也需要有一个公众号，需要获取一下公众号的cookie信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EGScJ5LI5ibiaAYqBh8NkXVRRoyeticNGC04umiagEPQ1Bh6SibTK3WeHa8Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>（注意：本文旨在参考学习，请勿滥用此能力）</p>
+<p>以我的账号举例，这里需要公众号的两个参数：</p>
+<p>- 完整复制cookie的值（比较长，一定要复制完整）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EWgATAm2EoibMf8cgXlicywe1LuKOEpCunMzzISLntdYn81ew5ClvrleQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>- 然后再点击payload，获取token的值，复制token。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EcQfs2QKx7pjXJBAvjCAOrn83zqyppzRNOgRueTtBNXIjAOO4Hus12w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<h4>「 第二步，写飞书多维表格插件 」</h4>
+<p>飞书多维表格是有专门的插件开发文档的，直接把文档链接给AI，然后把开发需求丢给AI，让它帮我们写插件代码即可。</p>
+<pre><code class="language-javascript">边栏插件开发指南地址：https://feishu.feishu.cn/docx/S1pMdbckEooVlhx53ZMcGGnMnKc
+</code></pre>
+<p>以下是使用cursor，丢给了他文档并且告诉他我们的需求：根据以上方案，我提供cookie和token，写一个插件把“目标账号”的前五条文章提取出来并存到表格中。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20E5775cVZRgS3rS2sIOtkmDVS1Kiciaz7pIHTkpval9zJ1nQQvWtpgHMibg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>中间经过了几轮交互，很快完成了整个插件代码，插件写完之后，根据开发指南中的要求进行配置，只需要几分钟，就完成了载入。</p>
+<p>大家可以自己直接写一个，也可以直接用我做好的1.0版本玩一下，我把插件代码打包放在了后台， <strong>在公众号里发送：1107，获取代码压缩包。</strong></p>
+<h4>「 第三步，部署并使用插件 」</h4>
+<p>如果你自己写了一个插件，要安装到飞书多维表格使用，参考以下方式部署。</p>
+<p>以我们写好的代码包和windows系统为例：</p>
+<p>首先我们先确保有nodejs和python，去以下地址下载和安装。</p>
+<pre><code class="language-javascript">python：https://www.python.org/downloads/node.js：https://nodejs.org/zh-cn/download/
+</code></pre>
+<p>下载完成后一路点击“Next”进行安装即可。</p>
+<p>然后把下载的代码文件，解压后，进入文件夹，在文件夹地址栏输入CMD，回车，打开终端。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20E8tJeMhelqWia9UR7LpAAsxvY5ffGxSTLn68gGpkibgCXjYkB7bRzR89A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>在终端内输入：（服务器与winodws方法一致）：</p>
+<p>启动前端项目：</p>
+<pre><code class="language-javascript">npm installnpm run dev
+</code></pre>
+<p>再新建一个终端，输入以下代码启动后端项目：</p>
+<pre><code class="language-javascript">pip install -r requirements.txtpython server.py
+</code></pre>
+<p>项目启动后，就可以在飞书多维表格进行使用了：</p>
+<p>新建一个飞书多维表格，点击右上角的插件，点击自定义插件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EdSNUeQvRF6CoVg8tXMFt9V2npeZUfoP0T62ZOroGoWrZklkraP5xmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>点击新增插件，输入插件名称和服务地址：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EoEqBm9riaMyBhQOoF123b7bCQ3aoicsb9leFABJnMmxOm6htlljqavNw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>服务地址，如果你是windows本地启动的，则输入<a href="http://localhost:9000">http://localhost:9000</a></p>
+<p>如果是服务器使用的，则输入服务器IP:9000</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EXbSm8AIsatxlN36m8icbaSWKS5eYIYbE17We96TU8Q9DVwuPPtoQssQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>输入完成后，在表格创建相应的字段：【封面图、标题、文章链接、更新时间、公众号名称】</p>
+<p>然后输入刚刚获取到的两个公众号的参数，以及你想获取的公众号的名称，就可以开始获取数据：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20ENcHKBpibc4IUC5VYALY6Q59DmIEiaSB0CI54AFA55Dd5qsaBeSu0tSFg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>现在我们已经可以提取到文章的标题、封面和地址了。</p>
+<p>接下来我们需要把网址里的内容直接提取出来，网址提取文本内容大家应该已经司空见惯，直接拿扣子上的插件「微信公众号内容提取」来用，发布成多维表格的字段捷径就好了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EA8JIW94KtK85WDlI8BfY3UDv3SJZ6fvxjiaPD8lc0fbAaKsdW6iarTzA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>然后这个字段捷径，在飞书多维表格中，引用文章链接作为输入url，这样就可以获取到文章内容了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20Eib8dGoWkbRHr9z7cuugvegzoHzU9FqzP9dnUPs1MVgOsDjFW1UxtciaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>有了文章内容之后，那我们想如何对文章进行分析和处理，都可以非常自由的在飞书多维表格中操作了。</p>
+<p>比如使用【总结】这个字段捷径，将【文章内容】以及【标题】给到AI，还可以在【自定义总结要求】中写自己的提示词。让AI按你想要的方式进行总结，后续我们就可以根据总结的内容做相应的推送了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20Ekh4hbHeldicSCmAqIleFX8cdia2qyWGGpqvqdBpEghDvu7qhEa8y7Afg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>这些都是在飞书多维表格里完成的。如果你还没有体验过，可以使用 专属邀请码 <code>New2H4g6L3v9B2l</code> 免费获得3个月专业版体验。</p>
+<p>如果你用了飞书多维表格，不仅以上功能可以实现，我们刚才获取到的封面图，只能获取到URL，这时候我们用【链接转附件】的字段捷径，可以直接把封面url转为图片。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EwS4URQWD0TLjXaopbpm4QC01iaYAwXEia8T7E81sAz5XAC1iaSicQFDgqQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>现在我们的整个表格就完成了，但是只有这些还不够，如果这些文章数据放在那，它就只是个死数据。我根据我内容的评价标准，为AI制定了一个打分标准，这样AI就可以对这些数据进行加工和打分。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EvzDwPmaeOaX1kJj5aB2VOOxClAftM5icuYqib68YLRc4Y2qGaiaRNUSxA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>然后制定一个「自动化流程」：当近期有多个AI博主都发了某个主题内容时或者有某个文章得分高于8.5时，就会给我发送飞书通知。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3WibXDiaVPOBoKbLgoTAz20EMjt0iaBTQhlupVV8BE3XcmnFfHF6twNLWuzWumVBGNZr6Otxpm2BC1Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>到了这一步，我的目的就达到了。但其实利用飞书多维表格的能力，我们甚至可以直接把内容比较好的文章的相关信息同步到我的素材库里去，然后把我的写作风格配置上，让AI按照我标题、内容、封面图风格，帮我生成新的标题、内容、封面图。</p>
+<p>不过，我还是喜欢自己探索，以上的功能已经够我用了。</p>
+<p>以上，希望对你有帮助，我们是梦飞，我们下次见~</p>
+<p>参考资料：<a href="https://blog.csdn.net/weixin%5C_43582101/article/details/103682490">https://blog.csdn.net/weixin\_43582101/article/details/103682490</a></p>
+<p>往期推荐</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>梦飞 AI</p>
+<p>向上滑动看下一个</p>
+<p>梦飞 AI</p>
+<p>| |  | MP4 File 557.5 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/DHn9AmZ28zCaPg0ISM4rsg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

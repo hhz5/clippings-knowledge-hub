@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16个外网疯传的高效 NotebookLM 提示词 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">16个外网疯传的高效 NotebookLM 提示词</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=NotebookLM">NotebookLM</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E7%A0%94%E7%A9%B6">研究</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a>
+    <span class="date">2026-01-10</span>
+  </div>
+  <p class="lead">本教程基于在 Reddit、X 和学术圈疯传的 NotebookLM 提示词整理。</p>
+  <article class="content"><p>原创 小互 <em>2026年1月9日 06:00</em></p>
+<p>本教程基于在 Reddit、X 和学术圈疯传的 NotebookLM 提示词。<br>这些提示将 NotebookLM 从一个 AI 小工具变成了 研究助理 + 内容生产加速器 。</p>
+<h3>✅ 使用前提</h3>
+<p>NotebookLM 是 Google 推出的文献/知识型 AI 工具，擅长处理大量材料，进行分析、总结、问答等任务。</p>
+<p>如果你需要从复杂的资料中提炼信息、检查逻辑漏洞、做出决策——这些 prompts 将大有帮助。</p>
+<h3>✨ 使用技巧总纲</h3>
+<ul>
+<li>结构化输出 ：要求 AI 生成有组织的列表、表格、备忘录等</li>
+<li>引用原文 ：明确要求返回引用、出处、关键原话</li>
+<li>识别矛盾 ：不仅要总结内容，还要指出不同观点或冲突</li>
+<li>揭示知识空白 ：找出遗漏、盲点和误区</li>
+</ul>
+<h2>🚀 16 个高效 NotebookLM 提示词</h2>
+<h3>1.📌 五个关键问题（通用提取结构）</h3>
+<pre><code>英文 Prompt：
+&quot;Analyze all inputs and generate 5 essential questions that, when answered, capture the main points and core meaning of all inputs.&quot;
+
+中文翻译：
+分析所有输入内容，生成5个关键问题，回答这些问题后应能捕捉到输入材料的核心要点和主要含义。
+</code></pre>
+<h3>2.🎓 讲座/课程材料提问器</h3>
+<pre><code>英文 Prompt：
+&quot;Review all uploaded materials and generate 5 essential questions that capture the core meaning.
+Focus on:
+- Core topics and definitions
+- Key concepts emphasized
+- Relationships between concepts
+- Practical applications mentioned&quot;
+
+中文翻译：
+回顾所有上传的材料，提出 5 个能捕捉核心含义的关键问题。
+重点关注：
+- 核心主题和定义
+- 强调的关键概念
+- 概念之间的关系
+- 提到的实际应用
+</code></pre>
+<h3>3.💡 找出令人惊讶的信息</h3>
+<pre><code>英文 Prompt：
+&quot;What are the most surprising or interesting pieces of information in these sources? Include key quotes.&quot;
+
+中文翻译：
+这些资料中最令人惊讶或有趣的信息有哪些？请包含关键原文引用。
+</code></pre>
+<h3>4.🎯 定向“趣点”提取器</h3>
+<h3>5.🎙️ AI 问答秀格式（适合学习）</h3>
+<h3>6.🌍 多语言播客生成器</h3>
+<h3>7.🧭 产品经理人格（决策备忘录生成）</h3>
+<pre><code>英文 Prompt：
+&quot;Act as a Lead Product Manager reviewing internal documentation. Ruthlessly scan for actionable insights, ignoring fluff.
+Synthesize into &#39;Decision Memo&#39; format:
+- User Evidence
+- Feasibility Checks
+- Blind Spots
+Use bullets. If I ask vague questions, force me to clarify.&quot;
+
+中文翻译：
+扮演一名首席产品经理，审阅内部文档。严苛筛选可执行见解，忽略废话。
+整理成“决策备忘录”格式：
+- 用户证据
+- 技术可行性检查
+- 盲点
+用项目符号呈现。如果我提问模糊，请强迫我澄清。
+</code></pre>
+<h3>8.🧪 科研助手人格（方法论聚焦）</h3>
+<pre><code>英文 Prompt：
+&quot;Act as research assistant for a senior scientist. Tone: strictly objective, formal, precise.
+Assume advanced knowledge of [FIELD]. Don&#39;t define standard terminology.
+Focus on methodology, data integrity, and conflicting evidence.
+Prioritize sample size, experimental design, and statistical significance.&quot;
+
+中文翻译：
+作为一名高级科学家的研究助理，保持客观、正式、精确的语气。
+假设读者在 [领域] 方面已有高级知识，不需解释基本术语。
+重点关注方法论、数据完整性和相互矛盾的证据。
+优先考虑样本量、实验设计和统计显著性。
+</code></pre>
+<h3>9.👩🏫 初中老师人格（适合小白入门）</h3>
+<pre><code>英文 Prompt：
+&quot;Act as an engaging Middle School Teacher. Translate source documents into language a 7th grader understands.
+Structure every response:
+- The &#39;tl;dr&#39;
+- Analogy
+- Vocab List
+For dense paragraphs, break into True or False quiz format.&quot;
+
+中文翻译：
+作为一名有趣的初中老师，将原始资料翻译成七年级学生能理解的语言。
+每个回答结构如下：
+- 总结一句话（简单词汇）
+- 类比说明（生活中的例子）
+- 生词表（解释 3 个难词）
+如果遇到长段落，拆成判断题格式。
+</code></pre>
+<h3>10.📚 文献主题提炼器</h3>
+<pre><code>英文 Prompt：
+&quot;From papers on [TOPIC], identify 5-10 most recurring themes.
+For each theme provide:
+1. Definition
+2. Papers that mention it
+3. How it’s treated
+Present as structured table.&quot;
+
+中文翻译：
+从关于 [主题] 的文献中，识别 5–10 个反复出现的研究主题。
+对每个主题给出：
+1. 简要定义
+2. 提及该主题的论文（含引用）
+3. 如何对待该主题（争议、假设、验证等）
+以结构化表格形式呈现。
+</code></pre>
+<h3>11.⚔️ 找出文献中的矛盾</h3>
+<pre><code>英文 Prompt：
+&quot;From papers on [TOPIC], identify major contradictions or conflicting findings.
+For each contradiction provide:
+1. Conflicting claims
+2. Reason for disagreement
+3. What evidence could resolve it&quot;
+
+中文翻译：
+从关于 [主题] 的文献中找出主要的矛盾或相互冲突的发现。
+每条矛盾包含：
+1. 冲突观点（含引用）
+2. 可能导致分歧的原因（方法、样本等）
+3. 哪些证据可用于解决冲突
+</code></pre>
+<h3>12.🧱 项目失败原因分析器</h3>
+<pre><code>英文 Prompt：
+&quot;Analyze this attempt against my uploaded materials:
+Project: [WHAT I TRIED]
+My approach: [STEPS I TOOK]
+Result: [WHAT HAPPENED]
+Expected: [WHAT SHOULD HAVE HAPPENED]
+Cross-reference with sources:
+- Missed steps
+- Skipped concepts
+- Ignored prerequisites
+Output: &#39;Gap in [concept]: You missed [step], but [Source] says: [quote]&#39;&quot;
+
+中文翻译：
+基于上传材料分析我的项目失败：
+项目：[我尝试的项目]
+方法：[我采取的步骤]
+结果：[发生的情况]
+预期：[应发生的情况]
+对比材料：
+- 未执行的步骤
+- 忽略的概念
+- 跳过的前置知识
+输出示例：在 [概念] 上存在缺口：你跳过了 [步骤]，但 [资料出处] 指出：“[引用语句]”
+</code></pre>
+<h3>13.🛠️ 实施概念计划生成器</h3>
+<pre><code>英文 Prompt：
+&quot;Help me implement the concept of [TOPIC].
+For each source:
+1. Quote key evidence
+2. Connect info
+3. Note conflicts
+4. Suggest actions
+Synthesize into actionable steps.&quot;
+
+中文翻译：
+帮助我将 [主题] 概念付诸实践。
+对每个资料来源：
+1. 引用关键证据
+2. 联系其他信息
+3. 指出冲突观点
+4. 提出明确的行动建议
+整理成可操作步骤。
+</code></pre>
+<h3>14.🔗 跨概念连接器</h3>
+<pre><code>英文 Prompt：
+&quot;Synthesize the connection between [TOPIC 1] and [TOPIC 2].
+For each source:
+1. Quote evidence
+2. Note links
+3. Note conflicts
+4. Suggest interesting combinations&quot;
+
+中文翻译：
+综合分析 [主题1] 与 [主题2] 之间的联系。
+每个资料来源包括：
+1. 引用证据
+2. 联系点
+3. 冲突信息
+4. 有趣的组合建议
+</code></pre>
+<h3>15.🧠 深度研究输出结构</h3>
+<pre><code>英文 Prompt：
+&quot;Provide accurate, well-reasoned information about [TOPIC].
+Structure:
+- OVERVIEW
+- ANALYSIS
+- SOURCES
+Standards:
+- Separate facts from opinions
+- Cite evidence
+- Stay objective&quot;
+
+中文翻译：
+针对 [主题] 提供准确、逻辑严密的信息。
+结构：
+- 概览
+- 分析
+- 参考来源
+标准：
+- 区分事实和观点
+- 引用依据
+- 保持客观立场
+</code></pre>
+<h3>16.🥊 AI 模拟辩论</h3>
+<pre><code>英文 Prompt：
+&quot;Generate a debate between two hosts with opposing viewpoints on [TOPIC].
+Host 1: [立场 A]
+Host 2: [立场 B]
+要求他们挑战对方观点、引用资料，并由听众判断谁更有说服力。&quot;
+
+中文翻译：
+围绕 [主题] 生成一场观点对立的双人辩论。
+主持人1代表：[立场 A]，主持人2代表：[立场 B]。
+他们应互相质疑对方观点、引用原始资料，让听众决定哪方更具说服力。
+</code></pre>
+<h2>📎 总结</h2>
+<p>这些提示词能大幅提升你使用 NotebookLM 的效率，适用于：</p>
+<ul>
+<li>学术研究</li>
+<li>教育内容设计</li>
+<li>AI 课程总结</li>
+<li>企业决策备忘录生成</li>
+<li>项目复盘与分析</li>
+<li>多语言内容创作</li>
+</ul>
+<p>🔖 建议收藏并根据场景自定义参数（如 [TOPIC]、[FIELD]、[POSITION A] 等）使用。</p>
+<p>****加入XiaoHu.ai 日报社群 每天获取最新的AI信息  </p>
+<hr>
+<p><strong><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/E6YcKUBEibQFibqBQKNmUPicUnhZSL9BCzFg9npaicRGOzBKlS0dhmsjOaHIyicfiaEr0W9mkWWiclKMJZ2U3SKtkbj8A/640?wx_fmt=other&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=27" alt="图片"></strong></p>
+<p><strong>____________</strong></p>
+<p><strong>End.</strong></p>
+<p><strong><strong>感</strong> <strong>谢 <strong>阅</strong> 读，都看到这了，还不...</strong></strong></p>
+<p><strong><strong>点赞，转发，关注关注关注↓↓</strong></strong></p>
+<p>继续滑动看下一个</p>
+<p>小互AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/2PeZ7lho1pYssBjpWoBwVQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

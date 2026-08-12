@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新手小白也能写出好用Skill，保姆级教程和Skill分享。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">新手小白也能写出好用Skill，保姆级教程和Skill分享。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%98%BF%E7%9C%9F">阿真</a>
+    
+    <span class="date">2026-03-23</span>
+  </div>
+  <p class="lead">大家都能做出自己的Skill。</p>
+  <article class="content"><p>原创 阿真 <em>2026年3月21日 16:56</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8QYw1muJQkKPgicDTFZfgNIABERzfaPwt3BdEmeS41yYISV5KlNeJRzFtNCRrpkzlLN8NKZf8XJahhvQGNKN4bXNw4NL9xKOgU/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>分享有趣 · 一起精进</p>
+<p>嗨大家好！我是阿真！</p>
+<p>我算是看明白了，不管是玩转 CC 还是龙虾，就目前来说，首先还是自己要有这个 Skill 输出的能力。不知道最近大家有没有化身囤囤鼠，在各个平台看博主的推荐，安装了非常多各种功能的 Skill。比如我，光是大佬们推荐的和自己搜索安装的就有百八十个。</p>
+<p>但实际上，就我自己个人的感受来说，如果是安装了别人的，大部分都使用的不多，甚至有的安装到现在从来没有调用过。</p>
+<p>别人写的 Skill 我们未必看得懂它到底干了什么，尤其是 <strong>那些带脚本、能操作文件、能执行命令的 Skill，装进来就等于给了它更多操作权限。</strong> 有的龙虾当前会对部分可疑 Skill 给出风险提示或拦截安装，但这不等于所有平台都会帮你把风险兜住。</p>
+<p>所以我的建议是：与其到处装别人的 Skill 担心安全风险，不如自己掌握写 Skill 的方法。这个能力是可以不断复用的，学会了之后，我们做的每一个 Skill 都完全在自己的掌控之中，还能根据自己的需求随时调整。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9gPMUAq8tRYGHbqnKEVykw1NWbzYCoBpulBbU7lzjAW0T6SQKRCGhxM9ralPfAGI8bBoUgxnUKJE0ibOTRx3dBdtIibqibkvKjqA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>今天这里不讲那些更深奥的进阶知识。只分享我自己的一个超级适合小白且好用的写出自己需要的 Skill 的方法。</p>
+<p><strong>我会分享给大家一个我自己做的 Skill，当安装了我这个 Skill 之后，你说“我想要通过访谈来新建 Skill”，这个 Skill 就会开始和你沟通，一步步向你提问。</strong> 然后在整个对话的过程中，它会逐步梳理清楚你的需求并输出 Skill。</p>
+<p>Skill 放在后面，我先讲点基础的东西。</p>
+<p>下面这些主要还是作为小白的了解，格式也不用记住，操作也有后面的 Skill 工具托底。</p>
+<p><strong>Skill到底是什么，</strong></p>
+<p><strong>跟提示词有什么区别？</strong></p>
+<p>先说一个我的个人看法。写 Skill 的核心能力，是把一件事说清楚。</p>
+<p>我们先复习一下 Skill 的格式👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/m1eibvmmT3sibkv7wFObH1aA2V8yrBFtvT8PJX0snvUibn9LM5VOCpOZ0rnRRTpzbEoqOCm6aNOQ7QLuQnx4icicJs3ZmlH9llLpC6iaK11cia0agE/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>简单说，一个 Skill 就像是一个文件夹。你把内容写好放进去，再配一个简短的“封面介绍”。AI 收到任务后，会先扫一眼所有 Skill 的封面介绍，判断当前任务跟哪个 Skill 有关，然后自动加载对应的完整提示词。</p>
+<p>就像图书馆管理员，不用把所有书都背下来，只要知道每本书大概讲什么，有人问书名的时候能快速找到对应的那本就行。</p>
+<p>所以提示词管的是“当前这一次”，Skill 管的是“这一类任务”。一次写好，反复调用，每次输出稳定。</p>
+<p>什么时候该写 Skill 呢？简单的判断标准是：一件事最近一周做了3次以上，做法基本固定，那它就值得变成 Skill 。比如搜集每日专业相关的资讯和资料、做竞品分析、按照公司要求的格式写周报和整理会议纪要、给客户写跟进邮件等等，只要流程基本固定，且输出格式可预期，就都是好的 Skill 候选。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sic6BtScQRMFfWospncYumv40bpBWvDteQgHcCdrnF5QLBxvjXo0LvpxWsjxYiagSicc8ib5AdDwcBkTXSq1ERtpFdyibAqwSQZ4hU4/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p><strong>写好Skill的核心</strong></p>
+<p>SKILL.md 文件开头有一段元数据，其中首要的是description。把心思全花在正文上，description 随便写两句，后面调用的时候就不方便了。</p>
+<p>description 决定了 AI 什么时候会触发这个 Skill 。写得太模糊，该触发的时候不触发；写得太宽泛，不该触发的时候乱触发。</p>
+<p>这就好比你去买水果，和店家说要苹果，店家会给你苹果，而不会递给你香蕉、葡萄、草莓。</p>
+<p>好的 description 要包含：功能描述 + 触发关键词。</p>
+<pre><code class="language-makefile"># ❌ 太模糊，AI不知道什么时候该用description: 帮忙处理文档
+# ❌ 太宽泛，什么写作任务都会触发description: 帮助用户写文章
+# ✅ 具体功能 + 触发词description: |  将故事文本转换为AI视频生成所需的分镜脚本。  当用户说“做分镜“、“分镜脚本“、“故事转分镜“时触发。
+</code></pre>
+<p>如果你的Skill一句话讲不清楚可以干什么，那多半是边界还没收好。这时候试试做减法：砍掉那些副线，保留主线任务。砍掉顺便也能做的部分，只留必须做的那件事，等这件事稳了，再考虑扩展。</p>
+<p>小技巧：想想我们自己平时会怎么说话。“帮我做个分镜”、“把这个故事拆成分镜”、“生成分镜脚本”，把这些你可能会用的表达都写进 description 里，AI 才能准确识别，下次你一说它就触发。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicoyUBHvjzc9Scia3cqAlBBZ6uJAoyicMK1mfTGp0TTs4SneyXgIm2CoMu4hlKH1owXwTY5PDW3OQuxFibA3ob3Kp7DoeHSMvwpBE/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>截至目前，Claude Code、OpenAI Codex、OpenClaw 这几个体系里，一个可用 Skill 的最小结构通常都是：</p>
+<pre><code class="language-objectivec">skill-name/└── SKILL.md
+</code></pre>
+<p>复杂一点再往里加：</p>
+<pre><code class="language-objectivec">skill-name/├── SKILL.md├── scripts/├── references/└── assets/
+</code></pre>
+<p>这个我曾经在拆解我的视频脚本 Skill 的时候详细讲过，感兴趣可以后续看看这篇👉🏻 <a href="https://mp.weixin.qq.com/s?__biz=MzkxNzYzODgwNw==&mid=2247496522&idx=1&sn=74bf641fa193203799c33c28fdd2d1a6&scene=21#wechat_redirect">视频分镜提示词Skill，详细制作过程分享！</a></p>
+<p>其中 SKILL.md 是核心，各平台的最小 frontmatter 也很统一，通常就是 name + description 两个字段。所以不管你用哪个平台，上手成本都不高。结构搞清楚了，重点就是把正文内容写好。</p>
+<p><strong>多模块骨架</strong></p>
+<p>description 搞定之后，正文按什么结构写？我综合了 OpenAI Codex、Claude Code 和 OpenClaw 当前公开文档里的共通思路，梳理了一套骨架。</p>
+<p>如果你下面对这些问题很清晰了，那么你可以直接把这些内容全部填完之后，调用一个 Skill Creator 的Skill ，（就是默认可以给你创建 Skill 的那个，对话的时候，你说创建 Skill 就能把它呼唤出来。）直接去完成你的 Skill。</p>
+<p>1. 目标是什么</p>
+<p>2. 什么情况下触发</p>
+<p>3. 什么情况下不要触发</p>
+<p>4. 开始前先收集什么信息</p>
+<p>5. 按什么顺序干活</p>
+<p>6. 输出必须长什么样</p>
+<p>7. 做到什么程度算完成</p>
+<p>8. 搞不定的时候怎么处理</p>
+<p>9. 什么时候去读参考文件</p>
+<p>这样 AI 就能清楚地知道该从什么地方开始、做什么、做到哪里停，以及在什么情况下算完成、什么情况别乱来。</p>
+<p>这里并不是要求每个模块都要写得很长、很详细，但如果能按照这个框架来写，会比想到什么写什么，或者胡乱、无序地补充要好得多。这样写也不容易有遗漏，能避免后续的反复修改。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8ER36n5LasHUqlU2YibRDpZU2ibn5NJLicJQqicNdjH1A9jYyrlRcpj3ADb4gIa2p0ENRal6njiaibW3P4rA8G0D3zH1EaLPD1ib1iaqY/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><strong>SKILL.md 正文写什么</strong></p>
+<p>骨架有了，description 也写好了，正文填什么？记住一个原则：你是在给一个聪明但对你的情况一无所知的新同事做工作交接。</p>
+<p><strong>1. 只写 AI 不知道的东西。</strong></p>
+<p>就这样想，如果你要把这个工作交接给你经验丰富的同事，你需要告诉他什么？Excel 怎么做这种就不用教了吧。</p>
+<p>告诉它你的私有规则、个人习惯、行业里的特殊流程等等，这些才值得写。比如“工作周从周三算起”“老板只看柱状图不看饼图”。每写一句想想，这个信息 AI 会知道吗？如果知道，可以删掉。</p>
+<p><strong>2. 把流程拆成步骤，带上决策分支。</strong></p>
+<p>不只是“第一步、第二步”，还要写清“如果遇到 XX 情况，怎么处理”。比如“如果某个分类没有内容，跳过，不要写&#39;本周无更新&#39;”。这比“你自己判断”靠谱得多。</p>
+<p><strong>3. 用示例代替解释。</strong></p>
+<p>一个正确示例 + 一个错误示例，胜过三段文字说明。复杂任务就给一个完整的“输入→输出”示例，放到 references/ 文件夹里按需引用。</p>
+<p><strong>4. 写任务指令，不要堆身份设定。</strong></p>
+<p>“你是一个资深 XX 专家，拥有20年经验”这种人设描述效果并不稳定。一定要告诉 AI 具体要做什么事情。</p>
+<p><strong>5. 信息分层，按需加载。</strong></p>
+<p>核心规则放主文件，参考资料、模板放单独文件，AI 需要时再去调用读取。主文件控制在 500 行以内，引用保持一层深度，别套娃。SKILL.md 直接引用参考文件就好，（比如“需要参考格式时，请读取 references/output-example.md”），注意参考文件本身不要再引用其他文件。</p>
+<p><strong>6. 复杂流程加验证环节。</strong></p>
+<p>AI 可能在某一步出错但要到后面才暴露。如果是比较复杂的任务，就可以在关键步骤后加检查点，验证通过才继续。可以在关键步骤后加一句“做完这步先检查 XX 是否正确，确认没问题再继续下一步”。</p>
+<p><strong>7. 先跑起来，再慢慢打磨修改。</strong></p>
+<p>Skill 很难做到一次就是完美的，可以先做一些尝试，哪里不对再优化。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibViabFHyANUfVRpqVLjXZichZd63rV0GM26IkzRa1hibwiaIkJnUfPhRUicPmbKSOTxThUJrlRhj40OkJrC7ZNhnX99ibl4bfevKO9Y/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p><strong>帮你写 Skill 的 Skill</strong></p>
+<p>虽然官方都有类似 Skill Creator 的 Skill ，但说实话，我们的重点不是格式说不清楚，而是需求说不清楚。第一次写 Skill 的时候，大家可能还是会不知道从哪里下手。</p>
+<p>所以我做了一个 Skill 来解决这个问题。这也是我自用好物 🐶 ，和大家分享。</p>
+<p>这份模板大家可以直接复制过去用，也可以在这个链接下载压缩包，然后扔给CC或者龙虾一类的工具安装。</p>
+<p>安装好以后，只要说“我想通过访谈新建一个 Skill ”，或者关键词带有“访谈”和“ Skill ”，它就会一步步问你问题，还会引导你提交配套素材，问完之后直接帮你生成完整的 Skill 文件包，包括 SKILL.md、参考文档、示例文件、文件夹结构和测试 Prompt。你也完全不需要记住骨架怎么填，只要回答问题就行。</p>
+<p>大家也可以先看到这个 SKILL.md 的完整格式，当然也可以基于这个去继续进一步的优化和修改，整个内容一键下载可以去这里：</p>
+<p><a href="https://my.feishu.cn/docx/JERudAXvVowpp7x3d2bctjD0n89?from=from%5C_copylink">https://my.feishu.cn/docx/JERudAXvVowpp7x3d2bctjD0n89?from=from\_copylink</a></p>
+<pre><code class="language-markdown">---
+name: skill-interview-builder
+description: |
+  通过分步访谈引导用户理清需求，最终产出完整的Skill文件包（含SKILL.md、参考文档、示例文件等），
+  并打包为可直接使用的压缩包。
+  当用户说“我想通过访谈新建Skill”、“用访谈方式做一个Skill”、“访谈建Skill”、
+  “通过访谈帮我生成Skill”、“访谈式创建Skill”、“我想访谈做一个XX的技能”时触发。
+  触发关键词必须包含“访谈”二字，不含“访谈”的Skill创建请求不由本Skill处理。
+  不用于已有完整SKILL.md只需小改的情况，也不用于一次性提示词请求。
+---
+# Skill访谈式构建器
+引导用户完成一次结构化需求访谈，收集配套素材，最终打包生成一份可直接使用的完整Skill文件包。
+## 核心原则
+1. **用户不需要懂Skill格式**——他们只需要回答问题，你来负责转化
+2. **每轮问完先小结确认**——不要一口气把12个问题全抛出来
+3. **允许跳过不确定的问题**——给出合理默认值，标注为假设
+4. **最终产出必须可直接使用**——复制到文件夹就能跑
+## 访谈阶段
+### 第一轮：核心意图
+依次问这4个问题：
+1. 这个Skill最终要产出什么？（比如：一篇文章、一份报告、一组提示词、一个方案）
+2. 你平时会怎么说来触发它？（想想你的自然表达，比如“帮我写个周报”、“做个分镜”）
+3. 哪些场景绝对不要触发？（比如：不要用来做XX、遇到XX情况不要用）
+4. 做到什么程度算完成？（列出3-5个可以打勾的标准）
+问完后，把回答整理成简短摘要，请用户确认后再继续。
+### 第二轮：运行环境
+依次问这4个问题：
+5. 它运行在什么环境里？（选项：Claude Code / Cowork / Cursor / Windsurf / 扣子 / OpenClaw / ChatGPT / 其他）
+6. 允许用哪些工具？（如果不确定可以跳过，默认为该环境的标准工具）
+7. 需要读取哪些参考资料或文件？（比如：风格指南、模板、行业规范、历史案例）
+8. 需要写脚本吗？（如果不确定，默认不需要）
+问完后，整理摘要并标记矛盾点，请用户确认后再继续。
+### 素材收集（第二轮确认后立即进行）
+根据第二轮中问题7和问题8的回答，主动引导用户提交配套素材。
+明确告知用户：
+&gt; 根据你刚才描述的需求，这个Skill运行时可能需要以下配套素材。如果你手上已经有，可以现在直接上传给我，我会一起打包到最终的Skill文件包里：
+按需列出以下类别（只列用户需求相关的，不要全列）：
+- **参考文档**：风格指南、行业规范、品牌手册、模板文件等（放入 references/）
+- **示例文件**：正例输出样本、反例输出样本、历史案例等（放入 examples/）
+- **脚本或代码**：运行时需要的辅助脚本、数据处理工具等（放入 scripts/）
+- **素材资源**：图片模板、字体文件、配色方案、图标包等（放入 assets/）
+规则：
+- 用户上传的文件原样保存到对应目录，不做修改
+- 如果用户暂时没有，标记为「待补充」，在最终文件包中保留空目录和 README 占位说明
+- 如果用户表示不需要任何配套素材，跳过此环节直接进入第三轮
+### 第三轮：输出契约
+依次问这4个问题：
+9. 最终输出必须长什么样？（描述格式、结构、长度等）
+10. 有哪些必须包含的内容？
+11. 有哪些必须避免的内容？
+12. 能给一个正例和一个反例吗？（如果暂时没有可以跳过）
+问完后，汇总全部信息。
+## 工作流程
+1. 问第一轮，等待回答
+2. 整理第一轮摘要，请用户确认
+3. 问第二轮，等待回答
+4. 整理第二轮摘要，标记矛盾点，请用户确认
+5. 引导素材收集：根据第二轮回答，列出需要的配套素材类别，请用户上传或标记为「待补充」
+6. 问第三轮，等待回答
+7. 汇总成完整的结构化需求
+8. 如果还有矛盾或关键信息缺失，最多追问5个修复问题
+9. 根据访谈结果，生成完整Skill包：
+   a. 写一句精确的name和description（description必须包含具体触发词和排除条件）
+   b. 按以下骨架生成SKILL.md正文：
+      - Goal（目标）
+      - When to use（触发条件）
+      - Do not use（排除条件）
+      - Inputs to collect（需要收集的信息）
+      - Procedure（执行步骤，含决策分支）
+      - Output format（输出格式）
+      - Definition of done（完成标准，每条可打勾验证）
+      - Failure handling（异常处理）
+      - Additional resources（配套文件引用，明确列出每个配套文件的路径和用途）
+   c. 创建文件夹结构并写入所有文件：
+      - SKILL.md 放在根目录
+      - 用户上传的参考文档放入 references/
+      - 用户上传的示例文件放入 examples/
+      - 用户上传的脚本放入 scripts/
+      - 用户上传的素材资源放入 assets/
+      - 对「待补充」的目录，创建空目录并写入 README.md 说明需要补充什么
+   d. 生成5条测试Prompt（2条应该触发、2条不应该触发、1条边界）
+10. ⚠️ 验证点：检查生成的Skill是否满足以下条件
+    - 12个问题的回答都有体现在最终Skill中
+    - description包含用户描述的触发词和排除条件
+    - 完成标准与用户第4题的回答对齐
+    - 流程步骤可执行，没有模糊指令（不使用“帮助”“支持”“改善”等模糊动词）
+    - 完成标准每一条都可以打勾验证
+    - 正文预计不超过500行
+    - SKILL.md 中 Additional resources 引用的文件路径与实际文件夹结构一致
+    如果不满足，修正后再继续
+11. 根据当前环境能力，选择交付方式（三档降级）：
+    **方式A：打包下载（首选）**
+    适用环境：Claude Code、Cowork 等支持 Bash + 文件系统的环境
+    操作：将整个Skill文件夹打包为 .zip 压缩包，提供下载链接
+    **方式B：写入指定文件夹**
+    适用环境：Cursor、Windsurf 等有文件写入能力但无法打包下载的环境
+    操作：询问用户保存路径，逐个创建目录和文件，完成后列出文件清单
+    **方式C：纯文本输出（兜底）**
+    适用环境：扣子、ChatGPT 等无文件系统操作能力的环境
+    操作：在对话中依次输出所有文件内容，每个文件用路径标题分隔，方便复制
+    判断规则：优先尝试方式A，不支持则降级到B，再不支持则降级到C。
+12. 交付最终Skill包，附上关键设计决策的说明和文件清单
+## 生成SKILL.md的质量标准
+1. 用具体动作动词开头，不用“帮助”“支持”“改善”等模糊词
+2. 触发条件用用户的自然表达，不用技术术语
+3. 软性质量要求必须转化为可检查的规则
+4. 正文只写AI不知道的信息——不要解释AI已知的概念
+5. 正文控制在500行以内，超出部分拆到配套文件
+6. 确保另一个AI看了也能直接执行，不需要额外解释
+7. 不要堆砌身份设定（如“你是资深XX专家”），聚焦任务指令和流程约束
+## 输出格式
+最终交付物根据环境能力，以三种方式之一交付（zip压缩包 → 写入指定文件夹 → 纯文本输出）。
+同时在对话中展示以下摘要信息：
+### 访谈简报
+&lt;三轮问答 + 素材收集的结构化汇总&gt;
+### 已解决的问题
+&lt;消除的模糊点、做出的假设、解决的矛盾&gt;
+### 文件包清单
+skill-name/
+├── SKILL.md（核心技能文件）
+├── references/（参考文档）
+├── examples/（示例文件）
+├── scripts/（辅助脚本，如果需要）
+└── assets/（素材资源，如果需要）
+注：只创建用户需求相关的目录。无内容的目录保留 README.md 占位说明。
+### 最终SKILL.md
+&lt;完整内容，已写入文件包&gt;
+### 配套文件说明
+&lt;文件路径、来源（用户上传/AI生成/待补充）、用途说明&gt;
+### 测试Prompt
+&lt;5条Prompt及预期触发结果：2条应触发、2条不应触发、1条边界&gt;
+### 设计决策说明
+&lt;为什么这样设计description、为什么这样划分边界、为什么选择这个文件结构&gt;
+## 完成标准
+1. 12个访谈问题都有回答或合理推断
+2. 矛盾点已解决或已明确标注为假设
+3. 产出了完整的SKILL.md，可直接复制到文件夹使用
+4. 用户上传的配套素材已归入对应目录
+5. 未提供的配套素材目录已创建 README.md 占位说明
+6. SKILL.md 中 Additional resources 的文件路径与实际文件夹结构一致
+7. 所有文件已通过方式A/B/C之一交付给用户
+8. 包含5条测试Prompt及预期结果
+9. description足够精确，能被准确触发
+10. 所有完成标准都是可打勾验证的
+</code></pre>
+<p><strong>操作流程</strong></p>
+<p>首先当然是安装上面的Skill，安装也很简单，直接把附件给工具，让它安装就行了。</p>
+<p>安装好以后，开始调用。它提问以后，我针对提问，输出细致的回答。这里我做一个简单的尝试，我做一个 Skill ，可以用来提取视频中的关键帧，生成 9 宫格或者 16 宫格。</p>
+<p>第一轮，核心意图👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibta6E87psAziaFUdUfm4qLib0ibqY1H9679BdJoUZHX6Rf50RhKorSkmQU7zVJNykIHHab53zNhydXBrc4HvhicxCeiayiaBaKHFpM0/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>第一轮摘要👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s88heMwRB1QRICZqmL99xm4eKzArqNU7YOJsFA5hbw0rg3NlicW99wFMmMo6OicJ46g2icDUDxo9KulgEHoCJe6c2C2RjsFP01lGk/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>第二轮，运行环境👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicQsXhMbhSUuPhcia2ITHXFGtauJt2d9Cz9DkK3tcDmnGf2zFJRNGXZ2W5n0Yq8YJIy9ZjAHal45FiciadDFicsrmYcdkmibHFkeYxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>然后第三轮，输出契约👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicwHHuUtdIFhjwd9cBVIfeDb1XKsXZdwRiaQ2cscTSDDXdcXU7p2vYb3vN8f3oUdlYlsqf4WGAgdkn7wdOjmZE9OyBCvL6j7BQw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>最后它会做一个全部访谈的汇总。而且和我确认细节。为了避免由于类似的 Skill 名称导致触发错乱，如果出现冲突，比如我有一个专门生成分镜图的 Skill，那么我就会在这里要求它排除触发生成分镜图的情况。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3siczZGibvEgSywQibb8DkpCOLDeHuKycXK7W8AkKBMDeb3f8YoibFNVT1URCCTWTEosicdJwcyiaoiaZONwkqfSDRibOt3ialXiaRVnXIhO4/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>细节确认后，它会生成Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicIBqDxIEXhyicC8B6okic2lSSoqicWG8c0oInQKBSGAnAGxvbfghl0DW0aj2zOGBN3HZux93IUPPxQ2Dicia5oRyIoPReGuKYAFsia4/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>将这个Skill 压缩包下载下来以后，可以看看里面的文件的内容👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8EBMSt75iazq4N9Hk9GFUdH80UxickibK2jWDJcgdGrHkicshGFXD242tnto1phqjKTdu0DAEDeCS1ws9Kdic3l0wsJSL0c8jZoUHk/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>过程中我上传的那张参考图案例，也在这个 examples 的文件夹里👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9WkHQ3vSe6xBUbsuhvvV2OgCib1q1pGN8y4ejyEaFRpvdPslKV8PmibD5Bxg9bZz9Fy8BESduSs82R1uR1XpedqZv75jQjPSKLE/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sictCyIKicu3ePyL8jurwpTtwN43mgYRA3GUTJo4EAibs3Via2Y61XhXa9l3LyhsLKAEmy2mwKLWz4h2dftzcbibVpUgCMExftU1rWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>完成一个Skill后，可以对照这个清单过一遍👇</p>
+<p>□ 触发词和排除条件都写进了 description</p>
+<p>□ 有至少 1 个完整的输入→输出示例</p>
+<p>□ SKILL.md 不超过 500 行（超出的参考资料、示例拆到配套文件里）</p>
+<p>□ 完成标准每条都能验证</p>
+<p>□ 实际测试过至少 3 次且都没有问题</p>
+<p><strong>小结</strong></p>
+<p>怎么样？现在有没有感觉自己强得可怕？</p>
+<p>说了这么多，其实动手最重要。只有尝试了，才会知道会遇到什么问题；遇到问题了，再去思考怎么解决。</p>
+<p>一开始完全不用追求大而全。先让第一份 Skill 稳定解决一件小事，把这个弄明白了，后续更进一步会非常快。</p>
+<p>最后， <strong>写好 Skill = 精准触发 + 清晰流程 + 输出契约 + 可验证标准。</strong></p>
+<p>Skill 也没有那么复杂和神秘，说白了它就是给 AI 写一份清晰的说明书和指南。太少了它不知道怎么干，太多了它被信息淹没。找到那个平衡点需要点手感，而手感来自多次实践。自己写的 Skill 最安全，也最贴合我们的需求。</p>
+<p>今天的分享就到这里啦，如果大家觉得这些分享对你有帮助的话，欢迎点亮下方的 👍🏻 和 🌸 图标，因为这对阿真真的很重要。感谢感谢~</p>
+<p>有什么想法或者自己做 Skill 遇到的问题，欢迎评论区一起聊聊实操经验~</p>
+<p>下期见~</p>
+<p>阿真Irene</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>流浪动物的回家之路</p>
+<p>34人捐赠</p>
+<p>继续滑动看下一个</p>
+<p>阿真Irene</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/x2fd6Jiv9jKDarnYgtrn0Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

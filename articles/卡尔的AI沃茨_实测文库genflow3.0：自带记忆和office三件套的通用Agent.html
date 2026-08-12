@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测文库genflow3.0：自带记忆和office三件套的通用Agent · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测文库genflow3.0：自带记忆和office三件套的通用Agent</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=GenFlow3.0">GenFlow3.0</a><a class="chip" href="../index.html?tag=%E7%99%BE%E5%BA%A6">百度</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%83%BDAgent">智能Agent</a><a class="chip" href="../index.html?tag=%E5%8A%9E%E5%85%AC%E8%87%AA%E5%8A%A8%E5%8C%96">办公自动化</a>
+    <span class="date">2025-11-16</span>
+  </div>
+  <p class="lead">把多并发刻进骨子里</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWAPFEUtkxdoFUcNKUFatiakaCLbiaswxJp1B927gq64upjrEGDg5ribtOw/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a> <em>2025年11月15日 11:45</em></p>
+<h2>我对GenFlow这款产品一直挺好奇的，</h2>
+<p>3个月前听说的版本是能让100个Agent同时干活，Agent执行过程中可以中途打断，信息检索的时候可以带上网盘和文库，当时忙忘了没有深度去体验。</p>
+<p>这次看到百度世界大会上又看到GenFlow了，</p>
+<p>更新到3.0，新增了Agent记忆，Office三件套，能并行生成的模态更多了，横跨⽂字、图⽚、视频、播客、⽹⻚、地图等等，一样保持网盘的联动。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWUKb2I2ndmPyjI1gvEVxDWMmyoyAiaiaKL8lLianO8MlnY54wUvM3Z688A/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>🔗 wenku.baidu.com</p>
+<p>事不过三，我决定来把测评。</p>
+<p>我会把记忆排到第一位，</p>
+<p>AI产品的记忆能力是可以追溯到24年2月GPT刚推出Memory的时候。那时候我还在天天手动录入那种 “我是Sam，GPT你回答我的时候要尽可能详细点” 或者是 “你回答对了我就奖励你200刀” 的邪修提示语。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWu37icRK0xmpv27cv5EFOBnD2dJcCETT3Lc5FeMjFib1UEhPhK2lkGJIw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>快两年过去了，现在各种模型像Claude、Gemini等等都有了记忆能力，</p>
+<p>但实际上，Agent们大多数还是失忆的，Manus算1个，Perplexity和秘塔算半个，其他的几乎看不到显式的记忆管理，停留在本轮对话和单次任务的维度。</p>
+<p>这就导致了一个痛点，</p>
+<p>AI搜索还好，我搜索的东西很广泛，我不太需要AI对我有什么认识，但是创作类Agent，我是真想它知道我不需要双引号逗号引号啊，每次跟它说话，都要在提示语最后重新介绍一遍。</p>
+<p>测GenFlow3.0前，我决定先把我的一些人设喂给它。 我是个AI博主，我偏爱登山和自然风光，胜过城市景观。我喜欢极简的网页风格，不喜欢蓝绿色，我写文章喜欢先抛个情绪问题，而且我有一只叫77的小猫。</p>
+<p>然后，我没有给它复杂的指令，我就问了一句，</p>
+<p>周末有啥好玩的，帮我规划下，再找点打发时间的东西。GenFlow3.0把好玩的活动和打发时间东西拆开成两个任务同步进行，执行过程中我可以随时补充文件和链接，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWqZHOibS1bfkzEquQfgWYDvk78v5aALEb7xdZeDgibXGzjLHOXkEhSXuQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>它给我的规划都是户外为主，让它把内容写成PPT的时候，也能记住我不喜欢蓝绿色。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWlaNKMogicqK8cwT52Vl0kFGZ9YerKR9ZCicdytfo1efKgxzA0WVuiahRw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>过了一会儿，我直接问它， 77最近怎么样？</p>
+<p>它回复我，我没有小猫的实时信息，但希望它一切都好。它记住了77是一个它，一个我的宠物，而不是一个别的东西。</p>
+<p>继续加码，</p>
+<p>我让GenFlow 3.0 联动在网盘里的指定文件夹，里面是我过去发布过的三篇稿子，前情提要，因为每篇稿子会有大量不同尺寸视频图片素材，不删我电脑空间没了，删了到时候要用就要重新录，所以我目前会用网盘做自动备份。</p>
+<p>对话的时候我会选择日期排最前的三篇文章，给它的指令是，</p>
+<p>学习这三篇文章的风格，总结我的写作模板，然后更新到你的记忆里。</p>
+<p>这样当我要从信息里提取我喜欢的点时，它就能用上我最新的写作风格，</p>
+<p>这种延续性，让它不再是每次都从零开始，</p>
+<p>它是在我上一次的基础上，接着跑。</p>
+<p>除了记忆，GenFlow3.0的Office三件套也是我想多测测的，它延续了自由画布的精神，在一个界面里，完成所有事情。</p>
+<p>我打开GenFlow，上传了一份原始的用户数据表和项目周报，给出了我的指令，</p>
+<p>我今天要做一个关于‘AI知识库’的完整产品提案，最后给我生成一份PPT。这个提案需要包括：对这份用户数据的分析报表，一份详细的产品需求文档，一个能交互的产品原型示意。</p>
+<p>几分钟后，它在交付窗口同时生成了Word文档（产品需求文档）和Excel图表（数据分析报表）。</p>
+<p>现在，我不用离开这个界面，我可以中途打断它，然后开始用嘴编辑。</p>
+<p>我先指着那篇Word文档说，</p>
+<p>在10月项目月报里面，将大标题调成小二，调整缩进，合理分点排列</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWEr0lwMW9V6GEA2zwhqYHFa72m8lOD2RvGkqbkNXj9DibP6mt1Z0TFhQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWJLNStXFg2aon6fVxIrnMLLw4edkSic6cvnbJFDwiaKyLK1ZFFvAtfia9g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>因为它可以并发处理，在我等待Word修改的同时，我又指向了旁边的Excel数据， 把表格里的各部门用户活跃度做成柱状图，搜索成功率分布做成扇形图。</p>
+<p>文档和图表都按我的要求修改完毕了。最后来个收尾指令，</p>
+<p>把刚才生成的所有这些东西，全部汇总到PPT里。模板用一个更简约好看的。</p>
+<p>在一次对话两次打断的状态下，GenFlow3.0完成word生成和排版，表格的生成和排版，网页代码生成，以及最终PPT的搭建，老实说每一个步骤的质量多少都可以再优化的，网页代码的质量，excel图标的样式，PPT的排版等。</p>
+<p>但底子在这，GenFlow3.0的多并发能力和Agent长对话还是给我留下了足够深的印象。在手机端还可以尝试生成视频和播客。</p>
+<p>使用体验讲完了，聊聊我对GenFlow3.0整体的印象，2个月前有随机到乱翻书的播客，了解到更多的幕后。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWMHPFKMOHib8xE5lHDAJmUuawr0dw4jeibkEW3XEXYTDWSYyanu7w9usg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>我摘要出几点有意思的，</p>
+<p>23年前文库在百度里都不算核心业务，却成为了是百度目前AI重构最彻底的产品。</p>
+<p>GenFlow这个名字。它对应的是Workflow，也就是工作流。开发团队认为，工作流不应该是写死的、固定的，是可以被AI生成的。</p>
+<p>GenFlow是Generated Flow，生成式工作流。</p>
+<p>GenFlow的并行能力和中途打断能力是来源自由画布的，当时只有20个人开发，8个月前全量上线后当时长这样，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkW5xrfiaicS8vFyds7ibxfnG4Bp2tBg6Yc2zfdrB9LFJDPCaWicDnxib479ug/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>那为什么又从画布模式回到了GenFlow这种大家都熟悉的对话界面呢？</p>
+<p>原因也简单，自由画布过于自由了，一般人打开看着一大块空白只有大眼瞪小眼，不知道第一步要做什么，所以他们做了取舍，保留内核，切换形态。</p>
+<p>换句话说，GenFlow是自由画布的产品化形态。</p>
+<p>它在我不看它的时候，依然在为我工作。</p>
+<p>在主动地帮我搜集、整理、归档。</p>
+<p>比方说，把最近⼀个月热门的AI论⽂下载到⽹盘，把重点内容整理成周报汇总给我。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlqdy97gfhGYc5Vh9jnAGkWQxovfKsiaN5g1jSgV1rIuDDNibP5kWDDlOIhmbqKfIdbcJ65CPfJWEnQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>这就回到了播客里我听到他们的反对话框思维。</p>
+<p>好的AI，就是那个你不需要去打开的AI。</p>
+<p>它无缝地融合在网盘里，文库里，工作流里。</p>
+<p>它记得你的偏好，它能干最累的排版活，它还能执行定时任务。</p>
+<p>过去我们常说，AI会让我变强大。</p>
+<p>但前提是，AI得先记住我，听得懂我说的话，接得上我的思路。</p>
+<p>GenFlow 3.0，</p>
+<p>至少在这条路上，走出了一步，</p>
+<p>想得也非常明白。</p>
+<p>它解决的就是普通人，</p>
+<p>在文档里，在表格里，在PPT里，</p>
+<p>遇到的每一个具体又琐碎的难题。</p>
+<p>所以，我愿意给它一个证明自己的机会。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏 如果喜欢这篇文章，不妨顺手给我们 <em>点赞👍｜在看👀｜转发📪｜评论📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标 🌟</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>捐一笔</p>
+<p>12人捐赠</p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>| |  | MP4 File 7.22 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.94 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 4.95 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 937.5 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 3.11 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 7.22 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 3.11 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 4.95 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/qrL_qt--q5jM7PA3sNqbYQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

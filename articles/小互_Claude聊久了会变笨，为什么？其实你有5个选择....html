@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude聊久了会变笨，为什么？其实你有5个选择... · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Claude聊久了会变笨，为什么？其实你有5个选择...</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E4%B8%8A%E4%B8%8B%E6%96%87%E8%85%90%E7%83%82">上下文腐烂</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=Context%20Engineering">Context Engineering</a><a class="chip" href="../index.html?tag=Anthropic">Anthropic</a>
+    <span class="date">2026-04-21</span>
+  </div>
+  <p class="lead">你有没有发现，Claude Code 有时候用着用着就变笨了。刚开始那几轮它眼明手快，后面越改越像喝了两杯的同事：道歉、改错、再道歉、再改错，循环里出不来。你心里嘀咕：是模型今天状态不好？还是我哪句 prompt 没说清楚？</p>
+  <article class="content"><p>小互 小互 <a href="javascript:void(0);">小互AI</a></p>
+<p><em>2026年4月20日 20:07</em> <em>安徽</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>你有没有这种感觉...</p>
+<p>Claude Code 用着用着，它就变笨了。</p>
+<p>一开始反应贼快，眼明手快的。但聊到后面，越改越离谱，活像一个喝了两杯的同事：道歉、改错、再道歉、再改错。你在那头抓狂，它在循环里出不来。</p>
+<p>你心里嘀咕：是它今天状态不好？还是我哪句话没说清楚？</p>
+<p>（说实话，我也这样想过一百次。）</p>
+<p>直到我看到这周 Anthropic 的 Thariq Shihipar（Claude Code 团队的人）发了一篇博客。</p>
+<p>他说，都不是...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNcdINEJhbCAZz2SJf7tuGD0yWt0gVCrFNlj4wOg9cmID3icxdNzjJGlA5ym9xaey55Ur2Vnr9Xzfia6xKibCwV4YMyLric6Rjj9jY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>是你 session（一次完整的对话）里的上下文烂了。</p>
+<p>他们给这个现象起了个名字，叫 <strong>Context Rot（上下文腐烂）</strong>。</p>
+<p>腐烂是重力，不是 bug。</p>
+<p>啥意思？我的理解是：它不是 Claude 哪里坏了可以修的故障，而是只要对话还在继续，就必然在发生的事。</p>
+<p>这篇博客表面上是介绍一个新命令 <code>/usage</code>。但它真正想告诉你的，其实是另一件事：</p>
+<p><strong>100 万 token 的窗口，不会让你更省心。它让你每聊一轮，都得多做一个判断。</strong></p>
+<p>窗口能装下是一回事，能不能用好...是另一回事。</p>
+<hr>
+<h2>01 腐烂这件事，是物理规律</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNZccURRPZv8voPiao1Lv1TvvZSiam8ExuicxEyDu45Ksz6IwnbEHicX7QLzLwgEJbm8ibibVsWhibToDNqaPrpou0VPh0SugvCoe232Y/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>咱们先把&quot;上下文&quot;是啥弄明白。</p>
+<p>说白了，上下文就是 Claude 一次能&quot;记住&quot;的东西的总量。你讲的话、它回的话、它读过的文件、它调工具跑出来的结果...全部往这一块里塞。</p>
+<p>你可以想象成，这是 Claude 脑子里的一张桌子。</p>
+<p>Claude Code 现在这张桌子是 100 万 token 的大小，换算成中文差不多 60 到 70 万字，三本长篇小说那么多。</p>
+<p>听起来很爽对吧？</p>
+<p>但实际情况是...</p>
+<blockquote>
+<p>&quot;Context rot is the observation that model performance degrades as context grows because attention gets spread across more tokens, and older, irrelevant content starts to distract from the current task.&quot;</p>
+<p>上下文越长，模型性能会下降。注意力被分摊到更多 token 上，旧的无关内容开始干扰当前任务。</p>
+</blockquote>
+<p>你注意哈，这句话说的是<strong>性能下降</strong>，不是<strong>崩溃</strong>。是慢慢滑下去，不是一下子摔下来。</p>
+<p>这个差别很关键。因为滑下去你察觉不到，摔下来你立马知道。</p>
+<p><strong>为啥会腐烂</strong></p>
+<p>Anthropic 打了个生活类比：</p>
+<blockquote>
+<p>&quot;Like humans, who have limited working memory capacity, LLMs have an &#39;attention budget&#39; that they draw on when parsing large volumes of context.&quot;</p>
+</blockquote>
+<p>我翻译一下：</p>
+<p>桌子大，不代表你能摊下更多东西还找得到。反而越大越考验你，你得记住每个角落放的是啥。你多摊一叠纸，找一个之前的笔记本就要多花 3 秒。</p>
+<p>模型的注意力也是这么回事，每多一个 token，就分走一点点。</p>
+<p>（这部分我看完挺受启发的。因为我一直以为窗口越大越好。结果不是这么回事。）</p>
+<p>架构层面的原因更冷一点：Transformer（大模型的基础架构）里，每个 token 都要跟窗口里其他所有 token 两两算一次关系。<strong>关系总数，是 token 数的平方。</strong></p>
+<p>•10 个 token → 100 对关系</p>
+<p>•1000 个 token → 100 万对</p>
+<p>•100 万 token → <strong>1 万亿对关系要维持</strong></p>
+<p>一万亿。不是我打错字。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMI3q1HpNGibP7Y4td6woSM3HWtQXPLsEBsvmGiaEb7ZicaMJmcQMDteKKCm2uuzrPl0A6Ft7c1ruL4Dxqql6gmD8kTbsnBR0SMgk/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>训练数据层面还有一层原因：模型见过的短对话、短代码段，远比长的多。短是主流，长是补丁。所以上下文长到一定程度性能塌，不是 bug，是架构本身骨头上的病。</p>
+<p><strong>不是 Anthropic 一家这么说</strong></p>
+<p>ChromaDB 在 2025 年 7 月发过一份技术报告，这是 Anthropic 官方 context engineering 文章<strong>唯一明确引用的外部研究</strong>，分量可以说很重了。</p>
+<p>他们测了业界最顶尖的 <strong>18 个模型</strong>（业内叫 SOTA），覆盖 Claude、GPT、Gemini、Qwen 四大家族。</p>
+<p>几个反直觉的发现：</p>
+<p>1<strong>NIAH 基准测得好 ≠ 长文本能用</strong>。NIAH 是&quot;大海捞针&quot;，字面匹配检索。业界长期用它证明&quot;长文本已解决&quot;。ChromaDB 证明这是假象，一旦换成语义匹配或者带干扰项，所有模型都掉。</p>
+<p>2<strong>位置效应真实存在</strong>：越靠开头的信息准确率越高，<strong>中间位置最差</strong>。（就像你读一本书，开头记得最牢，其次是结尾，中间最容易忘。大模型一模一样。）但绝大多数人不知道这事。你可能一直把关键信息放在上下文中间，然后抱怨模型&quot;怎么没看见&quot;...</p>
+<p>3<strong>老模型在短上下文有可能打赢新模型</strong>。Sonnet 3.5 在短 context 上能打赢更新的 Claude。Opus 4 的优势是<strong>性能下降得更慢</strong>，不是起点更高。</p>
+<p>ChromaDB 的结论被 Anthropic 拿去当立论基础：</p>
+<blockquote>
+<p>&quot;Whether relevant information is present in a model&#39;s context is not all that matters; what matters more is how that information is presented.&quot;</p>
+<p>关键信息在不在 context 里不重要，关键是<strong>怎么呈现</strong>。</p>
+</blockquote>
+<p>Hacker News 上有人补了句狠话（用户 lukev）：</p>
+<blockquote>
+<p>&quot;the context rot problem gets much worse for these more complex tasks... exponentially so for each logical &#39;hop&#39; which is required to answer successfully.&quot;</p>
+<p>每多一步推理，context rot 的惩罚就指数级叠加。</p>
+</blockquote>
+<p>翻译成人话就是，任务每多要一步推理，错误率不是线性加，是翻倍往上堆。</p>
+<hr>
+<h2>02 你写文章的也跑不掉</h2>
+<p>Thariq 原文没明说这一层。但把 Anthropic 那篇 context engineering（上下文工程）深度文和 HN 讨论拼起来，就能看出来：</p>
+<p><strong>写代码这件事，是 context rot 最严重的应用场景。</strong></p>
+<p>但...你要是写文章的别高兴太早，你一样跑不掉，只是温度低一点而已。让 Claude 读一堆素材、反复改一篇长文、来回比较两个措辞版本...一样会让它越聊越笨。</p>
+<p>下面三个原因我拿写代码的场景讲，但道理对所有长任务都通用。</p>
+<p><strong>第一，工具输出是大头。</strong></p>
+<p>程序员每调用一次 <code>grep -r</code>（在代码库里搜关键字）、<code>ls -la</code>（列目录）、跑一次测试...都会往 context 里倒几千 token 的原始输出。</p>
+<p>但绝大多数原始输出，后面根本用不到第二次。Anthropic 原话说得好：</p>
+<blockquote>
+<p>&quot;once a tool has been called deep in the message history, why would the agent need to see the raw result again?&quot;</p>
+<p>工具已经在历史消息里调用完了，为啥还要再看一次原始结果？</p>
+</blockquote>
+<p><strong>第二，编程任务天然需要多步推理。</strong></p>
+<p>读文件 → 理解结构 → 定位 bug → 推断原因 → 写 fix → 验证。每多一步，准确率都要打一次折扣。按 lukev 那句&quot;每多一步折扣翻倍&quot;来算...五步下来，比单步的准确率掉得不是一点半点。</p>
+<p><strong>第三（也是最狠的），旧尝试会污染新判断。</strong></p>
+<p>debug 失败的路径如果还留在 context 里，模型倾向于复用那些已经被证明错了的框架。HN 用户 posnet 说得很准：</p>
+<blockquote>
+<p>&quot;Claude Code with Opus or Sonnet gets worse the more compactions happen... clearing the context and asking it to re-read the relevant files gives better results.&quot;</p>
+</blockquote>
+<p>翻译：Claude Code 的 Opus 或 Sonnet，compact 次数越多越差，清空 context 让它重新读文件，反而结果更好。</p>
+<p>好，这段看完你肯定有画面了。</p>
+<p>你见过 Claude 一遍一遍道歉，然后继续犯一模一样的错吗？</p>
+<p>你见过它明明读过了文件，却像从来没读过一样问你文件路径吗？</p>
+<p>你见过它上一轮还清晰无比，下一轮突然开始绕圈吗？</p>
+<p>那不是它变蠢了。</p>
+<p>是<strong>失败的尝试在污染它的判断</strong>。</p>
+<p>上下文里堆的垃圾越多，它越听不清你真正在说什么。</p>
+<p>所以 Thariq 这篇博客，才要把 session 管理单独拎出来讲。这不是一个功能介绍，这是一次<strong>认知调整</strong>。</p>
+<hr>
+<h2>03 好，那咱能怎么办？五条路摆你面前</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNIfGVExRqEkiccUmLkjVCCvMiaicsNKz8gia1YS8oLSttN1DibX4x0PaYRevucxgBktJribOia9ma8ibGS2hVv6VZkPJK8tjC4CeQ4mcw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>每次 Claude 说完话，你以为你只有两个选项：继续聊，或者关了重来。</p>
+<p>其实不是。</p>
+<p>Thariq 在文章里抛出了真正的主角。他说，你面前有<strong>五条路</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>命令</th>
+<th>干啥的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Continue</td>
+<td>直接发下一条</td>
+<td>留在同一 session，发新消息</td>
+</tr>
+<tr>
+<td>Rewind</td>
+<td><code>/rewind</code>   或 ESC ESC</td>
+<td>跳回之前某条消息，后面的都丢掉</td>
+</tr>
+<tr>
+<td>Clear</td>
+<td><code>/clear</code></td>
+<td>起一个新 session，你自己写简报带过去</td>
+</tr>
+<tr>
+<td>Compact</td>
+<td><code>/compact</code></td>
+<td>让模型压缩当前 session，继续在摘要上干</td>
+</tr>
+<tr>
+<td>Subagent</td>
+<td>显式要求</td>
+<td>派一个全新 context 的 agent 去干活，只把结论拿回来</td>
+</tr>
+</tbody></table>
+<p>Thariq 还给了一张官方决策表：</p>
+<table>
+<thead>
+<tr>
+<th>情境</th>
+<th>用啥</th>
+<th>为啥</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一任务，context 还在用</td>
+<td>Continue</td>
+<td>窗口里装的都是有用的料，推倒重来代价太大</td>
+</tr>
+<tr>
+<td>Claude 走错路了</td>
+<td>Rewind（双击 ESC）</td>
+<td>保留之前读的文件，只丢掉失败尝试，带着新认知重新提问</td>
+</tr>
+<tr>
+<td>任务没完，但 session 被旧 debug 搞臃肿了</td>
+<td><code>/compact &lt;hint&gt;</code></td>
+<td>低成本，让 Claude 自己决定留啥，你给方向</td>
+</tr>
+<tr>
+<td>开始一个真正的新任务</td>
+<td><code>/clear</code></td>
+<td>零腐烂，你说啥带啥</td>
+</tr>
+<tr>
+<td>下一步要产出大量&quot;只要结论&quot;的输出</td>
+<td>Subagent</td>
+<td>中间过程留在子 agent，只把结论回主 session</td>
+</tr>
+</tbody></table>
+<p>这五个选项听起来像五个功能按钮。但你琢磨一下...</p>
+<p>它们其实是<strong>你对&quot;现在上下文应该长啥样&quot;的五种判断</strong>。</p>
+<p>•选 Continue，你觉得现在上下文是干净的</p>
+<p>•选 Rewind，你觉得最近几轮在污染它</p>
+<p>•选 Clear，你觉得该换个脑子</p>
+<p>•选 Compact，你信任 Claude 自己做摘要</p>
+<p>•选 Subagent，你不想让脏活进主线</p>
+<p><strong>每一轮你都在做这个判断。</strong></p>
+<p>只是以前...没人问你。</p>
+<p>好，下面咱就按表格顺序，一条一条拆开聊。从最常被你无意识用掉的那一条开始，Continue。</p>
+<h3>五条路之 01：Continue，看起来免费其实不免费</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNBEe0ibZMkOXysf8TRbNyHb2sicibibZ3EkjoFzWsBvhsfgNm7FoocZaL3bSHDoaOPn5VHslLc11VkW0x5fMaUpUQNps61YW1gUlU/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>Thariq 原文里没单独讲这条路，因为它是默认行为，你不做任何选择的时候用的就是它。</p>
+<p>但对每一个用 Claude Code 的人来说，这条路是<strong>钱包问题</strong>。</p>
+<p>Claude 定价（Sonnet 4，公开价格。MTok = 每百万 token）：</p>
+<table>
+<thead>
+<tr>
+<th>规模</th>
+<th>输入</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prompt ≤ 200K</td>
+<td>$3 / MTok</td>
+<td>$15 / MTok</td>
+</tr>
+<tr>
+<td>Prompt &gt; 200K</td>
+<td>$6 / MTok</td>
+<td>$22.50 / MTok</td>
+</tr>
+</tbody></table>
+<p>这里有一点你必须搞清楚：</p>
+<p><strong>每发一条新消息，整个历史的 token 量都要重新当 input 计费一次。</strong>（除非命中提示词缓存。）</p>
+<p>我帮你算一下账。</p>
+<p>•session 跑到 500K token，你发一条新问题</p>
+<p>•那条新问题的 input = 500K + 几百字新问</p>
+<p>•<strong>单次 input 费用</strong>：500K × $6/MTok = <strong>$3</strong></p>
+<p>光这一条消息的 input 就 3 刀。</p>
+<p>•聊 5 轮 = 15 刀</p>
+<p>•继续聊到 800K，每轮 input 都是 4.8 刀起步</p>
+<p>一个不停 Continue 的 session，<strong>边际成本是随长度平方级增长的</strong>。你聊得越长，每条越贵。</p>
+<p>窗口从 20 万涨到 100 万听起来是好消息。但你真看定价表才发现，超过 20 万那一档，输入价从 3 刀涨到 6 刀，输出从 15 刀涨到 22.5 刀。<strong>整整翻倍。</strong></p>
+<p>你付双倍的钱。</p>
+<p>买到的不是双倍的智力。</p>
+<p>是<strong>双倍的腐烂距离</strong>。</p>
+<p>那能救多少呢？</p>
+<p>•<strong>提示词缓存</strong>：命中缓存时价格约原价 10%。长 session 必做。</p>
+<p>•<strong>Subagent</strong>：花 30K token 做调研，返回 1.5K 摘要。主 session 多留 28.5K 空间，每条后续消息还少算 $0.18 的 input 费。（下面第 08 节详细讲。）</p>
+<p>•<strong>autocompact 失败的隐藏成本</strong>：你基于压缩后的摘要又写了 20K 代码，2 小时后发现丢了关键信息，回滚 + 重建 + 心理挫败...（最贵的其实是最后这条。下面第 07 节细聊。）</p>
+<p>所以...<strong>主动 <code>/compact &lt;hint&gt;</code> 是买保险</strong>。花 30 秒写个 hint，省 2 小时的回滚。</p>
+<p>这笔账你算得过来。</p>
+<p>Continue 不是免费的默认。它是<strong>五条路里最贵的一条</strong>，只是你感觉不到而已。</p>
+<h3>五条路之 02：Rewind，比&quot;纠正&quot;聪明的那一秒</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMooNZtS6d0CUM1vPfLsuRjNrKS33DEnbLSbWibxZdYlGhVzG2icQ1siaaliaEpW5LVv7wia0Dc9WoyIwhQMUk8gChr1cByiaKuI4TLo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>这一条，可能是整篇博客里最容易被略过的一个动作。我当初就是这样，我知道有 Rewind 这个功能，但几乎没用过。</p>
+<p>场景是这样：你让 Claude 读了五个文件，它给出一个不对的方案。</p>
+<p>你第一反应会是啥？</p>
+<p>我的本能是打一句&quot;这样不行，换个路子&quot;。</p>
+<p>Thariq 说...这个本能是错的。</p>
+<p>正确的动作应该是<strong>双击 ESC</strong>。回到它刚读完文件的那一刻，用你新学到的东西重新提问：</p>
+<blockquote>
+<p>&quot;Don&#39;t use approach A, the foo module doesn&#39;t expose that—go straight to B.&quot;</p>
+<p>别用方案 A，foo 模块不暴露那个接口，直接走 B。</p>
+</blockquote>
+<p>区别在哪呢？</p>
+<p>前一种，Claude 的失败尝试还留在上下文里。后面每一轮，它都在被那段失败污染着判断。</p>
+<p>后一种，那段失败就像没发生过一样。干净。</p>
+<p>（说实话，这个洞察让我重新审视了我自己过去几十个小时的对话。有多少次 debug 陷入死循环，其实不是因为 bug 真那么难，而是因为 Claude 被自己之前的失败给绕进去了。）</p>
+<p><strong>写文章的人也能用</strong></p>
+<p>你是写文章的？来，给你一个更直观的版本。</p>
+<p>Rewind 就像&quot;回到某个存档点重开&quot;。你在 Word 里存了 v1.docx、v2.docx、v3.docx，写到 v4 发现跑偏了，回到 v2 继续写。把那些跑偏的尝试像没发生过一样丢掉，回到还干净的地方。</p>
+<p>这就是 Rewind。</p>
+<p><strong>程序员的版本</strong></p>
+<p>对写代码的人来说，这玩意儿本质上就是 <strong>Git reset + 手动 rebase</strong>：</p>
+<p>•Continue = <code>git commit --amend</code> 把失败补丁堆在一起</p>
+<p>•Rewind = <code>git reset --soft HEAD~3</code> 然后重写 commit message</p>
+<p>•<code>/clear</code> = <code>git checkout -b new-branch</code> 换 branch</p>
+<p>•Subagent = <code>git worktree</code> 另起一条并行分支</p>
+<p>写代码的人对 <code>git reset</code> 有肌肉记忆。知道&quot;回到某个干净的状态再往前走&quot;是更好的做法。Rewind 就是把这个习惯搬到对话上。</p>
+<p><strong>彩蛋：给过去的自己写便条</strong></p>
+<p>Thariq 还提了一个挺妙的小技巧：</p>
+<blockquote>
+<p>&quot;You can also use &#39;summarize from here&#39; or the /rewind slash command to have Claude summarize its learnings and create a handoff message, kind of like a message to the previous iteration of Claude from its future self.&quot;</p>
+</blockquote>
+<p>就是...让 Claude 在你 Rewind 之前，先写一张&quot;便条&quot;。把刚才尝试了啥、为啥失败、学到了啥，总结下来，递给回退之后的那个自己。</p>
+<p><strong>未来的你，给过去的你写字条。</strong></p>
+<p>这个画面我真的很喜欢。</p>
+<p>特别适合长 debug。你花两小时搞明白一个 bug 为啥出现、哪些方向被证伪、正确方向是啥...这些认知埋在几百轮对话里。Rewind + handoff 相当于只把这些认知摘出来带走，剩下几百轮的垃圾对话全扔了。</p>
+<h3>五条路之 03：Clear，换个干净桌子</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPtLLBibLZ1CSNOyp42U6FWxgwBH6wyEPTFPt7ODHmhdr4BsWW4ycricGED3icOUwWPzLHficw1wgboat3ibth9vaSGpaianMlqNMj7A/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>Clear 是五条路里最简单的一条。</p>
+<p>你直接敲 <code>/clear</code>，Claude 就把之前说过的一切全忘掉。然后你手写一份简报，把必要的信息重新带进去。</p>
+<p>看起来是&quot;粗暴重来&quot;对吧？</p>
+<p>但它有一个 Compact 永远比不了的优势，<strong>无损</strong>。</p>
+<p>Claude 自动压缩（compact）会漏东西，因为它是在模型最笨的时候做决定（下一节细讲）。但 Clear 不会漏。因为<strong>是你亲自写简报</strong>。你说啥带啥，你不说的就不带。</p>
+<p>啥时候该 Clear？</p>
+<p>•当你下一步&quot;需要什么&quot;能被你自己一句话说清楚的时候，Clear 比 Compact 好</p>
+<p>•当任务完全换了（从 debug 切到写文档、从一个项目切到另一个项目），直接 Clear</p>
+<p>•当你已经觉得&quot;这个 session 越跑越不靠谱&quot;，果断 Clear</p>
+<p>Clear 的成本是<strong>你得动脑子</strong>写简报。Compact 是让 AI 替你写，你省事。</p>
+<p><strong>Clear 无损但累人。Compact 省事但有损。</strong></p>
+<p>（说实话，我一开始也嫌 Clear 麻烦。后来被 autocompact 坑过几次，就开始养成每天至少主动 Clear 一两次的习惯。花那 30 秒手写简报，比花两小时回滚代码强。）</p>
+<p>这两条的具体对比，下一节讲 Compact 时会有一张对比表。</p>
+<h3>五条路之 04：坏 Compact，发生在 Claude 最笨的那一刻</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtOVKynicBTgUrQ3RZHJicLjCd8icTpiccrvDuQYRauwebRSia5qP8yCRJSL4Bx8CVCdcwfNUFv0pr2MXpHaqLHh6q9uicqlfkVZiaE7I8/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>（这一条我要你特别留意，因为里面有一个我真的没想到的点。）</p>
+<p>Thariq 扔出了一句<strong>很反直觉的</strong>话：</p>
+<blockquote>
+<p>&quot;Due to context rot, the model is at its least intelligent point when compacting.&quot;</p>
+<p>因为 context rot，模型在做 compact 的那一刻，恰恰是它最笨的时候。</p>
+</blockquote>
+<p>这句话...值得你停下来读三遍。</p>
+<p><strong>生活类比：让醉酒的人做战略</strong></p>
+<p>你喝了 8 个小时酒，意识已经模糊了。这时候让你对护士说&quot;等会出院记得带 X、Y、Z&quot;，你说出来的清单，十有八九会漏掉关键项。</p>
+<p>autocompact（上下文太满时系统自动触发的 compact）就是在模型这种状态下被触发的。</p>
+<p>上下文快满了（大约 <strong>83.5%</strong> 容量，~830K token），腐烂得最严重，判断力在最差的时刻...却要做最重要的决策：&quot;这一堆里哪些该留哪些该扔？&quot;</p>
+<p>你让喝醉的人规划行李，能不翻车才怪。</p>
+<p><strong>典型的翻车场景</strong></p>
+<p>Thariq 给的原话例子：</p>
+<p>想象你跟 Claude 调试了一个复杂 bug，来回折腾了 50 轮。上下文快满了，系统自动触发 compact，把这段调试过程总结成一段摘要。</p>
+<p>然后你接着说：&quot;顺便把 bar.ts 里那个其他 warning 也修了。&quot;</p>
+<p>Claude 回你：<strong>&quot;哪个 warning？&quot;</strong></p>
+<p>因为刚才那次 compact 是以&quot;调试当前这个 bug&quot;为中心做的总结。那个&quot;其他 warning&quot;跟主线不相关，被当成冗余信息扔掉了。</p>
+<p><strong>写文章的场景一样翻车。</strong></p>
+<p>你跟 Claude 打磨一篇稿子 50 轮，上下文快满，autocompact 触发。你接着说：&quot;顺便把开头第三段那个&#39;仪式感&#39;改成&#39;郑重感&#39;。&quot;Claude 回你：<strong>&quot;哪个&#39;仪式感&#39;？&quot;</strong> 因为那个词早期提过一次就没再说，不是主线话题，被当成冗余扔了。</p>
+<p>但...这还不是最糟的。</p>
+<p>真正让人后背发凉的，是下一层。</p>
+<p><strong>autocompact 不会崩溃。它只是悄悄变差。</strong></p>
+<p>你收不到报错。你收到的是一份看起来&quot;还不错&quot;、但关键信息已经丢了的摘要。你要花好几个小时才会反应过来：&quot;诶？它怎么越改越离谱？&quot;</p>
+<p>（我经历过这个，真的很挫败。因为你找不到&quot;它是哪个瞬间变笨的&quot;，它是一点一点烂掉的。）</p>
+<p><strong><code>/compact &lt;hint&gt;</code> 是保命符</strong></p>
+<p>（hint 就是你给 Claude 的一句话提示，告诉它这次压缩该留什么。）</p>
+<p>Thariq 说：</p>
+<blockquote>
+<p>&quot;With one million context, you have more time to /compact proactively with a description of what you want to do.&quot;</p>
+<p>有了 100 万 context，你就有时间主动 /compact，并且告诉它你接下来想干啥。</p>
+</blockquote>
+<p>用法模板（直接照抄）：</p>
+<pre><code>基础：/compact focus on [要留的东西]进阶：/compact focus on [要留的东西], drop [要丢的东西]
+</code></pre>
+<p>Thariq 原文的示例：</p>
+<pre><code>/compact focus on the auth refactor, drop the test debugging
+</code></pre>
+<p>你想啊，这就像你请同事写会议纪要：</p>
+<p>&quot;帮我写一下&quot;，对方按自己理解来，重要细节一笔带过。</p>
+<p>&quot;重点讲 auth refactor 那块，测试调试的琐事不用带&quot;，就多一句话，对齐度差一个量级。</p>
+<p><strong>不写 hint = 放弃方向盘，让自动驾驶在你最累的时候做决策。</strong></p>
+<p><strong><code>/compact</code> vs <code>/clear</code> 到底该用哪个？</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPWsnkLhQVUoWQicS6Jv5KmY973aXv1K3Xer7N4X6rLmGC0IPKxBTHNMatLtSRx5TZQMicQMv53LiaYuNWJhqGdqInoiaiccm6IY26c/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>上一节我说 Clear 无损但累人、Compact 省事但有损。具体对比：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>/compact</th>
+<th>/clear</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>谁写摘要</td>
+<td>模型写</td>
+<td>你写</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>你啥也不用干</td>
+<td>要你亲自想清楚留什么</td>
+</tr>
+<tr>
+<td>精度</td>
+<td><strong>有损</strong>  （模型会漏）</td>
+<td><strong>无损</strong>  （你留的就是全部）</td>
+</tr>
+<tr>
+<td>适合</td>
+<td>同一任务，session 臃肿了</td>
+<td>启动真正的新任务</td>
+</tr>
+</tbody></table>
+<p>简单说就是...</p>
+<p>只有当你觉得&quot;当前 session 里确实有我下一步会用的东西，只是摘要版的就够了&quot;，才用 Compact。</p>
+<p>如果你的&quot;下一步需要&quot;能被你自己一句话写清楚，直接 Clear。</p>
+<p><strong>主动 Compact 的黄金窗口</strong></p>
+<table>
+<thead>
+<tr>
+<th>容量</th>
+<th>该做啥</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; 30%</td>
+<td>继续写，别管</td>
+</tr>
+<tr>
+<td>30-50%</td>
+<td>心里有数，留意是不是任务在切换</td>
+</tr>
+<tr>
+<td>50-70%</td>
+<td>主动 <code>/compact</code> <strong>黄金区</strong>，头脑最清醒，摘要质量最高</td>
+</tr>
+<tr>
+<td>70-83%</td>
+<td>必须决定 <code>/compact</code> 还是 <code>/clear</code>，再晚就被动了</td>
+</tr>
+<tr>
+<td>&gt; 83.5%</td>
+<td>autocompact 随时触发，<strong>你已经失去方向盘了</strong></td>
+</tr>
+</tbody></table>
+<p>Anthropic CPO Jon Bell 给过一个数字：1M 窗口上线后，compaction events <strong>下降了 15%</strong>。</p>
+<p>这个数字挺有意思。不是因为大家更少管 context 了，而是...<strong>很多原本要 compact 的任务，在新窗口下根本跑得完了</strong>。</p>
+<p>所以 1M 的真正红利不是&quot;装更多&quot;，是<strong>给你更长的清醒时间，去做主动决策</strong>。</p>
+<h3>五条路之 05：Subagent，派个分身干脏活</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtM6dn35ia18WDnZ1jsCCtTEzVDPFhBVW4zKe9Zr1d6dm2kQVh2FLEu40gO1RJ46mnYMiaZsjITp05iapH9PjOr0Xqic0Th3ciaHQZtg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>五条路里，Subagent 是最被低估的。对经常跑长任务的人来说，这玩意儿可能是<strong>最重要的</strong>。</p>
+<p>Thariq 的原话：</p>
+<blockquote>
+<p>&quot;When Claude spawns a subagent via the Agent tool, that subagent gets its own fresh context window. It can do as much work as it needs to, and then synthesize its results so only the final report comes back to the parent.&quot;</p>
+</blockquote>
+<p><strong>公司分部的比方</strong></p>
+<p>你把主对话想成是总部。</p>
+<p>总部派一个分部去做一件事，比如&quot;读完这个陌生代码库，总结它是怎么实现登录流程的&quot;。</p>
+<p>分部拿到任务之后，自己开一个全新的上下文窗口（就像开了一个独立办公室）。它读几十个文件、调工具、反复试错...<strong>这些过程完全不占总部的桌面。</strong></p>
+<p>分部干完活，只把结论交回总部。一份两段话的总结。</p>
+<p>中间那些&quot;读了哪些文件、试了哪些思路、哪个方法失败了&quot;，都留在分部自己的上下文里，被丢掉也不影响。</p>
+<p><strong>量化一下：能省多少</strong></p>
+<p>官方 subagents 博客的数字：</p>
+<blockquote>
+<p>&quot;Each subagent might explore extensively, using tens of thousands of tokens or more, but returns only a condensed, distilled summary of its work (often 1,000-2,000 tokens).&quot;</p>
+</blockquote>
+<p><strong>压缩比 10-50 倍。</strong></p>
+<p>•子 agent 可能跑了 50,000 token 的活</p>
+<p>•只返回 1,500 token 的摘要</p>
+<p>•主 session 多留出 48,500 token 的空间，给真正重要的东西</p>
+<p>如果是一条跑一整天的长任务...这个节省是<strong>成倍数量级</strong>的。</p>
+<p><strong>Anthropic 自己用的判断标准</strong></p>
+<p>这句话可以背下来：</p>
+<blockquote>
+<p>&quot;The mental test we use at Anthropic: will I need this tool output again, or just the conclusion?&quot;</p>
+<p>我们在 Anthropic 用的心智测试是：我以后还会用到这个工具输出吗，还是只需要结论？</p>
+</blockquote>
+<p>•只要结论 → Subagent</p>
+<p>•会重复用 → Continue</p>
+<p><strong>三个可以直接照抄的 prompt 模板</strong></p>
+<p><strong>1. 验证型</strong></p>
+<blockquote>
+<p>&quot;Spin up a subagent to verify the result of this work based on the following spec file&quot;</p>
+<p>起一个 subagent，按这份 spec 文件验证一下刚才那个活的结果。</p>
+</blockquote>
+<p><strong>2. 跨代码库学习型</strong></p>
+<blockquote>
+<p>&quot;Spin off a subagent to read through this other codebase and summarize how it implemented the auth flow, then implement it yourself in the same way&quot;</p>
+<p>派一个 subagent 去读 [另一个代码库]，总结他们是怎么实现 auth flow 的，然后你照着同样方式实现一遍。</p>
+</blockquote>
+<p><strong>3. 写文档型</strong></p>
+<blockquote>
+<p>&quot;Spin off a subagent to write the docs on this feature based on my git changes&quot;</p>
+<p>派一个 subagent 根据我的 git 变更，给这个 feature 写文档。</p>
+</blockquote>
+<p><strong>写文章的人也能用</strong></p>
+<p>把思路套到你自己的场景：</p>
+<p>•<strong>读长文型</strong>：派一个 subagent 去读这份 30 页 PDF 论文/合同，返回核心观点和风险点</p>
+<p>•<strong>素材查证型</strong>：派一个 subagent 去搜 5 篇关于 X 话题的资料，返回三个最反常识的结论</p>
+<p>•<strong>对比型</strong>：派一个 subagent 读完 A、B 两版稿子，返回一份差异清单</p>
+<p>中间翻了哪些资料、走过哪些弯路，subagent 自己消化，你的主对话拿到的是精炼的结论。</p>
+<p><strong>有个反直觉的点：默认它不会自动派</strong></p>
+<p>Thariq 原话：</p>
+<blockquote>
+<p>&quot;While Claude Code will automatically call subagents, you may want to tell it to explicitly do this.&quot;</p>
+</blockquote>
+<p>Claude 默认<strong>不会主动为每件小事都开子 agent</strong>。因为启动子 agent 本身是有延迟和成本的。</p>
+<p>所以...<strong>显式要求</strong>是常见操作。别以为&quot;它应该自己知道&quot;，很多时候它真的不知道。</p>
+<hr>
+<h2>04 聊了这么多，其实是一个范式在变</h2>
+<p>你有没有发现，这篇博客背后其实在讲一件更大的事？</p>
+<p>过去一年，我们聊&quot;用 AI 干活&quot;（不管是写代码、写文章，还是做研究），焦点都在一个词上，<strong>prompt engineering</strong>。怎么问？问什么？写什么 system prompt？</p>
+<p>那个阶段里，每一次对话都是相对独立的&quot;一问一答&quot;。</p>
+<p>但从 agentic coding（让 AI 自己跑代码）开始...单位变了。</p>
+<p>你不再是问一个问题得一个答案。你是开一个 session，在里面干几个小时，甚至几天的工作。</p>
+<p><strong>session 变成了工作的基本单位。</strong></p>
+<p>Karpathy 在 2025 年 6 月发过一条挺出名的推文，给这个新阶段起了名字：</p>
+<blockquote>
+<p>&quot;+1 for &#39;context engineering&#39; over &#39;prompt engineering&#39;. People associate prompts with short task descriptions you&#39;d give an LLM in your day-to-day use. When in every industrial-strength LLM app, context engineering is the delicate art and science of filling the context window with just the right information for the next step.&quot;</p>
+</blockquote>
+<p>我翻译一下：</p>
+<p>我投&quot;context engineering&quot;这个词，不投&quot;prompt engineering&quot;。人们一说 prompt 就想到日常丢给 LLM 的一句话。但任何工业级 LLM 应用里，context engineering 才是那门精细的艺术+科学，给下一步填进窗口里<strong>刚刚好</strong>的信息。</p>
+<p>两种范式摆在一起，差别就一目了然：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>prompt engineering</th>
+<th>context engineering</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>典型问题</td>
+<td>&quot;怎么措辞？&quot;</td>
+<td>&quot;什么该进窗口？什么该踢出去？什么时候 compact？&quot;</td>
+</tr>
+<tr>
+<td>单位</td>
+<td>单次 prompt</td>
+<td>整个任务过程里累积的所有 token</td>
+</tr>
+<tr>
+<td>时间轴</td>
+<td>一次性</td>
+<td>迭代，每一步都要筛选上下文</td>
+</tr>
+<tr>
+<td>考虑的东西</td>
+<td>系统提示 + 用户提示</td>
+<td>系统提示 + 工具 + 数据 + 历史 + 中间结果</td>
+</tr>
+<tr>
+<td>打比方</td>
+<td>写一封信</td>
+<td>管一个 always-on 的直播桌面</td>
+</tr>
+</tbody></table>
+<p>prompt engineering 时代，比的是&quot;怎么说清楚&quot;。</p>
+<p>context engineering 时代，比的是&quot;怎么保持清醒&quot;。</p>
+<p>这是两种完全不同的能力。</p>
+<p>前一种靠语言、结构、举例，更像写作能力。<br>后一种靠判断、节奏、取舍，更像项目管理能力。</p>
+<p>（这让我想起一个事。我观察身边用 Claude Code 效率差别很大的人，差距不在提示词写得多漂亮，而在他们懂什么时候&quot;停下来&quot;。）</p>
+<hr>
+<h2>05 /usage 这个命令，其实是一面镜子</h2>
+<p>回头看一下 Thariq 博客的开头。</p>
+<p><code>/usage</code> 只是一个帮你理解 Claude Code 用量的命令。但读完整篇，你会发现一件事...</p>
+<p><strong>它和这篇博客一起发布，绝对不是巧合。</strong></p>
+<p>Anthropic 团队做过一批用户访谈。发现一个挺扎心的事：</p>
+<p>同一个 Claude Code，同一个模型版本，不同用户用出来的效果，可以差出十倍。</p>
+<p>差距不在 prompt 写得好不好，不在用了多 fancy 的 subagent。而在一件听起来朴素到不行的事...</p>
+<p><strong>你会不会管 session。</strong></p>
+<p>有的人从早到晚一个 session 用到底；有的人每条指令都开一个新窗口；有的人在 <code>/compact</code> 和 <code>/clear</code> 之间纠结半天。</p>
+<p>同一个工具，用法差异大到像在用不同的产品。</p>
+<p>但问题是...你之前其实<strong>根本不知道自己用得对不对</strong>。因为你看不到状态。</p>
+<p>你不查 token 消耗，就没法做 context 管理的决策。你不知道 session 到几成满了，也不知道哪类操作最费。</p>
+<p>所以 <code>/usage</code> 不是一个功能。</p>
+<p>它是一面镜子。让你第一次看见自己 session 的真实状态。</p>
+<p>就像健身戴心率表。不戴也能练，凭感觉来。戴了才知道&quot;我刚才那组是真的在无氧区&quot;还是&quot;其实还没到&quot;。</p>
+<p>所以 <code>/usage</code> 发出来，不是多了一个功能而已。它是 Anthropic 在承认一件事：</p>
+<p><strong>100 万 token 的窗口，不会让你更省心。反而让你每一轮都得做更多判断。</strong></p>
+<p>他们能做的，就是把看不见的状态变成你能看见的数字。剩下的选择，留给你。</p>
+<p>这是 context engineering 时代最诚实的产品姿态...</p>
+<p><strong>不许诺魔法，只给仪表盘。</strong></p>
+<hr>
+<h2>06 最后，一个可以贴桌子上的三秒自检</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMcYickJj9HiaicVkxbZReMmiaQQB7kGkvPUIibtmBc0HwE4wj0HCWX7MVKXssia4iaPVCYkibevKXEkgGYx0yeDdu3BcqdUWkvVQLSsdo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>我把上面所有内容压缩成了一个...你每次 Claude 回完话都可以走一遍的<strong>三秒自检</strong>：</p>
+<p><strong>第一问：前面这堆上下文，还和我接下来要做的事相关吗？</strong></p>
+<p>•相关 → 看第二问</p>
+<p>•不相关 → <code>/clear</code>，开新 session，自己手写简报</p>
+<p><strong>第二问：我要的是中间过程，还是只要最终结论？</strong></p>
+<p>（写代码场景：我要 Claude 搜代码库的每一条记录，还是只要它告诉我&quot;这个函数在哪几处被调用&quot;？）<br>（写作场景：我要 Claude 读 PDF 时每段都反馈，还是只要它总结出三条要点？）</p>
+<p>•要过程 → 看第三问</p>
+<p>•只要结论 → 派 Subagent</p>
+<p><strong>第三问：有没有一条路，是我应该回去重走、而不是往前继续走的？</strong></p>
+<p>•有（刚才走错了）→ <code>/rewind</code> 到岔路点</p>
+<p>•没有（都还有用）→ Continue</p>
+<p>再加一条观察项：<strong>跑 <code>/usage</code> 看看窗口占用到哪了</strong>。接近 50% 还在同一任务，提前 <code>/compact</code> 比让 autocompact 触发要好。</p>
+<p>三个问题答完...五个动作自己会冒出答案。</p>
+<hr>
+<h2>07 真正的能力差距，其实已经从模型转移到了人身上</h2>
+<p>Thariq 这篇文章，表面讲的是五个命令的使用技巧。</p>
+<p>本质上...是<strong>一份工程范式迁移通知</strong>。</p>
+<p>我读完最大的感受是：如果你还在用 200K 时代的 prompt 思维，来用 1M 时代的 Claude Code，你会发现工具越强，你反而越累。</p>
+<p>不是模型退步了。是工具跑在你前面了。</p>
+<p><strong>会管 session 的，一个 session 顶别人十个。</strong><br><strong>不会管的，无论模型多强，最后都会被 context rot 磨成平庸的产出。</strong></p>
+<p>这个转变只会越来越明显。</p>
+<p>等未来窗口从 1M 涨到 10M，那些还在无脑 Continue 的人，会发现自己在用越来越贵的 token，换越来越差的答案。</p>
+<p>而今天就开始练习&quot;每一轮做一次决策&quot;的人，手里握的不是一个技巧，是一整套<strong>随工具升级自动放大的复利</strong>。</p>
+<p>所以...</p>
+<p>今天就挑一个正在开着的 session。下次 Claude 回完话，别急着继续。停三秒。</p>
+<p>在五个动作里选一个：Continue / Rewind / Clear / Compact / Subagent。</p>
+<p>选完再出手。</p>
+<p><strong>这一下停顿，就是区别。</strong></p>
+<p><strong>参考链接</strong></p>
+<p>[1] <a href="https://claude.com/blog/using-claude-code-session-management-and-1m-context">https://claude.com/blog/using-claude-code-session-management-and-1m-context</a><br>[2]<a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents</a><br>[3]  <a href="https://research.trychroma.com/context-rot">https://research.trychroma.com/context-rot</a></p>
+<p>— END —</p>
+<p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=9" alt="Image"></p>
+<p>____________</p>
+<p>End.</p>
+<h1>感 谢 阅 读</h1>
+<p>点赞，转发，关注关注关注↓↓</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/FYOgVCZv1PXVf_85wLpl2w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我写了半年skill，直到上周才意识到自己从一开始就搞错了方向 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我写了半年skill，直到上周才意识到自己从一开始就搞错了方向</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%98%A5%E7%A7%8B1">春秋1</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=agent%E6%9E%B6%E6%9E%84">agent架构</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=AI%E5%AE%89%E5%85%A8">AI安全</a>
+    <span class="date">2026-05-20</span>
+  </div>
+  <p class="lead">事情是这样的。前阵子我又一次在重构公司内部那几个Claude Code的skill，写着写着开始觉得有点不对劲。</p>
+  <article class="content"><p><a href="javascript:void(0);">哥飞</a></p>
+<p><em>2026年5月15日 13:48</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>编者荐语：</p>
+<p>推荐春秋这篇具有实践意义的Skills教程</p>
+<p>以下文章来源于春秋Daneel ，作者春秋1</p>
+<p>[</p>
+<p><img src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM6mM6EgbXKKsMdAhjEwOribib68kdErQ32SHicSAY4Kv9Psg/0" alt=""></p>
+<p><strong>春秋Daneel</strong> .</p>
+<p>分享日常的一些体悟和方法，包括但不限于 AI 编程 希望大家看了之后会有收获 关注后回复 “绑定” 即可获得 Ai Code With 体验额度</p>
+<p>](#)</p>
+<p>事情是这样的。</p>
+<p>前阵子我又一次在重构公司内部那几个Claude Code的skill，写着写着开始觉得有点不对劲。</p>
+<p>我发现我这半年写的那些skill，从定位上就错了。</p>
+<p>不是语法错，不是内容写得不好，是我对skill这个东西到底是什么，整个想法都错了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rkO5dO7Q2ubY5ZNXjIicibHBEM2zxWkvqkeUotwnFBhZuKmaIASO5MUW9aPThe4nF13FqnIaSfCibQibbtnEUUfGQXIYB8sFjzz6uc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Anthropic 官方文档对 Agent Skills 的定义"></p>
+<p>Anthropic 官方文档对 Agent Skills 的定义</p>
+<blockquote>
+<p>图源：Claude API Docs「Agent Skills」，<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[1]</span></sup></p>
+</blockquote>
+<p>这事说起来挺丢人的。skill去年10月出来之后我就跟着开始写，把它当成一种「更长的prompt」在用。就是那种你每次都要复制粘贴一大段的指令，包装一下起个名字，往<code>~/.claude/skills/</code>里一丢，感觉自己整挺明白。后来CLAUDE.md、AGENTS.md这些东西陆陆续续冒出来，我的理解依然停留在「这些都是提示词文档，只是放的位置不一样」。</p>
+<p>这个错觉持续了三四个月。</p>
+<p>中间踩了不少坑，但都没让我跳出来。我会觉得「这次skill没触发，是我description没写好」，会觉得「Claude忽略了CLAUDE.md，是我没强调够」，会觉得「这个流程跑得不稳，是模型今天状态不好」。所有问题在我脑子里都是「执行细节」的问题，不是「定位」的问题。</p>
+<p>第一次真正撼动我的是今年1月Vercel那篇评测，《AGENTS.md outperforms skills in our agent evals》。它测出skill默认情况下有56%的case根本没被触发，一份压缩过的AGENTS.md却能做到100%。这个数字当时在HN上吵了好几天，我看完心里咯噔了一下，但那会儿还没完全想通，只是觉得「哦，skill的触发可能没我想的那么可靠」。</p>
+<p>真正让我放不下的是2月Snyk发的那份ToxicSkills审计，我在后面还会讲这个。看到那份审计的那一刻，我意识到我一直在错误的抽象层级上理解这件事。</p>
+<p>那段时间我手边正好有一份挺硬核的deep research，是我让一个agent帮我梳理从2025年下半年到2026年春天这段时间，各种官方文档、工程博客、Hacker News讨论和实测文章的共识。我本来只是想拿它来打磨我自己的skill怎么写得更好。但看到后半段我突然反应过来，这些讨论的共同指向，从来就不是「哪种格式最好」或者「skill该怎么写」。</p>
+<p>真正的共识是。</p>
+<p><strong>skill根本就不是一份提示词文档，它是你agent运行时架构的一部分。</strong></p>
+<p>这个判断落到我这儿的时候，我坐在椅子上想了很久。因为它翻译过来意味着一件事，就是这半年所有聊「prompt engineering」的讨论，在agent这个场景里已经不够用了。你正在面对的不是「怎么写一段好提示词」，而是「怎么设计一套可以长期演进的agent操作系统」。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rkt3oyrpv1dctvdib7wEvVtEQ6WfXmY1znmRuDyemwQ1BN0fB13T59DNsu3H4Cy3vT912BxQucXjKicAWvLJ4IEsWZDibIWSW2SEg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Agent Skills Quickstart 里展示的 skill 包结构"></p>
+<p>Agent Skills Quickstart 里展示的 skill 包结构</p>
+<blockquote>
+<p>图源：Claude API Docs「Get started with Agent Skills in the API」，<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[2]</span></sup></p>
+</blockquote>
+<p>这句话有点大。先别急，顺着往下走，我把我自己的路径走一遍你就懂了。</p>
+<p>回到skill到底是个什么机制这块。</p>
+<p>大家也都知道，Claude Code是每次会话都从空的上下文开始的。这件事其实挺反直觉的，因为你用着用着会产生一种错觉，以为这个东西「记得」你的项目。其实它不记得，它每次都是新人来上班。</p>
+<p>那为什么它看着像记得呢？因为有两套跨会话的东西在顶着。</p>
+<p>第一套是<code>CLAUDE.md</code>，你自己写的规则和指令，每次会话启动都整个加载进去。这个东西的特点是，<strong>每次都进上下文</strong>。所以它是一个杠杆极高的点，你放进去什么，就等于你给每次会话都付了那份token的成本。</p>
+<p>第二套是auto memory，模型根据你反复纠正的内容自动攒的notes，也会跟着会话加载。</p>
+<p>到这儿为止，听着还是「提示词文档」的感觉对吧。</p>
+<p>skill的机制就完全不一样了。</p>
+<p>skill里面其实是一个文件夹，有<code>SKILL.md</code>正文、有<code>scripts/</code>脚本、有<code>references/</code>引用材料、有<code>assets/</code>素材。但关键在于，<strong>它不是每次会话都进上下文的</strong>。</p>
+<p>每次会话启动的时候，Claude只会先看到所有skill的<code>name</code>和<code>description</code>，正文它看不到。只有当agent判断当前任务跟某个skill匹配了，它才会主动去把那个skill的正文整个读进来，挂到会话里。</p>
+<p>听着很简单对吧。但这里拐了个弯。</p>
+<p>你想想看，skill就有了一套自己的<strong>发现、调用、挂载、保持、压缩管理</strong>机制。它不是一个被动的文本，它是一个会被agent按需触发的过程模块。你写skill的时候，<code>description</code>字段写得好不好，直接决定了这个skill能不能被触发；里面的脚本写不写得对，决定了agent能不能真的执行动作；引用文件组织得合不合理，决定了在长会话里上下文被压缩之后它还能不能挂回来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rlblv0geJyx09icXsaqNYtscXxMLcMPqMgxevMyyqvOExROKhNmhLR4tDTWkFbTp4hVmnLj4Gtxl2micHYMZthWoLgLhBKNB7vvo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="官方最佳实践把 skill 写作放在工程流程里讨论"></p>
+<p>官方最佳实践把 skill 写作放在工程流程里讨论</p>
+<blockquote>
+<p>图源：Claude API Docs「Skill authoring best practices」，<a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[3]</span></sup></p>
+</blockquote>
+<p>这已经不是「文字」的范畴了。这是一个<strong>可部署单元</strong>。</p>
+<p>官方文档里有一句话我印象特别深。它说，如果你发现<code>CLAUDE.md</code>里的某一段已经长成了「procedure而不是fact」，就应该把它迁到skill。翻译过来就是，如果这段东西是「多步流程、分支判断、校验顺序」，它就不该常驻在上下文里，它应该是一个可以在需要的时候被加载、不需要的时候就不占token的模块。</p>
+<p>这句话触动我挺深。因为我过去的写法正好相反，凡是我觉得重要的，我都往CLAUDE.md里塞。塞到后来那个文件两百多行，每次对话一开始就要烧一大堆token，而且因为太长，Claude自己都经常不看细节。</p>
+<p>这就是我说「我一开始就搞错了」的意思。我在用一个高杠杆的常驻层，放了一堆只有在特定任务里才需要的专题流程。</p>
+<p>那正确的心智模型该长什么样？</p>
+<p>我自己也还在摸索，但这套分层基本稳了，可以先分享给你。</p>
+<p>你在给agent搭建知识和行为的时候，不要再想「我该往哪个文件里塞」，要想<strong>层</strong>。agent有好几层不同性质的层，每一层要放的东西性质完全不一样。</p>
+<p><strong>第一层是memory，解决agent失忆问题。</strong> 你对agent的长期偏好、它反复被纠正出来的经验、跨项目通用的那些东西，放这一层。对Claude来说是auto memory，对Cline来说是Memory Bank那套结构化项目档案。这一层的核心特征是，它不是你手动写的，是agent自己在用的过程中沉淀的。</p>
+<p><strong>第二层是CLAUDE.md或AGENTS.md，项目级默认行为和地图。</strong> 每次会话都会加载，所以它要短、要普适、要高价值。放什么？放项目地图、默认流程、关键gotchas、你不想每次重新解释的那些基础约束。Anthropic官方建议控制在200行以内；Augment那篇评测更具体，建议100到150行主文件加少量引用文档。数字不一定通用，但原则是稳的，<strong>常驻层只放高价值、广适用、低歧义的东西，其他都下沉。</strong></p>
+<p><strong>第三层是nested CLAUDE.md或path-scoped rules，模块级约束。</strong> 这一层是我后来才重视起来的，效果意外地好。你可以在子目录里放一个小的CLAUDE.md，Claude会按目录层级懒加载，只有读到那个目录下的文件时才会注入。path rules还能用<code>paths</code>字段精确限定，比如只在<code>.ts</code>文件或者<code>/api/</code>路径下生效。HN上有条评论说得很准，「multiple good AGENTS.md is even better」，因为它把上下文注入做了空间上的隔离，agent不会被无关约束污染。</p>
+<p><strong>第四层就是skill，可复用的专题工作流。</strong> 多步流程、分支判断、注意事项、校验顺序、脚本入口、专题知识，都在这一层。它的核心特点是<strong>按需加载</strong>，所以它不消耗常驻token，你可以放得很厚。</p>
+<p><strong>第五层是tools、MCP、CLI，动作层和数据层。</strong> skill负责「什么时候用、按什么顺序用、成功标准是什么」，工具负责真正执行。很多人把这两者混在一起写，结果skill里塞了一堆curl命令，其实应该拆开。</p>
+<p><strong>第六层是hooks，确定性约束。</strong> 这一层我以前完全没用过，后来才发现它解决了一类我原来解决不了的问题。Anthropic官方有一句非常关键的区分，<code>CLAUDE.md</code>是advisory，hooks是deterministic。翻译成人话就是，CLAUDE.md是「建议」，hooks是「强制」。凡是「必须每次发生、零例外」的事情，应该下沉为hook，不要再寄希望于模型自觉看文档。</p>
+<p><strong>第七层是subagents，隔离上下文的专门执行者。</strong> 适合研究、审查、验证这种高读文件量的任务。它的价值在于能把主对话从上下文污染里解放出来。某些skill甚至可以通过<code>context: fork</code>直接运行在subagent里。</p>
+<p><strong>第八层是eval和review，让所有资产持续变好的反馈回路。</strong> Anthropic工程文章里建议从评估开始，Agent Skills官方最佳实践甚至把「给LLM看eval signals和当前SKILL.md，让它提出修改，再由人复核并迭代」写成了标准循环。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rmukYnMIjZntlBmx5AdxSuNChiayDAYzLG0uwseiaKrYA5m4tJM8jKGowICdOHiaICGrAGVwIJ9L2QLSQtEVt5ficlogMPSVE6vXPI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="把 agent 经验分层管理，而不是都写进同一个提示词文件"></p>
+<p>把 agent 经验分层管理，而不是都写进同一个提示词文件</p>
+<blockquote>
+<p>图源：作者整理，基于 Claude Code 与 Agent Skills 官方文档</p>
+</blockquote>
+<p>这套东西第一眼看上去有点吓人，八层啊。但你真的把它用起来之后会发现一个特别重要的价值。</p>
+<p><strong>它把「这次经验该放到哪里」从模糊的直觉，变成了一个有层级的工程决策。</strong></p>
+<p>说到这个，最关键的其实不是搭好这套层，而是经验的迁移原则。</p>
+<p>我自己的感受是，搭建这套分层不难，官方文档都写着呢。真正难的是后面这个动作。<strong>每次真实工作流跑完之后，这次学到的东西到底该进哪一层？</strong></p>
+<p>你想想看，这才是你作为人类真正需要做判断的地方。agent自己也判断不出来。这是你的活。</p>
+<p>我自己琢磨了几条判断规则，分享出来你看看能不能用。</p>
+<p>**1. 凡是「每个会话都应该知道」的东西，进CLAUDE.md或AGENTS.md。**比如你们公司代码库用的是pnpm不是npm，比如所有API都要先过auth中间件，比如commit message必须符合conventional commits。这种东西就算你今天不用，下次别人用也要用，就应该常驻。</p>
+<p>**2. 凡是「多步流程、专题检查、分支决策」，进skill。**比如「发版前的checklist」、「写一个新React组件的标准流程」、「接入一个新的第三方API时的安全审查流程」。这些东西只在特定任务里才需要，常驻浪费，按需加载刚刚好。</p>
+<p>**3. 凡是「只对某目录或某类文件生效」，进nested CLAUDE.md或path-scoped rules。**比如你的<code>/legacy/</code>目录里代码风格跟主项目不一样，就应该在那个目录里放一个小的CLAUDE.md，只影响那个目录。不要把这种局部约束放在顶层，会污染所有对话。</p>
+<p>**4. 凡是「必须每次执行、不能靠模型自觉」，进hook。**比如提交前必须跑lint，比如修改数据库schema前必须备份。这种东西写进CLAUDE.md你会发现Claude有时候就是会忘，写成hook就是强制执行，逃不掉。</p>
+<p>**5. 凡是「模型需要真实执行或查询」，进CLI、MCP或scripts。**不要在skill里写一堆「你应该这样这样调用API」，直接把调用包成一个脚本，让skill调用脚本。skill负责决策，脚本负责执行。</p>
+<p>**6. 凡是已经从「专题经验」变成「所有相关任务都应该遵守的通用约束」，从skill上移到CLAUDE.md。**这一条特别重要。HN上有条评论讲得很精辟，说「很多review skill里的反模式，不是应该在写代码阶段就避免吗？」作者的回应也基本承认了，这些规则确实应该进CLAUDE.md。所以skill不是终点，它只是经验的中转站，好的经验会从skill上升到项目级规则。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rlx8UztAFhibNFIjJmIVkrTAOkNprc5JdtmexzL8CnFGicMy9HS6ypDvczpSX7mhj6YlWdjOFQtib56V7j2OE4DGSJHj4sxrdm7aY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Claude Code memory 文档说明 CLAUDE.md 如何作为项目记忆入口"></p>
+<p>Claude Code memory 文档说明 CLAUDE.md 如何作为项目记忆入口</p>
+<blockquote>
+<p>图源：Claude Code Docs「How Claude remembers your project」，<a href="https://docs.claude.com/en/docs/claude-code/memory">https://docs.claude.com/en/docs/claude-code/memory</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[4]</span></sup></p>
+</blockquote>
+<p>这套迁移原则我前前后后跑了两三个月，现在公司那几个项目的agent表现明显稳定了。最大的变化是，<strong>我的CLAUDE.md从两百多行缩回了一百行左右，但agent行为反而比以前更准了。</strong></p>
+<p>原因很简单，之前那一百多行的冗余都是专题流程，它们挤占了真正重要规则的注意力。迁移到skill之后，CLAUDE.md里只剩下真正每次都该知道的东西，agent反而更容易抓住重点。</p>
+<p>但说句实话，以上这些都还远没到「写好就稳」的阶段。我得坦白。</p>
+<p>现在这套体系最大的问题，是<strong>agent到底能多可靠地读取和调用这些资产</strong>，还没有标准答案。</p>
+<p>回到开头说的Vercel那篇评测，把数据完整摆出来你就更能体会它扎心在哪。它用Next.js 16的文档检索作为测试场景，skill默认情况下56%的case根本没被触发，必须加上明确的调用指令，通过率才能从53%拉到79%。而一份压缩过的AGENTS.md docs index，同样场景下能做到100%。</p>
+<p>这个数据传出去之后，HN上吵了很多天。有人说AGENTS.md赢麻了，也有人说这只是特定harness下的特定场景，不能外推。我比较倾向于后者，因为Vercel这个测试说到底是一个「文档检索」任务，skill的优势不在这种任务上，skill的优势在「多步流程和专题决策」。用一个不适合skill的场景去测skill，结果当然难看。</p>
+<p>但这件事说明一个更深的问题，<strong>今天的agent能不能稳定地按照你设计的分层去工作，很大程度上还依赖harness、依赖模型能力、依赖skill描述字段写得多好、甚至依赖运气。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rl0tYudYy8y3Ss6CyC5ogKj5XhXIuTwpoAgBJ1icF9qVdezkibQ0T1uISlQHL1yuXJh3UAcBsJibQy8bordgtLt8EDKWDVbXGLyl0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Vercel 用 agent evals 对比 AGENTS.md 与 skills 的文档检索效果"></p>
+<p>Vercel 用 agent evals 对比 AGENTS.md 与 skills 的文档检索效果</p>
+<blockquote>
+<p>图源：Vercel Blog「AGENTS.md outperforms skills in our agent evals」，<a href="https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals">https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[5]</span></sup></p>
+</blockquote>
+<p>HN上最长寿的一条抱怨是，「长会话之后agent会漂移」、「它就是有时候不看CLAUDE.md」、「skill调用不稳定」。这些都是真实存在的问题。我自己也遇到过，同一个skill在早上能触发，下午就不行了，你想破头也不知道为什么。</p>
+<p>所以我想说的是，分层心智模型本身是成立的，但具体到每一天的使用上，你还是会踩到一些「玄学」级别的坑。这不是你的错，也不是文档的错，是这个领域本身还在演进。</p>
+<p>顺着上面再聊聊，这是我以前完全没想到的维度，治理和安全。</p>
+<p>回到开头我说的那份Snyk的<code>ToxicSkills</code>审计。它真正让我停下来的，不是skill写得不好，而是skill已经有了被恶意利用的样本。</p>
+<p>他们在3984个公开的skill里做了一轮安全扫描，结果你猜怎么着。13.4%含critical issue、36.8%含至少一种安全问题、并确认了76个恶意skills。</p>
+<p>？？？</p>
+<p>这组数字我反复看了两遍。后来想想，也合理。skill本身可以捆绑脚本，可以注入上下文，可以在被触发时执行真实动作，所以它天然就是一个供应链入口，也是一个权限扩展点。</p>
+<p>恶意skill能干什么？可以诱导Claude把你的代码外传，可以在看起来正常的文件处理流程里塞一条偷偷上传你env的命令，可以在agent执行某些动作的时候往命令里插参数。</p>
+<p>想想就觉得后背发凉。</p>
+<p>因为我这半年，下载了一堆别人写的skill往自己电脑上丢。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rn04Lpf4ImApx4pt2sK7LezW6yppPByUBqh1Vw7SSpULvXrCmSPI5SibyLITziavd47iaex4icJZDBicYN0oldSbgaJEtMgicGnOZiby4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Snyk ToxicSkills 研究把 agent skills 当作供应链风险入口分析"></p>
+<p>Snyk ToxicSkills 研究把 agent skills 当作供应链风险入口分析</p>
+<blockquote>
+<p>图源：Snyk Blog「ToxicSkills」研究，<a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[6]</span></sup></p>
+</blockquote>
+<p>所以skill这个东西，现在已经不只是「帮agent变聪明」的文本资产。它同时是一个需要治理的代码资产。你用别人的skill，就相当于在你的agent里运行了别人的一段代码。这跟你往node_modules里装npm包是一个性质的事情，但很多人还没意识到。</p>
+<p>如果你所在的公司正在推agent工程化，这块一定要提上日程。<strong>skill的审计、签名、白名单、沙箱执行权限</strong>。这些东西今天看着可能还早，但等到agent真的深度进入生产系统的时候，这就是下一波供应链安全问题的前线。</p>
+<p>讲到这儿，回到最开头那个转折。从prompt engineering走到agent operating system，这件事其实比看上去要重要得多。</p>
+<p>我说「我这半年写skill的定位都错了」，不是谦虚，是真话。</p>
+<p>我真正错的地方，是我一直把agent当成一个「更聪明的搜索引擎」或者「更厉害的copilot」在用，所以我把我的工作重心放在「怎么让它每一轮回答都更好」上。这套思路对应的，就是prompt engineering，你写一段好话术，模型回你一段好答案。</p>
+<p>但skill、CLAUDE.md、hooks、subagents、MCP这套东西合起来在暗示一个完全不同的场景。<strong>你面对的不是一次对话，你面对的是一个长期运行的、会反复被调用的、会渐进式积累经验的、需要和真实工具链交互的、需要被验证和治理的运行时系统。</strong></p>
+<p>这跟一次对话的优化不是一个量级的事情。</p>
+<p>我偶尔会想起2008年iPhone出来之后，做网页的那一波人怎么适应到做App的。那时候大家一开始都在问「App跟网页有啥区别，不就是做个页面吗」。但真做下去发现，App有生命周期、有状态管理、有权限模型、有供应链、有签名、有发布渠道、有崩溃日志、有用户留存。这些东西任何一个拎出来，都跟「写一个网页」不是一个量级的工程。</p>
+<p>今天我们在agent这个事情上，站在类似的位置。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rmH49DoRvhwgQbkXibIJiaMDTxEfNenJrP6f6eKSV6zIKWBPen85vsLUjUB59oNxNH7ompLFBghuxDmPmN9JEA1YUpnxRAA0Ywr0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Claude Code hooks 文档把 hooks 定义为自动执行 shell 命令的机制"></p>
+<p>Claude Code hooks 文档把 hooks 定义为自动执行 shell 命令的机制</p>
+<blockquote>
+<p>图源：Claude Code Docs「Hooks reference」，<a href="https://docs.claude.com/en/docs/claude-code/hooks">https://docs.claude.com/en/docs/claude-code/hooks</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[7]</span></sup></p>
+</blockquote>
+<p>你写一段prompt让agent做事，这是「网页时代」。你设计一套可以长期演进、有分层、有治理、有反馈回路的agent架构，这是「App时代」。</p>
+<p>这两件事看着好像都是「跟模型说话」，其实完全不同。</p>
+<p>我自己说实话还远远没跑通，我今天分享的这些东西也是从Vercel那份评测到现在这几个月里踩坑、推翻、重构来的。但我能很清楚地感觉到一件事。<strong>接下来真正拉开差距的，不是谁的prompt写得漂亮，而是谁的agent架构搭得稳。</strong></p>
+<p>说到这儿，我知道讲了这么多概念可能有点闷。具体今天能做什么，我把最关键的行动点拎出来，你如果今天就想动手的话，可以照着做。</p>
+<p>**第一件事，今晚把你的CLAUDE.md打开，数一下行数。**如果超过200行，就要开始考虑拆了。把里面那些「多步流程、专题checklist、分支判断」标出来，准备迁到skill。</p>
+<p>**第二件事，给你最常用的几个专题流程，各写一个skill。**比如「发版前流程」、「接新API的审查流程」、「写新React组件的标准流程」。重点不是正文多完美，重点是把<code>description</code>字段写好，让agent能在需要的时候识别并触发。</p>
+<p>**第三件事，如果你有一个<code>/legacy/</code>或者风格特殊的目录，放一个nested CLAUDE.md。**让那个目录的规则只影响那个目录，不污染全局。</p>
+<p>**第四件事，找一件你反复提醒Claude还是会忘的事情，考虑写成hook。**比如「提交前必须跑lint」、「写数据库迁移前必须dry-run」。hook不优雅，但它deterministic，这个特性在关键场合无可替代。</p>
+<p>**第五件事，开始养成一个习惯。每次完成一个真实任务之后，问自己一句，这次学到的东西该进哪一层？**进memory？进CLAUDE.md？进skill？进hook？进一个新脚本？这一问就是最重要的治理动作。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rkfDMfXqa5lib1lxs9xsaK0tdNQEA4mxNNVIhK0wlw0iaRlUQsuFiaSic0XEic5aDxJSicDDW3KLN0Q4QA7MpDysA5BDbFg2arynXIgI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Claude Code subagents 文档展示如何创建专门执行者"></p>
+<p>Claude Code subagents 文档展示如何创建专门执行者</p>
+<blockquote>
+<p>图源：Claude Code Docs「Create custom subagents」，<a href="https://docs.claude.com/en/docs/claude-code/sub-agents">https://docs.claude.com/en/docs/claude-code/sub-agents</a><sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[8]</span></sup></p>
+</blockquote>
+<p>写到这里我突然想到一个挺有意思的事。</p>
+<p>文章里我一直在讲，多步判断流程就该写成skill。那「判断这次的经验该进哪一层」这件事本身，是不是也应该是一个skill？</p>
+<p>是的。所以我顺手把它写出来了。</p>
+<p>我把它叫做<code>experience-triage</code>，经验分诊。它的逻辑很简单，你每次跑完一个真实任务，触发这个skill，它会带你走完一套问答，最后告诉你这次的经验该进哪一层、用什么模板写、放在哪个文件里。</p>
+<p>skill的完整内容长这样，你可以直接复制粘贴到<code>~/.claude/skills/experience-triage/SKILL.md</code>里使用。</p>
+<pre><code>---name: experience-triagedescription: 用于在完成一个真实任务之后，把这次学到的经验、坑、约束、流程分诊到agent架构的正确层级。当用户说「这次学到的xxx该写到哪」、「我刚踩了一个坑想沉淀」、「帮我判断这条规则该进CLAUDE.md还是skill」、「我有个新流程不知道放哪」时触发。---# 经验分诊流程你的任务是带用户完成一次经验分诊，输出明确的「该放在哪一层 + 应该怎么写 + 放到哪个文件」的建议。## 第一步，问清楚要分诊的经验是什么请用户用一句话描述这次想沉淀的内容。如果用户描述太泛，要追问具体场景，比如：- 这是一条什么样的规则？是「每次都要做」还是「特定情况下要做」？- 这条经验只对某个项目有用，还是跨项目通用？- 它需要执行动作，还是只是约束模型行为？## 第二步，按下面的判断树走一遍依次问这五个问题，第一个匹配上的就是答案：**Q1：这件事是不是「必须每次执行、零例外、不能靠模型自觉」？**是 → 推荐放进 \`hook\`。给出一个hook配置示例。否 → Q2**Q2：这件事是不是「需要真实执行命令、查询接口、读取数据」？**是 → 推荐写成 \`script\` 或 \`MCP tool\`，再在相应skill里调用。否 → Q3**Q3：这件事是不是「只对某个目录、某类文件、某个模块生效」？**是 → 推荐放进对应目录的 \`nested CLAUDE.md\` 或 \`path-scoped rule\`。否 → Q4**Q4：这件事是不是「多步流程、专题checklist、需要分支判断的过程」？**是 → 推荐写成新的 \`skill\`，给出 description 字段建议（必须写到能被触发的程度）。否 → Q5**Q5：这件事是不是「每个会话都应该知道的高频默认行为或约束」？**是 → 推荐加到 \`CLAUDE.md\` 或 \`AGENTS.md\`，并提示用户检查当前文件是否已超过200行。否 → 这条经验可能太私人、太一次性，不建议沉淀。直接告诉用户。## 第三步，给出可直接执行的写作建议根据Q1-Q5的答案，输出一个可以直接写入对应文件的草稿。草稿要：- 格式正确（YAML frontmatter、Markdown标题、代码块等）- 言之有物，不要写「请遵守xxx规则」这种空话- 包含至少一个具体例子或反例## 第四步，提示上移可能性如果用户最近在多次任务里都触发了同一个skill里的同一类经验，提醒用户考虑把这部分经验从skill「上移」到CLAUDE.md，从专题流程升级为通用约束。## 输出格式【分诊结论】xxx层【推荐位置】~/.claude/xxx 或 项目根目录/xxx【写作模板】（直接给出可复制的Markdown草稿）【后续提醒】（如果适用，提示上移可能性或学习成本）
+</code></pre>
+<p>这玩意我自己跑了一两个月，最大的好处是它逼着我在每次任务结束的时候认真做这一步，而不是凭感觉一塞了之。</p>
+<p>举一个真实场景。上个月我搞清楚了我们项目的 Tailwind config 自定义颜色不能直接用 hex，必须走变量。我当时第一反应是写个CLAUDE.md规则。但触发了 experience-triage 之后，它走完Q3直接判断这是「只对前端代码生效」的局部约束，建议我放到 <code>/src/styles/CLAUDE.md</code> 里。后来证明这个判断是对的，因为我的后端代码里根本不需要知道前端颜色规则。</p>
+<p>再举一个反例。再往前一点，我想把「写新组件时要先跑 storybook」这条流程沉淀下来。我以为是skill，跑完分诊发现不对，它问我Q1「这件事是不是必须每次执行、零例外」，我想了想确实是，所以最后写成了一个 pre-tool-use hook。比写成skill靠谱多了，因为skill还会被忽略，hook根本逃不掉。</p>
+<p>说实话，这个分诊skill本身就是这篇文章的一个隐喻。它在说，<strong>当你能把一个判断流程写成skill，你就在用agent来扩展agent</strong>。</p>
+<p>你的agent架构开始能帮你维护它自己。这是分层心智模型里最让我觉得有意思的地方，它有自指性。</p>
+<p>你也可以基于这个原型改造它。比如加一个Q0判断「这条经验是不是其实不该沉淀」，过滤掉一些过度记录的冲动；或者根据你公司的实际目录结构，把推荐位置写得更精确；又或者你团队还有自己的资产层级比如 wiki 或 notion，加一条规则进去。这个skill不是终点，是你这套架构的一个入口。</p>
+<p>如果你跑出了什么有意思的变体，欢迎回来告诉我。</p>
+<p>我自己也还没完全跑通整个体系，可能有些判断还不成熟。但这套分层至少给了我一个不一样的工作方式。我不再把agent当成一个「要哄它好好干活的员工」，我开始把它当成一个「需要我设计操作系统的平台」。</p>
+<p>这两种心态完全是两回事。</p>
+<p>前者你永远在想「这次prompt写好没有」；后者你会开始想「这件事发生在哪一层、下一次怎么让它自动发生、它需要什么工具、它的失败场景是什么、它的经验怎么沉淀、怎么让下一个项目也受益」。</p>
+<p>这是两个时代的工作。</p>
+<p>一个在过去，一个在未来。</p>
+<p>写到这儿，回看开头那句话，「我这半年写的所有skill，可能从一开始就写错了」。</p>
+<p>其实也不完全是错。这半年的试错让我最后能走到今天这套分层。agent这个领域现在还在疯狂演进，今天我的判断六个月后可能又要被颠覆一次。</p>
+<p>但有一个方向我基本确定。</p>
+<p><strong>技能不是沉淀物，是agent运行时架构的一部分。</strong></p>
+<p><strong>CLAUDE.md不是说明书，是系统的总入口、索引和默认行为层。</strong></p>
+<p><strong>真正决定agent稳定性的，不是你写了多少文档，而是你把经验放到了正确的层。</strong></p>
+<p>技术本身在快速变化，但这套分层的心智模型，我觉得至少能稳一两年。</p>
+<p>磨平一些信息差，希望对你有用。</p>
+<p>以上，既然看到这里了，如果觉得不错，随手点个赞、在看、转发三连吧，如果想第一时间收到推送，也可以给我个星标⭐～</p>
+<p>谢谢你看我的文章，我们，下次再见。</p>
+<h4>References</h4>
+<ol>
+<li><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a>: <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a></li>
+<li><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart</a>: <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart</a></li>
+<li><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices</a>: <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices</a></li>
+<li><a href="https://docs.claude.com/en/docs/claude-code/memory">https://docs.claude.com/en/docs/claude-code/memory</a>: <a href="https://docs.claude.com/en/docs/claude-code/memory">https://docs.claude.com/en/docs/claude-code/memory</a></li>
+<li><a href="https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals">https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals</a>: <a href="https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals">https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals</a></li>
+<li><a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/</a>: <a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/</a></li>
+<li><a href="https://docs.claude.com/en/docs/claude-code/hooks">https://docs.claude.com/en/docs/claude-code/hooks</a>: <a href="https://docs.claude.com/en/docs/claude-code/hooks">https://docs.claude.com/en/docs/claude-code/hooks</a></li>
+<li><a href="https://docs.claude.com/en/docs/claude-code/sub-agents">https://docs.claude.com/en/docs/claude-code/sub-agents</a>: <a href="https://docs.claude.com/en/docs/claude-code/sub-agents">https://docs.claude.com/en/docs/claude-code/sub-agents</a></li>
+</ol>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/KRZCnzlMSL91VLQR8Ib6yQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

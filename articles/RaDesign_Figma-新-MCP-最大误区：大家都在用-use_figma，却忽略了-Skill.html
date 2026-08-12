@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figma 新 MCP 最大误区：大家都在用 use_figma，却忽略了 Skill · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Figma 新 MCP 最大误区：大家都在用 use_figma，却忽略了 Skill</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0">微信公众平台</a>
+    
+    <span class="date">2026-03-27</span>
+  </div>
+  <p class="lead">“啊， Figma MCP 不是早就有了吗？”“哦，现在 Codex 会在 Figma 里画东西了。这有啥？”</p>
+  <article class="content"><p><a href="javascript:void(0);">RaDesign</a></p>
+<p><em>2026年3月27日 09:02</em> <em>河北</em></p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiax9rjA1nS9EMERHQibf2n9bq0GeHDtibibaZ6bLwRiaibVeKzicnnpZFYSGdYvR2iaTBHKX9S0daY2ic9jymCE3JeDQqtNymSC31t8fSbA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Dark terminal window labeled “earthling—zsh” overlays a green-toned UI design canvas, showing a command to generate a button component set and status messages confirming files read and 72 variants created."></p>
+<p>图片来自：Figma</p>
+<p>“啊， Figma MCP 不是早就有了吗？”</p>
+<p>“哦，现在 Codex 会在 Figma 里画东西了。这有啥？” </p>
+<p>上次写到的 Codex 和 Figma 双向互通，<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&mid=2247494972&idx=1&sn=f76efc67cc37cff8231d126a5bd38841&scene=21#wechat_redirect">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a>你可以用 Codex 写完整网站、生成 UI、但是感觉还是差点意思，还是得中间来回跳！</p>
+<p><strong>本质问题就一个：AI 进不去 Figma。</strong></p>
+<p>但这次，Figma 把这个问题直接解决了。</p>
+<hr>
+<p> 一 </p>
+<p>这次 Figma MCP，到底和之前有什么本质区别？</p>
+<p><strong>之前的 MCP，是让 Codex“看见 Figma”。</strong><br><strong>现在的 MCP，是让 Codex“进入 Figma”。</strong></p>
+<p>Figma 在 2 月 26 日官方文章里，重点讲的是 <strong>Codex 和 Figma 之间的双向流动</strong>。一边是从 Figma 把设计上下文交给 Codex，让它更好地生成代码；另一边是把已经跑起来的真实前端界面，通过 <code>generate_figma_design</code> 再带回 Figma，变成可编辑的 Figma 图层。Figma 自己对这件事的表述很明确：<strong>“bring real, running interfaces into Figma”</strong>，也就是把真实运行中的界面拉回画布里继续讨论和迭代。</p>
+<p>换句话说，上一篇文章里的核心，不是“AI 在 Figma 里做设计”，而是：</p>
+<blockquote>
+<p><strong>设计和代码终于能来回流动了。</strong></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiawJEG3jJg6o0iaq1ppuWS0HJxnwibEJIiaPhylGFvH7qnDf6jN5WkQwsPJwJuqF0fkF3g1DRaMNicVRvYiciaUzmtgsy5icmtHzPibIVl8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>图片来自：Figma</p>
+<p>这个阶段的 MCP，最关键的两个能力其实是：</p>
+<p>第一，<strong>从 Figma 读上下文给 Codex</strong>。<br>比如通过 <code>get_design_context</code>，把布局、样式、组件信息传给 Codex，帮助它做更有设计依据的代码生成。文章里明确写到，用户可以复制某个 frame 或 node 的 selection URL，然后让 Codex 基于这段设计上下文去实现界面。</p>
+<p>第二，<strong>把代码生成的真实界面带回 Figma</strong>。<br>也就是 <code>generate_figma_design</code> 这条链路：当你的应用已经能运行了，Codex 可以把网页或本地运行界面的 HTML / UI capture 转成可编辑的 Figma frame，用来做对照、讨论、评审和继续迭代。</p>
+<p>所以，如果只用一句话概括上一次的 MCP：</p>
+<blockquote>
+<p><strong>上一次的 MCP，重点是“连接 code 和 canvas”。</strong></p>
+</blockquote>
+<p>它让设计稿不再只是静态参考，也让代码不再完全脱离设计环境。但在这个阶段，Codex 更多还是一个<strong>在 Figma 外面工作、再把结果带回来</strong>的角色。</p>
+<h2></h2>
+<hr>
+<h2></h2>
+<h2><strong>二</strong></h2>
+<h2></h2>
+<h2><strong>那这次新的 MCP，又新在哪？</strong></h2>
+<p>这次不一样了。</p>
+<blockquote>
+<p>Codex 可以找到并利用所有重要的设计上下文。 </p>
+<p><a href="https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/">https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/</a></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiayl8iaFKlQibA5Qlic41KlOFMp67ibgHiciauAvNmPvAVWbCHPGcu0sPiaUrVaxia27BNfJ8ur5TnUiaw1b5dP8gvibIicd0iajgEYKxzVm5Ms/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>图片来自：Figma</p>
+<p>3 月 24 日官方文章里最关键的一句话其实是：agents can now write directly to your Figma files。也就是说，agent 现在不是只读取 Figma、引用 Figma、转换 Figma，而是可以<strong>直接写入你的 Figma 文件</strong>。</p>
+<p>通过 <code>use_figma</code>，Codex、Claude Code 这类 MCP client 可以直接生成和修改设计资产，而且这些资产是能和你现有 design system 关联起来的。</p>
+<p>这就意味着，Figma 这次开放的不是“更多上下文”，而是：</p>
+<blockquote>
+<p><strong>把画布本身开放给 agent 了。</strong></p>
+</blockquote>
+<p>以前 Codex 更像是在设计稿外围工作：</p>
+<ul>
+<li>读设计信息</li>
+<li>生成代码</li>
+<li>把运行结果搬回 Figma</li>
+</ul>
+<p>现在 Codex 可以直接在画布里做这些事：</p>
+<ul>
+<li>创建和更新 Figma 文件</li>
+<li>修改 component</li>
+<li>调用现有组件和变量</li>
+<li>按 design system 生成新设计资产</li>
+<li>在已有画面上继续改，而不是只做一次性的导入或还原</li>
+</ul>
+<p>所以这次真正的变化，不是 “Figma 支持得更好了”，而是：</p>
+<blockquote>
+<p><strong>Codex 的角色，从“代码生成器”变成了“画布里的协作者”。</strong></p>
+</blockquote>
+<h2></h2>
+<h2></h2>
+<hr>
+<h2></h2>
+<h2></h2>
+<h2><strong>三</strong></h2>
+<h2></h2>
+<h2><strong>这次更新最值得设计师注意的，不是 use_figma，而是 skills</strong></h2>
+<p>如果你只看到 <code>use_figma</code>，很容易理解成：</p>
+<p>“哦，现在 Codex 会在 Figma 里画东西了。”</p>
+<p>但 Figma 这次其实反复强调的另一个关键词，是 <strong>skills</strong>。</p>
+<p>官方文章里说得很清楚：<br>开放画布给 agent，只是给了它访问 design system 和文件的能力；而 <strong>skills 定义的是 agent 如何使用这些访问权限</strong>，包括流程步骤、顺序、约定，以及什么才算符合品牌和规范的结果。Figma 甚至还专门提到，skills 可以把团队原本写在文档里的规范，变成 agent 实际执行时会遵循的规则。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>RaDesign0/0</p>
+<p>00:00/00:36</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:36</p>
+<p>00:36</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eoucfcaaenaaoznwagbuvi5odkf2qiuia.f10002.mp4?dis_k=e4b74a38ec44dbeb082d86fbf165de2e&amp;dis_t=1774575381&amp;play_scene=10120&amp;auth_info=Wb+I+4QGaQU10NfX9z5QVyw+BDdOEWIOKG4nTkEzeEtoLmIdcgk0alcNezESHUdtJg==&amp;auth_key=f8b955d3a4ae4ec9fc61b713d3889146&amp;vid=wxv_4444433477429723137&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/tAlIKXfSZiawAypTftz3IYqgDibRlfE0BpRZnJxu8WqBWY4otBwKY2qjk8Ce9OiabGZJBUp8rteuuw4N9YIibFnEiaFH5ianh2KYicb2sVfhMbkHzQ/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1462027266">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>Figma 新 MCP 最大误区：大家都在用 use_figma，却忽略了 Skill</p>
+<p>转载</p>
+<p>,</p>
+<p>Figma 新 MCP 最大误区：大家都在用 use_figma，却忽略了 Skill</p>
+<p>RaDesign</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>视频来自：Figma</p>
+<p>这点对设计师特别重要。</p>
+<p>因为过去很多人对 AI 设计的失望，根本不是因为 AI 不会画，而是因为它：</p>
+<ul>
+<li>不懂你的组件体系</li>
+<li>不懂你的 spacing 规则</li>
+<li>不懂哪些变量该复用</li>
+<li>不懂品牌感和页面层级</li>
+<li>不懂你们团队默认的设计判断</li>
+</ul>
+<p>而 skills 的意义就在这里：</p>
+<blockquote>
+<p><strong>MCP 让 Codex 能进去，skills 才让 Codex 知道进去之后该怎么干。</strong></p>
+</blockquote>
+<p>这也是为什么 Figma 这次不只是发了一个工具，还给了好几类示例 skill，比如生成 component library、用现有 components 和 variables 生成设计、把 design token 和 Figma variables 同步、把现有设计连接到 system component 上等等。</p>
+<hr>
+<p> 四 </p>
+<h2><strong>对设计师来说，这意味着什么？</strong></h2>
+<h2></h2>
+<p>如果用一句很现实的话来说：</p>
+<blockquote>
+<p><strong>以前你是在用 Codex 帮你“实现设计”。</strong><br><strong>现在你可以开始用 Codex 跟你一起“做设计”。</strong></p>
+</blockquote>
+<p>这两个工作流完全不是一个量级。</p>
+<p>以前你最常见的方式，大概是这样的：</p>
+<ul>
+<li>在 Figma 里出稿</li>
+<li>把链接或截图发给 Codex</li>
+<li>让它写代码</li>
+<li>跑起来后再比对</li>
+<li>如果不一致，再回到 Figma 或代码里继续改</li>
+</ul>
+<p>而现在更像是：</p>
+<ul>
+<li>你给 Codex 目标</li>
+<li>它直接进入 Figma 画布</li>
+<li>用你已有的组件、变量和结构生成页面</li>
+<li>你在画布里继续判断、微调、推进</li>
+<li>再把最终结果带回代码环境</li>
+</ul>
+<p>你会发现，这时候 Figma 不再只是“交付设计稿的地方”，而开始变成：</p>
+<blockquote>
+<p><strong>AI 和设计师共同工作的现场。</strong></p>
+</blockquote>
+<p>这件事，对设计师、产品设计师，甚至对正在自己做产品的设计师来说，影响都会非常大。</p>
+<h2><strong>真正的变化不是“AI 更强了”，而是设计工作流开始重组了</strong></h2>
+<p>我觉得这次最值得警惕，也最值得兴奋的一点是：</p>
+<p>以后你跟 Codex 协作，可能不再是“写一句 prompt 看结果”，而是要开始管理三层东西：</p>
+<ul>
+<li><strong>你的目标和需求</strong></li>
+<li><strong>你的 Figma 设计系统</strong></li>
+<li><strong>你的 skills / 规则 / 工作流说明</strong></li>
+</ul>
+<p>因为未来真正高质量的结果，不会来自一句很会写的提示词，而会来自：</p>
+<blockquote>
+<p><strong>一套可被 agent 执行的设计规则。</strong></p>
+</blockquote>
+<p>所以你要是生成的效果不理想，自己多看看这三步是否做到了。另外通过两次 MCP 更新，能得出最清晰的一条线：</p>
+<p>2 月是在说，<strong>code 和 canvas 可以来回走了</strong>；<br>3 月是在说，<strong>agent 现在可以直接在 canvas 里工作了</strong>。</p>
+<p>而这背后的真正变化其实是：</p>
+<blockquote>
+<p><strong>设计稿，开始从“结果文件”变成“生产环境”。</strong></p>
+</blockquote>
+<hr>
+<p>👉 <strong>安装 skills</strong></p>
+<p>如何打开新版 MCP:</p>
+<p>1.随便打开文件 - 进入开发模式</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiayAX9qIoBO97xqV0NFgPcWlg5tOrribaFP5Nz7shX7lkviabWBeeSqCRb82UJtKMT2iaLAAuWuXaQiacYxnu2z8H1rkH03PV1Xze44/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>2. 点击右侧 Enable desktop MCP server  </p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiay3MLWKkjc8YfkOwEGlibhIPosgc3y2CsKsEcdxes2sHmrOicHeOibWvaGjt6B7H9IygV7T1FxjlZXRk4gnt2PrOAwjATfC9Sbwo4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>3. 选择你用的 IDE 软件，点击 “add” 添加，如果里面没有你用的，点击“Other editors” 复制 Code snippet 直接发给你的软件，例如我用的 Codex，发给它，它自己会链接好。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazyIiaqbddxCQR6bh12CyZH6oCKlvs2XdNeJkJSB9XWYzYdH3zvIcpbyq9sCLj68OniaiatbVP1KFiaH3xAdfNicib8P0MnNJY0tMaBc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>‼️‼️‼️</p>
+<p>‼️很多人到这里就停了，然后会觉得：</p>
+<blockquote>
+<p>“为什么生成的还是一团乱？”</p>
+</blockquote>
+<p>因为你少了最关键的一步：</p>
+<p>👉 <strong>安装 skills</strong></p>
+<p>你可以理解成：</p>
+<blockquote>
+<p>MCP 是“让 AI 进来”<br>Skills 是“教 AI 怎么干活”</p>
+</blockquote>
+<p>官方推荐的方式是：</p>
+<p>在你的项目里准备一个类似这样的结构：</p>
+<pre><code>/skills
+</code></pre>
+<p>里面写清楚：</p>
+<ul>
+<li>页面结构怎么搭</li>
+<li>必须用哪些组件</li>
+<li>spacing / color 怎么用</li>
+<li>哪些行为是禁止的</li>
+</ul>
+<p>如果你是第一次玩，可以先用一个最简单版本：</p>
+<p>👉 比如：</p>
+<ul>
+<li>所有 UI 必须用现有 components</li>
+<li>所有颜色必须来自 variables</li>
+<li>必须使用 auto layout</li>
+<li>不允许写死 padding / color</li>
+</ul>
+<p>就这几条，效果都会明显提升。</p>
+<h2><strong>最后一个非常关键的提醒（很多人会踩坑）</strong></h2>
+<p>你一定要记住一件事：</p>
+<blockquote>
+<p>❌ 不是“连上 MCP 就能用好”<br>✅ 而是“设计系统 + skills 决定最终效果”</p>
+</blockquote>
+<p>但如果你做到这三件事：</p>
+<ul>
+<li>Figma 里有完整组件体系</li>
+<li>variables（token）结构清晰</li>
+<li>有基础 skills 规则</li>
+</ul>
+<p>那你会明显感觉到：</p>
+<blockquote>
+<p><strong>Codex 开始“像你团队里的设计师一样干活”了</strong></p>
+</blockquote>
+<hr>
+<p>使用 Figma MCP 前，有几个关键限制需要搞清楚：</p>
+<p><strong>1）不是无限调用，而是按权限分级</strong><br>Figma MCP 有明确调用额度，且主要限制在“读取设计上下文”（组件、变量、布局等），并不是所有写操作都计入次数。</p>
+<p><strong>2）不只是总量限制，还有速率限制</strong><br>除了每天/每月调用次数，还有每分钟请求上限，连续高频使用很容易触发限制。</p>
+<p><strong>3）权限取决于“文件所在团队”，不是你个人账号</strong><br>即使你是 Pro，如果文件在免费团队中，仍然按免费额度计算，这是最容易踩的坑。</p>
+<p><strong>4）不同套餐差异很大</strong></p>
+<ul>
+<li>免费版 / 只读：每月约 6 次，仅能体验</li>
+<li>教育版：跟随 seat 权限，无额外加成</li>
+<li>专业版（Pro）：约 200 次/天，可正常使用</li>
+<li>企业版：更高额度，适合重度 AI 工作流</li>
+</ul>
+<p>Figma MCP 不是“能不能用”，而是“你能用到什么程度”，是 Agent + 设计系统 + skills。</p>
+<p>另外我们组了一个群热爱探索的设计师→ 「设计师的 VibeCoding 实验室」欢迎私聊来加入。</p>
+<hr>
+<p>历史文章 </p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925877792105037831#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=adxnvt2m&tp=webp#imgIndex=18" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925882854227312641#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=6du8fus1&tp=webp#imgIndex=19" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925887427964829708#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnyxekKjZGTauzZM1tnGU8XhMe8cQ8kPtK35fawroYY7ybu0LkYiaibW8g/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=yk6gkdmw&tp=webp#imgIndex=20" alt="图片"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&action=getalbum&album_id=3925889414856966155#wechat_redirect"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnlePXhuwMKJ6yCnsZM4zdUQOXwdCwHy5dibrW2hKIrTCDb4263utLJuA/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&randomid=ldmkfp07&tp=webp#imgIndex=21" alt="图片"></a></p>
+<p>有意向或者感兴趣的小伙伴欢迎加入 AI 交流</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/r4W4S6dqBwI_kS033j4rkA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

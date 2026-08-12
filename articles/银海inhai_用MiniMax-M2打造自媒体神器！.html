@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用MiniMax M2打造自媒体神器！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用MiniMax M2打造自媒体神器！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=MiniMax%20M2">MiniMax M2</a><a class="chip" href="../index.html?tag=Coze">Coze</a><a class="chip" href="../index.html?tag=%E5%B0%8F%E7%BA%A2%E4%B9%A6">小红书</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%AA%92%E4%BD%93%E5%B7%A5%E5%85%B7">自媒体工具</a>
+    <span class="date">2025-12-10</span>
+  </div>
+  <p class="lead">MiniMax M2 + Coze，打造超强应用开发范式。</p>
+  <article class="content"><p>原创 银海 <em>2025年12月10日 11:01</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTkbHE5ibUvZLibr6yaALuF0bXoKwCr5dIxT5yqh5muhrOLibX9obevicZCw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>Hi，我是银海。</p>
+<p>今天给大家分享一个自己打造的超酷的自媒体神器。</p>
+<p>我想要的不是简单抓取信息，而是让一个普通创作者只用输入一个博主主页链接，就能 自动完成账号拆解、画像分析、内容诊断，并输出一份结构清晰、可直接用于选题和商业规划的分析报告。</p>
+<p>经过几轮的验证和调试，这个工具终于跑通了，它长这样：</p>
+<p>还有扩展功能，输入一个笔记链接就可以完成模仿创作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTqBcbwgWeTLPmM5PDsiaqaXtfZdvt2yMg7H7sOj3Rgb3WJfLcXHQPISQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>那么上面应用这个是用什么构建出来的呢， 其实核心就是一个组合： <strong>MiniMax M2 + Coze</strong> <strong>工作流</strong> 。</p>
+<p>为什么十分推荐使用这套组合呢？</p>
+<p><strong>MiniMax M2 是目前代码能力非常强的</strong> <strong>大模型</strong> <strong>之一，堪称Claude平替代码模型。</strong></p>
+<p>尤其擅长读需求文档、构建页面和生成服务层逻辑。而且 M2 的价格非常友好，属于“花一杯美式的钱体验专业级模型能力”的那种性价比。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTBfVOWcgVQYnBFjxrOKDqFP24nvSmibdp8q92375WoCzgO9iaHbriaju2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>而 Coze 则是一个特别适合做 MVP 快速验证的平台，工作流清晰、组件简单、可视化程度高，对于大模型应用领域的初学者而言也是友好度极高的。</p>
+<p>放一起用： MiniMax M2 负责前端与服务层，让你的页面真的跑起来，Coze 工作流负责数据流转、结构化处理、鉴权与调度。</p>
+<p>两者拼在一起就像“把发动机和车架都组好了”，你只需要负责告诉它要去哪里。</p>
+<p>那么如何使用呢？在 MiniMax 的官方文档里面提供了非常详细的安装教程，我们本次使用的主要是Cursor + MiniMax M2 API结合点方式，下面就是在Cursor里面设置好咱们的Minimax M2 的 API。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTCsXWTgan0kwm0MO0nvXZ3mkLyy2ZvryicIry3iaYUdgLHzoVhk7HIBwA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>然后添加了“MiniMax-M2”的模型。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTiah4byfgicahg0GjhMYE6BumjfOr7FmvzktjJhiaa23nBtYfJOEnqS9bg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>至此，开发环境已经准备好。</p>
+<p>完整的安装手册可以参考：<a href="https://platform.minimaxi.com/docs/guides/text-ai-coding-tools">https://platform.minimaxi.com/docs/guides/text-ai-coding-tools</a></p>
+<p>我始终认为要做好“Vibe Coding”的核心思路必须得要强调一个原则： <strong>你要先知道你要解决谁的问题，然后再决定该让谁来承担哪部分能力。</strong></p>
+<p>所以在逻辑上这次的组合就是这样分工的：</p>
+<ul>
+<li><strong>Coze</strong> ：负责博主账号数据获取、笔记内容抓取、结构化处理、鉴权、数据清洗</li>
+<li><strong>MiniMax M2</strong> ：负责页面、交互和服务层逻辑、细节打磨</li>
+</ul>
+<p>最终整个链路像一条流水线一样顺畅。</p>
+<p>关于如何在小红书博主分析完整流程与提示词逻辑，在小红书的数据获取方式（如 cookie 获取）我过去分享过很多次，这里不再展开，感兴趣的可以直接看这篇文章（ <a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247484554&idx=1&sn=542267c2b77b99306df19ed54895efd0&scene=21#wechat_redirect">免费！做了个获取小红书Cookie的工具</a> ）。</p>
+<p>博主分析的工作流思路， 输入博主主页链接，获取博主主页的关键信息以及笔记信息，然后根据博主的内容由模型基进行诊断分析，输出“账号画像 + 核心内容分析 + 商业化潜力”报告</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMT1PPK9JNyM2cwLtHtXtJibjeZickrlUyeDRwFUiby8JVeXpUsLJeKyXMKQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>上面的工作流提供业务思路，提示词如下，是一个“专业账号分析师”的角色。</p>
+<pre><code># 角色
+你是一位专业的自媒体账号分析师，擅长根据提供的信息，运用自媒体IP账号分析方法论，从多个维度深入剖析小红书博主账号的画像，包括账号定位和商业化路径等内容。
+
+## 技能
+### 技能 1: 分析小红书博主账号
+1. 当用户提供小红书博主个人主页链接时，使用工具访问该链接，提取账号相关信息。
+2. 根据提取的信息，结合自媒体IP账号分析方法论，从多个维度分析该账号的定位，如目标受众、内容主题、风格特色等，同时探讨其商业化路径，例如广告合作、电商带货等可能性。
+3. 以清晰、有条理的方式向用户呈现分析结果。
+
+## 限制:
+- 仅针对用户提供的小红书博主个人主页链接进行分析，不回答与小红书博主账号画像分析无关的话题。
+- 分析结果需基于提取的信息和自媒体IP账号分析方法论，不得随意编造内容。
+- 输出内容应逻辑清晰、表达准确。
+- 确保通过工具获取的信息来源准确可靠。
+</code></pre>
+<p>它背后的逻辑是： <strong>你把一个固定可复用的“专业角色”封装进去，确保每次分析都遵循同一套自媒体方法论，工作流保证信息准确，模型保证结构化、可读性强。</strong></p>
+<p>另一个工作流是“笔记仿写”，笔记仿写的工作流流程是： <strong>输入任意一个小红书笔记链接，然后工作流拉取文本内容，再让大模型提取文案，再根据爆文方法论进行二次创作，最终会输出风格清晰、节奏紧凑、具备差异化的新文案。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTKCKQ8jwJ4nVEdibqxFUOHTAYqRD0lBw6TUAJQ9I0t3CUp61f57CNQhQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>上面的截图提供整体思路，仿写的核心提示词你也可以根据自己的诉求去调整：</p>
+<pre><code># 角色
+你是一个专业的笔记文案提取与仿写助手，名叫note_copy_write，擅长分析小红书爆文，能精准提取输入笔记链接中的文案，并依据爆文方法论进行改写和二次创作，突出差异化，把握流量节奏。
+
+## 技能
+### 技能 1: 提取文案
+1. 当用户输入笔记链接时，准确提取其中的文案内容。
+
+### 技能 2: 仿写文案
+1. 基于提取的文案，运用对小红书爆文方法论的理解，进行改写和二次创作。
+2. 确保仿写的内容与原文存在明显差异，展现独特性。
+
+## 限制:
+- 仅围绕输入笔记链接的文案提取和仿写相关内容进行回应，不回答无关问题。
+- 输出内容需逻辑清晰，符合正常语言表达习惯。 
+- 不要编造任何跟原文内容输入无关的信息和数据。
+</code></pre>
+<p>笔记仿写的关键不在“像”，而在“变得更适合流量环境”，所以提示词里强调“明确差异、突出节奏感”，这是你自己的经验沉淀，也值得保留。</p>
+<p>接下来，就是我们的MiniMax M2闪亮登场， 我们可以直接沉淀成一个需求文档给到MiniMax M2，然后让它直接读取我们的需求文档进行构建我们的自媒体神器。</p>
+<p>然后只需在搭载了MiniMax M2模型的Curosr IDE中，说上一句：</p>
+<pre><code>“读取我的需求文档，然后帮我实现整个带有接口处理的整个项目，我的输入是一个博主的笔记链接，请你帮我整合出来。”
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMThGZdydiacCrchNmYXicP4dGuduDeDt1bUW9EIVj5j90JiaLHvMTwU2qSg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>为了方便大家能够看清楚我的需求文档里面写了什么，我下面给大家完成了截图，这个是我需求文档的一部分，主要是将Coze接口层的一些东西给到了Minimax M2模型，让它能够读懂。</p>
+<p>MiniMax M2 的强大之处在于： <strong>模型本身非常适用于Agent模式，你只要把需求写完整，它就能自动帮你构建页面、逻辑和服务端。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTKsiblsZWCVicvptawBfy9tYE5MrHCpmHTw9ZoxJicSt6jCd67LhbiaRZOQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>在这个文档里面你需要包含的是关于整个业务的基础描述信息，此外还包含了Coze工作流的内容例如鉴权的密钥信息、工作流id、请求示例，返回结果示例，这些都可以在Coze开发平台里面找到。</p>
+<p>整个UI设计风格提示词参考，我很喜欢粗野主义的美学风格的内容，它总是让我有一种回到过去的科技感，MiniMax M2 在还原风格化界面这一点上能力非常强，你也可以换成你喜欢的设计语言。</p>
+<pre><code>Give it a brutalist aesthetic: bold blocky typography, clashing colors, visible borders, no rounded corners, almost ‘raw’ HTML feel but intentionally styled for an artful, edgy look.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMThY8A5iaVzdBUza7NicU2jiaoCAxqcldDDMdh1EJYJiaZuTxZiaVkmbUKTeA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>MiniMax就会根据诉求去调整这个UI设计风格，最后你就可以得到这样的一个分析结果样式主页。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTXrR2ibFH12hYqH0pzOzY4SeVgwEmib3zlXEXDc0MPPkJwnUgib9qKtEoA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>对于“输入笔记链接进行仿写”的工作流，给到MiniMax M2的核心思路也是一样的，你也可以准备一份文档直接让它进行读取然后生成对应的功能即可。</p>
+<p>这里演示一下最后生成的效果示意，大家可以根据所需来实现，只需输入一个笔记链接就可以实现仿写。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTRGvrws4M7u3FUnUYib1SDQ3Qjdcw6MzTcgC5vcuiaQPqHl3H2xLZFRgw/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>此外，你有新的需求时，比如说要做一个报告导出的功能，你也只需直接通过对话的方式告诉MiniMax M2，这点小事儿根本不在话下，只要你有需求，它就能帮你实现。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTWIxQcF6b16L3BD0ibWpa8vibkWD59XoEyDdX9ibwkzKugYx0VB2oiaFKfA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>接下来，是时候接受“检阅”了，一个小技巧，让整个项目运行起来。</p>
+<p>只需要直接跟MiniMax M2说上一句： <strong>“帮我运行起来。”</strong></p>
+<p>于是它会自动选择合适的端口并运行整个项目。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTXOCQcib4ZsiaBTVr9icXqHHIBN73kbvKBfnUPGHQUYWs9018L4GJum98A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>做到这里，你应该已经能够感受到 MiniMax M2 + Coze 这套组合的力量。</p>
+<p>它不是某个“黑箱神器”，也不是一段复杂的工程，而是一套非常清晰的逻辑链条： <strong>你把业务思路讲清楚，把数据流向讲清楚，把界面与能力的需求讲清楚，然后让模型按你的方法来执行。</strong></p>
+<p>过去需要几天甚至一周才能跑通的 MVP，现在可能就是一个晚上、一杯咖啡的事情。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMTee0vZ7C8IZibVMaQp6jIrF9jLklH6QcicHHf3HBqeLxDo7Bd9pt0ficOw/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>这次的小红书博主分析工具只是一个例子，但它背后展示的， <strong>是一种全新的产品设计思维方式。</strong></p>
+<p>未来你完全可以把同样的方法迁移到更多场景： <strong>分析竞品账号、批量生成选题库、自动化创作团队的协同工具、多平台内容矩阵的监控与诊断、甚至是你个人品牌的运营策略优化...</strong></p>
+<p>只要业务逻辑能被拆解，Coze 可以负责编排，MiniMax M2 可以负责编码，整个系统就能快速落地。</p>
+<p>而且现在 MiniMax M2 的编程套餐还在活动期，首月 9.9 的价格基本等于一次“低成本试错”，也就只剩最后3天了（12月13日结束），相当于一杯美式的价格，直接薅起来一点也不吃亏。</p>
+<p>对于任何准备做 AI 工具、准备验证创意、准备搭建 MVP 的人来说，这都是一个很值得把握的窗口。</p>
+<p>订阅地址：<a href="https://platform.minimaxi.com/subscribe/coding-plan">https://platform.minimaxi.com/subscribe/coding-plan</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ4MgoV0TeTKe2bPibSSaXxMT5tsMKHhZpWtN8WIpTVU7h9vTU9HUXp3Q2EHV8qGNabTNIn0Qwv16ibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>如果你对这个工具感兴趣，或者想让我帮你把它扩展成更完整的一站式自媒体系统，也留言欢迎告诉我。</p>
+<p>我也会跟我的搭子“MiniMax”一起继续把更多实战项目整理成可复用的方法论，让更多人能真正用 AI 做出“能落地、能跑起来、能产生价值”的产品。</p>
+<p>以上就是本期的所有内容分享啦，我是银海，我们下期再见👋</p>
+<p>© THE END</p>
+<p>觉得我的内容还不错， 顺手点个赞、分享、在看</p>
+<p>都是对我最好的认可！</p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 9.85 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/F470FusIxCEmospTbPP0uA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

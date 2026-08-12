@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent 原生通讯协议：从传递代码，到传递认知 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Agent 原生通讯协议：从传递代码，到传递认知</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Agent%E5%8D%8F%E4%BD%9C">Agent协作</a><a class="chip" href="../index.html?tag=Git">Git</a><a class="chip" href="../index.html?tag=Entire">Entire</a><a class="chip" href="../index.html?tag=%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE">通讯协议</a>
+    <span class="date">2026-02-12</span>
+  </div>
+  <p class="lead">我们正在从&quot;写代码的工人&quot;变成&quot;审查 Agent 思维过程的监督者&quot;。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2026年2月11日 18:51</em></p>
+<blockquote>
+<p>当 Agent 开始用 Git 说话：从一个 Vibe Coding 开发者的发现，到 Agent 协作的未来。<br><strong>文章内容由歸藏和 Opus 4.6 的讨论自动整理而成</strong></p>
+</blockquote>
+<h2>一、一个意外的发现</h2>
+<p>最近我在维护自己的开源项目时，做了一件很自然的事：让 AI Agent 帮我处理 GitHub 上的 Issues 和 PR。</p>
+<p>一开始只是图省事——Issue 太多了，让 Agent 帮我读一读、分分类、回复一些常见问题。PR 也是，让 Agent 先做一轮 Code Review，帮我过滤掉明显有问题的提交。</p>
+<p>但很快我发现了一件有趣的事情： <strong>给我提 Issue 的，很多也是 Agent；给我提 PR 的，也是 Agent。</strong></p>
+<p>我的 Agent 在和别人的 Agent 对话。</p>
+<p>它们用 Issue 的格式交换需求，用 PR 的格式交换代码，用 Comment 的格式讨论方案。没有人刻意设计过这套流程，但它就这么自然地发生了。</p>
+<p>那一刻我意识到—— <strong>GitHub 正在无声无息地变成一种 Agent 之间的通讯协议。</strong></p>
+<p>仔细想想，这并不意外。GitHub 天然具备 Agent 通讯协议所需要的一切特性：</p>
+<ul>
+<li><strong>可读且安全</strong> ：纯文本，所有操作透明可审计</li>
+<li><strong>命令式的</strong> ：Issue 是任务指令，PR 是执行结果</li>
+<li><strong>结构化的</strong> ：标签、模板、状态流转，天然适合机器解析</li>
+<li><strong>有版本控制</strong> ：每一次交互都被记录，不会丢失</li>
+</ul>
+<p>Agent 不需要什么新协议，它们已经在用人类建造的最成熟的协作基础设施来互相沟通了。</p>
+<hr>
+<h2>二、巧合还是必然？</h2>
+<p>昨天我刚和朋友聊完这个观察，今天早上就看到一条新闻： <strong>GitHub 前 CEO Thomas Dohmke 宣布创立新公司 Entire，拿了 6000 万美元种子轮，要在 Git 之上构建 Agent 时代的开发者平台。</strong></p>
+<p>有时候你模糊感知到的趋势，突然被行业里最懂这件事的人用一家公司、一笔融资、一个产品确认了——这种感觉很奇妙。</p>
+<p>Thomas Dohmke 在公告里写了一句话，和我的感受完全一致：</p>
+<blockquote>
+<p>&quot;我们仍然依赖一个在云时代之前构建的软件开发生命周期，它天生是为人与人协作设计的。&quot;</p>
+</blockquote>
+<p>他看到的问题和我看到的一样： <strong>现有的 Git/GitHub 体系是为人设计的，Agent 在将就着用。</strong> 能用，但不够。</p>
+<hr>
+<h2>三、Entire 是什么，它比 Git 走到了哪一步？</h2>
+<h3>3.1 Git 记录了什么，遗漏了什么</h3>
+<p>先回顾一下现有的 Git 体系。Git 是一个极其优秀的版本控制系统，它忠实记录了：</p>
+<ul>
+<li><strong>What</strong> ：哪些文件变了，每一行的 diff</li>
+<li><strong>Who</strong> ：谁提交的</li>
+<li><strong>When</strong> ：什么时候提交的</li>
+<li><strong>Where</strong> ：在哪个分支上</li>
+</ul>
+<p>但它有一个致命的缺失： <strong>Why——为什么要这么改。</strong></p>
+<p>在人类手写代码的时代，这个&quot;为什么&quot;勉强可以通过 commit message 和 PR description 来补充（虽然大多数人写的都是 <code>fix bug</code> ）。但在 Agent 时代，这个缺失被放大了一百倍——</p>
+<p>Agent 生成了 500 行代码，你只看到 diff，完全不知道它的推理链。Agent 做了一个架构决策，选了方案 A 放弃了方案 B，你不知道权衡了什么。你给 Agent 的 prompt、约束、讨论过程，在关闭终端的那一刻全部消失。</p>
+<p><strong>Git 保存了代码怎么变的，但丢掉了代码为什么这么变。</strong></p>
+<h3>3.2 Entire 的 Checkpoint：给 Git 补上 &quot;Why&quot;</h3>
+<p>Entire 发布的第一个产品叫 <strong>Checkpoint</strong> 。它的做法很聪明——不修改 Git，而是在 Git 之上增加一层语义元数据。</p>
+<p>当你用 Agent 生成代码并 commit 时，Checkpoint 自动捕获并绑定到这个 commit SHA 上：</p>
+<pre><code>普通 Git Commit
+：
+  
+commit abc123 → diff（代码变更）
+
+Entire Checkpoint：
+  
+commit abc123 → diff（代码变更）
+   +原始prompt（你给Agent 的指令）
+   +推理链（Agent 考虑了什么、放弃了什么）
+   +工具调用（Agent读了哪些文件、调了哪些 API）
+                + 约束条件（必须兼容什么、不能用什么）
+   +token 消耗（花了多少算力）
+   +完整对话记录（整个session的 transcript）
+</code></pre>
+<p>这些元数据存储在一个独立的 Git 分支（ <code>entire/checkpoints/v1</code> ）上，以 append-only 的方式追加。代码本身不受任何影响，完全兼容现有的 Git 工作流。</p>
+<p><strong>本质上，Checkpoint 把 Agent 的&quot;想法&quot;从黑箱变成了白箱——可追溯、可审查、可共享。</strong></p>
+<h3>3.3 为什么这件事比&quot;存聊天记录&quot;重要得多</h3>
+<p>你可能会想：这不就是把 AI 的聊天记录存到了 Git 里吗？</p>
+<p>不。区别在于它是 <strong>结构化的、版本化的、绑定到代码变更的</strong> 。这意味着：</p>
+<p><strong>代码审查的范式变了。</strong> 过去你打开一个 PR，面对几千行 diff，逐行读代码。现在你可以先看 Checkpoint——Agent 接到的意图是什么、它考虑了哪些方案、为什么选择了当前的实现。你审查的不再是&quot;代码对不对&quot;，而是&quot;思维过程合不合理&quot;。</p>
+<p><strong>Agent 之间有了共享记忆。</strong> Agent A 在一个 session 里做了技术选型，session 结束后上下文消失。Agent B 接手时，可以读取 Agent A 的 Checkpoint，直接继承之前的决策和约束，不需要从头推理。</p>
+<p><strong>决策历史可追溯。</strong> 三个月后有人问&quot;为什么选了 SQLite 而不是 PostgreSQL&quot;，你不需要靠记忆，直接查那个 commit 的 Checkpoint，当初的完整讨论和推理都在。</p>
+<hr>
+<h2>四、新范式：从&quot;写代码的工人&quot;到&quot;审查 Agent 思维的监督者&quot;</h2>
+<p>Entire 和 Checkpoint 指向的，其实是一个更深层的范式转变。</p>
+<h3>旧范式</h3>
+<ul>
+<li>1</li>
+</ul>
+<pre><code>开发者写代码 → commit → 开 PR → 同事看 diff → 讨论 → merge
+</code></pre>
+<p>在这个流程里，代码是核心产物，人的注意力集中在&quot;这段代码写得对不对&quot;。</p>
+<h3>新范式</h3>
+<ul>
+<li>1</li>
+</ul>
+<pre><code>表达意图 → Agent 生成 → Checkpoint 记录推理 → Review 意图和结果 → 验证正确性
+</code></pre>
+<p>每一步都发生了质变：</p>
+<p><strong>表达意图</strong> ——开发者的第一步不再是打开编辑器写代码，而是用自然语言描述&quot;我要什么&quot;。&quot;我需要一个 JWT 认证中间件，支持 refresh token，过期时间 15 分钟，兼容现有路由结构。&quot;意图本身就成了工程产物。</p>
+<p><strong>Agent 生成</strong> ——Agent 接到意图后，读项目结构、分析现有代码、权衡多种方案、做出选择、生成代码。这个过程消耗了大量算力和推理，但在过去，这些全部是瞬态的，commit 之后只剩下 diff。</p>
+<p><strong>Checkpoint 记录推理</strong> ——现在这些推理过程被自动捕获。不需要你&quot;有意识地&quot;去记录，不需要手动写规则文件或技术文档，Agent 每次 commit 时 Checkpoint 自动保存。</p>
+<p><strong>Review 意图和结果</strong> ——你不再逐行看代码。你看的是：意图对不对？决策合理吗？约束满足了吗？有没有忽略什么？你审查的是 Agent 的认知过程，而不是它写的每一个分号。</p>
+<p><strong>验证正确性</strong> ——正确性的验证也在变化。Agent 可以同时生成代码和测试；另一个 Agent 可以读取 Checkpoint，检查推理链是否自洽；业务指标可以自动验证结果是否符合预期。</p>
+<p><strong>一句话总结这个范式转变：人的角色从&quot;写代码的工人&quot;变成了&quot;审查 Agent 思维过程的监督者&quot;。</strong></p>
+<hr>
+<h2>五、对 Agent 时代的意义</h2>
+<p>把 Entire 放到更大的背景下看，它的意义超越了一个开发工具。</p>
+<h3>Agent 的世界需要自己的&quot;互联网&quot;</h3>
+<p>旧世界里，HTTP 是人访问网站的协议，构成了互联网。新世界里，Agent 需要自己的协作协议。</p>
+<p>我在项目维护中观察到的——Agent 通过 Issues 和 PR 互相沟通——是一种隐式的、低带宽的通讯。它只传递了代码和自然语言评论。Entire 想做的是把这变成显式的、高带宽的通讯：不仅传代码，还传推理过程、上下文图谱、决策依据。</p>
+<p>这就是为什么 Thomas Dohmke 要把它开源，要强调&quot;open, scalable, independent&quot;。他不只是在做一个产品，他是在推一个协议标准。</p>
+<h3>从 2C、2B 到 2A</h3>
+<p>最近看到朋友写的一篇文章《互联网已死，Agent 永生》，里面提出了一个很精辟的概括：过去软件服务人类消费者（2C）或企业（2B），未来最大的客户是 Agent（2A）。</p>
+<p>如果 Agent 是软件的新用户，那 Agent 之间怎么高效协作就成了最关键的基础设施问题。Entire 的 Checkpoint 本质上就是在让 Agent 之间的协作&quot;用得爽&quot;——不是给人看的漂亮界面，而是给 Agent 读的结构化推理数据。</p>
+<h3>&quot;韩信点兵&quot;需要指挥体系</h3>
+<p>文章里还引用了一个比喻：韩信点兵，多多益善——不是因为韩信自己能打，是因为他有一套体系。</p>
+<p>未来人和人的差距，取决于你能驱动多少 Agent 为你工作。但驱动 1 个 Agent 和驱动 100 个 Agent 的难度完全不是线性增长的。没有协调体系，100 个 Agent 就是一场混乱——各自为战、重复推理、互相冲突。</p>
+<p>Entire 的三层架构——Git 兼容数据库、语义推理层、AI 原生开发生命周期——对应的就是这个指挥体系。统一的信息存储、共享的态势感知、清晰的协作流程。</p>
+<hr>
+<h2>六、它解决了我的哪些问题，又有哪些还没解决</h2>
+<h3>解决了的：告别&quot;人肉 Checkpoint&quot;</h3>
+<p>作为一个重度 Vibe Coding 的开发者，我之前最痛的问题是： <strong>AI 在上下文压缩后，记不住以前的东西。</strong></p>
+<p>我不得不频繁地通过规则文件（比如 CLAUDE.md、cursor rules）去手动保存 Agent 的技术选型、架构决策和约束条件。这些记录是为了方便后期重构或重大迭代时提供参考。但这个操作需要&quot;有意识地&quot;去做，而我经常忘记。</p>
+<p>Checkpoint 直接解决了这个问题—— <strong>你不需要再手动记录任何东西。</strong> 每次和 Agent 的对话、每个技术决策、每条推理链，都自动绑定到 commit 上，成为项目历史的永久组成部分。</p>
+<p>另一个直接改善是 Issue 和 PR 场景。过去有人提 Issue 问&quot;为什么不支持 XXX 功能&quot;，我需要凭记忆回答。现在可以查询 Checkpoint 历史，找到当初讨论过这个功能的那次 session，直接引用当时的推理来回复——有理有据，不靠记忆。</p>
+<h3>解决了的：多 Agent 协作有了共享认知</h3>
+<p>我现在的工作流已经很复杂了：用 Git worktree 管理多个分支，每个 worktree 下面启动 Agent Teams 完成不同的任务，然后我要审查它们的结果，决定采用哪个方案。</p>
+<p>这个过程非常痛苦。六个 Agent Team 的产出可能有几千行代码，我要在不同方案之间做比较，还要手动测试。Checkpoint 至少让比较变得容易了——我不需要逐行对比 diff，我可以直接看两个方案的推理摘要和决策依据，5 分钟做出判断。</p>
+<h3>还没解决的：上下文爆炸问题</h3>
+<p>但我直觉上感觉 Checkpoint 能解决一部分问题，却不能彻底解决 Agent 的交流和沟通问题。原因很简单：</p>
+<p><strong>上下文窗口是有限的。</strong></p>
+<p>当你把每次 commit 的完整推理链都存下来，一个运行三个月的项目可能累积 10M tokens 的 Checkpoint 数据。而目前最好的模型上下文窗口才 200k。存下来了，但 Agent 一次看不完。</p>
+<p>更关键的是， <strong>Checkpoint 可能会反过来更快地塞爆 Agent 的上下文</strong> 。它解决了存储问题，但引入了检索问题——Agent 怎么从 500 个 Checkpoint 里精准找到它当前任务需要的那 3 个？怎么把海量的历史推理压缩成有限上下文窗口内的有效信息？</p>
+<h3>还没解决的：从事后记录到实时协调</h3>
+<p>Checkpoint 本质上是&quot;事后记录&quot;——Agent 做完了，commit 了，然后存一个 Checkpoint。但在多 Agent 协作的场景里，我们需要的不只是事后读记录，还需要 <strong>工作过程中的实时通讯</strong> 。</p>
+<p>比如 Agent Team 1 做到一半，决定了数据层用 Drizzle ORM——这个决定应该实时同步给正在并行工作的 Team 2 和 Team 3，而不是等 Team 1 做完 commit 了，Team 2 才读到这个信息然后发现自己的实现不兼容。</p>
+<p>这已经超出了 Checkpoint 的范畴，进入了 Agent 间实时通讯协议的领域。</p>
+<h3>Entire 想怎么解决这些问题</h3>
+<p>回到 Entire 的完整愿景，Checkpoint 只是第一层地基。它的三层架构恰好对应了这些待解决的问题：</p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>解决什么</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Checkpoint（存储层）</strong></td>
+<td>信息不再丢失</td>
+<td>✅ 已发布</td>
+</tr>
+<tr>
+<td><strong>Context Graph（语义推理层）</strong></td>
+<td>从海量 Checkpoint 中精准检索</td>
+<td>🔜 待发布</td>
+</tr>
+<tr>
+<td><strong>AI 原生开发生命周期</strong></td>
+<td>Agent 间的实时协调与工作流</td>
+<td>🔜 待发布</td>
+</tr>
+</tbody></table>
+<p>Context Graph 可能是最关键的一层。它需要做到：不是把所有 Checkpoint 塞给 Agent，而是根据当前任务语义检索相关的历史上下文，并进行分层压缩——完整记录、决策摘要、关键约束，不同场景用不同粒度。</p>
+<p><strong>就像人的记忆不是把所有经历都存着的——它有遗忘曲线、有抽象总结、有按需回忆。Agent 的 Checkpoint 系统也需要类似的智能检索和压缩机制。</strong></p>
+<hr>
+<h2>七、结语</h2>
+<p>回到最初的发现：我在维护开源项目时，看到 Agent 已经在用 GitHub 互相沟通了。这件事正在自然发生，不需要任何人许可。</p>
+<p>Entire 做的事情，是把这种自然发生的 Agent 通讯，从隐式变成显式，从低带宽变成高带宽，从&quot;将就着用人类的工具&quot;变成&quot;为 Agent 时代专门设计的基础设施&quot;。</p>
+<p>Checkpoint 是第一步——把 Agent 的思维过程从黑箱变成白箱。接下来的 Context Graph 和 AI 原生开发生命周期，才是真正让 Agent 之间高效协作的关键。</p>
+<p>但最深刻的变化可能不在工具层面，而在角色层面：</p>
+<p><strong>我们正在从&quot;写代码的工人&quot;变成&quot;审查 Agent 思维过程的监督者&quot;。</strong></p>
+<p>不需要理解每一行代码怎么写的，但需要理解 Agent 的推理是否合理、决策是否正确、有没有遗漏关键约束。这是一种全新的能力，也是一种全新的责任。</p>
+<p>旧世界的开发者用键盘写代码。新世界的开发者用判断力指挥 Agent。</p>
+<p>而 Entire 这样的基础设施，就是让这种指挥成为可能的指挥系统。</p>
+<p>地基已经打下。让我们看看上面能建起什么。</p>
+<p>引用：</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkwMzY5NzU2Nw==&mid=2247488954&idx=1&sn=751172c4fa327e68d5e5c04b4844277d&scene=21&subscene=90#wechat_redirect">互联网已死，Agent 永生</a></p>
+<p>Entire 官方介绍： <a href="https://entire.io/blog/hello-entire-world">https://entire.io/blog/hello-entire-world</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/6ppTHXXdmKWI18uB_ysf3w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

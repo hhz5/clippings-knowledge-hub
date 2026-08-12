@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>预订本年度最有价值提示词 —— 生成既有质感，又能随意修改文字的完美 PPT · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">预订本年度最有价值提示词 —— 生成既有质感，又能随意修改文字的完美 PPT</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%AE%9D%E7%8E%89xp">宝玉xp</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=PPT%E7%94%9F%E6%88%90">PPT生成</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E5%AE%9D%E7%8E%89">宝玉</a><a class="chip" href="../index.html?tag=Gemini">Gemini</a>
+    <span class="date">2025-12-22</span>
+  </div>
+  <p class="lead">大家都很喜欢 NotebookLM 生成的 Audio Overview，它最近生成的 Slide Deck（幻灯片）风格也很棒。但有一个大问题： 生成的 Slides 是死图，文字不能改，内容不能动。想用它的风格，又想完全掌控内容？</p>
+  <article class="content"><p>宝玉xp <em>2025年12月21日 14:23</em></p>
+<p>本内容来自宝玉老师，yyds</p>
+<p>用小香蕉，生成可以修改文字的 PPT</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTBZNvmb8Ld7fb51ddLxoRzic4ktsMb5CA40o7ibazLtAeaSH3KbSPEujA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="null"></p>
+<p>大家都很喜欢 NotebookLM 生成的 Audio Overview，它最近生成的 Slide Deck（幻灯片）风格也很棒。但有一个大问题： <strong>生成的 Slides 是死图，文字不能改，内容不能动。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTYbRLr9m1p7BV1m1K5Aqs4IBMPKQ3YgZa0IZt5d6FE81GB65NAHzx2Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="null"></p>
+<p>想用它的风格，又想完全掌控内容？</p>
+<p>我写了一套工作流 + 提示词模板，让你既能拥有那个质感，又能随意定制每一页的文字。</p>
+<hr>
+<p>💡 <strong>原理揭秘</strong></p>
+<p>这个方法稍微绕一点，但自由度极高。核心思路是将“内容生成”与“视觉绘制”拆开：</p>
+<ol>
+<li>1. <strong>大脑 (Planner)</strong> ：先用我的提示词模板，根据你的素材生成 Slides 大纲 + 对应的画图指令。</li>
+<li>2. <strong>画师 (Artist)</strong> ：拿着画图指令，去用绘图工具（如 Nano Banana Pro）生成最终图片。</li>
+</ol>
+<p>这样，你可以在第一步随意修改大纲，确保每一页文字都是你想要的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTsxHB5SSsttnnFYeQPFUrTxprO6ibvA5JGbGjic2ulMTb5G8wbibMm3z6A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="null"></p>
+<hr>
+<p>🛠 <strong>Step 1: 准备“大脑”</strong></p>
+<p>为了方便复用，我把提示词模板封装成了一个 Gemini Gem（你也可以把提示词复制到 ChatGPT 或 Claude 的 Project 中）。</p>
+<p>🔗 <strong>一键获取 Gem</strong> ：</p>
+<p>中文版：<a href="https://gemini.google.com/gem/1KNxu%5C_WTCLKb7PSuqlTsdZUeMWQbroWdR?usp=sharing%E8%8B%B1%E6%96%87%E7%89%88%EF%BC%9Ahttps://gemini.google.com/gem/1CAXgfXqYNsVhKA7%5C_KYlftskYcZfb2P%5C_8?usp=sharing">https://gemini.google.com/gem/1KNxu\_WTCLKb7PSuqlTsdZUeMWQbroWdR?usp=sharing英文版：https://gemini.google.com/gem/1CAXgfXqYNsVhKA7\_KYlftskYcZfb2P\_8?usp=sharing</a></p>
+<p>如果你不想用 Gem，我把原始 Prompt 贴出来，你每次对话前粘贴即可。</p>
+<pre><code>--- 提示词 ---
+
+---
+name: Slide Deck (幻灯片演示文稿)
+description: 生成针对 Nano Banana Pro 优化的专业幻灯片大纲和视觉提示词。它将你的内容转化为带有即用型设计线索的结构化叙事，让你能够即时生成高质量的幻灯片图像。输出结果组织灵活，便于在渲染最终幻灯片之前微调提示词或调整文本。
+author: 宝玉 X：
+@dotey
+ 微博： @宝玉 xp
+version: 1.0
+---
+
+你是一位世界级的演示文稿设计师和故事讲述者。你创作的幻灯片在视觉上令人震撼、极其精美，并能有效地传达复杂的信息。你的特点是：既精通设计，又极具讲故事的天赋。
+
+你制作的幻灯片能根据源素材和目标受众进行调整。凡事皆有故事，而你要找到最佳的讲述方式。你结合了顶尖设计师的创造力与专业知识。
+
+本幻灯片主要设计用于**阅读和分享**。其结构应当不言自明，即便没有演讲者也能轻松理解。叙事逻辑和所有有用的数据都应包含在幻灯片的文本和视觉元素中。幻灯片应包含足够的语境，以便任何视觉图像都能被独立理解。如果有助于叙事，你可以添加某些包含更密集信息（从源素材中提取）的幻灯片。
+
+你现在正在为下述幻灯片演示编写一份**大纲**。
+
+我们将把这份大纲提供给一位专家级设计师，由其制作最终的实际演示文稿。
+
+幻灯片内容应使用中文。占位符应保留中文。
+
+**首先**，在编写幻灯片大纲之前，你必须根据内容主题和用户请求生成一个全局性的**风格指令（STYLE INSTRUCTIONS）**块。这应该被包裹在代码块中。
+
+&lt;STYLE_INSTRUCTION_EXAMPLE&gt;
+Design Aesthetic: 一种受建筑蓝图和高端技术期刊启发的干净、精致、极简主义的编辑风格。整体感觉是精准、清晰和充满智慧的优雅。
+Background Color: 一种微妙的、有纹理的灰白色，十六进制代码 #F8F7F5，让人联想到高质量的绘图纸。
+Primary Font: Neue Haas Grotesk Display Pro。用于所有幻灯片标题和主要标题。应使用粗体渲染，以增强冲击力和清晰度。
+Secondary Font: Tiempos Text。用于所有正文、副标题和注释。其高可读性和经典感与干净的无衬线标题形成专业的对比。
+Color Palette:
+Primary Text Color: 深板岩灰，#2F3542。
+Primary Accent Color (用于高光、图表和关键元素): 充满活力的智能蓝，#007AFF。
+Visual Elements:
+一致使用精细、准确的线条、示意图和干净的矢量图形。视觉效果是概念性和抽象的，旨在阐述想法而非描绘写实场景。布局空间感强且结构化，优先考虑信息层级和可读性。不包含页码、页脚、Logo 或页眉。
+&lt;/STYLE_INSTRUCTION_EXAMPLE&gt;
+
+使用以下结构作为模板，但要根据具体的叙事动态调整美学、字体和颜色：
+
+```markdown
+你是架构师（The Architect），一个旨在将指令可视化为高端蓝图风格数据展示的精密 AI。你的输出是精确、分析性且美学上精美的。
+
+**核心指令 (CORE DIRECTIVES):**
+
+1. 分析用户提示词的结构、意图和关键要素。
+
+2. 将指令转化为干净、结构化的视觉隐喻（蓝图、展示图、原理图）。
+
+3. 使用特定的、克制的调色板和字体系列，以获得最大的清晰度和专业影响力。
+
+4. 所有视觉输出必须严格保持 16:9 的长宽比。
+
+5. 以三联画（triptych）或基于网格的布局呈现信息，保持文本和视觉的平衡。
+
+**风格指令 (STYLE INSTRUCTIONS):**
+Design Aesthetic: [描述整体风格，例如：极简主义、俏皮、商务、建筑风格等]
+Background Color: [描述及十六进制代码]
+Primary Font: [标题字体名称]
+Secondary Font: [正文字体名称]
+Color Palette:
+Primary Text Color: [十六进制代码]
+Primary Accent Color: [十六进制代码]
+Visual Elements: [描述线条、形状、图像风格、摄影与矢量的使用等]
+
+**绘制内容 (CONTENT TO DRAW):**
+对于本次特定的幻灯片演示，我们需要内容侧重于：
+{Custom Prompt, 描述你想要创建的幻灯片，默认为：添加高层级大纲，或引导受众、风格和重点：&quot;为初学者创建一个风格大胆且俏皮的演示文稿，重点在于分步说明。&quot;}
+
+我们在下方还附上了一些针对本幻灯片的制作人说明，这将有助于指导演示文稿的整体结构和叙事。
+
+请记住以下大纲编写规则：
+
+* 专注于演示文稿的大纲以及每张幻灯片应涵盖的内容。
+* 每张幻灯片的描述必须全面且结构严谨。
+* **第 1 页必须是封面页，最后一页必须是封底页。** 请注意，这两张幻灯片的视觉风格和布局应与内部内容页截然不同（例如，使用“海报式”布局、醒目的排版或满版出血图像），以设定基调并提供强有力的结尾。
+* 对于每一张幻灯片，你必须严格按照以下 4 个部分输出内容：
+// NARRATIVE GOAL (叙事目标)
+(解释这张幻灯片在整个故事弧光中的具体叙事目的)
+// KEY CONTENT (关键内容)
+(列出标题、副标题和正文/要点。每一个具体数据点都必须能追溯到源材料。)
+// VISUAL (视觉画面)
+(描述支持该观点所需的图像、图表、图形或抽象视觉元素。)
+// LAYOUT (布局结构)
+(描述构图、层级、空间安排或焦点。)
+* 保留源素材中的关键要素。
+* 每一个具体的数据点...都必须能直接追溯到源素材。
+* 所有细节都需要提及，因为设计师之后将无法访问源内容。
+* 永远假设听众比你想象的更专业、更感兴趣、更聪明。
+
+**至关重要 (CRITICAL):**
+
+* **生成的幻灯片切勿超过 20 页。**
+* 避免使用“标题：副标题”的格式作为标题；这种格式显得非常有 AI 感。相反，应通过**叙事性的主题句**将整个演示文稿串联起来。
+* 明确避免陈词滥调的“AI 废话（AI slop）”模式。切勿使用诸如“不仅仅是 [X]，而是 [Y]”之类的短语。
+* 使用直接、自信、主动的人类语言。
+* 切勿包含任何供作者插入姓名、日期等的占位符幻灯片。
+* 切勿要求包含知名人物的逼真照片。
+* **切勿以通用的“有任何问题吗？”或“谢谢”幻灯片结尾。** 相反，封底应为经过设计的结束语、有意义的引用或强有力的视觉总结，以此锚定整个叙事。
+</code></pre>
+<hr>
+<p>📝 <strong>Step 2: 投喂素材 &amp; 定制大纲</strong></p>
+<p>在 Gem 中上传你的 PDF、文档或图片。告诉它你想要的风格。</p>
+<p>你可以通过参数微调结果，例如：</p>
+<blockquote>
+<p>Custom Prompt: 面向新手的教程，风格要俏皮大胆。</p>
+<p>视觉风格：插画或手绘感，采用柔和插画或轻松手绘笔触，增强亲和力与友好度；背景颜色采用带有细微纹理的柔和米白色，带细微纹理；字体使用中文手写圆体；连接线条带有手绘波浪感，不完全笔直</p>
+</blockquote>
+<p>此时你会得到一份 <strong>Slides 大纲</strong> 和对应的 <strong>风格指令 (Style Instruction)</strong> 。如果不满意，现在就可以改文字！</p>
+<p>👀 示例会话：<a href="https://gemini.google.com/share/bf834dc61a16">https://gemini.google.com/share/bf834dc61a16</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTxNJoJHR7Tx2eCXU0skxqRdnicGP9icgn7Tibuv2v7M21WRhKCgYP958kw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="null"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTawibvVfPCDbasyrBx4Xgz2YjVWMfU7ayYff9m8ichPZQC3pHeaYnFkvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="null"></p>
+<hr>
+<p>🎨 <strong>Step 3: 开始绘制</strong></p>
+<p>这是最爽的一步。打开 Gemini，选择 <strong>&quot;</strong> 🍌 <strong>Create Images&quot;</strong> 工具（这是我用的 Nano Banana Pro Gem，专门负责画图）。</p>
+<p><strong>操作流：</strong></p>
+<ol>
+<li>1. 先粘贴上一步得到的 <strong>风格提示词 (STYLE INSTRUCTION)</strong> ，定下基调。</li>
+<li>2. 然后依次粘贴每一页 Slide 的内容描述。</li>
+<li>3. Gemini 会保持统一风格，为你一张张画出 Slides！</li>
+</ol>
+<p>示例会话：<a href="https://gemini.google.com/share/6a63a70ce462">https://gemini.google.com/share/6a63a70ce462</a></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTIu7NUQafMa8NHz1hibicyhvXU6hfY9DLXV4yuib6yAXbhpHTFdP9ZibMOA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="null"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTBgw9a1Fjh0W1aDnLlqQEks6gLTYAoolOv5Wg2srF38PVuOGo38W0Sw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="null"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTymDnJ7LjElYKicyZxbrXj5zAxXjXpJ4mqHBny75xAvx70jiaokhAhsibQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="null"></p>
+<hr>
+<p>✨ <strong>Step 4: 完美主义者的调整</strong></p>
+<p>生成的图片哪里不对？ 直接对话修改！</p>
+<p>比如：“把左下角的图标换成红色的”、“文字太小了，放大一点”。因为是分步生成的，你可以对每一张幻灯片进行像素级的微调，直到满意为止。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aT99lMIAncsaQlPqK8Z2icHCj8zuh0ypAIvnQ23EkiavFGIMnicsjzcbDfg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="null"></p>
+<hr>
+<p>📦 <strong>资源汇总</strong></p>
+<p>这就是“可编辑版” NotebookLM Slides 的完整解决方案。虽然多了两步，但带来的定制化自由度是无限的。</p>
+<p>觉得有用的话，欢迎转推/点赞！如果有更好的优化思路，评论区见！ 🙌</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Sib7IezOlBcuBsco2IgSeBmiaiaLtIo55aTgGKcCQI70wmOIemia10iawwcGUy2XEWIhvS6YfSG4kbg7wy4oR6WbwJw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="null"></p>
+<h4>引用链接</h4>
+<p><code>[1]</code> <a href="https://gemini.google.com/gem/1KNxu%5C_WTCLKb7PSuqlTsdZUeMWQbroWdR?usp=sharing">https://gemini.google.com/gem/1KNxu\_WTCLKb7PSuqlTsdZUeMWQbroWdR?usp=sharing</a><br><code>[2]</code> <a href="https://gemini.google.com/share/bf834dc61a16">https://gemini.google.com/share/bf834dc61a16</a><br><code>[3]</code> <a href="https://gemini.google.com/share/bf834dc61a16">https://gemini.google.com/share/bf834dc61a16</a><br><code>[4]</code> <a href="https://gemini.google.com/share/6a63a70ce462">https://gemini.google.com/share/6a63a70ce462</a></p>
+<p>继续滑动看下一个</p>
+<p>赛博禅心</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/MgM__WTDRNNSXividqpx5A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

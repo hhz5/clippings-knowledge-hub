@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>当我用Codex做PPT，这可能是目前最好的解法之一。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">当我用Codex做PPT，这可能是目前最好的解法之一。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%98%BF%E7%9C%9F">阿真</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=PPT%E7%94%9F%E6%88%90">PPT生成</a><a class="chip" href="../index.html?tag=%E9%A3%8E%E6%A0%BC%E8%BF%81%E7%A7%BB">风格迁移</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a>
+    <span class="date">2026-04-30</span>
+  </div>
+  <p class="lead">真·很想分享给你的很棒的Codex做PPT技巧！</p>
+  <article class="content"><p>原创 阿真 阿真 阿真Irene</p>
+<p><em>2026年4月29日 22:08</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9I0Jk18Y7OFXSgFpuqvHgpQVfWp73LZwghKyqz6xJUcH5nBVIOYMAaER1tsfpoelTwSQDqCdQ8Ucdp3zKh9QGurGGuRwqCd7s/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>嗨大家好！我是阿真！</p>
+<p>朋友们，好像标题党了，先别骂，看完指定有灵感。整了点不错的东西，这次真的可以把 PPT 做得很好看了！快放假之前给大家再分享一波，这个真的很棒的不容错过。</p>
+<p>首先我其实是很早就想做这个的，我之前分享的 Coze 的技能那篇文章，我做了一个技能叫【PPT风格克隆】，那时候我只有一个想法雏形，就是<strong>通过提取参考图或者参考网页的视觉细节，去进行这个风格的参考，然后把风格迁移到我的 PPT 生成的流程里，完成 PPT 的输出。</strong></p>
+<p>当时我虽然在 Coze 也做出来了，但是操作起来还是有点困难的，要自己比较熟悉什么参考图适合什么风格，不然迁移效果就差了点。刚去看了只有 5 个人给技能评分，还都是给1分（最低1分）😅</p>
+<p>而且我属于有点强迫症的那种，我不能接受它很多细节不统一，虽然它们单看都还不错，但是在一个 PPT 里的话，它们的那种视觉上的一致性是不够好的。</p>
+<p>比如下面这两张，虽然是一组生成的，但是黑色部分的框就是一个是方框另一个是凹角边框。或者很多场景下的单页的小标题的装饰是差别有点大的。👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicGyB87xFzibWHJkkGGQMEPaTpWntAxKxg1sUthwDWG9p8ukYFB2qo4I8XBhIQn6Yglia3sKibDQlXXnj1yDvRA1R9LH4RV3fwdyY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8FibSnW92N07vpqLweSMu8MeaNpsSicXkjj0OKABoKsATlht9iczMa3lPYR9ycYGtrlD5V1NRPXkk8OiaOL8UYSnF1AibwCZ4IEjic4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>那有没有解决办法呢？以前不那么好解决，但是现在我觉得又可以了。主要还是 Codex 支持了 Image 2 大大加强了我的探索欲，我探索出了一个很棒的可以用来做 PPT 的 Skill，可以很好地去迁移参考图的风格，做出自己想要的 PPT 效果。</p>
+<p><strong>几乎任何风格，都可以让 Image 2 为你迁移。</strong></p>
+<p>给大家先看看输出效果。这次风格参考的图片来自网站 Landbook（<a href="https://land-book.com/%EF%BC%89%EF%BC%8C%E8%99%BD%E7%84%B6%E5%AE%83%E4%B8%BB%E6%89%93%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E7%81%B5%E6%84%9F%E5%BA%93%EF%BC%8C%E4%BD%86%E6%98%AF%E8%A7%86%E8%A7%89%E7%9A%84%E4%BA%AE%E7%82%B9%E9%83%BD%E6%98%AF%E5%85%B1%E9%80%9A%E7%9A%84%EF%BC%8C%E5%AE%83%E5%88%86%E4%BA%AB%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%9A%84%E7%89%88%E5%BC%8F%E6%95%88%E6%9E%9C%E4%B9%9F%E6%98%AF%E9%9D%9E%E5%B8%B8%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E3%80%82">https://land-book.com/），虽然它主打网页设计灵感库，但是视觉的亮点都是共通的，它分享的网页图的版式效果也是非常值得学习的。</a></p>
+<p>这是给到的参考图👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibpu12x9uhURxuDaYmVVV7Y5z3Mia8rfPWcaMOiagoYib9r2zTfGOzV9icFLrXLXLqC8jmibSt0XcPfSS74yHB46r8eicYa1BibI9WDDo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p><strong>点击查看大图</strong></p>
+<p>原图链接：<a href="https://land-book.com/websites/71866-doconomy">https://land-book.com/websites/71866-doconomy</a></p>
+<p>输出 PPT 图片的时候，我的逻辑是先输出多宫格图，把基本的版式定下来，后续它再一个个放大，而 GPT Image 2 不让人失望的一点就是它放的的时候不但基本遵循了版式，在多宫格时候一些处理不好的地方它放大之后反而有可能进一步优化，这一点我觉得是 Nano Banana Pro 做得有点不如它的。但是人像和角色相关还是 Nano Banana Pro 更好。这个在最后一个案例可以看出来。</p>
+<p>先看多宫格👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicFT1xicw1dib6hnsMrfO65MH1wt49NiaRby3xVu8hrB1DNY5ibv4o8QVfecXFDrk1nwMF92HbtKwpoiaRkkibiaTGAzOB4KmwJPD2ZpQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>再看完整的输出👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8ree4qZLjIKichlW2YC0mdwJRBkrzdQbiacTYQIH0Lv8DBRKzRenn7iczFrRk6PsyF3UumMNH96pFLzQQc3XsEEqWxHzfIvmK5tY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibZ9yVfPEOibA2WZt54vJtUPHeqibYe6ocFiaSp2amQRb1PDjd6UqFrahPpfQ2rxSe04ppfsbpjgelbDr7zQ7HlUZCyOD3FUJh5jQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicOn0ZdfbyzR0UibkjXAWcgmp2lRCyovPMKmvFWWY4PMRxriaaWlPGrBuJfThA2fPgtI2YE6Q5QglwTt1h2iax5nSd24kcXbAzrias/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8tyicV55VKTCrVxh5m6loX8U9KnLy5uKrbcXFAMALT8RRrPb1whO6v1s47md0gKG7dN6oKa3VOdNcavubwwiaiajNPxfKqrkPSrU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9AdRbUKIWacyhsWP0rXz5GX4J1OGyPGk5kj0fZW77XgWto5VrIhjBMnnAsibp6dYsfBbS316lfToX3AzU2xOV9rVymHQibBA5EE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibiaDPvrkEtM1KcDWdibH7icwZiccYTlI2d5h33Elq8An27zkD3S98hMQp0RulMUgQ8u82yp5orGXPKb62BGvPMdPznYmQg0NMibGwc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s93HUtjMoiaZibk8Jxk2uXLstUUWDXgAfmI7cT5MpOReXBHqMqnLoFzwhGSlO0rLVHURA1l9VGStUxjjDZ5R1RH6UH0zTtJQPenY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sic1IdqfNGQF7WNCCiazm6DCrib11mHgTt1ek40uGrfkTbar6XFib0OgBJ5UDKmtbHpcjnc3P9FexOUaX95j7iaSnaBBTcRylabPKcU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>这是给到的参考图👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8sae4rwr71K5Kcd2NDopAWzBMLjIJRr1h1DqibCujyQIgWa8vLu9vkXiatE2uL8icGN8qECxyxtBy6VJTbrQ07AgBATQpLkHTa2Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p><strong>点击查看大图</strong></p>
+<p><a href="https://land-book.com/websites/93690-golive-webflow-ecommerce-website-template">https://land-book.com/websites/93690-golive-webflow-ecommerce-website-template</a></p>
+<p>这是参考参考图的输出PPT，基本都不用怎么修改。<strong>哎，你怎么知道我五一要去甘肃玩的哎嘿🐶👇</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9vYKj2QRtkK8OpTm6TBkHLVaq3f5jh81gm5DUvBX3z8baC7vwytRr4icXtPP7977Zml8gaI80icq21tmiawp5W2drDZ1jrBTnO00/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9NbkMvRU8Q3HgpZNib7X1XolNwicU3xmibbykpicjDCvzicIQ5fKqPibMWiaKjfdgTv8x4UCnbc9N8gUWZkvsz2fXOoszD5MghyQnfPw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sib3J4zTyfsb4jLtLxzxaNs4Hp6kfBTfOTX5t0VjxOW8lgTI6mibictx2YuBfWPsKTzMZG1LGKxn3iaea3y2477CAYS23oG0FuGwJw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8rD4akGjYibv5uvdSKZ5DC6VWu3H4S8g48BnvmopVxTlkk5cia2BnXOEE8PVmIts5WTCr99CerCczkK1d06JVSbs4Cov9tQcpG4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8gJ934k6ycWk6VmruiblG7peQ3M2FgeHx3Yo4FcJibBTt38C5OB7TlBGHHfO6zchKrQlCVjkhxkSd3v6tvpW8bLibXDpYe9Pl11o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicfPu1Dwo6fVSlloRKOCFiayH0kor7xrknBD5XUhFxdyESfbk2J6eABYdE3oqVNEicQng0nuxXKNlKjcpqnSLa6ybf8R0rnH1LNM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8nib3p0KMvaKVc3icMOHmw8AZicsyFRIn7CreKPEmlKmibISejribHIUGXbqVukCq4sXXarRmfXZORRHHzHO7jHkCA0B0icNQGibN2l0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibLua53TCCUsUFCCrbSbh2ficDGoXk6cOavnNEX8mILia4MfTYxlosr2icmeziabCrZghceNhwMWLB1M1cOXsMauOm0XkATMoW3l9o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s99wdpSVYe8gHtibfkL9H9L6fBoXxicIZd4r4S3DACMwAsU0DnX8fOrVSS66JN4JHzMghdTuY3cLACdkOvhnDJW9iaiaxwUaia0icUyA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>这个也是。前面几组简约点，后面几组复杂点👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicpvBcet81vVfp9ibNUq8HNpicrACddiacZUSbPPrt1yzJ28ej5VNlkO3T5I8qcSEkmM445jqiaEZEoLR85hibmlymHlHkBSJYgcJds/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sic5oo7UGdwW4Nv7Tf19hDtpgNzZJrzcHD0Sk7wc9wH5kxImYqAYl4ttNiaHeCJ79aqe0aMNibhwdyf97vlPlX1JyWZwCwfr5Rv1I/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s87tWPYUWZaMWBA5jLEGPA1v1ZSBs8NK1pe1TTMdyUmgnUiatHyDoLDPrVpEYSeMGra7NoRAMZQLHqT6yria5GcAzuWLAq3ich0Bg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8yUfvjHByh479dOcpvEiaSxXhjHFllnl2CdzvwdGgGfhF7dcG1cib99hVMfLzYOHU8N9s42qqQ0gcqujqk6rHzjlRzXYCt182jI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibsqy4mibYVg5yMZ4p4f0yp2QvdMPMIesKzL8307UJHtBoNzZgtgONECuiczickQe44icQhTicNKDibscic8Nk3DIj9xuicpj7ybJ0VNuk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>还有这个👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sib17zkUBSm7ia7t7l4IibduzYYlhqPFTQvC1lWiab2rz0daVcJevcbwEKUBZOTy1icnZeQf6UF0d9plyw3z2Mib0DndMK9EnY8I1tRI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibLMgKvsGSHOLsqm53AGolPStSmiaicWM3yWqGBeicbGTfUP6r89CQYlkThf6ib8XsdicVUP9l9GyzTe1EEC8Oxuvdu5f3zgkUKicaJ0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8WppgNnvicWibnTvYOQDgTw9VwuMqdmqGJOWgXdsZV1FtYJzjaaicyrLWIMNjnV5KBodD4HyQy0Fd8mia5oXfyZ3YbpwpUTojSQ2g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibhzBofaXMgQypNrly6EicmBp6S4VyRlPRIQdTNsc7KmSHw9NrgEia3dRumoO8wmXyZU6fO5SmnzLAiaPOMNbZDeicr75hibOf5OWjU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibGR1IMXic8Yc8rJBhEScW4L67fWll7Nhfy8w80RR3DahGhqQBHJQlUIb2ibcP8ZssNN4MRjcE2EWqgZZXoxz5WjMMpZO13gOnoU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibcmdSibSic4n6OBYCQuyEbXpfpnoKNbIztqwecUfjtiaV2mBMp4jwGOSR597qOLKr7DNOSibkHJ0EH7LMTibsqqM6MDh5FGzTt4MrQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>还有这个👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8KJ63GAbI8OVLjesIvhvnhpR5czYgxwueU5SzicoIMPwCTtD21fInKgFH7OV9ibynM3rN8wRK8pHraJDpCRkL1jlJwmW8tbyoJI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9Fev0Nmp8acuUosO5Ser25mAcia2ThH1G0zEiaJdibWuIyQoJe3jMBzHoDUYJDTKjNicTIJPoDaYdtppYoAP5un5ogxnxGMJPdrCc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicINJ5jsHnsuPtLYGHsibh0VNTawPtndPiacIPM9HZfUBn9Ae6R1CxgXBd4KIfBIlibJWztEXJpF32lXnc3GarLCWQVvVo95p2dgQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=36" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s995Dlqx4KADbUQzvibyZbQNicfcsxaiaiaGqc6WcMFfUjzqvZqoBFE4zlrgP1euVS88Eks9kQyvprYI5IotQ6j8SKpcV9hCnQTMuw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=37" alt="图片"></p>
+<p>虽然依然不能说很完美，但是整体的调性和细节还是不错的了。</p>
+<p><strong>思路分享</strong></p>
+<p>再和大家分享我这个 Skill 的工作过程和我的思路。</p>
+<p>首先这个 Skill 不是做可编辑 PPT 的路线，走的路线还是“先把视觉风格资产化，再用 Image2 生成整页图，最后封装成图片版 PPTX ”。这主要还是依托 Image 2 自身强大的能力实现的。</p>
+<p>下面是我的思路（这个风格是这个 Skill 的默认风格）👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s89P5WcCzGy5QRia2khY32W3OJCLuxYVAqL0hiaYrHSGf4nE2ZUYufJrjnlnW5E9zPrauBDdYpMHRJTZWSibcT8MfiamR4q8PuiartY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicXuLPvAL9vknbcfj5BNZzbOGBDOfEIQibPZnoD7mIqBzjDDNb2VrEb4uAdDzfBRl5YOqHZb6ib5qfm5NbEIrV6tqNLBG2w79CoU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=39" alt="图片"></p>
+<p>**1. 判断任务类型：**GPT首先会判断是提炼风格、调用风格库、文档转 PPT/图片、已有图片版 PPT 返修，还是单页视觉重做。</p>
+<p>**2. 选择或提炼风格：**明确只使用一个 Style source （用于参考风格的资源）和一个 Style Lock（锁定视觉细节），防止混入历史参考图或其它风格。</p>
+<p>**3. 理解内容：**从文档或主题里抽出一句话主张、受众、3-6 个核心观点、可视觉化对象和建议页数。这一块是为了PPT 的内容作准备。</p>
+<p>**4. 确认生产参数：**页数、比例、输出类型、语言、文字密度、是否需要日期/作者/Logo/水印。默认是中文优先、16:9、低密度、无日期。这里是锁定视觉细节。</p>
+<p>**5. 规划页型：**从封面、目录、核心观点、对比、流程、框架、时间线、数据、案例、清单、结论等页型中为每页定角色。这里也是锁定视觉细节。</p>
+<p>**6. 先产出文档：**多页项目前必须先生成 outline.md（这个是内容框架） 和 prompts.md（这个是完整提示词），其中 prompts.md 要包含完整 Style Lock（这是为了统一多图的视觉细节）。</p>
+<p>**7. 两段式生成：**多页项目优先先做缩略图板锁定整体节奏，再逐页生成独立成品图。这里选择了先做一张多宫格图，用于更好地保持不同页面的图片版式的一致性。</p>
+<p>**8. 用户确认图片：**生成后先展示或列出图片，确认通过后才组装 PPTX 和 zip。</p>
+<p>**9. 局部返修：**重做被点名的页，保留其它页和同一风格系统。</p>
+<p>**10. 最终打包质检：**检查风格一致、中文可读、信息不拥挤、页型匹配、无黑色外框、无假日期、一页一图、PPTX 全屏铺图。</p>
+<p><strong>如何使用</strong></p>
+<p>**推荐工具首选 Codex 。**因为它足够聪明，能够很好地理解并输出我需要的文本内容，还能批量完成极高质量的带有文本的图片。如果无法使用，同样可以尝试 Lovart 、LibTV 或扣子来完成。</p>
+<p>首先还是安装这个 Skill，或者直接把我最后的链接复制给 Codex 让它安装就行了。顺带说一句这里打码是因为是个无关的 Skill，不是特地藏私，这个调好了下下期就分享了，也是很有意思的小工具😁 👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9QDtfmaBDB8sbVlCgmbBlwoPQNV3VcBVjkjvrUa141LXgIcE4HnCzD9VHfannP8c3iaiaG9hwMp7e2C2ibNoibpicBS7j3Kj1K9vZg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=40" alt="图片"></p>
+<p>安装好以后，让它调用这个识别图片做PPT的 Skill 或者直接让它调用 visual-style-ppt Skill，给到它想要参考和模仿风格的图或者直接给网页链接也可以，并且和它说，提取这张图的风格 DNA ，然后它就完成了提取👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicSTzNTAzsAruQiatfyhsupnfUdvoOgLSDuVGMGSXgzctRz0pbAFY9DHb7xiaDpVCZq9X5WNnWb9mibJ2C89nicm11cwdzlMiaBtL64/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=41" alt="图片"></p>
+<p>原图与原图链接👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9cQhF7w1whanMyGlgRvxAme1Gw8aN9t3oKDdoeTS9KBCGeMSibfenibvsdY4p5P8JOic3YEudBM2eqFYm1bZNFvnUntUWpXuhawc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=42" alt="图片"></p>
+<p><a href="https://land-book.com/websites/84950-error-the-request-could-not-be-satisfied">https://land-book.com/websites/84950-error-the-request-could-not-be-satisfied</a></p>
+<p>好，风格已经提取好了，接下来就是给到指定路径的文档，或者文档附件，让它生成 PPT。如果没有文档直接让 Codex 去找资料也一样的。</p>
+<p>但是在这一步它还不会生成 PPT，它会首先生成第一步文件等我们确认，这一步会生成一个 outline 文件，一个 prompts 文件。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sic4Il0rknJgDXBwbrqUNKOiaQbqHC49coMkhbfn5k0SnMWicKj8yDJXuPjFDlQr0D5w53CVias0AoSabibH9BXAuKibpZXcNNic3HRJA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=43" alt="图片"></p>
+<p>outline 文档其实就是 PPT 的文本大纲，为了内容更加可控，我的想法是把这个文档先单独输出出来进行确认，**内容大纲上还有任何问题的时候，可以选中内容然后【添加到对话】修改。**这个后面有截图示意。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sib3vmRTJHPO6x6gsfZiaTOvA483uSXtmX27qDStbFO8vBg4HNXz2geljBzNTa3NLnDSPsics9382asMcaAD3Me7r7icKUHfGv2wBU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=44" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sib1vBgHy3icibUPUKZCsjQE58iciad8zdrQHibIkCXichF8ynnjv66fxx1SialNgBGHF00cUDPY2XfXx9U9lGE74AoN8RQsKDzGhcoTn8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=45" alt="图片"></p>
+<p>然后是 prompts ，这个相信大家都很熟悉了，这个就是提示词，不同的是，在这个提示词前面我做了详细的制作参数标准的默认与统一，以及Style Lock，也就是将风格和层级的细节狠狠锁死。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9BnHVlhMFUB0v3EbXtVG3B35msr3icAGpdWoD5vEKgEg1yvAgOkYl9epO0VYfzYYfFRcqbJZKQjlicXZrRqDQr1eID1MzQlR4Fs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=46" alt="图片"></p>
+<p>再往后，就可以看见缩略图、每张PPT的详细提示词了，之所以这样做也是想让风格和内容在内容阶段就都更加可控。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sib3ceUJwNmdBqmvkc1pw3vaqlc3HiagGO8Edwz8zjJzSBgicS3rjABY8tDMkqx2IzSg2rH577U50icApRFvbzzEoVflU2RS3H8Dm8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=47" alt="图片"></p>
+<p>等上面 2 个文档内细节确认了，就可以让它生成图片了。就对它说“生成图片”或者“继续”就行了。生成图片分了两步，先出多宫格，不满意就修改到满意，然后再一张一张输出。下面我这个内容很简短，所以只有 7 张图。如果是 PPT 内容比较长的，可以考虑让它分成多次去完成。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibiaftj5HoYCVWoWVSewOQGnDaEkUlaOsMpiaDTtQEVkVuibbp27ia0W7OVR0icXu1xQ7LfjHswxhrKQ2tOAZoN53gPABxvOMGboyX0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=48" alt="图片"></p>
+<p>文档原文来自：<a href="https://substack.com/home/post/p-186699129">https://substack.com/home/post/p-186699129</a></p>
+<p>当然，如果你觉得上面这些都虚头巴脑的，费那老大劲！那也可以直接让它输出 PPT 图。这个主要还是为了细节可控。</p>
+<p>最后的大图和九宫格的缩略图可能还是有点差别的，但是**在我的尝试中，它变化的方向通常是往更好的方向，**所以都还是可以接受的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s99lQf1wRoahm6EawjcSDkaNAB1bQZZpzpUHnlJhibq7pnXWF8dGA5IlPF2QxhLcib3q8hmeicWLQHVUQeQgict8fO53H0jGstn2T4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=49" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibvFiaJ64Z4l9gibUE5AZAgYXuDI0cDHOWt7LXK4rfcrmWsORMRcRaveM3gS9BjiaaWpic0QROmo8icjzC1NI2H9lsK4YmmYPqORaqI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=50" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sic9miaKhuaPJtuNKNu44IPLRjAY7xX8xRoZY3MU4osElxZsyibNgiar2o6ku21ib6v9mxt4JQ2Oeo23ibtYZScRW7xdsygicZZETGjN8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=51" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicd6rWuerkpKQFJZj6huJzOmEiaHAxibayCicOt2PHkH5ubGibGrs7jWZl4MukticeedhmpomT3xve8xQUACpSg8kABBiaAWB2rOpAQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=52" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8E685RfcdZCDC8A0rvj0GY4XBDibMbpBricAJ0CsJmGUuoonbVkoK6oRz4ojZ89ayTw7tzuwzLXLtZIRpXUkHW242XmAXJf2ib7k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=53" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibNqakDHg77CXvLJUeCnQwGEme1wWsbN5a9yLgHicbpianSGC96H5HevRIboDibYJuVDia0icbvHgMOGBgU1I9QGbItW6fNib6J7exEo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=54" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9a5aOaILziaTIXWl62oNvfeZkiad4IpfcnkQBkmBKKjpIiagVejibF5me97fsn8KkfWehJIYXdUdwckricNbs9GEP3WloWBVxDy1CU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=55" alt="图片"></p>
+<p>第一轮所有图片输出以后其实还是可以继续进行调整的。比如这个原图序号错了，我让它继续修改。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibFRNuSz9j5mHcibibc05pXIcFh5DB0mHsmznFTLG3W4aiaqPFU3QGBbM1Kia6ibgfogyGzQXaYkooXLHRjPGg7zLKuwW40jCV2nia1M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=56" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s87VyrSRPr9kiat37pMlI7gIPvlN8lyvtnHT0g3m235yEBZ5tFpiamWsns4lqBJgNibSQGyOaSR3GAYKkhbcwib0cYNhoV9mAvNU8Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=57" alt="图片"></p>
+<p><strong>但是还是老问题哈 Image 2 这个人像细节。</strong></p>
+<p>如果还有其他文字细节要修改，可以截图框选给她让它修改。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9QdibCDE2mgdhz2f7t0ibXp2PcZk3qnI3DIIwBwkefichMmEJdwsYankPjQ92uWanAVlIrQXF0vAwFz8JysiatCRlU7A0W3kjXKz0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=58" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8ZM1gDT6zh1l27kroZT1JmcI7CkDPptaV2xicNJ893zctXSibs9E4ncgw9eKNIHK2A5Xzuv8T11wVCY4yYic0PqvRCuWnz0gIDVI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=59" alt="图片"></p>
+<p>然后图片也确认完了，可以直接让它导出 PPT，或者直接说“打包” 。它会交付最后确认的所有的图片、缩略图版、大纲、提示词文件。不要误会，这里的 PPT 其实还是那个无法修改文字的图片组合在里面的。有需要修改的，一定在前面一步修改完了再打包压缩包。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibyqdLV92tyyyJTVBnyf9KmYFMbXejESQOibunpl2m8bzGwvQxZbAgwKmxAich1n4xoZ4JjticDAYts8k7PxJbicjFFTsdWbCb8PYw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=60" alt="图片"></p>
+<p>最终输出的压缩包里是这样的👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibg6TxkQdicp6Sdcc7Fq85NO1gZ4p6veRrlNH6J7Fyag7TR9LS3Z6bS3XzgiafK52I387LpzU9vG7KZ0ggXgYg6IYhucHPZYstIU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=61" alt="图片"></p>
+<p>**其中 Style-used 是可复用的风格模板。**它是给后续生成、返修、复用看的风格设定文件。它的作用如下（你看，我再次生成信息图的时候调用了同一个风格模板，它的风格一样维持得很好）也就是说，<strong>我们如果还要加 PPT 页面，直接在这个基础上补内容也是完全 OK 的，绝对不是只能九张以内的👇</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9Dw56vh37iaLaXiaF2M9SDwbPoWVVXAdgm7ibT27vKGDpMkSHjemArdvtL8sLmx9sh2UO5JvwgyWVS9gs5PPV4EdURNxgPNzUKuw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=62" alt="图片"></p>
+<p><strong>如何使用 · 文字版</strong></p>
+<p>最后再次简单概括怎么使用：</p>
+<p>第一步，在 Codex 安装这个 Skill。</p>
+<p>第二步，给它参考图，让它提炼风格 DNA 。</p>
+<p>第三步，给它我们的文档，让它基于文档生成 PPT 图片。这一步会生成两个文档，修改确认好以后，再进行下一步。</p>
+<p>第四步，检查和修改图片细节，没有问题后让它打包文件。</p>
+<p>第五步，Style-used 文件，下次还可以复用，觉得有用可以让它直接存到 Skill 里。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibSylLAVNPo1gNermU0JibnIJdAEJxicFpGANFT8aPflpwm3c8icQfy9d1tobKD7JXXrfE2lpEWek0jCad5icSibUPpbw6fULk0X8d4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=63" alt="图片"></p>
+<p><strong>小结</strong></p>
+<p>好嘞，到这里，我的整个思路和它的操作方法也差不多分享完了，以后大家如果想迁移自己一直惯用的一些风格到要用的 PPT，或者做一些实验性的PPT 风格的尝试等等，也都非常方便了。</p>
+<p>最后，这个 Skill 已经分享在 GitHub ，下面是链接，如果喜欢可以点亮阿真的 GitHub 🌟</p>
+<pre><code>https://github.com/irenerachel/visual-style-ppt-skill
+</code></pre>
+<p>创作不易，烧脑烧 token 咩哈哈，如果内容对大家有启发或帮助，欢迎给阿真一个免费的猛猛三连鼓励～！</p>
+<p>马上放假了，阿真假期出去玩，可能整个假期不更新，预祝大家假期愉快呀😄</p>
+<p>下期见！</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/3fFwt4G-jmnY93RyatJ-rQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

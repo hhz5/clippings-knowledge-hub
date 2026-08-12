@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 编程助手的三大支柱：Skills、Rules 与 MCP 详解 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI 编程助手的三大支柱：Skills、Rules 与 MCP 详解</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%A5%BD%E6%9C%8B%E5%8F%8B%E4%B9%90%E5%B9%B3">好朋友乐平</a>
+    
+    <span class="date">2026-03-09</span>
+  </div>
+  <p class="lead">如果你正在使用 AI 编程工具，可能会被各种术语搞得晕头转向：Rules、Skills、Commands、MC</p>
+  <article class="content"><p>原创 好朋友乐平 <em>2026年3月9日 08:01</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxBZYDNgr8kUY8zqPyhibSJqlZRUMib1RMqzjPvWibD5dV8zguzWvYz9VicNMibI2Mlcv5xgAmOrF1YoHfNp3yIX1MC2uJaZMwB6yoxQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>如果你正在使用 AI 编程工具，可能会被各种术语搞得晕头转向：Rules、Skills、Commands、MCP、Hooks……每个工具都有自己的术语体系,但核心困惑始终存在。</p>
+<p>本文将帮助你理清这些概念,特别是三个最核心的部分： <strong>Skills（技能）</strong> 、 <strong>Rules（规则）</strong> 和 <strong>MCP（模型上下文协议）</strong> 。理解它们的区别,就像掌握了 AI 编程助手的操作系统。</p>
+<h2>核心心智模型</h2>
+<p>在深入细节之前,先建立一个简单的类比。如果把 AI Agent 比作一位厨师:</p>
+<ul>
+<li><strong>MCP Tools</strong>
+  = 食材 🥔🥩（原料能力）</li>
+<li><strong>Skills</strong>
+  = 菜谱 📝📇（烹饪方法）</li>
+<li><strong>Rules</strong>
+  = 厨房守则 ⚠️（必须遵守的规则）</li>
+<li><strong>AI Agent</strong>
+  = 厨师 👨🍳（执行者）</li>
+</ul>
+<p>这个类比贯穿整篇文章,帮助你直观理解每个概念的作用。</p>
+<h2>Rules（规则）：不可协商的约束</h2>
+<h3>什么是 Rules？</h3>
+<p>Rules 是 <strong>持久性约束条件</strong>,无论执行什么任务都必须遵守。它们定义了&quot;什么必须始终为真&quot;,而不是&quot;如何完成任务&quot;。</p>
+<p><strong>类比</strong> ：厨房守则</p>
+<ul>
+<li>生食熟食必须分开</li>
+<li>过期食材不能使用</li>
+<li>操作台必须保持清洁</li>
+</ul>
+<p>这些规则 <strong>无论做什么菜都要遵守</strong>,不是针对某道菜的做法。</p>
+<h3>适用场景</h3>
+<p>Rules 适合定义 <strong>不变量</strong> ：</p>
+<pre><code># 项目 Rules 示例
+
+## 架构约束
+- 验证逻辑必须在领域层
+- 不得引入新的依赖项
+- 公共 API 行为不得在未明确指示的情况下改变
+
+## 代码规范  
+- 禁止提交 .env 文件
+- 使用设计系统中的 token,不使用硬编码像素值
+- 所有 UI 组件必须支持键盘导航
+
+## 测试要求
+- 必须复用现有的测试辅助函数
+- 修改计费代码时运行集成测试
+- 测试必须保持通过
+</code></pre>
+<h3>关键特征</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>触发方式</strong></td>
+<td>工具自动应用</td>
+</tr>
+<tr>
+<td><strong>作用范围</strong></td>
+<td>所有任务</td>
+</tr>
+<tr>
+<td><strong>上下文成本</strong></td>
+<td>始终占用</td>
+</tr>
+<tr>
+<td><strong>稳定性</strong></td>
+<td>长期不变</td>
+</tr>
+</tbody></table>
+<h3>常见误区</h3>
+<p>❌ <strong>错误</strong> ：把规则当作行为指导</p>
+<pre><code># 不好的 Rule
+- 编写整洁的代码
+- 重构时要仔细思考
+- 适当时进行优化
+</code></pre>
+<p>这些需要&quot;判断&quot;的指令不是约束条件。</p>
+<p>✅ <strong>正确</strong> ：定义明确的边界</p>
+<pre><code># 好的 Rule  
+- 不得修改 src/legacy/ 目录下的文件
+- API 响应格式必须符合 OpenAPI 规范
+- 所有数据库查询必须使用预编译语句
+</code></pre>
+<h2>Skills（技能）：可选的专业知识</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxA2VibEIVWjw69oVRzkib0Y78hxWBkf2EDTbsiamdZznKF3QwmkmpSKvIajKGpl9Snmxyd5xIvdLuIvfrBc1nPGJTWErLHouB9d4Y/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h3>什么是 Skills？</h3>
+<p>Skills 是 <strong>可重用的方法论包</strong>,教会 Agent 如何解决特定类别的问题。它们按需加载,只在相关时才被使用。</p>
+<p><strong>类比</strong> ：菜谱卡片</p>
+<ul>
+<li>意大利面的做法</li>
+<li>烤蛋糕的步骤</li>
+<li>炖汤的技巧</li>
+</ul>
+<p>菜谱不会自己种番茄或磨小麦,但它会 <strong>编排如何使用这些食材</strong> 。</p>
+<h3>工作原理：渐进式披露</h3>
+<p>Skills 的巧妙之处在于&quot;渐进式披露&quot;（Progressive Disclosure）：</p>
+<pre><code>Agent 启动
+  ↓
+扫描 Skills 的名称和描述
+  ↓
+只在任务相关时加载完整内容
+  ↓  
+执行 Skill 中的步骤
+</code></pre>
+<p>这就像&quot;懒加载&quot;——Agent 不会一开始就读取所有 Skills,而是需要时才加载,<strong>节省上下文空间</strong> 。</p>
+<h3>Skill 文件结构</h3>
+<pre><code>.cursor/
+└── skills/
+    └── ui-change/
+        ├── SKILL.md          # 主定义文件
+        ├── scripts/          # 可执行脚本
+        │   └── validate.sh
+        ├── references/       # 参考文档
+        │   └── design-tokens.md
+        └── assets/           # 模板资源
+            └── component-template.tsx
+</code></pre>
+<h3>实际示例</h3>
+<pre><code>---
+name: ui-change
+description: 修改 UI 组件、样式、布局或交互行为时使用此技能
+---
+
+# UI 变更技能
+
+## 约束条件
+- 使用现有的设计 token 和组件
+- 不使用魔法数字或原始像素值
+- 保持可访问性：键盘、标签、焦点、对比度
+
+## 工作流程
+1. 用一句话重述变更内容
+2. 识别最接近的现有组件模式  
+3. 实施最小差异的变更
+4. 验证响应式行为、焦点状态和键盘导航
+5. 有歧义时停下来询问确认
+
+## 成功标准
+- ✅ 未使用新 token、魔法数字或原始像素值
+- ✅ 在移动/平板/桌面视口上均正常工作
+- ✅ 完全支持无鼠标和屏幕阅读器使用
+</code></pre>
+<h3>关键特征</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>触发方式</strong></td>
+<td>Agent 根据相关性决定</td>
+</tr>
+<tr>
+<td><strong>作用范围</strong></td>
+<td>特定任务类别</td>
+</tr>
+<tr>
+<td><strong>上下文成本</strong></td>
+<td>仅在需要时占用</td>
+</tr>
+<tr>
+<td><strong>可操作性</strong></td>
+<td>可包含脚本、模板</td>
+</tr>
+</tbody></table>
+<h3>常见误区</h3>
+<p>❌ <strong>过早创建 Skill</strong></p>
+<p>如果某个流程只做过一次,不要急于创建 Skill。 <strong>只有重复出现的模式才值得封装</strong> 。</p>
+<p>❌ <strong>把 Rule 写成 Skill</strong></p>
+<pre><code># 这应该是 Rule,不是 Skill
+---
+name: never-commit-secrets
+description: 确保不提交敏感信息
+---
+</code></pre>
+<p>❌ <strong>Skill 过于臃肿</strong></p>
+<p>如果 Skill 读起来像百科全书,应该拆分成更小的文件,通过引用链接按需加载。</p>
+<h2>MCP（模型上下文协议）：连接真实世界</h2>
+<h3>什么是 MCP？</h3>
+<p>MCP（Model Context Protocol）是一个 <strong>开放协议</strong>,让 AI Agent 能够调用外部工具、系统和数据源。</p>
+<p><strong>类比</strong> ：食材本身</p>
+<ul>
+<li>面粉（数据库查询工具）</li>
+<li>鸡蛋（API 调用工具）</li>
+<li>盐（测试运行工具）</li>
+<li>橄榄油（浏览器交互工具）</li>
+</ul>
+<p>这些是 <strong>原子化的能力</strong>,本身没有行为逻辑,但可以被组合使用。</p>
+<h3>MCP Tools 的特点</h3>
+<table>
+<thead>
+<tr>
+<th>特点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>原子性</strong></td>
+<td>每个工具只做一件事</td>
+</tr>
+<tr>
+<td><strong>无状态</strong></td>
+<td>通常不保持状态</td>
+</tr>
+<tr>
+<td><strong>可组合</strong></td>
+<td>可以被 Skills 编排使用</td>
+</tr>
+<tr>
+<td><strong>由平台提供</strong></td>
+<td>通常由框架/服务提供</td>
+</tr>
+</tbody></table>
+<h3>实际示例</h3>
+<pre><code>// MCP Tools 示例
+{
+&quot;tools&quot;: [
+    {
+&quot;name&quot;: &quot;run_tests&quot;,
+&quot;description&quot;: &quot;运行指定的测试套件&quot;,
+&quot;parameters&quot;: {
+&quot;test_path&quot;: &quot;string&quot;,
+&quot;coverage&quot;: &quot;boolean&quot;
+      }
+    },
+    {
+&quot;name&quot;: &quot;query_database&quot;,  
+&quot;description&quot;: &quot;执行数据库查询&quot;,
+&quot;parameters&quot;: {
+&quot;sql&quot;: &quot;string&quot;,
+&quot;readonly&quot;: &quot;boolean&quot;
+      }
+    },
+    {
+&quot;name&quot;: &quot;browser_click&quot;,
+&quot;description&quot;: &quot;点击浏览器中的元素&quot;,
+&quot;parameters&quot;: {
+&quot;selector&quot;: &quot;string&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h3>MCP 的作用</h3>
+<p>MCP 不会提升推理能力,它 <strong>提升反馈能力</strong> ：</p>
+<ul>
+<li>❌ 不会让 Agent 更聪明</li>
+<li>✅ 让 Agent 能验证假设</li>
+<li>✅ 让 Agent 能观察真实结果</li>
+<li>✅ 让 Agent 能与外部系统交互</li>
+</ul>
+<h3>常见误区</h3>
+<p>❌ <strong>把 MCP 当作智能</strong></p>
+<p>MCP Tools 只是能力接口,不包含决策逻辑。决策应该在 Skills 或 Agent 层面。</p>
+<p>❌ <strong>混淆 MCP Tools 和 Skills</strong></p>
+<pre><code>错误理解：
+MCPTool=&quot;部署应用&quot;
+
+正确理解：
+MCPTools= [&quot;运行脚本&quot;, &quot;检查状态&quot;, &quot;发送通知&quot;]  
+  Skill = &quot;部署应用&quot;（编排多个 MCP Tools）
+</code></pre>
+<h2>三者对比：决策树</h2>
+<pre><code>需要添加一个指令？
+  │
+  ├─ 是否无论何时都必须遵守？
+  │    └─ 是 → Rules
+  │
+  ├─ 是否是特定任务的重复流程？
+  │    └─ 是 → Skills
+  │
+  ├─ 是否需要调用外部系统？
+  │    └─ 是 → MCP Tools
+  │
+  └─ 一次性指令？
+       └─ 直接在对话中说明
+</code></pre>
+<h3>对比表格</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Rules</th>
+<th>Skills</th>
+<th>MCP Tools</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>抽象层次</strong></td>
+<td>约束</td>
+<td>方法论</td>
+<td>能力</td>
+</tr>
+<tr>
+<td><strong>触发方式</strong></td>
+<td>自动应用</td>
+<td>Agent 判断</td>
+<td>被调用</td>
+</tr>
+<tr>
+<td><strong>作用范围</strong></td>
+<td>全局</td>
+<td>特定任务类别</td>
+<td>原子操作</td>
+</tr>
+<tr>
+<td><strong>上下文成本</strong></td>
+<td>始终占用</td>
+<td>按需占用</td>
+<td>调用时占用</td>
+</tr>
+<tr>
+<td><strong>可操作性</strong></td>
+<td>否</td>
+<td>可包含脚本</td>
+<td>直接执行</td>
+</tr>
+<tr>
+<td><strong>所有权</strong></td>
+<td>开发者定义</td>
+<td>开发者定义</td>
+<td>平台提供</td>
+</tr>
+<tr>
+<td><strong>稳定性</strong></td>
+<td>长期不变</td>
+<td>经常演化</td>
+<td>相对稳定</td>
+</tr>
+<tr>
+<td><strong>类比</strong></td>
+<td>厨房守则</td>
+<td>菜谱</td>
+<td>食材</td>
+</tr>
+</tbody></table>
+<h2>组合使用：完整的工作流</h2>
+<p>最强大的模式是 <strong>组合使用</strong> 这三者：</p>
+<h3>示例：实现发布流程</h3>
+<pre><code># Rule（约束）
+- 发布前必须通过所有测试
+- 不得直接推送到 main 分支
+- Changelog 必须更新
+
+# Skill（方法）
+---
+name: release  
+description: 执行应用发布流程
+---
+
+## 发布流程
+1. 检查当前分支是否干净（使用 git_status MCP Tool）
+2. 运行测试套件（使用 run_tests MCP Tool）
+3. 更新版本号
+4. 生成 Changelog（参考 references/changelog-template.md）
+5. 创建 Pull Request（使用 create_pr MCP Tool）
+6. 等待审核通过
+
+## 成功标准
+- ✅ 所有测试通过
+- ✅ Changelog 包含所有变更
+- ✅ PR 包含正确的标签
+
+# MCP Tools（能力）
+- git_status: 检查 Git 状态
+- run_tests: 运行测试
+- create_pr: 创建 Pull Request  
+- send_notification: 发送通知
+</code></pre>
+<p>在这个流程中：</p>
+<ul>
+<li><strong>Rules</strong>
+  定义了不可违反的边界</li>
+<li><strong>Skill</strong>
+  编排了具体的执行步骤</li>
+<li><strong>MCP Tools</strong>
+  提供了实际操作能力</li>
+</ul>
+<h2>实用建议</h2>
+<h3>1. 保持 Rules 简短</h3>
+<p>Rules 应该只包含 <strong>路由逻辑</strong> ：</p>
+<pre><code># 好的 Rule
+- 修改 UI 组件时，加载 ui-change Skill
+- 调试生产错误时，加载 incident-triage Skill
+- 操作计费代码时，加载 billing-safety Skill
+</code></pre>
+<h3>2. Skills 的黄金法则</h3>
+<p>每个 Skill 必须回答六个问题：</p>
+<ol>
+<li><strong>触发条件</strong>
+ （Description）：何时加载？</li>
+<li><strong>输入</strong>
+ ：需要什么信息？</li>
+<li><strong>步骤</strong>
+ ：执行流程是什么？</li>
+<li><strong>检查</strong>
+ ：如何验证成功？</li>
+<li><strong>停止条件</strong>
+ ：何时需要人工介入？</li>
+<li><strong>恢复</strong>
+ ：检查失败时怎么办？</li>
+</ol>
+<h3>3. 基础 Skill 库</h3>
+<p>建议从这些 Skills 开始：</p>
+<ul>
+<li><code>repo-orientation</code>
+  : 仓库结构和约定</li>
+<li><code>ui-change</code>
+  : UI 组件修改流程</li>
+<li><code>debugging</code>
+  : 问题复现和日志分析</li>
+<li><code>verification</code>
+  : 变更验证命令</li>
+<li><code>pr-hygiene</code>
+  : 提交信息和 Changelog</li>
+<li><code>safety</code>
+  : 安全边界</li>
+</ul>
+<h3>4. 先用 Skills，再考虑其他</h3>
+<p>遇到问题时的优先级：</p>
+<ol>
+<li>能用 <strong>Skills</strong> 解决吗？（大部分情况）</li>
+<li>需要单独的 <strong>Sub-agent</strong> 吗？（权限隔离）</li>
+<li>需要新的 <strong>MCP Tool</strong> 吗？（缺少能力）</li>
+<li>需要升级 <strong>Rule</strong> 吗？（新的约束）</li>
+</ol>
+<h2>总结</h2>
+<p>理解 Skills、Rules 和 MCP 的关键在于认识到它们控制的是 AI Agent 工作流的 <strong>不同阶段</strong> ：</p>
+<ul>
+<li><strong>Rules</strong>
+  → 定义边界（&quot;什么是不可协商的&quot;）</li>
+<li><strong>Skills</strong>
+  → 提供方法（&quot;如何完成任务&quot;）</li>
+<li><strong>MCP Tools</strong>
+  → 赋予能力（&quot;可以做什么操作&quot;）</li>
+</ul>
+<p>就像厨房的类比：</p>
+<ul>
+<li><strong>Rules</strong>
+  是厨房守则，保证食品安全</li>
+<li><strong>Skills</strong>
+  是菜谱，指导如何烹饪</li>
+<li><strong>MCP Tools</strong>
+  是食材和工具，提供原料和手段</li>
+<li><strong>AI Agent</strong>
+  是厨师，按照菜谱使用食材，遵守厨房守则</li>
+</ul>
+<p>当你清楚区分这三者时，AI 编程助手就会从&quot;神秘的黑盒&quot;变成&quot;可理解的协作系统&quot;。新工具不再令人困惑，而是变得可组合、可预测。</p>
+<p>最重要的是： <strong>责任仍然在你手中</strong> 。Agent 只是执行你设计的系统，代码的正确性、安全性和清晰度，始终由你这位工程师负责。</p>
+<p>继续滑动看下一个</p>
+<p>好朋友乐平</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/aYQNU8_iyCLF9e-ImcmBUg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

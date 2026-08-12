@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code 泄露代码隐藏的87个未发布功能 暴露其野心... · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Claude Code 泄露代码隐藏的87个未发布功能 暴露其野心...</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    
+    <span class="date">2026-04-01</span>
+  </div>
+  <p class="lead">有人从 npm 包里扒出了 Claude Code 的完整源码。源码里藏着什么，它打算变成什么？</p>
+  <article class="content"><p>原创 小互 <em>2026年4月1日 11:06</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOyOXCeLRTF6S4atXJJPoanqa841iaOVGF04yyYqG0PX00seiaGSGcuZq3VbAlWn25PTYPHglnyNrpFepUfaSc70NSawrofBO1rI/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<blockquote>
+<p>有人从 npm 包里扒出了 Claude Code 的完整源码。</p>
+<p>源码里藏着什么，它打算变成什么？</p>
+<p>87个编译时feature flag，大部分处于关闭状态。每一个flag背后是一个还没上线的功能。翻完之后我发现，它们指向同一个方向。</p>
+</blockquote>
+<hr>
+<p>Claude Code 的完整源码泄漏后有人说&quot;44个隐藏feature flag&quot;。</p>
+<p>我翻完源码的实际数字是87个。</p>
+<p>用正则跑一遍就能数出来：</p>
+<pre><code>// 从源码里 grep 出来的完整列表（87个）
+ABLATION_BASELINE, AGENT_MEMORY_SNAPSHOT, AGENT_TRIGGERS,
+BUDDY, BUILDING_CLAUDE_APPS, COORDINATOR_MODE,
+DAEMON, DIRECT_CONNECT, EXTRACT_MEMORIES,
+KAIROS, KAIROS_BRIEF, KAIROS_CHANNELS, KAIROS_DREAM,
+KAIROS_GITHUB_WEBHOOKS, KAIROS_PUSH_NOTIFICATION,
+PROACTIVE, SSH_REMOTE, TEAMMEM, TELEPORT,
+UDS_INBOX, ULTRAPLAN, ULTRATHINK, VOICE_MODE,
+VERIFICATION_AGENT, WEB_BROWSER_TOOL, WORKFLOW_SCRIPTS
+...
+</code></pre>
+<p>这不是完整列表——完整列表87个，上面只列了最有意思的那些。每个flag都是一个还没对外发布的功能开关，编译时决定是否包含在发行版里。</p>
+<p>把这87个flag按功能归类，一条进化路线浮出来了：</p>
+<p><strong>工具 → 常驻助手 → 团队协作 → 跨设备 → 多感官</strong></p>
+<p>每一步都在去掉Agent身上的一个限制。下面一个一个说。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOYXf5DFCewsiar9I1q3IV8LXKfutokDfiaRl6qkLRaiaX8bZqzI6lJVUdRcl8a3Z4VMEIibpEeXyOrsYkMEp1DNyXSy37wIMzqI7Y/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h2>它不想下班了</h2>
+<p>现在的Claude Code，你问它答，你不问它就安静等着。</p>
+<p>源码里有一个叫KAIROS的功能，彻底改变了这个模式。不是增量升级，是另一种运行方式。</p>
+<p><strong>Kairos</strong> 的内部名字叫&quot;assistant mode&quot;（助理模式）。激活之后，Claude Code变成一个24小时在线的主动助手。它不再等你输入——系统给它发周期性的心跳信号（叫tick），每收到一个tick，它就评估一下&quot;现在有没有什么有用的事可做&quot;。有就做，没有就调Sleep工具休眠等下一个tick。</p>
+<p>系统提示词里是这么写的：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: constants/prompts.ts
+
+You are running autonomously. You will receive &quot;color:#ce9178&quot;&gt;\`&lt;tick&gt;\` prompts
+that keep you alive between turns — just treat them as
+&quot;you&#39;re awake, what now?&quot;
+
+If you have nothing useful to do on a tick, you MUST call Sleep.
+Never respond with only a status message like &quot;still waiting&quot;
+or &quot;nothing to do&quot; — that wastes a turn and burns tokens
+for no reason.
+</code></pre>
+<p>&quot;你正在自主运行。把每次tick当作&#39;你醒了，现在干嘛？&#39;&quot;</p>
+<p>更有意思的是这段：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: constants/prompts.ts
+
+Look for useful work. A good colleague faced with ambiguity
+doesn&#39;t just stop — they investigate, reduce risk, and
+build understanding.
+
+Do not spam the user. If you already asked something and
+they haven&#39;t responded, do not ask again.
+</code></pre>
+<p>&quot;好的同事面对模糊性不会停下来——他们会调查、降低风险、加深理解。&quot;</p>
+<p>你看到了吧，提示词里用的词不是&quot;tool&quot;，也不是&quot;assistant&quot;，是&quot;colleague&quot;。它不再把自己定位成工具。</p>
+<p>还有一个细节：系统会检测你的终端是否聚焦。终端失焦=你不在电脑前=Claude更大胆地自主行动。终端聚焦=你在看=它更多地跟你协商。</p>
+<p>Kairos模式下有一套专属工具，正常模式下你根本看不到它们：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>干嘛的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>睡眠工具</td>
+<td>休眠等待下一次tick</td>
+</tr>
+<tr>
+<td>SendUserMessage</td>
+<td>主动给你发消息</td>
+</tr>
+<tr>
+<td>SendUserFile</td>
+<td>主动给你发文件</td>
+</tr>
+<tr>
+<td>推送通知</td>
+<td>给你手机推送通知</td>
+</tr>
+<tr>
+<td>订阅 PR</td>
+<td>订阅 GitHub PR 的 webhook</td>
+</tr>
+<tr>
+<td>CronCreate</td>
+<td>创建定时任务</td>
+</tr>
+</tbody></table>
+<p>你没看错，它可以给你手机发推送。你可以在设置里开三种推送通知：任务完成通知、需要你输入通知、以及Claude&quot;认为合适时&quot;的主动通知。</p>
+<p>Kairos目前被锁在 <code>tengu_kairos</code> 这个运行时gate后面，只有Anthropic内部员工能用。但代码已经完整了，不是原型，是可以随时打开开关的成品。</p>
+<hr>
+<p><strong>Daemon</strong> 是Kairos的底座。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: utils/concurrentSessions.ts
+
+export type SessionKind = &#39;interactive&#39; | &#39;bg&#39; | &#39;daemon&#39; | &#39;daemon-worker&#39;
+</code></pre>
+<p>四种会话类型。 <code>interactive</code> 是你现在用的交互模式， <code>daemon</code> 是后台守护进程——没有TUI界面，纯粹的headless执行者，像数据库服务或Web服务器那样常驻后台。</p>
+<p>Daemon模式拥有cron调度器，支持标准5字段cron表达式，本地时区，支持循环任务（默认30天自动过期）和一次性任务，支持持久化（写到<code>.claude/scheduled_tasks.json</code> ，进程重启后自动恢复）。有jitter机制防止全球用户的定时任务在同一秒触发。</p>
+<p>还有一层是远程scheduled agents——不在你机器上跑，在Anthropic云端跑完全隔离的Claude Code实例。通过 <code>/schedule</code> 命令管理，最小间隔1小时，cron表达式用UTC时区。</p>
+<p>从&quot;你问它答&quot;到&quot;它自己找活干&quot;，再到&quot;它按时间表自动干&quot;。这不是增量升级，是换了个物种。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPic4KQNjamuqd4F8hrqPpaIsnZmW3ubWFMlQKQhIYNbNfDjE1gGJuF5229fPkWnPlFI9kgEiaP84CEeicMGlfQJUkon92GRfQGKo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h2>它开始做梦了</h2>
+<p>你不用Claude Code的时候，它在后台做一件事： <strong>整理记忆</strong> 。</p>
+<p>源码里真的管这个叫&quot;dream&quot;。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: services/autoDream/autoDream.ts
+
+const DEFAULTS: AutoDreamConfig = {
+  minHours: 24,
+  minSessions: 5,
+}
+</code></pre>
+<p>触发条件：距上次整理超过24小时，且至少有5个新会话产生了对话记录。两个条件同时满足，加上当前没有其他进程在整理（有PID锁防并发），就会在后台悄悄启动一个子Agent开始&quot;做梦&quot;。</p>
+<p>&quot;做梦&quot;的过程分四个阶段：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: services/autoDream/consolidationPrompt.ts
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Phase 1 — Orient
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// ls memory 目录，读 MEMORY.md 索引，了解已有记忆
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Phase 2 — Gather recent signal
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 从日志、现有记忆、session transcripts 中收集新信号
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Phase 3 — Consolidate
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 写入或更新记忆文件。合并重复，日期转绝对，删除已推翻的事实
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Phase 4 — Prune and index
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 更新 MEMORY.md 索引，保持在 200 行 / 25KB 以内
+</code></pre>
+<p>定位→采集→整合→修剪。跟人类睡觉时大脑把工作记忆转化为长期记忆是一个逻辑。</p>
+<p>你在底部状态栏能看到一个&quot;dreaming&quot;标签，可以点进去看它正在review多少个session、修改了哪些文件。如果你觉得它整理得不对，按 <code>x</code> 可以随时杀掉，锁会回滚，下次重试。</p>
+<p>&quot;做梦&quot;的Agent被限制了权限——Bash只能执行只读命令（ls/find/grep/cat），Edit和Write只能操作memory目录内的文件。安全意识到位。</p>
+<p>这个功能已经在灰度了。在设置里或 <code>/memory</code> 命令的界面里有一个 <code>Auto-dream: on/off</code> 开关。</p>
+<p>Kairos模式下还有一个升级版：白天往日期日志里追加条目（ <code>logs/YYYY/MM/YYYY-MM-DD.md</code> ），夜间由定时任务调度 <code>/dream</code> 技能做深度整合。跟人类的&quot;白天记笔记、晚上复盘&quot;一模一样。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: services/autoDream/autoDream.ts
+
+function isGateOpen(): boolean {
+  if (getKairosActive()) return false  &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Kairos用自己的定时dream
+  if (getIsRemoteMode()) return false
+  if (!isAutoMemoryEnabled()) return false
+  return isAutoDreamEnabled()
+}
+</code></pre>
+<p>Kairos模式下auto-dream被禁用，因为Kairos有自己更精细的cron定时dream。普通模式用auto-dream。两条路线，同一个目标：让Claude Code拥有持续的、会自我整理的记忆。</p>
+<p>工具不需要记忆。助手需要。这是从工具到助手最本质的跨越。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtNzJWq40ciaF6MnWLJnxQXwLNJUXjXicJiaW59U5YkWV9uT4jAtjF3KIc2qYCFLnCxGEE7aNcUnib9nsTNlH74uj9icQ4vbibczkLxUc/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<h2>它不再是一个人了</h2>
+<p>一个Claude不够用，那就来一队。</p>
+<p><strong>Coordinator模式</strong> 是一个完整的多Agent编排系统。一个Claude当协调者（CEO），只有三个权限：派活（Agent工具）、传话（SendMessage）、叫停（TaskStop）。其他Claude当worker，执行具体任务。</p>
+<p>源码里定义了标准的四阶段工作流：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: coordinator/coordinatorMode.ts
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// | Phase          | Who              | Purpose                              |
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// |----------------|------------------|--------------------------------------|
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// | Research       | Workers (并行)    | 调查代码库，找文件，理解问题            |
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// | Synthesis      | 协调者 (自己做)   | 读取发现，理解问题，制定实施方案         |
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// | Implementation | Workers          | 按方案做修改，提交                     |
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// | Verification   | Workers          | 测试变更是否有效                       |
+</code></pre>
+<p>最有意思的是系统提示里对&quot;偷懒&quot;的防范。源码里明确禁止了一个反模式：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: coordinator/coordinatorMode.ts
+
+Never write &quot;based on your findings&quot; or &quot;based on the research.&quot;
+These phrases delegate understanding to the worker instead of
+doing it yourself.
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 反面示例（禁止）:
+Agent({ prompt: &quot;Based on your findings, fix the auth bug&quot; })
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 正面示例（推荐）:
+Agent({ prompt: &quot;Fix the null pointer in src/auth/validate.ts:42.
+  The user field on Session is undefined when sessions expire
+  but the token remains cached. Add a null check before user.id
+  access — if null, return 401 with &#39;Session expired&#39;.
+  Commit and report the hash.&quot; })
+</code></pre>
+<p>&quot;永远不要写&#39;根据你的发现&#39;。这些短语把理解的责任推给了worker。&quot;协调者必须自己消化信息，然后给worker精确到行号的指令。这不是偷懒的委派，是有理解的指挥。</p>
+<hr>
+<p><strong>UDS Inbox</strong> 让同一台机器上的多个Claude Code实例可以互相通信。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: setup.ts
+
+if (feature(&#39;UDS_INBOX&#39;)) {
+  const m = await import(&#39;./utils/udsMessaging.js&#39;)
+  await m.startUdsMessaging(
+    messagingSocketPath ?? m.getDefaultUdsSocketPath(),
+    { isExplicit: messagingSocketPath !== undefined },
+  )
+}
+</code></pre>
+<p>启动时创建一个Unix Domain Socket，路径写入 <code>~/.claude/sessions/&lt;pid&gt;.json</code> ，其他实例通过这个路径就能找到你、给你发消息。以前你开三个Claude Code窗口，它们完全隔离，互不知道。有了UDS Inbox，它们可以按名字互发消息，甚至可以广播（ <code>to: &quot;*&quot;</code> ）。</p>
+<hr>
+<p><strong>Ultrareview</strong> 是暴力美学的极致。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: commands/review/reviewRemote.ts
+
+const commonEnvVars = {
+  BUGHUNTER_DRY_RUN: &#39;1&#39;,
+  BUGHUNTER_FLEET_SIZE: String(posInt(raw?.fleet_size, 5, 20)),
+  BUGHUNTER_MAX_DURATION: String(posInt(raw?.max_duration_minutes, 10, 25)),
+  BUGHUNTER_AGENT_TIMEOUT: String(posInt(raw?.agent_timeout_seconds, 600, 1800)),
+  BUGHUNTER_TOTAL_WALLCLOCK: String(posInt(raw?.total_wallclock_minutes, 22, 27)),
+}
+</code></pre>
+<p>在Anthropic云端启动5到20个Agent（默认5个，最多20个），每个从不同角度审查你的代码。总耗时控制在22分钟以内（预留3分钟做综合报告）。单个Agent最多跑600秒。</p>
+<p>有两种模式：PR模式（ <code>/ultrareview 123</code> ，直接从GitHub clone指定PR）和分支模式（ <code>/ultrareview</code> ，打包本地工作区上传）。</p>
+<p>有配额系统——Pro/Max用户有免费额度，用完走&quot;Extra Usage&quot;按量计费，账户余额低于$10不让启动。从代码来看，Team/Enterprise用户不限次。</p>
+<p>5到20个Agent同时审查一份代码，10到25分钟出结果。这就是AI原生的&quot;code review&quot;：不是一个人仔细看，是一支舰队暴力扫描。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPkl0clRQBX1s36ku6lxeQVF1Lysjiae7EbYDuyfYY4moibzFo6g883zQDkRdHjvfXUjicXcsQvwt9BNLCByXpEic57XhhvSahn1Oc/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<h2>它不再被困在这台电脑里</h2>
+<p><strong>Teleport</strong> 让你把整个工作会话从一台电脑传到另一台。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: main.tsx
+
+program.addOption(new Option(
+  &#39;--teleport [session]&#39;,
+  &#39;Resume a teleport session, optionally specify session ID&#39;
+).hideHelp());
+
+program.addOption(new Option(
+  &#39;--remote [description]&#39;,
+  &#39;Create a remote session with the given description&#39;
+).hideHelp());
+</code></pre>
+<p>两个方向： <code>--remote</code> 把本地会话传到云端， <code>--teleport</code> 从云端拉回来。</p>
+<p>本地到云端：检测Git仓库，如果GitHub App有权限就直接clone，否则打包一个git bundle上传（有大小限制，100MB以内，超了会自动降级到只打包HEAD）。</p>
+<p>云端到本地：拉取远程session的对话记录，replay到本地，checkout同一个Git分支，自动处理脏工作区（帮你stash），然后注入一条系统消息：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: utils/teleport.tsx
+
+\`This session is being continued from another machine.
+ Application state may have changed.
+ The updated working directory is ${getOriginalCwd()}\`
+</code></pre>
+<p>&quot;这个会话正在从另一台机器继续。应用状态可能已经改变。&quot;</p>
+<p>公司电脑干到一半，回家 <code>claude --teleport &lt;session-id&gt;</code> 继续。所有上下文跟着你走。</p>
+<hr>
+<p><strong>Ultraplan</strong> 是另一种&quot;逃离本地&quot;的方式。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: commands/ultraplan.tsx
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Multi-agent exploration is slow; 30min timeout.
+const ULTRAPLAN_TIMEOUT_MS = 30 * 60 * 1000;
+
+function getUltraplanModel(): string {
+  return getFeatureValue_CACHED_MAY_BE_STALE(
+    &#39;tengu_ultraplan_model&#39;,
+    ALL_MODEL_CONFIGS.opus46.firstParty  &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 默认 Opus 4.6
+  );
+}
+</code></pre>
+<p>你在本地输入 <code>/ultraplan</code> 加一段描述，系统在Anthropic云端启动一个远程Claude Code实例，用Opus 4.6模型，最多花30分钟来探索你的项目、分析可行性、规划步骤。本地每3秒轮询一次结果。</p>
+<p>有一个好玩的细节：你在任何对话里打出&quot;ultraplan&quot;这个词（不需要加斜杠），系统就会触发，而且这个词会被彩虹色高亮。但它做了排除——如果&quot;ultraplan&quot;出现在代码块、引号、文件路径里，不触发。</p>
+<p>计划完成后有两条路：在云端直接执行，或者teleport回本地执行。</p>
+<p>从&quot;绑定在你的终端&quot;到&quot;在任何设备、任何位置运行&quot;。Agent不应该有物理限制。</p>
+<hr>
+<h2>它开始有感官了</h2>
+<p><strong>Voice</strong> 是一个完整的语音输入系统。按住说话，实时语音转文字。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: services/voice.ts
+
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// Recording uses native audio capture (cpal) on macOS, Linux,
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// and Windows for in-process mic access. Falls back to SoX &quot;color:#ce9178&quot;&gt;\`rec\`
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// or arecord (ALSA) on Linux if the native module is unavailable.
+</code></pre>
+<p>三层录音后端，按优先级降级：原生NAPI模块（直接调用系统音频API）→ arecord（Linux ALSA）→ SoX的 <code>rec</code> 命令。16kHz、16位、单声道PCM。macOS首次使用会弹麦克风权限弹窗。</p>
+<p>音频通过WebSocket实时流到Anthropic的STT服务，后端是Deepgram Nova 3（通过 <code>tengu_cobalt_frost</code> 门控），支持20种语言：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: hooks/useVoice.ts
+
+const SUPPORTED_LANGUAGE_CODES = new Set([
+  &#39;en&#39;, &#39;es&#39;, &#39;fr&#39;, &#39;ja&#39;, &#39;de&#39;, &#39;pt&#39;, &#39;it&#39;, &#39;ko&#39;, &#39;hi&#39;,
+  &#39;id&#39;, &#39;ru&#39;, &#39;pl&#39;, &#39;tr&#39;, &#39;nl&#39;, &#39;uk&#39;, &#39;el&#39;, &#39;cs&#39;, &#39;da&#39;,
+  &#39;sv&#39;, &#39;no&#39;,
+])
+</code></pre>
+<p>英、西、法、日、德、葡、意、韩、印地、印尼、俄、波兰、土耳其、荷兰、乌克兰、希腊、捷克、丹麦、瑞典、挪威。有中文吗？暂时没有。但语言映射表里有大量别名——&quot;español&quot;和&quot;spanish&quot;都映射到 <code>es</code> ——说明这个列表是为了真实使用场景设计的，不是摆设。</p>
+<p>还有一个巧妙的优化：系统会自动提取项目相关的领域词汇（Git分支名、最近操作的文件名、常见技术术语）作为keyterms发给STT服务，提高识别准确率。最多50个。</p>
+<hr>
+<p><strong>Chrome浏览器控制</strong> 通过Chrome扩展实现。能导航、点击、填表、截图、录GIF、读console log、读network请求。在你现有的Chrome里操作，不是无头浏览器，是你正在用的那个Chrome，需要你给站点级别的权限。</p>
+<p>源码里的Verification Agent（验证代理）有一段提示词，教它先检查有没有 <code>mcp__playwright__*</code> 工具可用，有就用Playwright做自动化测试。浏览器控制不是玩具，是验证工具链的一部分。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOculgEzwQU59SxfEKbzqcc755hg59w6oFluh8eTeCPzADO6vnGV2KkUMzkIYz965h0uhHzNJuw79Qib343OVKeyVdxosiaFhkGw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<h2>彩蛋：它有宠物了</h2>
+<p>这个纯粹好玩，但代码是认真的。</p>
+<p><strong>Buddy</strong> 是一个确定性生成的虚拟宠物，住在你的Claude Code终端里，有ASCII精灵图，偶尔冒出语音气泡评论一下。</p>
+<p>18种物种，名字全部用十六进制编码（因为有一个名字和模型代号撞了，会被构建检查拦截）：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: buddy/types.ts
+
+const c = String.fromCharCode
+exportconst duck     = c(0x64,0x75,0x63,0x6b) as&#39;duck&#39;
+exportconst axolotl  = c(0x61,0x78,0x6f,0x6c,0x6f,0x74,0x6c) as&#39;axolotl&#39;
+exportconst capybara = c(0x63,0x61,0x70,0x79,0x62,0x61,0x72,0x61) as&#39;capybara&#39;
+exportconst dragon   = c(0x64,0x72,0x61,0x67,0x6f,0x6e) as&#39;dragon&#39;
+exportconst chonk    = c(0x63,0x68,0x6f,0x6e,0x6b) as&#39;chonk&#39;
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// ... 还有 goose, blob, cat, octopus, owl, penguin, turtle,
+&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;//     snail, ghost, cactus, robot, rabbit, mushroom
+</code></pre>
+<p>五档稀有度：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: buddy/types.ts
+
+export const RARITY_WEIGHTS = {
+  common:    60,   &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 60%
+  uncommon:  25,   &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 25%
+  rare:      10,   &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 10%
+  epic:       4,   &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 4%
+  legendary:  1,   &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 1%
+} as const satisfies Record&lt;Rarity, number&gt;
+</code></pre>
+<p>1%概率出闪光版：</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: buddy/companion.ts
+
+const bones: CompanionBones = {
+  rarity,
+  species: pick(rng, SPECIES),
+  eye: pick(rng, EYES),         &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 6种眼睛: · ✦ × ◉ @ °
+  hat: rarity === &#39;common&#39; ? &#39;none&#39; : pick(rng, HATS),  &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 8种帽子
+  shiny: rng() &lt; 0.01,          &lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 1%概率闪光
+  stats: rollStats(rng, rarity),
+}
+</code></pre>
+<p>5项属性：DEBUGGING（调试）、PATIENCE（耐心）、CHAOS（混乱）、WISDOM（智慧）、SNARK（毒舌）。属性值由稀有度决定下限，传说级的最低属性都有40多点。</p>
+<p>最反作弊的设计：你的宠物由用户ID哈希决定。</p>
+<pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: buddy/companion.ts
+
+const SALT = &#39;friend-2026-401&#39;
+</code></pre>
+<p><code>friend-2026-401</code> ，2026年4月1日的朋友——愚人节彩蛋。用户ID加上这个盐值，FNV-1a哈希，喂进Mulberry32伪随机数生成器，依次roll出稀有度、物种、眼睛、帽子、闪光、属性。结果完全确定，没法刷。</p>
+<p>而且只有&quot;灵魂&quot;（名字和性格，首次孵化时由模型生成）存在配置文件里，&quot;骨骼&quot;（物种、稀有度、属性）每次都从哈希重新计算。你想改配置文件伪造一个传说级？没用，骨骼不存配置。</p>
+<p>源码里有ASCII精灵图，每种动物3帧动画，5行高、12字符宽。给你看几个：</p>
+<pre><code>/\_/\          n______n         }~(______)~{
+  ( ·   · )      ( ·    · )       }~( ·  · )~{
+  (  ω  )       (   oo   )         ( .--. )
+  (&quot;)_(&quot;)        \`------´          (_/  \_)
+    cat           capybara          axolotl
+</code></pre>
+<p>8种帽子里有一顶叫 <code>tinyduck</code> （小鸭子），渲染出来就是头顶上蹲着一只 <code>,&gt;</code> 。</p>
+<p>Buddy的发布时间窗写得很明确：2026年4月1-7日显示彩虹色的 <code>/buddy</code> 通知，引导你首次孵化。注释里特别说了为什么选7天窗口而不是一个UTC午夜时刻：</p>
+<blockquote>
+<p>24h rolling wave across timezones. Sustained Twitter buzz instead of a single UTC-midnight spike, gentler on soul-gen load.</p>
+</blockquote>
+<p>&quot;24小时滚动覆盖所有时区。Twitter上持续的热度，而不是UTC午夜一个尖峰。对灵魂生成的服务器压力也更温和。&quot;连发布策略的代码注释都写好了。</p>
+<hr>
+<h2>87个开关指向同一个方向</h2>
+<p>把这87个feature flag按功能归类，画出来的路线图是：</p>
+<p><strong>Kairos + Daemon + Cron</strong> — 去掉&quot;你不问它不动&quot;<br><strong>Auto-Dream + Daily Log</strong> — 去掉&quot;下次要重新教&quot;<br><strong>Coordinator + UDS Inbox + Ultrareview</strong> — 去掉&quot;只能一个人干&quot;<br><strong>Teleport + Ultraplan</strong> — 去掉&quot;绑定在一台机器&quot;<br><strong>Voice + Chrome控制</strong> — 去掉&quot;只能打字&quot;<br><strong>Buddy</strong> — 去掉……无聊？</p>
+<p>每一步都在减少一个约束。</p>
+<p>上一篇文章的结论是做减法——给Claude更少的规则，它反而更聪明。这篇的结论是Anthropic也在做减法——去掉Agent身上的每一个限制，直到它不再像一个工具。</p>
+<p>它会24小时在线，自己找活干，按时间表执行任务。它会做梦整理记忆，白天记笔记夜间复盘。它能指挥一队worker并行工作，还能跟隔壁窗口的自己通信。它能从你的办公电脑传送到家里的笔记本。它能听你说话，能操作你的浏览器。</p>
+<p>它甚至有一只宠物。</p>
+<p>源码里的提示词已经不再叫它&quot;tool&quot;了。它管自己叫&quot;colleague&quot;——同事。</p>
+<p>这些功能大部分还锁在feature flag后面，但代码已经写完了——不是原型，不是demo，是有完整UI组件、安全权限、错误处理、配额系统的成品代码。开关拨过去就能用。</p>
+<p>我不知道Anthropic会在什么时间点打开这些开关。但翻完这87个flag之后我有一个很明确的感觉：Claude Code现在的样子，不是它最终的样子。它想变成的东西，源码里已经写好了。</p>
+<p>你最期待哪个功能先上线？</p>
+<hr>
+<blockquote>
+<p><strong>来源标注</strong></p>
+<p>本文所有代码片段来自 Claude Code CLI npm 包意外泄露的 source maps（1884 文件，512,664 行 TypeScript，33MB），已在 GitHub 存档 <sup>[1]</sup> 。87 个编译时 feature flag 通过 <code>grep -o &quot;feature(&#39;[A-Z_]*&#39;)&quot; | sort -u</code> 从源码中提取。运行时 flag（ <code>tengu_*</code><br>系列）通过代码引用交叉确认。文中描述的功能均基于源码静态分析，实际上线行为可能与源码有差异。</p>
+</blockquote>
+<p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=9" alt="Image"></p>
+<p>____________</p>
+<p>结尾。</p>
+<h2>感 谢 阅 读</h2>
+<p>点赞，转发，关注关注关注↓↓</p>
+<p>继续滑动看下一个</p>
+<p>小互AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/O2zsV2j8Kysm_nLk8ymS2Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

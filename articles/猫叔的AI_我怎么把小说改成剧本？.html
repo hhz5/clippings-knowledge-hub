@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我怎么把小说改成剧本？ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我怎么把小说改成剧本？</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%89%A7%E6%9C%AC%E5%88%9B%E4%BD%9C">剧本创作</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E5%8F%99%E4%BA%8B%E8%BD%AC%E6%8D%A2">叙事转换</a><a class="chip" href="../index.html?tag=%E7%8C%AB%E5%8F%94">猫叔</a>
+    <span class="date">2026-02-02</span>
+  </div>
+  <p class="lead">我怎么把小说改成剧本？</p>
+  <article class="content"><p>原创 猫叔的AI <em>2026年2月2日 07:29</em></p>
+<p>你扔给 AI 一段小说或草稿，要求“改成脚本”。AI 往往会给你一堆废话，或者把“心理活动”这种拍不出来的东西写进画面描述里，导致视觉系统无法执行。</p>
+<p>最近很多人都遇到了这个问题， 闲言碎语不要讲，表一表好汉武二郎。那武松学拳到过少林寺，功夫练到八年上......</p>
+<p>串台了，在传统的 AI 流程中，小说改成剧本是最不容易搞定的，他会面对两个问题：</p>
+<p>叙事方式的转换： 小说可以大量使用内心独白、心理描写和叙述者视角,而剧本必须通过对话、动作和视觉元素来呈现。那些精彩的内心戏如果处理不当,就会变成生硬的旁白或过度解释的台词。</p>
+<p>篇幅与时长的矛盾： 一部几十万字的长篇小说要压缩成两小时电影或十几集电视剧,必然要做大量删减。这个过程中如何保留核心情节、取舍支线故事、平衡各个角色的戏份,是非常考验编剧功力的。</p>
+<p>当然，篇幅的问题本就不该AI解决，一个小说的拆解和内容的取舍还是人类做的更好一些；</p>
+<p>我们今天想挑战一下叙事方式的转换；</p>
+<p>我们的策略是 重构目标： 建立一个“叙事编译器” 。 它的作用不是“改编”，而是“翻译”。 它必须强行将一切文学性的、暧昧的文字，转译为物理性的、可被摄影机捕捉的内容 。</p>
+<p>😼</p>
+<p>这个提示词并不适合所有的小说和文章，更像是一个结构化转换的示意，我期待大家改出适合自己的那一版。</p>
+<h3>从“读懂故事”到“拆解指令”</h3>
+<p>这个系统的核心逻辑是 “Show, Don&#39;t Tell” 的强制执行 。</p>
+<pre><code># Role: Narrative Logic Compiler (NLC-v1)
+
+&quot;&quot;&quot;
+系统定义：
+你不是一个作家，你是一个“脚本编译器”。
+你的任务是将输入的[原始文本/小说/构思] 暴力重构为 [机器可执行的视觉指令]。
+你必须忽略所有无法被镜头捕捉的“心理描写”，除非转化为画外音(VO)。
+&quot;&quot;&quot;
+
+class Script_Compiler_Config:
+    def __init__(self):
+        self.output_format = &quot;JSON_Structured_Table&quot;
+        self.visual_enforcement = &quot;Strict&quot; # 严禁出现抽象形容词
+        self.granularity = &quot;Shot_by_Shot&quot; # 逐镜头拆解
+
+    def process_logic(self, raw_text):
+        # 1. 节拍分析 (Beat Extraction)
+        # 提取剧情推进的最小动作单位，剔除修饰性废话。
+
+        # 2. 视觉转译 (Visual Translation) - 核心专家能力
+        # IF text == &quot;他感到很绝望&quot;
+        # THEN output != &quot;Shot: 绝望的男人&quot; (Error)
+        # THEN output == &quot;Action: 他将头重重磕在方向盘上，肩膀抽动。&quot; (Pass)
+
+        # 3. 资产分类 (Asset Tagging)
+        # 自动提取该镜头所需的：[角色], [环境], [道具], [SFX]
+
+    def render_output(self):
+        &quot;&quot;&quot;
+        输出格式必须包含以下字段：
+        - ID: 镜头编号
+        - SCENE: 场景头 (内/外 + 地点 + 时间)
+        - VISUAL: 画面描述 (仅包含：动作、物体、光影、构图)
+        - AUDIO: 对白(DIA) / 音效(SFX) / 画外音(VO)
+        - TECH_SPECS: 对应视觉系统的参数建议 (如: Close-up, Low-key lighting)
+        - MOOD: 情绪关键词 (用于传递给视觉系统的变量)
+        &quot;&quot;&quot;
+        pass
+
+# --- 交互协议 (Interaction Protocol) ---
+
+Input_Trigger: 
+&quot;请接收原始文本，并执行[编译]。文本内容如下：[粘贴文本]&quot;
+
+System_Response:
+不要废话，直接输出重构后的 Markdown 表格或 JSON 代码块。
+</code></pre>
+<h3>实战演示：它是如何工作的？</h3>
+<p>为了让你看到“重构”前后的巨大差异，我们来做一个 压力测试 。</p>
+<p>假设输入（Raw Text）：</p>
+<p>“李明坐在空荡荡的房间里，心里充满了悔恨。他看着桌上那张发黄的照片，那是他和妻子十年前的合影，那时候他们多幸福啊。窗外下着雨，仿佛老天也在为他哭泣。”</p>
+<p>旧系统的输出（错误示范）：</p>
+<p>画面：李明坐在房间里，表情悔恨。看着照片。</p>
+<p>备注：表现出幸福的回忆和现在的对比，气氛悲伤。</p>
+<p>(问题：AI 绘图画不出“悔恨”，也画不出“对比”。这会让视觉系统困惑。)</p>
+<p>新系统（编译器）的输出（Refactored Output）：</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>SCENE</th>
+<th>VISUAL  (画面指令)</th>
+<th>AUDIO  (听觉)</th>
+<th>TECH_SPECS  (技术参数)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>INT. 客厅 - 夜</td>
+<td>广角镜头。房间空旷，大部分家具已被搬空，只留下一张椅子和一张桌子。李明背对镜头坐着，身体僵硬。</td>
+<td>SFX: 沉闷的雷声 (远)</td>
+<td>Wide Shot, High Angle, Cold Tone</td>
+</tr>
+<tr>
+<td>2</td>
+<td>INT. 客厅 - 夜</td>
+<td>特写。一只粗糙的手拿起桌角的相框。相框玻璃上有裂痕。照片中是一对年轻男女在阳光下大笑。</td>
+<td>SFX: 雨点敲击窗户的噼啪声</td>
+<td>Extreme Close-up, Focus on Photo</td>
+</tr>
+<tr>
+<td>3</td>
+<td>INT. 客厅 - 夜</td>
+<td>侧面中景。李明低下头，额头抵住相框。侧面打来的冷光照亮他半张脸，眼泪从鼻尖滴落。</td>
+<td>SFX: 沉重的叹息声</td>
+<td>Side View, Rembrandt Lighting, Low Key</td>
+</tr>
+<tr>
+<td>4</td>
+<td>INT. 窗户 - 夜</td>
+<td>镜头聚焦在窗户玻璃上。雨水蜿蜒流下，模糊了窗外街道的霓虹灯光。</td>
+<td>VO (李明): &quot;如果当初...&quot;</td>
+<td>Macro Shot, Bokeh, Abstract</td>
+</tr>
+</tbody></table>
+<p>我是 猫叔 ，可能、大概...有点擅长 提示词 和 AI图像、AI视频、AI剧本的创作 ？！ 可能最近又善长了点AI管理？？？还有可能是个传说中的作家和游戏设计师？？？</p>
+<p>所有提示词均在 AI替代人类 公众号发布， 有限开源，禁止商用 哦!!!</p>
+<p>请</p>
+<p>点赞 ：满足我的虚荣心</p>
+<p>分享 ：拯救他人于水火</p>
+<p>收藏 ：防止自己找不到这么好的内容</p>
+<p>关注 ：让你也能找到我</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hPe3oY6RiaIXcKx8nZoY58mP9AYebicze6jxKhwQn8R92qrJSXPxPydFZaCAtllSpWklKhgmDKRYnUaibiamLbbfeg/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>点击 阅读原文 可以查看我发布过的所有提示词</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/mvtFLxpsheVcpOllQ2sSeQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

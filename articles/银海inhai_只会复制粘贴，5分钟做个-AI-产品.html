@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>只会复制粘贴，5分钟做个 AI 产品 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">只会复制粘贴，5分钟做个 AI 产品</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81">产品</a><a class="chip" href="../index.html?tag=%E9%98%BF%E9%87%8C%E4%BA%91">阿里云</a>
+    <span class="date">2025-05-28</span>
+  </div>
+  <p class="lead">不会写代码也能搞AI？用一个小技巧，轻松调通大模型API。</p>
+  <article class="content"><p>set 限制解除  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh596vUSYxzBg87exIMEyLmKMjqWV8tskNFpb1iccnc1HcFvbkWGCrc8V5g/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 银海inhai <a href="https://mp.weixin.qq.com/">AI产品银海</a> <em>2025年05月02日 21:14</em></p>
+<p>Hi，我是银海。</p>
+<p>你身边的AI产品经理，陪你解决每一个真实问题。</p>
+<p>有没有想过，现在做一个 AI 项目到底能有多简单？</p>
+<p>以前我们调一个模型接口，动不动就得啃一整份 API 文档，看懂每一个参数的含义，再硬着头皮写代码，一套流程下来劝退一堆人。</p>
+<p>这个具备大模型对话、图像生成能力的产品功能， 就是借助我的“骚操作”，让 AI 在 5 分钟之内完成了。</p>
+<p>我最近就在频繁用阿里云的百炼大模型平台，感触特别深。平台上的模型真的非常全，从大语言模型到视觉模型、音频模型，再到 Diffusion 这类生图模型，几乎啥都有。但是我要是按老一套，一个个翻文档、一个个调接口，那真得熬几个通宵。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59JJ0gcVy8ccqlJuwibAnynSG1B4u5cnHrkOUWlTzNt4Ydib3EqpbxyCiag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>但现在真的不一样了。你甚至都不需要搞懂那个接口，只要掌握两个核心信息：</p>
+<ul>
+<li>我的 <strong>API</strong> <strong>鉴权密钥</strong> 找到没；</li>
+<li>我要调用的 <strong>API</strong> <strong>文档</strong> 在哪里。</li>
+</ul>
+<p>就这两个东西，够了，你就能对接大模型。</p>
+<p>而且不夸张地说， <strong>人人都能搞得定</strong> 。</p>
+<p>所以今天我就分享一个特别实用的小技巧，帮你 <strong>又快又好地接入</strong> <strong>API</strong> <strong>，迅速完成项目开发： 我们只需要把这个需求说明文档复制粘贴丢给大模型，配上咱们之前说的 MCP 服务，就能够快速的完成一个功能设计了。</strong></p>
+<p>（吹吧你）还不信啊？看我下面给你手把手操作。</p>
+<h3>只要这几步，大模型帮你搞定开发</h3>
+<p>举一个我亲身经历的简单例子：之前想一个自己专属的 <strong>在线对话 Chatbot 网页版窗口。咱们先去阿里云百炼大模型平台选一个合适的大语言模型，咱们需要拿到两个信息：</strong> <strong>API</strong> <strong>Key + 模型的接口文档。</strong> 然后咱们在开始之前需要准备一个文档，我这里推荐 Markdown 结构的文档；</p>
+<p>1. API-KEY： 左下角进入“API-KEY”后，然后点击“创建我的API-KEY”，然后点击查看后复制（记得保存到一个文档里面）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59smdj6N0Bcia3tRsRG4N4jic8HUB0gpKvicN6DKegWKrOIX6p9lZvN1jzQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>2. 需求文档： 进入模型广场，选择中“API参考”后进入模型接口文档：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59ibr4daZKHUje3vNANrQLkJcFDa6owGp7mM76RpGcWd1RBuXCFkQpibBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>复制下面这个请求体代码信息到文档里面即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59FPzR7huJQMH0zib88BibhiciaM9bsa3AN9pQ2Wt5LTghadMNAwwVv3LTIQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>这里默认的文档用的是“qwen-plus”，如果需要指定模型id，我们“查看详情”页面中可以去拿模型的code信息。当然，如果你实在也不知道该拿一块信息，直接把上面几个页面都全选复制粘贴就好了（也不是不行）...</p>
+<p>最后我们会得到这样的一份Markdown文档：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59HBThGGbLsP88kibNe5VicTicmHehsepK3MRqay34IBVeaqX4SdUs5NibXg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>然后，把文档放到 VsCode Cline 项目文件夹里，当然也可以是Cursor/Trae/通义灵码 的工作目录。</p>
+<p>如果对工具调用有疑问，可以看往期介绍：</p>
+<p>VsCode Cline： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247484564&idx=1&sn=6aa9578c5ce5fa07de6cb12f2c2a89a0&scene=21#wechat_redirect">吩咐 AI 帮我一键运行万星 Github 项目</a></p>
+<p>Trae： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247484716&idx=1&sn=1bf25e68893e53c20d5cd136f5dd31b2&scene=21#wechat_redirect">Trae：用 Agent + MCP 打造 AI 开发团队</a></p>
+<p>通义灵码： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247484812&idx=1&sn=2d359807e9f07dea6e3fbb1f044da635&scene=21#wechat_redirect">代码是它写的，功劳是我拿的</a></p>
+<p>接下来直接跟大模型说一句：</p>
+<blockquote>
+<p>“请你阅读这份文档，帮我实现一个美观一些的在线对话 Chatbot 功能界面。”</p>
+</blockquote>
+<p>完事！它就会自动读取、自动理解，然后啪一下直接把项目代码生成好了。</p>
+<p>如果我改个需求，比如想让它做一个写小红书文案的工具，也很简单，把Prompt 换一换，几秒钟也能出来。</p>
+<p><strong>不写代码、不啃文档，它就能把活干了。</strong></p>
+<h3>生图项目也能这么整</h3>
+<p>像 Diffusion/Flux 这种 <strong>生图模型</strong> ，同样可以照这个流程来：假设我想做一个 AI 生图网页工具，前面我们其实有讲过，可以先用 MCP 的方式去调用界面渲染的能力 （ <a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&mid=2247484841&idx=1&sn=2a569977f855579979912c7c460e3d99&scene=21#wechat_redirect">真不装，我现在都不用自己写前端</a> ），配上一个还不错的 UI 页面框架，然后配上 Diffusion/Flux 的 API 能力之后就可以整一个完整的生图生成页。</p>
+<p>现在我们需要先找一个简单好看的 UI 页面：我在Figma的资源社区里面找到了一个适合 Diffusion 模型的UI界面（Diffuison Bee），下面是项目的地址，供大家参考：<a href="https://www.figma.com/community/file/1164358234113718327/diffusion-bee-a-redesign">https://www.figma.com/community/file/1164358234113718327/diffusion-bee-a-redesign</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59YdzHVQ06hCqjHVMUEk3mT4B3zrIVbWBGkhpsqZ068pxGdBbJOSO2kw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>再拿到 Diffusion 模型的 API 文档（我在阿里云百炼的图像生成模型里面选择的是Flux文生图模型，这份文档内容参数细节比较多，我就直接把整页参数信息给复制了）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59srdHiadvHlKyasibviaf1ibfdu3tYD5PibR4bebDUd71IEmUEPkicQ6315vw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>同时把Figma的图层链接也一起放到文档里面，最后你会得到一份这样的文档：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7iac7HQH8JPkozfICvkjh59vKLn74GCyNdOibUJg5MMKCUNmoKTM5Y2c2ChqljrDZyBiapnzu4B1W5Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>接着对 VsCode Cline 说：</p>
+<blockquote>
+<p>“请你读取这个需求文档，我要实现一个在线生图页面，里面有Figma的文件链接和API对接信息。”</p>
+</blockquote>
+<p>结果就是：它自动把页面和生图接口串好了，整个项目直接跑起来，甚至连参数说明都帮你兜住了。</p>
+<p>项目开发突然就变得没那么吓人了，对吧？</p>
+<p>用AI搞AI，真的快！</p>
+<p>今天分享的这个“骚操作”，其实就是 <strong>让</strong> <strong>大模型</strong> <strong>看文档、写代码、搭架子，全流程帮你干</strong> 。你只要搞清楚思路，把信息交代清楚，剩下的交给它。</p>
+<p>在 AI 时代，动手能力变成了“动嘴能力”。</p>
+<p>你不需要精通开发，也能把一个项目跑起来。 <strong>别让技术门槛吓住你...动动手、动动嘴，说不定下一个爆款</strong> <strong>AI</strong> <strong>工具就是你做的。</strong></p>
+<p>当然我也会持续分享这些实践经验，以及自己在日常开发过程中的AI小产品工具，有意思的操作一个接一个，也真心希望你也试试。我是银海，你身边的AI产品经理，陪你解决每一个真实问题，我们下次再见 👋</p>
+<p>© THE END</p>
+<p>觉得我的内容还不错， 顺 手点个赞、分享、在看</p>
+<p>都是对我最好的认可！</p>
+<p><img src="https://mmbiz.qlogo.cn/sz_mmbiz_png/DhduwiaBa7lcH5oG1yRdR55WmAziaFjE8n80qrKYXWyomZyd6hdsAK5pRB7X7usIO0658XjGeyibbb4Qibn01MhSZw/0?wx_fmt=png" alt=""></p>
+<p>充满你的好奇心</p>
+<p> <a href="https://mp.weixin.qq.com/">钟意作者</a></p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>AI产品银海</p>
+<p>剪存为飞书云文档</p>
+<p>| |  | MP4 File 2.35 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 3 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s?__biz=MzkxMzUyODQ3OA==&amp;mid=2247484878&amp;idx=1&amp;sn=e66167ce7ea41bdcfa8f81f71cbfb297&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

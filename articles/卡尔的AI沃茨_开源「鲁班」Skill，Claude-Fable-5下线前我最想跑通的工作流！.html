@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源「鲁班」Skill，Claude Fable 5下线前我最想跑通的工作流！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源「鲁班」Skill，Claude Fable 5下线前我最想跑通的工作流！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E9%B2%81%E7%8F%ADSkill">鲁班Skill</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81">产品</a><a class="chip" href="../index.html?tag=Skill%E4%BC%98%E5%8C%96">Skill优化</a><a class="chip" href="../index.html?tag=GitHub">GitHub</a>
+    <span class="date">2026-06-12</span>
+  </div>
+  <p class="lead">用Fable 5给自己的Skill打磨升级！</p>
+  <article class="content"><p>原创 AI沃茨 AI沃茨 卡尔的AI沃茨</p>
+<p><em>2026年6月11日 18:37</em> <em>美国</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>来不及解释了，</p>
+<p>Claude Fable 5昨天上线，定位是Mythos的安全公开版。回忆一下4月份的Mythos当时就是称之为神话级模型，找出了1万多个零日漏洞，我刚拿到这个模型的时候，其实有点不知道该测什么。</p>
+<p>这次开放得很突然，窗口也很短。从昨天到6月22日（就剩11天了），Pro，Max，Team都能在订阅里用到Fable 5。6月23日之后，它会先从订阅方案里移除，就开始烧API了，后面什么时候再回来，要看官方容量。</p>
+<p>如果你是Claude订阅用户，我的建议很简单。</p>
+<p>这十几天，别拿Fable 5问日常问题。拿它做一件你一直想做，但平时觉得太麻烦很费脑子的事。</p>
+<p>我是100刀的Claude Max会员，刚开始也学着想玩玩宝可梦，结果玩一半都不到额度就没了。所以我这24小时没有让它闲聊，也没有让它写文章看看写作是不是比Opus好很多。</p>
+<p>我让它帮我做了一个Skill。更准确一点，是一个专门升级Skill的Skill。</p>
+<p>我给它起了个名字，叫鲁班Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxB0Rlhx7jsw2d7uBiad3XPeFacjJRX2kw9q5PRdF7TZHz2B5D7gEliaxkPOjEjKsgqxPS0Eib3VtCaqR2YluIHQVlDdvUqFANtew/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>🔗 github. com/LearnPrompt/luban-skill</p>
+<p>它在一轮打磨之后，把我的ai new rader升级到了v0.7版本，直接上GIF就知道了，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/VNz1x8bH8FzPxAVaNicChA72hF0P2cwkKWvXpNqeNNicMIPm34LyUpNh7GmNTic08F1IsaWyS0NLibHvDu8adkatwss6jAibfkRHhuPSSxicygrNI/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>为了让别人在第一时间，用10秒钟就能了解到这个ai news rader Skill能干嘛，</p>
+<p>Fable 5甚至用我电脑录制了一段完整的视频传到了Readme，这段视频我一秒钟都没剪它自己甚至把模型生成过程的多余的时间剪辑掉了，就离谱。。。</p>
+<p>除此之外，他还把我这个项目里原本表达了思路但没讲透的优势，打包成了同一个项目另外一个 Skill，ai rader，这样，Agent通过安装这个Skill就可以直接读取聚合后的一手信息。</p>
+<p>还不止，鲁班Skill是会通过横纵的方法吸收同类型Skill的优势的（后面会详细拆解），这些优势不是我跟Agent凭空讨论或者一拍脑袋就想去迭代的，而是同类型项目拉开差距的特有功能。</p>
+<p>通过判断Github项目的Star数历史和Release记录。通过这些数据来判断它做了什么样的功能，从而导致它的Star有了一个非常快的提升。</p>
+<p>所以一轮打磨之后还帮我追加了热点模式和时间轴模式。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/VNz1x8bH8FxSdTZKDEqFJQQkSqEWqGFMNdHVdaU2KItT9MovdNuXYTicr0hlLwYEUwBibOtqBCxaDs5URSt65ASvvq2MJocUjbq0NZ4vfWlvw/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>同时，它还提升了给消息打分的门槛。之前发现很多得分都在 100 分，是因为在信息源里面，如果AI信息源占比过多，分值权重就会很大。但对于聚合站来说，AI占比多并不代表完全的质量，</p>
+<p>所以Fable 5专门做了一个评分的回测工具，算法我也全部公开出来了，让大家来看看这个Fable 5的代码水平怎么样。</p>
+<p>所以，这就是一次打磨后的效果，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FziaQ38KoGuNulmSJ1XueY1K9NMfyZdZ6Pejo5H9gzGfYiaY6YbsE9ib10XkxDric9Av7chyCzI0T3MhY0EEHJiaI4swj1taWiaeH9U8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>🔗 github. com/LearnPrompt/ai-news-radar</p>
+<p>更有意思的点是，我想给他开全量权限，让他连夜跑完的时候，Fable 5是会主动去预测，它改完这个项目后面的所有想要用的权限，只开放这方面的权限。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzBia7xTDCMc3ulibbDNxOVT6k64Ydic0BdicIyQ5AWJD0OD1dSXuqRnXzlsPeZ1xL7gHXEicmzabicZ4tcavYayEib0RW2o1wZAuIibtQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>那这个升级Skill的Skill为什么叫鲁班呢？</p>
+<p>因为它干的是把一块已经能用、但还很粗糙的木料（本地给自己用的Skill），刨平、校准、开榫、打磨，最后变成一个别人真的愿意拿走、安装、复用的东西（能公开到Github上给所有人用的高水准Skill）。</p>
+<p>这也是我最近越来越强烈的一个感受。</p>
+<p>很多人以为Skill是一个很神秘的东西，好像里面一定要有复杂脚本，自动化流程，MCP，浏览器操作啥啥啥的。</p>
+<p>但大量真正好用的Skill，主体其实就是提示语。</p>
+<p>一段写得足够清楚，边界足够明确，失败模式足够多的提示语。</p>
+<p>我常用的20万星的superpowers和1.5万星的pm-skills就是最好的例子。</p>
+<p>这次的鲁班Skill也是这个思路，</p>
+<p>这段时间我看了很多Skill，有GitHub上的，有ClawHub上的，也有自己写着写着沉淀出来的。</p>
+<p>然后我发现一个挺尴尬的问题。</p>
+<p>能用，和能发布，中间差着一大截。</p>
+<p>基本上所有的Agent都会有Skill Creator这个初始的Skill。</p>
+<p>确实，你可以直接跟Agent说你的需求，让它打包成为一个可以在自己电脑上、在自己的 Agent 上能够顺利运行的 Skill。我Hermes給我打包的Skill都上百个了，但我也就打磨开源了10%不到。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FyhzHfUicUSVxMJGaTYnZmMibrcAh3SsbdpT6BeLiaIRSAazlGoVJ08EodTarVyZgLKUSDG4zIS4QrDgg7Jr0ta8V5SfGAphQ33Q0/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>一个Skill在自己电脑上能跑，不代表能看懂。</p>
+<p>别人看得懂，不代表愿意安装。</p>
+<p>愿意安装，不代表三分钟内能跑出一次工作流闭环。</p>
+<p>这就是很多Skill发布的时候卡住的地方。</p>
+<p>它像一个没有验收标准的手艺活，</p>
+<p>你问Agent帮你改SKILL.md，它大概率会干什么？</p>
+<p>加几个小标题，补一点触发词，写一段更漂亮的description，再把README整理得工整一点。</p>
+<p>有用吗？有但不大。</p>
+<p>所以我给Claude Fable 5的任务，不是让它润色一个Skill，而是让它打磨我的ai new rader项目，完成一个完整的升级流程。</p>
+<p>从这一次升级里面提取出来的这个鲁班 Skill，当然随着它改的项目越来越多，鲁班Skill肯定还会发布 2.0 甚至 3.0 版本的。但是留給Fable 5的时间不多了，我决定先把1.0版本开源。</p>
+<p>第一步，先挑战前提，</p>
+<p>会分出去一个掌柜的（产品经理），判断这件工具到底解决谁的什么问题，为什么值得安装。</p>
+<pre><code># skill.md 部分节选1
+
+真实问题：这个Skill解决的真实用户问题是否成立？
+独特角度：它的唯一性来自方法论、脚本资产、私有经验、数据、工作流还是展示效果？如果没有唯一性，直接指出同质化风险。
+安装理由：用户为什么要安装它，而不是临时问Agent？
+公共传播性：它有没有一句话传播钩子？有没有可截图、可录屏、可展示的结果？
+</code></pre>
+<p>这个Skill解决的问题真的成立吗？</p>
+<p>用户为什么要安装它？</p>
+<p>它有没有独特的方法论、脚本资产、数据、工作流、展示效果？</p>
+<p>它有没有一句话能讲出去的传播钩子？</p>
+<p>这些问题先答上来再改。</p>
+<p>因为大部分Skill的问题是压根没想清楚为什么值得存在。</p>
+<p>第二步，去找同类。</p>
+<p>鲁班师爷会派几个行脚去找同类型的Skill，分析它们为什么被收藏，安装和传播。</p>
+<pre><code># skill.md 部分节选2
+
+并行搜索策略
+使用子Agent并行搜索提高效率。建议的分工：
+子Agent 1 — GitHub同行：搜 &lt;关键词&gt; skill、&lt;关键词&gt; agent skill、&lt;关键词&gt; SKILL.md、&lt;关键词&gt; Claude skill、&lt;关键词&gt; OpenClaw skill
+子Agent 2 — Skill市场：ClawHub、skills.sh、Tessl等目录里的同类分类、热门Skill、相近工作流
+子Agent 3（用户指定了对标时才需要）：深读用户指定的对标仓库或Skill，分析它的README、安装路径、showcase做法
+搜索词从当前Skill的name、description、README首屏、核心任务中提取，生成三组：功能词（它做什么）、人群词（谁会用）、形态词（skill/agent/runtime名）。
+</code></pre>
+<p>这也是我觉得Fable 5比普通模型更适合干这件事的地方。</p>
+<p>它会去横向看GitHub、ClawHub、skills.sh、Tessl这些地方里相近的东西。哪些是直接竞品，哪些是间接竞品，哪些虽然不是同类，但README、命名、showcase做得特别好，值得借鉴。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyzpQEOrUqjqvPMRRqVXHQngJdWq0MEUgaSvqvcrnxA8NTibOAHWfiboxoNLlRf5bgxz3qMibVKpIIhj0dsTaudl9dmoc311YicP1M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>第三步，是我从HV Analysis里借来的横纵分析。</p>
+<pre><code># skill.md 部分节选3
+
+纵向：这个Skill从哪里来，要走向哪里
+
+它最初是为了解决什么具体痛点？
+它现在是工具、方法论、工作流、风格迁移、还是自动化系统？
+它从&quot;私用&quot;变成&quot;公开可用&quot;还缺哪一步？
+下一版最该从哪条路演进：更强功能、更好展示、更稳安装、更通用适配、更高验证？
+
+横向：行情里的同类凭什么立足
+
+至少从以下维度判断：
+命名钩子：名字有没有记忆点？是否一听就知道解决什么？
+一句话定位：是否用人话说清楚用途？
+安装摩擦：是否一条命令能装？是否需要复杂前置条件？
+首屏信任：README首屏有没有徽章、GIF、截图、结果样例、真实数据？可验证产物：跑完后有没有HTML、PDF、报告、卡片、diff、测试结果等&quot;看得见&quot;的东西？
+安全边界：有没有说明不会乱删、不会泄露、不会擅自发外部请求？
+生态兼容：是否明确兼容多个Agent runtime？
+故事感：它是不是在讲&quot;为什么现在需要这个Skill&quot;，而不是只列功能？
+</code></pre>
+<p>纵向看，这个Skill从哪个真实需求里长出来，现在解决什么，下一版应该往哪里走。</p>
+<p>横向看，同类Skill为什么更容易被理解、更容易被收藏、更容易被安装。</p>
+<p>最后交叉出一个判断。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8Fzy0RbL9hg66iagwWpGFia7CqRvdys4ZMTWYicRZm5YOibBOQNG0at1sMiaexCx125589gWPa7Re6pPAdSqxibCzYv5rzmMfR2qaqQJA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>我们真正要抢的生态位，到底是什么。</p>
+<p>Fable 5给我的一个判断就很有意思。</p>
+<p>它没有把重点放在「再做一个更好的AI日报网站」上。</p>
+<p>它反而指出，真正有差异的地方，是GitHub Pages上那份静态JSON。</p>
+<p>也就是，它天然就是一个不需要鉴权、不会被下线、可以fork、可以直接curl的开放数据接口。</p>
+<p>我当时看到这个判断，确实愣了一下。</p>
+<p>因为这不是一个功能建议。</p>
+<p>这是生态位判断。</p>
+<p>按我以前的思路，大概率还会继续往页面、订阅、信息源、展示样式上加东西。</p>
+<p>但它把我从「做一个更好的新闻站」这条路，</p>
+<p>拽到了「把自己的公开数据接口说清楚」这条路。</p>
+<p>第四步，是Darwin式评分。</p>
+<p>鲁班师爷会派个量尺师傅来测出最先要打磨的面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxfFBHuCTFgwArd2dZAuicLxCrAdOnwdjwjAARnmySpU3TpO6RbtMjvviboDq72Zc3BYwe31gldWZ3H2AHzLNjOsiaF7aia6oNiawjk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>这里我让鲁班Skill固定用9个维度打分，Frontmatter与触发条件、工作流清晰度、失败模式、检查点、可执行具体性、资源整合度、整体架构、实测表现等等。</p>
+<p>里面权重最高的是实测表现。</p>
+<p>也就是说，一个Skill写得再漂亮，如果没有测试prompt，没有前后对比，没有真实输出样例，它也不能算升级成功。</p>
+<p>这点我觉得很适合拿来给所有Skill当体检表。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fz7FhBa0Vic7BadpEtGHHEQVcbA0lZN8mlTxhFh1icrBqsUrGyqg53eD2X0D4qYMNe01WAhOjFAibk8PNiaJ4eIMgOUJZ4kCmQw2vE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>因为现在很多Skill最大的问题，就是Readme里的showcase老好看了，实际上跑起来就像纯草稿。</p>
+<p>第五步，是SkillOpt式候选改写。</p>
+<p>这块借鉴的是微软SkillOpt的思路，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fwzn1x1d3MBdZ1icxr1hBAxcjWfSRHGemwNSQessyMX00S90TE0P9Mf5k6E1nTzp0IicK6DzYNUGPk4X8C3hyyYibZxFmyLRobZPA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>把Skill文档当成一个可以优化的状态，但每一轮只改一个主要方向，而且要过验证门。</p>
+<p>比如这一轮只修触发词，就不要顺手重写README。这一轮只补失败模式，就不要顺手加一堆showcase。</p>
+<p>否则最后你根本不知道变好是因为哪一步。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxCibUWiaibeHnJVMIXJvh4VHPUZ8aOCuk2XjKLsPuX90j29qKDecaeCJhZ3aRiaqibGdDUbdB6k4QNHxSkt78k2Y5FlX4GUysTMkfA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>这个思路很像做实验。</p>
+<p>不要一次改十个变量，然后看着结果变了，就说自己找到了方法。</p>
+<p>鲁班Skill最后会要求候选改写必须过几个门。</p>
+<p>至少2个典型测试prompt输出优于原版。</p>
+<p>README首屏能在10秒内说明价值。</p>
+<p>安装路径没有新增明显摩擦。</p>
+<p>鲁班Skill里面还有很多其他很有意思的概念。</p>
+<p>比如摆活儿的，就是专门去优化你的 README 和 Showcase。</p>
+<p>另外还有访行，过尺、慢刨和回炉等各种各样的概念，以及最终的出师证书。</p>
+<p>你看，这就从「写Prompt」变成了「做产品」。</p>
+<p>这也是我这次最想分享的地方。</p>
+<p>过去我们讲Prompt，很多时候讲的是单次效果。</p>
+<p>但Skill这个东西，开始把Prompt变成一种更接近产品的东西。</p>
+<p>它有定位，有触发场景，有失败边界，有showcase，有安装路径。</p>
+<p>它不是一次提问。</p>
+<p>它是一种可复制的工作方式。（人类撰写说明）</p>
+<p>Fable 5在这过程中对skill的调用，权限的判断和复杂项目的整合），基本都是一次性过。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fw9icYSbEFyQujr2oMxfciaiaOmmPIJbCMziabGiabDTzMCia3VrFZibdDOIOHKIUT48BTFlkY4MMNznDiaT7jrRBoUNwP8fVwaTcVTI0o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>我现在就是想趁着在22号之前，用Claude Fable 5和鲁班Skill把我的项目全部升级一遍。</p>
+<p>到时候我应该还会开源一个新的 Skill。这个 Skill 会让我们开源到一个项目里的所有Skill都能保持同样类型的风格，让大家一眼就能看出来这就是你做出来的。</p>
+<p>我现在越来越觉得，</p>
+<p>普通人用AI最重要的资产不是收藏了多少工具。</p>
+<p>是有没有把自己反复做的那几件事，变成自己的Skill。</p>
+<p>怎么去研究一个陌生领域。</p>
+<p>怎么判断一个选题值不值得写。</p>
+<p>你怎么把一个粗糙项目包装成能发布的作品。</p>
+<p>这些东西一旦沉淀下来就会变成你值得对外分享的手艺。</p>
+<p>鲁班Skill干的事，就是帮我们去打磨这门手艺。</p>
+<p>它不保证每个Skill都能火。</p>
+<p>这个我也不敢吹。</p>
+<p>但它至少能帮你在发布之前，</p>
+<p>把几个最要命的问题问一遍。</p>
+<p>谁会用？</p>
+<p>为什么装？</p>
+<p>怎么触发？</p>
+<p>交付什么？</p>
+<p>比同类强在哪？</p>
+<p>怎么证明？</p>
+<p>答清楚了，再去写README、补showcase、</p>
+<p>录GIF、做测试prompt。</p>
+<p>完整版本我还会继续迭代，但这个版本已经足够你拿去喂给Claude Fable 5，</p>
+<p>先给自己所有的Skill做一次升级。</p>
+<p>找一个已经在用但还没发布的Skill，</p>
+<p>让Fable 5用鲁班Skill挑挑刺，</p>
+<p>整个好活。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/WX_MNcSmSHUkjkPxzmc9Tg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我最常用的三个写作 Skill · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我最常用的三个写作 Skill</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E5%86%99%E4%BD%9C">写作</a><a class="chip" href="../index.html?tag=%E5%85%AC%E4%BC%97%E5%8F%B7">公众号</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a>
+    <span class="date">2026-06-11</span>
+  </div>
+  <p class="lead">上次分享了我的公众号写作流程，有很多读者私信，我的选题，配图，排版是怎么做的</p>
+  <article class="content"><p>原创 空格丶 空格丶 空格的键盘</p>
+<p><em>2026年6月11日 09:15</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy68kkyDZMLSGZqoHNjGQ2S2y3vzT2VdUpnX7JPiaDlT3tOmnN38JyzAKjm3yEy2qONGU2NgN6Hm3FBC6wCkXuSexCQTjlCJxrE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>REPOSITORIES</p>
+<p>上次分享了我的公众号写作流程，有很多读者私信，我的选题，配图，排版是怎么做的？</p>
+<p>这三个事以前都很碎，打开工具、复制文本、调格式、找数据、再整理回 Obsidian，每一步都不难，加起来特别消耗心力。</p>
+<p>现在，我把这些动作都做成了 Skill。也是我在写作过程中，用得最多的skill，稳定产出，效果极好。</p>
+<p>这篇文章就给大家介绍下这三个 skill 的用法和制作逻辑。</p>
+<p>文章批量配图</p>
+<p>按文章结构批量生成配图提示词，并调用 image2 逐张生成。</p>
+<p>爆款文章搜索</p>
+<p>监测热门内容，分析标题、结构、读者画像和可借鉴写法。</p>
+<p>微信公众号排版</p>
+<p>把文章转成可本地预览、可复制到公众号的 HTML 排版页。</p>
+<p>SKILL 01</p>
+<h2>文章批量配图</h2>
+<p>核心思路是先读懂文章，再配图。</p>
+<p>这个 skill 其实是一条四步流水线。</p>
+<p>第一步，结构解析：按 H2、H3 把文章拆成段落树，每个小节是一个配图单元。</p>
+<p>第二步，语义提取：读出每一节的核心观点和关键词，判断这段内容的内在形态，讲步骤的适合流程图，讲差异的适合对比图，讲包含关系的适合层次图，讲抽象概念的适合概念图。</p>
+<p>第三步，生成提示词大纲：每张图对应哪个段落、用什么图表类型、视觉上怎么呈现，先以文字形式列给我看。</p>
+<p>第四步，我确认之后才调用 Codex 内置的 image2 逐张生成，并自动插入文章对应位置。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxZUjBE5YYwjpERMg8SC5QRyoJZIWLJHX1mBueNu3OQe9OalibUxY63T38O14k7MD62dNs0CW6RTdAczn7mXHcfCIGGRRcicbRWs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>好的配图不该抢正文的戏，它更像一个临时搭起来的脚手架，让读者三秒内知道这一段在讲什么。</p>
+<p>最意外的收获是，我现在会用配图反查文章结构。如果某一节生成不出一张清楚的逻辑图，往往说明这一节本身就没写清楚。配图成了写作的测试用例。</p>
+<p>地址：github.com/zephyrwang6/space-GPT-image2-design</p>
+<p>SKILL 02</p>
+<h2>爆款文章搜索</h2>
+<p>更像一个写作者的雷达，里面是三层能力，叠在同一条数据流上。</p>
+<p>数据流大概是这样：</p>
+<p>1. 关键词进去，先抓公众号的热门内容，把阅读量、点赞、分享、评论、发布时间、来源这些指标归一化</p>
+<p>过一道爆款判定，比如阅读量和分享比异常高的优先；筛出来的文章再进入分析层，由模型拆标题公式、开头钩子、读者画像和可借鉴的写法；最后渲染成一份 HTML 可视化报告。</p>
+<p>第一层用法是定时监测。  </p>
+<p>这个任务可以放进 Codex 自动化，也可以挂在 Claude Code 的 loop 里定时执行。把 Codex、Claude Code、AI Agent、AI 编程这些关键词挂上去，每天自动跑一遍这条数据流。</p>
+<p>第二层是赛道分析。</p>
+<p>指定一个领域，它把最近的热门内容整体拉一遍，这个赛道最近什么选题在涨，哪类标题公式反复出现，读者在为什么停留。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozkbBEheDUR1RDUbU1w5IHHGHQO6N1XtdcIbjuPEb5YQ6cyNiaAS5UiaPcwn2n66VqiaofSbfT1HeGZwq2sMAZePNFbQSnBPGMicOg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>第三层是单篇解析。</p>
+<p>丢一个公众号链接进去，它抓正文，拆标题、结构、核心观点和读者吸引点。有些文章看起来很火，拆完发现结构其实很散，只是选题踩中了情绪；有些文章数据不夸张，但开头和案例组织方式特别值得学。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz7P23NFosl4WWIvibjhLHy2rcic1icBPRSn3jSwADQ5zVZhZU5BQPpDwxDBpZlDQLz2huSpQuxXHwfGZKZFibUA7jY9NurNxxvJvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>写公众号最怕自嗨，自己觉得话题很重要，读者根本没兴趣。定时监测的意义，就是每天帮我校准一次读者注意力。</p>
+<p>地址：github.com/zephyrwang6/baokuan-article-analysis</p>
+<p>SKILL 03</p>
+<h2>微信公众号排版</h2>
+<p>解决发布前的最后一公里。</p>
+<p>它的运作逻辑是一条转换链：先把 Markdown 解析成结构化的元素树，标题、段落、引用、列表、代码块各归各位；</p>
+<p>再把每种元素映射成一段带内联样式的 HTML；最后组装成一个本地预览页，正文区域配一个“复制 HTML”按钮。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy0sIjKhN6RsiaNVTEogeKyOJ4hbpuicerGAza7ueFm7GEqr1OsztpnoMpdic89bVKMZX97kJPLYASZOY5Zv0d6I8PDS2H48EsJZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>内置三种风格主题，每种主题就是一套不同的样式映射：</p>
+<p>Claude 风格暖白安静、留白多，适合观点文和长文分析；</p>
+<p>OpenAI 风格黑白灰、层级清楚，适合教程和工具文；</p>
+<p>Google 风格更明亮，适合榜单和数据总结。懒得选就说“你来定”，它根据文章类型自动挑一个。</p>
+<p>真正好的排版是让人忘记排版，只觉得文章读起来舒服。这个 Skill 把格式、间距、预览、重调这些琐事收束成一个动作：预览，复制，粘贴。</p>
+<p>地址：github.com/zephyrwang6/space-layout</p>
+<p>ENDING</p>
+<p>最后</p>
+<p>写到这里发现，这三个 Skill 虽然功能完全不同，骨架却是同一套：先理解（读文章结构、抓赛道数据、解析 Markdown），再决策（选图表类型、判定爆款、匹配样式），然后生成，最后落盘到我的工作环境里。</p>
+<p>它们刚好对应写作流程的三个节点：写什么，怎么让内容更好理解，怎么稳定发出去。</p>
+<p>skill 就是 AI 真正改变工作的地方，是把那些每天重复、细碎、容易拖延的动作，变成一个可以反复调用的流程。</p>
+<p>对 skill 制作感兴趣的欢迎后台加入社群。</p>
+<p>感谢阅读。 如果觉得有用，欢迎点赞、分享、转发。我们下期见。</p>
+<p>✍️：空格 </p>
+<p>📮：PM_Planets</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/VVE-ES1xox3W8fnW3y_6vQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

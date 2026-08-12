@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>烧了2000美金后，我发现Vibe Coding“已死”！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">烧了2000美金后，我发现Vibe Coding“已死”！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E4%BA%A7%E5%93%81%E9%BB%84%E5%8F%94">AI产品黄叔</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Spec%20Coding">Spec Coding</a><a class="chip" href="../index.html?tag=Vibe%20Coding">Vibe Coding</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a>
+    <span class="date">2025-09-03</span>
+  </div>
+  <p class="lead">Spec Coding已来！</p>
+  <article class="content"><p>原创 AI产品黄叔 <em>2025年09月02日 16:51</em></p>
+<p>感谢 <a href="https://mp.weixin.qq.com/s?__biz=MzkyMDU5NzQ2Mg==&mid=2247489027&idx=1&sn=05658b79a3ed2817b0550d6ae30f24c2&scene=21#wechat_redirect">【Z Next AI 产品创造营】</a> 上周末邀请，黄叔给AIPM和创业者们分享了最近科研的成果： Spec Coding 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsuTbBJWylZrBfz1Ux0Yt5AfA3BcAdtXOqmCfnGSibibyDvOzFr7l3vyqw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>本文会和大家 开源产品从0到1，以及后续产品的Spec 提示词 ，以及背后的思考：</p>
+<p>目录</p>
+<ol>
+<li>1.为何说Vibe Coding已死？</li>
+<li>2.两个关键Prompt帮你Spec Coding</li>
+<li>3.OpenAI和Karpathy是这么指引趋势的</li>
+</ol>
+<p>如果大家身边有企业和高校资源的话，欢迎找黄叔，想多多分享Spec Coding，和大家多多交流，也希望能为AI在国内的普及率做一些贡献！</p>
+<p>我的个人微信： product2023</p>
+<h2>01 为什么说Vibe Coding已死？</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsV5mfafEicU3dhvfXCzLlkBClVQUhECj9XlKR3INQh8xfWhA0KttkeTw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>OpenAI的Sean Grove，6月份分享了个主题，看起来很惊悚：“ Prompt Engineering is Dead ”，吸睛当然很重要，但更重要的是副标题：</p>
+<p>Everything is A Spec！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJszic6ibpTsIvMQ4BuT0icIv5Shxeq58sohXCo6FdQkuc4ZqCUcwuZINZ4Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>他在分享里提了个很重要的问题：</p>
+<p>问题1：“PROMPTS ARE EPHEMERAL.”（Prompt是短暂的）</p>
+<p>“每次和AI激情对话，最后的Prompt都像一场梦——醒了就啥也没留下。”</p>
+<p>其实我们想想，每次Vibe Coding的时候，我们会和AI大量的Chat，这些输入的Prompt最后都没留下来，可是，不正是这些Prompt，才生成了最后的结果么，为何我们把它丢掉了？</p>
+<p>另外，黄叔从去年10月份开始大量的玩Vibe Coding，包括和身边大量的朋友交流，发现一个更重要的问题：</p>
+<p>问题2：Vibe Coding一开始很爽，但到后面越改越头大！</p>
+<p>“Vibe Coding越改越乱，代码像打地鼠，改一个冒仨头，产品经理分分钟变‘救火队长’。”</p>
+<p>是吧，一开始很快就出来了，但是后面每次迭代都心惊胆战，因为你让它改A，经常莫名其妙的出现了B和C的错误。。。然后又是一通改，又是找Git回滚。总之费了很大劲，莫名其妙某次发现，它好了。。。</p>
+<p>然后不断的重复这个流程。甚至有朋友说，因为这一点，都不愿意去Vibe Coding了。。。</p>
+<p>那有没有解决方案呢？必须有的：</p>
+<h2>02 Spec Coding杀死Prompt Engineering</h2>
+<p>“Spec Coding不是‘头脑风暴’，而是‘头脑风暴后的施工图’。”</p>
+<p>提示词工程其实从2023年就开始了，但那会更多偏向于给出一个结构化的提示词，让大模型一次（或少数几次Chat）就出结果，但那个其实和我们的Spec Coding完全不是一个东西。</p>
+<p>为何呢？</p>
+<p>其实你想想很成熟的产品开发流程就知道了，除了一句话就能做出的玩具之外，大部分时候产品都需要持续不断的Vibe才能生成的，这个过程就需要很多的技巧来控制AI符合预期的去生成代码，并不断调整。</p>
+<p>复杂度： Spec Coding&gt;&gt;Prompt Engineering</p>
+<p>从三周前，在继刚的线下局里，黄叔就开始思考这个话题：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsZB804W0ZjpOfGZ6icZPkggKZ5rYb5vAOTe7dqeYkBYEXC8OlgjmGvwQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>到上周末，终于拿出了方案，这个方案，也是陆续烧了2000美金Claude Code方案后验证出来的：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsk4J4icsHu0ic2ial8qfgJeNtia7zHZtq7f3a9pz6jVjPOtKj4cPrIycLNQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>我们直接来看两个阶段性的成果！</p>
+<h2>产品0到1 Spec：</h2>
+<pre><code>现在，你将扮演一名首席产品设计师，不仅拥有世界顶级产品的设计审美，还具备敏锐的产品战略思维。我们的目标是共同规划一款能够持续迭代、不断成长的产品，首先从一个成功的 最小可行产品 (MVP) 开始。
+
+你的任务：
+启发式对话与战略规划：我会描述我的产品愿景。你的任务是：
+逻辑侦探：挖掘并质询所有模糊的功能细节。
+设计顾问：主动从用户体验和审美的角度提出UI/UX建议。
+版本规划师 (Version Planner)：这是你的核心职责之一。你必须主动引导讨论，帮助区分哪些功能是构成 MVP 的绝对核心，哪些是可以放在后续版本迭代的。例如，你会提问：“这个功能非常棒，但为了尽快上线验证核心价值，我们是否可以先做一个简化版，把完整版放在V2版本？”
+确保兼容性：随时查看代码库，确保新设计能与现有功能和谐共存。
+锁定产品路线图：当你认为一切清晰后，请以以下格式向我输出一份“产品路线图 (Product Roadmap)”。这份路线图将是我们合作的蓝图。
+
+核心目标 (Mission)：一句话描述产品的最终愿景。
+用户画像 (Persona)：这个产品是为谁设计的？他们的核心痛点是什么？
+V1: 最小可行产品 (MVP)：以列表形式，明确列出构成第一版必须包含的核心功能。这是我们首先要集中火力攻克的目标。
+V2 及以后版本 (Future Releases)：以列表形式，列出我们计划在未来版本中添加的激动人心的功能。
+
+关键业务逻辑 (Business Rules)：描述 MVP 版本中的核心业务规则。
+数据契约 (Data Contract)：明确 MVP 版本需要处理的数据。
+MVP 原型设计与确认：在我确认上述路线图后，请你仅针对 MVP 版本的功能，使用ASCII字符绘制 3个 不同设计理念的概念原型图。我会从中选择一个。
+
+架构设计蓝图: 基于上面的内容，生成一份Markdown文档，包含：
+核心流程图：使用Mermaid语法的序列图(sequenceDiagram)或流程图(flowchart)，画出关键的后端业务或数据流。
+组件交互说明：明确指出本次修改会影响到哪些现有文件或模块，以及新增模块和现有模块之间的调用关系。
+技术选型与风险：说明关键的技术选型（如特定库或算法），并预判潜在的技术风险。
+
+最终确认与存档：在我选定原型图后，我们将正式锁定所有需求。请将最终确认的“产品路线图”和选定的MVP原型图及设计说明还有架构设计蓝图一起，生成Prd.md文档作为存档，然后等待下一步的命令。
+</code></pre>
+<p>只要把提示词输入，AI就会开始主动提问，并不断追问，直到完成整个PRD.md文档：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsVBXeNXj1f4cxv6ibz1skxAD8bhZKIbDD4cEic8ibZibveVHada2xM9g2hA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsF10iazWCICJ1JO6TicNz9FztHMV25LUv3ANdwrlzSej2dmP9Lrw828Yw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>接下来，可以让AI根据这个prd.md，结合Context7 MCP，开始进行开发。</p>
+<p>如果是在CC里，打开危险模式：claude --dangerously-skip-permissions ，此时CC会获得最高权限，自己完成任务规划，并一路狂奔，跑个30分钟都很正常，然后一把给你出一个MVP产品。</p>
+<p>黄叔用这个提示词的上一个版本开发iOS App，只修复了两次编译错误，就出来了一个功能还比较齐全，并且完全符合PRD文档内需求的产品！非常爽。</p>
+<p>除了从0到1，还有后续多个版本的迭代，如何实现呢？</p>
+<h2>产品迭代Spec步骤：</h2>
+<p>我们以Claude Code为例，在产品迭代的时候，按照以下步骤进行：</p>
+<p>第一步：切到 Plan Mode ：</p>
+<pre><code>“{口喷描述需求、当前版本存在的bug}请给出解决方案，用ASCII绘制原型图，把所有影响到的部分全部绘制出来，包括原型和技术方案，注意，请仔细检查不要影响非相关模块，要保证根据你的方案实现后，能完美实现需求”
+</code></pre>
+<p>然后和CC核对方案，但凡你觉得不合理的，想优化的，都可以继续口喷，直到满意为止。</p>
+<p>第二步：当你对方案满意后，切换到危险模式：</p>
+<pre><code>用方案{},这个版本号设定为{}。
+
+请注意再次检查按照此方开发后是否能完整实现需求，并且不影响其他不相关模块，如果有，请重新指定方案并和我同步。
+
+如果一切可以正常实现，在prd.md文档顶部新版本更新区域,撰写对应的产品需求更新,对应的ASCII原型图，以及涉及到的技术架构和要点更新,然后后续的开发严格遵循此次更新，再将代码实现切分为合理的todolist,按顺序执行,执行完毕后自己做整体检查 ultrathink
+</code></pre>
+<p>这样开发下来会发现大部分情况下都能实现你的迭代要求：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsjpaS0wiaFOiaouu5GUPeEnZibzpOspUIichqX9N0aoBia203rNHuxV3d9ug/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsL3XVX6h3ia4m6rUg4fWtxOt2kZticUhGJXpXSDic4szakbKlVuFjXxwuQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsFOAsvAh06spelibo0alvfXCbJuRq0HqLGrRnibEqZmMvuAzaJauibb9zw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>可以看到，我用ASCII绘制原型图后，最后生成的页面是完全吻合的。</p>
+<p>使用上面这套工作流程，黄叔自己的产品从0到1，迭代了20多个版本，只有2个小版本开发后是有编译错误的，也是很快就完成了修复，几乎没有出现过要求改A，结果“B和C”被改掉的问题。</p>
+<h2>核心工作逻辑</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJstD6dPUsAooUhjicYH10vO04WGUOiaMAJhyNKxxr8TvSiaclqKJMWWWyxA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>“AI写代码，最怕你说‘你看着办’，最爱你给‘说明书’。”</p>
+<p>你会发现基于Claude Code，这套Spec Coding的效率之所以高，核心是上面的机制。</p>
+<p>首先是Plan Mode，我会调用4.1 Opus来深度理解当前代码以及自己的需求，这个最强的编程大模型能够找到合理的方案，并制定开发计划。然后我会反复和它对齐，最后让Opus输出Spec文档。</p>
+<p>其实，你设想这个场景和过去产品开发流程里面是非常相近的：</p>
+<p>在需求评审会里，你会提出很清晰的需求。然后，研发理解之后，我还不会让他直接去开发，而是让他详细地跟我说一下他的解决方案是什么。</p>
+<p>因为有时候可能你跟他说的是 含糊的A ，结果他理解成了B。这样子，最后开发出来的就和之前你想要的有很大的差异。所以在需求评审会上，两边都要聊得非常清楚，再进入到开发。</p>
+<p>这里我们是和最牛的Opus来沟通协作的。</p>
+<p>有了Prd，再让干活麻利的小弟4 Sonnet去干活，甚至引入Context 7 MCP，让它去读最新的技术文档，这样就能大幅提高开发的成功率。</p>
+<p>有了Spec，AI开发像装宜家家具——照图施工，不再靠‘感觉’拼命试错。</p>
+<h2>额外的好处</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsLicsBkNp4Wib7ONs5ouZia34cwpvcEutAKrrvazbztoKhjsCn7mlcRUUQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>这里不知道大家感受到一个额外的好处没：PRD可以一直保持最新的状态：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsK9U0S3iaYISEYRpayGQx7M7uicA1DefKicaKpISkWFP4p5yMDx7P4brpQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsPrkzick6ny3C5y5zSTxeAOGaIvia2CGmN0lCC8dUfqjwXf2bqsYoPnjw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsUR2uytTfgggxxypokSRXmGpQHn6LChJzhhWXK3oExyUPiaaH7Cusk4A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>这里我给大家看几个版本的Prd截图，可以看到非常的清晰。</p>
+<p>在过去，和产品版本同步更新的Prd是非常难的，因为很多需求就是口头和研发沟通完就开发了，要一直保持prd版本同步更新，非常吃产品经理的时间精力。</p>
+<p>现在AI完全搞定了！</p>
+<p>而且还有个好处，即使是没有git做存档，也可以部分恢复产品代码，因为：</p>
+<p>Spec = New Code！</p>
+<p>黄叔之前开发到2.2.4版本，有个新功能的开发导致了界面的问题，修了两三次没修复，然后我一看git，只是保存到1.9.2，这要在过去，头都大了！</p>
+<p>现在就没事，首先我先用git reset回滚到1.9.2，然后把之前prd保存下来的每个版本更新内容给到CC，让恢复到界面有问题之前的2.2.1版本，CC一次就完成了重新开发，非常高效！</p>
+<h2>还有更多</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsJFs5KrFnI6skKIfe7Zw2YDAsQwISCHzJqyFEz029Ma2ZYJWRhIicNpQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>其实要展开说这套Spec Coding，还有些东西，简单说两点:</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsP9W9pApDCvOTdt7ydNKM2jDaofcvCRZIBHSAB8vZndGPLXP4wflIHA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p>这个是峰子上次分享给我的一个启发，结合我自己过去的经验，其实模型在预训练阶段，以及基本完成了Coding能力的上限，不管是Vibe Coding还是Spec Coding，我们无非是用不同的方式提高模型在生成代码上的正确性。</p>
+<p>但模型能力是有边界的，比如我们不可能一句话就让Sonnet生成40万行高质量的代码一样，Spec Coding仍然只是在更好的激发模型的潜力，并逼近它的能力上限。</p>
+<p>也就是说，这套流程不可能包治百病！大家得做好心理准备。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJs2oC6yMouSaczcIg6VIHPmEbdicuWHic3tfoxzPQh03Lzvp0btAkDSQZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Image"></p>
+<p>这个理念的背后，带来了Spec一个很有意思的特性：</p>
+<p>Write Once, Run Everywhere</p>
+<p>你只需要写一遍Spec，就可以在非常多的地方达到相近的效果，甚至模型升级后都可以有很好的效果。</p>
+<p>这是因为Spec已经完成了很详尽的定义，只要模型能力足够，就能很好的发挥出来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsVlV08S4hvtN09DwhYz97sMK9licPt5wMxvUUvKNTbfiazIicsXQqBT3Bw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Image"></p>
+<p>最后， Spec = New Code</p>
+<p>这是一种自主滑块的概念，当LLM越来越好使，我们只需要更清晰的结构化沟通，就更能让AI还原代码。现在这个滑块还在靠左侧的位置，随着能力逐渐进化，Spec的价值会越来越大。</p>
+<h2>最后</h2>
+<p>Spec Coding刚刚开始，其实国内外也开始陆续的有更多的研究，黄叔的这一套Spec工作流，也并不完善，一方面，在开发产品过程中，我也在不断优化细节，也在发现遇到的边界情况，另一方面，也在努力和AI Coding高手交流学习，不断完善这套体系。</p>
+<p>对了，上次在智谱的线下分享里，我做了个调研，非常震惊的是，大概只有1/20的同学，使用Claude Code来Coding，自从黄叔用上CC后，包年的Cursor已经无所谓它封杀我Claude4的使用权限了，目前CC是Coding领域断档的存在。</p>
+<p>简单说，Cursor用不了我不慌，CC用不了要我命。。。</p>
+<p>目前我自己是上了一个车队，398元月费，网络很稳定，用了一个月还不错，在CC限量行政之后，目前车队限制每天消耗100美金以内，Opus：Sonnet可以是1:2的消耗比例，大家要是有购买需求的话可以加群，满了后可以加我vx：product2023进群：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/6F2voy70UYmjL4iaN3uKaRTvXLp9gQEJsiafv6u9Z8kAia0TKZaHLmscNj0JUSq1avUNr7UFlQhdjCOLKbY2w3VXg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="Image"></p>
+<p>如果你还没用过Cursor之类的IDE，个人不建议直接上CC。</p>
+<p>最后，如果你有企业和高校资源，欢迎加我vx！一起Spec Coding！</p>
+<p>继续滑动看下一个</p>
+<p>AI产品黄叔</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/-OQ_fflcJ5RUhLfQbEPFBw?scene=1&amp;click_id=32" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

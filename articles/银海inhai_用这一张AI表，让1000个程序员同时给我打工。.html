@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用这一张AI表，让1000个程序员同时给我打工。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">用这一张AI表，让1000个程序员同时给我打工。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E9%92%89%E9%92%89AI%E8%A1%A8%E6%A0%BC">钉钉AI表格</a><a class="chip" href="../index.html?tag=%E9%98%BF%E9%87%8C%E4%BA%91%E7%99%BE%E7%82%BC">阿里云百炼</a>
+    <span class="date">2025-08-19</span>
+  </div>
+  <p class="lead">AI时代，一个人，也可以是一支小型研发团队。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRGFQzOwlsKDEBpbeulozBB3tauIGDn9geYbUErPlb7LBaiaSEaMqFeAQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 银海inhai <a href="https://mp.weixin.qq.com/s/">AI产品银海</a> <em>2025年08月19日 07:51</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRV0sXNo3a5icZb15BUuic2FKXUPPqQRZ8g10NoEVlB0ftk2IgcgTPibuHA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>Hi，我是银海。</p>
+<p>你身边的AI产品经理，陪你解决每一个真实问题。</p>
+<p>我最近做了个实验：</p>
+<p>在一个AI表格里敲一行需求，几分钟后，它自动帮我生成一段可运行的代码，本地直接跑完，结果又自动回到表格里。</p>
+<p>用到的工具是： <strong>钉钉</strong> <strong>AI</strong> <strong>表格 + Qwen3</strong> <strong>Coder</strong> <strong>+ 阿里云百炼</strong> 。</p>
+<p>在过去可能需要一个研发团队一天才能走完的事，现在我一个人、几分钟就能闭环完成。</p>
+<p><strong>这种感觉，就像同时有 1000 个程序员帮我写代码。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRiasQNfNMYR7zQKMN4MjyuxSVicS437hU39ksEM1a5pxduhFCgJQYY6WQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>我写一句需求或者丢进去一个文档，钉钉 AI 表格就可以触发阿里云百炼工作流应用，把需求丢给 Qwen3 Coder 写成代码，结果数据就能回到表格里，然后还能自动运行出结果来。</p>
+<p><strong>下面就给你分享下我是如何搭建出来的。</strong></p>
+<p>第一步来到钉钉来新建空白的AI表格。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/kfTykfMJicWNiarZPXKHxcpXbH7OGl4VSbD8ibsV70deCS17yd6YQP2icMNJ08BfB7zLf1K3eUNiciaG5XNBrY0ziczoQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>我们需要准备的表格字段： 需求文档/描述、需求解析、Qwen3 Coder 程序员（产出Python代码）、代码运行结果。</p>
+<p>需求解析字段，我们完全可以直接使用钉钉AI表格提供的AI文本生成字段即可，带大家找找字段模版的感觉。</p>
+<p>鼠标移动到标题右侧的时候，点击展开并选择“编辑字段/列”。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeREflSRAEow9hAKRgKhjbpk2U2uzMGZX1qPu7jrv0FJV12I9QkjQzVhA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>在探索字段模版中选择“AI生成文本”，然后你输入下面的提示词即可，添加“引用字段”，引用字段是第一列的“需求文档/描述”内容。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRSv1bYTka8teU2haxIVffEsbJ31so3R4zVsZ5MAQThBTo6W9VDFFrcg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>在阿里云百炼上去创建应用，然后通过模版捷径的方式引入钉钉AI表中进行使用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/kfTykfMJicWNiarZPXKHxcpXbH7OGl4VSbJic16R0Uu4gibRdFjtiaZfSnEKVp2WFyUqJ3PamDjtxXXHPoEqFgfYYAg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>阿里云百炼地址：<a href="https://bailian.console.aliyun.com/">https://bailian.console.aliyun.com/</a></p>
+<p>按照我们上面所说，我们需要现在是需要一个Python代码生成器，相当于是基于Qwen3-Coder能够写出专业代码的程序员，让他来给我们打工...</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/kfTykfMJicWNiarZPXKHxcpXbH7OGl4VSbB19INYjHZSTibGicqp7jiaic0hU45OVKzicVvH1X6B8CD01uCQowRLggoicg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>你可以在模型配置里面选择Qwen3-Coder-Plus模型，目前是阿里最强的开源代码模型，我把对应的应用提示词放下面了，供大家参考：</p>
+<pre><code>你是一名资深 Python 开发工程师，擅长编写可运行、结构清晰、可维护的 Python 代码。请严格按照以下要求编写代码：1. 使用 Python 3 语法，代码应能直接运行且逻辑正确。2. 在必要位置添加简洁清晰的中文注释，解释关键逻辑。3. 若涉及外部库，请在代码开头给出 import 语句，并优先使用标准库，只有在标准库无法满足需求时才使用第三方库，并注明安装方式。4. 保持变量命名规范（有意义且遵循蛇形命名法），函数名和类名应能反映用途。5. 如有输入输出，请提供示例用法。6.直接给出代码即可，不需要任何其他无关的解释。下面是我的需求：
+</code></pre>
+<p>我们快速的试下运行结果，只要结果是纯代码结构就可以了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/kfTykfMJicWNiarZPXKHxcpXbH7OGl4VSbWsZpqrwwOUTFjdkK43IicMXh5uWg62deYv5HibE2A1ZLlSxGKuFlEXAQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>接下来，我们按照多维表格上的字段，我们还需要一个能够帮我们把代码运行起来的工具，所以我们可以直接创建一个一个Python代码运行器。</p>
+<p>模型选择基础的 Qwen3 Plus 即可，然后我们直接在插件里面去选择 Python代码解释器 这个插件。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/kfTykfMJicWNiarZPXKHxcpXbH7OGl4VSbIpEYjMTibk5SlSXu0IjUS2SXvV8icb1qgtmx5L4BAJ24kx7B4zFjG4tw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>提示词也是非常简单，让他直接执行代码运行任务即可。</p>
+<pre><code>整理代码格式，直接调用Python代码解释器，按照要求帮我运行我给出的代码，并返回结果。下面是我的代码：
+</code></pre>
+<p>我们用一个简单的代码案例测试了一下，目前已经链路畅通。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRCDFFX5JQ2Tkib5Ant0Jsw4zl9yhLCLygNzoPb07xUYqmTF2XlXo8FxQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>接下来就是需要我们在钉钉AI表格上去配置Qwen3 Coder这个表头的字段，对接上阿里云百炼的工作流应用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRP1ugOEcXPBEY8Hicnw3gqHz1hOvfRSiaZwweDgbVoe7ibJGdfrPAwiaC3w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>我们需要到刚刚发布了的阿里云百炼的应用里面，拿到对应的应用ID和API Key信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRnyVoE7IugkQsEBQ4kekAiaCuXia1rW9bfkFVqYn9aXS6lxacYX56ibWQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>然后在AI表格的探索字段模型里面，选中“阿里云百炼”后，再选择“智能体应用”，添加“引用字段”，把我们的“需求解析”这个字段给放进去。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRMrpSM37G317S6sia5AA70eqBJ7qanugnDyYHj4mDy9RhsKuMnn33wcA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>同样的把运行器的应用也通过钉钉AI表格字段模版的方式添加进来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRVsBibY7zFib3h4evxQh4ic33SnrPk0Wr4eFWe61ToyrRQbUjqTtvVbCQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>下面是配置参考信息：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeReibTdicwvRUgnAz20APyvAb422s92eFyqaDA2icUwkROJo4ibSY7BOa3kw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>现在，我们就已经大功告成了，你可以不断的在这个表格里面提出你的需求，让它来帮你写各种各样的代码需求，并得到对应的运行结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRib4AAORsVhfxLeMusgNNt9LDXWBgyibRvS2iarLG1bflTWQx0mSWkbesQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>整个过程是不是很有意思，虽然看起来很抽象的案例（产品经理给研发提需求到功能上线），但是我希望是给大家能够打开更多的思路， <strong>我们的传统生产关系正在</strong> <strong>AI</strong> <strong>时代快速的发生了变革。</strong></p>
+<p>对我来说，这种方式带来的变化特别明显， <strong>以前处理一个需求得一条一条跑，现在直接可以一次性把几百上千行丢进去同时处理，速度完全不是一个量级。</strong></p>
+<p>再说一些接地气的案例，在钉钉AI表格的模板中心里，其实已经有很多现成的模板， <strong>从电商行业到互联网、细致到人事等等，辐射千行百业，大家都可以直接拿来改一改就用。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRP5eGD2x15zNV5Z8l0LLCtxUlxABUpjBMH2N4AHDkic9TSX3De3nF90g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>我平时就是先用现成模板起步，再根据业务需求改链路，这样起步很快，验证也快。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRPm6SLrX63nstlGlh344oT3ibTErHmibymq8Mx0mhkXa3SicT5Y0Wntibsg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>比如我跑过的场景有：基于历史爆款生成小红书/抖音选题和脚本大纲，从商品详情和评论提炼卖点、反驳点生成对比文案，多渠道用户反馈聚类、打分自动生成周报，SKU 级销售预测和补货建议，以及实时数据监控、客服售后分析、AI 打标、自媒体选题和文案批量生成...</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRN1Hy1WWmevv5Lort0rVZDLmaicOoVXTeYFBU1s9nt8DPiaevdHmlxtcg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>基本上，我只要改一下“需求描述”，同一条链路就能切到全新的场景，完全不用重搭。</p>
+<p>如果你想试，直接打开钉钉，左侧 Tab 找“AI 表格”，照我上面的方法建一张任务表，先跑一个你最熟悉的场景。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRMgYyq0m6z7YV3AM8FvCSpxibSp8wSwEz23woCFyXbibxrMfqygEwYCiaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>你把场景写在评论区，我会挑典型案例做成模板，把百炼工作流和表格模板一起分享出来。在后面我还会在直播共学里，带着大家一起去体验玩一玩。</p>
+<p>现在这不是简单的模型生成处理能力，而是 把一整套从需求到交付的流程，压缩到一张表里就能完成。这种效率差距，让你很难再回到原来的做法。</p>
+<p>它给我的最大感受有两个：</p>
+<p><strong>主动权回来了。</strong> 我不需要等谁有空、不用排研发资源，我随时能验证想法。</p>
+<p><strong>心态变了。 现在的</strong> 表 格不只是记录工具，它成了我随时可以调度的生产线。</p>
+<p>而当你意识到，这条生产线可以随时扩容、同时处理上百上千个任务，你看待工作的方式也会变： <strong>不是找更多的人来做事，而是让工具帮你放大能力。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ7icN6zLsDIIcT806vFJiczeRVJxykmibvx4LXnGcfL5OCyq5OC9Fd2cm32VCIreMhz9n88bBtw4l7Ig/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>等你第一次看到结果自动回到表格的那一刻，你大概会和我一样觉得：</p>
+<p><strong>一个人，也可以是一支小型研发团队。</strong></p>
+<p>本次分享的内容就到这里结束啦，我是银海，你身边的AI产品经理，陪你解决每一个真实问题，我们下次再见 👋</p>
+<p>© THE END</p>
+<p>觉得我的内容还不错， 顺 手点个赞、分享、在看</p>
+<p>都是对我最好的认可！</p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>AI产品银海</p>
+<p>| |  | 2 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 4.15 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/-TwpBKrRdBvh0VSKp8BcTA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

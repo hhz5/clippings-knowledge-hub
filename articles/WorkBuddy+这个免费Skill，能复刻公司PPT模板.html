@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkBuddy+这个免费Skill，能复刻公司PPT模板 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">WorkBuddy+这个免费Skill，能复刻公司PPT模板</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=orion%C2%A0Wang">orion Wang</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=PPT%E6%A8%A1%E6%9D%BF">PPT模板</a><a class="chip" href="../index.html?tag=WorkBuddy">WorkBuddy</a><a class="chip" href="../index.html?tag=PPT-master">PPT-master</a>
+    <span class="date">2026-07-01</span>
+  </div>
+  <p class="lead">WorkBuddy接上免费Skill，让公司PPT模板反复复用。</p>
+  <article class="content"><p>orion Wang 纯AI老王 <em>2026年7月1日 08:00</em></p>
+<p>大家好，我是老王。</p>
+<p>很多 AI PPT 工具都有一个毛病——看起来很炫，真拿来用，又差那么一miumiu。。</p>
+<p>输入一个主题，它哐哐框给你生成十几页：标题有了，图表有了，逻辑也勉强可以。</p>
+<p>但打开细一琢磨：品牌色不对，字体不对，版式不对，LOGO 位置也不对，心情感觉也不太对了。。。</p>
+<p>最后你会发现，PPT 是有了，也顺手给你留了一堆返工的活。</p>
+<h2>问题不在生成，在模板</h2>
+<p>很多人第一次用 AI PPT，会把希望都寄托在一句话生成上。</p>
+<p>比如许愿式输入：帮我做一份 2026 年 AI 战略规划 PPT！</p>
+<p>但主题只是第一层需求，真正麻烦的是第二层需求：这份 PPT 要像你做的你们公司的 PPT。</p>
+<p>要求可能有固定品牌色，固定字体，固定封面，固定目录页，固定结束页，甚至连图标风格、页边距、标题位置都有要求。</p>
+<p>之前的很多 AI PPT 工具大多是主题词匹配模板库。它从一堆老套的模板里找一个凑合用，但它不知道你们公司长什么样。
+![[Pasted image 20260701144427.png]]</p>
+<p>所以它生成得再快，后面还是要你一页一页改。</p>
+<p>改颜色，改字体，贴 LOGO，调版式。。。</p>
+<p>我最近看到一个PPT 技能，叫 PPT-master，非常牛掰。正好适合在 WorkBuddy 里试一试。</p>
+<p>它的核心是把文字需求变成可编辑的 PPTX 文件，是可编辑的，这点很重要。</p>
+<p>PPT-master 走的是另一条路：先理解你的内容需求，再结合模板，最后导出可以继续编辑的 PPT 文件。</p>
+<p><strong>更关键的是，它支持把公司模板注册进去。</strong></p>
+<h2>三步就能跑起来</h2>
+<p><strong>第一步，安装 PPT-master。</strong></p>
+<p>如果你会用终端，参考官网<a href="https://github.com/hugohe3/ppt-master.git%EF%BC%8C%E5%B0%B1%E6%98%AF%E4%B8%89%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%9A">https://github.com/hugohe3/ppt-master.git，就是三行命令：</a></p>
+<pre><code>git clone https://github.com/hugohe3/ppt-master.git
+cd ppt-master
+pip install -r requirements.txt
+</code></pre>
+<p>会直接下载到本地，把依赖再装好。</p>
+<p>如果 AI 使用非常熟练，那肯定知道这一招「让 AI 干活」。
+![[Pasted image 20260701144445.png]]
+花点积分直接帮你搞定脏活累活。不过这花起来有点猛啊，也不能全怪他，毕竟网络问题，还有包也有点大。。。。
+![[Pasted image 20260701144455.png]]
+<strong>第二步，把公司模板喂进去。</strong></p>
+<p>这一步非常关键。</p>
+<p>你准备一份公司常用 PPT 模板，然后在 WorkBuddy 里调用 create-template 工作流，把模板文件注册到 PPT-master 的全局模板库。</p>
+<p>你可以这么说：</p>
+<blockquote>
+<p>用 create-template 工作流，把我公司的模板文件注册到 ppt-master 全局模板库。
+![[Pasted image 20260701144529.png]]
+这就是一次配置，多次复用。
+![[Pasted image 20260701144540.png]]
+<strong>第三步，一句话生成 PPT。</strong></p>
+</blockquote>
+<p>模板注册好之后，你就可以直接写需求了。</p>
+<p>比如：</p>
+<blockquote>
+<p>用公司模板生成一份 PPT，主题是 2026 年 AI 战略规划，受众是企业高管，风格要结论先行，包含封面、目录、行业趋势、竞品分析、核心策略、路线图、里程碑、执行计划、风险预案和尾页感谢。@skill:ppt-master
+![[Pasted image 20260701144556.png]]
+![[Pasted image 20260701144613.png]]</p>
+</blockquote>
+<h2>结语</h2>
+<p>建议先拿公司现成模板，做一份简单的日常汇报 ppt。</p>
+<p>主题可以简单一点，比如周会复盘、培训教程、销售方案等等。</p>
+<p>跑完之后重点看三件事：模板像不像，结构顺不顺，后期好不好改。</p>
+<p>如果都 ok，那它就可以直接进工作流，当生产力组件了。</p>
+<p>AI 做 PPT 的重点，从来不是一句话变出想象中的作品。</p>
+<p>真正有用的，是让你少做那些明明没技术含量，却每次都要耗半天的重复劳动。</p>
+<p>这才是打工人和老板都需要的 AI 价值。</p>
+<p><strong>觉得有帮助的话，帮我点个赞、在看、转发三连吧<del>下次见</del></strong></p>
+<p><strong>记得关注页右上角「...」设为星标噢</strong></p>
+<p><strong>- THE END -</strong></p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>小白 AI 零门槛系列 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/dY0Rto2OZaZ8tlDrm5mIlg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跨境电商最需要的 5 条 n8n 工作流（直接拿去抄作业） · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">跨境电商最需要的 5 条 n8n 工作流（直接拿去抄作业）</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%A6%99%E5%90%9B%E8%B5%9B%E5%8D%9A%E6%B7%98%E9%87%91">香君赛博淘金</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86">跨境电商</a><a class="chip" href="../index.html?tag=n8n">n8n</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=AI">AI</a>
+    <span class="date">2026-01-10</span>
+  </div>
+  <p class="lead">跨境电商最需要的 5 条 n8n 工作流（直接拿去抄作业）</p>
+  <article class="content"><p>原创 香君赛博淘金 <em>2026年1月8日 23:58</em></p>
+<p>我在刷 n8n 社区的时候，发现了很多不错的落地案例。</p>
+<p>其中跨境电商相关的那部分，我今天专门挑出来整理了一遍。</p>
+<p>你会发现一个很有意思的现象：大家不是缺工具，大家缺的是一套能跑起来、能复用、能交接的工作流。</p>
+<p>下面这些就是我筛出来的跨境电商最常用、也最值得直接抄作业的 5 条 n8n 工作流：</p>
+<p>我们其实不是缺工具，我们缺的是一套能持续运转的 服务系统 。</p>
+<p>而我这两年最强烈的体感是：跨境电商的增长，最后都会回到同一个底层问题—— 信息流动的成本 太高。</p>
+<p>所以这篇文章不讲 n8n 有多厉害，我只想用第一性原理把问题拆开：</p>
+<p>跨境电商要更赚钱，本质是让钱相关的信息更快、更准、更少人为失真地流动起来。</p>
+<p>n8n 刚好就是那个把信息流动从手工搬运变成自动流转的工具。</p>
+<p>下面我把我认为跨境电商最需要的 5 条 n8n 工作流 整理出来，全部都给到可直接参考的模板链接（能抄就抄，不用硬造轮子）。</p>
+<p>1）订单履约自动化：Shopify 未履约订单 → 自动标记 Fulfilled</p>
+<p>跨境最怕的不是没订单，是 有订单但履约链条断了 。</p>
+<p>一个常见场景：仓库/3PL 已经发货了，但 Shopify 还没标记 Fulfilled，客户一直收到未发货，售后炸锅。</p>
+<p>这条工作流的价值很直接：</p>
+<ul>
+<li>自动拉取未履约订单</li>
+<li>逐单处理并完成 Fulfillment 标记</li>
+<li>把发货后还要“点点点”的人工环节直接删掉</li>
+</ul>
+<p>参考模板：</p>
+<ul>
+<li>Automatic Shopify Order Fulfillment Process（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOHPKAU5LFWNVNDk27Im4SUG8ibChrwALleIfSYNHEn6ZrFlCcjE1nVMA/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></li>
+<li>它是干什么的：
+  自动把 Shopify 里未履约（unfulfilled）的订单执行 Mark as Fulfilled （标记已履约）。<ul>
+<li>解决什么痛点：
+  仓库/3PL 已发货但后台没点已履约，客户看到状态不更新，售后压力上来。</li>
+<li>关键步骤（官方说明里的核心逻辑）：</li>
+</ul>
+</li>
+<li>拉取所有未履约订单
+  - 通过 List Fulfillment Orders 先拿到 Fulfillment Order ID （注意不是 Order ID）
+  - 再调用 Mark fulfillment order as fulfilled
+  - 处理部分履约、API 报错等边界情况
+<ul>
+<li>你需要准备的东西：
+  Shopify API Key / 访问权限，以及你的 Shopify Admin URL。</li>
+</ul>
+</li>
+<li><a href="https://n8n.io/workflows/3296-automatic-shopify-order-fulfillment-process">https://n8n.io/workflows/3296-automatic-shopify-order-fulfillment-process</a></li>
+</ul>
+<p>2）订单 + 库存 + 反馈闭环：订单变动 → 表格记账 + 群里提醒 + 邮件回访</p>
+<p>很多团队一开始都是靠表格跑起来的。</p>
+<p>问题不在于用表格丢人，问题在于：</p>
+<ul>
+<li>订单多了以后，表格更新永远慢半拍</li>
+<li>运营不知道什么时候缺货</li>
+<li>客服不知道什么时候该回访</li>
+</ul>
+<p>这条工作流把三个动作串起来：</p>
+<ul>
+<li>同步订单数据到 Google Sheets 做统一台账</li>
+<li>Slack 推送订单/库存关键变更</li>
+<li>Gmail 触发反馈邮件，把评价/售后前置</li>
+</ul>
+<p>参考模板：</p>
+<ul>
+<li>Automate E-commerce Orders, Inventory &amp; Feedback with Slack, Sheets &amp; Gmail（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOeBVjYflfdpLRaPLQJavkiajuPdkpFt8MSXvesMdYkkfpe5HQzibNjQcw/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></li>
+<li>它是干什么的：
+  把订单通知、低库存提醒、发货后回访三件事做成一个运营中枢（作者称 E-commerce Operations Hub ）。<ul>
+<li>包含 3 条子流程（模板自带）：</li>
+</ul>
+</li>
+<li>A 新订单 → 发货团队通知：
+  通过 Webhook 接收新订单，解析订单字段，然后发到 Slack 或邮箱。
+  - B 每日库存巡检 → 低库存报警：
+
+  定时触发，读取 Google Sheets（或 API）库存表，低于阈值就 Slack/邮件提醒。
+  - C 订单履约后（延迟几天）→ 发反馈邮件：
+
+  当订单已履约/已送达后（建议延迟 3-7 天），触发 Gmail 给客户发回访问卷链接。<ul>
+<li>你需要准备的东西：</li>
+</ul>
+</li>
+<li>订单侧：你的电商平台能推 Webhook（Shopify/WooCommerce 等）
+  - 表格侧：Google Sheets（库存表的列名要对齐模板，比如 ProductID / ProductName / StockLevel）
+  - 通知侧：Slack 凭证和频道
+  - 邮件侧：Gmail 凭证和回访问卷链接</li>
+<li><a href="https://n8n.io/workflows/6362-automate-e-commerce-orders-inventory-and-feedback-with-slack-sheets-and-gmail">https://n8n.io/workflows/6362-automate-e-commerce-orders-inventory-and-feedback-with-slack-sheets-and-gmail</a></li>
+</ul>
+<p>3）竞品价格监控：竞品降价 → 立刻 Telegram/Discord 报警</p>
+<p>跨境最残酷的一件事是：你辛辛苦苦把流量打起来，竞品一个动作就能让你整天白忙。</p>
+<p>价格监控的第一性原理其实很简单：</p>
+<ul>
+<li>你不需要随时盯着所有竞品</li>
+<li>你只需要在 关键 SKU 发生关键变化 的时候第一时间知道</li>
+</ul>
+<p>这条工作流通常包含：</p>
+<ul>
+<li>定时任务（每天/每小时）</li>
+<li>从表格读取监控清单（SKU / URL / 阈值）</li>
+<li>抓取页面价格（Web scraping）</li>
+<li>触发告警（Telegram / Discord）</li>
+</ul>
+<p>参考模板（选一个你顺手的告警渠道）：</p>
+<ul>
+<li>Competitor Price Monitoring with Web Scraping, Google Sheets &amp; Telegram（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzObDgZwYRtb4utAibQjW8uuRqiaghAly23K8icjo6n8jibe9CdibNmJKeklxw/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></li>
+<li>它是干什么的：
+  用网页抓取 + 表格台账 + Telegram 提醒实现一个竞品价格监控系统。<ul>
+<li>工作流怎么跑（模板原文）：</li>
+</ul>
+</li>
+<li>每天定时跑一次
+  - 从 Google Sheets 读监控清单（product_url + last price）
+  - 逐条 URL 抓取当前价格（用 CSS selector 从页面里抽价格）
+  - 对比 last_price，计算涨跌幅
+  - 若发生变化：</li>
+<li>发 Telegram 报警（Price Drop / Price Hike）
+      - 把变化记录写入 price_tracking 表（历史曲线）
+      - 更新 master 表，把 current_price 写回去，作为下次对比基线
+<ul>
+<li>你需要准备的东西：
+  Google Sheets（至少两张表：product_data、price_tracking）+ Telegram Bot token + chat_id + 目标站点可用的 CSS selector。</li>
+</ul>
+</li>
+<li><a href="https://n8n.io/workflows/4640-competitor-price-monitoring-with-web-scrapinggoogle-sheets-and-telegram">https://n8n.io/workflows/4640-competitor-price-monitoring-with-web-scrapinggoogle-sheets-and-telegram</a></li>
+<li>Competitor Price Monitoring with Web Scraping, Google Sheets &amp; Discord Alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOiaVG5BLYhP06c1RVLs7ibAibByPQ6CaiamiaSrDKuafNckl5yaBr66XX7HA/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></li>
+<li>它是干什么的：
+  和上面那条逻辑类似，只不过告警渠道换成 Discord（webhook），并且示例站点是 BooksToScrape。<ul>
+<li>节点结构（模板页列出来的）：
+  Schedule → Google Sheets → HTTP Request → Extract HTML → Code（清洗价格）→ If（判断是否触发）→ Discord Webhook → 更新 Sheets。</li>
+<li>你需要准备的东西：
+  Discord Webhook URL、你的监控站点 URL（或从表格读取），以及用于提取价格的 HTML 选择器。</li>
+</ul>
+</li>
+<li><a href="https://n8n.io/workflows/6179-competitor-price-monitoring-with-web-scraping-google-sheets-and-discord-alerts/">https://n8n.io/workflows/6179-competitor-price-monitoring-with-web-scraping-google-sheets-and-discord-alerts/</a></li>
+</ul>
+<p>如果你想把抓取这件事做得更稳，下面这些资料也值得看：</p>
+<ul>
+<li>Datahut：用 n8n 免费做竞品价格追踪（文章）</li>
+<li><a href="https://blog.datahut.co/post/free-n8n-web-scraping-competitor-price-tracking">https://blog.datahut.co/post/free-n8n-web-scraping-competitor-price-tracking</a><ul>
+<li>它是干什么的：
+  一篇从 0 到 1 搭建竞品盯价的完整教程，核心是给你一份可下载的 workflow JSON（可以直接导入 n8n），并一步步教你改成适配自己站点的版本。</li>
+<li>你能从这里直接拿到什么：</li>
+</ul>
+</li>
+<li>可下载的 n8n Workflow JSON（文内提供下载链接）
+  - 推荐的架构：Schedule Trigger + Google Sheets（主表）+ HTTP 抓取 + HTML 解析 + Code 清洗 + If 判断 + Telegram 报警 + Sheets 写回
+<ul>
+<li>适用场景：
+  你要监控的站点不是 n8n 模板示例站点，但你愿意自己换 URL、换 CSS selector、换字段。</li>
+</ul>
+</li>
+<li>ScrapeOps：n8n 抓取案例集合（文档）</li>
+<li><a href="https://scrapeops.io/docs/n8n/examples/">https://scrapeops.io/docs/n8n/examples/</a><ul>
+<li>它是干什么的：
+  ScrapeOps 官方整理的 n8n 抓取例子与模式库，把常见抓取场景拆成可复用结构（Scrape → Transform → Store / Monitor → Compare → Act 等）。</li>
+<li>里面最值得跨境电商抄的部分：</li>
+</ul>
+</li>
+<li>Amazon 盯价的工作流结构示例
+  - Competitive Price Monitoring（竞品价格监控）的流程图与关键节点
+  - E-commerce Inventory Monitor（补货/到货监控）这类缺货=损失的提醒逻辑
+<ul>
+<li>适用场景：
+  你想把抓取做得更稳（代理、渲染 JS、重试、缓存、批处理），并且愿意在 n8n 里用它的节点/接口组合。</li>
+</ul>
+</li>
+</ul>
+<p>4）平台/站外价格追踪：Amazon 价格波动 → 自动提醒（顺便监控竞品）</p>
+<p>如果你做的是 Amazon 或者你有大量站外渠道需要盯价，你就会知道价格变化这件事有多磨人。</p>
+<p>这条工作流属于典型的盯着也没用，但错过就要命的事：</p>
+<ul>
+<li>自动抓取 Amazon 商品价格</li>
+<li>低于阈值就提醒</li>
+<li>同时可以扩展到竞品清单，做更系统的监控</li>
+</ul>
+<p>参考模板：</p>
+<ul>
+<li>Track Amazon Product Prices with ScrapeGraphAI, Google Sheets &amp; Telegram Alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzO55k7SE9ValBRlmHJicfAoicBpFTyk7RsNOxqcfcvycLnLoCMfTcDgbpg/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></li>
+<li>它是干什么的：
+  Amazon 价格监控 + Telegram 实时提醒，抓取部分用 ScrapeGraphAI（更擅长处理 Amazon 这种 JS 重、结构复杂的页面）。<ul>
+<li>工作流怎么跑（模板原文）：</li>
+</ul>
+</li>
+<li>定时触发（模板示例是每 10 分钟）
+  - 从 Google Sheets 读取要监控的商品（PRODUCT/URL/MIN PRICE）
+  - 对每个商品用 ScrapeGraphAI 抓取当前价
+  - 如果当前价 &lt; 表里的 MIN PRICE：</li>
+<li>更新表格 MIN PRICE 和日期
+      - 发 Telegram：提醒刷新最低价并附商品链接
+<ul>
+<li>你需要准备的东西：
+  Google Sheets（可复制模板表格）+ ScrapeGraphAI API key + Telegram Bot token + chatId。</li>
+</ul>
+</li>
+<li><a href="https://n8n.io/workflows/10115-track-amazon-product-prices-with-scrapegraphai-google-sheets-and-telegram-alerts/">https://n8n.io/workflows/10115-track-amazon-product-prices-with-scrapegraphai-google-sheets-and-telegram-alerts/</a></li>
+<li>Track Amazon Prices &amp; Monitor Competitors with Apify and Google Sheets（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOyJPS7DZJWkqhNMUornZNaV8Vo329lCIj4vRm8wSPYwJcH2xrqVMtKw/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></li>
+<li>它是干什么的：
+  面向 Amazon 卖家的日更价格数据库工作流：用 Apify 抓你自己和竞品的价格，然后每天写回 Google Sheets。<ul>
+<li>适用场景（模板页列的 Use Cases）：</li>
+</ul>
+</li>
+<li>监控自家产品价格
+  - 监控多个竞品卖家的价格变化
+  - 做 Buy Box 相关的每日审计（对比卖家报价）
+  - 从 10 个 URL 扩展到 1000+ URL 的规模化盯盘
+<ul>
+<li>节点结构（模板原文）：
+  Schedule → Google Sheets 读行 → Loop → Apify Actor 跑爬虫 → HTTP Request 拉结果 → JS 清洗/抽字段 → Update Sheet 写回。</li>
+<li>你需要准备的东西：
+  Apify 账号（以及它的 Amazon Product Scraper）+ Google Sheets 表结构（含 competitor_url_n、price_comp_n 等列）+ n8n 里配置 Apify/Sheets 凭证。</li>
+</ul>
+</li>
+<li><a href="https://n8n.io/workflows/11062-track-amazon-prices-and-monitor-competitors-with-apify-and-google-sheets/">https://n8n.io/workflows/11062-track-amazon-prices-and-monitor-competitors-with-apify-and-google-sheets/</a></li>
+</ul>
+<p>5）客服/工单自动分流：Zendesk 工单 → AI 识别优先级 → Slack 提醒</p>
+<p>跨境电商最贵的不是广告费，是 售后响应的延迟 。</p>
+<p>你会发现，客服系统里最要命的那几条消息往往长得一模一样：</p>
+<ul>
+<li>Where is my order?</li>
+<li>Refund</li>
+<li>Chargeback</li>
+</ul>
+<p>这条工作流干的事很朴素：</p>
+<ul>
+<li>Zendesk 出新工单</li>
+<li>用模型做摘要/情绪/优先级判断</li>
+<li>关键工单直接推送到 Slack</li>
+</ul>
+<p>参考模板：</p>
+<ul>
+<li>Prioritize Zendesk tickets with GPT-4 analysis and Slack alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzO0kC7sHxNuQ15BoIWC6ibVNibQoBicwjcDSuyA5S6z4qQOsBtiaBiaWvnAgQ/640?from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></li>
+<li>它是干什么的：
+  Zendesk 新工单进来后，用 GPT-4 （原模板用的是gpt4，可以换一些新的模型）自动判定紧急程度（1-5 分），把高优工单推到 Slack，并回写 Zendesk 的优先级和 AI 解释。<ul>
+<li>解决什么痛点：
+  跨境售后里催发货/退款/拒付这种工单，表面都一样，但严重程度不一样。人工分拣慢了就会被差评、拒付、平台处罚。</li>
+<li>工作流怎么跑（模板原文）：</li>
+</ul>
+</li>
+<li>Zendesk Webhook 触发（Ticket is created）
+  - 抽取 subject/description/客户信息
+  - OpenAI GPT-4 分析后打分
+  - 分数达到阈值（默认 4）就：回写 Zendesk 优先级 + 写入私密备注 + Slack 通知
+<ul>
+<li>你需要准备的东西：
+  Zendesk API token + OpenAI API key + Slack bot 权限 + 在 Zendesk 后台配置 HTTP target/trigger</li>
+</ul>
+</li>
+<li><a href="https://n8n.io/workflows/7516-prioritize-zendesk-tickets-with-gpt-4-analysis-and-slack-alerts">https://n8n.io/workflows/7516-prioritize-zendesk-tickets-with-gpt-4-analysis-and-slack-alerts</a></li>
+</ul>
+<p>这 5 条工作流，为什么是跨境最需要的？</p>
+<p>如果只用一句话概括：</p>
+<p>它们分别对应了跨境电商里最重的 5 个成本：履约成本、信息同步成本、定价决策成本、竞品反应成本、售后响应成本。</p>
+<p>你当然可以用人堆出来，但人越多，信息流动越慢，错误越多，最后还是回到同一个结论：</p>
+<p>能自动化的就别手动，能系统化的就别靠个人英雄主义。</p>
+<p>最后：如果你也想把 n8n 用在跨境上</p>
+<p>我一直觉得工具不是重点，重点是把它变成一套可复制的服务。大家可以在这些有价值但是不是很难的工作流的基础上继续构建自己的自动化护城河。</p>
+<p>当然，最后别忘了关注我，后面还会分享更多有价值的工作流。</p>
+<p>继续滑动看下一个</p>
+<p>香君赛博淘金</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/DPkF3xBuuPj4VVlu36Z6ng" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

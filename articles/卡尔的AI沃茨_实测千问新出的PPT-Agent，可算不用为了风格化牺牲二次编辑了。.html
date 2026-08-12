@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测千问新出的PPT Agent，可算不用为了风格化牺牲二次编辑了。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测千问新出的PPT Agent，可算不用为了风格化牺牲二次编辑了。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=PPT%E7%94%9F%E6%88%90">PPT生成</a><a class="chip" href="../index.html?tag=%E5%8D%83%E9%97%AE">千问</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Agent">Agent</a>
+    <span class="date">2026-04-30</span>
+  </div>
+  <p class="lead">生图还是生代码，this is a question</p>
+  <article class="content"><p>原创 AI沃茨 AI沃茨 <a href="javascript:void(0);">卡尔的AI沃茨</a></p>
+<p><em>2026年4月29日 18:44</em> <em>浙江</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<h2>这段时间做了巨多PPT。</h2>
+<p>多到我现在都条件反射了，好不好看先放一边，先看AI容易错的细节。</p>
+<p>文字有没有糊，布局是不是在装高级，图片是不是只是看起来有氛围感，该有的信息都没放进去，</p>
+<p>再就是画面上有没有一些莫名其妙的英文小字，因为有的时候模型会把思考过程也写到页面上。</p>
+<p>先给大家看两类AI做PPT的主要思路。</p>
+<p>一类是用文生图做出来的，Nano Banana和Image2。生图路线的优势很明显。风格化强，氛围感足，你让它做一个赛博朋克，液态玻璃，像素游戏啥的都不是什么大问题。</p>
+<p>缺点也明显，生图模型很喜欢把大量文字信息塞进一张图片里，导致整个页面看起来比较拥挤，分不清楚主次。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fwn1FwSiceYgcWI3IoyXczkVYVAI7bRtnnLNBiao2lSfqziajHeic1GPAtPrqDLuYzGu7NWcicCaqLichKHTqd1VD0GebVZmz85SuFI4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>另一类是用HTML做出来的，会有条理很多。文字样式能改，图标能改，排版也能修，还能插入 SVG，动效，视频背景和组件。</p>
+<p>但也有坑就是了。</p>
+<p>如果你用的模型比较不会说人话，GPT-5.4就很喜欢在 UI 里放上自己的思考过程。最后效果就是，远看很高级，近看页面上突然冒出来几段不明所以的英文小字。。。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzWJNtVZkJnPh4C6adzl884RMtV7gsEzWCb5hyxJZtB3RnL0Zwox3GsPtDkdXXFZrDW0Yj3KS4SGMZ7mS6UBqeicAiaJHXMXU3Po/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>这周我刚好参加了一个8小时的直播，深度用了下千问做PPT的功能。</p>
+<p>它目前和我们上面提到的两种都不太一样，简单来说，就是用模板系统保证PPT的稳定性，然后用Agent拆具体内容和切换风格。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FxnGQufGAlWoibzkZ9A12ibVibpF8YbLGCHg4hF4tMj4pick7uawBqbYpUBzf7kYzZrXzGdwfF6z2GoXTVmgFnib2nTBJ704O3gmCaY/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>直播的时候我本来以为大家测PPT生成最后都会问差不多的问题，能不能更好看，能不能导出，能不能二次修改。</p>
+<p>结果看下来完全不是，实际上大家做PPT时关注的点还挺不同的，</p>
+<p>比如老师，做 PPT可能就会关心知识点有没有罗列清楚，做时尚行业的，就比较会关心视觉风格有没有贴合当季，打黑客松的就会关心信息是不是成体系的，投资人能不能一眼看懂。</p>
+<p>当然，还有一些人是手里有一堆数据，但不知道怎么排版，想让AI全托管的。</p>
+<p>所以我这次跟千问一拍即合，除了视觉风格之外，按照任务的复杂程度，给它安排了终极测试。从风格化，到信息搜索，到方法论，到上传模板，到数据自排版，再到HTML风格约束。</p>
+<p>看看它到底能稳稳接住哪几种。</p>
+<p>第一组，风格化。</p>
+<p>我让它基于星露谷物语的视觉风格，做一份25页的年度运营报告。</p>
+<p>❤️</p>
+<p>帮我生成PPT，基于星露谷物语的视觉风格，生成一份25页的项目年度运营报告PPT。整体表达上，将业务增长类比为农场扩建进程，把用户增长转化为社区中心修复进度。</p>
+<p>每一页以春夏秋冬四季场景作为背景变化。图标体系需要统一设计，包括体力条用来表示预算消耗，技能等级用于体现团队能力。</p>
+<p>内容结构需要有完整叙事感，从农场整体概览开场，逐步过渡到四季阶段性的运营数据，再到过程中遇到的问题与收获，最后落到未来扩建与发展规划。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxIxomBFQZibazvxMwQ2BniacBHNCpZq32jqqSWCdkEfucWNXmbByepPIMibaB9kfNPVpU6J3CH3XHtHQeUXaphXWzZoQgTsJicvics/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>这组考验的是它能不能get到星露谷的视觉风格元素，再融合到一份能够投入使用的 PPT 上。</p>
+<p>整个视觉效果其实和我们平时工作中真实做的 PPT 效果类似，能用动态图表展示相数据，也能用到Agent本身的优势做出数据分析。</p>
+<p>第二组，真实信息搜索和图片处理。</p>
+<p>我让它收集曼哈顿在售的20套顶级豪华公寓，做一份40页的销售画册。</p>
+<p>帮我生成PPT，收集曼哈顿目前在售的20套顶级豪华公寓的户型图和室内实景图，并制作一份40页的PPT销售画册。</p>
+<p>整体排版中，图片需要自动裁切到合适比例，以适配页面布局，同时提取每套房源的每平方英尺单价。</p>
+<p>设计风格强调几何构成，主色调为黑、白、红，字体使用无衬线字体。</p>
+<p>内容结构安排如下，第1页为封面和市场概览，第2到30页为单个房源的深入介绍，包含视觉展示、关键数据以及优缺点分析，第31到38页为横向对比表格和图表，第39页为价格总结，第40页为行动引导页。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fx5HIiaR8IubicLQQsRRCE7sAgLxNNySmvnW3yGKzNWgYhIcdOicZCXkaK2XwuWfwWAQDCSzm3BEt9syicb9GGCJ0kgicY0jpn8AVC4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>这一组 PPT，整个画面做得更克制点。</p>
+<p>它没有过度地去复杂化，也没有添加很多不必要的元素，整个画面非常简洁明了。</p>
+<p>其实我反而觉得这样的PPT更适合我们平时的办公场景，去做演讲。</p>
+<p>这里我没有提供素材图片，公寓的素材图片和房源的信息，都是直接让千问自己去搜索整合了互联网上已有的信息。</p>
+<p>第三组，麦肯锡式商业结构。</p>
+<p>套娃的来了，我让千问App给千问App做一份15到20页的完整可编辑 PPT。</p>
+<p>🍰</p>
+<p>帮我生成PPT，你是麦肯锡级演示文稿专家，为千问App创建一份15-20页完整可编辑PPT。</p>
+<p>结构必须遵循金字塔原则，包括标题和议程，执行摘要，市场和问题分析，解决方案细节，财务模型与预测，团队与竞争优势，风险缓解和行动号召。</p>
+<p>视觉要求，极简高级感，深色或品牌配色，大量留白，层级清晰的标题，无多余装饰。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzdXE8VZYLaNOWYvOvdkhePSxhVVbaD81XFKaGxCVdu5dZfAco5PWLGaicjLKfljo1awYPfM0T2hdkNWVhn4h9NOlX865OicenYQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>这组测的是叙事结构。</p>
+<p>AI做商业PPT的问题是看起来每一页都有内容，但整套看完你不知道它到底想说什么。</p>
+<p>在这份PPT实际上就可以看到，从目录开始就有一个完整的叙事逻辑，从B端到C端，从市场到商业模式，再到风险评估，每一步都做了相应的页面进行解释。</p>
+<p>第四组，路演PPT，</p>
+<p>帮我生成PPT，为一个 AI Agent 自动化开发平台 SaaS，面向黑客松与开发者协作，制作一份12页的投资人路演PPT。</p>
+<p>需要包含问题与解决方案框架，市场规模分析，商业模式画布，竞争格局分析，团队介绍页，财务预测，增长与运营指标，以及融资需求与资金用途说明。</p>
+<p>设计风格要求干净专业，使用现代无衬线字体，搭配克制的品牌色点缀。整体信息密度较高，但需要保证易于快速浏览和理解。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwWoH8hjDl7AxNS5y5boQiaVSbjJSJr7FZfyGTcliaroVDBiaAOS6Bg5S9l89ic8Mxkmwoj2KQh9AkHFuibT3qyARAWo1fzE6qyic8sA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>这种路演的PPT，基本上都是比较流程化、固定的内容分享逻辑。但我们在手搓的时候，也还是可能就会漏掉一些细节。</p>
+<p>所以我就直接把大家常在ppt里面提到的部分写到提示语里，让千问去安排每部分的内容长度和排版。</p>
+<p>第五组，模板复用。</p>
+<p>这里我先给了一个想要的模板，然后我让千问以瓦猫为主题给我做一个类似样式的PPT，</p>
+<p>👍</p>
+<p>帮我生成PPT，分析我上传的PowerPoint模板文件，梳理出其中所有幻灯片版式，并整理成一份完整的视觉版式清单。</p>
+<p>随后基于该模板，围绕瓦猫非遗制作一套完整的演示文稿。根据内容类型匹配最合适的版式，例如封面页、正文内容页、数据图表页等。</p>
+<p>我给到的模板是这样的，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8Fx8CWc61sbNTCX1gOx0ENAUuaGiclgXLLlaqmaYVcIct5R9HAibJ9ibOkRqqqnrI9m8ESedmNDibN1MCNfsOdt3FrXvwL2FI0jQJxo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>千问给到我的是这样的，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzGXFjeJ1zdxPMNib7HPZetxWZPzpWcX6Rro99FmtPrju6P2NO36lUv24r0CnyvHhpuRT232NibO3khicoBZ8hD2k4Kwgvu4lYUAc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>不能说一模一样，但设计以及用到的素材，确实是跟瓦猫相关，而且风格非常贴近。排版和内容设计也是按照我给出的模板来的，我觉得有个六七成了。</p>
+<p>第六组，纯数据让千问自由发挥。</p>
+<p>我给了它Tesla2025 年Q1的季度业务复盘数据，让它做管理层阅读的QBR。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fygk0McJmP24Mv8xgbCKc12x4bYxZRZ7iaOVP4oRppoVmzsMDoAcp2ky8CVVfAz66cuYicric5Knobs5loB9BYB9BIDDKn3MaQxlM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>🍰</p>
+<p>帮我生成PPT，请基于我本地上传的数据文件，制作一份Tesla 2025 年Q1季度业务复盘 PPT。</p>
+<p>要求严格优先读取本地文件中的数据，不要自行补充或改写数值。如果本地文件中存在多个口径，优先采用GAAP口径，并明确标注。</p>
+<p>输出内容需包含业绩概览，运营概览，业务结构，亮点，挑战，结论。每一页都要写出所引用的具体数据，并保证前后口径一致。如果本地文件里没有某项数据，请明确写出未在本地文件中找到，不要猜测。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzNQsWaCveJdWIssPlCAxmBStBsRDvhV2cjArCvCmTiajyRmpwLgnLptNdMtVNeUBicveicJMJicXFXWQ1BFuMcFnrG3pSqIsJSicIw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>拿AI做PPT的时候我最怕的就是乱改我的数据，加了很多废话。</p>
+<p>我这里截取了生成的PPT中关于数据的部分。可以看到它把整个表格拆分成了不同类型的数据，分到不同的PPT页里进行了数据分析，要是整体风格能往特斯拉的主题色接近就更好了。</p>
+<p>第七组，Apple Liquid Glass 风格。</p>
+<p>这组就是纯审美压力测试。</p>
+<p>Generate a 35-slide premium product presentation in Apple Liquid Glass style.</p>
+<p>主题是 MacBook Neo。整体需要有 Apple inspired 的 Liquid Glass 设计语言，包括半透明玻璃面板，柔和模糊，大量留白，极简风格。</p>
+<p>叙事结构从重新定义笔记本体验开始，到当前笔记本的问题，再到 MacBook Neo 的突破，真实使用场景，性能对比。</p>
+<p>这种提示词，图像模型会很开心，因为它本来就擅长风格化。但PPT Agent要做的，就不是一张图好看那么简单，它要保证这35页看上去是一个整体。</p>
+<p>很明显，千问的脑容量还不错。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FznTYPt6F8FPda1YibZibqHeI0rY1obfZVpSXdznAPJxd0DekkPsWeox3Un5Lwtc27aLKCptL7g7HMnrEowwaGp0OVmDHAYffH1g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>第八组，想做一个网页一样做PPT。</p>
+<p>这组其实已经不是传统的PPT生成方式了，</p>
+<p>我就在想啊，既然是用代码生成的话，那我为什么不可能把它当做一个真正的HTML网页去生成？</p>
+<p>这样一些动效组件，我就能够直接指定引用，都不需要去描述一些风格词。</p>
+<p>🌅</p>
+<p>帮我生成一个全屏 presentation-style slide deck web app，5 页，适合现场演示和口播。使用 React 和 Tailwind CSS，安装hls.js和lucide-react。</p>
+<p>整体设计系统使用 Plus Jakarta Sans，黑色主题，所有文字白色，字体和间距全部响应式。所有卡片和 UI 元素采用 liquid glass 玻璃质感，不使用阴影，需要用键盘翻页。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyaJYCyTDjIhicJ61OtYg3YQ2SX3ucs76d7UcALRribh9gLg6ZuRd1FAo3y8TTUBYN9ziatM6H74VzQQiaDQuxRrc9V2d79pq6DT7s/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>这比我预设中的，能够完全按照我提供给它的动效文件跟代码框架还差了一点，</p>
+<p>这个可能就是后续代码生成PPT的一个优化方向，包括可以把视频模型生成的循环视频素材作为整个PPT的背景等等等等。</p>
+<p>总的来说，</p>
+<p>千问这次的PPT功能使在纯代码生成和纯套公式的模版化两者取了个中间值。</p>
+<p>它提前准备了很多套相对稳定的表达模版，还能秒切不同的预设主题。</p>
+<p>当然，代价也有。</p>
+<p>单页的布局和文字区域会相对固定，</p>
+<p>自由度会被压缩。</p>
+<p>但对大多数人来说，</p>
+<p>无限自由反而会带来无限翻车，</p>
+<p>重要的是用更少的折腾成本，把内容讲清楚。</p>
+<p>去年我们还在纠结，用DeepSeek做的PPT能不能下载。</p>
+<p>后来开始琢磨，做出来后能不能多次修改。</p>
+<p>再后来，NotebookLM这类图生PPT出来，</p>
+<p>我们发现图像模型可以承载更多的信息。</p>
+<p>绕了这么一大圈，其实图生和代码生成这两个流派，都在往同一个地方靠。</p>
+<p>就是怎么把我们脑子里想表达的东西，</p>
+<p>用一个好看又好懂的方式，</p>
+<p>摆到所有想听的人面前。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/mVYxA4KFhOiIrss6J_Lhdg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

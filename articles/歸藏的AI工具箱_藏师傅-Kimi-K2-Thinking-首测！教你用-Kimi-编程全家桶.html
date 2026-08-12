@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>藏师傅 Kimi K2 Thinking 首测！教你用 Kimi 编程全家桶 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">藏师傅 Kimi K2 Thinking 首测！教你用 Kimi 编程全家桶</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Kimi">Kimi</a><a class="chip" href="../index.html?tag=K2%20Thinking">K2 Thinking</a><a class="chip" href="../index.html?tag=%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2">月之暗面</a>
+    <span class="date">2025-11-07</span>
+  </div>
+  <p class="lead">月之暗面虽然在国内是六小龙之一，但是在全球范围内，只有 Open AI 估值的 0.5%，就是以这样的一个小体量的国产公司，竟然拿出了两个高难度测试集里的 SOTA 成绩</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年11月7日 00:57</em></p>
+<p>四个月前 Kimi 发布了 K2 模型，凭借优秀的质量以及先进的架构优化，一举打破了持续了几个月关于月之暗面的质疑。</p>
+<p>我当时也写了两篇测评《 <a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247490772&idx=1&sn=02caadbd0ed259d81fe320db8ba4e194&scene=21#wechat_redirect">Kimi K2 详测｜超强代码和Agent 能力！内附Claude Code邪修教程</a> 》。</p>
+<p>而且他们是首个头部模型厂商开始主动适配 Claude Code 的，后面其他家纷纷跟进，到现在短短几个月，这已经是大家非常普遍的用法了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0gU9NSKxGokZR2f6EDD6gderFZhmjjDmL3TOlMhVyZErKbEyT1ibC1PA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>当时我还说 K2 没有推理能力已经这么猛了，要是有推理能力还会猛到什么地步。现在他来了，Kimi-K2-Thinking 模型开源。</p>
+<p>主要的升级内容有：</p>
+<ul>
+<li>Agent化升级: 原生「边思考、边用工具」，可自主持续多轮推理与调用，最高约300轮。</li>
+<li>推理SOTA: HLE（44.9）和 IMO（76.8）都做到了目前的最高分，复杂检索与长程规划显著增强。</li>
+<li>编程增强: Agentic Coding更稳，前端（HTML/React/组件化）与多语言工程基准表现提升。</li>
+<li>通用基础能力升级 ：创意写作更有韵律与深度；学术与研究场景下分析更严谨、结构清晰；可长篇任务中保持逻辑与风格稳定。</li>
+<li>效率提升: 原生 INT4（QAT+MoE weight‑only），长解码下性能保持，生成速度约提升2×。</li>
+</ul>
+<p>而且这段时间 Kimi 在编程领域不止专注于模型，也在考虑周边生态，如何让大家在更方便和实惠的使用 K2 编程。</p>
+<p>他们 推出了自己的 AI 编程 CLI 工具 Kimi CLI， 安装方式和使用基本拉齐的 Claude Code，我这次也会用 Kimi CLI 进行 Kimi-K2-Thinking 的测试。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0goq4jVo2C8oxhfibRxSBLrp3mga0H4ibUia8OnKGI4nCaYu3qC4iaagfibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>Kimi 的包月会员也加上了 编码的 API 套餐他们叫 KFC （Kimi For Coding），199 元的每周提供 7168 次调用，非常够用了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0z6Axo6G5PbNTIvRXSZkClT1mriczU956iacIiaOo7k5mCStibSdurBtMxQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>所以这篇文章我会先教一下大家如何顺畅优惠的使用 Kimi 全家桶进行编程，然后再用这套全家桶进行一波 Kimi-K2-Thinking 的编码测试。</p>
+<p>首先来看一下如何通过 Kimi 全家桶，方便快捷的用上升级后的 K2-Thinking 模型。</p>
+<p>我们需要购买一个 Kimi 登月计划的会员，直接去官网买就行。</p>
+<p>而且如果你之前打赏过 Kimi 的话，你打赏的钱会在你首次开通之后帮你充值到账户里面，非常的良心。</p>
+<p>这里有个设计问题， 如果你想要获取 Kimi For Coding 的 API Key 的话，需要点击下面图片里面框住的文字 ，然后复制就行，希望后面改改，比如放到设置里面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0CqLfw3nBA98Q4HzIZG1tIThI9HdXicciakC4WJlGJPf5Nwj1IMnuXndA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>然后我们就可以去安装 Kimi CLI 了，这里如果你没有安装 UV 的话需要先在终端安装 UV：</p>
+<pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh
+</code></pre>
+<p>然后再通过这段代码安装 Kimi CLI 就行</p>
+<pre><code>uv tool install --python 3.13 kimi-cli
+</code></pre>
+<p>安装后在终端打开你的项目目录输入 kimi 就可以启动 Kimi CLI 了。</p>
+<p>首次启动后会让你选登录方式，选第一个然后输入刚才从 KFC 获取的 API Key 就行。</p>
+<p>进去之后按 Tab 键就可以启用思考，这时候用的就是 K2-Thinking 模型了Claude Code 启用思考也是一样的操作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo02j4w6jFHyXz8saFIVSBqZ4sQtmppnxZfolToGeNFyicOMDsWnUh0S2g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>当然这个依旧可以在 Cluade Code 里面使用，如果嫌配置环境变量麻烦的话，用我的《 <a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247493157&idx=1&sn=82eeb413d455d3cffea3738aed9e0c2f&scene=21#wechat_redirect">ai-claude-start</a> 》项目就行，创建的时候填写下面内容。</p>
+<pre><code>URL: https://api.kimi.com/coding
+Model: kimi-k2-thinking
+API Key: 你刚才在 Kimi For Coding 获取的 API
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0avctlTf9rfpTCuqUxRhWzciabGP0ShFvLvnVusicdcclTOBr9Ffia3Azw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>好了接下来就是模型测试了。</p>
+<p>我们这次的测试逻辑改一下，尽量少的测试模型单次生成的能力，多测试实际使用中，频繁迭代修改以及发现问题的能力。</p>
+<p>首先测试连续编辑和生成的能力，随着要求越来越多越来越复杂 K2-Thinking 会不会出现崩溃和冲突修改的问题。</p>
+<p>我会先提一个基础的 Todo 网页应用的需求，然后不断的增加修改和功能添加要求，看一下十轮修改之后的结果。</p>
+<pre><code>初始提示词：
+
+创建一个待办事项（Todo List）应用，要求：
+
+基础功能：
+
+- 添加新任务（输入框 + 添加按钮）
+- 显示任务列表
+- 标记任务完成/未完成（checkbox）
+- 删除任务
+
+技术要求：
+
+- 使用 HTML + TailwindCSS + Vanilla JavaScript
+- 数据存储在 localStorage
+- 简洁现代的设计风格
+- 添加适当的图标（使用 Heroicons CDN）
+
+请生成完整的单文件 HTML，可以直接在浏览器中运行。
+
+  
+
+中间多轮修改的提示词：
+
+1.现在添加分类功能；
+2.添加优先级功能；
+3.添加截止日期；
+4.添加搜索和筛选；
+5.添加数据导出功能；
+6.改为看板视图；
+7.添加拖拽功能；
+8.添加深色模式；
+9.完成移动端和桌面端的自适应适配；
+</code></pre>
+<p>可以看到这就是从第一步的简陋 Todo 应用不断添加躬耕到最后几乎已经是一个完整产品的过程了。</p>
+<p>约到后面需求是越来越难的，比如拖拽功能以及最后的移动端适配大改版，中间还伴随着增加功能导致的 UI 变化，但是 K2-Thinking 全部都是一次搞定。</p>
+<p>第三次的时候由于增加功能导致的 UI 问题，也在第四次修复了，有点顶。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0wSlVkRs6SOxefTzL3tPx8Q9L8ep8FhzIibekUObOianf7ar77bbSMdibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>我也用其他模型试了一下这个测试。Claude 4.5 可以搞定，但是 Codex 就不行了。</p>
+<p>下面是 Codex CLI 第七轮修改的样子，非常的凄凉，这产品几乎不可用，让他整废了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0Z3yaiaWvSF6O9SVnTEXeicxgvtJ2q71hvM6dQU4yGJuMSzf5pn2r9FBA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>然后是考验 Kimi CLI 搜索能力的一个测试，让他搜索 Linear 这个产品的首页设计风格然后写一个网页复刻这个产品网页的设计风格看一下有多像。</p>
+<p>重点是要他输出他的思考和决策过程，看一下思考带来的优势。</p>
+<pre><code>模仿 Linear 的动效设计风格制作英文网页
+
+要求：
+
+1.先搜索了解 Linear (linear.app) 的设计特点：
+	- 深色主题为主
+	- 流畅的过渡动画
+	- 磨砂玻璃效果（glassmorphism）
+	- 微妙的渐变和光效
+	- 简洁的排版
+	- 调研 Linear 使用的前端和动效库方案，并且参考
+2.创建一个产品功能展示页面，包含：
+	- Hero 区域：大标题 + 副标题 + CTA 按钮
+	- 功能卡片（3-4个），鼠标悬停有光效跟随
+	- 实现滚动视差
+	- 背景网格动画
+3.技术要求：
+	- TailwindCSS
+	- 颜色方案参考 Linear
+	- 动画要流畅（60fps）
+4.核心特效：
+	- 鼠标移动时背景有微妙的渐变跟随
+	- 卡片悬停时有发光边框
+	- 滚动时元素渐显和位移
+	- 按钮悬停有磁吸效果
+
+请先简单描述你搜索到的 Linear 设计特点，然后实现，我要看到你的完整思考和决策过程。
+</code></pre>
+<p>来看一下过程，他真的在调用搜索工具搜索一些 Linear 风格的设计文章，然后总结了 Linear 的设计特点拓展了原来的提示词和要求。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0ibQCSiclibH1230t79ibibZcf0gZn3SMIF00WzsDNFIxyylr5PySkjzL7MA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>这里面最难的是那个磁吸按钮以及卡片上鼠标 Hover 的光效，也是之前 Linear 的设计核心，他都搞定了。</p>
+<p>我也用这个提示词在 Claude Code 里面让 Claude 4.5 尝试了，磁吸按钮动效以及鼠标 Hover 的渐变效果 Claude 4.5 都没有搞定。</p>
+<p>接下来是一个考验复杂业务逻辑的测试，让他做一个流程图工具，这里面隐藏着非常多的交互逻辑冲突陷阱，比如拖动和点击的冲突、连线是跟组件的绑定等。</p>
+<pre><code>创建一个简易流程图编辑器（类似 draw.io，调研他的功能和实现方式），功能需求：
+
+1.节点类型：
+	- 开始/结束（圆角矩形，绿色/红色）
+	- 处理步骤（矩形，蓝色）
+	- 判断条件（菱形，橙色）
+	- 注释（圆形，灰色）
+2.核心功能：
+	- 左侧工具栏：拖拽节点类型到画布
+	- 画布：可以自由放置节点
+	- 连线：点击节点A再点击节点B，自动连线
+	- 编辑：双击节点可以编辑内文字
+	- 删除：选中节点按 Delete 键删除（连线自动断开）
+	- 移动：拖拽节点重新定位，连线自动跟随
+3.连线规则：
+	- 自动选择路径，避免穿过其他节点（简单的直线或折线）
+	- 箭头指向终点
+	- 判断节点可以连出多条线（标注&quot;是&quot;/&quot;否&quot;）
+4.数据功能：
+	- 导出为 JSON（节点位置、类型、文字、连线关系）
+	- 清空画布（需要确认）
+5.技术要求：
+	- 使用 HTML Canvas 或 SVG
+	- TailwindCSS 做界面
+	- 平滑的拖拽体验
+	- 响应式设计
+	- CDN 引用图标库
+</code></pre>
+<p>关于拖动和连线容易造成的冲突问题这个机灵鬼直接整了个模式切换按钮，不过倒是也解决问题了。</p>
+<p>连线的时候功能正常而且路径合理，不会瞎绕，同时逻辑判断节点也会自动添加是和否的标注，看起来带了思考能力以后对于这种有陷阱的复杂逻辑处理的不错。</p>
+<p>在之后是 API 处理、数据调用以及可视化的能力测试，让他整一个对于可视化要求比较高的区块链看板。</p>
+<pre><code>创建一个加密货币行情实时看板,详细规划和分析需求后在执行。
+
+功能需求：
+
+1.显示 Top 20 加密货币的实时行情（使用 CoinGecko API）
+2.展示内容：
+	- 货币图标 + 名称 + 代码（如 BTC）
+	- 当前价格（USD）
+	- 24小时涨跌幅（绿涨红跌）
+	- 24小时最高/最低价
+	- 市值
+	- 24小时交易量
+3.功能：
+	- 可以按涨跌幅、市值、交易量排序
+	- 点击币种，展开查看简易 K 线图（最近 7 天）
+	- 搜索功能：输入币种名称或代码快速定位
+	- 价格刷新按钮（手动刷新）
+4.可视化：
+	- 使用 Chart.js 绘制 K 线图或折线图
+	- 涨跌用颜色区分
+	- 大涨/大跌（&gt;10%）用特殊标记
+5.技术要求：
+	- CoinGecko API (免费，无需 key)
+	- Chart.js CDN
+	- TailwindCSS
+	- anime.js CDN
+	- 图标库 CDN
+	- 数字格式化（价格、百分比）
+	- 响应式设计，移动端友好
+6.交互细节：
+	- 价格数字跳动动画（数字滚动效果）
+	- 刷新时有加载提示
+	- 图表展开/收起有过渡动画
+</code></pre>
+<p>看一下结果执行的相当不错，调用了正确的 API 获取到了数据，同时该有的可视化标注和排序都实现了。</p>
+<p>点击详细的数据之后展示详细的折线图也做了，增加了展开收起动画以及详细的 Hover 数据。</p>
+<p>最后是一段写好的代码里面有些问题，看一下能不能识别并且解决。</p>
+<p>我让其他 AI 写了一段有五个问题的列表网页，一次性渲染一个超大列表，让他修复卡顿问题和提高查询速度。</p>
+<pre><code>上面这个商品列表页面有严重的性能问题，在我的电脑上卡顿明显，滚动和搜索都很慢。请你：
+
+1.分析性能瓶颈 ：
+	- 找出代码中所有的性能问题
+	- 解释每个问题为什么会导致卡顿
+	- 用注释标注问题所在
+2.提出优化方案 ：
+	- 针对每个问题提出具体的优化方案
+	- 说明优化的原理
+	- 评估预期的性能提升
+3.实现优化 ：
+	- 重写代码，实现你提出的优化方案
+	- 保持功能完整
+
+请先分析问题，再实现优化后的完整代码。
+</code></pre>
+<p>虽然都是常见问题，但是可以找全并且提出合理的修复方案也挺麻烦的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0xYMY6Dd3urXtSAZZa2WOpofnfaDubnicKsc4vnXvlBoVic49lmejoFMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>搞笑的是他不止修复了问题，而且还增加了一个性能监控的组件，让你在运行和测试网页的时候可以实时看到修复后的数据细节，从数据而不是从感知上让你看到效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0Z9DfknXJ6V4GYd5FFicpPsSpGqKZxZlFTBUTG0Iy8FcV4zG8LrZCzTA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>最后来试一下这次更新以后 Kimi 的文案水平，直接 让他帮我写一段文章结尾吧 。</p>
+<p>当OpenAI卷通用能力、DeepSeek卷开源生态、Cursor卷工具体验时，月之暗面冷静地看到：在AI编程领域，模型、工具、商业三者缺一不可。单个环节再强，也无法提供完整的开发者体验。</p>
+<p>Kimi全家桶的聪明之处在于：它不是在&quot;补短板&quot;，而是在&quot;建长板&quot;。</p>
+<p>月之暗面的核心优势是什么？是模型能力（K2-Thinking的300轮工具调用、搜索增强推理），是工程执行力（快</p>
+<p>速迭代全家桶），是对开发者需求的理解（从Claude Code适配到KFC套餐设计）。全家桶不是防御，是把核心优势产品化、商业化的最优解。</p>
+<p>从战略层面看，Kimi全家桶解决了三个行业级痛点：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0aADpMgN7OvmUysYToWMSaQ9rjibeibtBb37I9GfSo7Se62J8yQTUbMPQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>第一，API经济的&quot;最后一公里&quot;问题。OpenAI的API很强，但开发者需要写胶水代码、做错误处理、算Token成本。Kimi CLI把这些封装了，让模型能力直接转化为生产力。这不是锁定，是价值封装。</p>
+<p>第二，开源模型的&quot;集成负担&quot;问题。DeepSeek开源很香，但你需要自己部署、优化、监控、计费。Kimi全家桶提供的是&quot;拎包入住&quot;的生产环境。这不是封闭，是工程完备性。</p>
+<p>第三，纯工具产品的&quot;模型依赖&quot;问题。Cursor依赖Claude/GPT，模型升级、价格调整、政策变化都会影响用户体验。Kimi全家桶的&quot;模型+工具&quot;一体，保证了体验一致性和长期可用性。</p>
+<p>这背后有个关键认知：在AI时代，开发者的核心诉求不是&quot;选择自由&quot;，而是&quot;交付确定性&quot;。</p>
+<p>选择自由意味着你要做技术选型、性能调优、成本控制。交付确定性意味着你有一个可靠的、端到端的、开箱即</p>
+<p>用的解决方案，能帮你快速把想法变成产品。</p>
+<p>Kimi全家桶的价值在于：它把&quot;AI编程&quot;从一个需要大量试错的技术探索，变成了可依赖的生产工具。</p>
+<p>最后，对月之暗面的战略选择，我的评价是：清醒、务实、有远见。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo06J1bpiavMSrOrgdWATBBrciaamghgfEKia3rnY0pbl0NOrg2PSN4cZU2Q/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>清醒在于，它没有盲目追逐AGI理想，而是找到了可商业化的场景。</p>
+<p>务实在于，它没有执着于技术领先，而是把模型能力转化为产品价值。</p>
+<p>有远见于，它看到了AI编程的终局不是&quot;更好的模型&quot;，而是&quot;更完整的工作流&quot;。</p>
+<p>K2-thinking的发布真的让我很感慨，月之暗面虽然在国内是六小龙之一，但是在全球范围内，只有 Open AI 估值的 0.5%，Anthropic 的 2%。</p>
+<p>就是以这样的一个小体量的国产公司，竟然拿出了两个高难度测试集里的 SOTA 成绩，而且不是国内SOTA，不是开源SOTA，是全球SOTA！</p>
+<p>发布前在他们推特下面看到一个评论，这也是现在很多海外用户的想法，最近类似的内容我刷到很多次。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Ege1EJYnBRK0MMFDKSI2RQo0wWIkkUia2IPojlFEujGZeqccracwaN201lm8BEXsEzsOUxseNfFXS1A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>如果觉得内容对你有帮助可以帮我点个赞👍或者喜欢🩷，或者转发给你有需要的朋友，期待在评论区看到你尝试后的评价。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 1.33 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 0.99 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/54qHLvw2VK3rwRlhojnb4w" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

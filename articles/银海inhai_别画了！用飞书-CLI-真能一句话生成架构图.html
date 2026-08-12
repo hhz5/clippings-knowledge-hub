@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>别画了！用飞书 CLI 真能一句话生成架构图 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">别画了！用飞书 CLI 真能一句话生成架构图</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E9%A3%9E%E4%B9%A6%20CLI">飞书 CLI</a><a class="chip" href="../index.html?tag=%E9%A3%9E%E4%B9%A6%E7%94%BB%E6%9D%BF">飞书画板</a><a class="chip" href="../index.html?tag=%E6%9E%B6%E6%9E%84%E5%9B%BE%E7%94%9F%E6%88%90">架构图生成</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7">效率工具</a>
+    <span class="date">2026-05-27</span>
+  </div>
+  <p class="lead">飞书CLI这次直接能够直接调用画板了！</p>
+  <article class="content"><p>原创 银海 银海 AI产品银海</p>
+<p><em>2026年5月26日 21:53</em> <em>浙江</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzTEiaewFpicdibNRiarHXicHQsicdWOibTsstTLj25qaBWlm3gebfKRrKu1nvlXIhialM2ROXIXPdydDJoGcD6gdh9zibfh58rbBjKAmMD8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>前两天刷到飞书 CLI 更新了一个新技能，官方文档里放了个案例：一句话生成化学元素周期表。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/thoHNWXYDzQK41lmoZlz540qpsbiaQjXKUnzeHPHVsp0BDxFHtJSnXYnZB9fNITotyK7niapIAP40ZPZrRQRAcOx8Zutcvoic9fRWNUbxZDk8g/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>我一开始不信，也用 Codex 更新了飞书 CLI 的画板能力后，试了一下生成一个「Codex 的使用流程」，三秒钟后飞书文档里多了一张画板。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzTUbUgzp8DT02YnEYQP2uVM14QPG1Hu5QAxIFU46bIulS6Oaajv6uibG5xexjdBwlkaFAKiaqjC85YgFAGuC0RH5bTIkicsL7g8Ng/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>不是截图，是飞书画板，每个元素一个节点，双击就能改字，拖动就能调位置，连线关系都在。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/thoHNWXYDzQr6zuV1N7GM63g0RzsVSKC1xgjzlz0icnmke8rQEic7UiaLn3ia27KWOeibRw1tonUjRFRQBdSFrShwtibyyfLjcmbiajOVpdEx5D7Yk/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>我想你们可能都经历过这种事：写方案写到一半，要补一张架构图，打开画板工具，拖节点，对齐，调字号，调颜色。</p>
+<p>四十分钟过去了，拿给老板一看：&quot;这块逻辑改一下。&quot;行，全部重来。</p>
+<p>需求文档里画泳道图更离谱，拖到手酸，对齐对到眼瞎。好不容易画完截图贴进文档，第二天需求变了，又得从头搞。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzTeTcz4KN9NtwSuiclPpK1mClv7MicR2uSZ3icPBTP7Vza7Pt1Fy4OeeM1GDGtJX4Mj3xI5MMuynlJicKnkH8Ne2Viacq7uLLjib00Mg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>飞书 CLI 这个技能不一样，它出来的是飞书画板本身，能够直接给我们的 AI Agent（Codex、Claude Code、OpenClaw等等）直接集成使用。</p>
+<p>像我一开始的这个图就是直接在 Codex 里面通过这么简单的一句话给生成的，然后会返回给我一个飞书画板的在线链接。</p>
+<p>节点、连线、文字都能改，不满意就双击进去调，不用打开别的工具。</p>
+<p>需求变了也简单，挪个节点改个字，几秒钟的事。而且画板直接嵌在飞书文档里，不用来回切窗口，文档沉淀了画板也跟着沉淀，下次复用直接改。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzQNCzpe8hia9seq9m5Dibib0rlLHGN5618M8PtMXalO52JujrjBical7iapVm9sHwotzicgHia1EHIptBwkXUZ3Bxm33aL3tZR4kAujqI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>当然了，如果想要再修改这个画板，除了手动去编辑细节以外，我们也可以直接跟 Codex 这种AI Agent直接去对话就好：“这个图能给改成中英文双语版本吗”</p>
+<p>它能够快速的帮我们修改好，并且一样更新到飞书在线画板里面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzRHHCd9G8icxEosCIVicqrTsa128jjhiaPSu96M5oEBCQyRlr3diabEoxfiaRrjzabAbYBUXppuxnvwzXH04sl7kAibL7vYQiaEibC5wlc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>产品经理梳理功能模块，脑子里大概知道有哪些模块、怎么交互，但要画成产品架构图给团队对齐又得折腾半天。</p>
+<p>现在直接一句话：&quot;画一张电商后台的产品架构图，包含商品管理、订单管理、用户管理、营销活动、数据看板。&quot;</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong></p>
+<p>AI产品银海</p>
+<p>0/0</p>
+<p>00:00/00:16</p>
+<p>进度条，百分之0</p>
+<p>播放</p>
+<p>00:00</p>
+<p>/</p>
+<p>00:16</p>
+<p>00:16</p>
+<p>倍速</p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p>0.5倍 0.75倍 1.0倍 1.5倍 2.0倍</p>
+<p>超清 流畅</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2esmaniaaapiahnbyvp5vfbe6d2sjqbvaa.f10002.mp4?dis_k=cde4898d64147d1d3bc1a56e0191a887&amp;dis_t=1779864586&amp;play_scene=10120&amp;auth_info=S+jy3JUSVFUhm8P4kDNqHGhETm1sGz4wYUt/PEQ3UFNwPl4DQTlPGFZ/Qxo2XGc8fE4=&amp;auth_key=3e5cbb3a59ef2363cb9d58f4a37a4332&amp;vid=wxv_4533381367245832197&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/thoHNWXYDzRFRicnXcxmBfVnicGU4LzdOpoKnjZtFLsrQPUbkMsua6v4JMf3Opx6qKdrricF2ibmQTvgS2e7r7ibJtfFqJvn80YT8oDmomlHwnwI/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 645px; height: 484px;" jm_neat="1736078337">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>别画了！用飞书 CLI 真能一句话生成架构图</p>
+<p>转载</p>
+<p>,</p>
+<p>别画了！用飞书 CLI 真能一句话生成架构图</p>
+<p>AI产品银海</p>
+<p>已同步到看一看写下你的评论</p>
+<p>视频详情</p>
+<p>画板直接出来，模块怎么分组、层级怎么排都给你搞好了，如果要加模块？双击进去补。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzTrOczm6yygXdYhPyDf1mMzsqwvnAaH6CvvWYLokBxNc2p4D4a89IAmAAicHCv7Ugu6pQM5a27QSYRQGnbg03k4ibd9efyNnfAew/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>产品经理做新产品设计的 roadmap，现在把需求丢进去给咱们的 AI Agent，它会主动去调研，调研完成后时间轴、阶段划分、关键节点直接生成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzRVejPclmavGTXT5o7cq7VmTyE4BYD7a5nyL3iadS1USrDuHnd7s6Uat9X2gdaiau6tPicxuKBB2ORBtDfOpeGa0YPZnW98dhYky0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>要放以前排一个 Roadmap 要开半天会，甚至脑暴完了想整理思路，会上讨论了一堆想法乱糟糟的，把要点列出来丢给它，思维导图就出来了，哪些是主干哪些是分支一目了然。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzSxrVKr4XaOnUuLI8HXrLFeP2IDDpO3icPhg6hkI7IXls8QctlpWWnV4pJSL3zWh7xzericyApqRh6n6hoghpfWY6UrIpSWibGJ8g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>流程图、思维导图、甘特图、组织架构图、泳道图，只要是结构化的图表基本都能搞定，而且像这种带有判断逻辑的流程图，也是能够搞定。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzRUJvc0PX5nGFrTpfVgIgkxcpOwF0hOAhFmQV4MxfbnmzJ0pEE5zlRGaibAqrHTibKsVpIEQCa29LiaFGBRcQ2Gd8D70jLq3RFKHY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>写 SOP 也是。</p>
+<p>运营同事经常要出各种操作流程：功能操作说明、数据分析和验证链路等等，以前要么用文字一步步写，要么打开画板慢慢拖。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/thoHNWXYDzRFnBmWg5R2PmAe3rRwib4pomtQia61yuH2riaF4RLxt74GtMhfunacDWKuydyFFfYrCwhrtrhZjXI6YjoNF65nqKtqxaXibX7PiaSg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>现在把流程描述丢进去，流程图就出来了，每一步该谁做、怎么流转都标清楚，流程变了改几个节点就行。</p>
+<p>其实做教程内容的也用得上，写一篇技术教程想配一张系统交互图，以前得自己想布局、画箭头、标数据，现在把教程大纲丢给它，交互关系直接变成图，贴进文档就能用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzRC1QZUSXkcqjWLsSiavwiaudeKafr2IeC6etjnXGrnRiaZ8MHGQ8ofJQib0lQ4kffLeWYkookOvdlicVjiaibayPa9yc0zHLftuLhr3M/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>像我想要直接了解学习一下开源项目飞书 CLI 的整体架构图设计，它也可以自己去研究项目后然后通过飞书画板的形式呈现。</p>
+<p>还有这种一图读懂系列，都可以直接沉淀到画板里面，想要学习 Agent Skill 直接生成一图读懂系列，并且在企业中人与人之间的效率协作就更加方便了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzQ4uka9eic81qGkmSKpGBxHwiagZiaKuazWqmVJDVWB0icxZtVkJiccqswe1OlvK40lqvW4kjhI08HGj2FYoebpFnaqHlw1WzOS7D18/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>了解到这个生图原理后，我还尝试着用它来整活，比如直接让它去生成一个装修合理的户型图，这样在协作沟通的时候，也能够直接圈圈点点，动态去换很多局部内容。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/thoHNWXYDzRjbyogKJmom8qyRbQKvKibUuib2j7T3nfrlSsPrfFAWhRtgQs0vTzNQyQfHc75JGIKtdDq3dswEHFD5OHcjhDE74LMiaqnkibOzX0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>那么能做的事情可就太多了，太酷啦！</p>
+<p>那么这个飞书 CLI 怎么装呢？有两种方法。</p>
+<p>方式一：手动安装。在终端中输入一行命令完成安装</p>
+<pre><code>npx @larksuite/cli@latest install
+</code></pre>
+<p>方式二：将以下信息发送给你的 AI Agent 工具（如 Codex、Claude Code）</p>
+<pre><code>帮我安装飞书 CLI：https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md
+</code></pre>
+<p>装好就能用。</p>
+<p>当然了，直接在飞书的 aily 里面直接就是内置好了，左侧打开就能用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/thoHNWXYDzRH2k2ltsdA8LADlFnfK7gY3FFk7eXD1wr6dqn9zQCbFZwJx0ibaNJCF50nN4jiaYvK3okBfXwMib1ynJZaVQt3tPRLibdRpH6fR94/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>我自己在使用飞书 CLI 画板的过程中，为这个飞书画板美化还做了一个风格 Skill，配合这个飞书 CLI 画板能力使用也非常好用，已经开源在 Github 上了，如果你有需要也可以直接让你的 AI Agent 安装上。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/thoHNWXYDzR2VyY8DryUAL27etlibPygnDM9wYWickGM7a5wWfplfQ1GE2MsbLSqYrzowJIPIk6GK9MEh6N8I5NvIKw9j17Th9MicOVTF0g7WE/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>地址是：<a href="https://github.com/inhai-wiki/feishu-whiteboard-themes">https://github.com/inhai-wiki/feishu-whiteboard-themes</a></p>
+<p>默认生成的画板样式不一定适合所有场景，技术架构图可能想要科技感强一点的，产品 roadmap 可能想要简洁清爽的，给老板汇报可能想要正式一点的。</p>
+<p>这个风格 Skill 会根据你画的图的类型，自动推荐合适的视觉风格，配色、排版、组件样式都会跟着变。</p>
+<p>以前用 AI 画图，出来的图改不了或者改起来比重画还麻烦。</p>
+<p>这次不一样，生成的画板就是飞书画板本身，能改能复用，直接嵌在文档里。</p>
+<p>画图这件事，终于不用再当体力活干了。</p>
+<p>© THE END</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/kGZS9pjaiAAfhqaGEIIiJg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

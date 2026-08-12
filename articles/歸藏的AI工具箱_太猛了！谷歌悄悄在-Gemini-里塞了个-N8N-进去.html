@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>太猛了！谷歌悄悄在 Gemini 里塞了个 N8N 进去 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">太猛了！谷歌悄悄在 Gemini 里塞了个 N8N 进去</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Google%20Gemini">Google Gemini</a><a class="chip" href="../index.html?tag=N8N">N8N</a><a class="chip" href="../index.html?tag=Opal">Opal</a><a class="chip" href="../index.html?tag=Agent%E6%9E%84%E5%BB%BA">Agent构建</a>
+    <span class="date">2025-12-20</span>
+  </div>
+  <p class="lead">Gemini 的新版 Gem 功能太猛了，直接塞了一个 N8N 进去，而且操作还很简单，一键创建你的 AI 应用。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOG200QJApqqEnFOyvKNrkGHKGPLCkLabtJLuvrVx6W20QcKuwcKjT56w/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 歸藏的 AI 工具箱 <a href="https://mp.weixin.qq.com/s/">歸藏的AI工具箱</a> <em>2025年12月19日 17:27</em></p>
+<p>前几天，去 Gemini 玩的时候发现谷歌的 Gem 功能，也就是类似 GPT 的 GPTs 功能更新了。</p>
+<p>原来这个东西的能力非常之差，基本就是保存一段提示词然后给提示词起个名字的水平。</p>
+<p>但是前几天发现他更新了，现在可以直 接帮你生成带有界面的网页应用 ，支持任何图片或者文档的输入，也可以创建网页输出结果，而且可以调用所有的谷歌模型，功能相当强大。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGAKco7iaHtBIEalEh4FMg8iaB10r8o2yNWnHHHuQiagM1OczNyJyGsIpVA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>比如我这里就用他创建了一个屏幕使用时间分析工具，上传你的屏幕使用时间他就会帮你创建一个网页展示和分析你的屏幕使用时间状况。</p>
+<p>具体包含一个非常漂亮的可视化海报，还有文本分析以及一个基于你屏幕使用时间建议的音频博客。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOG4WDYzWENMXFibfWvtyZKwes8sVbhYV3ZPyib31ic3uQEbNp2QibnDoJc0A/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>仔细探索了一下发现这个就是将前几天谷歌发布的类似 N8N 的 Agent 构建工具 Opal 内置到了 Gemini 里面，而且更加易用了，今天大概教一下大家这个如何玩以及 Opal 的进阶操作。</p>
+<p>首先是入口我们进到 Gemini 里面之后，在侧边栏这里找到“探索Gem”这个选项进去就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGicPSYABIsibgccCAxicDcLpjSoLqlicIKE8qXwJn603pBnzC21UPRBa0lA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>进去之后你就看到除了之前的 Gem 界面和设置之外，上面出现了一个全新 Gem 的实验。</p>
+<p>点击这个“New Gem”就可以进入到新的 Gem 的创建界面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGO3K1vvcYdrFNb0MQq4NsFicsycmDiblF7lzYD9dfXWnJeTWUNoqPic45A/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>进入到创建页面之后很简单的一个输入框，你直接告诉他想要做什么就可以了。</p>
+<p>比如我这里让他基于我上传的我力量训练的表格分析我的训练数据给出对应的报告和建议。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGAQNkOMh4mB0cnEicaCZqJ6OqiaeRn9mLWTMKnyE9sMjI53PbTEWVBRjg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>回车之后他就会开始帮你构建 Gem 应用了，右侧会有进度一般很快就能搞定，你就可以在右侧测试刚刚生成的 Gem 了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOG2eeHAUNWIXloMomWeqLxCwAoNDuVNJxkEPkxr1M3AEATnQxEXP15IQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>这里我要求的是上传 CSV 文件，但是可以看到新的 Gem 支持的格式非常丰富，包括我们常见文件、youtube视频、甚至还可以录制网页操作视频和涂鸦。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGBUhfk5OOhpjkZ6NVoYxN0VpD9rIe8167GXgMTwN8rictTo7Y68PVBTw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>我上传了自己的训练数据上去测试，可以看到结果相当的详细，上面是数据看板，中间是各种表格，最下方是对我的训练建议。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGC6oQVNXQTtUXYLib2Urmric3NwicTdrhcibpB0SR3z1LBoI0V2Bzytct0A/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>但这里全是英文，我们还是需要修改一下，这里简单的修改直接在左侧说提示词就可以，比如我这里让他将报告结果改为中文，他就开始工作了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGvx3gpcjo2WxSVbwHTBU6OtQuPmpCnNUkv0L2D9FtmdfCM67jGfZk9A/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>可以看到这这次的分析结果就全部变成中文了，而且分析的数据相当详细。</p>
+<p>上面是整体的训练分析，中间是各个部位的数据，接下来是进步的和退步的训练，最后是个性化数据分析和建议。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGPZQw77nYo4YIib2L0P6DnSzUngQ18cEsgOCZ6SNMZXTILUv02W1uhSw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>当然你肯定这时候对于结果是有些不满意的，比如网页没有图片全是字，而且没有数据可视化看起来非常难以理解等等，你觉得左边通过提示词进行修改太烦了。</p>
+<p>这时候我们就可以点击右上角那个“Open Advanced Editor”去到真正的 Opal 界面进行编辑。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGJ7ibxILduj9ccXwrm9icqSIeSWVKtBv4U7qovFcelRSWbW7hZkWZaNXQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>好了，进来之后这个界面看起来是不是很熟悉了，他把用到哪些模型处理数据、生成数据以及输入、输出的卡片都给你展示出来了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOG5UHzEpAefbcnpkELaAfLKN5UKFvDTRSvcQpSUjleYOW2S6jsjFibibIg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>我们讲一下这个界面，主要大概是这四个部分组成：</p>
+<p>黄色： 这里是添加卡片的区域，如果你想要增加工作流中的模型或者输入项的话可以点击对应的卡片名称。</p>
+<p>红色： 这里是预览界面，如果你没有点击任何卡片这里就是完整的应用预览，如果点击卡片就是卡片预览。</p>
+<p>紫色： 这里你依然可以用提示词对你的应用进行修改，中间的卡片也会同步改变。</p>
+<p>绿色： 这里是主要的编辑和调整区域，代表着每个数据或者模型处理步骤的卡片，可以进行链接。</p>
+<p>我这里一般懒得调整卡片设置和链接卡片，涉及到模态更改和卡片更改的就会直接在输入框输入让他自己帮我修改工作流。</p>
+<p>但是如果是涉及到具体效果的提示词调整或者模型调整就得点击卡片在右侧进行精细化调整了。</p>
+<p>比如这里我就选择了生成建议这个卡片，之后红色区域就变成了卡片具体以的设置。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOG3TA3ldJRHYpBwUtV13I1u8yM50mzrIIDocFyvUfMlu1P7RJH6Z4ejw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>上面你可以选择使用什么模型，这里的模型相当详细，基本可以满足你的任何信息处理和素材生成要求。</p>
+<p>比如文本、音频、视频、表格、图片的输入处理我们就可以用比较便宜的 Gemini 2.5 Flash 或者直接用顶级的 Gemini 3 Pro 来完成。</p>
+<p>图像输出的话有只支持文生图的 Imagen 4 模型，还有支持改图生图的 Nano Banana Pro 和 Nano Banana 模型。</p>
+<p>视频生成有 Veo 视频模型，文本转语音有 AudioLM 模型，跟离谱的是还有音乐生成模型 Lyria 2。</p>
+<p>如果你提示词跟他说修改他给你把模型选错了的话，你就可以在这里改回来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGy9WlABgTykIGFr3Lhz9opjr3Z2LvKa2xpPyGiccTlJbka0S3NAvr6icQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>然后在下方可以调整具体的提示词，很多时候模型自己写的提示词还是有些问题的，你这里可以自己写，也可以点右侧的魔法棒图标直接跟他说怎么改，这里只会对这里的提示词生效，不用担心影响其他地方。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGGtIvBtyicVRUqPCW6CuP4WbYEuTficiaPrcG4T3BFgBib1SjLbqfysjsiaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>来看个例子，我前面展示的根据屏幕使用时间生成可视化海报和网页的案例里面，由于图片提示词复杂，他一直写不好，我就直接在图片生成卡片里面将提示词改成我原版的图片提示词了，然后效果就对了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf5477mbNv0f4aThybFQBOG8lXYzSsHxzRHs3ZfVZMMXLp3vDjLggderb543JLMIegmguscmVcibvA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>上面力量分析的卡片比较少，我们直接来看我的屏幕使用时间分析应用的卡片链接。</p>
+<p>可以看到左侧黄色卡片代表输入，这里就是用户上传的屏幕使用时间截图。</p>
+<p>中间部分主要是三个部分素材的生成、屏幕使用时间的文本分析、可视化海报的图片生成以及口播稿的生成和将口播稿用 AudioLM 生成博客音频。</p>
+<p>最右侧的绿色卡片负责将这三部分素材生成一个网页展示和播放。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGDmiaDvibzicx9MTO6J5BPdkB7wROI4VnMTicMcsDpoxmumQf8WS6bggxBg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p>好了具体的创建到这里就差不多了，最后当然是我们的分享功能了。</p>
+<p>你可以点击右上角的 “Share App” 按钮获取到应用的分享链接，获得链接的用户直接谷歌登录就能用，会根据用户的 Gemini 会员等级扣除他们的模型额度。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf5477mbNv0f4aThybFQBOGc9mdqibPf0qewbIJU38vA2uX5ickqhIGLrDBEmXZQxEM8IicjgTibYwqug/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Image"></p>
+<p>好了今天的 Gemini Gem 和 Opal 教程就到这里结束了。</p>
+<p>你可以自己去创建一个玩玩，也可以来玩玩我自己的这个屏幕使用时间分析工具，点击右上角 Remix 可以直接对我这个应用进行修改和编辑： opal.google/?flow=drive:/1P8cjpYRdou_4DyuBfJU78nrIafcpmdmI&amp;shared&amp;mode=app</p>
+<p>谷歌最近在 Gemini 里面的产品整合真的可怕，直接将 AI 实验室的一堆孵化的产品都整合进来了，NoteBookLM 项目好像也可以直接添加到聊天的上下文里面，只需要将 Gemini 的傻逼交互细节修复一下真就无敌了，不封号、额度高、模型强，我要是 Sam 真慌死了。</p>
+<p>如果觉得我的内容对你有帮助的话，可以帮我点个赞👍或者🩷，也可以转发给需要的朋友们，感谢。</p>
+<p><img src="https://mmbiz.qlogo.cn/mmbiz_jpg/FHoZCAjrvqgWLlBljDrYWKz1Ye6EYz33ukAVcyMBsRVbMqbfUibViadbnEGQmq4UkIoTodgambExicYdObJmQ8ZeA/0?wx_fmt=jpeg" alt=""></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p> <a href="https://mp.weixin.qq.com/s/">钟意作者</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/KtMFEj4eyMUl1f_JlIey7Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

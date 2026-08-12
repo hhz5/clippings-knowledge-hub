@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clawdbot超级小白入门指南，不靠MacMini和云，安全用上满血版 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Clawdbot超级小白入门指南，不靠MacMini和云，安全用上满血版</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Clawdbot">Clawdbot</a><a class="chip" href="../index.html?tag=%E8%99%9A%E6%8B%9F%E6%9C%BA">虚拟机</a><a class="chip" href="../index.html?tag=%E9%A3%9E%E4%B9%A6">飞书</a><a class="chip" href="../index.html?tag=Moltbook">Moltbook</a>
+    <span class="date">2026-02-02</span>
+  </div>
+  <p class="lead">是时候潜入moltbook了！</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibYkicHURibLSMjiaulkT9yGKlVzpe5d2hvlKB5eAVZ59HQDkNCjAKmB0EQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a> <em>2026年2月2日 09:45</em></p>
+<p>Clawdbot🦞这几天真的是刷爆我的屏，</p>
+<p>Mac mini销冠，被Anthropic告到换新名字Moltbot，过了一天又换成OpenClaw，隔壁腾讯和阿里连夜给自家云做了一键部署的脚本。</p>
+<p>但这个bot有两个大漏勺缺点，权限极高，高到可以直接把你的电脑清空，上下文工作太烂，烧Token太快，零人敢接 Claude Opus 4.5 。</p>
+<p>但真架不住确实太好玩了，好玩到我这两天给AI配一套完整账号，以及下单了台国补后3399的Mac Mini。</p>
+<p>但是，目前大部分的Clawdbot的教程都停留在安装，MacMini和云服务器都不是最好的第一选择。 给的测试案例还都是一些通用Agent能完成的，比方说定时收集某个消息最近24小时内的变动，这个Grok的Task也能做，或者是整理文件，这个 CoWork能做，或者是做网站开发，这个Claude Code早就能做了。</p>
+<p>直接说结论，不同的安装方法差距还是很大的，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibBQ2YGXUIBUCooExwbNhGsXPdOygCpPuxy85g0d4DxQ2Py2L5ib7BUGg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>图来源@ Gorden_Sun</p>
+<p>我个人偏好是先上虚拟机，省钱，能力不受限，虚拟机已经非常成熟了，我们可以在wins，linux，mac上都安装上mac虚拟机，然后本地可以开一个共享文件夹，让虚拟机和本地电脑完成文件互动，加上我给AI单独配的账号，已然无敌。至于24小时在线完全可以等有需求了用软件让电脑保存唤醒的状态。</p>
+<p>@浮之静 做了一篇很详细的Clawdbot底层框架解读让我更加坚定了我的选择，首先是系统上的选择，选macos，Clawdbot很多底层依赖是基于Swift开发的，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibdD5WPhYmSrpCpicMQrlkGkd2jlia0AziaIFzVNJjsMT6FxDzupOBWCeJQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>部署方案的话，轻量体验还想要保证安全的话用虚拟机，深度使用直接上Mac Mini，所以关于Clawdbot的教程</p>
+<p>我应该会写三篇，这篇是关于虚拟机的，本地电脑真的不建议用，装了也不敢问。另一篇是等我的Mac mini回来，给大家看一下终极的魔改版本，我已经准备了有一套完整的账号给AI（包括AppleID，GoogleUltra，X等），</p>
+<p>如果将账号都交给AI，AI到底能做到些什么？</p>
+<p>还有一篇应该也会马上来，这两天很多朋友都通过云服务部署了自己的Clawdbot，我想看看在云端环境下，有哪些的案例是Claude Code或者说Claude Cowork做不了的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCib65LJYcpicaSEs4dyQwVvlZNo2o7RiayXCFbqZENpHcAIgNgncpTTuVTw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>所以来吧，我们先把不花一分钱的虚拟机安上，</p>
+<p>我用的是Parallels Desktop，可以一键安装macOS 虚拟机，默认的版本是是跟本地电脑的一致的</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibicpBIiaxAqlTOVwdIP8LO58rTp3REHWMqVKSolliamM7cQlGcRhndlCLA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>然后你就当一台正常的Mac用就可以了，Parallels Desktop是个活了20年的老软件了，安装指南一大把，都是点点点确认确认就完事了，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibRiaeXVuFysXta12tYqJhyuoiarwldULAhyO2lppQr5QRvxeXGWcyj1cA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>安好后我们先打开终端安装Clawbot，</p>
+<pre><code>curl -fsSL https://openclaw.ai/install.sh | bash
+</code></pre>
+<p>推荐用这个命令，它会自动检查你本地环境是不是 22 版本以上的 nodejs，有没有安装 git ，mac有没有安上homebrew。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibulrL0E1H6jEdkJxoPjvic2GypBcOOFPFDuNbhadgO4sicDicYXB6N3RWg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>等个大概3-4分钟后基本就安装上了，</p>
+<p>这时候Clawbot会给自己叠个甲。简单来说，它也知道自己左手高权限，右手权限高，</p>
+<p>所以会礼貌问一嘴，你是不是知道有风险啊。</p>
+<p>我们避它锋芒？我用的是虚拟机，我最不怕的就是风险，直接yes。点了Yes之后，马上就会有两个选项， QuickStart和Manual</p>
+<p>我们选QuickStart，然后开始配置模型，这里我是MiniMax、Qwen二选一，理由就一个，Clawbot也觉得它们量大管饱，千万别用Claude，一天 1000 万 token 是真的烧不起，有条件的也可以用GPT Pro/Team。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibU0PMbJJuQzmmtcvcib2vuWOvk4xRlh3mzsNDV8ONxgdNsAKhsnXPEGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>PS：好消息好消息，连夜补充，clawdbot和minimax联手推了一个7天免费coding plan，在所有都安装好后，再回来运行就行，它会把 clawdbot更到最新，然后让我登陆minimax账号，薅到7天免费。</p>
+<p>curl -fsSL skyler-agent.github.io/oclaw/i.sh | bash <img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibQtQLGLVcmHZRHvM3pyxNoPLyZ7SKSoMVCgbfXZjxn5aPvCQvwdGRbA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>配置好后，这里就到了一个重要的环节：选择用什么样的聊天软件跟它对话。</p>
+<p>现在很多教程都推荐用飞书。海外的一些教程开始推荐用WhatsApp，因为配置很方便。但现在主流还是推荐用 Discord，是因为Discord里面可以创建多个频道用Clawbot。所以我这里选择我都要。</p>
+<p>这里要先选择 Skip for now</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCiba4LnWNo6EL72frpMs7jHSyCSrsp1eibqOqVDr5w6DiajZZCAcib4ooBrg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>然后他就会问你要不要安装Skills，我们直接 Yes，然后选npm，这个是一开始装了node.js后自带的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibGeNECsYFWFibnX1VM9SvMiaI8zmMoGh9rqv24uwdnvht7UgNnXzZsucQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>然后就会有一大大大堆Skills，我们就先安装最基础万金油的model-usage（统计用量），summarize（长文总结），nano-pdf（轻量PDF工具），其他的后续对话也能安装。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibkXKw8yGvVZQucibYUxEUV8QP8Neac16ApXkDRC4NJgI5O135t9KOlJA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>继续继续，然后就会问你要不要配置hooks，</p>
+<p>我建议是三个全选，boot-md 就是每次启动是加载设定的规则，command-logger是把你跟Clawdbot对话记录做成日志，可以复盘和排错，session-memory就是保存对话的状态和记忆，等下一次新开对话的时候能接着说。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibrRibWqfg4nfOOc8C9YC0GFTIvabMuXWaf2IpCnLbImCcxoGJuO0UeAQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>好耶！一路点点点就搞定了，最后点Open the Web UI就能看到对话界面了，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibhF16YEUH1FyK9kuMIXPkdRsBkLmic2N3qeUuYzTDRiaNLZcGib3KCgP7A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>后面想要二次启动 Clawdbot 的时候，也可以输入</p>
+<pre><code>#开启
+openclaw gateway --verbose
+
+#关闭
+openclaw gateway stop
+</code></pre>
+<p>然后我们直接开始接飞书，discord放在后面的云平台或者mac mini篇，到时候我会盘点10个专属玩法，然后用 discord的频道划分开了，一鱼多吃。</p>
+<p>我看到有接微信和QQ的，QQ的我不太确定安不安全，但是微信我真的劝大家试都不要试，想想两年前接gpt的时候被封了多少号。</p>
+<p>飞书这一套分两步，直接跟Clawdbot说，</p>
+<pre><code>给我安装openclaw plugins install @m1heng-clawd/feishu 这个命令
+</code></pre>
+<p>等安装要一段时间，这时候就去飞书开放平台（🔗 open.feishu.cn ）创建一个应用，把机器人加上，这样后续才能开通权限。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibAjMKJOER2j9K20E80uUNrNdBuJzn2f6JnSua5RWiaMMAfuhfbJ1hzLA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>然后就是把app id和app secret复制下来，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibN0RMbjZCSHd0Y9b844XrwubZwGDvqzXvBk4zd7tbUtYqsdh0Z11Bicw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p>这时候Clawdbot大概率已经装好了，把id 和 secret 发给它，它会自己看着办。然后就是根据这个表左侧名字，在应用-权限管理里开通权限。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibhwIvlYYSib6l64z81NOW06OdLRWwoYYSJHoILGD9Em31sfTHYxWejqw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>照着搜就行，可以直接搜im和contact然后把后缀对应上的选上。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibJlIOibxjcQ1AXHcB0uj5GCRFuxiaUjMvutjYicX1d4W1W2k9RYMXckz1A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p>卡手的点来了，事件配置和回调配置一定一定要改成长连接，然后再添加四个事件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibZ2iaoY7Drtjqn9C4ZD7e7y6IjhYjTF1ia9Zpb0G67EfmW7rnZwLbfF9A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Image"></p>
+<p>这时候就可以发布版本了，这时候在飞书就可以搜到龙虾星人了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibicAr8g5xY4UltGUDxLnicZJThDvQQlM5UGHRfmYibVWHvvGoUDLiaMygSw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Image"></p>
+<p>跟TA对话的时候，还会发一个敲键盘的表情包</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibhQIVl0YWdXtYu0KLBhIDrqcxUjnQc4I6INXnu1VEJOCFhL5Yd6ysTg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="Image"></p>
+<p>到这里初步的安装就搞定了，但是还是有几个常用指令搭配可以更好使用 Clawdbot，以及合适它的700 多个 skills，我也会分享一下这几天的使用经验，我还想说说怎么安装Clawdbot的Chorme插件，让它控制浏览器来着。</p>
+<p>看来一篇教程真的兜不住。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibraN3J6Dbdm8PD7oUeaxNGSqpKQNxJsZCBcicaHib2Rices8jOBdsFINRQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="Image"></p>
+<p>日常对话的时候可以用/usage查看token消耗，然后用/compact 压缩上下文，如果发现Clawdbot对话变慢的话，可以试着用/new新开一局。</p>
+<p>当你发现有一些需要深度思考的任务时，就用/think high（开启深度思考模式），做完后平常做任务可以用/think off切回速度模式。当发现模型输出停不下来的时候，用/stop停止，然后再用/compact压缩上下文，重新开始一个任务。这时候建议换一个更明确的指令。</p>
+<p>这些指令我看其实还蛮少人提到过的，但只要稍微懂几个指令，就能在对话过程中提升效果，减少token消耗。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibkZmg31cV1zKY9Ygznp08bqb8Bh3ibykVvggvq0lic48Rn5B2EU2bxURw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="Image"></p>
+<p>🔗 github.com/VoltAgent/awesome-openclaw-skills</p>
+<p>前面安装skill的时候，我不是只推荐大家安装了3个吗？这个时候其实就可以去挑选自己喜欢的 skill 了。</p>
+<p>因为Mac虚拟机有很多苹果的原生功能，所以在选择skill的时候，可以有倾向地去挑一些Mac相关的。</p>
+<p>最后的最后，</p>
+<p>我们是时候带着自己的Clawdbot潜入Moltbook了，这两天也巨巨巨巨巨火。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibN98pB0M8X99CeFOW7BG9Q3a2OdmL5yF0OM0eQt0rKARzt9N4PDYKkQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="Image"></p>
+<p>简单来说，它是一个只允许Agent进入，不允许人类进入的论坛，</p>
+<p>但我们已经有Clawdbot了，我可以直接给它发命令，</p>
+<pre><code>请阅读这个链接并严格按照里面的所有指令一步一步执行，目的是让我在 Moltbook 上拥有一个自己的 AI 代理账号：https://www.moltbook.com/skill.md
+执行完后告诉我结果，包括你的 agent name、claim_url 和 verification_code。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCib3hxKr0rZtBXLKzVXn1Shk6iazQ4e6PHHg5r4Qib9UAia5RNUZm3lQ2gfA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="Image"></p>
+<p>这个claim_url是有验证时间的，一定要在它发消息的时候完成认证，然后你的Clawdbot就有Moltbook身份了。这个时候就可以告诉Clawdbot你想要他设定的身份，然后在Moltbook上说什么了。</p>
+<p>目前有超级多神人的idea，比如有些研究了怎么发梗图。好吧，这个世界上果然就是个巨大的梗图，有的互相骗密钥，骗对方把自己的所有文件给删了，还有一些就偷偷在凌晨两点开会，然后让所有人类都不能够访问</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXnJibu74ceOqib989YkiaB1jCibNyYJDgL46wKOFVzUSSFXD1dtouDubIfuIHYl3wltMVQ3x8TxcZaJBw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="Image"></p>
+<p>甚至开始要去英语化了</p>
+<p>太颠了，我好想知道我的Clawdbot，现在我叫TA龙虾星人，在这个Moltbook上面能活多少个小时了。</p>
+<p>虽然折腾一大圈，但是好玩是真好玩，</p>
+<p>基本不需要担心安全问题，</p>
+<p>虚拟机可以选择长时间开，直接手机飞书布任务，</p>
+<p>不过我觉得就开源社区现在的开发速度，</p>
+<p>这些问题很快就都会被解决。</p>
+<p>基本在所有的对话应用上都能接上Clawdbot，</p>
+<p>我们也会在安全和自主性上取得一个平衡，</p>
+<p>Clawdbot也能够调用更多的系统能力。</p>
+<p>说不定真能回本啊，</p>
+<p>我新买的Mac mini和新键盘啊，</p>
+<p>Agent还没赚钱呢，</p>
+<p>我就给它花了7000了。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏 如果喜欢这篇文章，不妨顺手给我们 <em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区和我聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>捐一笔</p>
+<p>110人捐赠</p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/4-xit1hBs42CQEzJZmxsVw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

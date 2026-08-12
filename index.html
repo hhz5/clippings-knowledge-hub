@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剪藏知识库 · 按作者与标签查阅</title>
+<meta name="description" content="AI 主题剪藏知识库，按作者与标签两个维度浏览与全文检索。">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  // 主题初始化：在渲染前应用，避免闪烁
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">剪藏<span>知识库</span></a>
+    <div class="search">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.3-4.3M11 19a8 8 0 110-16 8 8 0 010 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="searchInput" type="search" placeholder="全文检索标题 / 作者 / 标签 / 正文…" autocomplete="off">
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色主题">🌓</button>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <aside class="sidebar">
+    <div class="side-section">
+      <div class="side-title">作者 <span class="cnt" id="authorCount"></span></div>
+      <div class="author-list" id="authorList"></div>
+    </div>
+    <div class="side-section">
+      <div class="side-title">标签 <span class="cnt" id="tagCount"></span></div>
+      <div class="chips" id="tagList"></div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="results-head">
+      <h2 id="resultTitle">全部剪藏</h2>
+      <div class="sub" id="resultSub"></div>
+    </div>
+    <div class="filter-bar" id="filterBar" style="display:none"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" style="display:none">没有匹配的文章，试试调整筛选或搜索词。</div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

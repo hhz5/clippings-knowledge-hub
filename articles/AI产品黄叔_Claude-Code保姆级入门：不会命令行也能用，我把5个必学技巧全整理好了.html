@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code保姆级入门：不会命令行也能用，我把5个必学技巧全整理好了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Claude Code保姆级入门：不会命令行也能用，我把5个必学技巧全整理好了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E4%BA%A7%E5%93%81%E9%BB%84%E5%8F%94">AI产品黄叔</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%83%BD%E4%BD%93">智能体</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-12-01</span>
+  </div>
+  <p class="lead">Claude Code这东西，对于教不教我是真的纠结。为啥？说实话，这玩意太强了，强到我觉得不分享出来有点可惜。</p>
+  <article class="content"><p>原创 AI产品黄叔 <em>2025年12月1日 08:05</em></p>
+<p>Claude Code这东西，对于教不教我是真的纠结。</p>
+<p>为啥？说实话，这玩意太强了，强到我觉得不分享出来有点可惜。但是吧， CLI这种命令行 会让我社团的用户入门比较难，以及，即使是拼车成本也挺高的。</p>
+<p>但是最近发生了三件事，让我突然觉得—— 不行了，必须得写 。</p>
+<p>第一件事， CC Switch 的普及+国产大模型的崛起，让我们可以轻松切换到国产大模型（ GLM、MiniMax 等）， 成本直接降到原来的1/10 ，而且没有网络问题，这个真的解决了大问题。</p>
+<p>第二件事， Skills很强， 值得花更多精力研究，可以把知识资产沉淀为 自动化SOP执行 。也只有CC才能更好的用上它。</p>
+<p>第三件事，上次分享的 Spec Coding提示词 ，Claude Code是目前 最适合发挥它的编程工具 ，没有之一。</p>
+<p>所以今天开始，黄叔会陆续分享多篇Claude Code的技巧，这一篇先带大家保姆级入门CC（Claude Code的缩写）：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYkK5vM98icDE129tu1a2Ysl9XmQfpHrBSdD5xerjiaibJk5dDR9h3GocMGdrDQL36NctGdxD7bpNTQ7w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<h2>01 Claude Code到底牛在哪？</h2>
+<h3>这不是普通的AI编程工具</h3>
+<p>你可能用过 Cursor、Trae 这些工具，它们本质上都是&quot;模型的包装商&quot;——调用 Claude、GPT 的API，然后套一层自己的外壳。</p>
+<p>但 Claude Code 完全不同。</p>
+<p>说实话，它是 Anthropic （Claude模型的开发公司）亲自下场，为自己的模型量身定制的 官方工具 。</p>
+<p>用一个比喻你就懂了：</p>
+<ul>
+<li>Cursor等工具 ：像是给手机装了个第三方壳，功能受限于接口</li>
+<li>Claude Code ：像是手机厂商自己设计的原生系统，能榨干硬件性能</li>
+</ul>
+<p>别人都在借刀杀人，Claude Code是亲自磨刀。懂我的意思吗？</p>
+<h3>核心优势：它不是工具，是同事</h3>
+<p>Claude Code是Agentic Coding Tool （代理式编程工具）。</p>
+<p>它是真正的 Agent（智能体） ，能够 独立思考、自主决策、主动调用工具 。</p>
+<h4>它到底强在哪？</h4>
+<p>我总结了三个最核心的点：</p>
+<p>1. 会思考、能规划</p>
+<p>能进行 多步推理 。</p>
+<p>2. 工具生态牛逼</p>
+<p>Claude Code 背后有一整套生态：</p>
+<ul>
+<li>MCP（Model Context Protocol） ：连接外部世界的标准接口</li>
+<li>Skills（技能库） ：封装的专业知识</li>
+<li>SubAgent（子智能体） ：专门处理特定任务</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYkK5vM98icDE129tu1a2Ysl9fN54rxqZsGYdz1xB37Qf2icSMLF8DQq6E9YnezsmDhTw8K66Yhbn8icA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>3. 越用越懂你</p>
+<p>最近推出的 长程跨对话的工程记忆机制 ，意味着，第30天的Claude，会比第1天的它 强大N倍 。</p>
+<p>用得越久，越懂你。这个体验是真的爽。</p>
+<p>（以上部分源自即友@ 吴都.ai 、 @ Linus.ai ）</p>
+<h4>为什么我说它是最强的壳？</h4>
+<p>说白了， Claude Code 做到了三个&quot;统一&quot;：</p>
+<p>架构统一 → 一个极简但强大的框架，想加新能力？装个MCP或Skills就行，不用改核心</p>
+<p>能力统一 → 它不是&quot;编程工具&quot;，是 通用Agent 。装上不同的&quot;技能包&quot;，就能胜任不同领域的工作</p>
+<p>知识统一 → Claude可以自己创建Skills ！你教它一次，它自动封装成Skill，下次直接用，整个团队都能复用</p>
+<p>Claude Code = 最强的AI大脑 + 最完整的工具生态 + 可持续进化的知识库</p>
+<p>这就是为什么我说， 暂时还没看到有其他更强的壳 。</p>
+<p>而且最牛逼的是 生态效应 ： Claude Code的能力边界，由整个生态决定 。</p>
+<p>它会越来越强。</p>
+<h2>二、安装教程：比你想象的简单</h2>
+<p>💡 我的推荐 ：新手入门 → Trae + 终端 （兼顾图形化和功能完整性）</p>
+<h3>第一步：安装Trae</h3>
+<p>因为 Trae 本身是一个壳，我们用它打开文件夹，相当于给 Claude Code 加载了上下文。</p>
+<p>另外， Trae 本身也有AI大模型的能力，也就是说我们可以辅助地在某些地方使用Trae本身带的大模型来进行处理。</p>
+<p>说白了就是，两个工具结合起来用，体验会好很多。</p>
+<h3>第二步：安装Claude Code CLI</h3>
+<p>超级简单！</p>
+<p>真的，我一开始以为会很麻烦，结果发现简单到离谱。</p>
+<p>直接复制下面的提示词，粘贴给 Trae的AI助手 ：</p>
+<pre><code>帮我自动检查环境并安装 Claude Code CLI 工具，按以下步骤执行：
+
+第一步：前期检查
+确认我的操作系统类型 (Mac / Linux / Windows)。
+尝试运行 claude --version 检查是否已安装。
+如果已安装：显示当前版本号，提示我 &quot;Claude Code 已安装，直接输入 claude 即可使用&quot;，并结束所有后续步骤。
+如果未安装：继续执行下一步。
+
+第二步：检查 Node.js
+运行 node -v 检查 Node.js 是否已安装。
+如果没有安装，请根据系统提示我安装方法：
+Mac：运行 brew install node 或去 nodejs.org 下载。
+Linux：运行 sudo apt install nodejs npm 或去 nodejs.org 下载。
+Windows：建议运行 winget install -e --id OpenJS.NodeJS 或去 nodejs.org 下载。
+
+第三步：安装 Claude Code
+执行通用安装命令：npm install -g @anthropic-ai/claude-code
+系统特定处理：
+Windows：直接在 PowerShell 或 CMD 中运行上述命令即可（无需 WSL）。
+Mac/Linux：如果遇到 EACCES 权限错误，请自动提示我使用 sudo 重新运行。
+
+第四步：验证安装
+运行 claude --version 检查是否安装成功。
+如果成功，请提示我直接输入 claude 即可启动工具并开始 OAuth 登录流程。
+模型选择Auto即可
+</code></pre>
+<p>（感谢成峰的提示词，我在上面做了一些小修改，另这里安装需要魔法）</p>
+<p>⚠️ 小提示 ：</p>
+<ul>
+<li>如果遇到英文提示看不懂，直接截图发给AI让它解释，别慌</li>
+<li>安装过程中可能要求输入管理员密码，密码是 盲打的 （不显示），打完直接回车就行</li>
+</ul>
+<p>我第一次装的时候也被这个盲打吓了一跳，还以为键盘坏了。。。</p>
+<h3>第三步：启动和登录</h3>
+<ol>
+<li>1.启动Claude Code ：</li>
+</ol>
+<p>打开 Trae的终端 ：</p>
+<ul>
+<li>点击右上角的&quot;面板&quot;图标</li>
+<li>在界面中间底部会出现终端区域</li>
+<li>可以点终端里的向上箭头展开终端获得更大屏幕</li>
+</ul>
+<p>在终端输入：</p>
+<pre><code>claude
+</code></pre>
+<p>但先等等，目前安装的是官方的Claude Code，默认使用官方的模型，但正常来说国人是用不了的，所以下面我们会提供解决方案：</p>
+<ol>
+<li>2.选择账号方案 ：</li>
+</ol>
+<p>我的推荐：</p>
+<ul>
+<li>拼车账号 ：和其他人一起拼一个账号</li>
+<li>国产模型 ：用MiniMax M2、GLM等，价格低还没有网络问题!</li>
+<li></li>
+</ul>
+<h2>三、CC Switch：一键切换模型的神器</h2>
+<h3>这是个啥？</h3>
+<p>Claude Code 默认要求登录Claude官方账号，但我们很多时候想：</p>
+<ul>
+<li>使用第三方拼车账号（更便宜和不会被封杀）</li>
+<li>用 Claude Code 这个壳，调用其他模型（如 MiniMax M2、GLM 等）</li>
+</ul>
+<p>CC Switch 就是解决这个问题的 完全开源工具 。</p>
+<p>不得不说，这个工具的出现，真的是救了我一命。</p>
+<h3>下载和安装</h3>
+<p>GitHub地址 ：</p>
+<ul>
+<li>项目地址： <a href="https://github.com/farion1231/cc-switch">https://github.com/farion1231/cc-switch</a></li>
+<li>下载链接： <a href="https://github.com/farion1231/cc-switch/releases">https://github.com/farion1231/cc-switch/releases</a></li>
+</ul>
+<p>在下载链接下滑到底部，找到 Assets区域 ，根据你的电脑型号下载对应版本。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYkK5vM98icDE129tu1a2Ysl94dwH9NsSzUxwjpa6MKNbhcBwqcjkfKr1vVZUKibHIPQaZUxSvhokTSQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<h3>⚙️ 配置步骤</h3>
+<p>1. 处理环境变量冲突</p>
+<p>打开 CC Switch 后，如果检测到系统环境变量冲突，点击&quot;查看详情&quot;，把对应的文件都删除掉。</p>
+<p>2. 添加模型供应商</p>
+<p>点击&quot;添加供应商&quot;按钮：</p>
+<ul>
+<li>选择某个模型供应商</li>
+<li>填写 API Key 和主模型的 Model ID （在对应模型后台查看）</li>
+<li>点击&quot;添加&quot;按钮</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYkK5vM98icDE129tu1a2Ysl9S2TJocjQ1gtia82FAT9Ad8rMmvYktb0byGVf9JeNEtrOJyPTeZ7ib49w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>3. 启用模型</p>
+<p>在主页面点击你想使用的模型旁边的&quot; 启用 &quot;按钮。</p>
+<p>4. 验证切换</p>
+<p>启用完毕后，在终端里重新进入 Claude Code ：</p>
+<pre><code>claude
+</code></pre>
+<p>它就会使用新的模型了！</p>
+<p>模型如衣服，合身的才是最好的。CC Switch让你随时换装。</p>
+<h2>四、必学的5个命令和技巧</h2>
+<p>掌握这 5个技巧 ，你已经 超越了90%的Claude Code用户 。</p>
+<h3>🔥 技巧0：学习成本不重要</h3>
+<p>说实话，这个是我最想先说的。</p>
+<p>Claude Code是最好用的通用Agent ，所以学习成本不重要。</p>
+<p>只要学会它，你不用再看什么 n8n、dify、coze ，它就是你的通用Agent。</p>
+<p>一个工具吃遍天下，不香吗？</p>
+<h3>⚡ 技巧1：危险模式</h3>
+<p>因为Claude Code是通用Agent，所以我们要给它最高权限：</p>
+<p>启动时输入命令：</p>
+<pre><code>claude --dangerously-skip-permissions
+</code></pre>
+<p>如果你想每次启动不用复制粘贴这么长的命令，可以和CC说一下：</p>
+<pre><code>帮我设置Claude Code自动以bypass permissions模式启动。
+当我输入 claude 时，自动执行 claude --dangerously-skip-permissions
+</code></pre>
+<h3>🎯 技巧2：Plan Mode</h3>
+<p>这个是黄叔之前用Spec Coding最重要的能力之一，Cursor后面也抄了它！</p>
+<p>在CC里连续按 Shift + Tab ，直到切换成 Plan Mode</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/6F2voy70UYkK5vM98icDE129tu1a2Ysl9zJrI6Mn6ZFDBX15LOUnEic6BcIU62umibAJnBniaREJJmo8sTBDEicGia6g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>Plan Mode里只会和你讨论需求，不会进行任何代码的修改，可以讨论完成后再切换到危险模式执行。</p>
+<p>典型场景 ：</p>
+<ul>
+<li>复杂功能开发前，先看计划</li>
+<li>大型重构前，先评估影响范围</li>
+<li>多步骤任务前，先理清思路</li>
+</ul>
+<h3>💡 技巧3：图片输入</h3>
+<p>别以为CC是命令行，就无法粘贴图片了，其实是可以的：</p>
+<ul>
+<li>Windows/Linux ： Ctrl+V 粘贴图片</li>
+<li>Mac ： Cmd+V 粘贴图片</li>
+</ul>
+<p>典型场景 ：</p>
+<ul>
+<li>截图界面让AI复刻UI</li>
+<li>上传架构图让AI理解系统设计</li>
+<li>粘贴错误截图快速Debug</li>
+</ul>
+<p>⚠️ 注意 ：部分国产模型不支持视觉理解，需要调用官方自带的图片理解 MCP （如果有的话）</p>
+<h3>🧠 技巧4：深度思考</h3>
+<p>让Claude用最高代价，进行深度思考：</p>
+<pre><code>（你的需求描述） ultrathink
+</code></pre>
+<p>效果 ：Claude会进入 深度推理状态 ，给出更深刻的洞察。</p>
+<p>💡 推荐 ：关键时刻、甚至是一直使用 ultrathink 。</p>
+<p>别省，该用就用。</p>
+<h3>⏸️ 技巧5：即时停止</h3>
+<p>发现Claude的方向不对时，按 ESC 就会停止任务。</p>
+<h2>五、常见问题快速答疑</h2>
+<h3>Q1：我英语不好，能用吗？</h3>
+<p>完全可以 。</p>
+<p>别担心，真的。</p>
+<ul>
+<li>Claude Code支持中文对话</li>
+<li>遇到英文提示，截图给AI翻译</li>
+<li>本文所有命令都有中文说明</li>
+</ul>
+<p>我英语也不好，但完全不影响使用。</p>
+<h3>Q3：成本高吗？</h3>
+<p>看你怎么用 ：</p>
+<ul>
+<li>官方账号：$20-200/月</li>
+<li>拼车账号：¥399/月 （6人拼）</li>
+<li>国产模型：¥50-100/月 （通过 CC Switch ）</li>
+</ul>
+<p>💡 我的建议 ：用 CC Switch 切换到国产模型， 成本直接降90% 。</p>
+<h3>Q3：安装失败怎么办？</h3>
+<p>最常见的问题 ：</p>
+<ol>
+<li>1.Node.js未安装 → 按教程安装</li>
+<li>2.权限不足 → 使用管理员权限</li>
+<li>3.网络问题 → 检查代理设置</li>
+</ol>
+<p>🔧 终极方案 ：复制错误信息，让 Trae AI 帮你解决。</p>
+<p>AI修AI，完美。</p>
+<h2>写在最后：用AI落地想法的时代已经来了</h2>
+<p>Claude Code 其实远远不止Coding。它非常值得你每天花几个小时深度使用。</p>
+<p>因为，它本身就是 通用Agent 。</p>
+<p>安装它，关注黄叔，后面我会教授各种 Skills ，帮助大家把专业能力教给AI，这样，AI就可以完全替我们做好工作。</p>
+<p>多爽 。</p>
+<p>想想都激动。</p>
+<p>也欢迎加入可能是中国最好的AI编程社团，不止AI编程：</p>
+<p>继续滑动看下一个</p>
+<p>AI产品黄叔</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/0d8x55t1t-SWQzG7jck7Pw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

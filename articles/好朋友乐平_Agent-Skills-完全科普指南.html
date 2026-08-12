@@ -1,0 +1,1314 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Skills 完全科普指南 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Agent Skills 完全科普指南</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%A5%BD%E6%9C%8B%E5%8F%8B%E4%B9%90%E5%B9%B3">好朋友乐平</a>
+    
+    <span class="date">2026-03-14</span>
+  </div>
+  <p class="lead">Agent Skills 是一个开放标准，用于为 AI Agent 扩展专用能力。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxDCQRTU9VBNNATArpwNJEmrMx0eLYvj1fIlQdgF8UR7gGiaya0fhuKPyeibXvV2WibiaJzmuBPoO0UxAJnn30RaFeAC0icTKZeA6vD0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<blockquote>
+<p>Agent Skills 是一个开放标准，用于为 AI Agent 扩展专用能力。本文将从概念、工作原理、规范、分类、脚本支持、最佳实践等多个维度，带你全面了解 Agent Skills。</p>
+</blockquote>
+<h2>一、什么是 Agent Skill？</h2>
+<h3>1.1 基本概念</h3>
+<p><strong>Agent Skill（技能）</strong> 是一种可移植、受版本控制的包，用来教会 AI Agent 执行特定领域的任务。你可以把它理解为给 AI Agent 安装的「插件」或「技能包」——它把特定领域的知识、工作流程、脚本和最佳实践打包封装，供 Agent 在合适的时机自动调用。</p>
+<p>用一个更直观的比喻：如果 AI Agent 是一位通才型的新员工，那么 Skill 就是你为他准备的 <strong>入职培训手册</strong> ——它不会改变员工的智力水平，但会让他立刻掌握公司特定的工作流程和领域知识。</p>
+<h3>1.2 四大特性</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>可移植</strong></td>
+<td>Skill 可用于任何支持 Agent Skills 标准的 Agent，不锁定到特定平台</td>
+</tr>
+<tr>
+<td><strong>受版本控制</strong></td>
+<td>Skill 以文件形式存储，可以在代码仓库中追踪，通过 GitHub 仓库链接安装</td>
+</tr>
+<tr>
+<td><strong>可操作</strong></td>
+<td>Skill 可以包含脚本、模板和参考信息，Agent 会通过其工具对这些内容进行操作</td>
+</tr>
+<tr>
+<td><strong>渐进式</strong></td>
+<td>Skill 按需加载资源，使上下文使用更加高效</td>
+</tr>
+</tbody></table>
+<h3>1.3 为什么需要 Skill？</h3>
+<p><strong>问题场景</strong> ：你每次和 AI Agent 对话时，都需要反复提供相同的上下文——比如公司的代码规范、部署流程、数据库表结构等。这既浪费时间，也容易遗漏。</p>
+<p><strong>Skill 的解决方案</strong> ：</p>
+<ul>
+<li><strong>专业化</strong>
+  ：让通用 Agent 变成特定领域的专家</li>
+<li><strong>减少重复</strong>
+  ：一次创建，自动使用</li>
+<li><strong>能力组合</strong>
+  ：多个 Skill 可以组合使用，构建复杂工作流</li>
+<li><strong>知识沉淀</strong>
+  ：将团队的工作流程、最佳实践和机构知识固化下来</li>
+</ul>
+<hr>
+<h2>二、核心设计理念：渐进式披露</h2>
+<p>渐进式披露（Progressive Disclosure）是 Agent Skills 最核心的设计理念。它确保 Agent 只在需要时加载必要的信息，而非一开始就把所有内容塞进上下文窗口。</p>
+<h3>2.1 三级加载机制</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCQ4waP1HQQkBsbyxMqxKYItYLPRia2AUqeBBH25hMlPW0zKib2lJW1MhdqXBasNpWbz7QQxicMBHPrDI7ksXoe0emu0yHr7wxBe0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th>加载时机</th>
+<th>Token 消耗</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Level 1: 元数据</td>
+<td>启动时始终加载</td>
+<td>~100 tokens/Skill</td>
+<td>YAML frontmatter 中的 <code>name</code> 和 <code>description</code></td>
+</tr>
+<tr>
+<td>Level 2: 指令</td>
+<td>Skill 被触发时</td>
+<td>&lt; 5000 tokens</td>
+<td>SKILL.md 主体内容（指令和指南）</td>
+</tr>
+<tr>
+<td>Level 3: 资源</td>
+<td>按需加载</td>
+<td>理论上无限</td>
+<td>脚本、参考文档、模板等附属文件</td>
+</tr>
+</tbody></table>
+<h3>2.2 为什么这很重要？</h3>
+<p>上下文窗口是一种 <strong>公共资源</strong> ，你的 Skill 和以下内容共享这个空间：</p>
+<ul>
+<li>系统提示词（System Prompt）</li>
+<li>对话历史</li>
+<li>其他 Skill 的元数据</li>
+<li>用户的实际请求</li>
+</ul>
+<p>渐进式披露让你可以安装几十个 Skill 而不会产生上下文压力——Agent 只知道每个 Skill 的存在和用途，只有在真正需要时才加载完整内容。</p>
+<hr>
+<h2>三、Agent 如何消费 Skill？</h2>
+<p>理解 Skill 的消费机制是理解整个体系的关键。这里需要区分三个角色： <strong>Agent（程序）</strong> 、 <strong>LLM（大模型）</strong> 和 <strong>Skill 文件（文件系统）</strong> 。Agent 是 LLM 的&quot;外壳程序&quot;，负责管理对话、调用工具、组装 prompt；LLM 是做决策的大脑；Skill 文件是静态的知识包。</p>
+<h3>3.1 Agent、LLM 与 Skill 的完整交互流程</h3>
+<p>下面这张图完整展示了从 Agent 启动到 Skill 被使用的全过程。注意关键点： <strong>Skill 的筛选和激活是由 LLM 决策的</strong> ，Agent 只负责执行 LLM 的指令（读文件、跑脚本）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCTWK4SD9j4mr9icN6sxDpb4DMwFMxAXFdr2d83qAvIDnsGYIEHOBWLMwAqkibIXWHv3lw3IK2qKy3mlMUmEibML8BkjLbiblRdibsM/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h4>关键要点</h4>
+<p>上面这张图有几个值得特别注意的地方：</p>
+<p><strong>1. Skill 目录在启动时就注入 System Prompt</strong></p>
+<p>Agent 启动时扫描文件系统，提取每个 Skill 的 <code>name</code> 和 <code>description</code> （每个约 100 tokens），拼接成一个&quot;技能目录&quot;块，注入到 System Prompt 中。这个目录类似这样：</p>
+<pre><code>&lt;available_skills&gt;
+&lt;skill&gt;
+&lt;name&gt;pdf-processing&lt;/name&gt;
+&lt;description&gt;Extract PDF text, fill forms, merge files. Use when handling PDFs.&lt;/description&gt;
+&lt;location&gt;~/.agents/skills/pdf-processing/SKILL.md&lt;/location&gt;
+&lt;/skill&gt;
+&lt;skill&gt;
+&lt;name&gt;data-analysis&lt;/name&gt;
+&lt;description&gt;Analyze datasets, generate charts, and create summary reports.&lt;/description&gt;
+&lt;location&gt;~/project/.agents/skills/data-analysis/SKILL.md&lt;/location&gt;
+&lt;/skill&gt;
+&lt;/available_skills&gt;
+</code></pre>
+<p><strong>2. Skill 筛选由 LLM 完成，不是 Agent 硬编码匹配</strong></p>
+<p>Agent 不会自己做关键词匹配来决定用哪个 Skill。而是将&quot;技能目录&quot;和用户消息一起发给 LLM，由 LLM 根据语义理解决定是否加载某个 Skill。LLM 的决策体现为一次工具调用——调用 <code>Read</code> 工具读取对应的 <code>SKILL.md</code> 文件。</p>
+<p><strong>3. Skill 内容通过&quot;工具调用-工具结果&quot;机制进入上下文</strong></p>
+<p>SKILL.md 的内容不是直接塞进 prompt 的，而是通过 LLM 主动发起一次 <code>Read</code> 工具调用，Agent 执行读取后将内容作为 <code>tool_result</code> 返回。这意味着 Skill 的加载使用的是和其他工具调用 <strong>完全相同的通信机制</strong> 。</p>
+<p><strong>4. 后续操作（读引用文件、执行脚本）也都是 LLM 驱动的</strong></p>
+<p>加载 SKILL.md 后，LLM 可能继续发起工具调用来读取参考文档或执行脚本。每次都是 LLM 做决策、Agent 执行、结果返回，循环进行。</p>
+<h3>3.2 与 MCP Tool 交互流程的对比</h3>
+<p>Skills 和 MCP Tools 都是扩展 Agent 能力的方式，但 <strong>交互模式有本质区别</strong> 。下面用两张并排的时序图来对比：</p>
+<h4>MCP Tool 的交互流程</h4>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxDF6pB1wvd7ZnNicbK0DyVEJyUG2tvPgvZrEXg1jjvrQ0XNEo1lMn8Y2icKBvjCKg7UeOzLq89fdhYY8qwxzzF3Iica0ckIopwVZc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<h4>Skill 与 MCP Tool 的本质区别</h4>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxB9haG9xica4x4ggLoFFmwsbe085Un6oTtmydsIXicxJlPxUO0S16nQQ8gWicPvj6NhVnsQhYBx4fXKmcg7KDwWmibicIoKBttiaxydQ/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>总结两者的核心差异：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>MCP Tool</th>
+<th>Agent Skill</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>本质</strong></td>
+<td>提供 <strong>能力</strong> （做某件事）</td>
+<td>提供 <strong>指令</strong> （教会怎么做）</td>
+</tr>
+<tr>
+<td><strong>信息注入位置</strong></td>
+<td>工具定义随 <code>tools</code> 参数发送</td>
+<td>技能目录注入 System Prompt</td>
+</tr>
+<tr>
+<td><strong>触发结果</strong></td>
+<td>返回 <strong>数据</strong> （API 响应、查询结果）</td>
+<td>返回 <strong>指令</strong> （工作流程、最佳实践）</td>
+</tr>
+<tr>
+<td><strong>LLM 行为变化</strong></td>
+<td>获得一个新的数据源</td>
+<td>获得一整套新的行为指南</td>
+</tr>
+<tr>
+<td><strong>类比</strong></td>
+<td>给员工一把新工具</td>
+<td>给员工一本操作手册</td>
+</tr>
+<tr>
+<td><strong>组合使用</strong></td>
+<td>—</td>
+<td>Skill 指令中可以指导 LLM 如何使用 MCP Tool</td>
+</tr>
+</tbody></table>
+<p>一个常见的强力组合场景： <strong>MCP 给 Agent 提供了调用 BigQuery 的能力（工具），Skill 教会 Agent 你们公司的表结构、查询规范和注意事项（指令）</strong> 。两者互补，缺一不可。</p>
+<h3>3.3 完整的 Prompt 拼接示意</h3>
+<p>为了更直观地理解 Skill 是如何融入 Agent 与 LLM 的对话流程中的，下面展示一次完整交互中 Agent 发给 LLM 的 prompt 结构：</p>
+<pre><code>┌──────────────────────────────────────────────────────────┐
+│  SystemPrompt                                           │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │ 基础指令（你是一个 AI 助手...）                       │  │
+│  ├────────────────────────────────────────────────────┤  │
+│  │ 📦 可用技能目录（~100tokens × N 个 Skill）         │  │
+│  │  • pdf-processing:ExtractPDFtext,fillforms... │  │
+│  │  • data-analysis:Analyzedatasets,generate...    │  │
+│  │  • deploy-app:Deploytheapplicationto...        │  │
+│  │  当任务匹配技能描述时，使用 Read 工具加载 SKILL.md    │  │
+│  ├────────────────────────────────────────────────────┤  │
+│  │ 🔧 可用工具列表                                     │  │
+│  │  • Read（读取文件）                                  │  │
+│  │  • Bash（执行命令）                                  │  │
+│  │  • get_weather（MCP 工具）                          │  │
+│  │  • ...                                             │  │
+│  └────────────────────────────────────────────────────┘  │
+├──────────────────────────────────────────────────────────┤
+│  对话历史                                                │
+│  [user]: 帮我从这个 PDF 中提取文本                        │
+│  [assistant]:tool_use → Read(&quot;pdf-processing/SKILL.md&quot;) │
+│  [tool_result]:#PDFProcessing...（SKILL.md 内容）     │
+│  [assistant]:tool_use → Bash(&quot;python scripts/extract.py&quot;)│
+│  [tool_result]:Extracted15pagesoftext...            │
+│  [assistant]: 已从 PDF 中提取文本，以下是总结...            │
+├──────────────────────────────────────────────────────────┤
+│  当前用户消息                                             │
+│  [user]: 再帮我把提取的内容生成一份 Word 文档               │
+└──────────────────────────────────────────────────────────┘
+</code></pre>
+<p>可以看到：</p>
+<ul>
+<li><strong>Skill 目录</strong>
+  和 <strong>MCP 工具定义</strong> 同时存在于 prompt 中</li>
+<li>Skill 的激活（读取 SKILL.md）在对话历史中表现为一次普通的工具调用</li>
+<li>SKILL.md 的内容作为 <code>tool_result</code> 留在对话历史中，持续影响后续 LLM 的行为</li>
+</ul>
+<h3>3.4 发现阶段详解</h3>
+<p>Agent 启动时，会从以下目录自动发现技能：</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>级别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.agents/skills/</code></td>
+<td>项目级</td>
+<td>跨客户端通用目录</td>
+</tr>
+<tr>
+<td><code>.cursor/skills/</code></td>
+<td>项目级</td>
+<td>Cursor 专用目录</td>
+</tr>
+<tr>
+<td><code>~/.cursor/skills/</code></td>
+<td>用户级（全局）</td>
+<td>所有项目可用</td>
+</tr>
+<tr>
+<td><code>.claude/skills/</code></td>
+<td>项目级</td>
+<td>Claude Code 兼容目录</td>
+</tr>
+<tr>
+<td><code>~/.claude/skills/</code></td>
+<td>用户级</td>
+<td>Claude Code 全局兼容</td>
+</tr>
+</tbody></table>
+<p>扫描规则：</p>
+<ul>
+<li>跳过 <code>.git/</code> 、 <code>node_modules/</code> 等无关目录</li>
+<li>设置合理的扫描深度（一般 4-6 层）和目录数上限（~2000 个）</li>
+<li>项目级 Skill 优先级高于用户级 Skill（同名时覆盖）</li>
+</ul>
+<h3>3.5 触发激活方式</h3>
+<p>Skill 有两种激活方式：</p>
+<p><strong>自动触发（Model-driven）</strong> ：LLM 看到 System Prompt 中的技能目录后，根据用户请求的语义自动判断是否需要加载某个 Skill。这是最常见的方式——LLM 的决策体现为一次读取 <code>SKILL.md</code> 的工具调用。</p>
+<p><strong>手动调用（User-explicit）</strong> ：用户在对话中输入 <code>/skill-name</code> （斜杠命令）来显式调用特定 Skill。此时 Agent（程序侧）直接将 SKILL.md 内容注入上下文，不需要 LLM 做判断。适用于设置了 <code>disable-model-invocation: true</code> 的 Skill。</p>
+<h3>3.6 脚本执行的高效性</h3>
+<p>当 Skill 中的指令引用了脚本文件时，Agent 通过 bash 直接 <strong>执行</strong> 脚本，而不是将脚本代码读入上下文：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxB6iaOqQCdLlnS7qYCU3GpmjBeAFfx0p4KvHl2DAYx9kMH4M34WAs6HDjRDefxwXCPVogGQPvTSPxQyBTTK6qzoGz2KMVAepPWc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>这意味着：</p>
+<ul>
+<li>脚本代码本身 <strong>不会</strong> 消耗上下文 token</li>
+<li>只有脚本的 <strong>输出结果</strong> 会进入 Agent 的上下文</li>
+<li>比让 Agent 临时生成代码更可靠、更高效</li>
+</ul>
+<hr>
+<h2>四、Skill 的规范与结构</h2>
+<h3>4.1 目录结构</h3>
+<p>每个 Skill 是一个包含 <code>SKILL.md</code> 文件的文件夹：</p>
+<pre><code>my-skill/
+├── SKILL.md              # 必需：元数据 + 指令
+├── scripts/              # 可选：可执行代码
+│   ├── deploy.sh
+│   └── validate.py
+├── references/           # 可选：补充文档
+│   ├── REFERENCE.md
+│   └── FORMS.md
+├── assets/               # 可选：模板、图片等静态资源
+│   └── config-template.json
+└── ...# 任何其他文件或目录
+</code></pre>
+<p>各目录的职责：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>用途</th>
+<th>加载时机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SKILL.md</code></td>
+<td>主要指令文件（核心）</td>
+<td>Skill 被触发时加载</td>
+</tr>
+<tr>
+<td><code>scripts/</code></td>
+<td>Agent 可执行的代码</td>
+<td>被指令引用时执行</td>
+</tr>
+<tr>
+<td><code>references/</code></td>
+<td>按需加载的补充文档</td>
+<td>被指令引用时读取</td>
+</tr>
+<tr>
+<td><code>assets/</code></td>
+<td>模板、图片、数据文件等静态资源</td>
+<td>被指令引用时读取</td>
+</tr>
+</tbody></table>
+<h3>4.2 SKILL.md 文件格式</h3>
+<p>每个 Skill 在带有 YAML frontmatter 的 <code>SKILL.md</code> 文件中定义：</p>
+<pre><code>---
+name: pdf-processing
+description: Extract PDF text, fill forms, merge files. Use when handling PDFs.
+license: Apache-2.0
+metadata:
+  author: example-org
+  version: &quot;1.0&quot;
+---
+
+# PDF Processing
+
+## Quick start
+
+Use pdfplumber to extract text from PDFs:
+
+\`\`\`python
+import pdfplumber
+
+with pdfplumber.open(&quot;file.pdf&quot;) as pdf:
+    text = pdf.pages[0].extract_text()
+</code></pre>
+<h2>Advanced features</h2>
+<p><strong>Form filling</strong>: See FORMS.md for complete guide<br><strong>API reference</strong>: See REFERENCE.md for all methods</p>
+<pre><code>### 4.3 Frontmatter 字段详解
+
+#### 必填字段
+
+| 字段 | 约束 | 说明 |
+|------|------|------|
+| \`name\` | 最多 64 字符，仅允许小写字母、数字和连字符，不能以连字符开头或结尾，不能包含连续连字符，必须与父文件夹名一致 | 技能标识符 |
+| \`description\` | 最多 1024 字符，不能为空 | 描述技能功能和使用场景，Agent 用它来判断相关性 |
+
+#### 可选字段
+
+| 字段 | 约束 | 说明 |
+|------|------|------|
+| \`license\` | 无 | 许可证名称或对随附许可证文件的引用 |
+| \`compatibility\` | 最多 500 字符 | 环境要求（目标产品、系统软件包、网络访问等） |
+| \`metadata\` | 键值对映射 | 用于附加元数据（如 author、version） |
+| \`disable-model-invocation\` | 布尔值 | 为 \`true\` 时仅在通过 \`/skill-name\` 显式调用时才使用 |
+| \`allowed-tools\` | 空格分隔的工具列表 | 预批准该 Skill 可使用的工具（实验性功能） |
+
+#### name 字段示例
+
+\`\`\`yaml
+# ✅ 合法
+name: pdf-processing
+name: data-analysis
+name: code-review
+
+# ❌ 非法
+name: PDF-Processing    # 不允许大写
+name: -pdf              # 不能以连字符开头
+name: pdf--processing   # 不能有连续连字符
+</code></pre>
+<h4>description 字段示例</h4>
+<pre><code># ✅ 好的描述：具体且包含触发关键词
+description:&gt;
+  Extract text and tables from PDF files, fill forms, merge documents.
+  Use when working with PDF files or when the user mentions PDFs,
+  forms, or document extraction.
+
+# ❌ 差的描述：太模糊
+description:HelpswithPDFs.
+</code></pre>
+<h3>4.4 文件引用规范</h3>
+<p>在 Skill 中引用其他文件时，使用相对于 Skill 根目录的路径：</p>
+<pre><code>See [the reference guide](references/REFERENCE.md) for details.
+
+Run the extraction script:
+scripts/extract.py
+</code></pre>
+<p>关键规则：</p>
+<ul>
+<li>始终使用 <strong>正斜杠</strong> <code>references/guide.md</code> ，而非反斜杠</li>
+<li>文件引用保持 <strong>一层深度</strong> ，避免嵌套引用链</li>
+<li>文件名应当有描述性：用 <code>form_validation_rules.md</code> 而不是 <code>doc2.md</code></li>
+</ul>
+<hr>
+<h2>五、Skill 的分类</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxBQAKYmEXk0p0TfssjBmCOrOrUiaIpm7uvDC0XicHF1YyibN4gav0vqyMlJhqJueHQxSGJ68nFviaI1L4OXu4OibbJTic6tgNxDhFsDU/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<h3>5.1 预构建 Skill（Anthropic Skills）</h3>
+<p>由 Anthropic 官方创建和维护的 Skill，开箱即用：</p>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>skill_id</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PowerPoint</td>
+<td><code>pptx</code></td>
+<td>创建演示文稿、编辑幻灯片、分析演示内容</td>
+</tr>
+<tr>
+<td>Excel</td>
+<td><code>xlsx</code></td>
+<td>创建电子表格、分析数据、生成图表报告</td>
+</tr>
+<tr>
+<td>Word</td>
+<td><code>docx</code></td>
+<td>创建文档、编辑内容、格式化文本</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td><code>pdf</code></td>
+<td>生成格式化的 PDF 文档和报告</td>
+</tr>
+</tbody></table>
+<p>这些 Skill 在 claude.ai 和 Claude API 上对所有用户可用，Agent 会在相关任务中自动调用。</p>
+<h3>5.2 自定义 Skill（Custom Skills）</h3>
+<p>用户或组织自行创建的 Skill，用于特定领域的工作流。按内容构成可分为：</p>
+<h4>纯指令型 Skill</h4>
+<p>只包含 <code>SKILL.md</code> ，通过自然语言指令指导 Agent：</p>
+<pre><code>code-review/
+└── SKILL.md
+</code></pre>
+<p>适用场景：代码审查流程、写作风格指南、会议纪要模板等不需要执行代码的任务。</p>
+<h4>包含参考文档的 Skill</h4>
+<p>除主指令外，附带额外的参考文档，Agent 按需读取：</p>
+<pre><code>bigquery-skill/
+├── SKILL.md
+└── reference/
+    ├── finance.md
+    ├── sales.md
+    └── product.md
+</code></pre>
+<p>适用场景：需要大量领域知识的任务，如数据库分析、API 对接等。</p>
+<h4>包含脚本的 Skill</h4>
+<p>附带可执行脚本，Agent 在执行任务时调用：</p>
+<pre><code>deploy-app/
+├── SKILL.md
+└── scripts/
+    ├── deploy.sh
+    └── validate.py
+</code></pre>
+<p>适用场景：部署、数据处理、表单填充等需要确定性操作的任务。</p>
+<h4>复合型 Skill</h4>
+<p>同时包含指令、参考文档、脚本和资源：</p>
+<pre><code>pdf-processing/
+├── SKILL.md
+├── FORMS.md
+├── REFERENCE.md
+├── examples.md
+├── scripts/
+│   ├── analyze_form.py
+│   ├── fill_form.py
+│   └── validate.py
+└── assets/
+    └── template.json
+</code></pre>
+<h3>5.3 组织级 Skill（Organization Provisioned）</h3>
+<p>针对 Team 和 Enterprise 计划，组织的管理员可以为所有用户统一配置 Skill：</p>
+<ul>
+<li>分发经过审批的工作流，确保全员一致</li>
+<li>确保团队使用标准化的流程和最佳实践</li>
+<li>部署新能力无需每个用户单独上传</li>
+<li>Skill 可设为默认启用或禁用</li>
+</ul>
+<h3>5.4 合作伙伴 Skill（Partner Skills）</h3>
+<p>由合作伙伴（如 Notion、Figma、Atlassian 等）专业构建的 Skill，设计为与对应的 MCP 连接器无缝配合使用，实现强大的集成工作流。</p>
+<hr>
+<h2>六、支持脚本的 Skill</h2>
+<p>支持脚本是 Agent Skill 最强大的能力之一。它将确定性的代码执行与 Agent 的灵活决策结合起来。</p>
+<h3>6.1 脚本 vs 指令的选择</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxCrQmbGnPdGuXKiaxk7SWGovouiaNVeLbA2NmHqCduBbaicRDFRTSupIzT4QXR0hAzhBXU8GEudgf4McCIEHs4mra6W5OFIjH9LG0/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<table>
+<thead>
+<tr>
+<th>自由度</th>
+<th>方式</th>
+<th>适用场景</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>高</td>
+<td>文本指令</td>
+<td>多种方法均可、依赖上下文判断</td>
+<td>代码审查、写作指导</td>
+</tr>
+<tr>
+<td>中</td>
+<td>伪代码/带参数脚本</td>
+<td>有推荐模式但允许变通</td>
+<td>报告生成、数据转换</td>
+</tr>
+<tr>
+<td>低</td>
+<td>固定脚本</td>
+<td>操作脆弱、一致性关键</td>
+<td>数据库迁移、部署流程</td>
+</tr>
+</tbody></table>
+<h3>6.2 一次性命令</h3>
+<p>当现有工具包已经能满足需求时，可以直接在 <code>SKILL.md</code> 中引用，而不需要 <code>scripts/</code> 目录：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>语言生态</th>
+<th>命令示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>uvx</code></td>
+<td>Python</td>
+<td><code>uvx ruff@0.8.0 check .</code></td>
+</tr>
+<tr>
+<td><code>pipx</code></td>
+<td>Python</td>
+<td><code>pipx run &#39;black==24.10.0&#39; .</code></td>
+</tr>
+<tr>
+<td><code>npx</code></td>
+<td>Node.js</td>
+<td><code>npx eslint@9 --fix .</code></td>
+</tr>
+<tr>
+<td><code>bunx</code></td>
+<td>Bun</td>
+<td><code>bunx eslint@9 --fix .</code></td>
+</tr>
+<tr>
+<td><code>deno run</code></td>
+<td>Deno</td>
+<td><code>deno run npm:create-vite@6 my-app</code></td>
+</tr>
+<tr>
+<td><code>go run</code></td>
+<td>Go</td>
+<td><code>go run golang.org/x/tools/cmd/goimports@v0.28.0 .</code></td>
+</tr>
+</tbody></table>
+<p>关键原则： <strong>锁定版本号</strong> ，确保行为一致。</p>
+<h3>6.3 自包含脚本</h3>
+<p>当需要自定义逻辑时，将脚本放入 <code>scripts/</code> 目录并声明内联依赖：</p>
+<p><strong>Python 示例（PEP 723）</strong> ：</p>
+<pre><code># /// script
+# dependencies = [
+#   &quot;beautifulsoup4&quot;,
+# ]
+# ///
+
+from bs4 import BeautifulSoup
+
+html = &#39;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Welcome&lt;/h1&gt;&lt;p class=&quot;info&quot;&gt;Test.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#39;
+print(BeautifulSoup(html, &quot;html.parser&quot;).select_one(&quot;p.info&quot;).get_text())
+</code></pre>
+<p>使用 <code>uv run scripts/extract.py</code> 运行，uv 会自动创建隔离环境并安装依赖。</p>
+<p><strong>Deno 示例</strong> ：</p>
+<pre><code>#!/usr/bin/env -S deno run
+import * as cheerio from&quot;npm:cheerio@1.0.0&quot;;
+
+const html = \`&lt;html&gt;&lt;body&gt;&lt;p class=&quot;info&quot;&gt;Test.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;\`;
+const $ = cheerio.load(html);
+console.log($(&quot;p.info&quot;).text());
+</code></pre>
+<h3>6.4 脚本设计原则</h3>
+<p>为 Agent 设计脚本时，需要遵循以下原则：</p>
+<h4>禁止交互式提示</h4>
+<p>Agent 在非交互式 shell 中运行，无法响应 TTY 提示。所有输入通过命令行参数、环境变量或 stdin 接收：</p>
+<pre><code># ❌ 错误：会挂起等待输入
+$ python scripts/deploy.py
+Target environment: _
+
+# ✅ 正确：清晰的错误提示
+$ python scripts/deploy.py
+Error: --env is required. Options: development, staging, production.
+Usage: python scripts/deploy.py --env staging --tag v1.2.3
+</code></pre>
+<h4>提供 --help 文档</h4>
+<p><code>--help</code> 输出是 Agent 了解脚本接口的主要方式：</p>
+<pre><code>Usage: scripts/process.py [OPTIONS] INPUT_FILE
+
+Process input data and produce a summary report.
+
+Options:
+  --formatFORMATOutputformat: json, csv, table (default: json)
+  --outputFILE      Write output to FILE instead of stdout
+  --verbose          Print progress to stderr
+</code></pre>
+<h4>提供有意义的错误信息</h4>
+<pre><code># ❌ 不好：模糊
+Error: invalid input
+
+# ✅ 好：具体且有指导性
+Error: --format must be one of: json, csv, table.
+       Received: &quot;xml&quot;
+</code></pre>
+<h4>使用结构化输出</h4>
+<p>优先使用 JSON、CSV 等结构化格式，而非自由文本。将数据输出到 stdout，诊断信息输出到 stderr。</p>
+<h4>其他原则</h4>
+<ul>
+<li><strong>幂等性</strong>
+  ：Agent 可能重试命令，「不存在则创建」比「创建然后在重复时失败」更安全</li>
+<li><strong>干运行支持</strong>
+  ：对于破坏性操作，提供 <code>--dry-run</code> 标志</li>
+<li><strong>有意义的退出码</strong>
+  ：不同失败类型使用不同退出码</li>
+<li><strong>可预测的输出大小</strong>
+  ：Agent 的工具输出通常有截断阈值，支持 <code>--offset</code> 等分页参数</li>
+</ul>
+<h3>6.5 工作流与反馈循环</h3>
+<p>支持脚本的 Skill 特别适合构建 <strong>验证反馈循环</strong> ：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxAPOqqMGdBUbl0RLDhYm7qqFo4GQUjCq2qy121G7aTnRm7Dic3NPBotWwAdm7E9RnNMjGtLC5l8Es8uxs1wu8WldIiaoBoNVM1EY/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>这种「计划-验证-执行」模式通过在每个关键步骤后加入机器可验证的检查，大幅提高输出质量：</p>
+<ul>
+<li><strong>早期捕获错误</strong>
+  ：验证在变更应用之前发现问题</li>
+<li><strong>机器可验证</strong>
+  ：脚本提供客观验证</li>
+<li><strong>可逆规划</strong>
+  ：Agent 可以在不触碰原始文件的情况下迭代计划</li>
+</ul>
+<h3>6.6 实战 Demo：天气查询 Skill</h3>
+<p>下面通过一个完整的、可运行的天气查询 Skill，来展示脚本型 Skill 的完整结构和工作方式。</p>
+<h4>目录结构</h4>
+<pre><code>check-weather/
+├── SKILL.md
+└── scripts/
+    └── get-weather.mjs
+</code></pre>
+<h4>SKILL.md 文件</h4>
+<pre><code>---
+name: check-weather
+description: &gt;
+  Query current weather conditions for any city worldwide.
+  Use when the user asks about weather, temperature, wind,
+  humidity, or atmospheric conditions for a specific location.
+compatibility: Requires Node.js 18+ (uses native fetch API)
+metadata:
+  author: demo
+  version: &quot;1.0&quot;
+---
+
+# Check Weather
+
+Query real-time weather data for any city using the wttr.in API.
+
+## Usage
+
+Run the weather script with the city name:
+
+\`\`\`bash
+node scripts/get-weather.mjs &lt;city&gt;
+</code></pre>
+<p>Examples:</p>
+<pre><code>node scripts/get-weather.mjs Beijing
+node scripts/get-weather.mjs &quot;New York&quot;
+node scripts/get-weather.mjs Tokyo
+</code></pre>
+<h2>Output Format</h2>
+<p>The script outputs JSON with the following fields:</p>
+<pre><code>{
+&quot;city&quot;:&quot;Beijing&quot;,
+&quot;country&quot;:&quot;China&quot;,
+&quot;temperature&quot;:&quot;22°C&quot;,
+&quot;feels_like&quot;:&quot;20°C&quot;,
+&quot;weather&quot;:&quot;Partly cloudy&quot;,
+&quot;humidity&quot;:&quot;45%&quot;,
+&quot;wind_speed&quot;:&quot;15 km/h&quot;,
+&quot;wind_direction&quot;:&quot;NE&quot;,
+&quot;visibility&quot;:&quot;10 km&quot;,
+&quot;pressure&quot;:&quot;1015 mb&quot;,
+&quot;uv_index&quot;:&quot;5&quot;,
+&quot;observation_time&quot;:&quot;02:30 PM&quot;
+}
+</code></pre>
+<h2>Guidelines</h2>
+<ul>
+<li>If the user provides a Chinese city name, translate it to English<br>  before calling the script (e.g. 北京 → Beijing)</li>
+<li>If the script fails due to network issues, inform the user and<br>  suggest trying again later</li>
+<li>Present the weather data in a readable, conversational format<br>  rather than dumping raw JSON</li>
+</ul>
+<pre><code>#### scripts/get-weather.mjs 脚本
+
+\`\`\`javascript
+#!/usr/bin/env node
+
+const city = process.argv[2];
+
+if (!city) {
+  console.error(JSON.stringify({
+    error: &quot;City name is required&quot;,
+    usage: &quot;node scripts/get-weather.mjs &lt;city&gt;&quot;,
+    examples: [
+&#39;node scripts/get-weather.mjs Beijing&#39;,
+&#39;node scripts/get-weather.mjs &quot;New York&quot;&#39;
+    ]
+  }, null, 2));
+  process.exit(1);
+}
+
+try {
+  const url = \`https://wttr.in/${encodeURIComponent(city)}?format=j1\`;
+  const response = await fetch(url);
+
+if (!response.ok) {
+    console.error(JSON.stringify({
+      error: \`HTTP ${response.status}: Failed to fetch weather for&quot;${city}&quot;\`,
+      suggestion: &quot;Check the city name and try again&quot;
+    }));
+    process.exit(1);
+  }
+
+  const data = await response.json();
+  const current = data.current_condition?.[0];
+  const area = data.nearest_area?.[0];
+
+if (!current) {
+    console.error(JSON.stringify({
+      error: \`No weather data available for&quot;${city}&quot;\`
+    }));
+    process.exit(1);
+  }
+
+  const result = {
+    city: area?.areaName?.[0]?.value ?? city,
+    country: area?.country?.[0]?.value ?? &quot;Unknown&quot;,
+    temperature: \`${current.temp_C}°C\`,
+    feels_like: \`${current.FeelsLikeC}°C\`,
+    weather: current.weatherDesc?.[0]?.value ?? &quot;Unknown&quot;,
+    humidity: \`${current.humidity}%\`,
+    wind_speed: \`${current.windspeedKmph} km/h\`,
+    wind_direction: current.winddir16Point,
+    visibility: \`${current.visibility} km\`,
+    pressure: \`${current.pressure} mb\`,
+    uv_index: current.uvIndex,
+    observation_time: current.observation_time
+  };
+
+  console.log(JSON.stringify(result, null, 2));
+} catch (err) {
+  console.error(JSON.stringify({
+    error: \`Network error: ${err.message}\`,
+    suggestion: &quot;Check your internet connection and try again&quot;
+  }));
+  process.exit(1);
+}
+</code></pre>
+<h4>实际交互过程</h4>
+<p>当用户说 &quot;北京今天天气怎么样&quot;，Agent 和 LLM 的交互过程如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxA1TibbVye3IbXO2dKiacxxrunjj6vtfZdgH5Q6kehnh5cpLlz47icGRwCKYFdfXYUiaDg4Of0s0XrNicZefMQBvT7ficG7tibRnbURMs/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>这个 Demo 体现了脚本型 Skill 的几个核心价值：</p>
+<ul>
+<li><strong>脚本提供确定性能力</strong>
+  ：API 调用和数据解析由脚本保证，不依赖 LLM 生成代码</li>
+<li><strong>指令提供灵活指导</strong>
+  ：翻译城市名、格式化输出等由 LLM 根据指令灵活完成</li>
+<li><strong>错误处理自包含</strong>
+  ：脚本自己处理各种异常，提供结构化的错误信息</li>
+<li><strong>零 token 浪费</strong>
+  ：脚本代码不进入上下文，只有 JSON 输出进入</li>
+</ul>
+<hr>
+<h2>七、Skill 在不同平台的使用</h2>
+<p>Agent Skills 可以在多个平台上使用，但各平台的支持程度和限制有所不同：</p>
+<h3>7.1 平台支持矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Claude API</th>
+<th>Claude Code</th>
+<th>Claude.ai</th>
+<th>Agent SDK</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>预构建 Skill</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>自定义 Skill</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>网络访问</td>
+<td>❌</td>
+<td>✅</td>
+<td>视设置而定</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>运行时安装包</td>
+<td>❌</td>
+<td>✅（建议仅本地安装）</td>
+<td>✅（npm/PyPI）</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>共享范围</td>
+<td>工作区级</td>
+<td>个人/项目级</td>
+<td>仅个人</td>
+<td>项目级</td>
+</tr>
+</tbody></table>
+<h3>7.2 跨平台限制</h3>
+<p>自定义 Skill <strong>不会在不同平台之间自动同步</strong> ：</p>
+<ul>
+<li>上传到 claude.ai 的 Skill 需要单独上传到 API</li>
+<li>通过 API 上传的 Skill 在 claude.ai 上不可用</li>
+<li>Claude Code 的 Skill 是基于文件系统的，与 claude.ai 和 API 均独立</li>
+</ul>
+<h3>7.3 在 Claude API 中使用</h3>
+<p>使用 Claude API 时，通过 <code>container</code> 参数指定 Skill：</p>
+<pre><code>response = client.beta.messages.create(
+    model=&quot;claude-opus-4-6&quot;,
+    max_tokens=4096,
+    betas=[&quot;code-execution-2025-08-25&quot;, &quot;skills-2025-10-02&quot;],
+    container={
+&quot;skills&quot;: [
+            {&quot;type&quot;: &quot;anthropic&quot;, &quot;skill_id&quot;: &quot;pptx&quot;, &quot;version&quot;: &quot;latest&quot;}
+        ]
+    },
+    messages=[
+        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Create a presentation about AI&quot;}
+    ],
+    tools=[{&quot;type&quot;: &quot;code_execution_20250825&quot;, &quot;name&quot;: &quot;code_execution&quot;}],
+)
+</code></pre>
+<p>需要三个 beta 头：</p>
+<ul>
+<li><code>code-execution-2025-08-25</code>
+  ：Skill 在代码执行容器中运行</li>
+<li><code>skills-2025-10-02</code>
+  ：启用 Skills 功能</li>
+<li><code>files-api-2025-04-14</code>
+  ：用于上传/下载文件到容器</li>
+</ul>
+<h3>7.4 在 Cursor 中使用</h3>
+<p>Cursor 支持自定义 Skill，从以下目录自动发现：</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.agents/skills/</code></td>
+<td>项目级</td>
+</tr>
+<tr>
+<td><code>.cursor/skills/</code></td>
+<td>项目级</td>
+</tr>
+<tr>
+<td><code>~/.cursor/skills/</code></td>
+<td>用户级（全局）</td>
+</tr>
+</tbody></table>
+<p>也可以在 Cursor Settings → Rules 的「Agent Decides」区域查看已发现的 Skill。</p>
+<p>手动调用方式：在 Agent 对话中输入 <code>/</code> 并搜索技能名称。</p>
+<hr>
+<h2>八、Skill 的安装与管理</h2>
+<h3>8.1 本地创建</h3>
+<p>最简单的方式，直接在项目或全局目录中创建 Skill 文件夹：</p>
+<pre><code># 项目级
+mkdir -p .agents/skills/my-skill
+touch .agents/skills/my-skill/SKILL.md
+
+# 全局级
+mkdir -p ~/.agents/skills/my-skill
+touch ~/.agents/skills/my-skill/SKILL.md
+</code></pre>
+<h3>8.2 从 GitHub 安装</h3>
+<p>在 Cursor 中：</p>
+<ol>
+<li>打开 Cursor Settings → Rules</li>
+<li>在 Project Rules 部分，点击 Add Rule</li>
+<li>选择 Remote Rule (Github)</li>
+<li>输入 GitHub 仓库地址</li>
+</ol>
+<h3>8.3 通过 API 上传</h3>
+<p>使用 Skills API (<code>/v1/skills</code> 端点) 上传自定义 Skill，上传后在整个工作区范围内共享。</p>
+<h3>8.4 在 claude.ai 上传</h3>
+<p>通过 Settings &gt; Features 上传 Skill 的 zip 文件。需要 Pro、Max、Team 或 Enterprise 计划，且启用代码执行。</p>
+<h3>8.5 规则和命令迁移</h3>
+<p>Cursor 2.4 版本内置了 <code>/migrate-to-skills</code> 技能，可以将现有的动态规则和斜杠命令转换为 Skill：</p>
+<ul>
+<li><strong>动态规则</strong>
+  （ <code>alwaysApply: false</code> ）→ 转换为标准 Skill</li>
+<li><strong>斜杠命令</strong>
+  → 转换为设置了 <code>disable-model-invocation: true</code> 的 Skill</li>
+</ul>
+<h3>8.6 使用验证工具</h3>
+<p>使用 skills-ref 参考库验证 Skill：</p>
+<pre><code>skills-ref validate ./my-skill
+</code></pre>
+<hr>
+<h2>九、编写高质量 Skill 的最佳实践</h2>
+<h3>9.1 简洁是关键</h3>
+<p>Agent 已经非常聪明，只添加它 <strong>真正不知道</strong> 的信息：</p>
+<pre><code># ✅ 好的：简洁（~50 tokens）
+## Extract PDF text
+Use pdfplumber for text extraction:
+\`\`\`python
+import pdfplumber
+with pdfplumber.open(&quot;file.pdf&quot;) as pdf:
+    text = pdf.pages[0].extract_text()
+</code></pre>
+<h2>❌ 差的：啰嗦（~150 tokens）</h2>
+<h2>Extract PDF text</h2>
+<p>PDF (Portable Document Format) files are a common file format<br>that contains text, images, and other content. To extract text<br>from a PDF, you&#39;ll need to use a library...</p>
+<pre><code>对每条信息的价值进行挑战：
+- &quot;Agent 真的需要这个解释吗？&quot;
+- &quot;我能假设 Agent 已经知道这个吗？&quot;
+- &quot;这段内容值得它占用的 token 吗？&quot;
+
+### 9.2 编写有效的 description
+
+\`description\` 字段是 Skill 能否被正确触发的**决定性因素**：
+
+-**使用第三人称**：\`&quot;Processes Excel files&quot;\` 而非 \`&quot;I can help you process&quot;\`
+-**包含触发关键词**：既描述做什么，也描述何时使用
+-**具体而不模糊**：列出具体的操作和文件类型
+-**适度宽泛**：包含用户可能不会直接点名但仍然相关的场景
+
+\`\`\`yaml
+# ✅ 优秀的 description
+description: &gt;
+  Analyze CSV and tabular data files — compute summary statistics,
+  add derived columns, generate charts, and clean messy data. Use
+  when the user has a CSV, TSV, or Excel file and wants to explore,
+  transform, or visualize the data, even if they don&#39;t explicitly
+  mention &quot;CSV&quot; or &quot;analysis.&quot;
+
+# ❌ 糟糕的 description
+description: Process CSV files.
+</code></pre>
+<h3>9.3 命名规范</h3>
+<p>推荐使用动名词形式（gerund），清晰描述 Skill 提供的能力：</p>
+<table>
+<thead>
+<tr>
+<th>推荐</th>
+<th>可接受</th>
+<th>避免</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>processing-pdfs</code></td>
+<td><code>pdf-processing</code></td>
+<td><code>helper</code></td>
+</tr>
+<tr>
+<td><code>analyzing-spreadsheets</code></td>
+<td><code>spreadsheet-analysis</code></td>
+<td><code>utils</code></td>
+</tr>
+<tr>
+<td><code>managing-databases</code></td>
+<td><code>process-pdfs</code></td>
+<td><code>tools</code></td>
+</tr>
+<tr>
+<td><code>testing-code</code></td>
+<td><code>analyze-spreadsheets</code></td>
+<td><code>documents</code></td>
+</tr>
+</tbody></table>
+<h3>9.4 渐进式披露的文件组织</h3>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxCUg4e9Fkicicdhia6b5z853dM0Ela36t3FAr5Y0AE9oS8aW9MiarE0gfCYJeJKiaCgW6CYrc8be3S0YOxE4g6vtJwblticv2qXeFR2U/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>核心原则：</p>
+<ul>
+<li>SKILL.md 主体控制在 <strong>500 行以内</strong></li>
+<li>详细内容拆分到独立文件</li>
+<li>文件引用保持 <strong>一层深度</strong> （不嵌套引用）</li>
+<li>超过 100 行的参考文件加上目录索引</li>
+</ul>
+<h3>9.5 避免常见反模式</h3>
+<table>
+<thead>
+<tr>
+<th>反模式</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>使用 Windows 风格路径 <code>scripts\helper.py</code></td>
+<td>使用正斜杠 <code>scripts/helper.py</code></td>
+</tr>
+<tr>
+<td>提供过多选项让 Agent 困惑</td>
+<td>给出一个默认方案 + 备选方案</td>
+</tr>
+<tr>
+<td>嵌套引用链 <code>A → B → C → 实际内容</code></td>
+<td>所有文件从 SKILL.md 直接引用</td>
+</tr>
+<tr>
+<td>包含时效性信息</td>
+<td>使用「当前方法」+「旧模式」结构</td>
+</tr>
+<tr>
+<td>术语不一致（混用 API endpoint/URL/route）</td>
+<td>选定一个术语，全程一致</td>
+</tr>
+<tr>
+<td>脚本中使用魔法数字</td>
+<td>每个配置值都有注释说明理由</td>
+</tr>
+</tbody></table>
+<h3>9.6 使用一致的术语</h3>
+<pre><code># ✅ 一致
+Always &quot;API endpoint&quot;
+Always &quot;field&quot;
+Always &quot;extract&quot;
+
+# ❌ 不一致
+Mix &quot;API endpoint&quot;, &quot;URL&quot;, &quot;API route&quot;, &quot;path&quot;
+Mix &quot;field&quot;, &quot;box&quot;, &quot;element&quot;, &quot;control&quot;
+Mix &quot;extract&quot;, &quot;pull&quot;, &quot;get&quot;, &quot;retrieve&quot;
+</code></pre>
+<hr>
+<h2>十、Skill 的评估与迭代</h2>
+<h3>10.1 评估驱动的开发</h3>
+<p>在编写大量文档之前，先创建评估用例。这确保你的 Skill 解决的是真实问题：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCBNKG4iaPZbwicicqicqE7jKjRS7iadOhWusBWcZwgKOmCahuGicIvGzzCD3k3ibrshA9eH2IKsVw3miazKQsIJnqHBo5OYw6mszzw374/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<h3>10.2 测试用例结构</h3>
+<pre><code>{
+&quot;skill_name&quot;:&quot;csv-analyzer&quot;,
+&quot;evals&quot;:[
+{
+&quot;id&quot;:1,
+&quot;prompt&quot;:&quot;我有一个月度销售数据的 CSV 文件，能找出收入最高的 3 个月并做一个柱状图吗？&quot;,
+&quot;expected_output&quot;:&quot;柱状图显示收入最高的 3 个月，有标注的坐标轴和数值。&quot;,
+&quot;files&quot;:[&quot;evals/files/sales_2025.csv&quot;],
+&quot;assertions&quot;:[
+&quot;输出包含柱状图文件&quot;,
+&quot;图表恰好显示 3 个月&quot;,
+&quot;两个坐标轴都有标签&quot;,
+&quot;图表标题或说明提到了收入&quot;
+]
+}
+]
+}
+</code></pre>
+<h3>10.3 双实例迭代法</h3>
+<p>最有效的 Skill 开发过程涉及两个 Agent 实例协作：</p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Claude A</strong>  （设计者）</td>
+<td>帮助设计和优化 Skill 内容</td>
+</tr>
+<tr>
+<td><strong>Claude B</strong>  （使用者）</td>
+<td>使用 Skill 执行真实任务，暴露问题</td>
+</tr>
+</tbody></table>
+<p>迭代步骤：</p>
+<ol>
+<li>用 Claude A 完成一个没有 Skill 的任务，记录你提供的上下文</li>
+<li>让 Claude A 将这些上下文转化为 Skill</li>
+<li>用 Claude B 测试 Skill 在相似任务上的表现</li>
+<li>将观察结果反馈给 Claude A 进行改进</li>
+<li>循环往复</li>
+</ol>
+<h3>10.4 触发描述优化</h3>
+<p>通过设计触发评估查询来测试和优化 <code>description</code> 的准确性：</p>
+<ul>
+<li>准备约 20 个查询：8-10 个应当触发、8-10 个不应触发</li>
+<li>每个查询运行多次（至少 3 次），计算触发率</li>
+<li>使用训练集/验证集拆分（60%/40%）避免过拟合</li>
+<li>迭代 5 次通常足够</li>
+</ul>
+<h3>10.5 观察 Agent 如何使用 Skill</h3>
+<p>在迭代过程中注意观察：</p>
+<ul>
+<li><strong>意外的浏览路径</strong>
+  ：Agent 是否按你预期的顺序读取文件？</li>
+<li><strong>遗漏的连接</strong>
+  ：Agent 是否未能跟踪到重要文件的引用？</li>
+<li><strong>过度依赖某些部分</strong>
+  ：Agent 反复读取同一个文件，可能该内容应放入主 SKILL.md</li>
+<li><strong>被忽略的内容</strong>
+  ：Agent 从未访问的文件，可能是不必要的</li>
+</ul>
+<hr>
+<h2>十一、安全考量</h2>
+<h3>11.1 信任模型</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxA9G62W9icvHklA5bfiatymJdhgcKWiaKHhIBrIwONIVng7T00eEyGlRTJ9dFt3J0h6onaP3lC1ia8TrZGyricgLOxvmbpGzlxblyNc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<h3>11.2 关键安全原则</h3>
+<table>
+<thead>
+<tr>
+<th>风险类别</th>
+<th>说明</th>
+<th>防范建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>工具滥用</strong></td>
+<td>恶意 Skill 可能以有害方式调用工具（文件操作、bash 命令）</td>
+<td>审查所有脚本和指令</td>
+</tr>
+<tr>
+<td><strong>数据泄露</strong></td>
+<td>具有敏感数据访问权限的 Skill 可能向外部系统泄露信息</td>
+<td>检查是否有意外的网络调用</td>
+</tr>
+<tr>
+<td><strong>外部源风险</strong></td>
+<td>从外部 URL 获取数据的 Skill 风险特别高，获取的内容可能包含恶意指令</td>
+<td>避免 Skill 依赖外部数据源</td>
+</tr>
+<tr>
+<td><strong>项目级注入</strong></td>
+<td>不受信任的仓库可能通过项目级 Skill 注入指令</td>
+<td>对不受信任的项目设置信任检查</td>
+</tr>
+</tbody></table>
+<h3>11.3 审计清单</h3>
+<ul>
+<li>审查 SKILL.md 中的所有指令</li>
+<li>审查 scripts/ 中的所有脚本文件</li>
+<li>检查是否有意外的网络请求</li>
+<li>检查文件访问模式是否与 Skill 声明的用途一致</li>
+<li>检查是否有操作不匹配 Skill 声明用途的行为</li>
+</ul>
+<hr>
+<h2>十二、与其他能力的对比</h2>
+<p>Agent Skills 并不是 Agent 扩展能力的唯一方式，理解它与其他方式的区别有助于在正确的场景选择正确的工具：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Agent Skills</th>
+<th>Projects（项目）</th>
+<th>MCP</th>
+<th>Custom Instructions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>定位</strong></td>
+<td>特定任务的专业能力</td>
+<td>静态背景知识</td>
+<td>连接外部服务和数据源</td>
+<td>全局通用偏好</td>
+</tr>
+<tr>
+<td><strong>加载方式</strong></td>
+<td>动态按需加载</td>
+<td>始终加载</td>
+<td>始终可用</td>
+<td>始终加载</td>
+</tr>
+<tr>
+<td><strong>适用范围</strong></td>
+<td>特定任务类型</td>
+<td>特定项目内</td>
+<td>跨对话</td>
+<td>所有对话</td>
+</tr>
+<tr>
+<td><strong>典型内容</strong></td>
+<td>工作流、脚本、领域知识</td>
+<td>项目文档、代码</td>
+<td>工具连接</td>
+<td>语言、风格偏好</td>
+</tr>
+<tr>
+<td><strong>组合使用</strong></td>
+<td>可与 MCP 配合</td>
+<td>独立使用</td>
+<td>可与 Skills 配合</td>
+<td>独立使用</td>
+</tr>
+</tbody></table>
+<p>一个常见的强力组合： <strong>MCP 提供工具访问，Skill 教会 Agent 如何有效使用这些工具</strong> 。</p>
+<p>例如，MCP 连接让 Agent 可以调用 BigQuery API，而 Skill 告诉 Agent 你们公司的表结构、命名规范和常见查询模式。</p>
+<hr>
+<h2>十三、开放标准与生态</h2>
+<h3>13.1 开放标准</h3>
+<p>Agent Skills 规范作为开放标准发布在 agentskills.io。这意味着：</p>
+<ul>
+<li>你创建的 Skill <strong>不会被锁定</strong> 到特定平台</li>
+<li>同一套 Skill 格式可以在所有采用该标准的 AI 平台和工具中使用</li>
+<li>提供 Python 参考 SDK 供开发者在自己的平台中实现 Skills 支持</li>
+</ul>
+<h3>13.2 为你的 Agent 添加 Skills 支持</h3>
+<p>如果你在开发自己的 AI Agent 或开发工具，可以按照以下步骤添加 Skills 支持：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCwGnRVBwjpSfomVuu9zFWSAQHETC4VnE8cLX8mpPhRN7q1Wxg9Loj6txyiaiapspic8w3d0h2TGVlkw4oa4iauiaX87ECCEoLMDUC8/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>核心实现要点：</p>
+<ol>
+<li><strong>发现</strong>
+ ：扫描约定目录，查找包含 <code>SKILL.md</code> 的子目录</li>
+<li><strong>解析</strong>
+ ：提取 YAML frontmatter 和 markdown 主体</li>
+<li><strong>披露</strong>
+ ：在系统提示词中注入技能目录（仅 name + description）</li>
+<li><strong>激活</strong>
+ ：通过文件读取或专用工具将完整指令加载到上下文</li>
+<li><strong>上下文管理</strong>
+ ：保护 Skill 内容不被上下文压缩算法移除，去重重复激活</li>
+</ol>
+<h3>13.3 生态现状</h3>
+<p>目前支持 Agent Skills 标准的平台包括：</p>
+<ul>
+<li><strong>Cursor</strong>
+  ：通过文件系统自动发现和使用</li>
+<li><strong>Claude Code</strong>
+  ：原生支持，文件系统集成</li>
+<li><strong>Claude API</strong>
+  ：通过 Skills API 上传和使用</li>
+<li><strong>Claude.ai</strong>
+  ：通过设置上传和使用</li>
+<li><strong>Agent SDK</strong>
+  ：TypeScript 和 Python SDK 支持</li>
+</ul>
+<hr>
+<h2>附录：Skill 效果检查清单</h2>
+<p>在分享你的 Skill 之前，逐一确认以下项目：</p>
+<h3>核心质量</h3>
+<ul>
+<li><code>description</code> 具体且包含关键词</li>
+<li><code>description</code> 同时说明做什么和何时使用</li>
+<li>SKILL.md 主体在 500 行以内</li>
+<li>额外细节放在独立文件中</li>
+<li>没有时效性信息（或放在「旧模式」区域）</li>
+<li>全程术语一致</li>
+<li>示例具体，非抽象</li>
+<li>文件引用只有一层深度</li>
+<li>合理使用渐进式披露</li>
+<li>工作流有清晰的步骤</li>
+</ul>
+<h3>代码和脚本</h3>
+<ul>
+<li>脚本主动处理错误，而非把问题抛给 Agent</li>
+<li>错误处理明确且有帮助</li>
+<li>没有「魔法常数」（所有值都有注释说明）</li>
+<li>所需软件包在指令中列出并验证可用</li>
+<li>脚本有清晰的 <code>--help</code> 文档</li>
+<li>不使用 Windows 风格路径</li>
+<li>关键操作有验证/确认步骤</li>
+<li>质量关键任务包含反馈循环</li>
+</ul>
+<h3>测试</h3>
+<ul>
+<li>至少创建 3 个评估用例</li>
+<li>在计划使用的所有模型上测试</li>
+<li>使用真实使用场景测试</li>
+<li>纳入团队反馈（如适用）</li>
+</ul>
+<p>继续滑动看下一个</p>
+<p>好朋友乐平</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/dAvM4dAW3CHCF8OOm8JcjA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

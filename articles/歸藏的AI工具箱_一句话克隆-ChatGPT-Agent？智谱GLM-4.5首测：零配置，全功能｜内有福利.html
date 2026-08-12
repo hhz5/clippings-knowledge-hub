@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一句话克隆 ChatGPT Agent？智谱GLM-4.5首测：零配置，全功能｜内有福利 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">一句话克隆 ChatGPT Agent？智谱GLM-4.5首测：零配置，全功能｜内有福利</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=GLM-4.5">GLM-4.5</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%B0%B1">智谱</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a>
+    <span class="date">2025-07-29</span>
+  </div>
+  <p class="lead">大家好我是歸藏（guizang），今天带来智谱 GLM-4.5 模型的首发测试。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年07月28日 23:20</em></p>
+<p>大家好我是歸藏（guizang），今天带来智谱 GLM-4.5 模型的首发测试。</p>
+<p>智谱发布了他们最新发布的 GLM-4.5 ，总参数 335B，激活参数 32B。 GLM-4.5-Air ： 总参数 106B，激活参数 12B 。</p>
+<p>在推理、代码和智能体能力上测试成绩都非常强，支持混合推理，而且性价比很高，0.8 元/百万tokens、输出 2 元/百万tokens，高速版输出速度超过 100 Token 每秒。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgflIqWict88IELG856ibHhhOCYur62PjVI8oxNibplDyZrFypib7wanLKKQpRu9xCdpXfHwvIV86w1ibYA/640?wx_fmt=webp&from=appmsg&randomid=nr3rdgqh&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>我提前试了一下 GLM-4.5，发现虽然总参数没有其他几个高，但是在代码能力上一点不逊色甚至更好。</p>
+<p>一个特点是由于混合推理的存在，即使你的提示词非常短，他也可以帮你补全页面所需信息给出非常好的结果，如果你的提示词很细，那他对于提示的遵循就会很好，在编码路径的判断上非常聪明。</p>
+<p>尤其是他们还在一个 API 里面兼容了各种 Agent 能力，比如知识库检索和搜索能力，在产品构建上非常省心， 你甚至能够用一个 API Key 和提示词搞定一个弱化版的 ChatGPT Agent 模式，而且生成的 PPT 还比 GPT 好看。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgflIqWict88IELG856ibHhhOCPN4AgQKeqlAPgSlHDEib11rloTV2RfjgFLoChVmXiaNJh6wQNbWmRnNw/640?wx_fmt=webp&from=appmsg&randomid=nr7pzmv0&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>当然他们也做了 Cluade Code 的兼容，也可以直接替换 Cluade Code 的模型，后面有大致教程。</p>
+<p>先来看案例，我们从简单到难。</p>
+<p>下面所有的测试结果都是 API 输出，没有用 Z.ai 的全栈开发模式，加上以后会更强大。</p>
+<p>这次 GLM-4.5 在没有复杂指令的情况下也可以很好的完成代码编写的任务，比如“帮我写一个Gmail 邮箱页面”或者“帮我生成一个 3D 抽象艺术 ”。</p>
+<p>你看我就说了一个帮我生成 Gmail 邮箱页面，其他细节一概没说，然后他就搞定了，该有的元素都有，甚至连点击邮件分栏展示详情也有，一点不偷懒。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCIVT4ibRZukIIQC6iaWFiaBNceSphEyUiaHQnfphbyab7Eky1riauwXJ9RYw/640?wx_fmt=png&from=appmsg&randomid=3idiqv52&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>可以看到这里他自己就知道去应用 Three.js 库，来完成任务，而且生成的结果细节非常丰富，其他的模型要不就只有一两个元素，要不就是元素自己不会动，GLM-4.5 生成的每个元素都在运动和相互碰撞。</p>
+<p>然后来一个基本的前端组件吧，还是我们的复杂日程组件，支持月、周、日视图切换、支持新建和编辑日程。</p>
+<pre><code>创建一个功能全面的日历组件，不仅能展示日期，还能用于管理事件和日程安排。
+
+核心功能：
+多种视图： 支持月、周、日视图的切换。
+事件展示： 在日历上清晰地展示事件，长时间的事件可以跨越多天或多个时间格。不同类型的事件可以有不同的颜色。
+
+事件操作：
+创建： 点击日期或时间格可以快速创建新事件，并弹出表单填写详情（标题、时间、描述、参与人等）。
+编辑/删除： 点击已有事件可以查看详情或进行编辑/删除。
+拖放： 支持拖放事件以快速更改其日期或时间。
+调整时长： 支持拖动事件的边缘来调整其持续时间。
+</code></pre>
+<p>来看一下结果，一点问题没有，还在日程标注的卡片上加上了编辑和删除的图标，可以快捷操作。</p>
+<p>小的组件 OK 了，刚过半年大家应该都写完 KPI 或者 OKR 的 Review 了，我就在想要不要让他整一个复杂的 OKR 管理工具呢，支持新建和修改进度还有统计的仪表盘，还加上了中英文切换。</p>
+<pre><code>创建【OKR 管理器】：
+
+功能需求
+1. 目标与关键结果
+- O：标题、周期（季度）、负责人、权重
+- KR：标题、类型（数值/百分比/里程碑）、初始/目标/当前值、权重
+- 自动计算 O 的聚合进度（按 KR 权重）
+2. Check-in
+- 每周填报：进度值、阻塞项、下周计划；时间线展示
+3. 仪表板
+- 按人/团队/季度筛选；雷达图或条形图展示进度分布
+4. 多语言
+- 中/英切换（i18n 字典在前端）
+
+技术要求
+- HTML + JS + Tailwind + Heroicons
+- 图表：Chart.js（CDN）
+- localStorage；导出 JSON
+- 进度计算与输入校验（0~100% 等边界）
+</code></pre>
+<p>可以说非常完美了朋友们，他完美的完成了所有的需求，而且一次成功没有 bug。</p>
+<p>UI 和交互设计的很好。</p>
+<p>比如在目标和关键结果这里用图标来展示时间、人物和权重，然后用进度条展示展示总的进度。</p>
+<p>进度条最后还有大致的状态，正常就是绿色文字，有风险就是黄字，目标和关键结果用的嵌套的卡片组件。</p>
+<p>整个信息的排版和关键交互位置都非常符合直觉。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCNdGKTrpicaicxlotvic2pIuNsrhvsN7w76gcLA3PGfETjkx3zwltMLOVA/640?wx_fmt=png&from=appmsg&randomid=2s63qya3&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这些界面都比较素，都是一些 B 端系统，那我们在整个对视觉要求高的面向 C 端的场景。</p>
+<p>这里我让他整一个时尚品牌电商网站的订单结算全流程，包括购物车、邮寄信息填写、支付信息填写以及结算成功的页面。</p>
+<pre><code>角色与目标
+——
+担任高级 UX/UI 设计师。为 “VELLORA” 在线商店（奢华而平易近人的时尚与配饰）创建高保真的桌面网页。包含：精致的购物车页面，以及独立的结账流程（3 步：送货 • 付款 • 审核/确认）。
+
+【Quiet Luxury · 石墨中性】
+——
+色板（Hex）
+- 页面背景：#F7F7F7（浅灰）；内容卡片：#FFFFFF
+- 主文本：#222426；次文本：#6B6E73；强调近黑：#0E0E0F
+- 品牌点缀（选其一并全站统一使用）：#9AA18E（Sage 鼠尾草）或 #8E7C6D（Mocha 摩卡）
+- 分隔/描边：#E7E7E7（1px 细线）；发丝线可用 rgba(0,0,0,.06)
+
+字体
+- H1/H2：优雅衬线 **Newsreader**（备选：Cormorant Garamond）
+- UI 文本：几何无衬线 **Manrope**（备选：Inter）
+- 数字/价格允许使用等宽样式（Manrope Tabular）
+
+圆角与阴影
+- 圆角：按钮与输入 12px；卡片/模态 16px
+- 阴影：s-sm：0 1px 2px rgba(17,17,19,.06)；s-md：0 8px 24px rgba(17,17,19,.08)（浮层/模态使用）
+- 分隔以 1px 线为主，阴影少量点缀，整体克制
+
+屏幕与关键布局（保持原功能/流程，按下述结构出高保真）
+——
+1) 购物车界面（桌面 &amp; 移动）
+- 桌面布局：
+  · 左栏：购物车商品列表（此处省略长表格）。每张商品卡片包含：缩略图、商品名称、颜色/尺码、单价、数量步进 (+/–)、“稍后保存”、移除 (×)
+  · 右栏（置顶）：订单摘要卡片（小计、预计运费、税费/关税、优惠码输入与验证、总计），主要 CTA「去结账」，支持“继续购物”次级链接
+- 移动布局：
+  · 列表纵向滚动；摘要卡片固定底部（安全区内），显示总计与主要 CTA
+  · 数量步进与移除操作就地完成，避免跳层
+  · 优惠码折叠，点击展开输入
+
+2) 结账流程（3 步）——送货 • 付款 • 审核/确认
+- 通用
+  · 顶部步骤条（当前高亮，已完成打勾，可点击返回修改）
+  · 表单分组拥有清晰分隔标题与说明文本；错误就地提示
+  · 支持“返回购物车”与“继续下一步”双按钮（主要/次要层级明确）
+- 步骤一：送货（Shipping）
+  · 字段：收件人、电话、邮箱、国家/地区（联动省市区）、地址1/2、邮编；发票与备注（可选）
+  · 运送方式卡片：标准/加急/当日（价格与预计到达时间），选择后实时更新摘要
+- 步骤二：付款（Payment）
+  · 方式：信用卡、支付宝/微信；卡片信息实时掩码；账单地址同收货地址的复选
+  · 安全与合规说明（小字）
+- 步骤三：审核/确认（Review &amp; Confirm）
+  · 汇总：收货信息、配送方式、付款方式尾号、商品清单与金额；可就地编辑返回相应步骤
+  · 同意条款复选；下单 CTA；下单后显示订单号与下一步指引
+</code></pre>
+<p>这里面要求相当复杂，除了对样式有要求以外对于每一个页面的内容都很详细，而且这还是一个包含四个页面的复杂流程。</p>
+<p>可以看到除了步骤条那里的横线有点错位以外，GLM 完成的非常的完美。</p>
+<p>首先是购物车页面，商品的数量选择、删除都有，而且价格和 SKU 的选择也正常回显了，下面他自己还加了帮助增加信任的信任背书部分。</p>
+<p>甚至连使用优惠码都专门进行了鸡贼设计，用的主体色的文字链接而不是按钮，你学点好的啊 GLM，哈哈。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCLJYb3BzQCgOSY7Y8qKW1X9X0yd7pe0FfAWYd0h5iatQia5YxWFQtWdIg/640?wx_fmt=png&from=appmsg&randomid=izlv5okv&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后的下单页面信息展示和排版也很完美，信息层次非常的清晰，尤其是卡片和分割线的选择这里，处理的太好了，汇总了刚才填写的所有内容，收货信息这里还加了修改按钮。</p>
+<p>最后下单成功之后除了右上角的 Tost 提示以外，还增加了网页的全屏弹窗提示，在交互这块，没得说嗷。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCjgLkN5WTDFgnwfl1dBpEwlxIic8sRKCnlibficHdM9VIWKnnptOauX3AQ/640?wx_fmt=png&from=appmsg&randomid=1bjlmbuc&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>刚才说过除了模型本身强大以外智谱的 GLM-4.5 还内置了一堆其他的 Agent 工具，让你可以一次调用，除了 API 调用以外他们也支持 MCP 的调用而且还是 SEE 方案，非常方便。</p>
+<p>我这里用一个 API Key 调用了 GLM-4.5 模型帮我生成网页，网页的信息来自智谱的搜索工具， 等于一个提示词就实现了一个简易的 Manus 或者是 ChatGPT 的 Agent 模式。</p>
+<pre><code>帮我调用智谱搜索检索上海的天气和 WAIC 的所有信息生成一个 WAIC 参会指南生成一个 HTML 动态网页 ，网页生成的要求是：
+1. 使用Bento Grid风格的视觉设计，纯黑色底配合特斯拉红色#E31937颜色作为高亮 
+2. 强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差 
+3. 中英文混用，中文大字体粗体，英文小字作为点缀 
+4. 简洁的勾线图形化作为数据可视化或者配图元素 
+5. 运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变 
+6. 模仿 apple 官网的动效，向下滚动鼠标配合动效 
+8. 数据可以引用在线的图表组件，样式需要跟主题一致 
+9. 使用 Framer Motion （通过CDN引入） 
+10. 使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript 
+11. 使用专业图标库如Font Awesome或Material Icons（通过CDN引入） 
+12. 避免使用emoji作为主要图标 
+13. 不要省略内容要点
+</code></pre>
+<p>最近刚好 WAIC 会很热，我就让他检索 WAIC 的相关信息，然后做一个参会指南页面。</p>
+<p>这里他的搜索质量给了我惊喜，由于 WAIC 的信息时效性非常强，所以很难搜索，我用过很多海外的搜索 API 估计都搜不出多少信息，而且还容易跟去年的信息混淆。</p>
+<p>结果 GLM-4.5 搜出来信息非常的全面而且准确度很高，涉及到了场馆、日程、亮点、交通各个方面。</p>
+<p>而且网页也是一步到位，完全没有布局或者显示上的问题。</p>
+<p>最后其实 GLM-4.5 也 支持通过兼容 Anthropic API 的端点和 Claude Code 集成 ，集成过程也很简单。</p>
+<p>我们首先需要一个智谱的 API，可以去智谱开放平台获取（ <a href="https://bigmodel.cn/usercenter/proj-mgmt/apikeys">https://bigmodel.cn/usercenter/proj-mgmt/apikeys</a> ）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCy8ZtlITVfpwBxPLMf6KFs4Cia9UqQKFib4weuGmziadUjdWVZjvicV0Stg/640?wx_fmt=png&from=appmsg&randomid=4d5g858v&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后如果你没有安装 Claude Code 的话需要安装一下，安装之后不需要启动先在终端输入下面的命令行就行，注意改成自己的 API。</p>
+<pre><code>export ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+export ANTHROPIC_AUTH_TOKEN=&quot;e6c167e0201240d492572fce4e7230ed.Ld8J4nZd2cnz1uxH&quot;
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOC10JAEao5XAGwKyBpMFicF4ibO5a1f4ICjzchNmokRTsqQwuibvk7mH6hQ/640?wx_fmt=png&from=appmsg&randomid=8sc3ffg9&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后直接选第一个选项，看到 Claude Code 的欢迎界面上的 API 地址是 bigmodel 的时候就 OK了，是不是很简单。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCqjjx3puZ4dJicBHyO1wr130gLu0ReCQdvkehMJkbrRA95k2LAzCgvaw/640?wx_fmt=png&from=appmsg&randomid=ip8i7uf1&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>需要注意的是这个只是单次修改，如果你想彻底修改可以改.bashrc 或者.zshrc ，这样每次启动都会是 GLM-4.5 了，这部分可以跟 AI 沟通他会是很好的老师。</p>
+<p>而且他们还搞了“ 50块就能包月爽用GLM-4.5，调用量无上限 ”的活动，50 块钱就能爽用！扫码就行，名额有限，先到先得朋友们！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCOiazD5Aw6W7WXibxOvtAETsjibryibko1PgY5ibEpaMRb4b1GlkWicvUr8tg/640?wx_fmt=png&from=appmsg&randomid=eoj7qjvc&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>如果你不是开发者的话，也可以在 Z.ai 选择 GLM-4.5 模型使用，而且这里还有很多内置的 Agent 工具可以搭配，效果更好，比如全栈开发和 P PT 生成。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCdNnsiaD61EXkXcH2JicqwCP7dXz8659ePicP2liaHQCTzvFYBMRznC8Dsg/640?wx_fmt=png&from=appmsg&randomid=bomxlucs&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>好了今天的测试到这里就结束了。</p>
+<p>写到这儿，我忽然意识到“后发先至”四个字在 GLM-4.5 身上不是形容词，而是一种新的集成策略——它把“晚”变成了“免门票”。</p>
+<p>别人用两年把推理、代码、Agent、搜索、MCP、Claude-Code 兼容分别打磨成六座孤岛，智谱干脆等它们全部成熟，再一次性焊成一艘航母。于是用户登船时看到的不是六个 Beta，而是一个打完补丁的正式版：价格直接按后来者最低标准定价，功能却顺手把前人踩过的坑都填平，更强的是他用更低的成本带来了更强的能力。</p>
+<p>更深一层，这种高度集成其实是对“碎片化 AI 时代”的一次反动。过去一年我们习惯了把任务拆成模型 A 写代码、模型 B 做搜索、模型 C 画原型，再写胶水脚本把它们粘起来。GLM-4.5 用单一 API 把胶水本身蒸发掉，让“跨模型编排”退化成一句自然语言。</p>
+<p>“后发先至”不是简单的弯道超车，而是把“集成”本身变成武器：把别人走过的路压缩成一条捷径，把分散的创新打包成一次升级。</p>
+<p>如果这篇文章刚好对你有些帮助的话，不妨点个「赞」，让它被更多人看见。我是歸藏，我们下次再见。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | 5 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.91 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 0.96 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 943.3 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.56 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/s4rVAFctJgQaumfGg2nJPg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>放着Coze和Dify不用，我喜欢上商汤新开源本地Agent平台 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">放着Coze和Dify不用，我喜欢上商汤新开源本地Agent平台</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=LazyCraft">LazyCraft</a><a class="chip" href="../index.html?tag=%E5%95%86%E6%B1%A4">商汤</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90%E5%B9%B3%E5%8F%B0">开源平台</a>
+    <span class="date">2025-11-10</span>
+  </div>
+  <p class="lead">自带多用户多工作空间，还能接本地MCP和模型微调推理自评，太多了写不下了</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicmrCRGs3dGibAuKCmrELkhTFoLmO6BeRhtNvhu5s64HCauv9Ule7Zl2w/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a> <em>2025年11月10日 14:32</em></p>
+<p>我接过很多Agent智能体定制的单子，</p>
+<p>印象最深是做金枪大叔的脚本Agent，先不说要求是实时联网+视频分析+视频逐字稿+图片素材生成+发布文案要在一个Agent里完成，还需要并行生成四个模型的运行结果可以对比（破防），</p>
+<p>他们给我的初demo，基本上是用不了的。。。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDic4aicTJexPw94gbhohAQHOdt6nicV7SR2Z7OXlNx8RCFl0B0vgicdB3SOg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>接到这个需求的时候，我深呼吸了500秒，</p>
+<p>给了线下版Dify和线上版coze两套方案，</p>
+<p>直接说结论，已知对面没有开发的情况不选Dify，且不能登他们的Coze账号前提下（因为空间还有知识库不够安全），我直接分享做好的智能体过去是看不到提示语的（如果这里是我配置有问题麻烦立刻踢我），</p>
+<p>这意味着，只要有任何的版本更新或者维护需求，比如觉得AI的某句话文风不对，要我改改。我就必须重复那个最原始的动作：找他们，要账号，登录，修改，退出。</p>
+<p>而且对接的人工作空间配得细碎，做完之后，老板的账号还看不到这个Agent。</p>
+<p>头疼，相当头疼。</p>
+<p>上周吃到了 @袋鼠帝 的LazyCraft安利，简单来说这同样是个开源AI Agent开发和管理平台，</p>
+<p>Apache-2.0开源版就包含了一般的企业级才齐全的功能点， 可视化应用搭建界面（功能模块23个，Dify开源版16个），知识库，提示语管理，推理服务，MCP Servers（同时支持本地和远程），数据管理，模型评测，模型微调的同时！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicDo6svFX6VaBbV5GY6P9Uib7iavK2yjovLMrt5JZ2rN0ojTnAfb9MiaT9A/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>还支持多工作空间和多租户管理，不同身份能调用的资源可以划分开。</p>
+<p>目前Star还不多，但我翻了翻它的开发团队，是商汤基于他们在去年开源的LazyLLM构建的。🔗 <a href="https://github.com/LazyAGI">https://github.com/LazyAGI</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicLnaickbCqYx2E1eKhk06FWxW4vTGCcE9zItN8zWZHz4n5CUPADExrCQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>还有还有，他们自己也贴了自己跟Coze和Dify的功能对比，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicxe9qhRngbSEqG5ZJ3M5fJnBU8oRXU1jwiaxWjnwboSLpJV6QibRvAfHg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"> 所以我也来说说这几天的使用感受，</p>
+<p>再附上小学生级的安装教程（一行命令，多了轰炸我）。</p>
+<p>首先，也是最难得的， 多用户多权限管理。</p>
+<p>这基本上是开源项目买企业版的核心卖点，如果还有印象两年前GPT套壳满天飞的时候，我当时就想着省事，买了ChatGPT Web的二次开源版本，结果就是用户管理是单独一个套餐，模型分流计费又是一个套餐，一套接一套，比我一个南方人冬天去哈尔滨穿的都多。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicQvtFeLFKlUTCUnSSJRRQ0ibgrLt1ErCY2rXfCp7js0A1H12jOPA9Bcg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"> LazyCraft直接就把它开源了。</p>
+<p>它有一个非常清晰的使用层级， 团队 -&gt; 用户管理 -&gt; 添加用户。</p>
+<p>你可以在后台任意添加新用户，也可以让他们自己注册。然后我可以设置用户组，比如产品部门、运营部门。把指定的用户，拉进这个组里，然后设置他的权限。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicrwlR0eUXAT5PYuYnRoyUJy9DT0NB3YMgScKbIXVatF8nC1xp30pzkQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"> 只读，就代表这个用户只能查看和使用这个空间下的Agent应用、知识库。</p>
+<p>读写，就代表他可以编辑。</p>
+<p>管理员，就代表他有这个工作空间的最高权限。</p>
+<p>我完全可以给老板一个只读权限，让他看到所有Agent的运行情况，给业务部门读写权限，让他们去迭代自己的Prompt，给平时用这个Agent的运营部门只读权限，随便用随便折腾，也不会搞坏任何配置。</p>
+<p>还内置了日志记录和费用统计。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicPoqcy7DXyC8RkLQsVJH8ibia5Zhmz40liaDUu05jcIVyp8BLXCjv0RxWg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicasGFtEPfZychcIJt50kLoMoMISYmzYIeZbVmurCeh7ygziaXLQqVTzg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>你可以清清楚楚地看到，哪个用户，在什么时间，调用了哪个模型，消耗了多少Token。</p>
+<p>当老板问你，我们这个月花在大模型上的钱，到底值不值的时候，</p>
+<p>你可以直接给到他一个后台报表。</p>
+<p>有了用户管理，我们下一步就要解决一个终极哲学问题了，用本地模型，本地框架，本地数据，物理隔绝，隐私安安全全，</p>
+<p>还是用API，本地框架，云端数据管理，为的是团队可以使用这一套囤下来的提示语工作流呢？</p>
+<p>LazyCraft选择都要，</p>
+<p>在模型仓库里，我可以直接加载Hugging Face或者Model Scope魔搭上的模型，</p>
+<p>🔗 <a href="https://modelscope.cn/models">https://modelscope.cn/models</a></p>
+<p>🔗 <a href="https://huggingface.co/models">https://huggingface.co/models</a></p>
+<p>也可以导入你自己下载好的本地模型文件，选模型我一般是按下载量以及任务来筛选的，huggingface上还可以先把参数量限制上。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicPt8XrG0lDz74LlHpb6bVs2iaHJSJyUAiaQCv2wrdH4AIMP1EVxz9F9Dg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicG2EbFFvbXfwpSSWFUFJWtbXUulOyITcSXEpqCMJAFotVzsycOBLMIw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>如果拿不准的话可以按照这个公式去估算， 以Mac举例，Memory是24GB的前提，能运行的比较流畅的模型大小应该是24*0.8/2，20%是留给电脑正常运行，*2就是对应上模型本身大小，所以说qwen3:8b（&lt;10）在我的电脑上是可以运行的。</p>
+<p>如果有足量的数据集，想微调一些0.5B左右大小的模型的话，比方我会用来做用户意图识别，还可以试试看LazyCraft的模型微调，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicH3Dz9CEUB1z3AwibqIIlXmkHQHPM929nkYrvgP9cP1xFFlfrJ4LHHrg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"> 微调完了，还要避免模型跷跷板，功能A提升了，功能B忘了，</p>
+<p>LazyCraft内置了模型测评，支持人工和AI评测，在同一个数据集上，进行盲测。那作为开源第一版，LazyCraft的Issues我也挨个看了一遍</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicJqVjibWvT6DwFUUzZYPic5vRQEEn6Z7DHJxI96oEsjJqaOYJYtAgDMHw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"> 首先就是目前能下载的开源模型，以及能接入的大模型数量需要更多，我直接列一个表出来，希望后续能蹲到更多的更新。 <img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicqFwXR2mH7ORmeWe8bhPibRkzHpHOYjCzy9S1o4x0O5bv6aKPl8icP1LA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p>OK，模型ready和数据都ready后直接快进到可视化搭建，</p>
+<p>画布这个形式我觉得现在就已经追溯不到哪个是第一个做的，但目前各家的Agent编辑平台基本上已经是画布大一统了，这也降低了上手的难度，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicuQrM5Pib8FXGgMzLCjwn0rQoR941CSn0Z4urc3Gp92wZCABJonPRQbw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"> LazyCraft支持两种MCP接入方式，一种远程的SSE，一种本地的STDIO。</p>
+<p>很多线上的Agent平台不支持本地STDIO的接入。关键是很多功能强大，但又不方便暴露成API的MCP工具，比如一些本地的数据处理脚本，它们提供的就是STDIO，MCP出圈的3D Blender模块，也是STDIO。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDic3HDW7J2ekkwp54nha8nPz4jwdsYUYekicHEfvibdgxMz8IQRXQRbt8tg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"> 这周下来我使用的亮点盘差不多了，</p>
+<p>该上炒鸡无敌简单安装教程了，说好的一行命令多一行都不行。</p>
+<p>先去 <a href="https://github.com/LazyAGI/LazyCraft.git">https://github.com/LazyAGI/LazyCraft.git</a> 下载代码，解压并进到子目录docker</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicIRnuUp8nVw8gT5Vnh0QCQKW11UPj0W5icO58IOn8jEic5HdzA1fwn2Sg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>然后安装docker，每个人电脑环境可能都不同，用docker封装的环境胜在够稳定 🔗 <a href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a></p>
+<p>到了唯一一个需要代码的点了，不管是mac还是wins，在刚刚打开的子目录docker右键或者快捷键打开命令行，输入</p>
+<p>docker-compose up -d</p>
+<p>这行命令短到我甚至不需要用代码块单独分割出来，看到这个样子就成了</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/YEhakvKZjXlPMmMWU3gQCtnics3kIgLDicWMGqAhKulGj2RI5kWHj5d7LBCIReQ3csZe1Vg0sPwZ18bGnO7PKsew/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p>然后就在浏览器打开 127.0.0.1:30382 ，</p>
+<p>账号：admin，密码：LazyCraft@2025。</p>
+<p>完事了，搞定了，直接开整了。</p>
+<p>它把应用编排，模型管理，模型微调，权限管理，这些企业落地最痛最核心的能力，完整开源了出来。</p>
+<p>说真的，好用的开源项目，再多我也不嫌多。这就像我们去吃火锅，备的料越足，心里就越踏实。</p>
+<p>Dify可能就是那盘肥牛，Coze是毛肚，但你总得备点贡菜，红糖糍粑和白米饭吧。</p>
+<p>LazyCraft就是那个我可能一开始没注意，</p>
+<p>但一口下能让我吃得饱，吃得舒服的虾滑。</p>
+<p>这样称手的工具，多一个，就多一条路。</p>
+<p>老话说得好啊，</p>
+<p>多准备一条路，</p>
+<p>总没错的。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏 如果喜欢这篇文章，不妨顺手给我们 <em>点赞👍｜在看👀｜转发📪｜评论📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标 🌟</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>捐一笔</p>
+<p>8人捐赠</p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/7pN3o87hseXL-lcdcaiOhg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的知识库和 skill 自动化管理方法（附开源仓库） · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我的知识库和 skill 自动化管理方法（附开源仓库）</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    
+    <span class="date">2026-04-08</span>
+  </div>
+  <p class="lead">对于skill的管理方法，如何实现跨设备同步和调用，有很多朋友询问。所以这篇文章来详细写下 skill 的管理方法，顺便分享下我 100 多 GB 的知识库是怎么跨设备调用的。</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年4月7日 08:21</em></p>
+<p>刚开源了我的所有skill <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247494524&idx=1&sn=417c69b784101a91f7b23f209cdb9828&scene=21#wechat_redirect">开源我的所有 skill，以及 skil...</a></p>
+<p>但是对于skill的管理方法，如何实现跨设备同步和调用，有很多朋友询问。所以这篇文章来详细写下 skill 的管理方法，顺便分享下我 100 多 GB 的知识库是怎么跨设备调用的。</p>
+<p>总结一下这套方法，帮我解决了这四个问题：</p>
+<p><strong>1 跨文件夹/工具调不到：</strong> Cursor 打开项目 A，里面的 Skill 跑得飞起。切到项目 B，同样的 Skill 不存在。Codex 那边又是另一套。改了 A 里的 Skill 忘了同步 B，两边版本不一致，输出质量忽高忽低，排查半天才发现是 Skill 版本的问题。</p>
+<p><strong>2 跨电脑用不了：</strong> 公司电脑一套 Skill，家里电脑一套。出差用笔记本，又是一套残缺版。每次换设备都要手动拷贝，拷完发现漏了几个，或者拷的是旧版本。</p>
+<p><strong>4 知识库同步不了：</strong> Obsidian 仓库越来越大，有 100 多 GB，几百篇文章、几千条素材、大量图片。GitHub 有文件大小限制，NAS 同步要手动操作。换台电脑，知识库就断了，AI 读不到我的上下文，等于没用。</p>
+<p>这四个问题折腾了我一个月，最后摸索出一套方案。</p>
+<p><strong>01 四个方法，四层互通</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxFk1KX7kyMFhWicVCjDDSlPqGW7sn6oNbv5LjicpNBu6XqUDS1HQ8G1UrwtsuiaywrpOyWiaRCRjtFebrCHE6w5doRnqsNyCcicv8Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><strong>第一：跨文件夹互通 = 全局目录 + 软链接</strong></p>
+<p>所有 Skill 只存一个地方： <code>~/.claude/skills/</code> 。</p>
+<p>这是全局唯一来源。不管打开哪个项目，不管用 Cursor 还是 Codex 还是 OpenClaw，都从这一个目录读取 Skill。</p>
+<p>把下面指令发给你的 Coding Agent，让它来为你创建软链接：</p>
+<p>使用软链接，根目录是 <code> ~/.claude/skills，目标文件夹是（这里写你的目标文件夹）</code></p>
+<p><code>也可以手动写，参考下面格式：</code></p>
+<pre><code>obsidian/.claude/skills  →  ~/.claude/skills  (symlink)
+</code></pre>
+<p>一行命令搞定。打开 Obsidian 项目，自动能调用全部 130 个 Skill。</p>
+<p>打开另一个项目，加一条 symlink，也能调用。</p>
+<p>改了某个 Skill 只需要改全局目录，所有项目同时生效。</p>
+<p>不再有&quot;项目 A 有但项目 B 没有&quot;的问题，不再有版本不一致的问题。</p>
+<p><strong>第二：跨电脑互通</strong></p>
+<p>全局目录解决了本地问题，但换台电脑还是得重新来。</p>
+<p>解法很直接：把 <code>~/.claude/skills/</code> 全量推到一个 GitHub 仓库。</p>
+<p>这里强烈建议使用 github CLI，告诉你的 codingAgent：帮我安装GitHub CLI，它会自动下载安装，安装完成后，你需要使用 http 认证登录授权。</p>
+<p>此时就可以用自然语言增删改查你的 github 仓库</p>
+<p>比如：把 <code>~/.claude/skills 文件夹推送到我的 github 仓库，可以在我的 github 创建新的仓库。</code></p>
+<p>送成功后，其他电脑只需要， <code>git clone</code> 一行命令，130 个 Skill 全部恢复</p>
+<p><strong>第三：分类skill</strong></p>
+<p><strong>100多个文件夹。当我想共享 其中一个或多个的时候，估计收到这个 skill的人会一脸懵。</strong></p>
+<p><strong>所以我把 Skill 按领域拆成了四个公开仓库：</strong></p>
+<p><strong>分类的过程也是让AI完成的，我只需要发给我的Agent说：把我这100多个skill进行分类，你自己按照标准分，创建不同的文件夹，保存分类的结果，并推送到GitHub。</strong></p>
+<p><strong>整个分类就完成了，并且我获取到了下面的分类结果，不需要我自己手动去整理文件。</strong></p>
+<table>
+<thead>
+<tr>
+<th>仓库</th>
+<th>领域</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>write-skill</td>
+<td>写作 / 内容生产</td>
+<td>21 个</td>
+</tr>
+<tr>
+<td>draw-skill</td>
+<td>画图 / 设计 / 视觉</td>
+<td>13 个</td>
+</tr>
+<tr>
+<td>info-skill</td>
+<td>信息获取 / RSS / 爬虫</td>
+<td>14 个</td>
+</tr>
+<tr>
+<td>protodesign</td>
+<td>产品 / PM / 原型</td>
+<td>13 个</td>
+</tr>
+</tbody></table>
+<p>如果想单独分享一个skill的话，就告诉你的Agent说把某一个skill单独拷贝一份到一个新的文件夹，并把这个文件夹推送到一个新的GitHub仓库。</p>
+<p>总之，所有的过程都是靠自己的自然语言完成的，而这依靠的是Agent对本地文件夹的整理能力和GitHub CLI 的使用。</p>
+<p><strong>第四：知识库同步</strong></p>
+<p>GitHub 解决了 Skill 的同步，但知识库太大，有 100 多 GB，推不上去。</p>
+<p>我的方案是用 NAS 做中转。写了一个 rsync 脚本，每天下午 6 点自动把本地 Obsidian 仓库同步到 NAS：</p>
+<pre><code>本地 obsidian/  →  NAS NFS /obsidian/  (每天 18:00 自动)
+</code></pre>
+<p>脚本会自动检测 NAS 是否在线，离线就跳过，不会卡死。排除了<code>.git/</code> 、<code>.trash/</code> 、 <code>node_modules/</code> 这些不需要同步的目录。</p>
+<p>家里的电脑、公司的电脑，都能通过 NAS 访问同一份知识库。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowP4aPvPCreSyHrIPliaUg8NyxUjc9ZKsmKaTLDBjoS3QqsbV2ibUT0fn6rFUYtCs6op1H5Wt0yeftYCaKU3fBhpsb5z1rp55Ycg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>AI 读取的上下文永远是最新的。</p>
+<p><strong>02 用一个 Skill 管理所有 Skill</strong></p>
+<p>方案有了，但每次手动执行这些操作还是麻烦。扫描新增的 Skill、判断归类、复制到分类仓库、全量同步、推送 GitHub...步骤不少。</p>
+<p>所以我做了一个&quot; Skill&quot;： <code>skill-manage</code> 。</p>
+<p>只要干两件事，一个是自动分类、一个是自动推送。</p>
+<p>说&quot;整理 Skill&quot;，AI 就知道该干什么：</p>
+<p>1 扫描全局目录，找出最近新增的 Skill</p>
+<p>2 按分类规则自动判断归属（写作/画图/信息获取/PM/其他）</p>
+<p>3 复制到对应的分类仓库</p>
+<p>4 全量同步到 allSkills 私密仓库</p>
+<p>5 依次对所有仓库执行 git commit + push</p>
+<p>6 可选：触发一次 NAS 同步</p>
+<p>一句话触发，全流程自动化。</p>
+<p>skill 管理 Skill，系统自我维护。</p>
+<p><strong>03 我的 Skill 库，全部公开</strong></p>
+<p>既然做了分类，公开出来就更容易让大家使用了。这是我目前在用的四个分类仓库：</p>
+<p><strong>1 写作类：write-skill</strong></p>
+<p>地址： <code>github.com/zephyrwang6/write-skill</code></p>
+<p>21 个 Skill，覆盖内容创作全流程：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozKbPccaS13aoSJia0KP15jcaXLlINceWX70QD0r3H1ujYuFDkEMxYgMyG9ArWKjGNXdCHObxS1DbAW5GsE0yRRkViaKs2mJbseY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p><strong>2 画图类：draw-skill</strong></p>
+<p>地址： <code>github.com/zephyrwang6/draw-skill</code></p>
+<p>13 个 Skill，解决&quot;AI 配图&quot;这件事：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyarZcLWTIVzIHGzA90fKOPj3eyOW3URbiajuHibKSgTCxM82ejzichoe3PO1icI5QhomPiaZ6XZPlWwQUFOgGbf6ib24J9Wu0Kyy45U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p><strong>3 信息获取类：info-skill</strong></p>
+<p>地址： <code>github.com/zephyrwang6/info-skill</code></p>
+<p>14 个 Skill，把散落各处的信息收回来：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowicGkXdickAf8QA5bwhezaCsIW9Rhicu4AyJCEtibYvakLfmGKbG5QTW5GrNtbtzOWVZMzbPGGj8XRacWXzgxu4DicAJYyDibbObmlc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><strong>4 产品经理类：protodesign</strong></p>
+<p>地址： <code>github.com/zephyrwang6/pm-skill</code></p>
+<p>13 个 Skill，产品经理的工具箱：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowg9y62wVGkG08b5H6GDJ2FpUoYyX3aN3Bm9UlahMj7kMz0AEKzqJATLt41afFrd1SagzqfyA73d0mn5zuavfSsbdpdTdyibUmo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>这些仓库都是公开的，直接把地址发给你的 coding Agent 就安装调用。</p>
+<p><strong>04 最后</strong></p>
+<p>刚开始搭 AI 生产力系统的时候，核心理念是&quot;上下文优先于提示词&quot;。Skill 的创建是在封装上下文，Skill 的管理其实也是。</p>
+<p>全局目录是上下文的单一来源。软链接是上下文的分发通道。GitHub 是上下文的持久化。NAS 是上下文的多端同步。skill-manage 是上下文的自动化维护。</p>
+<p>绕了一圈，管理 Skill 这件事本身，就是一次上下文工程的实践。</p>
+<p>130 个 Skill 说到底是我个人场景下打磨出来的，未必适合所有人。但如果能让一些正在搭建自己 AI 系统的人少走几步弯路，省下几个晚上的折腾时间，那就值了。</p>
+<p>这个篇文章实际上是我付费专栏的内容，挺多朋友在后台问我怎么管理的，所以就是我免费分享给大家。</p>
+<p>如果需要订阅专栏或社群的朋友，可以根据下面订阅。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxP1nZVnPTby0aJ3QUXfxRZeicsqvMIs9q8uycvPf8vCSSKDiaT4yd7hjTLub9HKpflibDGk66HVeibicG2eOa4N0zS8ic3fJWWrlibRo/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=13" alt="Image"></p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/yzb66SHIgYkXdPPgWNWjpg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

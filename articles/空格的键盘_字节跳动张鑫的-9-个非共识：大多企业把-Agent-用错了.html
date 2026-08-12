@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字节跳动张鑫的 9 个非共识：大多企业把 Agent 用错了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">字节跳动张鑫的 9 个非共识：大多企业把 Agent 用错了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%BC%A0%E9%91%AB">张鑫</a><a class="chip" href="../index.html?tag=%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8">字节跳动</a><a class="chip" href="../index.html?tag=%E4%BC%81%E4%B8%9AAgent">企业Agent</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-06-30</span>
+  </div>
+  <p class="lead">2026 年已过半，AI 这半年发展最大的感触是，Agent 已经改变了每个人的工作，甚至改变了企业的协同方式</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年6月29日 18:55</em></p>
+<p><strong>2026 年已过半，AI 这半年发展最大的感触是，Agent 已经改变了每个人的工作，甚至改变了企业的协同方式和组织架构。</strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_jpg/yrQseOROf13bOtRTicL4xXpWuFMLY5EpZh3hg6FXu8BUFLI7OJAS51pJt1F5GgBWoJ9QvLwlEWDaYUcn4rI2DXUOCIZ4oiaXakuKO0lyOWTPo/640?wx_fmt=jpeg&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=1" alt="Image"></strong></p>
+<p>上图选自火山引擎前两天的发布会，我听了他们技术副总洪定坤分享的字节内部是怎么用 Agent 感触很深，又顺着去搜了更多字节内部对企业 Agent 的判断，汇总了 9 个非共识，也就有了这篇文章。</p>
+<p>观察我身边的朋友，几乎每家企业都在同时做三家事：</p>
+<ul>
+<li>把自家的产品融入 AI 的能力</li>
+<li>鼓励并培训员工使用 AI 提效</li>
+<li>加入 Agent 工作流，改变员工协同方式。</li>
+</ul>
+<p>在企业使用 Agent 这件事上，最后还是要看模型和云服务厂商给的解决方案。</p>
+<p>火山引擎在模型侧有豆包、seedance、seedream 以及全线开源模型。</p>
+<p>在产品侧有扣子、TRAE、HiAgent、AgentSphere 一整套 Agent 产品矩阵。</p>
+<p>他们还有大量真实跑着 Agent 的数据样本：谁在用、用得怎么样、烧了多少钱、效果如何。</p>
+<p>圈里多数声音都来自个人开发者，但企业级 Agent 的数据，全行业能拿到的就那么几家云厂商。</p>
+<p>看完两篇专访加发布会，我提炼了几个企业结合 Agent 发展的非共识观点。</p>
+<p>先看一组数据。</p>
+<p>中等以上规模、较早做 Agent 的企业，内部平均跑着 300 个 Agent。</p>
+<p>但这 300 个里到底是谁在用、烧了多少 Token、效果如何，几乎没有企业能说清楚。总结几个关键词就是，家底不清、成本黑洞、缺乏度量。</p>
+<p>还有一种现象叫&quot;日抛型 Agent&quot;，搭出来的 Agent 的 DAU 小于等于 1。</p>
+<p>按 IDC 数据，Agent 开发平台市场 2024 年 4-5 亿，2025 年到了 20 亿，张鑫预测 2026 年底到 2027 年会到 500-1000 亿规模。</p>
+<p>下面是他的几个观点和详解：</p>
+<p>一、Agent 平台的主战场已经从&quot;开发&quot;转移到&quot;用人&quot;</p>
+<p>过去一年所有 Agent 平台都在卷开发：零代码搭建、Vibe Coding、工作流编排、Skills、Agentic Loop。</p>
+<p>看起来谁都能造 Agent。</p>
+<p>张鑫的判断很直接：能造和造好之间，隔着一道巨大的鸿沟。</p>
+<p>他把 Agent 的全生命周期拆成四个域： <strong>开发域、运行域、消费域、管理域</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowWMkLQ4ul50hWylia5w6w7gg8TZJEERYkgC06QP9HVWa8L4S5bd212A5jnyib2wiaIlM1Rt30HV2GWXZ853xGYCiart1Y4xiczgTv0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>开发域是搭 Agent；</p>
+<p>运行域通过 Harness 让 Agent 跑得更好（记忆、知识融合、上下文管理、Multi-Agent 编排、意图识别）；</p>
+<p>消费域是好的交互和人机协同方式；管理域是像管员工一样管 Agent，做绩效考评、度量价值。</p>
+<p>很多公司只在开发域里卷，实际上壁垒早就移到后三个域了。</p>
+<p>二、端到端流程才是真正的卡点</p>
+<p>这是张鑫给&quot;为什么 Agent 落地没想象中快&quot;的最直接解释。</p>
+<p>大部分企业已经能做到局部提效。代码生成环节接一个 TRAE 或 Claude Code，从一小时降到 5 分钟。听起来很爽。</p>
+<p>但企业的端到端流程里可能有十几个步骤，上下游的测试、发布、运维还是人工处理。</p>
+<p>如果只解决其中一个 AI 步骤，上游下游还是卡着，中间缩短的那 1 小时没有任何意义。</p>
+<p>这些端到端的系统集成，看起来是脏活累活，跟底层模型迭代相比没那么令人兴奋。但这才是真正做到大企业深水区，Agent 落地绕不过的门槛。</p>
+<p>我看到这里特别有共鸣。身边好几个朋友的公司都在做&quot;AI 卷王&quot;那一个环节，但整条链没动，整体效率自然提不上去。</p>
+<p>三、Harness 不会被模型吃掉</p>
+<p>这件事行业里争论很多。乐观派认为模型一强，所有中间层都会消失，最后只剩模型加自然语言。</p>
+<p>张鑫的判断完全相反：Harness 不会被吃掉。</p>
+<p>理由是 Harness 要解决六件事： <strong>可控、可靠、可审计、可规模化、全生命周期管理、价值可度量。</strong></p>
+<p>以当前 Next Token Prediction 的技术架构，模型永远需要外部的交叉验证和行业知识。</p>
+<p>模型决定智力的天花板，Harness 决定这个智力能不能在生产环境里安全、可控、可度量地发挥出来。</p>
+<p><strong>从 Control 转向 Context Not Control。</strong></p>
+<p>一步步控制 Agent 怎么走的机制，会被模型逐渐吸收，但那六个维度不会被替代。</p>
+<p>这个判断对企业的产品策略影响很大。信&quot;模型一强中间层就消失&quot;的，今天就不该投入做 Harness。</p>
+<p>认同张鑫这套判断的，Harness 反而是越早投入越好。</p>
+<p>四、Workflow 不会死，会和 Agentic Loop 互相转化</p>
+<p>过去半年 Agentic Loop 火起来之后，&quot;Workflow 已死&quot;的声音越来越多。</p>
+<p>张鑫认为两者会长期共存。</p>
+<p>理由是企业内部有&quot;敏态&quot;和&quot;稳态&quot;之分。强管控的任务用 Workflow 保证可靠性，更发散的场景用 Agentic Loop 探索。</p>
+<p>更妙的是两者能互相转化：一开始用 Agentic Loop 探索一个新场景，跑出最佳路径后沉淀成 Workflow，效率更高、Token 消耗更少。</p>
+<p>这一段我看完想了很久。它点破了一件事：企业里真正能跑稳的，是新老范式之间的转换桥梁，单一范式都不够。</p>
+<p>五、软件不会被日抛，CLI 化只改变入口</p>
+<p>最近圈里有种声音叫&quot;软件日抛论&quot;：AI 一强软件就该重写，老软件都该淘汰。</p>
+<p>张鑫认为&quot;软件日抛论有点脱离实际&quot;。企业 Token 成本在不断飙升，已有工具不去利用还要重新搞一套，非常不现实。</p>
+<p>他给的判断是 CLI 化不会吃掉软件，但会改变软件的交互入口：从给人用变成给 Agent 用。软件背后的逻辑和数据不变，只是调用方式变了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyQExFaOSRasNdbvM7Biblurib1gEfvB8aKdjVsOxQbJn7Zq72kMdmgy2FoibE3yCmeZYiaRE7YFVw242tlFOdVDNnkgiaHic5gia4mOE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>这个对所有 SaaS 厂商都重要。你不需要被 AI 逼着重写一切，但需要重新设计被 AI 调用的接口。</p>
+<p>六、别按职能给 Agent 分岗</p>
+<p>企业搭 Agent 的本能是按职能分：营销 Agent、客服 Agent、HR Agent，照搬人类组织的分工。</p>
+<p>张鑫管这种做法叫&quot;每个萝卜都拆一个坑&quot;。他认为这只是用提示词去约束模型能力，结果是拆出了一大堆功能重叠的 Agent。</p>
+<p>他的判断是：&quot;组织去适配新的 AI 能力，而不是 AI 适配现有组织。&quot;</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy3Uiasm0bzFXPOn2rIGSUIVlJdA28kz9MUtdiadldU4Olo7OUEmticqEotl3xjU5dXWzBuvyGKP2psVdPEPoSR1KIWCfmM45DexA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>他用自己 TRAE 团队的变化做例子。原来研发按前端、后端、SRE、QA、架构师、产品经理划分岗位。现在围绕一个产品，用一个不大的团队、借助 Agent 端到端完成所有环节。TRAE 团队 94% 的代码已经由 AI 生成。</p>
+<p>横向职能在收敛，纵向深度在增加。</p>
+<p>这件事如果成立，意味着所有按职能切的 Agent 矩阵，未来都要重新长一遍。</p>
+<p>七、超级个体不是终态，知识必须沉淀到组织</p>
+<p>这一段我觉得最值得做企业的人想想。</p>
+<p>AI 让一个人能干过去十个人的事，&quot;超级个体&quot;成了一个很性感的词。</p>
+<p>但张鑫的看法是， <strong>超级个体只是短期形态，长期不可持续。</strong></p>
+<p>他给的理由是：员工的流动和流失，会把业务的上下文一起带走。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozkwoKgkW43e3gopL1QfxB1BicJrLY5KzVMcxrJ7NVhLAXWWicfCzdnQNqtG02RL1qUvNzRTAmh22CBZjQic3gicic8p1DfNolRpNE4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>知识跟着人走，不跟着组织走，这家企业就永远在重新学习。</p>
+<p>微软纳德拉前几天有句话其实讲的是一回事：&quot; <strong>你可以外包一项任务、一份工作，但永远不能外包你的学习</strong> 。&quot;</p>
+<p>人贡献经验形成 Skills，Agent 基于 Skills 产出价值，价值再追溯到人。人从执行者升级为 Agent 的优化者和管理者。</p>
+<p>把超级个体的知识转化成组织资产，这是数字员工和个人助手的核心差别。</p>
+<p>八、监控员工训练 AI 是错的方向</p>
+<p>最近 Meta 干了件让员工炸锅的事：给美国员工电脑装追踪软件，记录键盘、鼠标、屏幕截图来训练 AI。1500 多个员工签名抗议，CTO 自己也承认员工士气接近 20 年来最差。</p>
+<p>这事的心理学机制其实很简单。员工心里都有个问号：我贡献的知识，会不会被拿去取代我？</p>
+<p>德鲁克 1959 年提&quot;知识工人&quot;概念时就说了：体力劳动者可以靠计件和监控管理，知识工人只能靠设定目标和给自主性来激发。监控键盘敲击，和在流水线上计件是同一种思维。</p>
+<p>张鑫的落地心得跟德鲁克方向一致。</p>
+<p>第一，先用现有 Agent 帮员工干掉重复琐碎的活，让他先尝到甜头。</p>
+<p>第二，让知识贡献和个人回报可见可衡量。你孵化出四个数字员工，它们产出越多，归因到你身上的也越多。</p>
+<p>他用一句话总结：&quot;企业主和员工要互相给安全感。&quot;</p>
+<p>我觉得这句话讲得特别到位。技术问题反而不难，难的是怎么让员工愿意主动交出自己的隐性知识。</p>
+<p>九、未来商业模式会从按 Token 走向按业务效果</p>
+<p>过去一年 Agent 平台讲的故事，基本都是&quot;我们调用量翻了多少倍&quot;、&quot;日均 Token 多少万亿&quot;。这些数字 CEO 听不懂，也不在意。</p>
+<p>CEO 真正关心的是：&quot;我今年投了 100 万做 Agent 项目，到底带来了多少业务收益？&quot;</p>
+<p>张鑫提出的概念叫&quot;从 Agent 管理上升到数字员工经营&quot;。</p>
+<p>把数字员工的生命周期拆成招聘、上岗、进化、退岗四个阶段，配上四张看板：全局概览、业务产出、产物评分、投入成本。</p>
+<p>更远一点的判断是商业模式本身的演化。</p>
+<p>Agent 收费会经过三层：按资源（GPU 卡时）、按 Token、按业务效果。</p>
+<p>现在大家都在第二层。</p>
+<p>但按 Token 收费有个盲区：同样 100 万 Token，用来闲聊和用来做芯片设计，业务价值天差地别。</p>
+<p>未来一定走向第三层：按产出了多少可用代码、多少可用视频时长、节省了多少人力工时收费。</p>
+<p>更前沿的一批企业已经在做了：把 Agent 从软件预算转向人力预算。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozpOWAbpticHwaBANAaVtztibldmKM4Drh2Vehas7vmyMq3jib5Xgdl0IdcNxSJRhYLibgfxOrTKu7pjBQ88cPJvmjthwgbqIyYnVY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>这件事如果普及，是企业 AI 整个商业模式的重构。所有今天还在卷&quot;调用量&quot;的厂商，未来都得重新讲故事。</p>
+<p>最后</p>
+<p>企业用 Agent 这件事，已经从&quot;工具好不好&quot;进入&quot;组织行不行&quot;的阶段。去年大家拼模型、拼框架，今年开始拼经营、拼组织、拼 Harness。</p>
+<p>至于个人和中小团队，我自己的体感是不能只盯着新模型新工具。先想清楚两件事：你搭的 Agent 产出是否可衡量、有没有沉淀到组织里。这两件事做不到，AI 工具用得再多，最后也只是给自己一个心理安慰。</p>
+<p>以上，希望给各位带来一些启发，很多细节推荐搜索阅读原文。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/zcT9TXQJQsADpq_oqE3jUA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

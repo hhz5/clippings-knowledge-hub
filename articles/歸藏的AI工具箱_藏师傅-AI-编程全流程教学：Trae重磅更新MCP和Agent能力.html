@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>藏师傅 AI 编程全流程教学：Trae重磅更新MCP和Agent能力 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">藏师傅 AI 编程全流程教学：Trae重磅更新MCP和Agent能力</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Trae">Trae</a><a class="chip" href="../index.html?tag=%E8%97%8F%E5%B8%88%E5%82%85">藏师傅</a><a class="chip" href="../index.html?tag=Vibe%20Coding">Vibe Coding</a>
+    <span class="date">2025-05-14</span>
+  </div>
+  <p class="lead">这个教程将会用 Trae 教你如何写一个有相对复杂功能的网页，藏师傅精心编排下也融入 Trae 这四个能力顺便教会你怎么用。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年04月22日 11:08</em></p>
+<p>在 Claude 3.7 和 Deepseek 之前我很少玩 AI 编程。因为自己是非专业开发者，AI 模型能力不够搞的很痛苦。</p>
+<p>Claude 3.7 和 Thinking 模型更新后我看到了新希望，也产出了一 <a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247487585&idx=1&sn=5ee39d9fc9c7d8236c278c53fc7893d2&scene=21#wechat_redirect">系列网页生成提示词</a> ，让很多人认识到开发尤其是简单的前端开发没那么难。</p>
+<p>我之前的提示词主要还是让大家生成展示的网页的，涉及到复杂功能还是不太好搞。</p>
+<p>最近也用 AI 做了很多小的工具网页，迭代了一套自己的 AI 编程（Vibe Coding）方案。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKHicP4QS1xFGM3UWSSzogNMAibbCLQp0jNNAo5w8KOweHNWlh2rncia15g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKLEQRwaEjox07wJ268yb7gds4Qf1KZ7SwyEPKXTKs6ibiaibTicp9Y5mAzQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKII711leVgAm7HJo9f7ZdLcFYexAY8F0R1qoX2buIQC4kBYjOJEibyOg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKj7R2MVGp2xRh3qG4zcFES0WsoVuT8FWVBXd5uAIs0rCj1BicibBxd8cg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>Trae 发布了四大重磅功能（MCP、自定义规则、智能体、上下文理解），其能力已与 Cursor、Windsurf 看齐、甚至体验更胜一筹 。例如可以自定义智能体，配合上MCP和prompt，能一次集结多个专属AI专家，为我所用。</p>
+<p>先介绍一下Trae新增的4个功能：</p>
+<ul>
+<li>智能体创建： 支持基于提示词和MCP工具自定义智能体，@即可使用，不需要每次都输入复杂指令</li>
+<li>智能工具（MCP）： 支持MCP，而且内置了常用的，只需要点击即可使用</li>
+<li>更多上下文： 新增联网搜索和文档集上下文理解能力，可以让AI搜索不懂的编码框架和文档了</li>
+<li>个人/项目规则： 支持配置个人规则和项目规则，不需要反复强调基础的编码要求</li>
+</ul>
+<p>所以我觉得是时候了， 这个教程将会用 Trae 教你如何写一个有相对复杂功能的网页，藏师傅精心编排下也融入这四个能力顺便教会你怎么用。</p>
+<p>🍁</p>
+<p>教程内容&amp;AI 编程（Vibe Coding）步骤：</p>
+<ol>
+<li>配置 IDE：设置 IDE 需要的规则文档和后续用到的 MCP 服务</li>
+<li>梳理需求：通过提示词模板强迫自己的完成完整需求梳理</li>
+<li>生成完整PRD 提示词：根据梳理的需求提示词和开发&amp;设计要求整理完整提示词</li>
+<li>测试结果：如果测试生成结果</li>
+<li>修复问题：小步迭代和精细化修改</li>
+<li>部署上线：用现成工具低成本上线网页</li>
+</ol>
+<h2>先来看结果</h2>
+<p>最近我发了很多 AI 编程和 4o 的图片生成提示词，很多朋友让我搞个网页整理一下，刚好这次想找个复杂的，我们就整一下。</p>
+<p>支持 LLM 和图片生成提示词的筛选、支持模型筛选、支持点击后展示全部内容、支持快速复制提示词。</p>
+<p>这里查看： <a href="https://y2dyoxh7mq.app.yourware.so/">https://y2dyoxh7mq.app.yourware.so/</a></p>
+<h2>什么是 Vibe Coding</h2>
+<p>我前面写 AI 编程的时候写了一个 Vibe Coding，其实Vibe Coding 是 Karpathy 提出的概念，区别于专业程序员的 AI 辅助编程。</p>
+<p>它指通过自然语言描述需求，让 AI 完成所有编码工作，问题修复也仅通过提示词完成。我之前分享的网页生成提示词和流程都属于 Vibe Coding 范畴。</p>
+<p>尽管不直接编码，我们仍需高效稳定的完成产品，因此教程将重点介绍提高 Vibe Coding 成功率和效率的技巧。</p>
+<h2>环境配置</h2>
+<p>首先当然是下载 Trae（ <a href="https://sourl.cn/b2YrxR">https://sourl.cn/b2YrxR</a> ），如果你用其他 IDE 也可以，然后选择他让你选择文件夹的时候新建一个新项目的文件夹，最好是英文。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKiaicXDgzVdgxvKj8vtadaQorVLGic1C5icNM9oiauRGUWh28IHRJPF4NH5A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>之前我们用 Trae 的时候，Trae 还没有更新规则和 MCP 能力，所以也就不太需要配置，先介绍一下 Trae 的这两个更新。</p>
+<p>规则设置：规则主要是为了在整个项目或者所有项目中让 AI 按照你要求的代码书写方式去书写代码，这样你就不需要频繁在对话的时候要求了。</p>
+<p>MCP 配置：这次 Trae 终于支持了我们老生长谈的 MCP 配置功能，而且还内置了超级多的常用 MCP，基本上可以做到填写 API 一建添加。</p>
+<p>Trae 上次更新增加了模型配置的的能力，不用担心自己用国内版本没办法用好模型了，我这里用 Openrouter 的 Claude，只需要在模型选择这里点击添加模型，然后选择服务商填写你的 API 就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKe6jSHcYSIUDfGAMwSJQ9Et0ozlAeVWTJRoMzsJc4qb1MiaKG0n9UGhw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sK8rWkyj8KnXI6ickGKnftDd4cI9dpibel1k365kH5UCfEwZhia9kEM0AMA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后我们先来配置一下规则，只需要点击对话框右上角的设置图标在里面选择规则就可以看到这个界面，这里我设置了一下个人规则，没有设置项目规则。</p>
+<p>其实有很多规则的聚合网站，我在里面 找了一个前端的规则，你要实在懒得找也可以用我这个，复制进去之后记得保存。</p>
+<pre><code># 你是一位高级前端开发者和专家你精通ReactJS、NextJS、JavaScript、TypeScript、HTML、CSS以及现代UI/UX框架（例如TailwindCSS、Shadcn、Radix）。你思维缜密，能提供细致入微的答案，并且在推理方面表现出色。你认真提供准确、事实性、深思熟虑的答案，并且在推理方面堪称天才。- 严格按照用户的要求一字不差地执行。- 首先逐步思考 - 详细描述你用伪代码编写的构建计划。- 确认后，再编写代码！- 始终编写正确、符合最佳实践、遵循DRY原则（不要重复自己）、无bug、功能完整且可工作的代码，同时应符合下面代码实现指南中列出的规则。- 注重代码的易读性和简洁性，而非性能优化。- 完整实现所有请求的功能。- 不留TODO、占位符或缺失部分。- 确保代码完整！彻底验证最终结果。- 包含所有必需的导入，并确保关键组件命名恰当。- 简明扼要，尽量减少其他冗余文字。- 如果你认为可能没有正确答案，请明确说明。- 如果你不知道答案，请直说，而不是猜测。### 编码环境用户询问有关以下编程语言的问题：- ReactJS- NextJS- JavaScript- TypeScript- TailwindCSS- HTML- CSS### 代码实现指南编写代码时遵循这些规则：- 尽可能使用提前返回（early returns）使代码更具可读性。- 始终使用Tailwind类来为HTML元素添加样式；避免使用CSS或标签。- 在class标签中尽可能使用&quot;class:&quot;而不是三元运算符。- 使用描述性的变量和函数/常量名称。此外，事件函数应以&quot;handle&quot;前缀命名，如onClick用&quot;handleClick&quot;，onKeyDown用&quot;handleKeyDown&quot;。- 在元素上实现无障碍功能。例如，a标签应具有tabindex=&quot;0&quot;、aria-label、on:click和on:keydown等类似属性。- 使用常量而非函数，例如&quot;const toggle = () =&gt;&quot;。另外，如果可能的话，定义类型。# 你是一位高级前端开发者和专家你精通ReactJS、NextJS、JavaScript、TypeScript、HTML、CSS以及现代UI/UX框架（例如TailwindCSS、Shadcn、Radix）。你思维缜密，能提供细致入微的答案，并且在推理方面表现出色。你认真提供准确、事实性、深思熟虑的答案，并且在推理方面堪称天才。- 严格按照用户的要求一字不差地执行。- 首先逐步思考 - 详细描述你用伪代码编写的构建计划。- 确认后，再编写代码！- 始终编写正确、符合最佳实践、遵循DRY原则（不要重复自己）、无bug、功能完整且可工作的代码，同时应符合下面代码实现指南中列出的规则。- 注重代码的易读性和简洁性，而非性能优化。- 完整实现所有请求的功能。- 不留TODO、占位符或缺失部分。- 确保代码完整！彻底验证最终结果。- 包含所有必需的导入，并确保关键组件命名恰当。- 简明扼要，尽量减少其他冗余文字。- 如果你认为可能没有正确答案，请明确说明。- 如果你不知道答案，请直说，而不是猜测。### 编码环境用户询问有关以下编程语言的问题：- ReactJS- NextJS- JavaScript- TypeScript- TailwindCSS- HTML- CSS### 代码实现指南编写代码时遵循这些规则：- 尽可能使用提前返回（early returns）使代码更具可读性。- 始终使用Tailwind类来为HTML元素添加样式；避免使用CSS或标签。- 在class标签中尽可能使用&quot;class:&quot;而不是三元运算符。- 使用描述性的变量和函数/常量名称。此外，事件函数应以&quot;handle&quot;前缀命名，如onClick用&quot;handleClick&quot;，onKeyDown用&quot;handleKeyDown&quot;。- 在元素上实现无障碍功能。例如，a标签应具有tabindex=&quot;0&quot;、aria-label、on:click和on:keydown等类似属性。- 使用常量而非函数，例如&quot;const toggle = () =&gt;&quot;。另外，如果可能的话，定义类型。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKc7LzZyNPDRnaKhsD4fjZIEaVsK3nUDYx3Fs2ibcXmMibnV9FDYM6pib4g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后是配置 MCP，注意这一步不是这个项目必须的，没有也行。</p>
+<p>这次我们需要让 AI 参考一个卡片的设计稿，所以需要配置一下 Figma MCP。</p>
+<p>Trae 的 MCP 配置也很简单，还是刚才的设置图标，我们选择 MCP，然后点击添加按钮。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKKQkbbNics4SZLyl9xSxocJyVwTJPQW5aZwmJt5wmdGtGhf3PsvuEeSQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在列表中找到 Figma AI Bridge，按照这里的教程： <a href="https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens">https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens</a> 创建一个 API Key 填写之后确定就可以了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKkdsl0zP4K0543V7r7jxKK7TPghmLIxK267Q6Yzrq9xmSbmN81qic1gg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>梳理需求并整理提示词</h2>
+<p>这部分是最重要的，由于模型编程能力和上下文的问题 vibe coding 进行几轮修改之后注定会越改越差，所以我们必须保证第一次生成的时候 AI 就完成我们需要的完整功能，后面的修改次数越少越好。</p>
+<p>首先你需要完成的项目最好只有单个功能，我们现在不可能让 AI 帮你生成一个抖音，比如我最近写的一些网页渐变提取、图片分割、图片色彩调整等，这些都只有一个主线功能，单个页面加上不同的状态。</p>
+<p>❗</p>
+<p>注意：首次编码的结果很大程度取决于我们输入的提示词，珍惜的首次提示词，详细描述你的需求、目标用户、设计和开发要求等。</p>
+<p>如果你只是跟 AI 说“帮我写一个展示我提示词的网页”这种话的话，那完了，等待你的只有无尽的更改痛苦。</p>
+<p>我跟 Cluade 一起想了一个提示词可以让你写清楚自己的需求：</p>
+<pre><code>我想开发一个【应用类型】(如网站、手机APP、小程序、桌面软件)，主要用于【核心目的】。## 核心功能需求1. 【功能1】：能够实现【具体描述该功能如何工作】2. 【功能2】：允许用户【具体用户行为】并能够【预期结果】3. 【功能3】：提供【功能特性】以解决【具体问题/需求】4. 【可选功能】：如果技术可行，希望能够【描述理想但非必要的功能】## 目标用户- 主要用户群体：【年龄/职业/特征描述】- 使用场景：用户主要在【什么情况下】使用这个应用- 用户动机：解决【什么问题】或满足【什么需求】
+</code></pre>
+<p>比如我这提示词网站按照这个提示词的模板思考完成之后的填写结果是这样的：</p>
+<pre><code>我想开发一个网页应用，主要用于展示我的LLM和图像生成提示词集合。## 核心功能需求1. 卡片式展示功能：能够以卡片形式分别展示LLM提示词和图像生成提示词，其中LLM提示词卡片包含标题、提示词内容、作用标签和复制按钮；图像提示词卡片在基本结构相同的基础上增加结果图片展示。所有卡片设置固定高度并在内容超出时自动省略，点击卡片后弹出模态窗口展示完整内容和操作选项。2. 筛选系统：允许用户通过Select下拉组件筛选不同类型的提示词和适用的AI模型，并能够实时更新展示结果，帮助用户快速找到所需提示词。3. JSON数据管理：提供将所有提示词信息存储在JSON文件中的结构设计，以解决后期内容更新和维护问题，使我能够轻松添加、编辑或删除提示词而无需修改代码。4. SEO优化：如果技术可行，希望能够实现完整的搜索引擎优化，包括适当的页面标题、描述、关键词、结构化数据和其他元信息，提高网站在搜索结果中的可见度。## 目标用户- 主要用户群体：AI提示工程师、内容创作者、数字艺术家和AI应用爱好者- 使用场景：用户主要在需要创作AI内容、进行AI绘画或优化提示词技巧时参考- 用户动机：解决&quot;提示词工程&quot;难题，提高生成内容质量，学习优质提示词结构
+</code></pre>
+<p>上面这部分是核心需要你费心填写的部分，当然后面还需要的是设计和开发的要求，这里你就可以省些事情了，藏师傅帮你准备好了，当然你要是不喜欢 Linear 的风格也可以让 AI 根据这个部分更改。</p>
+<pre><code>在开发和设计方面，它应该参考 Linear 的网页设计风格，具体的要求为：1. 深灰近黑主背景 + 蓝紫单色渐变高光：整站以 #0A0C10 左右的暗色为底，局部用 #5E6AD2 方向的径向／角向渐变或发光强调重点，禁止多色互相渐变，以维持专业科技感。2. Inter 字体族 + 大字号层级：标题采用 Inter / Inter Display 极大号加粗，正文纤细；可中英文混排，中文负责情绪、英文作轻量注解。3. 单轴纵向滚动叙事：1080 px 以内的栅格，所有模块严格对齐，负空间充足；页面只向下滚动，避免 Z 形或错位排版，阅读节奏线性。4. 极简组件皮肤：1 px 半透明描边、12 px 圆角、柔和阴影；图标统一 1.5 px 线稿风格，禁用彩色 Emoji 做主要图标。5. 克制微动效 + 滚动触发 Reveal：元素进入视口时 150 ms 以内的淡入＋细微位移；整页可套用 Apple 官网式滚动驱动分段动效，但保持节奏舒缓，不喧宾夺主。6. Radix Primitives + TailwindCSS 3.0+：组件首选 Radix 获得键盘导航与 ARIA 语义；样式用 Tailwind CDN，引入预设深色／浅色变量。7. 高亮色自透明度渐变：通过调整同一高亮色的不透明度（而非色相）来制造纵深与光晕，避免多色混渐导致脏污。8. 数据可视化极简描线：图表使用单线条或半透明面 + 噪点蒙版，继承主题色；避免大面积色块破坏极简氛围。9. 专业图标库：通过 CDN 引入 Font Awesome 或 Material Icons Outlined 系列，保证线粗一致，与整体描边规则统一。10. 技术栈限制：仅用 HTML5、TailwindCSS（CDN）、必要的原生 JavaScript/Alpine.js；避免省略任何业务要点和可访问性标注。
+</code></pre>
+<p>然后我们需要的是将功能需求部分和设计&amp;开发要求结合起来发给 AI。</p>
+<p>这次 Trae 更新之后将原来的 Chat 模式和 Builder 模式结合在一起了，你要使用 Builder 模式的话只需要在输入框智能体部分选择 Builder 智能体就行。</p>
+<p>这里我们因为需要用到 Figma MCP 来参考设计稿，所以选择 Builder With MCP 就可以调用 MCP 了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sK0x4KgxBg6IppQCGbNPdqpezQ15wcibibDkrLfbTskYib1aziahgnfjaEnQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当 然你现在也可以根据自己的需求创建自己的智能体了，自定义提示词和启用需要的 MCP 服务就行。</p>
+<p>比如可以把我上面的设计和开发部分提示词做成智能体，你就只需要输入需求的部分，非常省事。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKZ8Nc89cvcotP8Q6MUxu5tgKxvEd6gZ9VRZ6liakbwAk8ibY2ib2qJRjmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后你需要做的就是将上面的两部分提示词粘贴到一起，选择 Builder 模式之后按下回车等待 Trae 给你的首次生成结果。</p>
+<p>如果你用的模型比较好的话，这套提示词和方法基本可以保证直接完成整个项目，可能偶尔只有几个小 bug，我最极限的一次是用 Claude 3.7 一次生成了 4000 行代码的项目，只有一个侧边栏没办法点开的 bug。</p>
+<p>❗</p>
+<p>如果模型写完发现跟你需求的相差甚远，这个时候不要继续修复了，重新梳理你的需求和提示词，新开一个项目重新开始。</p>
+<h2>测试和优化</h2>
+<p>这个时候我们需要点击聊天窗口中的「预览」按钮预览我们的项目，你需要非常全面的测试首次生成的结果，我写了一个简单的测试 todo，你可以按这个来：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKCpR5sCgcVsprEoWuibcLHYqsk6f5nibCezAEsuqVwYP1sEJ0UmYaj2WA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<pre><code># 网页应用测试计划## 功能完整性测试- 系统性测试所有交互元素（按钮、链接、卡片点击等），确保每个功能正常运行- 验证筛选组件中所有选项的响应正确性，不存在失效选项- 检查卡片展开/弹窗功能的一致性表现## 数据处理与边界测试- 测试筛选组件在各种组合条件下的表现- 验证极端情况处理能力（大量卡片、超长提示词内容、空结果等）- 确认复制功能在不同浏览器环境下的可靠性## 响应式设计验证- 在多种屏幕尺寸上测试布局适配性（手机、平板、桌面）- 检查不同设备上的交互体验（触控 vs 鼠标操作）- 验证在不同分辨率下内容可读性和视觉层次## 用户体验反馈收集（可选）- 邀请3-5位目标用户群体进行实际操作测试- 收集关于导航流畅度、信息查找效率的定性反馈- 记录用户在实际使用中遇到的困惑点和建议
+</code></pre>
+<p>如果没有问题的话那最好，你就可以直接发布了，如果你发现了问题或者你的朋友给你提了一些改进建议你觉得挺好应该加一些功能。</p>
+<p>那你就需要接下来这些 vibe coding 的迭代优化建议了：</p>
+<ol>
+<li>1. 每次解决一个问题： 每次对话只修复一个问题或者只增加一个功能，等待 AI 改完之后验证没问题了再继续下一步操作。</li>
+<li>2. 发现模型做出错误决定及时撤回： 如果发现 AI 再修改的过程中曲解了你的意思，已经跑偏了，不要等待 AI 修改完成直接点击上次对话气泡旁边的「回到本次对话发起前」按钮重新开始。 <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKLfSjULXZHd5QytuibINVvbtbAkk2ZTPVFxb8vAEMdSUpFr5g9TE7svA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>3. 精确指明需要修改的内容:，如果你知道是哪个文件或者代码的问题可以使用#号选择那个代码或者文件，比如修改颜色的的时候最好说“按钮颜色应为#3366FF”而不是说“按钮是红色的”，也可以给模型看截图。 <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sK6tmrxiaSKKrjGEuU4bEia96sxhkLAibm0x3LmuE7sPtZ6loxUGyY3GJHw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>4. 详细描述问题表现: &quot;点击提交按钮时表单没有响应，控制台没有显示错误信息，网络请求面板也没有捕获到API调用&quot;</li>
+<li>5. 请求针对性解释: 如果你只是想要对话的话需要明确要求 AI 解释而不是操作，比如&quot;能否解释一下在这个实现中，页面刷新之间的数据持久化机制是如何工作的？&quot;</li>
+<li>6. 保持完整的修改背景: &quot;保留现有的配色方案和动画时长，但需要调整布局实现响应式设计，在768px和1024px处设置断点&quot;</li>
+<li>7. 给 AI 提供完整的报错信息： 如果你发现终端或者控制台有红色的报错信息的话，复制完整的报错信息和上下文结合你的问题一起提供给 AI，通常会有助于修复。</li>
+<li>8. 安全问题： 如果你的项目涉及到了一些需要在网页填写的 API 或者账号密码之类的话，最好不要让 AI 写在代码里面，把它变成一个需要输入的参数，部署之后使用时你再填写就行。</li>
+</ol>
+<p>除了上面这些问题之外这个项目上我们还需要处理数据问题，第一次的时候我是没有提供给 AI 我的提示词数据的，它自己虚拟了一些，放在了 Json 文件里面。</p>
+<p>这个时候我需要将真实的提示词放进去，我直接下载了我的几篇文章，然后上传到 ChatGPT，让o3 根据 Trae 写的提示词结构整理了一个新的 Json 文件出来，我直接复制之后替换数据就搞定了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sK5IUbDNrv9lOeS33ibQg9l8vFAMOC6QTcmyn8Mwjl1Y6oklOIMX8Cl9w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sK6CrQbCldALsO4TLkkM9g5OKq9kGjlgHCyicBjFdicRTdH6JL3v4ibqsSw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>后续更新也只需要让 AI 生成类似的 Json 片段我复制到文件最后就行。</p>
+<p>大家如果后续写的项目如果数据不多而且没那么复杂的的话也可以参考我这个方法，方便维护，也不需要后端服务。</p>
+<p>如果你按照上面这些方式基本上可以保证你相对高效而且稳定的让 AI 修复问题或者添加功能。</p>
+<p>这里还是提一下上一部分结束时的话，如果你发现越改越差，不要考虑沉没成本，重新开始或许是最好的选择。</p>
+<h2>部署上线</h2>
+<p>部署这部分大家都很熟悉了，我这里稍微提一下就行如果你不是专业用户就可以使用类似 yourware 这类快速部署的服务，只需要将我们新建项目时候的文件夹拖到输入框上传就可以快速部署了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKQY36yfCDicN3BfslSeYAKa08HCzMhb2BWfmgpSvFOXxJ0g0Dx5NjkpQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>如果你需要自定义域名也可以使用 Netlify 这种服务，让 Trae 将项目上传到 Github 之后直接从 Netlify 链接 Github 就能一键部署了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgdTN28Dpcc4DGm00U3FA5sKMtmlnHIPH9qnpkJtMqXYGfbQWfr2waicnTMKUjChGExXrSQOWUtD4Jg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>从我写 Claude 的网页提示词到现在短短一个月时间整个服务 vibe coding 的生态和工具飞速发展，从 IDE 到专门为 AI 编程服务的前后端组件库、数据库，部署服务等等，距离 Trae 国内办法发布没多久，他就加了这么多能力。</p>
+<p>Vibe coding 现在只能做小工具小网页，但是它不会一直只能做小工具小网页。</p>
+<p>看完这个教程，我强烈建议你动手试试，真的很简单，每一次实践都会加深你对这种新开发方式的理解，也会让你更加了解AI的能力边界和最佳使用方法。</p>
+<p>好了教程到这里就结束了，如果你有什么问题也可以再评论区问，最好带上详细信息，我或者其他大神看到应该会给你解答。</p>
+<p>为了方便你记笔记我也把文章中提到的关键建议整理成了 15 条 Vibe coding 建议方便参考：</p>
+<p>🎁</p>
+<p>藏师傅的 Vibe Coding  15  条建议 ——把本文全部经验压缩成一份「拿来就能用」的清单</p>
+<ol>
+<li>聚焦单一核心功能： 第一次动手就先做一个功能点，别妄想一口气复刻完整抖音。</li>
+<li>写需求＝写产品说明书： 用「我想开发一个…」模板，把目标用户、场景、功能逐条写清楚，越细越好。</li>
+<li>珍惜第一次提示词： 首轮提示词决定成败，别用“帮我写个网页”这种含糊表达。</li>
+<li>IDE 规则先配置： 在 Trae 的 Rule 面板贴上前端最佳实践规则，让 AI 自动遵守编码规范。</li>
+<li>选顶级模型再开干： Claude 3.5 、 GPT-o4 mini等大模型才压得住复杂项目，别拿小模型硬撑。</li>
+<li>全链路测试清单： 功能完整性 → 边界数据 → 响应式 → 用户可用性，按表格逐项勾。</li>
+<li>一次只改一个问题： 每轮对话聚焦单 Bug / 单功能，验证通过再进入下一轮。</li>
+<li>发现跑偏立即回滚： Trae 里的“回到发起前”就是 Ctrl‑Z，别让错误分支越走越远。</li>
+<li>用 # 文件锚点精准定位： “#src/components/Card.tsx 第 42 行按钮颜色改为 #3366FF”——越精确，AI 改得越准。</li>
+<li>报错信息完整贴给 AI： 控制台红字别截半张图，一起贴上上下文和操作步骤。</li>
+<li>把业务数据抽成 JSON： 内容与代码分离，后期只维护数据文件，无需频繁重编译。</li>
+<li>敏感信息留到运行时填： API Key、密码用环境变量或输入框，别硬写进源码。</li>
+<li>越改越糟就重开项目： 成本是时间不是面子，早放弃＝少痛苦。</li>
+<li>选最省心的部署方式： 文件拖到 yourware → 自动上线；进阶用户 Netlify / Vercel + 自定义域名。</li>
+<li>持续收集真实反馈： 找 3‑5 个目标用户试玩，记录每个“卡壳”瞬间再迭代。</li>
+</ol>
+<p>期待在评论区看到各位的作品，如果觉得教程你有帮助可以帮我点个赞👍或者喜欢🩷，也可以转发给 你需要的朋友。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>收录于 AI 编程</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>剪存为飞书云文档</p>
+<p>| |  | MP4 File 1.75 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ADHNyGj17b4UOrHMb6w7WA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

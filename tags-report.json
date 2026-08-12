@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-08-12T07:08:04.724Z",
+  "totalArticles": 976,
+  "uniqueAuthors": 90,
+  "uniqueTagsBefore": null,
+  "uniqueTagsAfter": 1538,
+  "systemTagsRemoved": [
+    "clippings",
+    "剪藏"
+  ],
+  "tagMergeMap": {
+    "提示词工程": "提示词",
+    "Prompt工程": "提示词",
+    "Prompt": "提示词",
+    "Prompt心法": "提示词",
+    "AI视频生成": "AI视频",
+    "AI视频创作": "AI视频",
+    "图片生成": "图像生成",
+    "AI生图": "AI绘画",
+    "NanoBanana": "Nano Banana",
+    "Banana Pro": "Nano Banana",
+    "AI Agent": "Agent",
+    "办公效率": "效率",
+    "开源项目": "开源",
+    "AI编程": "编程",
+    "Gemini 3.0 Pro": "Gemini 3",
+    "Claude Skill": "Skill",
+    "Skill管理": "Skill",
+    "视频创作": "视频制作",
+    "大语言模型": "大模型",
+    "AI短剧": "短剧",
+    "编剧": "剧本创作",
+    "即梦图片": "即梦",
+    "即梦图片4.0": "即梦"
+  },
+  "authorAliases": {
+    "银海": "银海inhai"
+  },
+  "authorNameTagsDropped": [
+    "AI产品黄叔",
+    "云中江树",
+    "AI沃茨",
+    "一泽Eze",
+    "阿真",
+    "MuleRun",
+    "数字生命卡兹克",
+    "李继刚",
+    "张梦飞i",
+    "海辛",
+    "猫叔的AI",
+    "琢么琢么",
+    "船长AI视界",
+    "银海inhai"
+  ]
+}

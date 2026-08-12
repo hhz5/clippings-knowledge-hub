@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我做了个万能生图 Skill，人人都可以定制设计 Agent · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我做了个万能生图 Skill，人人都可以定制设计 Agent</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=%E7%94%9F%E5%9B%BE">生图</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1">设计</a><a class="chip" href="../index.html?tag=Agent">Agent</a>
+    <span class="date">2026-02-10</span>
+  </div>
+  
+  <article class="content"><p>原创 空格 zephyr <em>2026年2月10日 08:58</em></p>
+<p>上次我分享了几个生 图 Skill，它能 给 文章批量生成配图 ，也能制作故事板 、Logo 、海报，最后我还 演 示了 怎么根据自己的需求，自定义一个 Skill 来 批量出图 。</p>
+<p>做 完这 些 以后 ，我越来越觉得 Skill 的价值被严 重低估了 。</p>
+<p>往 小 了说，它能做 到过 去 Coze、Dify、n 8n 这 类 低代码平台做的事——用 模 块拼装各种 AI 能力 。但 它不需要你 配置节 点、连线、调参，一 个 Markdown 文件就能 搞定，真 正 让 每 个人都有手搓 AI 工具的能力。</p>
+<p>往 大了说，我认为 Skill 正在拆解 SaaS 和 AI 应用的每一个付费模块 。那 些 S aaS 软件最 吸引你掏钱的功能点 ，一 个 Skill 就能实现 。这 也是上周美股 S aaS 板块集 体崩盘的原因 之一， 市 场已 经 闻 到 了这 个信 号。</p>
+<p>今天我又做了个把所有图片生成场景融合在一起的 skill，一个 skill 搞定所有设计。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxoEDtQM0o4342GgXCL0PgCRC4f2NGHztJ5bicXE14513oElapibCR57XnvJKvHsc3T78TSiaXQfGibdSOicfXb2WzcVK7kF3NAeWEY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>上篇文章 <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247493724&idx=1&sn=a737d74a3df5049ce466828137dea4e2&scene=21#wechat_redirect">自定义 Skill 批量配图</a> 发出去后，就有不 少朋友来 问 我这样的 Skill 怎么做 ，但 我也 发现，真 正动手用 起来的人还是很少。</p>
+<p>其 实 Anthrop ic 官方出品的 skill-creator 就是一 个现成的元 Skill，你告诉 它你想要 什么能力，它直 接帮你生成一个 完整的 Skill 包。我做 的这个万能生 图 Skill ，就是 顺着 这个思路拆出来的。</p>
+<p>今天我把这 个 Skill 的原理和 7 个案例展 开 讲讲，希望你看 完之后不 只 是 觉得 &quot;效果不 错&quot;，而 是能 理解背 后的机制，学 会自 己去做 。</p>
+<p><strong>原理解析</strong></p>
+<p><strong>universal-image-gen skill 的</strong> 执行流程</p>
+<pre><code>用户说一句话 → AI 解析意图 → 引导选场景 → 引导选风格 → 确认比例/数量 → 自动构建提示词 → 调用 API 批量生成
+</code></pre>
+<p>能够制作任意风格如海报、电商、漫画、红包、UI、艺术照……</p>
+<p>这些专业的提示词不需用户写，全部存在 <code>references/scene_templates.md</code> 里。AI 读取用户的意图后，从模板库里匹配最合适的模板，填入用户的具体参数，就能组装出一段专业级的生图提示词。</p>
+<p>这就是这个 Skill 的核心机制： <strong>用户负责说&quot;要什么&quot;，Skill 负责把&quot;要什么&quot;翻译成&quot;怎么做&quot;。</strong></p>
+<p>目前支持 7 大场景，每个场景的处理逻辑不一样。展开看一下：</p>
+<p><strong>7 个案例</strong></p>
+<p>说了这么多，直接看效果。以下 7 个案例都是我今天用这个 Skill 实际生成的，每个案例告诉你：我说了什么、AI 执行什么、最后出了什么。</p>
+<p><strong>案例 1：冬日咖啡</strong></p>
+<p><strong>输入</strong> ：帮我生成一套冬日咖啡主题的插画海报</p>
+<p><strong>AI 执行</strong> ：判定为海报设计场景，推荐手绘水彩风格。自动构建提示词：温暖色调、咖啡杯拉花（雪人图案）、壁炉、熟睡的猫咪、窗外飘雪、书籍和围巾作为场景道具。文字元素&quot;冬日温暖拿铁&quot;直接融入画面。</p>
+<p><strong>输出</strong> ：2 张治愈系水彩插画，暖色调统一，适合冬季咖啡馆的社交媒体配图。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCowfWW14nicwiakrkkbpiaicdHdov3zousVFB9iafVv4xNzIrlDPSc7EuyXxibA2nwNsZhibiaQsbmfQGH6iaicofjnktBQRd96xww4BbK8as/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCowyad5hNCFLAJibbJ8mThxibo1kGB7HELO1cvZbEbwIya4cVUWzfeO1Z9kU2gO4TMuwO2Gvt0Lo8OQ0IzA7AJKyVicgYemib95n3yw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p><strong>案例 2：机器人剪贴风</strong></p>
+<p><strong>输入</strong> ：做一组机器人主题的潮玩海报，剪贴风格</p>
+<p><strong>AI 执行</strong> ：判定为海报设计场景 + 剪贴风格。自动构建提示词：黑色背景、3D 渲染的彩色机器人角色（红、蓝、黄、绿、橙多色）、贴纸质感、胶带元素、条形码装饰、斜体大字标题。文案 AI 自动生成：&quot;NEW COLLECTION&quot;、&quot;FUTURE IS NOW&quot;、&quot;TECH TOYS&quot;、&quot;LIMITED DROP&quot;。</p>
+<p><strong>输出</strong> ：3 张潮玩风格海报，每张构图不同但视觉语言统一，有很强的街头潮牌感。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoymqJIw4ZVDqc2a1eR9jtRsibe0z4K3efOBT9ycM8WqmSY2dcSDcQA0KCH6iaWUtxjf6oKZuvGzTJNL83bzduiaaxSxcCVbeicHVKk/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCoxTTxn8oUvZT2gqIhicjCeGWhH5DZHKmshh9cJC5veI4G7VjLadUmBFh0MIc3qrA0QP4QDic6icibT9nibrsGmXh9pkLSQMCJibaK3AI/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCowr9L080pHrOYwzjbqJhYjGXUg0XQia7e6pUORlHamnFKQicHicukzXQnuDh76bnffheYj2dwS4aWqwcvEEPTQuPkZgYwwdIQjWibo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></p>
+<p><strong>案例 3：clawAI 网球场品牌 VI</strong></p>
+<p><strong>输入</strong> ：帮 clawAI 网球场做一套品牌周边设计</p>
+<p><strong>AI 执行</strong> ：判定为 IP/周边延展场景。AI 先设计了一个机器人吉祥物（绿色 + 橙色配色，手持网球拍），然后围绕这个 IP 延展出一整套品牌物料：帆布袋、球拍套、运动 T 恤、连帽卫衣、棒球帽、遮阳帽、手提纸袋、球场地面设计。所有物料保持统一的绿橙配色和电路板纹理风格。</p>
+<p><strong>输出</strong> ：4 张品牌 VI 展示图，从单品到全套一目了然，可以直接拿去跟供应商沟通打样。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCox3U58icmdnNky5icFf7NEZqD57wRBNjTtWYCepEtD6MGHBUzlTd34QfGnZyIauwic8Xic0y3VsnoJhFHS6YRMyr7g2LeQ35Djic0VU/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCoyiaxErn1KjCNfX8Ku7n0ic1bCl60E59wum1e8FYKM5uvCCoPibpU0HkDp9mEQ8mSjlV6GtbkyopW9d3t4ZofAiaJP1syHnkTV55LY/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCozhzrnmjkuKu0vp9q422yn3cKu7hXAzBfPCcjyTWs7ccgbibGe5ETVcHSeqibvLRf1Nwsq9gibib48j9wWge6xlBUuw9t3dtuvtJJY/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCozEJrv2LmApWgYHQSLLsX3sBKDgZCbJvQjovoVYw55YOgO3XMXZaqcNDSZ8JhKkKvlYYwx3oZ6r7pCHicTvSq6v21dwia4icAB0LU/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></p>
+<p><strong>案例 4：三体故障艺术</strong></p>
+<p><strong>输入</strong> ：做一组三体主题的科幻海报，故障艺术风格</p>
+<p><strong>AI 执行</strong> ：判定为自定义场景 + 故障艺术（Glitch Art）风格。AI 从《三体》原著中提取了核心视觉元素：三颗恒星（蓝/紫/红）、智子量子纠缠、水滴探测器（Waterdrop Probe）、暗黑城市天际线。文字直接引用经典台词：&quot;不要回答&quot;、&quot;黑暗森林中每个文明都是带枪的猎人&quot;、&quot;弱小和无知不是生存的障碍，傲慢才是&quot;。整体叠加了数据流、像素错位、色彩偏移等故障效果。</p>
+<p><strong>输出</strong> ：3 张赛博朋克 × 故障艺术风格海报，科幻感拉满，可以直接当展览海报用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowzlpia1qgt6kicibuOiaqutlV5rOWMYTfe6icddkBvlCwHuktiaYB0AOibXEv1VS6pmh8sd1cAoDibEbQicWD0leicrXUuWxTk5ia8cibz4Uw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoyCagYoykhnWsQcWhVNgGRzCz6vTncR5cwhiaLZBYRjtHvPEClwcZ6GfbeZX1d9uicGGaibstnibLD9E7urfmvVmPJGG4q2X6ian2BU/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image"></p>
+<p><strong>案例 5：AI 语音聊天 App UI</strong></p>
+<p><strong>输入</strong> ：设计一款 AI 语音聊天 App 的界面</p>
+<p><strong>AI 执行</strong> ：判定为信息图表场景（UI 展示类）。AI 自动规划了 4 个核心页面：语音通话界面（声波动画 + 通话控制按钮）、对话列表页（多个 AI 助手的聊天记录）、助手选择页（Luna/Max/Aria/Dr.Spark 四个角色，各有性格标签）、文字聊天界面（支持语音消息）。整体采用深紫色暗黑主题，霓虹渐变点缀。</p>
+<p><strong>输出</strong> ：4 张 iPhone 机型展示图，页面逻辑完整、交互元素齐全，可以直接拿给开发看。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxeg6VNJAmIhuQZG5cJyd17mSDSfl7pMiaVB2n0CZwria4t3Sjn0Z3gV6eQoibqqgxuZSjxa9uHt8Acy1fqbwXqZXGIJ5ZmdoQLI0/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Feishu Docs - Image"></p>
+<p><strong>案例 6：PPT 制作</strong></p>
+<p><strong>输入</strong> ：制作一组带有信息图标的简约设计风格的 PPT，2025 年 AI 模型发展总结</p>
+<p><strong>输出</strong> ：4 张16:9不同内容的 PPT。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCox9iapFcdUcyDyjGZ2NSeYPVYmUhVjYib4tqdRx288sm143rDHJUPVTTTC6N5X1IN4x8gtOFJHCyRGZpIFmowVAXRbjx8oIWWUWw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCozGicRpsofUHyJbyJJj8Uvq52U0Kvr9VxJZjj4Jh27pgqsm3AFMDhCE7TWOAHtFC1dyo0QJxJtmOFHDcv9QeuTKQf3uzkIeuZlg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCozeZY09BURyD3QKjOw7ogz7bMD8EUSID6MbQ6uyMia7gjBvic0icrFxSyERtNySEVz2vjXSoiaQvvzNs3PWqjBXDzR2V4rgVplwwRo/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowRCJe5eDHq2Yf1erKaW3lqECgWwhgWXsoE4jTVkOtSVGuEUzY6mOIWibylB8De4J6ibiaCyyUGp7ys5gwLMtnz1ABueCztwlvXcs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p><strong>案例 7：马年红包</strong></p>
+<p><strong>输入</strong> ：做一个敲键盘的小马主题的马年红包封面，要有键盘元素</p>
+<p><strong>AI 执行</strong> ：判定为自定义场景。AI 构建了一个&quot;码上暴富&quot;的创意概念——卡通小马趴在金色机械键盘上，Space 键特别醒目。背景大红色，散落着代码符号（ <code>&lt;/&gt;</code> 、 <code>{}</code> 、<code>;</code>）、金币和元宝。整体是 Q 版卡通风格，喜庆但不俗气。</p>
+<p><strong>输出</strong> ：4 张马年红包封面，竖版 9:16 比例，可以直接用作微信红包封面。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxk83bOUczaMdgeXKpT57bHI35nJtdUfNKF4P1hhVicmpVwCuIGtY1ttR0KozhVZfSPNj95nGRER5DHKxyo0GALSw6DRr2Dx3hQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Feishu Docs - Image"></p>
+<p>这个 skill 我全放在这里了，下载体验： <a href="https://github.com/zephyrwang6/myskill">https://github.com/zephyrwang6/myskill</a></p>
+<p><strong>最后</strong></p>
+<p>今天这 7 个案例，覆盖了插画、海报、品牌 VI、科幻艺术、App UI、红包封面——全部是一个 Skill 完成的。</p>
+<p>以前你想做海报，要买 Canva 会员。想做电商图，要用醒图或创客贴。想做 UI 原型，要开 Figma。想做品牌 VI，要找设计师报价。每一个需求对应一个软件，每个软件对应一笔订阅费。</p>
+<p>现在，一个 Skill 就够了。</p>
+<p>同样的 。内容写作有 Skill，数据分析有 Skill，播客处理有 Skill，选题生成也有 Skill。</p>
+<p>每一个曾经需要专门工具的场景，都可以被一个 Skill 替代——而且是更懂你、更灵活、更便宜的替代。</p>
+<p>所以快动手做自己的 Skill 吧。从你每天重复做的那件事开始，把它变成一个 Skill，你就拥有了一个永远不下班的专属 Agent。</p>
+<p>如果你想系统学习怎么搭建自己的 AI 生产力系统，欢迎关注我的 <strong>AI 生产力专栏</strong> ，从 Skill 制作到 Agent 搭建，手把手带你从零开始。</p>
+<p><strong>点击阅读原文或地址订阅：</strong> <a href="https://xiaobot.net/p/AIPAC">https://xiaobot.net/p/AIPAC</a></p>
+<p>最后，送大家几张马年红包封面，祝各位读者朋友 <strong>码上暴富</strong> ，马年大吉！🐴</p>
+<p>每天好心情</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>修改于 2026年2月10日</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/wLgv348vfOVe__MiY6V3yQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

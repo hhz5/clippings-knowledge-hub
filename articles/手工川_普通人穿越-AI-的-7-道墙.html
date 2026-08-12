@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>普通人穿越 AI 的 7 道墙 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">普通人穿越 AI 的 7 道墙</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%89%8B%E5%B7%A5%E5%B7%9D">手工川</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F">思维方式</a><a class="chip" href="../index.html?tag=Skill">Skill</a>
+    <span class="date">2026-05-26</span>
+  </div>
+  
+  <article class="content"><p>原创 手工川 手工川 <a href="javascript:void(0);">手工川</a></p>
+<p><em>2026年5月26日 00:00</em> <em>上海</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>三天前我跟大学老师和博士生学妹腾讯会议了 2 个半小时</p>
+<p>关于 “AI 如何辅助学术”</p>
+<p>聊到一半我就发现问题本身不是问题</p>
+<p>问题的背后才是真正的问题</p>
+<p>最终的感受：撕裂</p>
+<p>我们这些在 AI 一线的从业者</p>
+<p>与 AI 之外的生产力相关的朋友</p>
+<p>真地隔着十万八千堵墙</p>
+<p>什么是 skill、什么时候用 skill、怎么用 skill</p>
+<p>怎么管理 session：压缩、分叉、横切点分离</p>
+<p>人、自动化与AI之间的微妙关系</p>
+<p>AI 小白与高手之间的本质差异</p>
+<p>太多太多……</p>
+<p>为此，我花了三天时间，仔细打磨，梳理此文，希望对你有所帮助</p>
+<p>同时，也越来越清晰地看到</p>
+<p>自己成为一名 AI 布道师的充分与必要性</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uw5djxcva2JK7xcvXK9zNE5j7ruIzKUCBYSdbwydhBopgHrvZgJJOAEJAl0fu7JzAwicIbeBuREmKtxOPSKqmKdAgeKgtJuw8iaoXiaJCndPWQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="普通人穿越 AI 的七道墙：从工具误解到 AI Native 与社会生存危机"></p>
+<p>普通人穿越 AI 的七道墙：从工具误解到 AI Native 与社会生存危机</p>
+<hr>
+<h2>第 1 道墙：不知道什么是 AI</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2IibQVIibEVY2bBkfHpgtoEGxyAHHL8KEFDIib6yNRqLfgshCo740SX2d31Pu3Lsxzj7OQgN5ayDibyr5CQMickkqjU9pQobfBcVdSc/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="不知道什么是 AI：自动化、人机翻译层与智能边界"></p>
+<p>不知道什么是 AI：自动化、人机翻译层与智能边界</p>
+<p>大多数人开始用 AI 时，脑子里的模型是这样的：</p>
+<pre><code>我 ←→ 一个叫&quot;AI&quot;的东西 ←→ 我的工作
+</code></pre>
+<p>AI 在这个模型里是一个统一的、神秘的、新的能力。然后你开始逐项盘点：&quot;这件 AI 能干吗？那件能干吗？登录付费数据库这件呢？&quot;</p>
+<p>这是绝大多数人撞上的第一道墙，也是最容易忽略的一道。</p>
+<p>要跨过去，你需要先做一个<strong>结构性的区分</strong>：</p>
+<p><strong>自动化</strong>：每一步都一样、能写死成脚本的事情。批量改文件名、定时抓某个网页、把同一份模板填进十封邮件、在某个软件里点固定的几个按钮——这些都是自动化。</p>
+<p><strong>AI</strong>：需要&quot;判断&quot;的事情。理解一句模糊的话、根据上下文选用不同的回应、把图里的内容描述成文字、把一段杂乱的笔记整理成 outline——这些是 AI。</p>
+<p><strong>AI 驱动的自动化</strong>：把上面两者拼起来。AI 负责需要判断的那几步，自动化负责执行的那几步。</p>
+<p>这里有一个被严重低估的事实：<strong>自动化是一个非常成熟的领域，早就被解决了。</strong></p>
+<p>二十年前你就能&quot;录制按钮 → 自动重放&quot;。RPA（机器人流程自动化）在金融、保险、电信行业已经吃掉了大量的后台流程。工业自动化更早——整条汽车流水线几十年前就在自己跑。</p>
+<p>那为什么自动化没有在我们身边大规模铺开？为什么白领的桌面工作大多还是&quot;靠人点点点&quot;？</p>
+<p><strong>因为人卡住了。</strong></p>
+<p>过去几十年的自动化，一旦遇到&quot;这里需要判断一下&quot;那一步，就推不下去了。要做这一步只能配一个人。一旦配了人，整个流程就被人的工作节奏卡住——人会请假、会犯错、会摸鱼、需要培训、需要审批。所以大量本来可以自动化的工作，最后还是用人在做。</p>
+<p><strong>AI 真正的革命，不是&quot;AI 比人聪明&quot;——而是它把&quot;需要判断&quot;那一步也接过来了。</strong></p>
+<p>于是&quot;判断 + 执行&quot;被打包到一起。<strong>人不再是流程里的瓶颈。人本身被流程绕过去了。</strong></p>
+<p>这一层想清楚之后，你回头看那个最初的世界模型，会发现它根本是错的。</p>
+<p>不是&quot;我 ←→ AI ←→ 工作&quot;。是：</p>
+<pre><code>我 ←→ ( 人 / 自动化 / AI / AI 驱动的自动化 ) ←→ 工作
+</code></pre>
+<p>AI 只是答案集合里的一种。你拿到一个任务，第一件该做的事，是分诊——而不是问&quot;AI 能不能干&quot;。</p>
+<hr>
+<h2>第 2 道墙：不知道什么时候用 AI</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2K9Mhm5gqn2o63buOO6DRzysa9iaVvfTibK32x56aYlribI7IBXEHcCnmiaVghNAOk2FJaKf9R4BRHxGgfE5oSZlRTvOTGwA3go3vg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="不知道什么时候用 AI：机械计算与智能求解器的分界"></p>
+<p>不知道什么时候用 AI：机械计算与智能求解器的分界</p>
+<p>跨过第 1 道墙，你开始能区分&quot;AI 的活&quot;和&quot;自动化的活&quot;了。这时候第 2 道墙立刻浮现：<strong>就算是&quot;AI 的活&quot;，也不是越多越好。</strong></p>
+<p>很多人陷入了一种&quot;AI 万能锤症候群&quot;——什么活都丢给 AI，结果反而更慢、更贵、更不准。</p>
+<p>这一层最干净的破题，是侯世达。</p>
+<p>侯世达在《GEB：哥德尔、艾舍尔、巴赫——集异璧之大成》里讨论过一件事：<strong>真正的智能，不会让加法计算得更快。</strong></p>
+<p>加法是已经被算法化、被压缩到极致的机械操作。一个真正智能的系统，<strong>不应该被定义为&quot;做加法做得更快的东西&quot;</strong>——计算器已经做得很好了。智能的特征，恰恰是那些<strong>没法用机械算法解决</strong>的东西：跳出当前框架、识别隐藏的模式、判断&quot;哪一条规则在这里适用&quot;。</p>
+<p>这个洞察用在使用 AI 上，立刻就有了导向：</p>
+<p><strong>该用 AI 的地方</strong>：模糊判断、抽象映射、跨域整合、自然语言理解、需要&quot;上下文感&quot;的事情。</p>
+<p><strong>不该用 AI 的地方</strong>：精确计算、固定流程、批量执行、需要可重复且可审计的事情。</p>
+<p>把一份 Excel 几千行数据按既定规则分类——别用 AI，写个脚本，结果可重复、可验证、几乎免费。</p>
+<p>把一篇杂乱的访谈纪要整理成结构清晰的文档——这才是 AI。</p>
+<p>让 AI 帮你算&quot;3.7% 的复合年化 20 年是多少&quot;——这是浪费。AI 算这个不仅慢，还可能算错。打开计算器，2 秒搞定。</p>
+<p><strong>AI 的本质，是一个&quot;智能求解器&quot;——而智能往往是与机械计算相对的。</strong></p>
+<p>跨过这一道墙的判断标准很简单：你拿到一个任务，问自己一句——</p>
+<blockquote>
+<p>这件事，本质上需要的是&quot;判断&quot;，还是&quot;计算/执行&quot;？</p>
+</blockquote>
+<p>是判断，给 AI。是计算或执行，给自动化（甚至给计算器）。<strong>两者结合的事情，先用 AI 做&quot;判断&quot;那一步，再用自动化跑&quot;执行&quot;那一步。</strong></p>
+<p>这个反射练成之后，你的 AI 使用效率会立刻翻倍。也会让你不再被&quot;AI 一晚上跑完所有活&quot;这种自媒体标题骗到。</p>
+<hr>
+<h2>第 3 道墙：不知道怎么选 AI</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uw5djxcva2IjxwR73tsBz4jzsmK8Hy2HEFJ9XicrYKeuib0JSYtbicSpMQ4GCcLTib57jl62EOt8TQ83N0dMAQo6dFS38PpYP3hydKE0ojwM2oM/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="不知道怎么选 AI：为不同任务选择模型、agent 与工具链"></p>
+<p>不知道怎么选 AI：为不同任务选择模型、agent 与工具链</p>
+<p>跨过第 2 道墙，你知道什么时候该用 AI 了。这时候你面对一个新问题：<strong>该用哪个 AI？</strong></p>
+<p>AI 选型至少分两层——<strong>agent 选型</strong> 和 <strong>模型选型</strong>——两层经常被搞混。</p>
+<p><strong>第一层：agent 选型</strong></p>
+<p>agent 是你跟 AI 协作的&quot;壳&quot;——它决定你怎么跟 AI 对话、AI 能调用哪些工具、它能不能动你的文件、能不能跑你的命令。</p>
+<p>主流的 coding agent：</p>
+<ul>
+<li><strong>Codex<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 700;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[1]</span></sup></strong>
+  （OpenAI）—— 长任务执行能力强，OpenAI 主推。</li>
+<li><strong>Claude Code<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 700;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[2]</span></sup></strong>
+  （Anthropic）—— 一线工程师圈中口碑最好的，特别擅长大型重构和 skill 系统。</li>
+<li><strong>OpenCode<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 700;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[3]</span></sup></strong>
+   —— 开源、provider 无关，可以挂到任意模型上跑。</li>
+<li><strong>国产 coding agent</strong>
+  （workbuddy<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 400;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[4]</span></sup> 这一类）—— 适配国内网络环境和支付方式。</li>
+</ul>
+<p>不写代码的人也有自己的&quot;个人助理&quot;型 agent：</p>
+<ul>
+<li><strong>OpenClaw<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 700;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[5]</span></sup></strong>
+   —— 跑在 WhatsApp / Telegram 这类聊天软件里的个人助理，能清收件箱、发邮件、办登机牌、管日历。</li>
+<li><strong>国内的腾讯元宝、豆包、Kimi 助手</strong>
+  等也都在往这个方向走。</li>
+</ul>
+<p><strong>第二层：模型选型</strong></p>
+<p>模型是 agent 背后的&quot;脑子&quot;。同一个 agent 可以挂不同的模型。</p>
+<p>简化的判断方式：</p>
+<ul>
+<li><strong>深度推理 / 复杂任务</strong>
+  ：Claude Opus、GPT-5 Pro</li>
+<li><strong>日常对话 / 性价比</strong>
+  ：Claude Sonnet、GPT 主力版、Gemini Pro</li>
+<li><strong>多模态 / 图像生成</strong>
+  ：Gemini 的 nano-banana 系列、GPT-image</li>
+<li><strong>国产模型</strong>
+  ：DeepSeek（推理性价比之王）、Kimi（长上下文）、通义、智谱、豆包等</li>
+</ul>
+<p>选型最大的误区是问&quot;哪个最强？&quot;——这个问题没有答案，因为不同场景下&quot;最强&quot;的定义不一样。</p>
+<p>更好的问法：</p>
+<ul>
+<li>我的主要场景是什么？（写代码？写文章？看长 PDF？做客户支持？）</li>
+<li>我能接受的延迟和成本是多少？</li>
+<li>我是不是需要这套工具能 work 在国内网络环境下？</li>
+<li>我是不是需要数据留在本地、不出我的电脑？</li>
+</ul>
+<p>把这四个问题答完，你的工具栈基本就定了。</p>
+<p><strong>一个常被忽略的洞察</strong>：agent 和模型可以混搭。一个高水平的玩家，桌面上经常同时开着 Claude Code + GPT-5 + Gemini，让不同的脑子做不同的活。一台&quot;AI 工作站&quot;已经不是单一工具，而是一个工具组合。</p>
+<hr>
+<h2>第 4 道墙：不知道怎么管 AI</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2ISqPZ2oACicOz37yHSPDU0iasNKBfjFNz7sxqic0uLESJxrjv30fewUJYvXWd2BFScEvyqLpAATUfe7RwvpLnAibEv6OAegcHiaFsA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="不知道怎么管 AI：session、fork、压缩与多智能体分工"></p>
+<p>不知道怎么管 AI：session、fork、压缩与多智能体分工</p>
+<p>跨过第 3 道墙，你选好了工具。但很快你会发现——会用工具，跟用得好之间，还隔着一道墙：<strong>会话管理（session management）</strong>。</p>
+<p>中文 AI 圈整天讨论 prompt engineering，讨论模型大小，讨论谁家又开源了一个 70B。<strong>但真正决定你每天用 AI 效率的，根本不在这些地方，而在 session 管理上。</strong></p>
+<p>主流工具——Claude Code、Codex、Cursor 等——你跟它的每一次连续对话叫一个 session。session 一长，token 一多，AI 就开始&quot;懵&quot;：它会忘掉前面说过的话，开始重复、跑偏、自相矛盾。</p>
+<p>下面这四个动作是会话管理的核心：</p>
+<p><strong>1. 新建 session</strong> —— 一个任务彻底切换的时候。比如你前一段在写代码，下一段要写文案——别在同一个 session 里跨。模型的&quot;注意力&quot;会被前面的内容污染。</p>
+<p><strong>2. Fork（分叉）</strong> —— 不是为了&quot;拆短&quot;，是为了<strong>不污染</strong>。当你基于同一段上下文，有两个不同的推进方向，你不希望它们互相干扰——这时候 fork。比如 AI 已经理解了你这篇论文的整体框架，你想让一个分支打磨第二章，另一个分支检查第四章的数据。</p>
+<p><strong>3. Compact（压缩）</strong> —— <strong>关键反直觉</strong>：不要依赖 AI 自动压缩。自动压缩时它不知道哪些是真重点。你要主动 compact，而且<strong>带方向</strong>——&quot;把前 30 轮关于前端的内容压缩成 1000 字摘要&quot;，再把这段摘要塞进新会话继续推进。这叫定向蒸馏。</p>
+<p><strong>4. Rewind（回滚）</strong> —— 当你发现 AI 在某一轮之后开始跑偏，别试图&quot;修正&quot;，回到偏离前的那个点重新出发。AI 不擅长&quot;忘记自己的错误&quot;。</p>
+<p>这四个动作练熟，比你看十篇 prompt 工程指南有用。</p>
+<hr>
+<p>但当你开始管很多个 session、跑很多个 agent 的时候，新问题又来了——<strong>单 agent 不够用了</strong>。</p>
+<p>这是当下 AI 工程领域最热的话题：单智能体 vs 多智能体。</p>
+<p>中文自媒体过去半年把&quot;多智能体&quot;吹得神乎其神：让产品经理 agent、工程师 agent、QA agent 自己讨论分工、自动交付。听起来很美。但你只要真的去做就会发现——</p>
+<p><strong>99% 的用户连一个 session 都还没管明白，凭什么能协调 10 个 agent？</strong></p>
+<p>管 10 个实习生本身就是一件比写代码还难的事。多智能体如果只是把&quot;分工&quot;这件事丢给 AI，等于把管理难度直接乘以十。</p>
+<p>那多智能体真正有价值的地方在哪？我的判断是两个：</p>
+<p><strong>第一，注意力反向。</strong> 让一个 agent 写代码，它全部注意力都在&quot;证明自己写的是对的&quot;。让另一个干净大脑的 agent 审核同一段代码，它全部注意力都在&quot;找出哪里可能错&quot;。两个 agent 的认知模式是相反的——一个 default yes，一个 default no。这种&quot;为了破坏而存在的另一个视角&quot;，是单 agent 不容易做到的。</p>
+<p><strong>第二，制衡而非分工。</strong> 中国古代的三省六部制最妙的地方，不是六部把工作分了——而是中书、门下、尚书三省之间互相牵制：中书省起草、门下省审核、尚书省执行。三个环节互不重叠，缺一不可。<strong>真正能打的多智能体架构，是把&quot;制衡&quot;做进去的——不是&quot;分活&quot;，是&quot;校准&quot;。</strong></p>
+<p>回到工具层面，这一波编排器的代表已经在出来了：</p>
+<ul>
+<li><strong>Yoda<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 700;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[6]</span></sup></strong>
+  （我自己在做的开源项目）—— 桌面端的多智能体编排器，让 Claude Code、Codex、OpenCode、Cursor、Cline、Kimi 等多家 CLI 在隔离的 git worktree 里并行干活，互不踩踏。</li>
+<li><strong>Slock.ai<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 700;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[7]</span></sup></strong>
+   —— 把 AI agent 当成&quot;同事&quot;放进类 Slack 的协作空间里，每个 agent 有持久记忆、跨 session 不丢失，跟你在频道和私信里协作。</li>
+</ul>
+<p>这一类工具的共同点是：<strong>它们承认了&quot;管一个 session&quot;和&quot;管多个 agent&quot;是两个不同量级的问题</strong>，并且为后者提供了基础设施。</p>
+<p>但我必须说一句实话：<strong>这一类工具目前最受益的用户，还是已经在墙这一侧的人。</strong> 如果你连第 1、第 2 道墙都还没跨过去，急着上多智能体，多半是缴学费。</p>
+<hr>
+<h2>第 5 道墙：不知道怎么驾驭 skill</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2IGD62r15XXvZc68klDqs3sFHshyhXacicSKyEu5j7aAS1ecyhQOI3cPvHFZNQtuMOq64NE2TpB5xBYriaUAV6bfxIcg6Exicqtxs/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="不知道怎么驾驭 skill：把流程、经验与工具封装成可复用能力"></p>
+<p>不知道怎么驾驭 skill：把流程、经验与工具封装成可复用能力</p>
+<p>跨过第 4 道墙，你能管好单 agent 了，开始触摸多 agent 了。这时候你撞上一个更深的问题：<strong>怎么把你跟 AI 协作的经验沉淀下来？</strong></p>
+<p>答案叫 <strong>skill</strong>。</p>
+<h3>Skill 是什么</h3>
+<p>最干净的定义：<strong>skill 就是智能版的 SOP</strong>。</p>
+<p>把一段你反复要做、有自己偏好、需要 AI 智能但又有标准流程的工作，沉淀成一个文件（通常是 markdown），让 AI 每次按你定义的方式自动走。</p>
+<p>它和写代码里的&quot;函数&quot;是一模一样的逻辑——封装、复用、可维护。</p>
+<h3>什么时候用</h3>
+<p>只用三个判据：</p>
+<ol>
+<li>这件事会做<strong>第二次以上</strong>吗？</li>
+<li>你对 AI 怎么做这件事，有<strong>自己的偏好</strong>吗？</li>
+<li>偏好稳定到值得固化吗？</li>
+</ol>
+<p>三个都&quot;是&quot;，就值得做成 skill。任何一个&quot;否&quot;，跳过。</p>
+<h3>怎么用</h3>
+<p>正规做法：</p>
+<ol>
+<li>第一次让 AI 直接跑——不写 skill。</li>
+<li>跑完后看哪里不满意——告诉 AI &quot;下次这种情况，请这样做&quot;。</li>
+<li>AI 把这些规则总结成一个 skill 文件。</li>
+<li>下次直接调用这个 skill，不再每次重新讲一遍。</li>
+<li>持续迭代——发现新偏好就加进去。</li>
+</ol>
+<p>这套流程里 AI 自己负责大部分工作。你需要做的只是<strong>把&quot;我的偏好&quot;说清楚</strong>。</p>
+<h3>怎么 DIY</h3>
+<p>最简的 DIY 方式：写一个 markdown 文件，里面分三段——</p>
+<ul>
+<li><strong>什么时候触发这个 skill</strong>
+  ：触发条件、典型场景</li>
+<li><strong>执行流程</strong>
+  ：第 1 步做什么、第 2 步做什么……</li>
+<li><strong>避坑提醒</strong>
+  ：哪些情况要特别小心、哪些工具不要用</li>
+</ul>
+<p>放到 AI 能读到的位置（不同工具不一样），告诉它&quot;以后碰到 XX 场景就走这个 skill&quot;。完。</p>
+<h3>怎么商业化</h3>
+<p>skill 的商业化在 2026 年初被验证为可行。</p>
+<p>我现在 LovStudio 工作室的 skill 商城<sup style="color: rgb(51, 112, 255);font-size: 12px;font-weight: 400;text-align: start;color: rgb(51, 112, 255);background-color: rgba(0, 0, 0, 0);background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;border: 0px solid oklch(0.922 0 0);border-left: 0px solid oklch(0.922 0 0);border-right: 0px solid oklch(0.922 0 0);border-top: 0px solid oklch(0.922 0 0);border-bottom: 0px solid oklch(0.922 0 0);border-collapse: separate;list-style-type: disc;list-style-position: outside;display: inline;"><span leaf="">[8]</span></sup> 一部分业务，就是把成熟的 skill 打包卖给那些&quot;想用好 AI 但还没养成 DIY 能力&quot;的白领。</p>
+<p>尽管我戏称自己<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTg5NDg3Mg==&mid=2247497312&idx=1&sn=e7372369b116e889b1d659480ba7925c&scene=21#wechat_redirect">中国skill商业化第一人</a>，但也要说一句实话：<strong>skill 的窗口期不会太长。</strong></p>
+<p>skill 的服务对象，是中国 14 亿人里大概 1000 万个&quot;AI 用得不算特别差但也不算高手&quot;的白领。对那些已经能跟 AI 高速对话的高手——他们不需要 skill。对那些还没入门的小白——他们现在连&quot;为什么要有 skill&quot;都理解不了。</p>
+<p>skill 是个过渡品。它会随着 AI 变强而逐渐失去意义——当模型本身已经&quot;会做你要的事&quot;时，再去定义流程反而是束缚。这就像你把一个聪明员工放进一家垃圾公司——本来他能发挥得很好，你用条条框框把他绑死，他反而成了一个不会思考的执行机器。</p>
+<p><strong>所以现阶段对你的建议是：用 skill，做 skill，但不要把 skill 当成永恒的资产。</strong> 这是一个 3-5 年的窗口。窗口里抓住红利，窗口关了就转去做下一层。</p>
+<hr>
+<h2>第 6 道墙：还没养成 AI Native 的思维</h2>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uw5djxcva2KHGo9W2uvQ2aTNPicztFwsdOPaiaO2Ywb1RtItUKl6fQbywIoWusWkf2RAsfozoxHg5C4icFO6IszmTJICmdnoRDLeC1Gp4DlC1I/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="AI Native 思维：一个人调度智能体、自动化、skill 与工具链"></p>
+<p>AI Native 思维：一个人调度智能体、自动化、skill 与工具链</p>
+<p>跨过前 5 道墙，你已经是 AI 工具的熟练玩家了——会分诊、会判断、会选工具、会管 session、会驾驭 skill。</p>
+<p>但你会发现你身边有一类人，比你跑得更快。他们没有更好的工具，没有更高的学历，没有更深的专业背景——他们只是<strong>思维方式不一样</strong>。</p>
+<p>我把这种思维方式叫 <strong>AI Native</strong>。</p>
+<p>我去年在广州办活动，遇到一个 13 岁的初中生。他用 AI 才两周，已经能让 AI 给他做小项目了——能描述清楚自己要什么、能在 AI 跑偏时及时纠正、能把一个复杂的任务自然拆成几步。</p>
+<p>他没看过任何&quot;prompt 工程&quot;教程。他没买过任何 AI 课。他没有任何&quot;传统的知识储备&quot;作为壁垒。</p>
+<p>但他比 90% 的成年人都更会用 AI。</p>
+<p>为什么？</p>
+<p><strong>因为他没有历史包袱。</strong></p>
+<p>成年人开始用 AI 时，脑子里有一堆既有模型——&quot;机器是死的，你得告诉它每一步&quot;&quot;问别人事情要客气一点&quot;&quot;复杂的事情要先 outline 再 outline&quot;——这些模型大多是对的，但放在跟 AI 协作上反而是束缚。</p>
+<p>AI Native 的人，是直接长在这一代工具上的人。他们的默认假设跟你不一样：</p>
+<ul>
+<li><strong>默认假设 1</strong>
+  ：AI 是我能力的延伸，不是工具。我说&quot;我能做 X&quot;的时候，包括&quot;我加上 AI 能做 X&quot;。</li>
+<li><strong>默认假设 2</strong>
+  ：我不需要先学完整套理论再动手。我边做边问，AI 教我。</li>
+<li><strong>默认假设 3</strong>
+  ：我能力的天花板，不是我会什么，而是我能让 AI 帮我做什么。</li>
+<li><strong>默认假设 4</strong>
+  ：一个人也可以构成一个团队——配上 AI，我就是一人军团。</li>
+</ul>
+<p>最后一条特别关键。最近一两年，&quot;一人公司&quot;（OPC，One Person Company）这个词在创业圈火了起来。本质就是：<strong>AI 把过去需要 10 个人才能跑起来的业务，压缩到 1-2 个人。</strong></p>
+<p>这件事 AI 之前完全做不到。一个人没法同时做产品设计、写代码、做营销、跑客服、做财务——精力和技能都不够。但 AI 加进来之后，&quot;精力&quot;和&quot;技能&quot;两个瓶颈被同时撑大。</p>
+<p>AI Native 的人，<strong>不是&quot;会用 AI&quot;，而是从一开始就把 AI 算进自己能力图谱的人。</strong></p>
+<p>这一道墙特别难跨过去，因为它跟年龄、学历、专业都没关系——它跟一种&quot;愿不愿意重新长一遍&quot;的勇气有关。</p>
+<p>你过去 20 年学会的所有东西，是存量。这些存量在 AI 面前，杠杆变低了。增量在哪？在<strong>你今天开始往哪个方向长</strong>。</p>
+<hr>
+<h2>第 7 道墙：还没看见自己的&quot;意义危机&quot;</h2>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2JjlNiberLKwe83X57W0tJD00YVICcRQeCVtgIHjLwuU9Mu5QlNovc9sQMyhgawvIRicZqKIa7N1EfYsqWK13gvE359gLxBaCxaU/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="社会生存危机：学术生产、内容检测、职业身份与意义感的重组"></p>
+<p>社会生存危机：学术生产、内容检测、职业身份与意义感的重组</p>
+<p>第 6 道墙跨过去，你已经能跟 AI 像同事一样协作了。这时候最后一道墙浮现——也是最痛的一道。</p>
+<p>它不是技术问题，是<strong>意义问题</strong>。</p>
+<p>我去年开始反复在身边看到几个现象：</p>
+<p><strong>现象一：学术综述的价值正在塌缩。</strong></p>
+<p>文献综述类的论文，AI 现在做得比人快、全、客观。你花三个月做的综述，AI 半小时给你一份相当像样的初稿。学术圈正在大规模生产的&quot;follow-up 论文&quot;&quot;换个变量重新跑回归&quot;——这一类，AI 全包了。</p>
+<p>那做这类研究的人——其中有相当一部分是真心热爱学术的——他们的工作意义在哪？</p>
+<p><strong>现象二：AI 内容检测的伪问题。</strong></p>
+<p>&quot;降 AI 率&quot;&quot;humanizer&quot;&quot;AI 味检测&quot;这一类工具最近半年涌出来一大堆。但只要你想一想就会发现：<strong>如果 AI 写的内容来自人类已有论文的综合，那&quot;检测 AI 率&quot;到底在检测什么？</strong></p>
+<p>学术写作的核心价值从来不是&quot;读起来像不像人写的&quot;。<strong>它是观点、是数据、是方法、是贡献。</strong> 把形式包装成&quot;是人写的&quot;，本质是回避更深的问题——你的工作里，到底有多少是 AI 暂时还做不好的？</p>
+<p><strong>现象三：人本身被流程绕过去。</strong></p>
+<p>我在第 1 道墙里写过一句话：&quot;人不再是流程里的瓶颈，人本身被流程绕过去了。&quot;这件事不是抽象的预言——它正在每一天发生。</p>
+<p>绕过去的过程是无声的。你不会收到通知。你会某一天突然发现自己手上的活变少了，或者新人比你便宜十倍还做得更好，或者你花三个月做的事情别人用 AI 一周交付了。</p>
+<p>这就是 AI 时代真正的意义危机。</p>
+<hr>
+<p>跨过这道墙没有&quot;技巧&quot;。但有两件事必须做：</p>
+<p><strong>第一件，承认它。</strong></p>
+<p>否认这道墙的存在是最危险的。它就在那里，不会因为你不看它就消失。</p>
+<p><strong>第二件，把&quot;我的价值在哪&quot;这个问题，从&quot;AI 暂时还做不到什么&quot;换成&quot;我能做什么 AI 永远做不好的事&quot;。</strong></p>
+<p>这两个问题看似一样，其实差很远。</p>
+<p>第一个问题是被动的——你在等 AI 的能力边界。今天 AI 不会写诗，你以为你安全了；明天 AI 写诗写得不错，你又得换一个赛道。</p>
+<p>第二个问题是主动的——你在主动找那些&quot;本来就需要人&quot;的部分。情感、信任、责任、复杂博弈、跨域的判断、对真实世界的理解、对人性和资本运转规律的感知……这些事 AI 短期内做不好，长期内也未必能做得比你好。</p>
+<p>要把这个问题答好，光有技术能力远远不够。你还需要对社会怎么运转、对人性怎么运转、对资本怎么运转有比较深的理解。</p>
+<p>我经常建议刚入门 AI 的朋友：有时间去翻一下《毛选》——看《中国社会各阶级的分析》、看《论持久战》。看教员怎么做&quot;客观分析、精准量化&quot;——中国到底有多少农民、多少小资产阶级、每个阶级对革命的态度如何转化，这些都是<strong>可量化的</strong>；中国不可能速胜、也不可能速亡，因为可以<strong>通过三个阶段精准推演</strong>。</p>
+<p>那种思维方式，是 AI 暂时学不会的。也是穿越第 7 道墙，最坚硬的那块砖。</p>
+<hr>
+<h2>写在最后</h2>
+<p>七道墙画完，回过头看会发现一件事——</p>
+<p>这七道墙是有<strong>递进</strong>的，但不是有<strong>先后</strong>的。</p>
+<p>你不需要把第 1 道彻底搞懂才能看第 2 道。多数时候，你是在第 3 道墙前面摸了几下，回头才发现自己第 1 道还有缺；又在第 5 道墙前面卡了几次，回头才意识到第 4 道还没练熟。</p>
+<p>正常的节奏是来回穿梭。不正常的节奏是只盯着一道墙打。</p>
+<p>最后留几个最小可执行的动作，对应每一道墙——</p>
+<blockquote>
+<p><strong>第 1 道</strong>：拿一个你每天都做的活，做&quot;人 / 自动化 / AI / AI 驱动的自动化&quot;四分诊。</p>
+<p><strong>第 2 道</strong>：下次想让 AI 算个具体数字时，停一秒，打开计算器。</p>
+<p><strong>第 3 道</strong>：列出你常用的 3 个 AI 工具 + 3 个 AI 模型，写清楚每个的&quot;擅长场景 / 不擅长场景&quot;。</p>
+<p><strong>第 4 道</strong>：在常用工具里，主动试一次 fork、主动 compact 一次上下文、主动 rewind 一次。</p>
+<p><strong>第 5 道</strong>：把你这周用 AI 做的某件反复性工作，写成一个简单的 skill 文件。</p>
+<p><strong>第 6 道</strong>：找一个比你小 10 岁、用 AI 比你熟练的人，认真聊一小时。</p>
+<p><strong>第 7 道</strong>：写下三件&quot;AI 暂时还做不好、且我想长期投入&quot;的事情。半年后重读。</p>
+</blockquote>
+<p>七件事都不难。但只要每一道墙你做到一件，半年之后你跟同样起步、却还卡在&quot;AI 能不能帮我 XXX&quot;的人之间，会有一条非常明显的分水岭。</p>
+<p>感谢你的阅读，愿你面对 AI，不再迷茫，手工川 AI 创造营第四期招募中，欢迎预约报名： <a href="https://my.feishu.cn/share/base/form/shrcnwhS2qcT0mB0QtQ1zb9x2Bd">https://my.feishu.cn/share/base/form/shrcnwhS2qcT0mB0QtQ1zb9x2Bd</a> ，或者访问 <a href="https://forge.lovstudio.ai">https://forge.lovstudio.ai</a> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uw5djxcva2JtDRXUgQQibibxibv7HP0ZXfdsCkiax8swkREOy4v6RbWoEg6mKvCXOogFqtAwoLQVlKTdClSLNa1cibe0SuGb6p4YS9E9yZS6WLAY/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uw5djxcva2JqXicmBlmlDnRg40WicpDbsUiauW6sYibb9rVnpz7Yf9FTFGQCmCIdPgAQP3HiaAeOy32AWyvjnVYBe6B9D3jA4pRfXEMh5HibaIb2E/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2Iu4KtMiafKgLlO4mojc2PAuTibtxjr1HnZzqat4ZIvawK8HW1jAIvpGIg6aUcYAeXh27udNMPthnibiaW53ib4QVQafPDb9YAmkGqQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/uw5djxcva2J4OurhibxytNOfrcRmSU6gcn9puJ6ElQdFdx2zw8RLmby5VWj1hry1fOlSiaPrzicSdDCrkAZARX8vicoIia0v8YZACZ5IxafmibAHw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<hr>
+<p>[1] Codex, <a href="https://github.com/openai/codex">https://github.com/openai/codex</a></p>
+<p>[2] Claude Code, <a href="https://docs.anthropic.com/claude/docs/claude-code">https://docs.anthropic.com/claude/docs/claude-code</a></p>
+<p>[3] OpenCode, <a href="https://opencode.ai/">https://opencode.ai/</a></p>
+<p>[4] workbuddy, <a href="https://workbuddy.cool/">https://workbuddy.cool/</a></p>
+<p>[5] OpenClaw, <a href="https://openclaw.ai/">https://openclaw.ai/</a></p>
+<p>[6] Yoda, <a href="https://github.com/lovstudio/yoda">https://github.com/lovstudio/yoda</a></p>
+<p>[7] Slock.ai, <a href="https://slock.ai/">https://slock.ai/</a></p>
+<p>[8] skill 商城, <a href="https://www.lovstudio.cc/">https://www.lovstudio.cc/</a></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/vaVXTNzSV8Ev08D2LdEeaA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

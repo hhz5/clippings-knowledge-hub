@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每家公司都值得雇佣的 Agent 设计师 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">每家公司都值得雇佣的 Agent 设计师</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Lovart">Lovart</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1">设计</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a>
+    <span class="date">2026-06-18</span>
+  </div>
+  <p class="lead">在内容创作这块，我的用图场景不止上面的文章配图。文字定完之后，我还要把内容录成视频，视频还要剪辑、要 Broll、要单独做视频封面和小红书封面。</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年6月17日 18:47</em></p>
+<p>在内容创作这块，我的用图场景不止上面的文章配图。</p>
+<p>文字定完之后，我还要把内容录成视频，视频还要剪辑、要 Broll、要单独做视频封面和小红书封面。</p>
+<p>每一样都要走一遍生图流程。这件事在 codex 用 Skill 制作风格单调、制作低效。</p>
+<p>我要实现配图、封面图制作的“高效率”“活人感”和“多样性”。</p>
+<p>这就需要能够对接不同的出图模型，能够将多种出图方式融合。</p>
+<p>不得不借用一些设计工具来实现，用了一圈设计 Agent 产品，只有 Lovart让我快速沉淀了这套工作流。</p>
+<p>去年我就有使用过一段时间 lovart，这是一个原生的 AI 设计产品。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCow40SRdZiamwowPIXJ9iae9shPHRNWukniakA18jMb41CqyRm4bPjZvGDmclibJWBwMDLhMy07mpQibQXdiaqUCKejrOibPXBjs6OJHtc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image"></p>
+<p>一年过去，Agent、生图模型的能力到了一个新的顶峰，lovart 给我的体验也是如此。</p>
+<p>从文章配图到公众号封面，再到虚拟 IP，最后到带 IP 的视频和小红书封面，整套跑了一遍，我就沉淀了 4 个 Skill，收获了 20 多张可以用于生产的精美图片，而整个过程花的时间一小时都不到。</p>
+<p>下面是我使用 lovart 完整过程，一起来看看我的使用思路，以及 Lovart 能力如何。</p>
+<p><strong>1 文章配图：顺便给视频剪辑攒一批素材</strong></p>
+<p>写完文章第一步是配图。技术类长文每隔几段就要一张概念图来续节奏，纯文字读者撑不住。</p>
+<p>提示词：</p>
+<pre><code>基于这篇文章的内容（粘贴要配图的文章），为我自动拆解段落结构，
+给关键段落各生成一张配图。不超过 10 张。
+风格：简约手绘 + 建筑蓝图编辑风混搭，参考 Notion / Linear 配图调性。
+内容覆盖：
+比例 16:9，配色克制，整体能直接插进公众号正文。
+</code></pre>
+<p>一共产出了 8 张配图，下面是我节选的效果，整体很不错</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyicWw6etndSEIjPELBlQzuSWibhPFNTsTkiaWicGTFia91lwu2VupBuvEz5z8xzvmzib3GbAQIqqnibWicrPGeRJkr7F1JVvRy25ib5w7I/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image"></p>
+<p>这一批图有两个用途。一是直接插进公众号文章正文，二是后面做视频时当 Broll 素材用，也就是录制视频的时候我可以边讲边用上面图作为视频的画面。一举两得。</p>
+<p>我让它用上面同样的风格制作了一张公众号封面图，并在跑完一句话存成 Skill：&quot;请帮我总结此对话并生成一个设计 Skill&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyYCl0TGVo3GqpTGic2GbKYFoaPAjrhxiaVfPBH0woPpqjX4zzNmvMkCg1fLhJPbJOOdnmveovs0wW6rNvv1cvhEiaPiaevHJDIS3c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"></p>
+<p>lovart 让我高效低成本的把文字内容的价值榨干。</p>
+<p>下次文章只需把 Markdown 丢进去，选择 Skill 就能出图。</p>
+<p>这个 Skill 还能用于文章配图，或制作公众号封面，比如这篇文章我就让它制作了一个封面图。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz4xfglqmJ0F00rVD8NwUn0yLhmnzQsJYMiaDHR2icAXBJoZulA5vKeOicZHPXcc8FCY2L5xTM2hE5jriaCYw19cu76KFb1aWDOESs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image"></p>
+<p>这张封面没怎么改就直接用了。它把文章里 几个核心概念图标化，远看是封面，近看是一张可视化目录。</p>
+<p><strong>2 视频封面</strong></p>
+<p>文字版的活儿到这就告一段落。下一步是把同一篇内容录成视频，发到 B 站、小红书、视频号。</p>
+<p>我去调研了下小红书的视频封面，我发现数据好的视频封面做的都很精致，有创意。</p>
+<p>比如下面这些，字体的设计、人物的表情、动作、插入元素，一下就能吸引用户点击。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxodrZWfqYxexxjh6yGAKG3X40PWSGRJW3fnxGaY7d5mScXQyZLrwoKkiaH9ZSXqaicgJRmp8r3VHyyjZtt8gvyyiaicRaFAG13ax0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></p>
+<p><strong>视频内容的成败有一半在封面</strong> 。</p>
+<p>文章封面用户先扫到标题，封面差一点点还能挽救；视频封面是用户决定点不点开的唯一判断依据。封面差一口气，内容做得再好也白搭。</p>
+<p>公众号的白底简约风搬到视频上完全不够看。</p>
+<p>视频封面要的是钩子、是活人感、是辨识度。</p>
+<p>我决定先把自己的&quot;虚拟 IP&quot;做出来，再用 IP 出视频封面。</p>
+<p><strong>3 设计虚拟 IP</strong></p>
+<p>我把自己公众号头像丢进 Lovart，让它扒一套多动作 + 多风格的 IP：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCozp3JKDfV16n0yZ8sYugcIJgMlv7Riao30hSjibQyGYPWkTDGMlYafN1oEDPhkSkfxY839kOXoTJIWvdRJjHIibicR1uRPibCXOdgQs/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<pre><code>基于挂载的人物原图，为这个人物创作一套完整的动漫 IP。
+参考主流 IP 设计概念，输出多种设计风格
+</code></pre>
+<p>【效果图：8 个动作视图表】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozUbicf1fJicn7Z52TycXpGhnicsibgkdMcVdm0twGQpb3GEAI66TrNpmwxbhSyHkdbsP4jkF9QYkoTdg3TicoVOrJeeVgFaKQuGJOo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"></p>
+<p>【效果图：像素艺术风】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz6CVaMXYF7Vow2rt2LmyFo6LvxLW76dnKws2ibqlcsoy4BVQT1ev65fYLAAjibCQ8yRJg1rteDTxNBx8WtibE8dT4Azvn9cicMicmU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"></p>
+<p>【效果图：扁平插画风】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowWWN3wMWhplJ3oztichicPun0pHDQv2r6wrLribtnTzEynmxWfRYwnP6RYianuX2tibqcKrLBSXUVHwnsic3F3CVm0JE3KJAwiajuiaSk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></p>
+<p>【效果图：3D 卡通风】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoypSnby0DCJVr7cEkXia6K72AUdWaiancOfd2T2uDwo78ZeQB7uibbZh6Wxm5ztpRTqVxovedQricibFCt6x5T8QGl2fPXJX0H9u2ck/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Feishu Docs - Image"></p>
+<p>【效果图：表情包 】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozLMzmYwmiaZkgibe9XSsb9IggERLQwfvZT2p8YibaEhPdaStibW8rNqRus3iakjpeTKpVnF0nBENMHdgOvzogW0kCDpjlyLn4W4pok/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image"></p>
+<p>【效果图：二次元动漫风】</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoytezTP7NpQFicQ5LH1nGQTZU1595ibQLgyFm00EtQm2H6iavwUOrJTz3s76xBfpx0fgemBOrH4P88Jt7eW9fqMiaEkSvDmJMb88Jk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Feishu Docs - Image"></p>
+<p>这一套出来之后，我手里就有了一套不同风格的&quot;虚拟IP 形象&quot;。</p>
+<p>我可以根据不同主题的内容选不同风格的 IP 去做封面，整体调性能跟着内容切换。</p>
+<p>这就实现了我一开头提到的封面创作的多样性和活人感。</p>
+<p><strong>4 多主题封面</strong></p>
+<p>IP 资产做完之后不能直接上正式封面，要先测试。我挑了 4 个真实可能要写的技术主题，让每种 IP 风格各跑一张 16:9 横版封面，看哪一套风格在不同主题下都稳：</p>
+<pre><code>每张封面要求：
+- 比例 16:9、3:4
+- 左右布局，文字占左侧 60%，IP 在右侧 40%
+- 人物动作与标题内容呼应
+- 背景加飘浮的 产品 logo、技术元素（代码片段、终端窗口、流程图等）
+</code></pre>
+<p>【效果图：4 张主题封面，各两种尺寸配图】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozLlZAtOhYI2GTEIJ8gLG7XR9woEZiaSQASkDE8ZFEcyB2nicTic9fXLxBllLicquQAR6z4ibGd7ERGGnMn2FhuicGgiaOiaO93brgglc8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Feishu Docs - Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoydcbEkDUAf1PCDiaZqnoJjjLQuTK1j5wGuwFFsiaMFLIQh9XPkSEY6hvB6yfxsdSibiaYBYpm61aM0jrOWhJj0mS2cLVN8XcVgKe4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Feishu Docs - Image"></p>
+<p>跑出来 4 张封面风格各异，人物始终是同一个虚拟 IP。</p>
+<p>这一轮目的是 <strong>用一组对比找到自己的封面公式</strong></p>
+<p>封面=设计风格+IP 表情动作+内容标题+内容元素</p>
+<p>风格、内容元素都是从内容中提炼出来的，IP 的表情和动作则要和内容标题有关联。</p>
+<p>公式定下来，下面就能总结成方法或 Skill。</p>
+<p>在下一次使用时调用方法就能生成封面图了。</p>
+<p>有了这个流程，我又给自己上面做的封面图加上了虚拟 IP，一下子档次就上来了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowU2ge49BPes52wGzHAGqiabeyGOZg2lLh3K5CMQ1GgD7Fk5Gic39JMn0UwZ1PZhodIrueQ4qqh0YaOeXzsnX5UeUvlDBFAKDtHg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Feishu Docs - Image"></p>
+<p><strong>5 Mockup 和字体设计</strong></p>
+<p>做完这一套，我突然意识到一件事：我手里这堆规整的 IP 人像，太适合拿去做周边产品了。</p>
+<p>我用 Lovart 的 Mockup，就能制作周边的杯子、微章等效果图。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/CFe2b8yvCoyNF9G414zE8SZQQ1QkRfZ2mnkWY8ZUJf2gWRWiaOVruichIc04OR8cMwYkvQL4g4SO2pFSbGR9tPAkT6pVJlfO6Q4Zto3NCcJOs/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Feishu Docs - Image"></p>
+<p>以后真要卖周边、做物料图，这套素材直接拿出来用，省得找设计出图了。</p>
+<p>整套工作流跑下来，我手里多了 4 个 Lovart Skill、5 套 IP 风格、十几张可直接发布的封面和配图，外加一组 Mockup 周边素材。从一篇 Markdown 到完整视觉资产，用了不到一个一个小时。</p>
+<p>还有一个字体设计的功能。</p>
+<p>可以把自己喜欢的字体保存成样式。</p>
+<p>以后遇到同样的场景，可以调用上一次的字体。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxYeYOVKksfePf5CTbDFTibSuWFdsKQWgTmqJOvftyyfpqRW5jcfM6RPX8gdiahOSj6zYND3iawllluCIiaOj1sI6vSAcXeAr7TNag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="Feishu Docs - Image"></p>
+<p>绝大多数 AI 设计工具停在&quot;出图&quot;，Lovart 已经跑到了&quot;沉淀&quot;。每一次对话都能存成资产，每一份资产都能被下次复用。</p>
+<p>6 我的感受</p>
+<p><strong>Lovart 我理想中的设计 Agent 。</strong></p>
+<p>Agent 的理解能力比我预期高。&quot;人物和背景有分离感&quot;这种模糊的表达，它能拆解成&quot;让人物参与到标题中、加入动感线条、配色统一&quot;三个具体动作。</p>
+<p>GPT-image-2、Nano Banana Pro 这次混着用，Lovart 内部按任务自动调度，不用我手动切。出图质量稳定在可用线以上。几乎都不需要二次精修</p>
+<p>这就是 2026 年的设计 Agent 生产方式。</p>
+<p>每家公司都值得雇佣一个这样的 Agent 设计师。它不抢谁的活，它替你把那些反复消耗时间的设计交付，从清单上一件件拿掉。</p>
+<p>Lovart 地址：lovart.ai/zh</p>
+<p>恰好碰上 Lovart 2026 年中大促，全年最低 43 折，是目前已确定的全年最低窗口。一直在观望的，现在直接入年费会员，相当于把未来一年的内容生产视觉资产提前打包买单。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/kdEAQ5s3JG3Hpii4PE9MTA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

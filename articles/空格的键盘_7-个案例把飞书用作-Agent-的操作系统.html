@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 个案例把飞书用作 Agent 的操作系统 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">7 个案例把飞书用作 Agent 的操作系统</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E9%A3%9E%E4%B9%A6">飞书</a><a class="chip" href="../index.html?tag=Agent%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">Agent 操作系统</a><a class="chip" href="../index.html?tag=CLI">CLI</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-06-19</span>
+  </div>
+  
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年6月18日 17:12</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowo2OAJN21a5v0H40vlibLaNVmW6z1ozYV1p4K2lz4CjFJ4ddP4v502TaUWpfibUauUB4SmmosRME6NgpHK8TQhhjTBEqxA5Lubk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image"></p>
+<p>昨天就在飞书群里看到这场直播预告。张咋啦也在嘉宾名单里。我关注挺久了，每次她聊飞书的玩法都让我想动手试试。</p>
+<p>除了她之外，名单上还有几个我蹲了很久的 AI 博主：人民公园说 AI 的苏辰、互通有无的卓霖、还有苍何。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowq9TgjmcMW1sia9sCZNpoT1mWxSA0M0O9TUQK6gjT4pyNme7UdlQUic0X4hEAIe8k3co4oybGoGf1vicamVNEyHia7ibDvwoMZKmRA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image"></p>
+<p>我挺好奇不同人对飞书的用法的，特别是有了 CLI 的能力后，飞书有太多可挖掘的场景了。</p>
+<p>我把手头的活儿停下，看完了一个多小时直播。</p>
+<p>听下来觉得每个嘉宾的用法都颠覆了我对飞书的想象。</p>
+<p>先说下我自己是怎么用飞书的</p>
+<p>我日常写文章在 Claude Code 里，写完之后用飞书 CLI 一句话把内容推到飞书文档。多端编辑、随时调整，最后从飞书同步到公众号、小红书、视频号。 <strong>飞书在我这边是&quot;承载端&quot;</strong> ：Agent 写完，结果倒进飞书，剩下的协作和发布我自己来。</p>
+<p>另一件事是 onepod。每天定时抓我订阅的播客字幕，自动推送到飞书文档，再同步到我的个人网站。整条链路我也没管过，跑了大半年。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCox8Gia9q9zoSnyMt0nKja2r8PuLSszVibOTLnMz5QVH5Ql79ehD3cVHfjXWtP40JpW2tX2ReaapzBB5W3SGKzHJx7ZmmGniaXY2ibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p>这两件事让我觉得&quot;飞书 + Agent &quot;场景也就这些了。</p>
+<p>直到这场 Demo Day。</p>
+<p>7 个人，从聊球的卡片到接 Codex 修 bug 的协议，从睡觉时自动写稿的定时任务到剪口播视频的 Skill。看到一半的时候我就反应过来：</p>
+<p><strong>飞书不只是承载内容的终端。它是 Agent 的操作系统。</strong></p>
+<p>操作系统有四个核心能力：进程调度、文件系统、消息总线、权限管理。</p>
+<p>到 Agent 时代：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoynebx1UuBjUm6mhwOTZ6QFgA9l0D87yoDmzWjUmclOVfr9WFKiafMFlXFaupib7LX7pLs5e1Xib7auBxyZia3n0JIAbFPJuFTIdvI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"></p>
+<p>- <strong>进程调度</strong> = 谁来触发 Agent？人手动喊？定时任务？事件驱动？</p>
+<p>- <strong>文件系统</strong> = Agent 产出的东西存在哪？怎么沉淀？怎么被下一个 Agent 读到？</p>
+<p>- <strong>消息总线</strong> = Agent 之间怎么传消息？怎么协作？</p>
+<p>- <strong>权限管理</strong> = 谁能调谁？数据谁能看？</p>
+<p>下面我总结了下这几个嘉宾提到的用法，以及他们开源的 Skill。</p>
+<p><strong>1 张睿 Zara：飞书文档里跑 HTML ，Bridge 把 Coding Agent 接进 IM</strong></p>
+<p>她演示了飞书文档里直接跑 HTML 。</p>
+<p>Agent 输出的是一张可交互的图表、一组带样式的卡片、甚至一个 mini 应用。这些 HTML 组件在飞书里能评论、能共享、能挂权限。</p>
+<p>Bridge 是她另一个开源项目，可以把本地的 Claude Code 和 Codex 桥接到飞书 里，让 Claude Code/Codex 成为飞书里的一个 bot，把 coding agent 接回大家每天都在用的协作场景里，让对话、任务、卡片、文档和会话记录都能在同一个环境中流动。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxddyRgicFQT6MooEptFqS5bBibQZzw3l8qbCWZP4tXjMt7hQ4fDjtBTQLhBVRn1AKxof0vmPgqJh4L9cPfQ5GQN3CK4FXMPJpLE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image"></p>
+<p>在Terminal输入一行命令就能安装：</p>
+<pre><code>npx @larksuite/cli@latest install
+</code></pre>
+<p>Agent 在 IM 里被聊天触发、在文档里渲染产出、在多维表格里被工作流调度。飞书把 Agent 时代最难解决的&quot;渲染怎么办&quot;和&quot;触发怎么办&quot;，用现成的产品组件全接住了。</p>
+<p><strong>2 苏辰：飞书卡片 + CLI 调 Codex，让 Agent 直接读&quot;飞书里的私人数据库&quot;</strong></p>
+<p>苏辰是《人民公园说 AI》的主播，他做了一个叫&quot;小书童&quot;的足球比赛 Agent，每天看比赛、出战报。比赛卡片直接做成飞书卡片在群里推。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCoztlicukMHUhO6y9rL7BCXW7TqBVyCYgpKBepmIUK8esrQg3EVjhHvTsxgpcgMVybKXollDDQUw1cibxPsKkiaN4ia6FAiadsUqCicME/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image"></p>
+<p>但让我停下来想了想的是他后面那段。他说他还有一个 Agent 叫AI早晚报，每天抓行业资讯，选择一个主题就能制作 5 分钟左右的博客。</p>
+<p>最近他在关注 SpaceX 上市，他直接让飞书 CLI 调 Codex 去读早晚报这个 Bot 里最近一个月所有跟 SpaceX 相关的数据，生成一份量化分析报告。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxl0gPj0AaszS9KExSpVcqIWy1yeuqZk7G1d3UhAz1TYpsAIQba8GMBmKIdE3icfYaTNeIJIlptdE55hfVIPicqCwdiblEl0dKDMM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image"></p>
+<p>- 资讯沉淀在飞书 Bot 里（ <strong>文件系统</strong> ）</p>
+<p>- 提一句话，CLI 唤起 Codex（ <strong>调度</strong> ）</p>
+<p>- Codex 读 Bot 数据 → 调用飞书原生表格图表能力 → 输出报告（ <strong>沉淀 + 协作</strong> ）</p>
+<p>整条链路里，飞书既是数据库，又是调度器，又是渲染层。</p>
+<p>苏辰说了一句话我很认同：&quot;在我们不要 GUI 之后，人可以跟 AI 直接交互，或者人可以跟数据直接交互。&quot;飞书 CLI 这种能力就是把&quot;人和数据之间的那层 GUI&quot;砍掉。</p>
+<p><strong>3 熊典：AAMP 协议把 Codex 接进多维表格的每一列</strong></p>
+<p>熊典是飞书项目产品经理。</p>
+<p>他使用飞书官方做的 AAMP 协议的应用场景</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCox9ibwENPTue83d9F1iawUbtl6u9iboQYX1wCzVpKK2KG7tcMqqEEW4iaJicibcRHIkGCxoQngEp7Cbibia5eQLxBCVazFfy07TDoJj9OI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"></p>
+<p>Feishu Docs - Image</p>
+<p>现场演示是：网站有几个 bug，bug 收集表里两行任务，引用了 codexchat 这个 Agent 邮箱。提交瞬间，本地两个 Codex worktree 自动拉起来，并行修 bug。修完返回 MR 链接到多维表格，再点一个&quot;一键上线&quot;按钮，部署完成。</p>
+<p>中间没有任何&quot;打开 Codex、贴提示词、等返回、复制结果&quot;动作。</p>
+<p>他做了一个叫 AAMP 的开源协议，给每个 Agent 分配一个邮箱地址，多维表格里只要填一行任务、引用 Agent 邮箱字段，那一行就会自动派给本地的 Codex 去干活。</p>
+<p>AAMP 就是 Agent 时代的 IPC（进程间通信）。每个 Agent 有地址、有信箱、有调度器，多维表格是任务队列，工作流是定时器，仪表盘是控制面板。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowBhef4ibB2znZRt11vlfhodIaibXdAFnLJV0EWZ8uickOdWcrP7csMz49TPBupLn68nia7Guv93XQwdicic4eFJL6FgAXRB76qnAvs0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"></p>
+<p>而且不止 Codex。 Claude Code、OpenClaw 等任何符合协议的 Agent 都能接进来。多维表格的每一列、飞书项目工作流的每一个节点、甚至 GitHub Issue 的评论区，未来都可以直接调用本地 Agent。</p>
+<p>熊典说：&quot;让 agent 的工作自然地发生，而不是我需要在 Codex 里面跟它讲话。&quot;</p>
+<p><strong>4</strong> <strong>卓霖</strong> <strong>：飞书 CLI 调 HyperFrames Skill，远程出口播视频</strong></p>
+<p>卓霖是互通有无 AI 俱乐部的发起人，她演示了一条&quot;拍完素材直接发飞书，剪辑全部给 AI&quot;的视频生产线。</p>
+<p>具体路径：手机拍口播素材 → 发到飞书 → 飞书 CLI 调用 HyperFrames 的开源 Skill → Cloud 调用 Remotion 生成成片。她现场放了一段完全用这条链路跑出来的视频，效果完全可发布。</p>
+<p>HyperFrames 安装</p>
+<pre><code>npx skills add heygen-com/hyperframes
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozIIS09jbHOEqj0LqOgzuckaSZ0LpOyTbbSAP8LFH0v4NtrVbicOc3lrrJ2uMugichAKycuiclbqP1mSbicaruY419GsdXuiazmQqq8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></p>
+<p>让我觉得有意思的是： <strong>她不用打开剪辑软件，不用碰电脑，整个生产流在飞书对话里完成。</strong></p>
+<p>这是飞书作为操作系统的另一个能力： <strong>端能力的延伸</strong> 。手机、桌面、CLI、卡片，对 Agent 来说都是一个统一的 IO 接口。卓霖的口播素材从手机进入，成片在 CLI 里输出，整个过程飞书把&quot;端&quot;这件事变成了透明的。</p>
+<p>她引用了张达的一句话：&quot;很多人在表达需求的时候会被想象力给限制住。&quot; 这句话放在 Agent 操作系统这个语境里特别对——当工具不再切换的时候，想象力才有地方落脚。</p>
+<p><strong>5 李青：邮箱订单自动审核，多维表格一键归档</strong></p>
+<p>李青是来也科技的 AI 产品经理，她演示了一个 B 端最高频的痛点：业务人员每天处理大量邮箱来的订单附件，逐字读、人工录入、人工核对。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyGEb2DWNIzcEiavktfs1J94Oly4MElEvA4Wp6Vec9nvXgHGWqSwibKicSXianiazBHJdf0ewmicQlO6Uv8gzKxyzQjmsUMs3nEGetTQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Feishu Docs - Image"></p>
+<p>她做了一个 Skill，安装后只要说一句&quot;帮我处理过去 24 小时内的所有订单附件&quot;，Agent 就自动拉邮件、读 PDF 附件、识别商品、对照内部 SKU 库、检测价格偏差、把异常订单单独标红、所有信息归档到多维表格。</p>
+<p>业务人员的工作从&quot;逐字录单&quot;变成&quot;只看异常&quot;。</p>
+<p>让我注意到的细节是：这个 Skill 还可以让用户用自然语言描述自己企业的业务规则，AI 自动生成多维表格里的计算公式。 <strong>配置工作流这件事本身，也被 Agent 接管了。</strong></p>
+<p>Skill 安装：</p>
+<pre><code>帮我安装这个skill：npx skills add laiye-ai/adp-cli -y -g
+</code></pre>
+<p><strong>6 苍何：GEO 诊断 Skill 直接输出飞书文档</strong></p>
+<p>苍何是 GitHub 万星项目开发者，他这场演示了一个给品牌做 GEO（生成式引擎优化）诊断的 Skill。</p>
+<p>给一个品牌名，Skill 全网搜索 + 多模型对比 + 评分输出，最后落成一份精美的HTML/飞书文档</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz5iag5VzNib9OdqVzoWkypoab5iavFtq5oaRiaicVzx8vPlXQP4VPxRD3zO5WCrhWeXotudiaqK0eSgahicUsxt3NIrXg1wCEWZfpzFY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image"></p>
+<p>让我特别有共鸣的是他说的那句：这些都依赖飞书 CLI 的能力。</p>
+<p>一个垂直领域的专业 Skill，最后的呈现层完全交给飞书原生组件，不用自己做前端。</p>
+<p><strong>飞书把&quot;文档和 HTML 报告呈现&quot;这件事抽象成了系统级能力。</strong></p>
+<p><strong>7 泛函：飞书 CLI + Codex 定时任务，他睡觉时 Agent 在写稿</strong></p>
+<p>泛函是 02 年的猎头，但他这场演示让我意识到： <strong>Agent 操作系统的核心是&quot;Agent 在你不在的时候还能干活&quot;。</strong></p>
+<p>他的工作流：每天晚上 12 点，他睡觉了，Codex 通过飞书 CLI 自动跑一个定时任务。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowttIrOo07GtJp0eibMycth3uFtdtntnllo8AtOEDYSviaLujfXyOcBtuMvZ5UY7MQ2fMjBmo39gKT5zS8PPhAWYicuZQzHibxM3Yk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Feishu Docs - Image"></p>
+<p>这个任务会读他白天所有飞书会议的妙记、读他得到大脑里录音卡录的语音，按他训练好的&quot;个人内容风格 Skill&quot;提炼选题、生成初稿、给客户敏感信息脱敏。</p>
+<p>第二天早上他打开飞书，文档里有他昨天的全部洞察 + 5 篇成稿。</p>
+<p>他说：&quot;以前要让 AI 的内容符合你的审美要求，这个事情还挺复杂的，但是有了飞书 CLI 之后变得非常简单。&quot;</p>
+<p>原因很简单：飞书 CLI 让 Agent 能直接读妙记、读历史文档、读他改稿前后的版本对比，自动反推他的审美偏好。</p>
+<p><strong>当 Agent 能在你睡觉时干活，飞书就不只是个协作平台，是 24 小时运转的数字工厂。</strong></p>
+<p><strong>写在最后</strong></p>
+<p><strong>上面 7 个案例数据沉淀在飞书、调度在飞书、产出在飞书、协作在飞书。</strong></p>
+<p>钉钉、企业微信、Notion、Slack 都接了 AI。但绝大多数停留在&quot;侧边栏加一个 AI 助手&quot;的形态。AI 是访客，工作流是主场。</p>
+<p>飞书是少数把 AI 当一等公民接进底层调度的。CLI 让 Agent 能像用户一样操作飞书，AAMP 让 Agent 之间能直接通信，多维表格 + 工作流让 Agent 可以被事件触发，妙记和文档让 Agent 有充足的上下文。</p>
+<p>这让可以让飞书 Agent 操作系统成为可能。。</p>
+<p>直播结束的时候，主持人王大仙说了一句话：&quot;以后我们都不用怕被 AI 替代了，我们要学会雇佣 AI。&quot;</p>
+<p>这支团队的总部，可以说就是飞书。</p>
+<p>设想一下，周一早上打开飞书，多维表格里堆着 5 个 bug、3 篇选题、1 段视频素材、12 封新订单。没人手动派活，AAMP 协议自动把任务投递给本地 Agent。bug 在 Codex 的 worktree 里被修，选题在 Claude 的脑子里被拆，视频在 HyperFrames 的渲染管线里成片，订单在多维表格里被归档。</p>
+<p>我打开看一眼，挑两条审一下，剩下的全部进生产。</p>
+<p>这就是 Agent 操作系统。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/rDcT6xFqHAkNUzwDuC5tBA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

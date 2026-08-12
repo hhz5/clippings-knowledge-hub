@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自定义 Skill 批量配图，一个 skill 搞定所有设计，设计 Agent 真要变天了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">自定义 Skill 批量配图，一个 skill 搞定所有设计，设计 Agent 真要变天了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=AI%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87">AI生成图片</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%BE%E8%AE%A1">自动化设计</a><a class="chip" href="../index.html?tag=Skill">Skill</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81">工作流</a>
+    <span class="date">2026-02-06</span>
+  </div>
+  <p class="lead">最近文章的评论区，出现频率最高的一个问题：文章配图有教程吗？</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年2月6日 13:34</em></p>
+<p>大家好，我是空格_</p>
+<p>最近文章的评论区，出现频率最高的一个问题：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyHYH8nYplNFdPBnK24Nzu8asD69GPZVYic4bFEnnwdJmAnH2lTOCd2Mib2yaJSCOzthvZ1VODJlnYLD8icZkYJ8iaKc4dmazNhTPE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>大家都说好的配图效果，到底怎么样，你可以看下效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyz6U2D7qfWL1EdrnRLcorsB4MAI3Ix1ZKszu17w231SpPZibp5m4qH9aibiaghGNspQcSJFUtfmfVVmBF25ZGjqdDIC2F90uqkXo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>如果用提示词来制作这种风格图片，很简单，发送下面文字给 gemin 3 pro 或 Google AI Studio</p>
+<pre><code>根据下面的文章内容，生成一张简约设计风格的逻辑图。
+白色背景，黑色线条，手绘质感。
+用图形和箭头表达核心逻辑，文字尽量少，只保留关键词。
+16:9 横版。
+[粘贴你的文章段落]
+</code></pre>
+<p>但这是手动的。每张图你都要自己复制粘贴，自己保存，自己插入文章。写一篇 3000 字的文章配 10 张图，光这个流程就要折腾半小时。</p>
+<p>用 skill 就能一句话搞定。大致流程是：</p>
+<p>我写完文章——发送： 给这篇文章配图——配图 skill 启动，协同完成配图——文章自动插入图片——推送到飞书/公众号草稿</p>
+<p>今天就写篇文章解读一下我的配图工作流实现逻辑，以及教大家制作批量制作封面图、 logo、故事版、海报、插画等等你想要的类型都能做的 <strong>无敌配图 skill。</strong> 有了这个，你能自定义，按需出图，不需要订阅任何昂贵的付费产品。</p>
+<p>一、文章配图 Skill：写完文章，全自动配图</p>
+<p>只要写完文章后，在对话框说一句： <strong>为 xxx 内容使用配图 skill</strong> ，得到下面内容：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyq5K7cYXSKpxyREBZthRlceQkaWtib8IRhrnibk1LoQrxg4OicSnHf2vUpg6D0ZzdxGvs2tffdEME94qn12ppQnKH8IkjJwumWOU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>skill对全文拆解，进行了一个标题、核心观点、关键概念、图标类型的拆解，这为每张图的提示词做准备。</p>
+<p>这个 Skill 提供了两种风格，在我选定风格后，就开始批量制作提示词：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoyH8uCias2M3Mce63Gwr3DOWWfPHDYu2Z1pSCIPIibbXV2picRospicND4Lg2TXkwApbE5ibIobzBFdw1ZI3ZvLQ8cTpSynM699PpfU/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>然后，调用脚本，把生成的图片保存到指定目录，插入到文章中。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyZHH289zvia945ZZPWKicdNRWXW02WibFKwQibsHyLo5OvYjZUcvrq0oiaUxicV2k2j7QpibGoXPBr3Uq4j5hsmefNEViblu8c7Vm7Hds/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p>最后，再来一句，推送到飞书，它就能把这几个 skill 推送到飞书文档里。</p>
+<p>这个 Skill 我已经开源了，在这里下载： <a href="https://github.com/zephyrwang6/image-create-skills/tree/main/article-batch-illustration">https://github.com/zephyrwang6/image-create-skills/tree/main/article-batch-illustration</a></p>
+<p>发送上面链接给 AI 告诉它安装这个 skill，就能安装成功了。</p>
+<p>注意图片的生成需要使用自己的APIkey，一定要用 gemini-3-pro-image-preview 效果最好，一张图片的成本在 3 毛左右，</p>
+<p>前段时间 google ai studio 可以免费每月领取 10 美金API 额度，我现在还在薅，用个半年没啥问题。</p>
+<p>这里领取： developers.google.com/program/my-benefits</p>
+<p>继续看，其他几种批量出图的风格。</p>
+<p>二、Logo 批量生成 Skill</p>
+<p>文章配图只是开始，同样的逻辑，换个场景就是 Logo 生成器。</p>
+<p>这个 Skill 支持两种入口：</p>
+<p><strong>入口 A：文字描述， 帮我设计一个 AI 生产力系统的 Logo，科技感，紫色系</strong></p>
+<p><strong>入口 B：上传参考图</strong></p>
+<p>丢一张喜欢的 Logo 给它，要求根据图片制作 logo，Skill 自动拆解：</p>
+<ul>
+<li>图形元素（什么形状、什么符号）</li>
+<li>色彩方案（主色、辅色）</li>
+<li>排版风格（字体类型、排列方式）</li>
+<li>情感调性（专业？温暖？前卫？）</li>
+</ul>
+<p>然后问我：&quot;想要类似风格？还是保留某些元素改进？&quot;</p>
+<p><strong>工作流：</strong></p>
+<ul>
+<li>收集品牌信息 → 展示 7 种风格（极简扁平 / 线条艺术 / 渐变现代 / 徽章印章 / 吉祥物 / 字母标志 / 手写书法）</li>
+<li>根据描述推荐最适合的风格，我选择确认</li>
+<li>生成 10 个 Logo 变体的提示词：不同构图、不同配色、不同图标</li>
+<li>批量出图，保存到指定目录</li>
+<li>不满意的话，可以指定修改某一张重新生成</li>
+</ul>
+<p>下面是我用它为「AI 生产力系统」专栏设计的 Logo，你觉得哪个好？可以给我投一票。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyNs9bFRNmu6wLN0DFPgI5wdN5K8eUibsfibafn5ncDuWr8Y1YjicBHBevm34Sm69TMC1UDnhvCEX4WkibDzhqjnnEDVJdiaEib6KSmc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>logo 批量制作 Skill： <a href="https://github.com/zephyrwang6/image-create-skills/tree/main/logo-batch-generator">https://github.com/zephyrwang6/image-create-skills/tree/main/logo-batch-generator</a></p>
+<p>同样的逻辑，我制作了一个故事板的 skill.</p>
+<p>三、故事板 Skill：8 帧漫画</p>
+<p>最近看着豆包、千问、元宝开始发红包，抢用户了，最受益的还是用户，紧跟热点，来制作一个拟人化的故事。</p>
+<p>描述故事：豆包、千问、元宝三个 AI 产品拟人化，春节争抢用户，。元宝在微信发 10 亿红包，千问在淘宝送 30 亿奶茶，豆包认认真真给用户打电话。</p>
+<p>发送描述后，Skill 做了这些事：</p>
+<ul>
+<li>润色故事线 — 补充叙事细节，梳理情感弧线</li>
+<li>拆分分镜 — 8 个关键帧，每帧标注镜头类型（远景/近景/特写）、画面描述、情绪基调</li>
+<li>选择风格 — 提供 8 种风格，根据故事推荐，我选了&quot;黑白漫画卡通风&quot;</li>
+<li>批量出图 — 8 帧全部生成，角色在每帧中保持一致</li>
+</ul>
+<p>下面总共是 8 张图，我做了一个合并，看下面的效果，故事感很有趣，而且每个形象和 产品 logo 是 一致的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozAelDfg0goxHY7rkV1AJcscNr7O8H7k0aqwvo7b6hXueCPaTZRX5ia137tzEdE9z99kaNUGlT7eOOFGjLkjkXwPGQdGCJVMXTk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowwMNAOicF3tkDshN59fuy1NqDY8LuTST8ia4vSqyYDMzwfrMHxU9YNAcKPC35AialUyREPxqsco9yia5ms5c2picpurfRxRHRcmjAk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyo4ykR5Om5EIvLc9VInAHKXniaZEvwUMHabnxBtZ4DrB5ATv3ibCHpTGiaH7pV0D7ExGjPpzCRSQDfIfzib1jUwjexlO9bIjfTBoQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz2sOydvib3B3XmIg5u2s3Dn7GMX82E4uxyRxTwiawUFZFE5t4FaE5ERcF5DYaDvBYsicEIBLEIAaYicHogcpV1oOg5qU6ciaeV8Fys/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoz0sZp7sKRlug4pcInOibU4vDC3JfpClhiaK0ibibRc5w6IclpE888Y3YI6atmatFYGINuJNfG5AFC2ymaWJbxf5XJD1RVFF8icopibk/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCowHMYQhVW5mGhvD6MKibJuSE8lOMZgOpBGRR5xcUds6KDfd4Xb6kIUky6w8ibVEHdVABeTcia7BF24kD5KB7S8upONLLGfbfz1lzQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片"></p>
+<p>8 帧故事板，从描述到出图，全程对话完成。拿这个 Skill，你改改也能做成其他的。</p>
+<p>下载地址： <a href="https://github.com/zephyrwang6/image-create-skills/tree/main/article-batch-illustration">https://github.com/zephyrwang6/image-create-skills/tree/main/article-batch-illustration</a></p>
+<p>四、零门槛，创建你自己的生图 Skill</p>
+<p>上面三个 Skill 都是我自己搭的。 <strong>但你完全不需要从零开始写。</strong></p>
+<p>我做了一个「生图 Skill 创建助手」—— 你只需要回答几个问题，它帮你自动生成一个完整可用的 Skill。</p>
+<p>流程是这样的，输入和输出：</p>
+<p>🤵 <strong>帮我创建一个生图 Skill</strong></p>
+<p>🤖 Q1：你想做什么类型的配图？→ 文章配图 / Logo / 分镜故事 / 社交媒体图 / 海报 / 数据可视化 / 角色设计</p>
+<p>Q2：图片主要用在哪？→ 文章插图 / 社交平台 / 品牌用途 / 教学演示</p>
+<p>Q3：每次大约生成多少张？→ 1-3 张 / 5-10 张 / 10+ 张</p>
+<p>Q4：喜欢什么风格？→ 展示 5-8 个相关风格选项，带一句话描述</p>
+<p>Q5：有参考图吗？→ 上传一张，助手自动拆解风格元素</p>
+<p>Q6：色彩偏好？图片比例？文字规则？→ 快速确认</p>
+<p>Q7：APIkey 和 API url 是什么</p>
+<p>回答完这几个问题，助手自动生成：</p>
+<ul>
+<li>SKILL.md（Skill 主文件，包含完整工作流）</li>
+<li>references/style-guide.md（你选定的风格模板）</li>
+<li>scripts/generate_image.py（图片生成脚本）</li>
+</ul>
+<p>生成完毕，你说&quot;帮我用这个 Skill 给批量出图&quot;，它就开始干活了。这个 skill 真的无敌，输入一张图就能复刻成 skill，批量无限出图，token 上限就是创作上限。我做完之后就觉得很多产品可以退订了，我可以按自己需求自定义 skill，比如在 dribble 看到好看的原型图，仿照做 skill。</p>
+<p>skill 下载： <a href="https://github.com/zephyrwang6/image-create-skills/tree/main/image-skill-builder">https://github.com/zephyrwang6/image-create-skills/tree/main/image-skill-builder</a></p>
+<p>五、Skill 再多，不如一个系统</p>
+<p>文章配图、Logo 生成、故事板、社交媒体图……这些 Skill 各自独立，但它们背后是同一套逻辑：</p>
+<p>提示词 + API + 自动化流程 = 批量出图</p>
+<p>单独用一个 Skill，解决了一个问题。把多个 Skill 串起来，结合你的上下文，就拥有了一个系统。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCow9ujBQDMuAfaAqZHibRZxrrauxeWsMI1gtDhwm80uLiadFJH51K7q7bia3Wh8qazAAgWslWOWAEpMA1qm7Hb47sv4aWGmWADoExw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="飞书文档 - 图片"></p>
+<p>我现在的内容生产流程： <strong>自动推热点→</strong> <strong>选题</strong> <strong>评估</strong> <strong>→</strong> <strong>和 AI 协同写作</strong> <strong>→ 自动配图 → 自动排版 → 推送到草稿箱</strong></p>
+<p>这是我系统中的一个环节，Skill 是零件，系统是机器。</p>
+<p>有了这个系统，知识管理、项目管理的理念在这里运行的更加顺畅了。</p>
+<p>我收藏保存的文件可以自动同步到系统中引用在其他文章里，而不是在收藏夹吃灰，我拆解的项目任务，AI 会自动提醒，有些可以自主执行，给我降低行动的门槛。</p>
+<p>我想把这两个月 对模型、工具、Skill、vibecoding，以及过去我作为产品经理做知识管理工具的理念都结合起来。</p>
+<p>帮助更多人搭建能自动运转的 AI系统。而我也想验证，我一天一篇公众号、视频、专栏文章 的创作 极限在哪里 ，这个系统给我带来的价值 边界是什么 。</p>
+<p>如果你对 Skill 感兴趣，想看更多实战案例和搭建教程。从上下文管理、文件夹结构、Skills 编写、多 Skill 串联到完整的自动化工作流——欢迎订阅我的专栏。</p>
+<p><strong>点击阅读原文或地址订阅：</strong> <a href="https://xiaobot.net/p/AIPAC">https://xiaobot.net/p/AIPAC</a></p>
+<p>早鸟价 99 元，满 200 人恢复 199 元。</p>
+<p>我是空格，持续分享 AI 生产力系统的搭建实践。觉得有用，点赞转发支持一下。有问题评论区见。</p>
+<p>每天好心情</p>
+<p>修改于 2026年2月6日</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/3oJAq8ivzEnx65pKle9h5A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

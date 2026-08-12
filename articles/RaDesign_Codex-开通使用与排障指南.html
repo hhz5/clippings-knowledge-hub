@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 开通使用与排障指南 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Codex 开通使用与排障指南</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=RaDesign">RaDesign</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4">故障排除</a><a class="chip" href="../index.html?tag=%E8%B4%A6%E6%88%B7%E7%AE%A1%E7%90%86">账户管理</a>
+    <span class="date">2026-06-08</span>
+  </div>
+  <p class="lead">准备体验Codex，遇到使用问题、无法登录、手机号验证、账号停用等问题的用户。</p>
+  <article class="content"><p>原创 RaDesign RaDesign RaDesign</p>
+<p><em>2026年6月6日 16:54</em> <em>河北</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/tAlIKXfSZiayVhXMQtDKAbeFdhyZLA5jX2qOAQDgYqKFzT14TQS4KqDCO2CGP4fEJGLKjIOOXASaEe8ohaVLFsUdOHYOYz3qMNQicQBd6VpCY/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<blockquote>
+<p>准备体验 Codex，遇到使用问题、无法登录、手机号验证、账号停用等问题的用户。 重要说明：官方的套餐、支持地区、风控规则和界面会持续调整。本文优先采用官方文档内容，仅代表个人观点，不代表官方政策。</p>
+</blockquote>
+<p>本文主要阐述常见问题包括：</p>
+<ul>
+<li>必须订阅 Plus 才能使用 Codex 吗？</li>
+<li>免费的为什么登录不了？</li>
+<li>为什么 Codex 提示手机验证？</li>
+<li>GPT 会员、Codex Credits 和 API 余额是一回事吗？</li>
+<li>提示被删或停用，还能找回来吗？</li>
+</ul>
+<hr>
+<p>01 </p>
+<p>先分清订阅、Codex Credits 和 API</p>
+<p>免费用户也可以体验 Codex，但不同套餐的用量、可用模型、Cloud Tasks、Code Review、Credits 和团队能力不同。免费账号更适合体验轻量任务，不适合作为高频开发主力。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaw8Yf9Y2kxMh0aytbstZmZicIkw1ZEOzSfUL0vJyafxHFxC3uEyNFWWSBKgsibiawkNeHRH0P8nGZ6D8H3lwt4FP8ef2VI8gwFOj0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<ul>
+<li>订阅：Free / Go / Plus / Pro ，使用 ChatGPT 和套餐内 Codex 能力，适合个人</li>
+<li>Codex Credits：套餐内 Codex 用量不足后继续使用，符合条件的 Plus / Pro 用户</li>
+<li>API Key 与 API 余额：按 API Token 计费，适合自动化、CLI、IDE、CI/CD，适合开发者、团队</li>
+</ul>
+<p>目前的这几种使用方式的区别，别搞混：</p>
+<ul>
+<li>订阅 Plus，不等于自动获得 API 余额；</li>
+<li>给 API 账户充值，不等于 GPT 账号变成 Plus；</li>
+<li>API Key 登录 Codex 时，走标准 API 计费，不走 GPT 套餐内额度；</li>
+<li>Codex Cloud 需要使用 GPT 账号登录。</li>
+</ul>
+<h3>普通用户怎么选？目前最合适的还是 Plus，综合性价比最高。</h3>
+<h3></h3>
+<table>
+<thead>
+<tr>
+<th>Free</th>
+<th><code>$0/月</code></th>
+<th>体验快速、轻量编码任务</th>
+<th>第一次了解 Codex</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Go</td>
+<td><code>$8/月</code></td>
+<td>轻量编码任务</td>
+<td>用量较少的个人用户</td>
+</tr>
+<tr>
+<td>Plus</td>
+<td><code>$20/月</code></td>
+<td>每周完成若干集中开发任务</td>
+<td>大多数个人开发者</td>
+</tr>
+<tr>
+<td>Pro 5x</td>
+<td><code>$100/月起</code></td>
+<td>比 Plus 更高的用量</td>
+<td>高频个人开发者</td>
+</tr>
+<tr>
+<td>Pro 20x</td>
+<td>更高档 Pro</td>
+<td>高强度、多任务工作流</td>
+<td>重度用户</td>
+</tr>
+<tr>
+<td>Business</td>
+<td>按团队方案</td>
+<td>团队工作区、权限、管理能力</td>
+<td>小团队与公司</td>
+</tr>
+<tr>
+<td>Enterprise / Edu</td>
+<td>联系销售</td>
+<td>企业级安全、权限和治理</td>
+<td>大型组织与教育机构</td>
+</tr>
+</tbody></table>
+<h3></h3>
+<p>如果你只是想体验 Codex：</p>
+<ul>
+<li>先用自己的 Free 账号登录。</li>
+<li>选择一个小项目。</li>
+<li>尝试读取代码、解释文件、修改 README 或修复一个局部问题。</li>
+<li>确认工作流适合自己后，再考虑 Plus。</li>
+</ul>
+<p>如果你准备把 Codex 用在日常开发：</p>
+<ul>
+<li>个人用户优先推荐从 Plus 开始。</li>
+<li>用量不足时，先检查任务是否过大、MCP 是否过多、上下文是否过长。</li>
+<li>再根据 Codex 用量页决定购买 Credits 或升级 Pro，不要盲目升级。</li>
+</ul>
+<p>如果你是团队用户：</p>
+<ul>
+<li>优先评估 Business、Enterprise 或 Edu。</li>
+<li>团队账号需要考虑权限、日志、数据控制、SSO 和成员管理。</li>
+</ul>
+<hr>
+<p>02</p>
+<p>Codex 用量和额度怎么理解</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazibic2CQ9wUCWnIxZweiahc8M8hGRA8iaR6NwTea651AKKVUibwE6UVZUVH5ic3Q1laNyDCpsicl6u4kzEO36n50Cicp1XSHf4tYTsTCo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>官方说明，Codex 用量会受到多种因素影响：</p>
+<ul>
+<li>使用的模型；</li>
+<li>代码库大小；</li>
+<li>任务复杂度；</li>
+<li>本地任务还是 Cloud Task；</li>
+<li>是否需要保留更长上下文；</li>
+<li>是否启用了更多 MCP；</li>
+<li>是否使用图片生成；</li>
+<li>是否开启更快但更耗用量的模式。</li>
+</ul>
+<p>同样是一条消息：</p>
+<ul>
+<li>修改一个小函数，消耗可能较低；</li>
+<li>扫描大型仓库、执行长任务、加载多个 MCP，消耗会更高；</li>
+<li>图片生成平均会更快消耗套餐内用量。</li>
+</ul>
+<p>Codex 额度是按照 <strong>API Token 用量</strong>计费，以每百万输入 Token、缓存输入 Token、输出 Token 对应的额度为计算标准。</p>
+<p>「5 小时」 和 「1 周」 两个额度怎么理解？</p>
+<p>5 小时额度，相当于短期限流器。防止你短时间内疯狂使用 Codex。用了会减少，5 小时后自动恢复。</p>
+<p>周额度，相当于本周总预算，只要使用 Codex 就会持续消耗。不会因为 5 小时到了而恢复，必须等到下一周重置。</p>
+<p>两者是什么关系？每次使用 Codex：会消耗 5 小时额度，也会消耗周额度不是二选一，而是同时扣减。</p>
+<hr>
+<p>03</p>
+<p>Codex 使用步骤</p>
+<p>之前文章看到依旧有小白不会，这里还是顺带过一下，先说明边界：以下方案不等于官方支持。国内目前不在官方支持地区列表中。下面的内容仅用于个人学习分享，不提供伪造地区资料、绕过访问限制、接码注册或规避风控的操作步骤。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiax4QrdthwL9o4E1qNUC9LuQlbP3hicoibfcXl7RtSETyDf9mlbdnrAtJvLvP8W2KyYwmygibUcCMOfJUpPYXvYWzIHSD63QVKWBLg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<h3>推荐方式</h3>
+<p>在受支持地区，打开官网，选择一种长期使用的登录方式：</p>
+<table>
+<thead>
+<tr>
+<th>注册方式</th>
+<th>以后怎么登录</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>邮箱和密码</td>
+<td>使用同一邮箱和密码</td>
+<td>建议开启 MFA</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>每次继续使用 Google 登录</td>
+<td>不要改用普通密码入口</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>每次继续使用 Microsoft 登录</td>
+<td>不要混用其他入口</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>每次继续使用 Apple 登录</td>
+<td>注意“隐藏我的邮箱”</td>
+</tr>
+</tbody></table>
+<p>登录成功后建议设置好密码和密钥等信息，能有效避免后续风控触发手机号二验，但核心还得是你的魔法根基稳定，如果触发二验，就等几天再登录，目前应该都可以绕过，实在绕不过就只能接码验证，这里不展开说明。</p>
+<hr>
+<p>04</p>
+<p>如何体验 Codex </p>
+<p>近期相关内容严控，这里不演示操作步骤，详细步骤请查看我们的某书文档即可，或留言/后台私，下面仅做相关异常内容介绍。</p>
+<blockquote>
+<p>Codex 完整使用指南</p>
+</blockquote>
+<hr>
+<p>05</p>
+<p>触发二验是为什么？</p>
+<p>这是目前大部分人最需要知道的新问题之一：</p>
+<ol>
+<li>先确认 GPT 网页是否仍能正常登录。</li>
+<li>截图保存完整报错，包括错误代码和发生时间。</li>
+<li>不要连续点击重发短信，避免触发临时频控。</li>
+<li>等待一段时间后再试。</li>
+<li>使用无痕窗口、不同浏览器和干净设备再试一次。</li>
+<li>发工单中明确写明：这是已有账号登录 Codex 时触发的二次验证，不是注册新号。</li>
+<li>以上都无法解决，如果账号之前没有绑定过，可以临时绑定一个通过即可，但是要确保临时绑定的稳定性，否则下次验证就无法进行了。</li>
+</ol>
+<hr>
+<p>06</p>
+<p>异常与风控排查</p>
+<h3>1. 报错后的操作，千万不要硬刷和重复高频操作</h3>
+<h3></h3>
+<ul>
+<li>清理缓存和 Cookie。</li>
+<li>切换/更换网络。</li>
+<li>等待最多 1 小时再尝试。</li>
+<li>避免短时间连续失败登录。</li>
+<li>换浏览器、设备或无痕窗口。</li>
+</ul>
+<h3></h3>
+<p> 2. 被删除、停用或封禁怎么办</p>
+<p>常见原因包括：</p>
+<ul>
+<li>违反使用政策；</li>
+<li>违反服务条款；</li>
+<li>规避安全或访问限制；</li>
+<li>不当共享账号或 API Key；</li>
+<li>可疑活动或未授权访问；</li>
+<li>多次收到警告后仍继续违规；</li>
+<li>未完成要求的验证。</li>
+</ul>
+<h3>3. 正确申诉路径</h3>
+<h3></h3>
+<ul>
+<li>先检查收件箱和垃圾邮件。</li>
+<li>使用停用通知邮件中的申诉入口。</li>
+<li>如果无法访问邮件，使用：<a href="https://openai.com/form/appeal/">https://openai.com/form/appeal/</a></li>
+<li>如果没有收到邮件但无法访问，Help Center 右下角聊天入口联系支持。</li>
+</ul>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiawibdcgA5Etpjk6WLhWq6fIjPxFYDGkPUqnZk66XIPPj7Nafia1oGcYSdf2GfdtSnIHoDftM676WNFcP7aNSwve7pZGgBTox2g4g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&mid=2247496544&idx=1&sn=434287cc0ee58deef8660994f00429d0&scene=21#wechat_redirect">Codex 安装全攻略：Mac、Windows 、CLI、IDE一次讲清楚</a> </p>
+<hr>
+<p>👉 如果觉得不错，随手点个赞、在看、转发三连</p>
+<p>👉 如果想第一时间收到推送，也可以给我个星标 ⭐</p>
+<p>👉 我们组了一群热爱探索的设计师，欢迎加入一起探索→</p>
+<p>「 VibeCoding 设计实验室」「 Image2 设计实验室」「 GPT/CC/Gemini 拼车实验室」</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/RIt2iJYNQooXeSldUJTEDw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

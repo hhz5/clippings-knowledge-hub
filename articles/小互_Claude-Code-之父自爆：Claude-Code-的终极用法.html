@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code 之父自爆：Claude Code 的终极用法 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Claude Code 之父自爆：Claude Code 的终极用法</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=Boris%20Cherny">Boris Cherny</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-01-04</span>
+  </div>
+  <p class="lead">Boris Cherny 作为 Claude Code 之父，他写了一篇非常详细的推文，分享了自己如何高效使用这款工具！</p>
+  <article class="content"><p>原创 小互 <em>2026年1月3日 12:47</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32J4fAEibvBtDl23E7UK9rT53GoF4ImfMuPU6PCzBFOzKuzbdKRica55qw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>你可能听过 Claude Code，甚至用过它来写点代码、改点文档。但你有没有想过：如果 AI 不是“临时用一下的工具”，而是你开发流程中的正式成员，甚至是一个自动化协作系统——它会怎样改变你的工作方式？</p>
+<p>Boris Cherny 作为 Claude Code 之父，他写了一篇非常详细的推文，分享了自己如何高效使用这款工具，以及他和团队在实际工作中如何将 Claude 深度集成进整个工程流程。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32wdlPib1EUIZ0yFgRUdbbv743Z4s4xoDfAcCeFfYcDyTiav65iao5szcaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>这篇文章将对他的经验做一次系统的整理和通俗的解读。</p>
+<p>Boris 是怎么让 AI 成为他工作流中的自动化伙伴的？</p>
+<h2>核心要点</h2>
+<p>他介绍了自己的工作流程，包括：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO3254BrYsNKc1YEr0P8KPoyBJGiaibpkdpyIG8iaiancOAkj11ehVRc8TsOGA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<h3>✅ 怎么用 Claude：</h3>
+<ul>
+<li>开很多个 Claude 一起跑 ：在终端和网页上开 5~10 个会话并行处理任务，还用手机 Claude。</li>
+<li>不瞎改默认设置 ：Claude 开箱即用，没必要复杂配置。</li>
+<li>用最强的模型 （Opus 4.5）：虽然慢一点，但更聪明，用起来更省事。</li>
+<li>写代码前先规划 （Plan 模式）：让 Claude 帮你想清楚再写，成功率高。</li>
+<li>生成代码后用工具检查格式 ，避免出错。</li>
+</ul>
+<h3>🛠️ 怎么让 Claude 越用越聪明：</h3>
+<ul>
+<li>团队维护一个“知识库” ：每当 Claude 写错东西，就把经验加进去，下次就不会再犯。</li>
+<li>写 PR 时自动训练 Claude ：让 Claude 看 PR，学会新的用法或规范。</li>
+<li>自己常用的命令变成 slash 命令 ，Claude 可以自动调用，节省重复劳动。</li>
+<li>用“子代理”处理一些固定任务 ，比如代码简化、功能验证等。</li>
+</ul>
+<h3>🔒 权限怎么管：</h3>
+<ul>
+<li>不随便跳过权限，而是设置安全的指令自动通过。</li>
+<li>多设备（网页、终端、手机）同步 Claude 工作流程。</li>
+</ul>
+<h3>最重要的一点：</h3>
+<p>✅ 一定要给 Claude 提供“验证机制”，让它可以确认自己写的东西是不是对的。</p>
+<p>比如 Claude 自动跑测试、打开浏览器测试网页、检查功能是否生效。</p>
+<h2>Claude Code 是“搭子”，不是“工具”</h2>
+<p>Boris 首先传达了一个核心理念： Claude Code 不是一个静态工具，而是一个可以与你配合、不断学习、共同成长的智能搭档。</p>
+<p>它不需要太多复杂配置，开箱即用就很强。但如果你愿意投入时间去构建更好的使用方式，它能带来的效率提升是成倍的。</p>
+<h2>模型选择：选最聪明的，不选最快的</h2>
+<p>Boris 使用 Claude 的旗舰模型 Opus 4.5 + 思维模式（“with thinking”）进行所有开发任务。</p>
+<p>虽然这个模型比 Sonnet 更大更慢，但：</p>
+<ul>
+<li>它理解能力更强</li>
+<li>用工具能力更好</li>
+<li>不需要反复引导，少来回交流</li>
+<li>总体上 比用快模型还更节省时间</li>
+</ul>
+<p>👉 启示： 真正的生产效率，不在于执行速度，而在于“少出错、少返工、少重复解释”。</p>
+<h2>🧭 1.Plan 模式：用 AI 写代码，先别急着让它“写”</h2>
+<p>当我们打开 Claude，很多人会直觉地输入“帮我写个接口”、“重构下这段代码”…… Claude 通常也会“写一些”，但往往偏了方向、遗漏逻辑，甚至理解错了需求。</p>
+<p>而 Boris 的第一步从不让 Claude 写代码。他用的是 Plan 模式 —— 先和 Claude 一起制定实现思路，再进入执行阶段。</p>
+<h3>他是怎么做的？</h3>
+<p>在开启一个 PR 时，Boris 先不让 Claude 直接写代码，而是使用 Plan 模式：</p>
+<ol>
+<li>1.描述目标</li>
+<li>2.和 Claude 一起制定计划</li>
+<li>3.确认每个步骤</li>
+<li>4.才让 Claude 动手写</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32G3L8SJicMnPnvC6WDyiccajDVAzQdwZApSJoAVib2hhT4HqB1amTbmiaqg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>每当需要实现一个新功能，比如“为某个 API 添加限流”，他会和 Claude 一步步确认：</p>
+<ul>
+<li>是用中间件实现，还是逻辑内嵌？</li>
+<li>限流配置是否需要支持动态修改？</li>
+<li>是否需要日志？失败时返回什么？</li>
+</ul>
+<p>这个“计划协商”过程，类似两个人一起画出“施工图纸”。</p>
+<p>一旦 Claude 理解清楚目标，Boris 就会打开“自动接受编辑”模式，Claude 可以直接修改代码、提交 PR，有时甚至不再需要人工确认。</p>
+<p>“Claude 的代码质量，取决于你们是否在写代码前就达成一致。” —— Boris</p>
+<p>👉 启示： 与其反复修补 Claude 的错误，不如一开始就一起把路线图画清楚。</p>
+<p>小结</p>
+<p>Plan 模式不是浪费时间，而是 用前置协商换稳定执行 。AI 再强，也需要“你说清楚”。</p>
+<h2>🖥️ 2. 多 Claude 并行：不是一个 AI，而是一支虚拟开发小队</h2>
+<p>Boris 并不只用一个 Claude。他的日常是这样的：</p>
+<ul>
+<li>终端里开 5 个本地 Claude，会话分配给不同任务（比如重构、写测试、调 bug）</li>
+<li>浏览器中再开 5–10 个 Claude，与本地并行</li>
+<li>手机上用 Claude iOS app，随时发起任务</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32AVY0nG3YTTdlQZjXialALyFRYVJgyyY0L3rwf7uxvdbfbyxPXXePYaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO329lYgHSAs7WDic2icYkq1o3kPl3iaQrN5Dgqku7tw50SicbnfZazKia9EBEA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>每个 Claude 实例，就像是一个“专属助手”：有的负责写代码，有的负责文档补全，有的长期挂后台执行测试任务。</p>
+<p>他甚至设置了系统通知，当 Claude 等待输入时，他能第一时间被提醒。</p>
+<h3>为什么这么做？</h3>
+<p>Claude 的上下文是局部的，不适合“一个窗口做所有事”。Boris 把 Claude 拆分为多个角色并行处理，一方面减少等待时间，一方面减少“干扰记忆”。</p>
+<p>他还通过系统通知提醒自己：“Claude 4 在等你回复”、“Claude 1 完成测试了”，像管理一个多线程系统一样管理这些 AI。</p>
+<h3>👀 类比理解</h3>
+<p>你可以想象自己身边坐着五个聪明实习生，每人负责一个任务。你不用每件事做到底，只要在关键时刻“切一下人”，保持任务流畅推进。</p>
+<p>👉 启示： 将 Claude 当作多个“虚拟助手”，分别承担不同任务，可以显著减少等待时间和上下文切换成本。</p>
+<h2>🔄 3. Slash 命令：把你每天做的事变成 Claude 的快捷指令</h2>
+<p>有些工作流，我们每天会做几十次：</p>
+<ul>
+<li>修改代码 → commit → push → 创建 PR</li>
+<li>检查构建状态 → 通知团队 → 更新 issue</li>
+<li>把改动同步到 Web 和本地多个会话</li>
+</ul>
+<p>Boris不希望每次都提示 Claude：“请你先 commit，再 push，然后再建 PR...”</p>
+<p>他把这些操作封装成 Slash 命令，比如：</p>
+<pre><code>/commit-push-pr
+</code></pre>
+<p>这些命令背后是 Bash 脚本逻辑，存放在.claude/commands/ 文件夹，加入 Git 管理，团队成员都可以使用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO327kiancdAgQQveoZGlzRW6HgJBhUS8VnicicJ7fVAicjWN7ujB0jHGU4n1w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<h3>Claude 怎么用这些命令？</h3>
+<p>当 Claude 遇到这个命令，它不只是“执行指令”，而是知道这个命令代表的工作流，并能自动执行中间步骤、预填参数、避免反复沟通。</p>
+<p>理解重点</p>
+<p>Slash 命令就像你给 Claude 安装的“自动按钮”。你训练它理解一个任务流程，之后它就能一键执行。</p>
+<p>“不只是我能用命令节省时间，Claude 也能。” —— Boris</p>
+<p>👉 启示： 不要每次都重复输入提示， 将高频任务抽象成命令 ，你和 Claude 的配合才能“自动化”。</p>
+<h2>📚 4. 团队知识库：Claude 不靠 Prompt 学习，而靠团队维护的知识基因</h2>
+<p>Boris 的团队维护了一个.claude 知识库，并加入 Git 管理。</p>
+<p>它就像是给 Claude 用的“内部维基百科”，记录了：</p>
+<ul>
+<li>什么写法是对的</li>
+<li>什么是团队约定的最佳实践</li>
+<li>遇到哪些问题时，该怎么修正</li>
+</ul>
+<p>Claude 会自动参考这个知识库来理解上下文、判断代码风格。</p>
+<h3>🔁 当 Claude 做错事时怎么办？</h3>
+<ul>
+<li>每当 Claude 出现误解或写错逻辑，就将教训添加进去。</li>
+<li>每个团队维护自己的版本。</li>
+<li>所有人协同编辑，Claude 会实时参考这份知识库做判断。</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32VCUcYATCb9ccqcWOAprN7Tcg3CambibSApiaWxF4Y497ITNO8L944GBQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>👉 举个例子：<br>如果 Claude 老是把分页逻辑写错，只需要团队将正确的分页标准写进知识库，后续每个使用者都能自动受益。</p>
+<p>Boris 的做法：不骂它、不关掉，而是“训练一次”：</p>
+<pre><code>这段代码我们不这样写，加进知识库
+</code></pre>
+<p>下次 Claude 就不会再犯这个错误。</p>
+<p>更重要的是，这套机制不是 Boris 一人维护，而是整个团队每周都贡献、修改。</p>
+<p>👉 启示： 用 AI，不是每个人单打独斗，而是构建一支“集体记忆”的系统。</p>
+<h2>🔍 5. 自动学习机制：PR 本身就是 Claude 的“训练数据”</h2>
+<p>Boris 在做代码审查时，常常在 PR 上 @Claude，比如：</p>
+<pre><code>@.claude 将这个函数写法加进知识库
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32Awia5Y7YhSY2dnia6dDdbh7OBU1QoT5fmNduk1uDQRy0EhtS4yvXbWYA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>配合 GitHub Action，Claude 会自动学习这段改动背后的意图，并更新内部知识。</p>
+<p>这类似于“持续训练 Claude”，每次评审不仅合代码，也提升了 AI 能力。</p>
+<p>这不再是“后期维护”，而是 将 AI 的学习机制融合进日常协作中 。</p>
+<p>团队用 PR 提升代码质量，Claude 同步提升知识水平。</p>
+<p>👉 启示： PR 不只是代码审查流程，也是 AI 工具自我进化的机会。</p>
+<h2>🔧 6. 子代理（Subagents）：让 Claude 模块化执行复杂任务</h2>
+<p>除了主任务流程，Boris 还定义了一些子代理（Subagents）处理常见辅助任务。</p>
+<p>Subagents 是一些自动运行的模块，比如：</p>
+<ul>
+<li>code-simplifier：在 Claude 写完代码后自动精简结构</li>
+<li>verify-app：跑完整测试，验证新代码是否可用</li>
+<li>log-analyzer：分析错误日志，快速定位问题</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32zlN8o4QUR8pGC24rrSJ93jSpSc37dcDABphiaPYINCvVbCrfx20Q7YA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>这些子代理像插件一样，自动接入 Claude 的工作流，自动协作运行，不需要重复提示。</p>
+<p>👉 启示： 子代理就是 Claude 的“团队成员”，把 Claude 从一个助手升级为“项目指挥官”。</p>
+<p>Claude 不只是一个人，而是你可以带团队的小总管。</p>
+<h2>🧩7. 补充段落一：PostToolUse Hook —— 代码格式的最后守门员</h2>
+<p>在一个团队里，让每个人写出统一风格的代码并不容易。Claude 虽然生成能力强，但难免会有缩进差一点、空行多一点这类细节瑕疵。</p>
+<p>Boris 的做法是设置一个 PostToolUse Hook ——<br>简单理解，这就是 Claude 在“完成任务”之后自动调用的“后处理钩子”。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32ycztNvMY5gN0BibAaHfkyLvmoicvviaezrEddP2wVSQdU9BVraDcxibUpA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<h3>🛠 它的作用包括：</h3>
+<ul>
+<li>自动修复代码格式</li>
+<li>补充遗漏注释</li>
+<li>处理 lint 错误，避免 CI 挂掉</li>
+</ul>
+<p>这一步通常不复杂，但很关键。就像文章写完后再跑一遍 Grammarly，这样交出去的作品才稳定、整洁。</p>
+<p>对 AI 工具来说， 好用的关键往往不在生成力，而在收尾能力。</p>
+<h2>💡 8. 权限管理：预授权而非跳过</h2>
+<p>Boris 明确表示他不使用 --dangerously-skip-permissions —— 这是 Claude Code 的一个参数，可以跳过所有执行命令时的权限提示。</p>
+<p>听起来方便，但也可能危险，比如误删文件、跑错脚本等。</p>
+<p>他的替代方案是：</p>
+<ol>
+<li>1.使用 /permissions 命令来 显式声明哪些命令是可信的</li>
+<li>2.将这些权限配置写入.claude/settings.json</li>
+<li>3.让整个团队共享这些安全设定</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32c2QODfWcCxX5hEBAv6k1LibXuqMt5ThNCgGY8wuGpxVgslxre75fbyA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>这就像是为 Claude 预先开了一批“白名单”操作，比如：</p>
+<pre><code>&quot;preApprovedCommands&quot;: [
+  &quot;git commit&quot;,
+  &quot;npm run build&quot;,
+  &quot;pytest&quot;
+]
+</code></pre>
+<p>Claude 遇到这些操作就直接执行，无需每次打断。</p>
+<p>这套权限机制设计得更像一个团队操作系统，而不是单机工具。他用 /permissions 命令将常用、安全的 bash 命令预先授权，这些配置保存在.claude/settings.json 中，团队共享。</p>
+<p>👉 启示： AI 自动化并不意味着失控。 将安全策略纳入自动化流程本身，才是真正的工程化。</p>
+<h2>🤖 9. 多工具联动：Claude = 多能机器人</h2>
+<p>Boris 不是只让 Claude 在本地写代码。他配置了 Claude 能通过 MCP（一个中控服务模块）访问多个核心平台：</p>
+<ul>
+<li>自动发 Slack 通知（比如构建结果）</li>
+<li>查询 BigQuery 数据（比如用户行为指标）</li>
+<li>抓取 Sentry 日志（比如线上异常追踪）</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32ib9iaf5CqZYxUZSyYb6pwfKPalib7AHh1RCib5oV4rpppia4Ia9rcSQltkg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<h3>🔗 如何实现？</h3>
+<ul>
+<li>MCP 的配置保存在.mcp.json</li>
+<li>Claude 在运行时会读取配置，自主执行跨平台任务</li>
+<li>整个团队共享一套配置</li>
+</ul>
+<p>所有这些都是通过 MCP（Claude 的中控系统）与 Claude 集成完成的，配置保存在.mcp.json 中。</p>
+<p>Claude 就像一个机器人助手，能帮你：</p>
+<p>“写完代码 → 提交 PR → 查看效果 → 通知 QA → 报告日志”。</p>
+<p>这已经不是传统意义上的 AI 工具，而是工程系统的神经中枢。</p>
+<p>👉 启示： 不要让 AI 只在“编辑器里”工作，</p>
+<p>它可以成为你整个系统生态中的调度者。</p>
+<h2>🔍 10. 长任务异步处理：后台 agent + 插件 + hook</h2>
+<p>在真实项目中，Claude 有时要处理长任务，比如：</p>
+<ul>
+<li>构建 + 测试 + 部署</li>
+<li>生成报告 + 发邮件</li>
+<li>数据迁移脚本运行中</li>
+</ul>
+<p>Boris 的处理方式非常工程化：</p>
+<h3>三种方式处理长任务：</h3>
+<ol>
+<li>1.Claude 在完成后，用后台 Agent 验证结果</li>
+<li>2.使用 Stop Hook，任务结束时自动触发后续动作</li>
+<li>3.使用 ralph-wiggum 插件（由 @GeoffreyHuntley 提出）来管理长流程状态</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/E6YcKUBEibQGp83WuMkfiaIBCzfmGFRO32PINEHX5oannUZ8Z4ldEiafF2wdX7vQsC9U3jOKfw2XoBAzm0LCAvkibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>在这些场景中，Boris 会使用：</p>
+<pre><code>--permission-mode=dontAsk
+</code></pre>
+<p>或者将任务放入沙箱中运行，避免因为权限提示而打断整个流程。</p>
+<p>Claude 不是“时时盯着”，而是你可以放心托管的协作者。</p>
+<p>👉 启示： AI 工具不仅适合短平快的操作，也适合长周期、复杂流程 —— 前提是你要为它构建好“托管机制”。</p>
+<h2>🧪 11. 自动验证机制：Claude 的输出值不值钱，关键看它能不能验证自己</h2>
+<p>Boris 的经验中最重要的一条是：</p>
+<p>Claude 输出的任何结果，必须有“验证机制”来检查其正确性。</p>
+<p>他会给 Claude 加一个验证脚本或 hook：</p>
+<ul>
+<li>写完代码后，Claude 自动运行测试用例验证代码是否正确</li>
+<li>在浏览器中模拟用户交互，验证前端体验</li>
+<li>自动比较运行前后的日志、指标</li>
+</ul>
+<p>如果没有通过，Claude 会自动修改、重新执行。直到通过为止。</p>
+<p>这就像 Claude 自己带了一个“闭环反馈系统”。</p>
+<p>这不仅提升质量，更减轻了人的认知负担。</p>
+<p>👉 启示： 真正决定 AI 成果质量的，不是模型的参数量，而是你有没有为它设计好“结果检查机制”。</p>
+<h2>✅ 总结：不是让 AI 替代人，而是让 AI 像人一样合作</h2>
+<p>Boris 的方法并没有依赖什么“隐藏功能”或黑科技，而是 工程化地使用 Claude ，把它从“聊天工具”升级为一个 高效的工作系统组成部分 。</p>
+<p>他的 Claude 使用法有几个核心特点：</p>
+<ul>
+<li>多会话并行 ：任务分工更清晰，效率更高</li>
+<li>规划优先 ：Plan 模式提升 Claude 的目标对齐度</li>
+<li>知识系统支撑 ：团队共同维护 AI 的知识库，持续迭代</li>
+<li>任务自动化 ：Slash 命令 + 子代理，让 Claude 像流程引擎一样工作</li>
+<li>闭环反馈机制 ：Claude 的每个输出都有验证逻辑，确保产出稳定可靠</li>
+</ul>
+<p>其实Boris 的方法展示了一种新的使用 AI 的方式：</p>
+<ul>
+<li>将 Claude 从“对话助手”升级为“自动化编程系统”</li>
+<li>将知识积累从人脑变成 AI 的知识库</li>
+<li>将流程从重复手动操作转化为脚本化、模块化、协同化的自动工作流</li>
+</ul>
+<p>这套做法不依赖黑魔法，而是工程化能力的体现。你也可以从中借鉴思路，把 Claude 或其他 AI 工具用得更高效、更智能。</p>
+<p>🧩 如果你在使用 Claude 时常常觉得“它懂一点，但不靠谱”、“写的代码总要我修”，也许问题不在 Claude，而在你还没给它一个成熟的协作机制。</p>
+<p>Claude 可以是一个合格的实习生，也可以是一个稳定可靠的工程搭档，取决于你怎么用它。</p>
+<p>📌 原推文： <a href="https://x.com/bcherny/status/2007179832300581177">https://x.com/bcherny/status/2007179832300581177</a></p>
+<p>****加入XiaoHu.ai 日报社群 每天获取最新的AI信息  </p>
+<hr>
+<p><strong><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/E6YcKUBEibQFibqBQKNmUPicUnhZSL9BCzFg9npaicRGOzBKlS0dhmsjOaHIyicfiaEr0W9mkWWiclKMJZ2U3SKtkbj8A/640?wx_fmt=other&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=27" alt="图片"></strong></p>
+<p><strong>____________</strong></p>
+<p><strong>End.</strong></p>
+<p><strong><strong>感</strong> <strong>谢 <strong>阅</strong> 读</strong></strong></p>
+<p><strong><strong>点赞，转发，关注关注关注↓↓</strong></strong></p>
+<p>修改于 2026年1月3日</p>
+<p>继续滑动看下一个</p>
+<p>小互AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/a-KpOYR42DPX0Lr075KFmg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

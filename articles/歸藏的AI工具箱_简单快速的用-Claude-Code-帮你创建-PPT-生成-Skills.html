@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>简单快速的用 Claude Code 帮你创建 PPT 生成 Skills · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">简单快速的用 Claude Code 帮你创建 PPT 生成 Skills</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=PPT%E7%94%9F%E6%88%90">PPT生成</a><a class="chip" href="../index.html?tag=Claude%20Code">Claude Code</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=AI%E5%B7%A5%E5%85%B7">AI工具</a>
+    <span class="date">2026-01-10</span>
+  </div>
+  <p class="lead">怎么用这个PPT Skills 以及我是如何创建这个 Skills 的，方便大家参考这个过程创建自己需要的 Skills。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2026年1月9日 16:14</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBYdfIBsIZlfpaRffeibicq8FEibTfhkO8zaVWI9sU9GeXk3zibakzCXQ54Q/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>这几天 Cluade Code 的热度真的很高。</p>
+<p>除开他强大的编程能力之外，Skills 这种可以用 AI 辅助构建简单 Agent 的能力对于 CC 的加持也很大。</p>
+<p>我这几天也创建了几个 Skills 来辅助我的内容创作，比如今天刚做的这个 Nano Banana PPT 生成的 Skills。</p>
+<p>可以直接将你的文档转换为可以直接进行演示的 PPT：</p>
+<ul>
+<li>支持自定义风格</li>
+<li>支持修改某一页的内容</li>
+<li>自定义具体生成的 PPT 页数</li>
+</ul>
+<p>今天就顺便教一下大家怎么用这个 Skills 以及我是如何创建这个 Skills 的，方便大家参考这个过程创建自己需要的 Skills。</p>
+<h2>怎么安装这个 Skills</h2>
+<p>首先前提肯定是你已经安装了 Claude Code ，还有一个是需要准备一个谷歌的已付费 API ，你可以在 AI Studio 里面申请。</p>
+<p>那天我装 Oh-my-OpenCode 的时候看到他们 Readme 里面有专门给编程 IDE 看的安装指南和提示词。</p>
+<p>你只需要复制那个提示词给 Claude Code 或者其他类似编码 Agent 它就可以帮你自动安装了。</p>
+<p>这个太好用了，极大的降低了非开发者安装的门槛，感觉以后会成为标配。</p>
+<p>藏师傅这个 PPT 生成 Skills 开源的时候也学了一下。</p>
+<p>你只需要把下面的提示词发给 Claude Code，他就会自动帮你安装和调试这个 Skills，记得吧最后一句的谷歌 API Key 换成你自己的。</p>
+<p>提示词：</p>
+<p>请帮我安装 PPT Generator Skill：<br>1. 从 GitHub 克隆项目：<br>git clone <a href="https://github.com/op7418/NanoBanana-PPT-Skills.git">https://github.com/op7418/NanoBanana-PPT-Skills.git</a><br>cd NanoBanana-PPT-Skills<br>2. 创建 Python 虚拟环境：<br>python3 -m venv venv<br>source venv/bin/activate<br>3. 安装依赖：pip install google-genai pillow<br>4. 配置系统环境变量（请将 YOUR_API_KEY_HERE 替换为我的实际 API 密钥）：对于 zsh 用户（macOS 默认）：echo &#39;export GEMINI_API_KEY=&quot;YOUR_API_KEY_HERE&quot;&#39; &gt;&gt; ~/.zshrc source ~/.zshrc<br>对于 bash 用户：echo &#39;export GEMINI_API_KEY=&quot;YOUR_API_KEY_HERE&quot;&#39; &gt;&gt; ~/.bashrc source ~/.bashrc<br>5. 验证安装：<br>./run.sh --help<br>6. 运行测试（如果有 test_slides_plan.json）：<br>./run.sh --plan test_slides_plan.json --style styles/gradient-glass.md --resolution 2K<br>完成后，告诉我安装结果和如何使用。<br>我的 API 密钥是：YOUR_API_KEY_HERE<br>（请在执行前帮我替换所有 YOUR_API_KEY_HERE）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBnIZtB83waRS0YIe3eeHKM51vIMLalAbV4hAicugZmCAl4E7Kn8dv6BA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<h2>怎么使用这个Skills</h2>
+<p>安装结束之后只需要将你想要生成PPT 的文本文件放在一个新建的文件夹里面，然后在这个文件夹下启动 Claude Code 跟他说，帮你基于这个文档创建 PPT，按照引导创建就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBBz2Cp6qlgyAAxYyzhurEWQ9De304mSbh4PoCXeERUJRqQd6ziadGR7g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>目前这个Skills 里面内置了两套主题，都是我之前发过的渐变拟物玻璃卡片风格和矢量插画风格，生成的时候 Skills 会让你选择，选择自己喜欢的就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBByAAcknHibexFYaHJKicdF2GRgBw42ibibNehe5oqL68KTJrt6zInbcGibw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<h2>怎么快速方便的创建 Skills</h2>
+<p>说完安装和使用之后以这个 Skills 为例子带大家创建一个 Skills ，刚好这个相对复杂。</p>
+<p>首先最重要的就是想清楚自己要用这个 Skills 完成什么工作。</p>
+<p>比如我这里就是想创建一个相对通用的 PPT Skills ，可以基于我自定义的风格提示词去生成 PPT，最好还能有一个网页来预览和演示生成的 PPT。</p>
+<p>想清楚了以后我们就需要准备资料了，Skills 一定是你本身实践过或者沉淀好的工作流，只是你要将它自动化。</p>
+<p>比如这里我们需要准备的资料有：PPT 生成的风格提示词、应该如何调用 Nano Banana Pro 生成图片的 API 文档、用来测试 Skills 结果的文档、你的谷歌 API Key。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBcmPCK5IX83ksZ4geP4w6rkROs6eicHEalOzHeGSLKXbxIbagASTPAAQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>这里最好都用 Markdown 文件，AI 模型对这种格式适配比较好。</p>
+<p>提示词是我本身就有的，测试用的文档和Nano banana Pro 的 API 文档都是我用 Obsidian 的剪藏工具从谷歌的网页采集下来的，如果你也想用 Obsidian 这个工具的话可以参考我之前的教程：</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247488244&idx=1&sn=9daf95eed33e348fd1e691d6deda2a60&scene=21#wechat_redirect">现在最强的AI网页剪藏工具，而且还免费！Obsidian AI教程02</a></p>
+<p>提前把这些上下文背景信息准备好之后就避免了在生成过程中 Claude 自己瞎写的可能性，比如在调用 Nano Banana Pro 生成图片的时候由于他不是完全清楚这些参数，就有可能自己瞎写，很容易出问题。</p>
+<p>准备好信息之后，我们就可以在当前文件夹启动 Claude Code 开始创建 Skills 了，这里最好在别的地方写好你的需求，把需求梳理清楚再给到 Claude Code。</p>
+<p>当然如果你不知道应该准备哪些文件或者如何梳理需求的话也可以让 Claude Code 帮你。</p>
+<p>可以跟他说“ 我想要创建一个 XXXXSkills 帮我梳理一下这个需求以及你可能需要的上下文信息我去准备，只是讨论不要执行任何操作 ”。</p>
+<p>直到你觉得讨论好了，再跟他说按照刚才讨论的开始执行。</p>
+<p>开始执行前最好开启计划（Plan）模式，这个时候 Claude Code 会规划好所有步骤然后按照步骤执行，效果会好不少，连续按两次 Shift+Tab 键就能开启。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPB6wO7RVmKAjiaGxJZhhGSA6rIY1B0KKmoibo22Q6JTXA1Hf45brq9KKQA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>我这里是这么跟他说的，大家也可以参考，基本上一次把整个 Skills 的具体能力、生成结果的要求、需要引用的文件位置都说清楚了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPB9yUicBhwAFFBaHVQcjJorKicc9icYWMwa8SjDPT0Num1Al4OjVcVLQQsA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>把这个提示词发给他之后如果你开了计划模式，他就会在生成规划之后让你补充一些细节后开始工作，这个时候你可以用键盘的上下左右和回车选择你需要的 Skills 生成细节。</p>
+<p>比如我在创建的时候他就问我，没找到文件文件在哪里，需要使用什么技术栈，是 Python 还是前端，还问我有没有 API Key。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBjhhZibq67czpt55BEEHE0a3ibWMA7MRkpDs0cWRvrh8H2J9YoEpo546Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>之后他就会开始工作了，工作完成也会自己进行测试，如果中间出现了什么问题，你可以直接让他修复。</p>
+<p>一旦测试完成这个 Skills 就搞定了，你后面可以在任何项目使用这个 Skills，直接跟他说根据 XXX 生成 PPT 就行，当然你如果是其他的能力也可以跟他说用 XXXX Skills 干什么事情。</p>
+<p>首次创建完成之后不是一劳永逸了，我们可能还想继续迭代这个 Skills，这个时候就需要启用 Git 了，不然万一改错了就麻烦了。</p>
+<p>你可以去 Github 申请一个账号，然后点击右上角的“New Repository”创建一个自己的储存库，进去之后只写个名字就行，如果你不想开源你的 Skills 就改成私有。  </p>
+<p>之后你会在界面看到一个 HTTPS 的连接，复制这个链接，然后跟 Claude Code 说帮你提交到这个 Git 仓库就行，咱们的 Skills 现在就有版本管理了，每次大改动你都可以让他提交一下。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPBb6QXiaKnXymuTHgpJPw1933y9Zs31vdBWFRsdhxU8N24TfsnqJ9KK4g/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>当然如果你想要开源自己的 Skills 的话也可以让他帮你写一个漂亮的 Readme 页面，这样你项目的使用者可能会更加多和方便，这个是 Claude Code 给我的这个 Skills 项目写的 ReadMe 页面，是不是很容易阅读。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf0m2evPX2csGn8vicqEJfPB8r0kcWfPRibkgcojBRoNuGaaYPWK5ARuRoVVhg7h49huqev7DETJIEA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p>好了，到这里教程就结束了。</p>
+<p>Skills 本身还是有些局限性的，比如功能不能太复杂，太复杂提示词遵循和上下文都会有问题，推荐可以将一整套流程中需要的不同工具打包成不同的 Skills，这样出问题的概率小，也会变的比较灵活。</p>
+<p>比如我这个 PPT 生成的 Skills 就可以作为我文章改写排版生成工作流的一部分，专门用来给这个流程生成对应的文章配图。</p>
+<p>脑洞已经打开了，方法也交给大家了，接下来看你们的了，也可以在评论区介绍你的 Skills 。</p>
+<p>如果你觉得内容对你有帮助的话可以帮我点个赞👍或者喜欢🩷，也可以推荐给你需要的朋友们，谢谢各位。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 1.70 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.70 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/QRek8OUN_BvBvOPr6ySvBA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

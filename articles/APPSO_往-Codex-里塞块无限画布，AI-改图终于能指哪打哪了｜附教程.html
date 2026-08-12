@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>往 Codex 里塞块无限画布，AI 改图终于能指哪打哪了｜附教程 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">往 Codex 里塞块无限画布，AI 改图终于能指哪打哪了｜附教程</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%8F%91%E7%8E%B0%E6%98%8E%E6%97%A5%E4%BA%A7%E5%93%81%E7%9A%84">发现明日产品的</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=%E6%97%A0%E9%99%90%E7%94%BB%E5%B8%83">无限画布</a><a class="chip" href="../index.html?tag=AI%E6%94%B9%E5%9B%BE">AI改图</a><a class="chip" href="../index.html?tag=tldraw">tldraw</a>
+    <span class="date">2026-06-25</span>
+  </div>
+  <p class="lead">Codex 正在变成打工人的 AI「工作台」</p>
+  <article class="content"><p>发现明日产品的 APPSO <em>2026年6月25日 10:14</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/dCG7OC48IfIFGzbtia3FrZ8NMM5Y0b8Mo9uLMiaftBUD5xWbhAn931IVXgZRULx3wuYbU0SnBVV45H8AkiaERlNC1ggHWrF4EMVwSLOkj72Zlc/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>和 Codex、Claude Code 等 Coding Agent 沟通，很多时候就像站在许愿池边，对着池子里的王八扔硬币，嘴里念念有词，关键它还真给你兑现愿望。</p>
+<p>因此，对很多不懂代码的人来说，Codex 带来的亢奋感是肉眼可见的——</p>
+<p>它让人第一次感觉，自己也能指挥电脑干活。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/dCG7OC48IfJmf7yIVsZ6QyxjPMS1RtmUe726Hc5tx9EJd2s78lVcSlOjH5kEMojZmGrnLq8o8KyzM3MibDcl3znW2UBKza2ok5ZicwTXt4duE/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>🔗 <a href="https://x.com/zhongerxin/status/2068027614300893383">https://x.com/zhongerxin/status/2068027614300893383</a></p>
+<p>近半年以来，社交媒体上，围绕 Codex 的玩法越来越野。有人让它写网页，有人让它做报表，有人让它管文件，还有网友 @zhongerxin 折腾出了一种更直观的玩法：</p>
+<p>把画布塞进 Codex。</p>
+<p>他基于 tldraw 改造了一个叫 Cowart 的本地无限画布插件，让 Codex 不只读文字提示词，也能看到用户在画布上的箭头、批注和位置标记。其作用在于让 AI 改图时，能够指哪打哪。</p>
+<p>逃离聊天框，Canvas 才是 AI 的应许之地</p>
+<p>介绍 Cowart 之前，得先提一下 tldraw。</p>
+<p>tldraw 可以理解为一块跑在浏览器里的无限白板。</p>
+<p>它基于 React 构建，提供完整的画布引擎，内置白板工具、压感绘图、几何图形、富文本、箭头、形状吸附、图片与视频支持，以及图像导出等能力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfLO0w7nw0m8p9f3xWjGC9NTF69rYcNgdk6hhHz1DwGQOkQVrygzXL3QGJxIjzAds7OEtEKmMRYx4CEyibE9yZ2tTibFVeaOado68/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>Github 地址 🔗 <a href="https://github.com/tldraw/tldraw">https://github.com/tldraw/tldraw</a></p>
+<p>开发者可以基于它自定义形状、工具、绑定关系和 UI 组件，把它扩展成各种不同类型的画布应用。</p>
+<p>Cowart 做的事情，就是基于 tldraw 搭了一个本地可视化画布，让用户在画布里构思、标注和生成图片，再把标注交给 Codex 继续修改。</p>
+<p>玩法也不复杂。</p>
+<p>安装 Cowart 时，可以直接把下面这段话发给 Codex，让它自动完成插件安装：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/dCG7OC48IfKA1eSbwxJKROvZvOQXtgw6o7cMQRdI65O7dWBFNr7YM8KVFIBtbWBj5jribsia2As2JWCticLwRbhiaFbJW3AgcKMBDjwfulnj0lY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<pre><code>请从 https://github.com/zhongerxin/cowart.git 安装 Cowart Codex 插件。
+
+请 clone 仓库到 ~/plugins/cowart，确认.codex-plugin/plugin.json 存在，
+
+把插件加入 personal marketplace，先运行 codex plugin marketplace add ~，
+
+再运行 codex plugin add cowart@personal。
+
+安装后请校验插件，并告诉我是否需要开启一个新对话来加载新技能和 MCP 工具。
+</code></pre>
+<p>安装完成后，通常需要开启一个新的 Codex 对话，让新的 skill 和 MCP 工具完整加载。使用时，可以直接在 Codex 中输入：</p>
+<p>帮我打开 Cowart 画布。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfKoERn9E4Ivmr1GibhZ03Ingd5raQZDVlvaXLYfGhf57ia3yrPjQZiaObXKMmBZgvI6H3WbfHV8xviboWnj2dNgcyLdAV0foWHxBOs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>实测中，Cowart 会启动一个本地网页服务，并在对话里给出预览入口。然后接下来的操作就非常简单了。</p>
+<p>比如调用 Cowart 插件，继续在对话中输入：</p>
+<p>帮我生成一张达芬奇原汁原味风格的《蒙娜丽莎》油画</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfKBJTxAzWgCu58RMRtaWL0s2hDjWq76iaTnsmmjTggiaAapJ8e8pic7uibn51lT5QfBShbP8OxW2apzxiatKjVf8iaBPiaicktGPM7nv2g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>随后，Codex 生成图片，并把它放进 Cowart 画布，右侧画布中可以看到生成后的《蒙娜丽莎》图片。后续修改可以直接围绕这张图进行。</p>
+<p>接下来，我在 Cowart 画布里对这张图做两处标注。</p>
+<p>第一处，在人物眼睛位置画箭头，并写上「给眼睛戴上墨镜」。第二处，在手部位置画箭头，并写上「手里拿着一杯果汁」。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/dCG7OC48IfJbv85ibsyWksto570ibdrzzU8cZutSTs2HT7jrbB44BplAfyWGLfIPIVScTbme91AcyJPcnC4NhF5g0V2yhm6ekJ8sb2tMIgDO4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>标注完成后，把这张 Cowart 标注截图发给 Codex，并输入：</p>
+<p>使用我的 Cowart 标注截图，生成一张干净的修订版图片，并将它放在原图旁边。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/dCG7OC48IfJYJ6JsFnOIXaCiabcGPLrLCEMzw4ibAL5ubtneia7BK5ntgRJ7XXq6aqyAbZemPureCB6L04uaWc3MkC5vgmv4wn6VxkS1gggrI8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>Codex 随后根据标注截图生成新的修订图。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/dCG7OC48IfJ1KxbibLhm4KJnuBV8PvAia8odLIbSSHibsCkntLnqt7KqoR4qia2oQkslKkG4HBId5s7k9kLviboVRC7ZdyulbkkbEnJ2icmXBhWXg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>2002 年斯皮尔伯格的《少数派报告》里，汤姆·克鲁斯饰演的角色站在悬浮屏幕前，用手势拖拽、圈选、调取数据。原本抽象的检索、判断和信息整理，被拍成了一种直接的空间操作：看到哪里，手伸过去，信息就跟着移动。</p>
+<p>![THE FILES] : Minority Report (2002)](<a href="https://mmbiz.qpic.cn/sz_mmbiz_jpg/dCG7OC48IfKQGQh53RlISaRhcXlic7D2Uv7uIHhekpcKkJvRSdoWJqpicXmEibTeaUUj4gTniaQBiaaEib2ARnznsXMABPeha2aeevw6rYX1YRHicM/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9">https://mmbiz.qpic.cn/sz_mmbiz_jpg/dCG7OC48IfKQGQh53RlISaRhcXlic7D2Uv7uIHhekpcKkJvRSdoWJqpicXmEibTeaUUj4gTniaQBiaaEib2ARnznsXMABPeha2aeevw6rYX1YRHicM/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9</a>)</p>
+<p>THE FILES]: Minority Report (2002)</p>
+<p>Cowart 的画布标注当然没有那么科幻，但它对应的交互直觉是一致的。</p>
+<p>过去用户得把脑子里的画面翻译成一长串提示词，现在只要把箭头画到图上，把要求写在旁边。AI 看到的不再只是「把这里改一下」这样的模糊描述，还有位置、方向和上下文关系。</p>
+<p>再来看一个商品图制作的案例。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfKibRjX7TH0DpcNHvWvYdwLPoRurJRGSShSz0KsibCRsygNWhaEJ4licjptDYgia8S0HrYq1CLQJEiaRvtWovSIS3WUmrR26kk5gwJE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>依旧是让 Cowart 先生成一张极简风格的空白牛皮纸外带咖啡杯，放在木质桌面上；随后在背景区域标注「背景换为露营地」，在杯身中间标注「加上一个柴犬 logo」。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/dCG7OC48IfJjE6MHibYRr525BDFlnmlulBd4YPpFuqh1RIC8CVNX6Vs51JvbY8ia8NydpCOjObSr8sWG0icwq40vumInq7FMrRRfibQ5CEJ7jtQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>最终的结果也不出所料。</p>
+<p>当 Cowart 把 AI 改图里的位置描述变成了画布标注，用户也不需要反复解释「左上角」「中间偏右」「手的位置」这类空间关系，直接在图上指给 Codex 看即可。</p>
+<p>Cowart 这套「画布加标注加生图」的交互，也不只是绑定在 Codex 上。只要 Agent 客户端能调用本地 MCP 工具、能访问本地画布服务、能使用图像生成能力，类似玩法就可以迁移过去。</p>
+<p>开发者 Chloe Tian（@tllll64）就搞了个 WorkBuddy 适配版，感兴趣的可以试试。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfLj1G6M6LUGfI51YhpbiaiccT1etBZWnDNqkYWS2yDs1Uxk4ibianncuzB8Is5LUiah3wPdGpVVxGh5kbAzhGgxyQC37TicwSbuEgk24/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>Github 地址🔗 <a href="https://github.com/tllll64/cowart%5C%5C%5C_workbuddy">https://github.com/tllll64/cowart\\\_workbuddy</a></p>
+<p>不过，尽管 Cowart 未来可期，但目前体验还比较粗糙的：</p>
+<p>响应慢，从开画布到生成、修改都得等；额度消耗高，多试几个版本成本肉眼可见地往上涨；还容易断联——画布、本地服务和 MCP 工具偶尔不同步，Codex 无法读取选区或插入结果，得重开画布或重启对话才能缓过来。</p>
+<p>Codex 正在变成打工人的 AI「工作台」</p>
+<p>Codex 的插件和应用案例，其实一直被市场低估。翻一翻 OpenAI 官网也能发现许多有趣案例，覆盖收件箱管理、电脑自动操作、前端开发、游戏开发、原生应用开发、生产系统维护等一系列场景。</p>
+<p>在这些案例里，Codex 承担的任务已经不只是写几段代码。它可以帮用户管理收件箱，找出重要邮件，并按照用户的语气草拟回复；可以在 Mac 上点击、输入和操作应用；</p>
+<p>可以跟随一个长期目标，持续处理复杂任务；也可以清洗表格数据、查询 CSV 和电子表格、审查 GitHub pull request、根据截图生成前端界面，甚至自动生成 slide decks。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfJw7vVMXHOegkXRWg3RibSwZicmSR9nicv2JqNgEZtZXc1swicWibibSy2JQcWqicBY60eGibVeACkmaA3of8MpsmVhiaXy1ExvWWxE5F5g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>🔗 <a href="https://developers.openai.com/codex/use-cases">https://developers.openai.com/codex/use-cases</a></p>
+<p>OpenAI 发布的《How OpenAI uses Codex》白皮书显示，Codex 已在安全、产品工程、前端、API、基础设施和性能等团队中日常使用，基于内部访谈与数据总结。其主要应用可归为七类：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/dCG7OC48IfKwTGibdBjibsvaf8caDqjRvvpo8wsOxOoZQIVl6hYicwuGD7Xjpt4hRWBC6s76fe3ZJpkOqO7AXe2ia39WBSXhlAOibnl40feico2jI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>🔗 <a href="https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf">https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf</a></p>
+<p>最佳实践包括：先用 Ask Mode 规划，再用 Code Mode 执行；优化运行环境与权限配置；Prompt 类似 GitHub Issue，需提供充分上下文。团队还将任务队列当作轻量 backlog，借助 AGENTS.md 提供长期上下文，复杂任务用 Best-of-N 生成多方案筛选。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dCG7OC48IfLW7XVzLqPzw0tp4iczia4Szz89yPaKaMFzFSKYcXpknaSG2bA78OTpXdzXGOs6NYfdXiajcmzR0pBUA3h9tickfoQicWO18ic0wNsx4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>Cowart 这类功能插件本质上也契合这个方向。</p>
+<p>对话是线性的，而创造往往是空间性的、发散的。用户在画布上指出位置，Codex 调用本地工具读取状态、生成图片、插入画布，并把结果保存在当前项目目录中。</p>
+<p>往后看，很多轻量功能可能不会以独立应用的形态存在，而是成为 Agent 可以调用的一组本地能力，并被装进同一个工作流里。</p>
+<p>当画布、表格、网页、邮件、代码仓库等等桌面环境都能被 Agent 理解和调用，Codex 也就演变成了一个可以被不断加装能力的本地工作台。</p>
+<p>至于现在该准备点啥？或许就是备好自己的想象力，往 AI「许愿池」里，投下一枚枚更大胆的硬币。</p>
+<p>我们正在招募伙伴</p>
+<p><strong>📮 简历投递邮箱</strong> <a href="mailto:hr@ifanr.com">hr@ifanr.com</a></p>
+<p><strong>✉️ 邮件标题</strong> 「姓名+岗位名称」（请随简历附上项目/作品或相关链接）</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjgzMTAwODI0MA==&mid=2652396877&idx=2&sn=dfef25453a6bf0dca147b0adca3deaf7&scene=21#wechat_redirect">更多岗位信息请点击这里🔗</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/dyDu14T9ZVCVcpovZWZUAPG4SZRb6dvkCnlbaaC9vB6DpTLHMYlQu7mRqvFxNvibws53vXibhXuM170teXdwjZgQ/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&tp=webp#imgIndex=16" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/77B1nr_qkaiy5oW5So6ULQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

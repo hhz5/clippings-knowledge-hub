@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我用 GPT-5.6 一口气做了 10 个工具，附教程 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我用 GPT-5.6 一口气做了 10 个工具，附教程</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91">工具开发</a><a class="chip" href="../index.html?tag=GPT-5.6">GPT-5.6</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7">效率工具</a>
+    <span class="date">2026-07-10</span>
+  </div>
+  <p class="lead">OpenAI 今天发了一整套更新：GPT-5.6 正式开放，分三档：旗舰 Sol 主打复杂推理和长时间自主干活</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年7月10日 12:00</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCoxLLviaPt9n7XqCgicHwzng7k9eeW5n1XM7jqRXrZgCjsSmuNGF9iaBH5dJt68me2g8rPXqNnHLgp8a5jWPVNQsavMxvIicglytyFc/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>没有错，上线的这不到半天，我早上起了个大早，用 GPT-5.6 做了 10 个小工具，就为了测试一下 GPT 5.6 的能力。</p>
+<p>几乎都是一次提示就做好了，而且部署到了我的个人网站，继续往下看看，相信对你也很有用。</p>
+<p>整个做下来，觉得它的编程能力强了很多，要是用其他模型需要多次提示，做完还要测试，有些直接卡主就做不下去。</p>
+<p>这次发布 GPT 5.6 总共有三个型号。</p>
+<p>旗舰 Sol 主打复杂推理和长时间自主干活。</p>
+<p>性价比款 Terra 接近上代旗舰但价格减半。</p>
+<p>轻量款 Luna 最快最便宜。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCox6BH0ic1R6ZIiaW6TyliaroRn0k3rd5wYicARApZjDqCEhFbbBHoPnQ2FfmWv6Ph60faib1bM1BSNmJJhzH0ZAHPQhqjnS6DDeTibTo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>还有一个很明显的改变。 ChatGPT 和 Codex 还合成了一个桌面应用，Chat、Work、Codex 三个模式共享能力和任务历史，官方说 Codex 每周 500 万活跃用户里有超过 100 万人干的是开发之外的活。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozPia0QrWNM2c5t76D8bVHFMdPkV3qqDREG2U1yP8xcdbo71B5asayJ5oNJ3bMkBTKkcJwVFUUhe8GxFF2Ivo7EmzbVA2W0ENuY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p>这 10 个工具把最近攒的想法全用 GPT-5.6 Sol 做的，最高的思考一定谨慎打开，我开了之后，两个工具就消耗完了，后面改成中等的，用了两次重置卡才做完其他的。</p>
+<p>用下来的感受：GPT-5.6 和 fable5 处理长程任务都更强了，不用指明工具，它自己会去调相关的 Skill 和插件。</p>
+<p>还有个共同点是爱反问，5.6 更谨慎，大任务动手前会先给你一份设计报告，对齐了再开工，返工确实少了。</p>
+<p>之前我用 Gemini 3 在 Google AI Studio 里做过几个小工具，依赖 Google 的 API。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247491312&idx=1&sn=5f68bb08eb52d3fa0a9bed6432dd53ea&scene=21#wechat_redirect">我用 Gemini 3 一口气做了 10 个应用，附教程</a></p>
+<p>这次这批工具开发更复杂：纯前端 + 脚本 + 云函数都有，GPT-5.6 都实现得很好。</p>
+<p>这十个工具大多围绕内容创作的痛点，全是我一直想给自己做的东西，现在都挂在我的个人站上。kongge.space/tools</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyuvBpFiaV9hAYNLwQSv9199aV1qv7wNrssygyGd8RbT6AcIVahJHHFYh1wENbzPibXnMcSicqUSnpZ9bxgI1ECtjWeibZlDgbcX4k/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>1 公众号文章转小红书图文</p>
+<p>粘贴文章或者直接扔公众号链接，自动识别文字和图片，按 3:4 排出一组卡片，封面加正文分页，可以单张下载或打包 ZIP 下载所有图片。</p>
+<p>风格内置 Notion、Apple、Claude 三套，还是很好看的，方便我后续把公众号文章发到小红书。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyCZTqFyicjbx0WM1FXoVoeXJiajFAssskpYZrm2lABDE4TP5nSAkGlPnKsAvpPblzscKUibRRjhm3J4cR085Gt8iceppeDqy955Vw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/xhs</p>
+<p>2 公众号排版</p>
+<p>左边写 Markdown，右边实时预览，点「复制到公众号」粘进编辑器，样式一点不丢。章节自动编号，风格做了十套：墨线、青野、暖纸、留白、纸间、紫穹、珊瑚、夜谱、拾彩、赤诚，分别参考 Vercel、Claude、Apple、Notion、Stripe、Spotify、Figma 这些产品的设计语言。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowbVBKlRXKXSqZFn9c5yOzEiaQhVl1E1cckVW6jCgD7iaZsDUIW4STa1RogtCJwHmpA7rWEib8aLDNXS0KV5YHVdNAY1TPHv54Riaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/gzh</p>
+<p>3 AI 味检测</p>
+<p>粘贴文章，把&quot;不是A而是B&quot;式套话、&quot;赋能&quot;&quot;底层逻辑&quot;类高频词、&quot;研究表明&quot;式模糊归因全部按类别高亮，给替换建议，最后打一个 0 到 100 的 AI 味指数。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxdpF9jc9Oxl7LPm5R06bMahp1ML3MqfYk7hVP4FRuEdK4c6Wgg6YojJLEjxUphwfQU4MXsW9j6UImfvB7RU5IU6u7IfYa3ABs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p>实现上完全没调大模型，就是正则加词库，500 多条规则，浏览器本地跑完。这篇文章发之前我也过了一遍，你们可以猜猜多少分。</p>
+<p>体验地址：kongge.space/tools/aiwei</p>
+<p>4 违禁词检测</p>
+<p>发布前自查违禁词。默认全平台，也可以只勾公众号、小红书或抖音：各平台规则真不一样，&quot;加微信&quot;在小红书是限流重灾区，在公众号里就还好。</p>
+<p>命中的词按严重度标三级颜色，给替换建议，输出风险百分比。词库来自新广告法极限词清单和三平台公开规范。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxfibe4TjPSOjBNDEwNBarfZWlnZ0p0RBba9Ep82YDn0Y90ibvSQhN3VuDwhwCZ2JxwmN37j73m6VCRNBQb6hPE4t5CB7X8vvAtw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/jinci</p>
+<p>5 万物皆可录</p>
+<p>全屏演示录制，支持PPTX / HTML / PDF / Markdown文件，全窗口预览，做产品演示、录教程时一次录完，纯浏览器 API，不装软件。</p>
+<p>这是我的一大痛点，每次想要把自己制作 PPT、文章做录屏演示的时候，都调节不好窗口，而且它还支持把脚本设置在窗口，录制的时候隐藏不显示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxqHTFamdRUKQj3VV4ZpR2AHibtBicHpx0LDRhcicvccepahZuzRmPrlA9Vgvibp73NRBl37q8iciaDibqt7YYiayp32JicMfehwdicy14FE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/all-recorder</p>
+<p>6 HTML 预览</p>
+<p>粘贴 HTML，新窗口直接看渲染结果。AI 生成的页面代码不用存文件不用起服务，贴进去就能看。</p>
+<p>解决我平常用 AI 生成的 Html 没地方预览的问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz5Exd7OBElslNSKxKjNaSe9RfKuJuKBSA0DjAnCbiaYdgU0DuF0HibstZN4a9Xibux2TKsLD5GEF1KQkTMtzMs2Ndr5KAjX34aB4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/html</p>
+<p>7 Mermaid 预览器</p>
+<p>AI 输出 Mermaid 图表代码可以渲染后插入到文档里，在这个工具你可以贴进来代码，它直接渲染成图，支持时序图，思维导图，架构图，甘特图等多种形式。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowDb6aPUsNEO6icQxJEESyicKKaBMxYOjwic2iaYgPnibqb3HoOqq5WYOCJdIYhiara8jkjibghX4oEvQpOnRMgPSBAqtUQgcnDVZBUj0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/mermaid</p>
+<p>8 视频转 GIF 动图</p>
+<p>浏览器本地把视频转 GIF，选时间段、设目标大小，完事下载，视频全程不上传。</p>
+<p>我做公众号文章就非常需要这个工具，但是用了很多都需要收费，或者他们只能转成很大的文件，在公众号没法粘贴。</p>
+<p>这个工具就解决我一大痛点，可以以最低文件体积来转视频为 GIF 动图</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozdqEpIicZxljmpHBMYTt0LvdWhU9xteSBoBCInbHCnAyhK1JSKRpUWp7CrYTehROSrdFf4zaInXnemNuOuCahPJtt4Lx9JWwlw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片"></p>
+<p>体验地址：kongge.space/tools/video-gif</p>
+<p>9 今天天气怎么样</p>
+<p>一个毒舌天气播报。输入城市，直接告诉你天气情况：&quot;36°C，体感 41°C。出门五分钟，流汗两小时，建议原地当咸鱼。&quot;</p>
+<p>这个产品口吻可切毒舌、老妈叮嘱、打工人、文艺四种。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoydegyMibWeFXljqH5nGicNhZnXu0okM0eYsFpyfibIuRuic3lzTmXUSyfI6SIibPv8gcjyYewKeJCwATdRICUsHsdicSuK1n8ZyOuow/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片"></p>
+<p>页面背景跟着天气变，下雨飘雨丝，晴夜满天星。还有城市 PK：我测那天哈尔滨 44 比 38 赢了深圳，判词是&quot;深圳的朋友，抱抱&quot;。数据用免费的 Open-Meteo，零后端。</p>
+<p>前端动效审美很在线，这也是 GPT-5.6 一大提升点。</p>
+<p>体验地址：kongge.space/tools/tianqi</p>
+<p>10 工具站本身</p>
+<p>最后一个&quot;工具&quot;是承载前面九个的站点。也是我的个人博客。里面有很多我个人介绍。</p>
+<p>我会在这个博客持续更新我个人的成长和思考，以及我制作的工具，产品和内容。</p>
+<p>它使用 GitHub 仓库 + Cloudflare Pages，推送代码自动部署，全程零成本。</p>
+<p>现在推荐大家都部署一个网站用来承载自己 vibe coding 的作品，分享给别人演示或使用。</p>
+<p>后续我也更新一下我部署网站的教程。不花一分钱，全程自然语言指挥 Agent 构建。关于这几个产品的制作，我总结了一些方法论👇</p>
+<p>总结</p>
+<p>1 从自己的重复劳动里找需求，从那些你用的最多的工具，你需要付费的工具入手，把它改造成属于你自己的。这十个全是我内容创作中要干的事，自己就是第一个用户。</p>
+<p>2 把消耗 token 的 Skill，转成交互式的工具，操作更稳定。可以问下你的 Agent，哪些 Skill 可以转为工具，比如上面做的 AI 味检测、违禁词检测都是 Skill 转的。</p>
+<p>3 尽量不用后端，也就是不用数据库，维护成本低很多，可以去找一些开源的 API 或代码做参考，比如天气怎么样的工具就是调用 开放 API 实现的</p>
+<p>我是空格，感谢你读到这里，有用的话，点个赞和在看支持一下。</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/OS5lI3eK1G4X0hYcum6kpw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

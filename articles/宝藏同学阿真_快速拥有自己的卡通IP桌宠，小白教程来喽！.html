@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>快速拥有自己的卡通IP桌宠，小白教程来喽！ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">快速拥有自己的卡通IP桌宠，小白教程来喽！</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%98%BF%E7%9C%9F">阿真</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E6%A1%8C%E5%AE%A0">桌宠</a><a class="chip" href="../index.html?tag=%E6%95%99%E7%A8%8B">教程</a><a class="chip" href="../index.html?tag=IP%E5%BD%A2%E8%B1%A1">IP形象</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90">视频生成</a>
+    <span class="date">2026-06-09</span>
+  </div>
+  <p class="lead">一起来做桌宠吗，很好玩的！</p>
+  <article class="content"><p>阿真 <em>2026年6月8日 18:22</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/m1eibvmmT3s8dLljZ9kMWMx1icrwrppKJ6EvD0xExvdh3vM1WZibfODJJcgjTxaiaS8Cx2dGVvcicZLbib8pFo1SQfUmMvChYOf0H1ruIHukSLKxY/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>嗨大家好！我是阿真！</p>
+<p>今天来玩一个有意思的。我最近做了一个桌宠小工具，这个桌宠是基于自己的卡通 IP 形象制作的。做完以后我有了一个想法，既然这个工具我能做出来，那么我也可以让大家都能做出属于自己的 IP 的桌宠。</p>
+<p>感觉好像很没用，但是哪管那么多有用没用，喜欢就来尝试一下！</p>
+<p>整个项目我都开源了，有一个简单操作路线和进阶操作路线。简单的就是只需要按照素材槽位，替换几个桌宠不同状态的视频文件，复杂的就是你还可以继续基于我的框架继续修改。这里我主要讲替换素材，修改框架相对折腾点，对Vibe Coding 感兴趣的朋友可以尽情尝试。</p>
+<p>先看看效果。</p>
+<p>一共 5 个状态，分别是任务进行中、任务完成、任务失败、任务暂停/休息，喝水提醒。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/m1eibvmmT3sic2UbC1iaCgsicuQQvqf5Qffb1ba8xx1WY1QuD82NgkZURumW5uVrrrbYRQUULMINFBeRGJiavyJHzUEa6lYzpbKUP9jsUvMLwR5E/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="附件/桌宠IP替换教程/桌宠教程-02.gif"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-02.gif</p>
+<p>Mini 阿真任务进行中：👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/m1eibvmmT3sic3h7CjL2X4lr8z78cibt5UwzJbR06icYfsMFtzNTp6riapdofZnW87p2eXhfKFamHQw0jp3ATOvibas3Oia1u4yrsW6mtfiau7gfpNg/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="附件/桌宠IP替换教程/桌宠教程-03.gif"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-03.gif</p>
+<p>提醒喝水小助手：👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/m1eibvmmT3sicJbYoWvibIoUz6y3LkcFqHWX1hrqwuFF2dXgAYTXYiaolsBYR4SgzG6wGfMaXiaJ58A5XmZn6pIpO0SXAnJjfaQww2Pa6gqZiba3g/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="附件/桌宠IP替换教程/桌宠教程-04.gif"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-04.gif</p>
+<p>更多先不放了，后面还会有制作过程。</p>
+<p>原始框架就是这 5 个标准状态，你只要给每个状态准备一段动作素材，就能替换成自己的角色。</p>
+<h2>IP元素替换</h2>
+<p>接下来我给大家分享整个 IP 元素的替换过程。我们的流程是这样的：</p>
+<p><strong>准备</strong> <strong>IP</strong> <strong>图 → 生成静态首帧 → 做成动态视频 → 转透明素材 → 放进对应文件夹</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sibLDqBIaQEKDA4EjdMBQ76QdwQyrF2xlNkmlwF8PlxOQ4AYZ3KibbzovKr8Xc2OhIAM4fCSC8caMT6kOU6iad2wdSUmmjUxibJFTw/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="附件/桌宠IP替换教程/桌宠教程-05.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-05.png</p>
+<h3>准备IP图</h3>
+<p>首先，你有一个喜欢的卡通形象或者 IP，准备好一张类似这样标准的 IP 形象正视图，全身照。背景最好是纯色或者简单干净的背景。这就是我们的角色参考图了。这里其实也不限制人或者非人类，宠物怪物也行哦。IP 风格也不限制。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9KOw8jx3P0xeEEr0y5UNMJec4IQiaWVH3VLOFJjz8w9xNxialIgNtqy1ia0bowqkpecIGJK27UiawtyibTZpknNa78Fka5FgkQoHmU/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="附件/桌宠IP替换教程/桌宠教程-06.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-06.png</p>
+<h3>生成静态首帧</h3>
+<p>然后生成静态首帧。</p>
+<p>考虑到还有一些朋友没有使用 Skill 习惯的，这里直接找个 AI 工具，比如 DeepSeek 的识图模式，将上一步的 IP 和下面的不同状态的静态首帧元提示词给到AI工具：👇</p>
+<pre><code>你是一个 Agent 桌宠静态素材提示词设计师。我要用一张卡通 IP 参考图制作桌宠素材。请你只生成“多个不同状态的静态生图提示词”，不要输出其它阶段内容。
+我的目标：把同一个卡通 IP 角色做成桌宠静态素材，在不同 Agent 状态下显示不同动作。所有图片必须是“纯绿幕背景上的单个桌宠角色素材”，不是场景插画、不是办公照片、不是电影截图、不是房间画面。
+合格参考样式：画面应接近“纯绿幕前的 Q 版角色 + 简化道具组合立绘”。例如任务进行中可以是角色坐在小椅子上，面前有简化小桌和笔记本电脑，角色、桌子、椅子、电脑全部完整入画；背景仍然只有纯绿色，不出现房间、墙面、地板、真实办公桌、环境光或室内透视。道具是桌宠动作的一部分，不是一个完整办公场景。
+默认状态：1. 任务进行中：角色原地认真打字、思考或工作。可以出现简化小桌、小椅子、笔记本电脑或小键盘；这些道具必须像桌宠小道具一样完整入画，不能变成真实办公室、大桌子、大显示器、深色办公场景或屏幕光氛围图。2. 任务完成：角色举起一个白色圆形牌，牌子由白色圆形和白色圆柱手柄组成，圆形牌上有一个清晰的绿色正确勾号。绿色勾号必须和绿幕背景明显区分，不能被当成背景。3. 任务失败：角色显示失败或出错反馈，可以有红色叉号元素，但不要出现多余文字。4. 任务暂停/休息：角色闭眼休息、躺平或安静待命。5. 喝水提醒：角色正在喝水或举起水杯提醒喝水，手里不要拿带文字的卡片。
+如果我提供了其它状态，请用我的状态替换默认状态。
+请你先从参考图中提炼“角色身份锁定块”，包括角色的头身比、脸型、发型、服装、主要配色、画风、五官比例和整体气质。不要编造参考图中不存在的细节。
+然后为每个状态输出一条静态生图提示词。每条提示词必须把下面这些硬性约束写进去，不能省略：
+【画面类型硬性约束】这是一张桌宠角色素材图，不是完整场景图。画面里只能有角色和完成动作所必需的简化道具组合。允许小桌、小椅子、笔记本电脑、杯子、牌子、键盘等桌宠道具，但它们必须像绿幕前的独立道具立绘一样存在。禁止生成房间、办公室、墙面、地板、灯光环境、真实摄影感背景、暗色背景、渐变背景。
+【绿幕背景硬性约束】背景必须是纯色 chroma key green 绿幕，建议颜色 #00FF00 或接近纯绿。背景必须平整、均匀、无纹理、无阴影、无渐变、无光斑、无景深、无地面线、无房间透视。角色和道具边缘要干净，不能出现绿色反光、绿色污染或半透明绿边。
+【不出框硬性约束】角色、头发、手、脚、裙摆、鞋子、耳环、牌子、杯子、电脑、键盘、桌子、椅子等全部元素必须完整在画面内部。任何元素都不能碰到画面边缘，不能被裁切，不能出画。整体组合可以像参考图一样占画面主体，但必须保留清楚的纯绿安全边距：顶部和底部至少 6%-10%，左右至少 10%-16%。角色加道具的整体高度建议占画布高度 78%-88%，不能超过 90%；整体宽度建议占画布宽度 60%-78%，不能超过 82%。
+【角色比例硬性约束】保持参考图的同一个角色，头身比、脸型、五官、发型、服装、配色和画风不变。禁止把角色画高、画瘦、拉长腿、缩小头、改变年龄、改变体型、改变服装主色。动作需要更多空间时，只允许整体等比缩小，不能改变身体比例。
+【构图硬性约束】1:1 正方形，单个角色居中，正面或轻微正面视角，平视镜头，近似正交视角。禁止俯视、仰视、斜向透视、广角透视、电影镜头、近景特写、半身图、只画头肩、侧脸大角度。
+【道具硬性约束】道具必须简化、可爱、完整入画，并围绕角色布置。任务进行中可以有简化小桌、小椅子、笔记本电脑或小键盘，效果应像参考图：角色坐在绿幕前的小桌旁，笔记本放在桌上，桌腿和椅子完整可见。不能出现大型办公桌、台式大显示器、真实电脑桌、房间环境，也不能让电脑遮住角色脸部、头发或主体轮廓。完成、失败、喝水等状态不要用写着文字的卡片表达动作。
+【禁止内容】禁止白色贴纸描边、粗白边、光晕边、阴影背景、复杂场景、真实桌面透视、深色房间、蓝色屏幕光污染、大屏幕挡脸、大桌子挡身体、桌腿出框、椅子出框、角色半身裁切、头发出框、脚出框、手出框、道具出框、无关文字、水印、logo。
+输出格式：
+一、角色身份锁定块用一段文字描述参考图中这个角色必须保持不变的特征。
+二、动作清单用表格列出：状态、动作、道具、建议图片文件名。
+三、静态生图提示词每个状态单独给一条完整提示词，格式如下：
+## 状态名称用途：建议图片文件名：静态生图提示词：负面提示词：
+</code></pre>
+<p>然后就有了详细的提示词。提示词是基于参考图去优化的。复制下面这块：👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s8Fnak0osF3GIQjRXiaQEuuE9B4IvPzbWkZUgWlnoNn0Q1x5kkNIoiazlfgSqZHNcSFr8WcpKIl8YYGVF7uG3GgFqcCOILdtuAvE/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="附件/桌宠IP替换教程/桌宠教程-07.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-07.png</p>
+<p>有了提示词后，即梦启动，给到 IP 参考图和提示词，选即梦4.7，生成图片。要注意图片有的时候会变成不同风格，比如我是 2D 的，那么就不要选择场景有 3D 效果的。👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sibC53B0lJfn7nVNfLPm2DoBflzRWaE1DQAf41SUT7GxOzXZrMCSVTDw3JOZLVhvk2GVc0ELtltzRyp28lTicPfPia5aMKtowcu2k/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="附件/桌宠IP替换教程/桌宠教程-08.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-08.png</p>
+<p>最终 5 张图的理想效果如下，注意图片全部元素都在图中，没有元素出框或者不完整。还要注意主体占据画面的比例差距不要太大，这样后期看起来更协调一点。如果没有下面这么绿的话也没有关系，只要背景色尽可能和元素的颜色没有重合就好：👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3siccmtTd78hEic3awXia4EShRWC2HN6Em3Ouic3NvmgrUxibtl8iap5phov8hMo0OkD2WK1I45oTLJbQ0Y4LQZBOvy6uL0mjn8icz70Ik/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="附件/桌宠IP替换教程/桌宠教程-09.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-09.png</p>
+<h3>做成动态视频</h3>
+<p>上一步我们得到了静态版本的几张图片，这一步我们要将上面的静态的图片做成动态的视频。</p>
+<p>要注意的是，整个主体，包括装饰元素，都不要出界，如果视频出现了元素出界的情况，那这个是不太适合的，建议重做。不然我们后期抠掉绿色的图以后，那些超出的元素在动态效果里就会不全，会很奇怪。</p>
+<p>但是有我在，不用慌，这一步的元提示词我也给大家准备好了，用这个去生成视频提示词，应该能保证完整入画，不会太抽象出框。</p>
+<pre><code>你是桌宠图生视频提示词设计师。现在我已经有了通过质检的静态首帧图，请你为每张首帧图生成图生视频提示词。
+全局硬性约束：1. 全程固定镜头，固定机位原地拍摄。2. 禁止推拉摇移、变焦、镜头晃动、画面尺度变化。3. 角色从第一帧到最后一帧必须全身完整可见，头发到脚不能裁切。4. 角色始终位于画面中央和原地，只允许角色自身和道具做小幅原地动作。5. 不允许角色位移、滑动、漂移、跑出画面。6. 保持参考图角色比例和画风，不要变高，不要拉长腿，不要改变头身比。7. 如需要适配画面，只允许整体等比缩小。8. 不要白色贴纸描边、白边、光晕边。9. 不要无关文字、水印、logo。
+循环状态规则：任务进行中、任务暂停/休息这类会长时间停留的状态，必须无缝循环。第一帧和最后一帧要回到同一个姿态、表情、角色位置、道具位置、构图和镜头尺度。动作只能是小幅往返运动，例如呼吸、眨眼、发丝轻摆、手部轻微动作，不能突然加速、转身、缩放、漂移或停在半途。
+一次性状态规则：任务完成、任务失败、喝水提醒这类短动作，不要求无限循环，但开始和结束必须稳定，角色不能漂移，动作结束时停在清晰可读的状态，方便桌宠播放后自动切回待命或休息状态。
+特殊规则：1. 任务暂停/休息默认闭眼，除非我明确要求睁眼。2. 任务完成的白色圆牌和绿色勾号都必须保留，不能在后续抠图或转透明时丢失。3. 喝水提醒只需要喝水动作，不要出现“喝水”文字卡片。
+请为每个状态输出：1. 参考首帧图文件名。2. 建议导出 MOV 文件名。3. 建议最终 WebM 文件名。4. 图生视频提示词。5. 负面提示词。6. 质检重点。
+</code></pre>
+<p>将上面生成的静态图和上面代码框里完整的提示词，都给 DeepSeek 识图模式：👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3sicQTgbiaZguibd9qeuCrRtJnt8wKvION2dH5bpCKnWw7GjBRMYmkicVrJ2gia1mx5J2VYiaCianHVR7BwxFrtf5Acw6DYDgV49T9qHME/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="附件/桌宠IP替换教程/桌宠教程-10.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-10.png</p>
+<p>下面是输出内容，蓝色部分是图生视频的提示词，红色部分是视频生成后需要检查的地方：👇</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/m1eibvmmT3s9Pv0FbFxYiaO31LiazkCwZMbZpFtG9MSkRFOumKleqNYyKezkPNJxwXHJxGiaC8wWPoNXI8SzB47adfSRedXLdEz9vsJicTb0pFDY/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="附件/桌宠IP替换教程/桌宠教程-11.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-11.png</p>
+<p>生成视频的工具理论上现在主流的视频生成模型都可以，因为这个难度都不高，并且都固定镜头。我这里用即梦，大家用其他的也都可以。记得修改图片比例！原图比例是什么比例，生成视频就改成什么比例，我建议 1:1，但是也可以根据IP的实际情况定。视频时间 4-5 秒，不用太长。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sib7VvDuicYlVSoS2JO7T3UxXB9d26eTga1gfWsV6agox8eicxdfEwApdYYVFIpnM312CXp61j0picF2Zf8uln914eW5vWX0xUnQS8/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="附件/桌宠IP替换教程/桌宠教程-12.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-12.png</p>
+<p>生成视频效果：👇</p>
+<p><video src="https://mpvideo.qpic.cn/0b2eviavsaablaanhgzhenvfdkwdlgvacwia.f10002.mp4?dis_k=670c56b158d63b2b6bdaf6d1900ea90c&amp;dis_t=1780984447&amp;play_scene=10120&amp;auth_info=KPDlq/JaaSsakKuKnAsMTmxAZUpRcjQRU09pdmIJI0oTaEF/bnRyZm19G288ZAFueEo=&amp;auth_key=3238ab3cded807d60b97388c33600b52&amp;vid=wxv_4551970139852013571&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>就这样依次生成 5 个视频，然后按照提示词要求进行质检。完成以后就到下一步抠视频了。</p>
+<h3>转透明素材</h3>
+<p>在上一步里面，我们的视频还是纯绿色的，那么接下来我们就要使用工具将背景抠掉。如果你用 Codex 等工具，直接让它基于视频输出透明背景 WebM 文件即可，效果细节不好就让它重新抠，不过这个会费 token 一点。其他方法也有，我们继续往下。</p>
+<p>这里使用的剪映，抠像，取色器取背景色，然后调整下面的细节。一直调整到基本看不到绿色。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9sn2ibmKibX1k4EQYJmwcfBX6AfHJwAq708DwrIcJ4w8vnvKXFDtyY9IMqvZWXS67qibE21s3PtNE09wSlORwPrqGRZ7TlqtCyHE/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="附件/桌宠IP替换教程/桌宠教程-13.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-13.png</p>
+<p>右上角，导出 MOV 格式。👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicF2OC4xmiaibhCkSDqX1bicCU0IbeAqvZnMu5TZlPjzmx5L15esVyibEibtJvIcguETCSpk085xNkbYEvALx8pu2uDykpHicyxxI9jk/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="附件/桌宠IP替换教程/桌宠教程-14.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-14.png</p>
+<p>其实在这一步直接下方选择导出 GIF 替换也可以。但 WebM 可以保留更好的半透明边缘，而 GIF 透明底通常容易有白边和毛边。同时，GIF 只有 256 色，渐变、阴影和细节会容易显脏，而 WebM 更像是真正的视频。同样几秒循环动画，WebM 的大小也通常比 GIF 小很多。</p>
+<p>如果大家做类似的项目，我也建议使用WebM。然后我们把上面的 MOV 转为 WebM 文件。可以用各类AI Cli 或者本地 AI 工作台，直接把视频或者路径发它，也可以问问 AI ，有不少免费 MOV 转 WebM 的工具，比如这个：👇</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3sicjYHhOVicV0wEplqALxm7xaDvEhLT6ZvmqB2uUEjCgBTxGNv0tuTnhT6CB4icfSfzNk8I1B6Xck5icjb1MkjyMIXB846lC8JKO3M/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="附件/桌宠IP替换教程/桌宠教程-16.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-16.png</p>
+<h3>放进对应文件夹</h3>
+<p>接下来就是把我们准备好的文件直接放进对应文件夹了。</p>
+<p>首先确保你已经下载并打开了这个桌宠文件。点击桌宠，右键设置，可以看到标准素材，这里每个状态右边都有替换键，点击【替换】然后替换你指定的文件就可以了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s8Cu4oVas6KiasFictmnia7Or0mu5GYmCh4usibOLs66jR6mkaViaB936v7tJPYwfib6EPSmE8rdPGG1p8duicrRZBibJqiaonuoU5rcs38/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="附件/桌宠IP替换教程/桌宠教程-17.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-17.png</p>
+<h2>小结</h2>
+<h3>谁适合用这个框架</h3>
+<p>这个小项目，比较适合大家做桌宠类项目的前期探索。它的工作原理很简单，我的 Agent 在工作的时候它就呈现现在工作的动态，也可以右键手动切换其他的状态，可以设置具体提醒喝水的时间和休息的时间。可以随意拉动放在桌面任意位置，也可以右键调整它的大小。</p>
+<p>它就这么静静待在桌面，当做是我们工作时候的一个陪伴和慰藉也可以。</p>
+<p>如果你希望在一些场景呈现自己的个人 IP、卡通吉祥物、并且让它更生动的同时也不怎么占用内存的话，可以试试这个框架。像我前面分享的那样，将它替换成你自己的 IP，你就得到了属于自己的桌宠。</p>
+<h3>更多延展空间</h3>
+<p>项目链接，里面还有一个 Skill ，是用来引导一路从图片生成到 WebM 的，非常方便，比上面还简单。</p>
+<pre><code>https://github【去掉中括号和内容】.com/irenerachel/azhen-desktop-pet
+https://github【去掉中括号和内容】.com/irenerachel/azhen-desktop-pet/actions/runs/27128698476
+</code></pre>
+<p>其实到目前为止，这个项目都还只是最基础的桌宠结构，它更像是一个可扩展的底座，或者说一个引子，我想做那块砖，引出大家的玉。</p>
+<p>现阶段跑通的只是显示角色、替换素材、状态替换，而后续，你可以继续增加互动，比如点击、拖拽、右键菜单、气泡对话、快捷操作等方面的优化；可以增加更多动作，比如鼓励、庆祝、伸懒腰、护眼等等；也可以接入更多状态，甚至让它变成自己的工作助手，任务开始、任务完成、报错、等待用户回复、定时提醒等等它都可以提醒，一样很有趣。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/m1eibvmmT3s9N2aOBiaFJmEpQXPCbWy0G66UxvmOAib30k2Nap0BWw6gChqZ63LKLBxU8GibkHqsYFUt3goDV8Q4YxDlM34SDYP55aW3NA9VPtg/640?from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="附件/桌宠IP替换教程/桌宠教程-18.png"></p>
+<p>附件/桌宠IP替换教程/桌宠教程-18.png</p>
+<p>我最希望和期待的，是每个人都可以换自己的 IP，让你们的 IP 展现出更多生动的一面，而不是只能用阿真IP。</p>
+<p>如果你还有更多想法，那太棒了，期待你的更棒的作品和心得分享！</p>
+<p>今天的分享就到这里了，项目我分享在这里了，期待大家的尝试和反馈~</p>
+<p>下期见~</p>
+<p>阿真Irene</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>流浪动物守护计划</p>
+<p>工具教程 · 目录</p>
+<p>内容含AI生成图片</p>
+<p>继续滑动看下一个</p>
+<p>阿真Irene</p>
+<p>向上滑动看下一个</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 513.6 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/biZ2Cn1lqD8uAeCYK4WI8g" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

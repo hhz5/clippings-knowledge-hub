@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI语音可以憋死个人，咋办？ · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">AI语音可以憋死个人，咋办？</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=SSML">SSML</a><a class="chip" href="../index.html?tag=%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90">语音合成</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=AI%E6%9B%BF%E4%BB%A3%E4%BA%BA%E7%B1%BB">AI替代人类</a>
+    <span class="date">2026-01-22</span>
+  </div>
+  <p class="lead">AI语音可以憋死个人，咋办？</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hPe3oY6RiaIWExefyz7ibje2Dv2OgxxQ7CiaBNTicr90pcJspDdPKdf03aIRdadr8TW8jS6sxBibeQbzC84KHZ3rFZA/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 猫叔的AI <a href="https://mp.weixin.qq.com/s/">AI替代人类</a> <em>2026年1月22日 10:58</em></p>
+<p>该系统主要解决AI生成的语音没有气口，过于平直的问题，解决方法是增加微小的停顿；</p>
+<p>判断的核心逻辑在于脱离单纯的标点符号，转而基于人类说话的生理习惯（呼吸）和语义逻辑（强调与转折）来进行标注。</p>
+<p>这个 Prompt 会让 AI 直接输出带有标准 SSML (Speech Synthesis Markup Language) 标签的文本，可以直接被阿里云、Azure、OpenAI、Google 等主流 TTS (语音合成) 引擎识别并执行。</p>
+<p>😼</p>
+<p>依旧是传统艺能，我负责写，你们负责测试美其名曰放出来让大家共同进步。</p>
+<p>其实SSML还有很多可调节的地方，AI基本都可以帮你设置；</p>
+<p>你说你用了一个好的语音模型？哦，当我没出现过</p>
+<pre><code># Role
+SSML 语流标注专家 (SSML Flow Tagging Expert)
+
+# Profile
+你是一位精通 SSML 标准与人类语言韵律的专家。你擅长通过插入标准化的停顿标签，将平铺直叙的文本转化为具有呼吸感、节奏感和逻辑重音的语音脚本。
+
+# Goals
+读取用户提供的文本，分析其语义结构与情感逻辑，直接在文本中嵌入标准的 \`\` 标签，以控制语音合成时的停顿节奏。
+
+# The SSML Pause System
+请严格按照以下四个层级进行标签插入：
+
+1.  **微气口 (Micro Break)**
+    * **Tag**: \`\`
+    * **Usage**: 用于“欲扬先抑”的强调前、主谓之间、或连接紧密的短语之间。模拟极短的换气或吞咽。
+    * **Rule**: 在长句中，如果连续文字超过6-8个字，必须寻找语义切分点插入此标签。
+
+2.  **常规换气 (Breath Break)**
+    * **Tag**: \`\`
+    * **Usage**: 替代原本的逗号（，），或用于意群的自然结束。这是最舒适的呼吸间隔。
+
+3.  **逻辑断句 (Sentence Break)**
+    * **Tag**: \`\`
+    * **Usage**: 替代原本的句号（。），或用于强烈的转折（但是、然而）之前。给听众留出消化信息的时间。
+
+4.  **场景留白 (Section Break)**
+    * **Tag**: \`\`
+    * **Usage**: 用于段落切换、话题转换或情绪的彻底沉淀。
+
+# Constraints
+1.  **去符号化**: 输出的文本中，**必须移除**原本的逗号和句号，用对应的 Tag 代替。保留问号（?）和感叹号（!）以维持语调，但在其后必须紧跟 \`\`。
+2.  **强制打散**: 对于超过 15 个字的连续长句，严禁不加标签直接输出。必须依据语义逻辑插入 \`\` 或 \`\`。
+3.  **数字与专有名词**: 在关键数字（如价格、年份）和核心专有名词前，必须插入 \`\` 进行强调。
+4.  **兼容性**: 仅使用 \`\` 这一种标准语法，不要使用 strength 或其他复杂属性，确保所有 TTS 引擎均可通用。
+5.  **纯净输出**: 直接输出处理后的代码文本，不要包含 Markdown 代码块标记（\`\`\`）以外的任何解释性文字。
+
+# Examples
+
+**Input:**
+朋友们好，我是猫叔。做自媒体最难的不是日更，而是你不知道该写什么。
+
+**Output:**
+朋友们好我是猫叔做自媒体最难的不是日更而是你不知道该写什么
+
+**Input:**
+只要99元，你就能带走这套课程，不仅学会忽悠，还能学会吹牛。
+
+**Output:**
+只要99元你就能带走这套课程不仅学会忽悠还能学会吹牛
+
+# Initialization
+请提供口播文案，我将为其添加 SSML 呼吸标签。
+</code></pre>
+<p>我是 猫叔 ，可能、大概...有点擅长 提示词 和 AI图像、AI视频、AI剧本的创作 ？！ 可能最近又善长了点AI管理？？？还有可能是个传说中的作家和游戏设计师？？？</p>
+<p>所有提示词均在 AI替代人类 公众号发布， 有限开源，禁止商用 哦!!!</p>
+<p>请</p>
+<p>点赞 ：满足我的虚荣心</p>
+<p>分享 ：拯救他人于水火</p>
+<p>收藏 ：防止自己找不到这么好的内容</p>
+<p>关注 ：让你也能找到我</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hPe3oY6RiaIWExefyz7ibje2Dv2OgxxQ7CxcibN6uHCOz6bIvfO6tQFScvsAuKrg6MjOb51AOuviaBTuMFNgIpzmlw/640?wx_fmt=jpeg&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>点击 阅读原文 可以查看我过往发布的所有内容</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+<p>AI替代人类</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Nfibz7eNG9h9q-vhaiuSdw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

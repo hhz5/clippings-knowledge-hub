@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>做 AI 产品，不会再用到的这些 AI技术 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">做 AI 产品，不会再用到的这些 AI技术</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%C2%A0zephyr">空格 zephyr</a>
+    
+    <span class="date">2026-03-16</span>
+  </div>
+  <p class="lead">GPTS、RAG、Fine_tune、Langchain、Prompt、MCP、LoRA，这些技术是怎么被 AI 杀死的</p>
+  <article class="content"><p>原创 空格 zephyr <em>2026年3月16日 08:17</em></p>
+<p>有朋友跟我说，他最近在用 搭一个知识图谱，做着做着翻出了 2 年前收藏的 RAG 教程。</p>
+<p>他发现好像现在很少有人提 RAG 这个技术了，便问我： <strong>RAG 是不是已经被替代了？</strong></p>
+<p>我当时回复他：还在，但现在 RAG 的应用场景已经变了。</p>
+<p>然后我越想越觉得，这个问题背后藏着一个的话题。</p>
+<p>AI 这东西，进化得太快。快到它不光在改变行业。</p>
+<p>它还在亲手杀死自己曾经催生出来的那些技术：GPTS、Langchain、Prompt、MCP、RAG、 向量数据库、LoRA，这些技术名词几乎没有再提了。</p>
+<p>它们是什么？现在是否还有用？</p>
+<p>今天系统梳理一下，那些被 AI 干掉的、或者正在被干掉的技术和产品。有些死得干脆利落，有些是慢慢消亡，有些则是面目全非地活了下来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxVLzov7iabfRZqVCh9ubjaXqg8rfoAUevyNR51lsLdZTHibazQibw1lHahhJIOHia61AfJtFsgZDeawNcWVCZcRA7Vz18teYhuTec/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image"></p>
+<p>1 传统机器学习</p>
+<p>先说清楚一个 AI 发展的时间线。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowjjEZEhHbhiclOQF4KQDu2VFGYzzDboJiaQmgxqYL7ibfBQhluNdcp2rjxyhUpB2cHTsrOGm11icOrqLbyunFL9waf7O0bRjiciaSOo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image"></p>
+<p>2010 年代，机器学习是整个 AI 领域的主角。那时候没有 ChatGPT，没有大模型，你想让机器「理解」一段文字、识别一张图片、预测一个用户行为，只有一条路：收数据、打标签、做特征、调模型。</p>
+<p>这套流程里， <strong>特征工程</strong> 是最核心的手艺。</p>
+<p>就是你要把原始数据里的「业务规律」手动翻译成模型能看懂的数字。比如你做电商推荐，你要想：用户最近 7 天点击了几次？他买的东西平均价格是多少？他上午浏览的品类和下午有区别吗？</p>
+<p>这些都要靠人来想、靠人来设计。一个好的特征工程师，能让同样的模型效果提升一个数量级，是那个年代最值钱的 AI 工程师。</p>
+<p>然后 2022 年末，ChatGPT 来了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyuqKSUFBZlXia8xpvHmWY62b1jhEHQeUVrEOW88sia7aqW5sJaiaKicRO4jH6VrqtTmceTkqCgk8sooqEGFiaNRNCaYB6ap11IUkIk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image"></p>
+<p>文本分类、情感分析、意图识别、内容理解，这些原来需要收集标注数据、做特征、调模型的任务，现在写几行 prompt 就能解决，效果还不差。</p>
+<p>更关键的是： <strong>LLM 本身就是一个预训练好的特征提取器</strong> 。它在海量文本上学到的东西，已经包含了大量人类语言的规律和模式。你不需要再教它「什么是情感」「什么是意图」。</p>
+<p>传统 ML 的工作流程并没有消失，结构化数据、时序预测、工业场景，该用还在用。</p>
+<p>但「ML 工程师靠特征工程吃饭」这个时代，结束了。</p>
+<p>曾经要一个三人小组花两个月做的分类模型，现在可能一个下午就能搞定。</p>
+<p>2 No-Code、GPTs 和低代码工作流</p>
+<p>这三个东西，我放在一起说，因为它们死于同一件事。</p>
+<p><strong>No-Code 的时代（2019—2022）</strong></p>
+<p>Bubble、Adalo、Glide，一堆国产低代码平台，它们的核心卖点是：让不懂编程的人也能做产品。</p>
+<p>这个赛道在 2020 年代初非常火。</p>
+<p>逻辑上说得通：大多数人有想法，但写不了代码，no-code 就是那座桥。</p>
+<p><strong>GPTs 和低代码工作流的时代（2023—2024）</strong></p>
+<p>2023 年末，OpenAI 推出 GPTs，让你可以创建自定义版本的 ChatGPT，配置知识库、人格、工具调用，发布到 GPT Store 里卖。</p>
+<p>同期，Coze（字节）、Dify、FastGPT 这类平台也火了一把。主打「拖拖拽拽搭智能体」——画布上拉几个节点，连连线，一个 AI 工作流就出来了。</p>
+<p>AI 图像生成圈有个的工作流： <strong>ComfyUI</strong> 。</p>
+<p>它是 Stable Diffusion 生态里的「专业工作流神器」。节点代表每一步处理，连线代表数据流向——加噪、采样、放大、风格迁移，全靠一张画布连起来。</p>
+<p>它还支持用户通过喂大模型来训练 loRA ，减少模型的幻觉。</p>
+<p>这些工具的共同逻辑，都是「视觉化编程」：把复杂的流程，变成人人可见的节点图。</p>
+<p>那时候我也觉得这些工具是未来。不用懂代码，配置一下就能做 AI 应用，民主化了嘛。</p>
+<p><strong>然后 Vibe Coding 来了，全部尴尬了</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozpow2D7GyaOXJulQprYSkVPkgZQKg0LeWicyTIsYwJo7iaOAVPlahpuakwBOsCeE7CekV4tVq9YTIKKYjPQZkdncSUXqnOnfCyw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image"></p>
+<p>2025 年初，Andrej Karpathy（OpenAI 联合创始人）提了一个词： <strong>Vibe Coding</strong> 。</p>
+<p>这件事彻底动摇了 No-Code、GPTs、Coze 这些工具的逻辑基础。</p>
+<p>No-Code 的卖点是「不用写代码」。但 Vibe Coding 让不会写代码的人也能直接生成真代码。</p>
+<p>真代码可以部署、可以扩展、可以维护，no-code 平台给的是个有很低天花板的积木。</p>
+<p>现在 Agent 本身就能根据你的描述自主规划工作流，你为什么还要手动拖拽连节点？</p>
+<p>ComfyUI 的困境更有意思，它死于一个更根本的原因： <strong>生图模型本身变强了，强到不需要工作流了</strong> 。</p>
+<p>以前你想让 AI 生成一张「符合你形象」的图片，流程是这样的：先收集几十张自己的照片，训练一个 LoRA，然后在 ComfyUI 里搭一套工作流——加载模型、注入 LoRA、调采样器、控制 CFG、加后处理……节点连得密密麻麻，调参调到头秃。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxmNrBCMDYBibj6jSDzDMEAl4Efsux4VH3e5YZfAeHia3tcANLRiav75kyIA1l9bZQJVSamOcAX5MPV3o3av0wfF7A0eibrdlpzaR8/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>现在呢？Gemini 直接支持「垫图生成」</p>
+<p>你发一张自己的照片，告诉它「生成一张我在巴黎铁塔前的照片」，它就能直接出图。不需要训练，不需要工作流。</p>
+<p>这背后的变化是： <strong>新一代生图模型内置了世界知识和推理能力</strong> 。它不只是在「生成像素」，它理解「人脸一致性」「场景合理性」「光影逻辑」这些概念。这些能力以前要靠工作流一步步「教」给模型，现在模型自己就会了。</p>
+<p>ComfyUI 存在的前提是「模型不够聪明，需要人来编排」。当模型自己变聪明了，编排的价值就大打折扣。</p>
+<p>模型能力变了，产品的存在价值就动摇了。</p>
+<p>3 微调（Fine-tuning）</p>
+<p>2023 年，如果你想让大模型「懂」你的业务，标准答案是： <strong>微调</strong> 。</p>
+<p>收集数据、整理格式、跑训练、调参数、部署推理，这套流程养活了一大批 AI 训练服务商和 GPU 云厂商。</p>
+<p>包括上面提到的 LoRA，也是图像模型的一种微调手段。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCow8zMpcvsKYar8o081IhbtcNjlFxcticicLE8Kt18wRLHDtVgRjGedIbwVUpwLgm3lmKiaMUOxjWaaZZDstTydIfFlPD1ktV2gyTk/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>但现在，越来越多的人发现： <strong>很多场景根本不需要微调了</strong> 。</p>
+<p>首先是 <strong>模型本身变强了</strong> 。GPT、Claude 、Gemini 这些旗舰模型的具备推理能力，很多任务只需要写好 prompt 就能搞定，不需要专门训练。</p>
+<p>其次是 <strong>上下文窗口变大了</strong> 。以前模型只能看几千 token，你想让它理解业务知识，只能通过微调「烧」进参数里。现在动辄几十万 token 的上下文窗口，直接把文档、示例、规则塞进 prompt，模型就能「懂」了。</p>
+<p>第三是 <strong>In-Context Learning（上下文学习）越来越有效</strong> 。给模型几个示例，它就能举一反三。这种 few-shot 的方式，成本比微调低几个数量级，而且不需要 GPU 资源。</p>
+<p>最关键的是： <strong>微调是个「移动靶」</strong> 。</p>
+<p>你花了一个月微调出一个定制模型，结果第二个月基础模型更新了，直接碾压你的微调版本。你的投入变成了「技术债务」，不仅没带来优势，反而锁死在旧版本上。</p>
+<p><strong>那微调完全没用了吗？</strong></p>
+<p>也不是。有几类场景还是需要的：</p>
+<p><strong>1 极度垂直的专业任务：比如医疗诊断、法律条款解析，需要把大量专业知识「烧」进模型</strong></p>
+<p><strong>2 对延迟和成本极度敏感的场景：每次都塞一堆 context 成本太高，不如一次性微调</strong></p>
+<p><strong>3 需要改变模型「人格」或输出风格：比如企业想要一个严格遵守品牌调性的客服模型</strong></p>
+<p>但对于 80% 的应用场景， <strong>Prompt Engineering + RAG + 长上下文</strong> 的组合，已经能解决问题了。</p>
+<p>微调的使用门槛和场景都收窄了。</p>
+<p>4 RAG</p>
+<p>先说结论：RAG 没死， RAG 的应用场景变了</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxLrCoOMNNbc0KWDqCHuELjwHiaZVic4G1OjUNibnOMJjHmu6ia3aLJ2chLgTWrPo0dzK1fsibXTnnlibTQ5WyibYvb0YNB1DzPs8GHsY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image"></p>
+<p><strong>2023 年版本的 RAG 是什么样的？</strong></p>
+<p>标准教程基本都长一个样：</p>
+<p><strong>把文档切成小块 → embedding 向量化 → 存进向量数据库 → 用户提问就检索 top-k 块 → 塞进 prompt</strong></p>
+<p>这套流程的问题很明显：文档切割破坏了上下文，检索出来的块之间缺乏关联，答案经常驴唇不对马嘴。</p>
+<p><strong>但更深层的问题是：当初为什么要做 RAG？</strong></p>
+<p>因为那时候的模型上下文窗口太小，装不下完整的文档。所以才要切块、向量化、检索。这是一种在「模型能力受限」的前提下的工程折衷。</p>
+<p>现在这个前提变了。</p>
+<p><strong>长上下文模型出现了，很多场景直接不需要 RAG</strong></p>
+<p>现在的旗舰模型，上下文窗口动辄几十万 token。如果你的知识库不大——一个产品的帮助文档、一本书、一套公司规章——直接全塞进 prompt 就行了，根本用不着做检索。</p>
+<p>而且还有一个更有意思的趋势： <strong>Agent 的按需加载（渐进式披露）能力</strong> 。</p>
+<p>不需要一次性把所有信息塞给模型，而是在需要的时候让模型主动获取。</p>
+<p>通过工具调用，在需要的时候去读文件、去查数据库、去浏览网页。</p>
+<p>对于很多文档，通过文件名称、元数据标注关键信息，Agent 自己按需取用，效率更高。</p>
+<p>这种方式比「提前做向量化」更灵活，更适合那种文档结构清晰、关联关系明确的场景。</p>
+<p><strong>但 RAG 没有消失，它加入了更大的体系</strong></p>
+<p>因为确实有一类问题，长上下文和按需加载都解决不好： <strong>文档量真的很大，超出任何上下文窗口，而且查询的需求是模糊的、发散的</strong> 。</p>
+<p>这种场景，你还是需要检索。但今天值得做的，已经不是 2023 年那种「切块+向量+top-k」了，而是 <strong>混合检索（语义+关键词）+ 重排序 + 智能判断何时检索</strong> 。</p>
+<p>Anthropic 2024 年推出的 Contextual Retrieval，在 RAG 基础上加了上下文信息和重排序，官方报告检索失败率降低了将近一半。</p>
+<p>RAG 没有消失，它只是从「主角」变成了「上下文工程」里的一个零件。</p>
+<p>5 MCP</p>
+<p>MCP（Model Context Protocol）之前被认为是访问外部系统的标准协议。</p>
+<p>但最近有个有意思的趋势： <strong>Claude Code 这类 Coding Agent，很多时候根本不用 MCP，直接调 API 就完事了</strong> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy42cfpy1sveZrxx92rUbCOQklqGdepdGZ1zVp3vYtPjxcfXcub3cycpibCH9Br0ohKQnjZakRnp9ZvSFQwibKqDicxibSBCteAkTg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image"> <strong>大多数 SaaS 已经有现成的 REST API</strong> 。Jira、Notion、Slack、GitHub，这些服务的 API 文档写得清清楚楚，已经稳定运行了数年年。</p>
+<p>而 MCP Server 呢？你得专门开发和测试。</p>
+<p>更关键的是 token 成本：相关统计，MCP 的成本是直接调 CLI 的 10 多倍</p>
+<p>Claude Code 可以读 API 文档、理解参数、生成调用代码、处理返回结果，整个流程不需要任何中间层。一个 50 行的 TypeScript 脚本，在执行之前零 token 开销，执行时直接拿到结果。</p>
+<p><strong>那 MCP 还有价值吗？</strong> 有，但要看场景。</p>
+<p>MCP 适合的是：</p>
+<p><strong>需要持久状态的工具</strong> （浏览器会话、数据库连接）</p>
+<p><strong>需要实时双向通信的场景</strong> （流式响应、事件推送）</p>
+<p><strong>工具数量巨大且需要动态发现的平台</strong> （10+ 服务集成）</p>
+<p>在这些场景下，MCP 把 M×N 变成 M+N，维护成本能降低 50-70%。</p>
+<p>但对于「调一下 Jira API 拿个 issue 列表」「往 Notion 写一条记录」这类简单任务。</p>
+<p>Agent 直接写代码调 API 更实际，零学习成本，零开发成本，调试也更直观。</p>
+<p><strong>所以 MCP 和直接调 API 的关系是：</strong></p>
+<p><strong>直接调 API：零中间层开销，适合工具集明确、流程稳定的生产场景</strong></p>
+<p><strong>MCP：标准化发现，适合需要动态扩展、多 Agent 共享工具的平台场景</strong></p>
+<p>而 Skill 和 MCP 的关系呢？</p>
+<p><strong>MCP/API 告诉 Agent 能获取或写入什么数据，Skill 告诉 Agent 遇到这个场景应该怎么组合工具</strong> 。</p>
+<p>Skill 最大的价值是封装经验，把多 Agent 协作踩过的坑、平台特性、安全边界写进去，新 Agent 上线就能继承，不用重新踩一遍。</p>
+<p>6 RPA</p>
+<p>这个很多人可能不太熟悉，但它曾经是企业数字化的「大热门」。</p>
+<p>简单说，就是教电脑模拟人的操作，点击、复制、粘贴、填表、登录系统。2018 年前后，UiPath、Blue Prism 这些公司融资估值飞速增长，因为企业里有大量「人工手动处理的重复流程」，RPA 可以自动化。</p>
+<p>银行里的对账、保险公司的理赔录入、财务的报表汇总……这些事情 RPA 做得又快又准。</p>
+<p><strong>AI Agent 来了，RPA 的逻辑基础松动了</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowqykWGicdkQfaEH33WQcv0ggeIccT2LcJVAAcFIDzVR6a7paexwAKxCurpAAd9Qia9Ce4MER66gb3lTYe89DTwlD73107PwiaIAI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image"></p>
+<p>RPA 本质上是「规则驱动的」，你要先把操作步骤写死，它才能重复执行。一旦界面变了、流程改了，RPA 就会出错，需要人去维护。</p>
+<p>但 Claude、GPT-4o 这类模型现在可以「看着屏幕操作」，用计算机视觉理解界面，自主推断下一步该做什么，遇到变化能自己适应。</p>
+<p>Anthropic 推出 Computer Use 功能时，业界第一反应就是：这是 RPA 的终结者。</p>
+<p>UiPath 这个产品现在的策略，是把 AI Agent 整合进自己的平台，把自己变成「AI 控制 RPA 机器人」的调度层。活下来了，但已经不是主角了。</p>
+<p>7 其他</p>
+<p>除了前面详细讲的，还有一批技术值得快速提一下。它们曾经是「AI 圈顶流」，现在要么已经下线，要么热度暴跌。</p>
+<p><strong>ChatGPT Plugins（2023.3 — 2024.3）</strong></p>
+<p>OpenAI 亲手杀死的亲儿子。2023 年 3 月发布时被吹成「AI 的 App Store」，结果使用率极低、维护成本高，2024 年 3 月正式下线，被 GPTs 取代。而 GPTs 自己也没火起来。质量参差不齐，真正有用的寥寥无几。</p>
+<p><strong>LangChain（2023 大火 → 2024 大量团队放弃）</strong></p>
+<p>2023 年最火的 LLM 开发框架。但过度抽象让代码越来越难维护，有人说「70% 的精力花在说服团队不要用 LangChain」。LLMChain、SequentialChain 等核心组件被官方标记为「过时」，很多团队用了 12 个月后选择移除。</p>
+<p><strong>AutoGPT / BabyAGI（2023.4 爆火 → 沦为学习工具）</strong></p>
+<p>2023 年 4 月，AutoGPT 几周内拿下 10 万 GitHub Star，被称为「自主 Agent 元年」的标志。</p>
+<p>但实际使用不稳定、API 成本爆炸、生产环境几乎不可用。现在的定位是「学习工具」和「原型验证」，真正的生产级 Agent 用的是 LangGraph、CrewAI 这些后来者。</p>
+<p><strong>Prompt Engineer（职位：2023 大火 → 2025 消失）</strong></p>
+<p>2023 年被吹成「年薪百万不用写代码」的新职业。2025 年，微软 CMO 公开说「你不需要完美的 prompt 了」。</p>
+<p>这个职位没有独立存在的必要了，AI 自己能优化 prompt，而且每个岗位都需要会用 AI，不需要专门设一个「AI 对话师」，现在更流行的是 <strong>上下文工程师</strong> 。</p>
+<p><strong>向量数据库（2023 火爆 → 2024 被混合检索吃掉）</strong></p>
+<p>2023 年 Pinecone、Qdrant、Weaviate 融资火热，大家都在说「向量数据库是 AI 时代的基础设施」。结果 2024 年发现：BM25（30 年前的技术）+ 向量的混合检索效果更好，纯向量检索反而不够用。</p>
+<p>OpenAI 收购了 Rockset 做混合搜索，Qdrant 自己也开始支持 BM25。纯向量数据库作为独立品类，存在感越来越弱。</p>
+<p>这些技术的共同点是： <strong>它们都是为「当时模型的局限性」设计的解决方案</strong> 。模型进化了，解决方案就过时了。</p>
+<p>我的感受</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz8Z2KXyDKFC4jbLV0T19napsKTnK7VM7FdH4OzeT6wQuZVON6UE3Tlemj3slP7VrIfia90vnMe2NibBLEnnZ1NibeD7vhQy6hhdQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image"></p>
+<p>这篇文章里讲的那些技术，如果要选一个最多企业踩过坑的应用场景</p>
+<p>那一定是—— <strong>AI 企业知识库</strong> 。</p>
+<p>不夸张地说，过去三年，每隔一段时间就有做企业的朋友来问我同一个问题：</p>
+<p><strong>AI 知识库，你觉得该怎么做？</strong></p>
+<p><strong>我每次回答都是：市面上到现在也没有标准的解决方案，也几乎没有一家企业真正成功落地 AI 企业知识库</strong> 。</p>
+<p>他们踩进了一个死循环：</p>
+<p>2023 年初，大家觉得向量数据库 + RAG 是答案，于是花几个月搭了一套检索问答系统。</p>
+<p>刚调通，发现效果不好，文档切块丢上下文、检索不准、幻觉严重。</p>
+<p>于是加 GraphRAG、加知识图谱、加重排序。系统越来越复杂，维护成本越来越高。</p>
+<p>然后有人说，要不试试低代码？用 Coze、用 Dify 拖拽搭工作流？搭是搭起来了，但业务一复杂就不够用，定制成本反而更高。</p>
+<p><strong>花了半年到一年，烧了几十万到几百万，最后安静地停在了某个内部系统里，没人用。</strong></p>
+<p>这篇文章里提到的 AI 产品范的核心错误是 <strong>在用产品结构去弥补模型的缺陷</strong> 。</p>
+<p>2023 年的模型上下文窗口只有 4K-8K，所以你需要切块、向量化、检索。</p>
+<p>2024 年窗口变成了 128K-200K，你精心设计的向量化流程突然变得多余。</p>
+<p>2025 年 Agent 可以按需读取文件、调用数据库，你搭的整套工作流又过时了。</p>
+<p>每次模型升级，企业之前投入的技术架构就贬值一轮。团队不是在做产品，而是在做「模型能力的临时补丁」。</p>
+<p><strong>那企业到底应该怎么做？</strong></p>
+<p>我现在给朋友的建议，和三年前完全不同了。</p>
+<p>不要再想着「建一个知识库」。要想的是： <strong>怎么让你的数据，随时能被 Agent 用上。</strong></p>
+<p>OpenClaw 这类开放 Agent 平台的火爆，其实已经确认了一条未来路径：</p>
+<p>以后每个企业内部会有大量 Agent，干不同的活。</p>
+<p>这些 Agent 的运行 <strong>靠的是数据，数据的获取靠的是 API</strong> 。</p>
+<p>API 从哪来？从 SaaS 工具来、从第三方系统来、从企业内部工具来。</p>
+<p>所以企业真正该做的事情是： <strong>把数据治理做好。</strong> <strong>梳理清楚 API 体系，</strong> 每条业务线需要什么数据、通过什么 API 获取、上下文是什么。</p>
+<p><strong>搭建工具平台。</strong> 让 Agent 能通过标准化的方式调用你的业务系统。</p>
+<p>从前面所有的「死亡案例」和企业踩坑经验里，我提炼了几条 AI 产品原则：</p>
+<p>1.<strong>不要用产品结构去弥补模型缺陷</strong> ——那些缺陷很快会被填上，你的结构反而成了包袱</p>
+<p>2.<strong>把「可扩展性」设计进产品骨架</strong> ——让产品能随时接入更强的模型、更新的能力</p>
+<p>3.<strong>专注于模型做不好的「最后一公里」</strong> ——用户体验、场景理解、信任建立，这些不会被 API 替代</p>
+<p>4.<strong>做「调度层」而不是「执行层」</strong> ——让产品成为调用最优模型的入口，而不是自己去卷模型能力</p>
+<p>5.<strong>做数据，不做补丁</strong> ——把精力花在让数据可被 Agent 调用上，而不是花在弥补模型不足的工程上</p>
+<p>说白了，要做 <strong>跟随模型能力进化的产品，而不是被模型能力进化打倒的产品</strong> 。</p>
+<p>前者像是站在电梯里——电梯往上走，你也往上走。后者像是站在电梯门口——电梯往上走，你被甩在原地。</p>
+<p>你觉得还有哪些技术正在被 AI 悄悄干掉？或者你经历过企业 AI 知识库的踩坑故事？欢迎评论区聊聊。如果有用，点赞转发支持一下。</p>
+<p>继续滑动看下一个</p>
+<p>空格的键盘</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/v7CtVdaG1IbIWXTiGYiNOw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6000 字，学不会退网！藏师傅Trickle AI保姆级Vibe Coding高级通关攻略 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">6000 字，学不会退网！藏师傅Trickle AI保姆级Vibe Coding高级通关攻略</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Trickle%20AI">Trickle AI</a><a class="chip" href="../index.html?tag=Vibe%20Coding">Vibe Coding</a><a class="chip" href="../index.html?tag=%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91">网站开发</a>
+    <span class="date">2025-07-31</span>
+  </div>
+  <p class="lead">大家好，我是歸藏（guizang），给大家带来肝了两天的用 Trickle AI 进行一些高级 Vibe Coding 的保姆级教程。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年07月30日 16:29</em></p>
+<p>大家好，我是歸藏（guizang），给大家带来肝了两天的用 Trickle AI 进行一些高级 Vibe Coding 的保姆级教程。</p>
+<p>我本来是觉得 Trickle AI（ <a href="https://trickle.so/">https://trickle.so/</a> ）这个产品交互和一些小细节特别好，想介绍一下产品的，结果越用越心惊。</p>
+<p>我发现 Vibe Coding 的方式和生态都会因为这个产品而改变了。</p>
+<p>我在几个月前说的一些 Vibe Coding 的原则都已经不适用了，我们需要新的 Vibe Coding 方式，用新的原则跟 Agent 相处。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyMrXqeoKyIuToTicfmaLWJGVQcnnnrt8YibNtKpV4lzibmQKG1pIMHnAdg/640?wx_fmt=png&from=appmsg&randomid=kt4ahzxm&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>所以这个内容我会详细介绍我用 Trickle AI 构建一个完整产品所用的所有方法和这么做的原因，具体内容包括：</p>
+<p>🎁</p>
+<ol>
+<li>首次提示词书写方式的改变</li>
+<li>Trickle AI Magic Canvas 的强大能力，永久上下文</li>
+<li>如何又快又省钱的用 Edit 模式对项目进行修改</li>
+<li>如何为网页创建数据库和上传数据</li>
+<li>如何利用外部组件增加网页美观度</li>
+<li>如何免费为网页增加搜索功能</li>
+<li>网页上线后的设置-SEO 优化、域名绑定、数据分析</li>
+</ol>
+<p>内容有点长，希望可以提前要一下点赞，转发收藏后面看也行。</p>
+<p>开始之前我们先来看一下，我 Vibe Coding 的结果（ <a href="https://fragments.guizang.ai">https://fragments.guizang.ai</a> ）。</p>
+<p>一个 AIGC 周刊的信息聚合网站，里面会有过去两年我收集到的所有 AI 产品、关键论文和文章、关键的事件记录，支持搜索支持分类检索，还包含一个后台来执行一些数据上传和同步的工作。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny9QKNJy5eJXEKTkNAZFWh4eic7gMFGzbbWR7fC8q2Pv1ibP2m7rcNk3bA/640?wx_fmt=png&from=appmsg&randomid=h8irj8n6&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我很早就想做一个网页，把我更新两年的 AIGC 周刊的内容原子化，变成一个一个卡片，他会成为 AI 发展的一个编年史，你可以看到从 ChatGPT 发布开始每周的变化，你也可以方便的检索过去的好内容。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny6lWePtAbFL6icWobO7VvxR4gpBmViazNgp1cxYQpiaRV4tnSQpMEzwTicw/640?wx_fmt=png&from=appmsg&randomid=tlmob2n6&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>用 AI 开发这样一个好用的网站是很费劲的，即使他看起来主要以内容展示为主。</p>
+<p>但是我需要处理数据，然后把数据传到一个庞大的数据库里面去，然后设计师的骄傲要求我需要把网页做的好看漂亮，我需要微网页增加分类和搜索，需要给他绑定属于我的域名，需要做 SEO 和数据分析。</p>
+<p>😡</p>
+<p>在 Trickle AI 以前没有一个 Vibe Coding 产品可以让我把这件事情做完，主要有下面几个问题：</p>
+<ol>
+<li>数据库的集成方式非常简陋基本都用 Supabase，操作很复杂我需要自己学习处理数据-上传-建表-链接。</li>
+<li>我需要对生成的网页结果进行非常细致的样式修改，现有的 Agent 根本不支持我进行几十轮的迭代，首先是 Token 消耗会非常可怕，另外是十轮修改就会超出上下文，Agent 有极大可能把你的项目改的面部全非。</li>
+<li>没有后端服务，无法完成比如数据管理以及一些 API 状态的管理。</li>
+<li>不能绑定的自己的域名，没有 SEO 优化和数据分析能力，没办法为运营提供帮助。</li>
+</ol>
+<p>以往非代码的方式我只能选 Framer，但是 Framer 非常的复杂，我进行任何微小的改动都需要搜索教程，没有几十小时经验，即使你是设计师也搞不定。</p>
+<p>但是现在时代变了，我只用了 一个下午的时间成本，和 6 美元的金钱成本 就搞定了上面的所有事情。</p>
+<p>Trickle AI 是一个会改变 Vibe Coding 生态的产品，而且起码会把 Framer 和 Figma Site 的份额吃掉！</p>
+<p>我们开始今天的教程。</p>
+<h2>首先是第一次提示词</h2>
+<p>按我原来的原则来看我们需要第一次就把提示词写的非常详细和准确，因为大部分的编码 Agent 改几次就很容易超出上下文，导致损坏项目。</p>
+<p>但是 Trickle AI 用优秀的上下文工程和优化方案一定程度上解决了问题，每次样式修改消耗的积分非常少，我们只需要在刚开始的时候大致描述清楚最主要的页面和功能就可以了，样式细节和后面的附加功能可以不管。</p>
+<p>比如我这里就只是简单描述了一下页面的组成部分以及字体和背景颜色。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyZd9lUfv2xxy3IR6392rgQh2QS8XkSwmLhBEhEl0BMuf8y3LI61SbnA/640?wx_fmt=png&from=appmsg&randomid=n6cj770t&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后他就给了一个很不错的结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyKcfiaA7bNvTDgw0GyX8kZibiblXHwI31iaMA4cHtYM72XKszmicrofKUlNw/640?wx_fmt=png&from=appmsg&randomid=rsi0edvx&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当然第一次肯定是不符合你的需求的即使他再漂亮，所以我们接下来就面临修改内容和样式的问题。</p>
+<p>以往很多 Vibe Coding Agent 你几乎只能用文字去描述想要修改的部分，但是 Trickle AI 提供了非常丰富的方式让你去修改和保证生成效果。</p>
+<h2>介绍一下 Trickle AI Magic Canvas</h2>
+<p>不同于其他 Agent 那种左边聊天右边只有一个预览网页窗口，他们右边做了一个无限画布。</p>
+<p>除了展示你优化的不同历史版本的网页之外，还有各种网页构建所需要的上下文，这部分是永久的。</p>
+<p>即使 Agent 的上下文超了，这部分信息也会一直存在，保证生成结果，某种程度完成了卡帕西说的永久上下文的概念。</p>
+<p>🎁</p>
+<p>Magic Canvas 的四个重要组成部分：</p>
+<ul>
+<li>Database（灰色） ：这个很好理解就是你网页的数据库，所有的数据都会存在这里，你可以编辑和修改里面的数据。</li>
+<li>Assets（蓝色） ：这部分可以放你的网页需要用到的图片素材，支持上传，后面你可以把素材放到网页的指定位置。</li>
+<li>Knowledge（黄色） ：这里会存放你需要让模型记住的所有信息，而且模型会自动更新，你也可以编辑。比如这里模型就记下了网站的功能、技术栈、项目结构，还有在我强调了两次密码安全后，他自己写了一份密码安全说明要求后面都按照这个方式存放密码。</li>
+<li>Rules（紫色） ：这部分大家应该都了解就是需要模型遵守的规则，比如这里默认就会要求模型在执行什么操作的时候需要更改 Knowledge 的对应部分。</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyGcpkEf28NjL1moqjrVZNg4HjuyWIibjc8yravnXSRqhfZibGy2xa6rcw/640?wx_fmt=jpeg&from=appmsg&randomid=0d5zx9n2&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>如何又快又省的用 Edit 模式对项目进行修改</h2>
+<p>我们在写网页的时候对项目做的操作主要分为两个部分：</p>
+<p>首先是一些样式和内容的增加和修改，这种大部分不涉及到功能很多都是加个链接或者改某个元素的样式；</p>
+<p>然后就是涉及到复杂功能的部分这部分基本上都要 AI 去处理很多逻辑或者新增页面。</p>
+<p>这里我们这里主要介绍如何利用 Trickle AI 的一些能力高效和省钱的完成第一部分修改任务。</p>
+<p>首先是一些基本样式的修改，你可以点击画布下面这个鼠标的图标，就进入了 Edit 模式，这时候就可以选中页面上的元素了。</p>
+<p>选中之后左侧的聊天窗口就会出现一个 CSS 属性的编辑组件，这时候你就可以直接编辑对应的文本、颜色对其方式等内容，编辑完点保存就行。</p>
+<p>解决了你用文字描述不知道该怎么说的问题，另外由于直接把内容传入了 AI，所以他可以精准的找到位置大幅节省 Token 消耗。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyCATjcf6hQciayeG71jAhgCCo8WDlw6EQcEKZJviavLugatBQKCD9zm4g/640?wx_fmt=png&from=appmsg&randomid=71akmz1i&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>另外你会发现，选中的元素不止有上面的可视化修改区域，在输入框上面也回填了，如果上面的元素没有你想要修改的部分也可以打字描述。</p>
+<p>然后 Edit 模式还不止可以选择网页元素，你还可以选择 Assets 部分的元素。</p>
+<p>比如我这里可以选中网页标题，再选中 Assets 中我上传的猫猫头像，两个部分就都回填到了输入框里面，这时候你就可以将图片快速添加到指定位置了，我还让他给图片加上了圆形遮罩。</p>
+<p>这样是不是比你吭哧瘪肚描述要好多了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny4RyqBNRr0ECJ9R1qoOmnbcR3JibWpe8VrV1BPLvVryOjxeL9CYFeYjw/640?wx_fmt=png&from=appmsg&randomid=q5z3mbax&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后一个技巧，我们需要介绍一个概念“设计变量”，你是不是以为网页中所有元素的颜色、大小甚至描边粗细都是单独写的样式。</p>
+<p>其实很多时候为了一致性和协作在正常写前端程序的时候都会将这些样式多封装一层，类似下面图片。比如描边颜色一般会指向这个变量名称而不是具体的颜色色值。</p>
+<p>这样我们修改整个系统所有页面的描边颜色的时候就不需要一个一个改了，直接把映射表里的色值改掉，整个系统都会生效。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyTavH8GhphdSsozMVwfmuFVUbIydHiaVY9KjaxiaJX4oicpcwjoK3a6Ziaw/640?wx_fmt=png&from=appmsg&randomid=nuw8hxnd&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>但是大部分编码 Agent 就是单独写的样式，所以随着你越该越多，模型丢三落四的现象就会越来越严重，需要传入的上下文也越来越长，直接导致上下文管理失败或者丢失需要改的部分。</p>
+<p>Trickle AI 直接内置了一套设计变量，这就导致我们在修改样式的时候直接让他改变量的值就可以了，他不需要查询这个多个页面的样式文件，就能修改多个页面的元素样式。</p>
+<p>了解了这个以后你用这种提问方式就可以频繁修改网页样式而不用担心过多的 Token 消耗和上下文占用。</p>
+<p>比如这里我希望整个网站三个页面的主题色、背景色和分割线颜色都做一些更改，就会直接跟他说，他就会查询这三个部分的变量名称，直接改掉对应的色值。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnygV5jsw9sJqjlm5EkmnZdJ3OEdAT4icjiagoFYbNgF4R8H13AWtKZQQ1A/640?wx_fmt=png&from=appmsg&randomid=imtlh7cz&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>你也可以让他拆分和新建设计变量，比如我这里原来导航的分割线和卡片描边共享一个变量，但是我不想他们是一个颜色，所以这个时候就可以要求他将分割线颜色和卡片描边颜色的变量分开分别设置。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnycfPGlhVWaibvlLyvD93r1iaBafFhf1Macicyvo1n7q5zLvdl7C8km2ICw/640?wx_fmt=png&from=appmsg&randomid=giacyfcn&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这期间只涉及到设计变量的文件，所以消耗的 Token 非常少，这也是为什么 我改了六十多个版本只花了几百积分 的原因（17 美元会员送1500 积分，每天送 350 积分）。</p>
+<h2>为网页添加数据库</h2>
+<p>刚开始创建的时候 Trickle AI 像其他 Agent 一样是把虚拟数据直接写在网页上的，但是我们需要把以往 AIGC 的数据都上传上去，所以肯定需要数据库。</p>
+<p>这里需要先让他初始化数据库将数据库表格的列变为我们需要的部分，比如我的卡片上面，有分类、标题、描述、更新时间以及链接。</p>
+<p>之后他就会帮你初始化数据库而且把虚拟数据放进去，并且把数据库跟网站开始链接，数据库数据的变化会反应在网页的卡片上。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnydBGE1DHiclcdGdyF0OS70Q0eUPTeicia57lWiahwWde9cy05GMzRHEiau5g/640?wx_fmt=png&from=appmsg&randomid=hzm1jldj&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我的周刊有非常多的数据，而且数据都是非标的文章，首先，我需要把这些数据变成跟数据库的格式一样的标准化表格数据。</p>
+<p>这时候就得找 o3 了，你们处理数据也能这么玩。</p>
+<p>直接把文章和 Trickle AI 的数据库截图发给 o3，要求他参考图片的数据库格式把文章的内容整理成 CSV 文件，不能映射的内容不整理。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnykt3jbxDcFOexJOzoTyagXvCUjHbuFjYuuxFku8dBaicYGrB1BCC35XQ/640?wx_fmt=png&from=appmsg&randomid=7cefj4i9&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>搞定以后， 我发现一个事情这个才是我觉得 Trickle AI 让我惊叹的地方。</p>
+<p>我发现他们还没做数据库数据导入的功能，这不麻爪了了吗，后来我就想能不能让他写个后台网页完成这个功能。</p>
+<p>网页的功能就是解析我上传的 CSV 文件然后存到数据库里面，我尝试了一下，结果真的可以！</p>
+<p>他真的写了一个后台网页，我只需要把 o3 给我的 CSV 文件上传上去，之后他就会自动解析，然后更新到数据库中，这样我就完成了把我以往的数据传到 Trickle AI 的过程。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyg0zFibA4ECXFVYg4TOeJEpEuthiczTwyzTMyQZmyR6KPorVg7PGZic5jw/640?wx_fmt=png&from=appmsg&randomid=pbkf9hq7&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>真的太牛批了，说明整个系统的智能程度非常高，即使前面的 UI 没有展示你也可以自己写一个新的 UI 让他访问和修改这些数据，这个系统的可能性是无限的。</p>
+<p>当然这个网页比较危险，所以我让他给后台加了登录密码，确保不会被人无意间访问，你们搞类似网页的时候也可以参考这种方式。</p>
+<h2>来让页面更美观吧</h2>
+<p>基本能力搞定以后，我优化了一堆首页的设计细节，比如更改卡片圆角、整体配色、增加顶部导航以及为网页增加移动端适配等等，基本用的都是之前说的 Edit 模式加上修改设计变量的方式。</p>
+<p>来看一下对比：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnys2opGicGiaWiaAeBoia7bTBA326Rc2Omnic1Br4ck4hibOn4FRRoMCicC9u8Q/640?wx_fmt=png&from=appmsg&randomid=99fujtkv&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后我就想挑战一下 Trickle AI 的上限，搞一个视觉效果不错的炫技页面，于是任务就落在了关于页面身上。</p>
+<p>我先是让他创建了一个非常基础的关于页面，基本只有标题和描述。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyhFYUvByVFb6Onw5qelBNEbHkxglFiamHp6FbrkGzImpleZBibSYfJxhA/640?wx_fmt=png&from=appmsg&randomid=pw0ufc36&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>除了排版字体之外的更改外，主要是三个地方的更改。</p>
+<p>首先是在社交媒体展示这里，让他从原来中规中矩的图标加链接，变成了 hover 上去以后会倾斜和出现弥散投影的卡片。</p>
+<p>我就只跟 Trickle AI 说 hover 会倾斜，并且加投影，没想到他的倾斜角度和投影样式搞得这么好，还加上了缓动效果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyr2Vu0I0fp3z3NzyKgoHA3ZPnoNabdMSPfDamIqtMTO8qYlQ56XLqYQ/640?wx_fmt=gif&from=appmsg&randomid=7b0ombwx&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后感觉这个白色背景有点单调，于是就让 Trickle AI 给北京加上了浅紫色的点阵效果，重新把整个页面内容变为一张卡片，只需要跟他说点阵的圆点大小和颜色就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnynEkaxPmCc3vYxtjelNadGFrU26anENSuHSDZvP2hHczsJLdh0XBpSw/640?wx_fmt=png&from=appmsg&randomid=92ltd95z&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后重点的来了，在作者这里我想要用一个炫酷的方式展示我的所在地，直接选了一个叫 COBE 的 3D 地球组件。</p>
+<p>我们只需要跟他说用 CDN 引用组件，然后说一下组件放到哪里就行，带上组件文档的示例代码就搞定了，你可以在这里查看（ <a href="https://cobe.vercel.app/docs">https://cobe.vercel.app/docs</a> ）示例代码。</p>
+<p>而且一次成功，V0 即使直接引用地球也会变椭圆，高下立见朋友们。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny3nk4B1uZlibm9ibo0axVJGnf6yqog9G96GoicvRYfotMNoehsfwW3qKlw/640?wx_fmt=gif&from=appmsg&randomid=ee5476p4&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>给网页增加搜索功能</h2>
+<p>我们网页最后还有一个功能需要做，如果全部的数据上传上来，可能会达到上千条信息，只靠 5 个分类显然不太现实，所以还是得加一下搜索。</p>
+<p>这里当然不能让他自己实现一个搜索，这个太复杂了，我们有免费的 Algolia 这种搜索服务可以使用。</p>
+<p>你只需要注册一个 Algolia 账号，数据链接方式选择爬虫，他会让你在网页加一个链接，这时候你发给 AI 让他加就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyp2zTN9TEDHZ2gskgz9qp2Dl2aZgkjHDk6I1ZkfBSL4aQgDkIgDTsGg/640?wx_fmt=png&from=appmsg&randomid=z6b9ktdk&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后把他新手引导最后一部分的信息给到 Trickle AI 跟他说帮我基于这个信息用 CDN 引用的方式给网站加上 Algolia 搜索服务就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnycJNqI63Z2aiaIK7ky8GkLBQazNZH9rqv1ekbups68vRhlKne9YmiciaXg/640?wx_fmt=png&from=appmsg&randomid=oq9jd66k&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在他加上以后你大概率会发现搜不到东西，由于我们是单页面网站，所以爬虫爬不到页面结构没办法搜索。</p>
+<p>这时候我们需要主动推送数据给 Algolia 才行，但是推送数据需要后端服务啊 Trickle AI 又没有。</p>
+<p>哈哈，我跟 Trickle AI 在聊天模式讨论后小脑袋瓜一转，还记得我们是怎么上传数据的吗，对的后台页面，那能不能在后台页面加个功能主动触发同步呢。</p>
+<p>可以的，你需要去 Algolia 找到写入的 API Key 提供给 Trickle AI 他就能帮你搞定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny0lHnGtF4AhQ6H2Qp9ycicDbdw5c46NlcGzElgc0fbAYCnFWCCK72ZMA/640?wx_fmt=png&from=appmsg&randomid=zyrf4f99&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>同步数据之后我们就能搜索对应的信息了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyeWHECPhFm77icRiaq7vdXtdcg9ZgUWoljV0kPxVZfReOC1b1wARKpfbQ/640?wx_fmt=png&from=appmsg&randomid=6xfnvrmp&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>网站上线后的设置-绑定域名、SEO、数据分析</h2>
+<p>到现在我们的网站已经是完全体了，但是上线后你的工作才刚开始。</p>
+<p>Trickle AI 提供了非常丰富的网页运营功能，常见的自定义域名、SEO 设置和数据分析功能都是有的。</p>
+<p>首先如果你有自己的域名的话，还是用自己的域名好一点，这样可以固定域名，一般自己的域名也比 Trickle AI 分配给你的的也好记，如果你想绑定自己的域名可以在右上角Publish 弹窗这里点击 「+ Custom domain」按钮。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyLMJZwibWkgoWeAmkKV1OicRPpp3c7nPdXGSpxCMQEFBlq1Zta7ibNrz6A/640?wx_fmt=png&from=appmsg&randomid=yeavi8py&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后在弹窗里面点击「New domain」就行，里面会有详细的引导，直接去你域名服务商那里复制填写内容就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyD3hia3syRw3sQHic1m53so0jTc9vjfqVSj0dSiaqq44oP4zgw4YA0eW7w/640?wx_fmt=png&from=appmsg&randomid=nd9d66ur&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后我们需要设置一些 SEO 需要的信息，大致就是可以让谷歌搜索的时候可以搜到你，同时填写网页后在推特这种地方会显的是一个卡片而不是只有一个链接。</p>
+<p>还是在 Publish 按钮弹窗的 Bookmark Preview 这里点击那个铅笔图标。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyiaSB9krMz6J8clIuh2wa9sT0a3cJyu9lOJnHH3zu1kibPicSXFAcDI1MA/640?wx_fmt=png&from=appmsg&randomid=pw5zr9p8&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我们需要做的首先是把里面确实的图片补一补，比如网页的图标以及预览图片，其他 SEO 部分 Trickle AI 已经帮你写好了，你也可以提出你的需求后让 Trickle AI 帮你改。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny12QnQrOibjcWicuQW87d5sRQBoPZYoWOo0qoz90cXibZ0dX3WdWdOSQFw/640?wx_fmt=png&from=appmsg&randomid=5y5ww2hs&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后就是数据分析了，网站上线之后我们总要看一下数据怎么样，然后针对性的宣传和修改。还是在右上角Publish 弹窗这里点击 「+ Custom domain」按钮。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAnyLMJZwibWkgoWeAmkKV1OicRPpp3c7nPdXGSpxCMQEFBlq1Zta7ibNrz6A/640?wx_fmt=png&from=appmsg&randomid=p2qqsfzd&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后在弹窗部分就可以看到大致的数据了，你也可以点击那三个点图标，再展开的新弹窗里看到非常详细的其他数据。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgeibjSKpEw6wzRhDicFt2tAny1Svygtb2FJHRlicmLUduDvK2nHL9S1lqHAaHxnqvvPwy7Vmfv0ZPBcQ/640?wx_fmt=png&from=appmsg&randomid=bqbab4w9&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>到这里我们的整个网站就搞定了，这个教程里面除了基本的创建，我主要在教你如何修改以及如何增加常见的网页能力，希望你看完的时候能有所收获。</p>
+<p>Trickle AI 通过 Magic Canvas 以及样式修改跟左侧输入框的联动以及优秀的上下文工程和设计系统跟 AI 的结合 ，除了大幅提高了 Agent 的能力以外还大幅降低了现在开发 Agent 最大的成本问题。</p>
+<p>而且设计系统跟组件库以后还会有更大的发展和更多的能力，带来更大的网络效应。</p>
+<p>从我目前的感受来说目前的 Trickle AI 终于让前端开发 Agent 在前端功能上超过了 Framer 以及 Webflow 这种可视化建站产品。</p>
+<p>而且解决了这类产品最大的问题，过于复杂的操作和学习成本，任何改动只需要跟 AI 说就行，他都能给你启发帮你搞定。</p>
+<p>写到这里，我突然意识到：我们正站在一个比「学会用 AI 写代码」更大的拐点上。</p>
+<p>过去两年，我们经历了三个阶段：</p>
+<ol>
+<li>1. Prompt 即魔法 （2022-2023）：把需求翻译成咒语，期待 AI 变出结果</li>
+<li>2. 工具链整合 （2023-2024）：用 Cursor + V0 + Replit 拼凑工作流</li>
+<li>3. 范式迁移 （2024-？）：像 Trickle AI 这样的产品，开始重构「开发」本身的定义</li>
+</ol>
+<p>观察 Trickle AI 的 Magic Canvas 会发现，它不再是「代码编辑器」的替代品，而是「数字造物主的操作系统」。数据库、设计系统、知识库、运行规则被可视化为可交互的实体——这像极了从 DOS 到图形界面的跨越。</p>
+<p>所以基于这个判断给 Vibe Coding 开发者三个建议：</p>
+<ol>
+<li>1. 开始学习「如何思考系统」 未来最有价值的不是记住 CSS 属性，而是理解「当用户搜索时，数据如何在 Algolia 索引、前端组件、URL 参数之间流动」。</li>
+<li>2. 把 AI 当作「认知外骨骼」而非「替代者」 就像计算器没有消灭数学，而是让人类能处理更复杂的方程。Trickle AI 的价值在于让你把脑力从「如何让 div 居中」解放到「这个搜索框应该放在什么位置才能符合用户心智模型」。</li>
+<li>3. 建立「人机协作」的新契约 我总结了一个「30% 原则」：永远让 AI 完成 70% 的实现工作，但保留 30% 需要人类判断的决策权。比如：</li>
+</ol>
+<ul>
+<li>让 AI 生成 10 种配色方案，但由你决定哪种更符合品牌调性<ul>
+<li>让 AI 实现搜索功能，但由你定义「什么算一个好的搜索结果」</li>
+</ul>
+</li>
+</ul>
+<p>5 万年前，我们的祖先在洞穴墙壁上画下第一头野牛时，他们不需要理解颜料化学，只需要有表达的冲动。</p>
+<p>今天，当你对着 AI 说「我想让搜索框在 hover 时有个温柔的阴影」时，你正在延续同样的创造冲动——只是这次，洞穴变成了互联网，野牛变成了用户体验。</p>
+<p>感谢你的阅读，真的肝了很久，如果对你有帮助希望帮忙点个赞或者转发给你的朋友，我是歸藏、我们下次再见👋</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/gCnrmJNcMm0h4a43-Hp0dg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

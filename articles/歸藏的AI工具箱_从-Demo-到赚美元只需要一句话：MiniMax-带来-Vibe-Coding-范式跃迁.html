@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从 Demo 到赚美元只需要一句话：MiniMax 带来 Vibe Coding 范式跃迁 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">从 Demo 到赚美元只需要一句话：MiniMax 带来 Vibe Coding 范式跃迁</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=MiniMax%20Agent">MiniMax Agent</a><a class="chip" href="../index.html?tag=Vibe%20Coding">Vibe Coding</a><a class="chip" href="../index.html?tag=%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91%E8%80%85">独立开发者</a><a class="chip" href="../index.html?tag=%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91">全栈开发</a>
+    <span class="date">2025-07-23</span>
+  </div>
+  <p class="lead">大家好我是歸藏（guizang），今天给大家带来更新后的 MiniMax Agent 介绍和测试。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年07月22日 16:57</em></p>
+<p>大家好我是歸藏（guizang），今天给大家带来更新后的 MiniMax Agent 介绍和测试。</p>
+<p>前段时间我试了 MiniMax Agent，当时我就说他们可能是现在最好的 Vibe Coding 产品，可以看这里了解上次测试</p>
+<p>《 <a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247490054&idx=1&sn=60b8c25184f90afb94202b4d56dc077f&scene=21#wechat_redirect">可能是比Lovable还好的Vibe Coding产品-MiniMax Agent体验</a> 》。</p>
+<p>最近他们又进行了更新，增加了后端的开发部署和定时任务的能力，然后还增加了开发 MCP 服务的能力。</p>
+<p>昨天迫不及待的尝试了一下，现在我觉得可以把“可能是现在最好的 Vibe Coding 产品”，里面这个可能去掉了， 他现在就是独一份的 Vibe Coding 产品。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9Zm2aEm0kVjcXEReJgibSVlIOvZAwic5hdYzNDVrDlO1Mn7V18uQ2HM9CQ/640?wx_fmt=png&from=appmsg&randomid=j7fng4lt&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>你可以用这个一句话搞定网页制作的前端、后端和部署三个完整的部分 ，直接上线一个可以登录、存储用户信息以及带有支付能力的完整产品。</p>
+<p>这么说吧，你现在完全可以一句话完成一个出海电商网站。</p>
+<p>先来看看第一个测试，认识我的朋友都知道我有些家传的东西，所以先让他做一个 AI 算命产品。</p>
+<p>主要支持长远运势的八字和临时的六爻，另外还支持预约真人大师一对一线上辅导，可以免费试用三次之后可以买会员，基本上覆盖了一个完整商业产品必须的所有能力。</p>
+<pre><code>帮我创建一个运势推算网站，主要包括输入日期推算出八字计算长期运势和点击一下生成随机的六爻推断短期运势功能，两个都可以试用三次，之后就需要调用 Stripe 付费，下方还有真人服务也需要调用 Stripe 付费，付费的金额和方式你自己决定，另外需要学习两种运势推荐方法生成对应的算法。
+
+网页生成的要求是：
+1. 使用简洁灰白色背景，衬线字体，线条图标，表现出古朴简洁的氛围
+2. 强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差 
+3. 中英文混用，中文大字体粗体，英文小字作为点缀 
+6. 模仿 apple 官网的动效（段落切屏 &amp; 视差缩放等）
+7. 数据可以引用在线的图表组件，样式需要跟主题一致 
+8. 使用 anime.js （通过CDN引入）
+9. 使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript 
+10. 文字引用 google Font,字体搭配要符合主题
+11. 使用专业图标库如Font Awesome或Material Icons（通过CDN引入） 
+12. 避免使用emoji作为主要图标
+</code></pre>
+<p>先看结果，卧槽，太牛批了。</p>
+<p>没想到他直接一步到位了，真给我搞出来了一个，我只需要换个域名就能做 SEO 开始销售了。</p>
+<p>刚开始他很清楚自己不会算八字和六爻，所以非常谦虚的开始了学习，这要是其他类似的 Agent 估计就开始瞎编了。</p>
+<p>八字这里他直接找了一个开源项目学习他的算法，六爻因为比较简单，本质是随机数，他就直接写了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZuIreibZFFPSBNWaUoouVArUozSY5NTL4qokQRswFYak6Ojv6icZs6Idg/640?wx_fmt=png&from=appmsg&randomid=ezec9vhi&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>完成了核心算法之后，他开始最难的两部分了，如何存储用户信息以及如何加入支付逻辑和支付系统。</p>
+<p>这时候数据库 MiniMax Agent 用的是常见的 Supabase ，但是整个数据库创建和连接过程极其优雅，直接在新建页面登录账号后点击授权按钮，就结束了。不需要你寻找各种 API 和翻看后台。</p>
+<p>Stripe 也是类似，只需要你填写你的 Stripe API Token 就行，完全不需要跳出页面就可以搞定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9Z4wfxBtsr6ZpxVESz87cr0oYO4AicImuA6F0B7hFL4sib52TTcG1Nm5TQ/640?wx_fmt=png&from=appmsg&randomid=r9q7nbrb&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在做好左右准备之后他就直接开始设置数据库和构建对应的算法和项目了，这部分没什么好说的。</p>
+<p>然后在完成项目之后他会主动进行代码测试和利用 Browser use 进行可视化测试，去点击每个网页的按钮查看实现效果和逻辑完整性。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9Zs3zWtgI1pAWeftUWgF7K1nPc5UZDjaWYsS8bIlic6uZcYfd7wr8a5rg/640?wx_fmt=png&from=appmsg&randomid=b31ph81m&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>最后的结果非常令人惊喜，他几乎一次性完成了所有主要的核心流程，包括八字和六爻的计算，试用逻辑、支付弹窗以及登录注册逻辑。</p>
+<p>唯一的一些小问题是比如首页的立即尝试按钮没有跳转以及试用后没有拉起登录和支付，这些在我强调之后都一次性修复了，而且修复的时候他特意把可视化测试的逻辑变详细了。</p>
+<p>我刚开始测试的时候基本没有管真人预约这部分，我就没想他能做，结果没想到，他这都做好了，在填写完信息之后他会告诉你预约成功了，工作人员会跟你联系。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZG91DpjOMTSCu8kQfJqv8Lf2Hm24kdYR7gs0qiavW2nps8ibztdWeZ8hQ/640?wx_fmt=png&from=appmsg&randomid=9rqypwik&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>如果对 AI 算命感兴趣的话可以来试试，每个用户会有 3 次试用机会，3 次试用结束会要求登录。</p>
+<p>另外支付逻辑是写好的，但是我没有申请自己的 Stripe 账户，所以会支付失败。</p>
+<p>你可以在这里尝试天机神算： <a href="https://9f6jzycxnkop.space.minimax.io/">https://9f6jzycxnkop.space.minimax.io/</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9Zcn9iaEMXKlqUXtcmc66VzqoSzo4lktR0s9fSklaic2mic11LTosSRtcwQ/640?wx_fmt=png&from=appmsg&randomid=0fbflhmw&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后由于现在我们有后端服务了，终于可以跑一些定时任务了，其中最常见的需求当然就是要求 AI 帮你监控某一类的信息。</p>
+<p>我这里就让他监控最核心的三个 AI 公司的信息，Open AI、Anthropic 和谷歌的 Deepmind，先看结果。</p>
+<pre><code>制作一个网页帮我监控 Open AI、Anthropic 和谷歌 Deepmind 的官网博客最新消息，通过后端的serper API每分钟更新，不需要手动刷新按钮，然后利用 Gemini API 生成中文标题和简介展示在页面上，同时增加模型和产品以及公司动向三个分类。
+
+他们三个的链接分别是：
+https://openai.com/zh-Hans-CN/news/
+https://www.anthropic.com/news
+https://deepmind.google/
+
+网页生成的要求是： 
+1. 使用Bento Grid风格的视觉设计，背景色为#FDFDFD，#161615作为高亮按钮色和文字色，# 5751D5 作为特殊高亮色 
+2. 强调超大字体或数字突出核心要点，画面中有超大视觉元素强调重点，与小元素的比例形成反差 
+3. 中英文混用，中文大字体粗体，英文小字作为点缀 
+4. 使用Apache ECharts 
+5 CDN 版做简洁的勾线图形化作为数据可视化或者配图元素 
+5. 运用高亮色自身透明度渐变制造科技感，但是不同高亮色不要互相渐变 
+6. 模仿 apple 官网的动效（段落切屏 &amp; 视差缩放等） 
+7. 数据可以引用在线的图表组件，样式需要跟主题一致 
+8. 使用 anime.js （通过CDN引入） 
+9. 使用HTML5、TailwindCSS 3.0+（通过CDN引入）和必要的JavaScript 
+10. 文字引用 google Font,字体搭配要符合主题 
+11. 使用专业图标库如Font Awesome或Material Icons（通过CDN引入） 
+12. 避免使用emoji作为主要图标
+</code></pre>
+<p>这个产品每隔几分钟都会定期检索互联网上关于这三家公司的最新动向。</p>
+<p>首页进来是一个数据看板，可以监控整个系统的运行状态，然后切换到右侧就是他收集到的信息，还支持模型、产品动态和公司动向以及公司名称三种分类方便筛选，信息也会调用 Gemini 翻译为中文方便理解。</p>
+<p>项目开始，这里照例在完成了方案设计之后他开始要求连接 Supabase，这里需要注意你得点一下新建数据库，别在刚才在那个项目数据库上处理，不然两边字段会混淆。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZjZhibujG5jpk2MTCDwlibDIRxELlzeANKHPfGWqLlVqRHJvNbJAxzGVw/640?wx_fmt=png&from=appmsg&randomid=6qa7mvjx&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后他说需要 Gemini 的 API 处理翻译，需要 Serper 的 API 检索信息，这两个都可以免费用的，直接去申请完填写就行</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZxHVxT9ptEuK4EhmBiaVZbQjVicJRs0ZN0xK5gRkfwg2xBMFHhBSic0P4w/640?wx_fmt=png&from=appmsg&randomid=1lecqcyn&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后我这里犯了一个错误，我本来想让他从三家官网博客获取信息，但是结果到底是做 AI 的，三家都做了很严重的反爬，根本拿不到信息。</p>
+<p>于是我就转头让他直接检索互联网的相关信息，你搜到啥你就拿啥得了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZruwlJsAlQdo69RoRmKue89KVvn1jrxPmXnVmKkhpbDxoNfW7nUDw0A/640?wx_fmt=png&from=appmsg&randomid=j4wdpvir&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>再然后他遇到了 AI 都会遇到的问题，他发现自己的 Gemini 模型没办法调用翻译内容。</p>
+<p>然后他开始自查发现是模型幻觉了，自己编造了 Gemini 的模型名称，这里他自己用 API 拉取了所有的模型名称，最后成功调用了 Gemini。</p>
+<p>这才是我们理想中的 Agent 发现错误以后会自己寻找问题，然后自己尝试解决。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZEzJ0z7SEq85DpzyrrJWqicGD5tIDUrxcUjBOicAmyzaQe6xKskNToAAw/640?wx_fmt=png&from=appmsg&randomid=vzp5cg08&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>到现在这个项目基本完整了，可能会由于我自己 Gemini 的 TPM 卡住几次，后面我会修复，如果感兴趣可以来看看： <a href="https://kwuppq4ke6sg.space.minimax.io/">https://kwuppq4ke6sg.space.minimax.io/</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egf46k5tMRHibvvpJWp85Wo9ZXfYObxSEeccCxahcogkLO16oHgAcwjokCY0ZFbCMahLfUw6QrP5xxA/640?wx_fmt=png&from=appmsg&randomid=q7su56ps&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我之前个人聊天的时候一直在说 Vibe Coding 产品还有很多可以做的事情，各种专门为 AI 调用优化过的脚手架以及后端数据库和支付，今天终于有产品开始注意这个问题了。</p>
+<p>过去我们说“独立开发者”，指的是一个人搞定产品、设计、开发、运营、商业化全流程的超级个体。但现实中，99% 的“独立开发者”都卡在了“我不会后端”、“我不会支付”、“我不会部署”这些环节上。</p>
+<p>现在 MiniMax Agent 把这些环节全部抽象成了 一句话的指令。</p>
+<p>当创造的门槛趋近于零时， 唯一稀缺的资源就变成了认知 ——你能不能想明白要解决什么问题，你能不能定义清楚用户的需求，你能不能设计出让用户愿意付费的价值。</p>
+<p>这就是为什么我说 MiniMax Agent 是“独一份”的 Vibe Coding 产品： 它不只是帮你写代码，它帮你完成从代码到商业的惊险一跃 。</p>
+<p>MiniMax Agent 只是开始。当更多的环节被 AI 抽象，当更多的商业逻辑被 AI 托管，当更多的创造过程被 AI 自动化，我们终将迎来一个 认知即商业 的时代。</p>
+<p>技术的终极意义，是让每一个有想法的人，都能成为商业世界的参与者。</p>
+<p>如果这篇文章对你有帮助，记得点个赞。我是歸藏，我们下次再见。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/tiA81DAEnjKvigqIZSjlrQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

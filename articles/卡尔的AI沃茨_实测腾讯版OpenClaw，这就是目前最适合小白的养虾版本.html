@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测腾讯版OpenClaw，这就是目前最适合小白的养虾版本 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测腾讯版OpenClaw，这就是目前最适合小白的养虾版本</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    
+    <span class="date">2026-03-11</span>
+  </div>
+  <p class="lead">开箱即用还送Token还得是鹅啊</p>
+  <article class="content"><p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a></p>
+<p><em>2026年3月10日 20:33</em> <em>意大利</em></p>
+<p>鹅开始发力了，</p>
+<p>先是QQ企微，再是深圳线下装虾，现在自己造虾了，</p>
+<p>WorkBuddy Claw</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwMribkqrYJ7gkA2zKoALllXNyTUw9R6xp2lVOsKxOylvKV77ZT1BiaZoDJ0le0O1nsII7nBB5yiajgnle9qqiabfAUrnvDxIIFDvU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>🔗 codebuddy.cn/work/</p>
+<p>先说结论，</p>
+<p>里面内置了一堆大模型，支持接入企微，QQ，飞书和钉钉，鹅经典有钱打法上线就送5000 Credit，Claw也是自带在里面了，不需要安装。</p>
+<p>🔗 codebuddy.cn/profile/usage</p>
+<p>主打就是先省掉前期配置的所有条件，试试看龙虾能不能帮我完成某些任务。所以我这次把接入飞书的配置放在后面，先用了定时任务来获取clawhub前100的技能分类，然后用hesamsheikh/awesome-openclaw-usecases这个github 22.1k的OpenClaw使用案例的同款格式做出了五个最常用的使用案例！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxVPbE3hHRtW7ruKagEGJeUsDibXj17urL4fjVibFQ2XNTaxoKwlJnxpXcWpKmzpvw3jktTHRqEdBup8cmf08NXIKbOVIYEiawn64/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>想法验证器，长视频学习，个人本地知识库 ，新技能安装自检和主动进化。</p>
+<p>PS，需要安装到WorkBuddy里的Skills我直接打包压缩成提示语放在后面一锅炖，这次用到的提示语也打包成文档了，公众号回复 鹅虾 就好啦</p>
+<p>首先是每次安装新技能会触发的，</p>
+<p>以后我每次说“安装某个 skill”，先不要安装。</p>
+<p>如果没有地址，用find-skills在clawdhub上找，</p>
+<p>接着用skill-vetter做审查并输出：</p>
+<p>风险评分（0-100），触发的风险项，最小权限替代方案，是否建议安装（是/否）<br> 只有当评分 &lt;= 60 且我明确回复“确认安装”时才执行安装。</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eeabwoaadgeaidivmzbuvgigdm4qagzya.f10002.mp4?dis_k=d9df540a2800867466846b2bde88a843&amp;dis_t=1773205531&amp;play_scene=10120&amp;auth_info=W8iDoeQsTgJI3Lyim11Scng6FwEXJ3s9XDEHQD4OMzlqAEcwKyUTbSoQMWhMfEVIcg==&amp;auth_key=65d1e55831a9b35577decbaf2c64848f&amp;vid=wxv_4421519614187241473&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FzlUxI4ia7X2e0UCqqBib1lHKJ5bvmA6AO2bf3KDBtmJ5ib2ks8prwpKH2EkGaN7keNfjMKVwdnXzhvHJzaf6RkbQWzGvgpxMrDIo/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 661px; height: 495px;" jm_neat="556092423">您的浏览器不支持 video 标签</video></p>
+<p>OpenClaw 教程我也更新了很多个，一直会有一个问题，就是有时候只有一些Skills名字找不到地址安装，</p>
+<p>或者技能会因为版本的迭代导致它不安全，</p>
+<p>所以我就做出了这样的一个提示语，让龙虾自己去Clawdhub和GitHub找更安全的替换版本。</p>
+<p>也是因为我做了一个前100的Skills分析，很多Skill的功能是会重叠的，有一些Skill不需要配置API，更方便还不花钱。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fwm4ouBXzrcb6PRYOia8HtpTjl0Rdkq6ibiankNTOCtq2Z3H9PcATOagVPHFy9DHWvYia2h70XYPB3SJDicooypxYQku4riaiaichyibLjo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>每日消化Youtube的长视频更新这个case我也做成不需要API的版本了，</p>
+<p>读取 channels.txt，每天 08:30 执行：</p>
+<ol>
+<li>找到过去 24 小时新视频</li>
+<li>提取字幕并总结每条视频 3-5 个要点</li>
+<li>生成一份 Markdown 日报，包含标题、链接、摘要、建议是否值得完整观看</li>
+<li>保存到 daily-youtube-digest/YYYY-MM-DD.md</li>
+</ol>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3imblkaacyeafg35ncbuveq6dwvbqfnia.f10002.mp4?dis_k=d841ea41ee6dc69ed9628f704ea8359e&amp;dis_t=1773205531&amp;play_scene=10120&amp;auth_info=f7jw+TMTXhrY7fPOXg8nfmZCABp0KTxeNV0Ua1piZDNZTDEhJE4xeBRgORl/GB10&amp;auth_key=38c02547eae98eacb24463dde8064b35&amp;vid=wxv_4421521525464481796&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FyjT87XGYxIiaVmIV4LadyACVOF5HLGK5QIYKIjpZse2cysPoCD8ibLCt9ZpPpPIB0jXxI7hWQhMhMDjjq5lu8QVw6e5F3xkfpaQ/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 661px; height: 495px;" jm_neat="556092424">您的浏览器不支持 video 标签</video></p>
+<p>现在 YouTube 对这些Skills限制得还挺严重的。</p>
+<p>在不需要 API 的情况下，能够获取到视频的元数据，而且用Summary能够给我快速总结出一个能判断出来值不值得我观看的信息，还是一个自动定时任务，我个人是觉得蛮够用的。</p>
+<p>然后就是个人知识库的龙虾版，</p>
+<p>原理是使用markdown-converter把PDF，网页，文档统一转 Markdown，配合qmd构建一个本地索引，减少每次读取消耗的token，最后就是写入到obsidian做长期存储。</p>
+<p>ob+openclaw的教程在这，换成WorkBuddy也好用。</p>
+<p>🔗 <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw==&mid=2247505302&idx=1&sn=d0cc0321dfc5963f2bb55b980d51e077&scene=21#wechat_redirect">Obsidian+OpenClaw组合技！花9分钟重构你的AI知识管理体系</a></p>
+<p>帮我建立本地知识库流程：</p>
+<p>本地目录【/Users/carl/Downloads/个人知识库初级版】</p>
+<p>扫描 inbox_docs/ 里的新文件</p>
+<p>转换为 Markdown 到 kb_docs/</p>
+<p>qmd更新索引</p>
+<p>回答问题时必须附带 Top3 来源路径和关键引用</p>
+<p>如果信息不足必须明确说明</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2esaaecaaaleakk6vpiruvbegdigiaaqia.f10002.mp4?dis_k=6b563f49a3b2c3199026c1a482239a90&amp;dis_t=1773205531&amp;play_scene=10120&amp;auth_info=UODBo/B4FVMY2u6mww5ZIHphEgcaKH03XmRUE2hSZDNhWB49KHdIPHoWY2wUL04acA==&amp;auth_key=b0c294c7874b11cc108b87b653b508e2&amp;vid=wxv_4421514116947787781&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fyejojz11TiaBo7QMleyNHtV0H4iaUZicJMCH2K7wuSOkeZlr53JdHJSNeTZpKhBR9BJfYJe4BCsj1WdRHXzKLAiaXWBPSEl7cVXRk/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 661px; height: 495px;" jm_neat="556092425">您的浏览器不支持 video 标签</video></p>
+<p>还有一个类型的cases我这段时间使用频率非常高的就是想法构建验证器，</p>
+<p>这个原理也很简单，就是通过搜索，在你要构建一个项目的时候，这些信息来源查找这个项目是否已经有了。</p>
+<p>比方说，我之前想研究一下怎么把Codex接到飞书里面。本来还想自己开发的，结果就找到了藏师傅的Claude-to-IM-skill，现在我一个飞书就接了WorkBuddy，openclaw，codex和claude code，</p>
+<p>我给你一个产品想法后，请执行“构建前验证”：</p>
+<ol>
+<li>检索同类产品，GitHub 项目，讨论帖</li>
+<li>汇总差异点，定价，目标用户</li>
+<li>评估拥挤度（高/中/低）</li>
+<li>给出结论：继续做/改方向/停止</li>
+</ol>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc34eazwaabw4ah3rvocruvdyodtpqqdgya.f10002.mp4?dis_k=0808cf5d47256e609ad286b3e572ecff&amp;dis_t=1773205531&amp;play_scene=10120&amp;auth_info=UZSj0ZV+T1YWiu6nnltdcH00RAATKCxhWj9TEG8PYzZgBBxifnESOXRGY21JekpKdw==&amp;auth_key=e52ec68e421ae1aa84d0663ffa0dea9a&amp;vid=wxv_4421520778341220358&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FwNCNqbTNtm7lczP9GweFvyia4l7wGiaJWECAofO981o0Tw60hUoN4QUOtRHLnDs5o2icqQiakPOHzjUrcXSibuxiaERLnJ5mweOywvU/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 661px; height: 495px;" jm_neat="556092426">您的浏览器不支持 video 标签</video></p>
+<p>我的给Claude Code做一个GUI的新idea就被一秒否决了。。。</p>
+<p>最后一个就是关于搭配 self-import agent 的自我升级迭代的进化版。</p>
+<p>因为有的自我迭代它不会明确地进入到 markdown，在使用初期我会更希望能够加速给它录入调整这些路线。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxPZjUcobt7kMNlZxZptEibBictwTudoFMkDPjNyksSH2tljBRG4HI6aUZMJNibzVKVfJy5bnSkugibRUGwP1YAw2U9y1wfboAsicVc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>PS，self-improving-agent里的部份规则</p>
+<p>默认 Skill 更偏被动记录，你的提示语把它变成了主动复盘。这个提示语就是把self-improving-agent从被动记录变成了主动记录，</p>
+<p>而且做了优先级的排序，这跟默认的把这些规则一条一条堆积起来相比，会更有挑战性，模型输出的每条规则都是要可以检查可以量化。</p>
+<p>这能够在短时间内产生效果。比方说这个Skill我们可能要用两周或者三周才有成效，但是如果你搭配这个提示语使用使用后，一周的高频使用，就能把我们的龙虾养得把白白胖胖。</p>
+<p>每天 20:30 复盘今天所有 OpenClaw 会话：</p>
+<p>找出至少3个最关键错误模式</p>
+<p>找出至少3个最有效动作</p>
+<p>输出明天要执行的至少3条具体规则（可检查、可量化）</p>
+<p>生成简短总结并写入复盘日志</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2ehubjqaackiah2knnebuvepodta6qfgaa.f10002.mp4?dis_k=1d5ff60a6274a2c40223579895b1e40b&amp;dis_t=1773205531&amp;play_scene=10120&amp;auth_info=UpGHxod8E1NIj76im1lYdXxjE1UXIX83WzJSS2RTY2NjBEs0enBOPCpDM2hMeE9Pdg==&amp;auth_key=c63e28c53950b6a805b593544d837598&amp;vid=wxv_4421516902905151488&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FzYnwqsf0vRQG3B6OdiawBZeJgBINjo6LQalkvpXnKic7C1gScw2kddhhCHukXlzIibvpribWfV6egUDrGiaZibHzrL1O2lWNOs7h3w8/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 661px; height: 495px;" jm_neat="556092427">您的浏览器不支持 video 标签</video></p>
+<p>WorkBuddy内置了两个Skills库，我还可以导入github地址来加载更多的Skills，上面的case里用到的skills有，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyXgFM2ibA8KaEkGP6f47bFYLQKXtemIwuRLQp0m8mIDLbJlwLaaID4LfltFicKsR9QUpaYVA843xMMFQhnyIUedxzkvtduK2Ddo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<pre><code>【skills安装】find-skillsskill-vetter【youtube长视频】openclaw-youtube-transcriptyoutube-watchersummarize【个人知识库】Obsidian Official CLImarkdown-converterqmd【想法验证器】Multi Search Enginegithub【自我迭代】self-improving-agentsession-logs
+</code></pre>
+<p>除了龙虾，WorkBuddy还把自己Agent能力划分成代码侧和日常侧，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxVowaaONSaSoyx6XOGCPWLWpziaUPlN1CF2OSSaicNiaNoM5STcaVucW9SJVGOib0MGFMNKiaUOYKgPOLpk7iaTdYIoeKiaHUJibvkPnQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>用多了会有种错觉，我把Codex（日常任务），Claude Code（编程）和OpenClaw放在一个入口里用。</p>
+<p>所以我就原汤化原食，让CodeBuddy教我连接上WorkBuddy和飞书，</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3lucjaaaeyqahqvvlhvuvixodsboqjeaa.f10002.mp4?dis_k=daddcfab9f97f6bd81500b484e76cbb8&amp;dis_t=1773205531&amp;play_scene=10120&amp;auth_info=VbSq7pAtFgJKiu7zmFYMe39kF1RHKXwwWDcHRmReMzZkAh1mICVLbShGYzlPdxtBdQ==&amp;auth_key=eb93689d071eac4aa67e3985e0cc9017&amp;vid=wxv_4421530491074396160&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FzHMrNdtRFNPKKRuI5Xia58xibZtHcMBNADcZCcDiaDqVfyB4xE2ToX61JNhWKia5VPiaw3icbkV65ReouD1zyBILcWUbMNkjF1jhfc8/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 661px; height: 495px;" jm_neat="556092428">您的浏览器不支持 video 标签</video></p>
+<p>飞书的配置已经很成熟了，</p>
+<p>基本上跟着做都不会出错的，</p>
+<p>硬要说跟OpenClaw有啥不同的话，就是在倒数第二步的时候，事件发送到的是开发者服务器，而不是长连接接收事件，</p>
+<p>回调配置的时候也是选开发者服务器，然后选卡片回传交互。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwtIm2Fa1Meau1n7yUJSaNHRHekMXsVlk6wrwHwOAjCZsibd6egVtsZyoQLAOnEd3MeEY4ibC7r0siaVCibYLPxdyOYWYquAV17s1s/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>现在QQ和企微的配置流程都比飞书要简单了不少，我能配的都配上主打一个哪里都能用龙虾。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzHXjtIAicm4INLHVic53c1ksrYnVVicQXRSUUtAkw1B8fG01qichW8mrfpLb9PJUztI3icFmgYRTAEWwFBnKCpwlT9SHFf6uo5ZITI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>最后的最后，</p>
+<p>明猜一手越来越多厂商也都会上自己的龙虾，</p>
+<p>跟现在一人一套大模型一样，</p>
+<p>龙虾也会变成编程龙虾，PPT龙虾，DeepResearch龙虾等等，</p>
+<p>理论上只要模型还放不下无限上下文，</p>
+<p>安装不完十几万的Skills，</p>
+<p>Skills们就会组合成不同的经验工作流，</p>
+<p>我们也会有各种各样的龙虾形态，</p>
+<p>以前我们是安App，通过MCP打通Agent能力，</p>
+<p>可能之后龙虾们碰碰爪子就能完成了。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mp.weixin.qq.com/s/www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg%20stroke='none'%20stroke-width='1'%20fill='none'%20fill-rule='evenodd'%20fill-opacity='0'%3E%3Cg%20transform='translate(-249.000000,%20-126.000000)'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/E160R47POK80j-GU_zIUqQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>龙虾实际产品形态预测——龙虾生态创业者必读系列 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">龙虾实际产品形态预测——龙虾生态创业者必读系列</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%83%8E%E7%80%9A%E5%A8%81%C2%A0Will">郎瀚威 Will</a>
+    
+    <span class="date">2026-02-26</span>
+  </div>
+  <p class="lead">过去几周我翻了83条推文、132个用例，跟踪了OpenClaw从一个周末项目变成GitHub第二大开源项目的全过程。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/K1icJ0FOfdZ7iaciaFHAicSriaPYWU9ATUSibGtia04cTbExAUUdSEdVmz48Qe8pEP3hNwqmG6NBQO2uBgHDmQsxdNO5TzqALwzNyBK4KnOZ8kia2pw/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 郎瀚威 Will <a href="https://mp.weixin.qq.com/s/">郎瀚威 Will</a> <em>2026年2月25日 18:52</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ43cafGEzadhqDOhibGR66RpslFPib4KcBGRSkicVOFtmC0rXHmElD11uWJcRzT7Vwy7ziczw7ckfpY3XKlMicia0Cc7VxHSFMzsWT5U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>过去几周我翻了83条推文、132个用例，跟踪了OpenClaw从一个周末项目变成GitHub第二大开源项目的全过程。关于用户拿它做什么、需求怎么变化，我在之前的文章里写过了。这篇聊一个不同的问题：OpenClaw现在这个形态，到底对不对？</p>
+<p>我的判断是：方向对了，但形态还没到位。</p>
+<p>分为两步，第一步，第二步。我们今天讲第一步。</p>
+<p>我自己接了各家API都简单测了下：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ5zrsnzPawhSezeJS7jj4KFroXmOYEhoPpmibcURibIoapicUpHXRf5hgtp4974l7xzQfmvZOUJlURDMvPYIQLDw76OalNWpn0biaE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h2>agent不应该是一个App</h2>
+<p>先说一个观察：OpenClaw用户讨论最多的不是&quot;我用它做了什么炫酷的事&quot;，而是&quot;我在哪里跟它说话&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ7OkDhX1qDpDicvCRicY9PLdYtdBJIKy5o93KFLrgtM1EvQcUCA20A2TFrHgUX2tG23vctUBiaPUsonMg9ujDrSjVmvdnxS1LBWic8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>翻完这些案例你会发现，绝大多数活跃用户选择的界面是Telegram，其次是WhatsApp和Discord。几乎没有人在用OpenClaw自带的Web UI作为主要交互界面。</p>
+<p>这不是偶然的。</p>
+<p>Manus过去的路线是做一个独立App——你打开它，告诉它做事，它做完了你关掉。这个交互模式跟ChatGPT没有本质区别，还是&quot;你去找AI&quot;。（现在也有龙虾了）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ4maUrn1ZlTPylBqbAGZ2SoUHb5o8v5Liba7fiaahU65w1DGiavg3Yr6ZuDDqiaAylwK2A86UR29U6EEMm7jceIeIBXU2kK97FJeOY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>OpenClaw走了另一条路：agent住在你已经在用的聊天软件里。你不需要&quot;打开&quot;它，它就在你的Telegram对话列表里，跟你的朋友、家人、同事的对话窗口并列。你想跟它说话，点一下就行，跟给朋友发消息没区别。</p>
+<p>这个设计选择看起来很小，但它决定了一件事：你跟agent交互的频率。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6wa9sdIiaiadpXnuhcLiaT5HllNGaUKxnK5NE6Y3dJeiahHYmmWdEibzU6iaIDF8SHqsicZXaRfzfpVoO2BPnNwhVyAKo229LHZ3W2qA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>一个需要单独打开的App，你一天打开几次？可能三五次。一个在你聊天列表里的对话窗口，你一天点进去几次？可能二三十次。交互频率上去了，agent对你的了解就上去了，它能做的事也就多了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ7w9V9bewaUBtkFruLYoVflLFiccZfSBzFf8pH2tLfniblICPIiaLlTw6tWtRwxOc91fYfic3icZHjZVlZozqtp5G2TxAfUK2CB4Hcw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>所以我的第一个判断是：agent的正确形态不是一个独立App，而是嵌入在你已经常驻的通讯工具里。目前来看，对个人用户最合理的载体就是Telegram——开放的bot API、全平台覆盖、消息格式灵活、全球用户基础。</p>
+<h2>多个窗口，不是一个窗口</h2>
+<p>但光&quot;在Telegram里&quot;还不够。</p>
+<p>现在大多数人的OpenClaw用法是：一个agent，一个对话窗口，什么都跟它说。邮件的事、日程的事、代码的事、买东西的事，全在一个窗口里。</p>
+<p>这会出问题。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6Cl5nfXPNzPqhczcw3PLLweAq8ibEWBDwkLGeCDotNibbGVSdl2NhdLQSticeia9Cdy7ORmriatcH2VBawgCy3sW4wanwwFoL9d6RU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>第一，上下文会乱。你跟它聊了半天代码bug，突然切到&quot;帮我查一下明天的航班&quot;，agent需要做一次心理切换。模型能处理，但效果不如专注在一个领域里好。</p>
+<p>第二，记忆会炸。一个窗口承载所有领域的对话，记忆系统（不管是持久记忆还是context window）都会被稀释。真正重要的信息淹没在大量日常闲聊里。</p>
+<p>第三，不符合人的思维习惯。你在公司里不会跟同一个人同时聊代码、聊行政、聊客户。你会找不同的人。</p>
+<p>所以更合理的形态是：Telegram里有多个agent对话窗口，每个agent负责一个领域。一个管邮件，一个管开发，一个管日程，一个管内容。就像你的聊天列表里有不同的同事，各管一摊事。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ4AAHHCqjwiaPwWEgbegNgmJWUxsRJYF8VT9FgTtyKt0icpFXVR08281omotDsMOMCQicFdJfGtzE58xoke9wXNiaskN3dFpDwmOus/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>这个方向其实已经有人在做了。Ryan Seamons在第一周就给家庭每个成员配了不同的bot。Kieran在跑三个agent swarm三班倒。Ziwen搭了10个agent组成的&quot;AI公司&quot;，每个agent有名字有分工。这些都是&quot;多窗口&quot;思路的早期实践。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ42JhmzbFvRe1DIScw0JaSt6iaiaaj7lCED4Z318DEjy88rNspdjZFGRMo3pdk7y0o5xawaRHedjbt8h37xpqPfc1oibxgr5lx4Mg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<h2>但多窗口需要一个大总管</h2>
+<p>多个agent各管一摊，马上会遇到一个问题：它们之间怎么协调？</p>
+<p>你跟&quot;邮件agent&quot;说了一件事，&quot;日程agent&quot;不知道。你跟&quot;开发agent&quot;讨论了一个决策，&quot;内容agent&quot;写文章的时候用不上这个信息。</p>
+<p>所以多agent架构里一定需要一个&quot;大总管&quot;——一个supervisor agent，负责两件事：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ611odt73AA0unlW4wyDfjndXomgVyWHg8rtDKs1jiaayo31A0nzkwSBGlaRL8fT0zYplrqLVnczwlGrvLV8x0yFqV1yhQicRqa8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>1、调配：你说一句话，大总管判断这事该分给谁，或者需要哪几个agent协作完成。Casey Sapp的方法论其实就是这个思路——Scout采集、Engine推理、Editor润色、Judge把关，每个角色对应不同的agent或模型。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ7D0xQrz53nU1uNOdU44hGicJunNurbDHBrpyxESbLViaF5mga4b0dthHLib88CLt4H2QAj3yjbcxnKwLrt2uHuEE1IRdAAc7RKPo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>2、统一记忆：所有agent共享一层底层记忆。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ7JvTYcDqKeSEmbCMGq3QLJKuBndqgUqdnbLYomMy6V5ibYiaGdgsoUU5ByceuOumBa3he4Es7k3lvtkwm7O4A9htcib0R1yMmntg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"> 你告诉任何一个agent的信息，其他agent都能访问到。这样你不用重复跟每个agent说&quot;我是做什么的、我的偏好是什么、上次讨论到哪了&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6Go6hM3vbTcaA3AyFE4hT9RAEAAUuEw4reJ6LE1rPx1qsxNZibpluTwxqRmgIicWHsto71tiaxviax6cKA7Vw6SA6GUYqTvnywqUE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6ZbAfUn3rWC1Dt4jticfrjUm9tR5Ly3RgqYHibhfFy36z7xHueX1VZJB0Fa5XhkG3gQpuvcfev6QdATe2vSKxgLgwwdzXHOlFys/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>fomomofosol的案例很能说明问题：他的agent观察到他重度使用Notion，自己决定把dashboard迁过去。这个行为之所以惊艳，是因为agent做到了&quot;跨上下文理解&quot;——它不只是执行当前对话里的指令，而是综合了对用户习惯的长期观察。如果多个agent都能做到这一点，而且彼此共享这些观察，那才是真正的&quot;AI团队&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ7N4Dwuia7IHgfRajpEYwPLQbZg7Csz23ZpibiafXUln7K4gKvzgn1AwyEgzepp1Nibfmw4haJiaCydug34aEEiazshvce5OicJzvRnYk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<h2>主动汇报比被动聊天更重要</h2>
+<p>前面说的&quot;多窗口&quot;还是一个&quot;你去找agent&quot;的逻辑——你点进邮件agent的窗口，问它今天有什么重要邮件。但更好的方式是反过来：每天早上你打开Telegram，每个agent已经主动给你发了一条消息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ5Zd02JzVqibcfOibR39GW8DdtHmBJIgmP43lia7uCPrPf7pGGvVjbaTCNmGood6GXRHnYV4pgkWPuVD7AcQLhEjB1CtUwaibJV9p0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>邮件agent告诉你：&quot;昨晚收到3封需要回复的邮件，其中1封是客户催款，我已经起草了回复，你确认一下。&quot;</p>
+<p>开发agent告诉你：&quot;CI昨晚跑失败了，我查了日志是依赖版本问题，已经提了PR，等你review。&quot;</p>
+<p>内容agent告诉你：&quot;今天有两个选题跟你的领域相关，我准备了草稿大纲，下午发布来得及。&quot;</p>
+<p>你不需要挨个点进去问&quot;有什么新情况&quot;。你起床，Telegram里已经有一排未读消息，每条都是一个agent的简报。你扫一遍，该确认的确认，该忽略的忽略，5分钟搞定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ4nMvpD5QCibIcd6YSFXsUq3gfobtutSQBUJly1kv6DhAYKI7Pc1ae89qGA61qibsySBbqyicNbco3OXba6rHBF5HZTjpfibiaGEE0o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>这比你打开一个App、输入指令、等回复的效率高一个量级。</p>
+<p>Radek Sienkiewicz在第一周就体验到了这个：&quot;它替我干活、关心我的睡眠，早上准备好完整报告等我起床。&quot;Jesse Leimgruber说得更直接：&quot;如果你还在给OpenClaw下指令，那你没搞懂重点。&quot;J.B.的内容agent每天7点自动扫描热门话题、分析互动模式、起草内容选项——他只需要审批，不需要发起对话。</p>
+<p>所以&quot;多窗口&quot;不只是让你有地方跟不同agent聊天，更重要的是让每个agent有一个固定的地方来给你汇报。窗口的意义不是&quot;你去找它&quot;，是&quot;它来找你，而且你知道在哪里看&quot;。</p>
+<h2>Manus那种界面不是没用，但它是后台面板，不是主界面</h2>
+<p>有人会问：那Manus、Claude Code这种独立界面就没有存在的价值了？</p>
+<p>有。但它的定位应该变一下。</p>
+<p>你想想日常工作的逻辑：你跟同事聊天在微信/Slack里，但调整公司的CRM设置、改项目管理面板、配置服务器参数，你会去登录一个后台系统。这两种界面不是互斥的，而是不同场景。</p>
+<p>同样的道理，agent的日常交互——对话、下指令、接收汇报——应该发生在聊天窗口里。但agent的配置和维护——调整记忆规则、修改技能模块、设置权限边界、查看运行日志——需要一个专门的操作面板。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ7B6xWPKybia47EZ6NA4CtjbyZXyM1AQkBqmZZS69EslNWYU5gLiaOulhcRXlsYeRdzloA26dV4QNwnRDGYDvzNsiaiacGQV5yribP0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>Manus或者类似的独立界面完全可以承担这个角色：一个你偶尔登录一次的维护面板（panel），用来调整那些不需要每天碰的设置。比如：</p>
+<p>这个agent的记忆范围是什么？哪些上下文可以跨agent共享？ 哪些操作需要我确认，哪些可以直接执行？ 各agent之间的调配规则怎么设？ 运行成本多少，哪里可以优化？</p>
+<p>你不会每天去调这些东西，就像你不会每天去改CRM的字段设置一样。但你需要一个地方能改。</p>
+<p>所以结论不是&quot;Manus没用&quot;，而是Manus这种界面的定位应该从&quot;主要交互入口&quot;变成&quot;后台维护面板&quot;。用户的主战场在聊天窗口里，操作台在后面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6bcq4paXDiciaV4vjsG2poq7BjyhQM4icoicWt2yRmYfSiaGgkvV5iaMibat5QAEEK4biaLTQtreEtGhDzP4mB63y2GPbRWTDs92UWOzg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<h2>对创业者来说，没做完的地方就是机会</h2>
+<p>上面说了这么多&quot;应该长什么样&quot;，反过来看，现在还没做到的部分就是创业机会。对照一下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ7ksooKfpWLtibbFqRo3XwUZvz9S4kr3f95Q325vpMe0WjibhtmT6Pk0FvMYkKDhYms8smLdPPXU01YA2OVIdO51XCd4k5tIzZDo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p><strong>1、Telegram原生的multi-agent管理层。</strong> 现在要在Telegram里跑多个agent，你得自己部署多个OpenClaw实例，手动配置各自的SOUL.md和技能，手动处理它们之间的通信。没有一个产品把这件事做成&quot;开箱即用&quot;。谁先做出来&quot;一键在Telegram里创建一组协同agent&quot;的产品，谁就拿到第一波用户。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ7h2bib1uWRLibHpq5RF3KgUhVuQe7WHatJoJw0uScd3rdBE13dFRTFLW8vYnGep2s1G2gpyK36pRSpPVnWoudYuPbT5qiaPGLic7Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p><strong>2、大总管调配层。</strong> Casey Sapp的Scout/Engine/Editor/Judge方法论是对的，但现在全靠手动编排。需要一个中间层产品，能根据用户的消息自动判断该分给哪个agent，或者需要哪几个agent协作。Greg Isenberg说的&quot;wrapper&quot;就是这个东西，但目前还没有好用的实现。</p>
+<p><strong>3、跨agent统一记忆。</strong> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ46jM26icaVqlPwkwAKnIygnuCmcznCVJxqBDlMfIfibc5ptub16ibmCHeRApmIpeOgh35ZPKMqmSTVgJica7CBXetZrlTQRGNf90c/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p><strong>4、维护面板（Panel）。</strong> 前面说的那个&quot;后台操作台&quot;——配置记忆、调整权限、设定调配规则、监控成本。现在这些要么靠命令行，要么靠改配置文件。做成一个可视化面板，让不会写代码的人也能管理自己的agent团队，这是Manus类产品真正应该去的方向。</p>
+<p><strong>5、企业合规封装。</strong> 个人用户可以接受agent偶尔犯错，企业不行。把OpenClaw的能力封装成带权限管理、审计日志、SOC 2认证的企业产品，这条路Knolli和Lindy已经在走，但远没有跑通。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ7pppuajgyIjbj3ibPMzJ9mwTkF33oExDE1jzIpuGTNvX46oEEWKNlCYbOK23hq624Knqw2XVKYhn8ANUPicXBicAZpxuza7NfLbI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>这五个方向有一个共同特点：都不是在做&quot;一个更好的agent&quot;，而是在做&quot;让agent协同工作的基础设施&quot;。单个agent的能力已经够用了，缺的是让多个agent像一个团队一样运转的管道、调配和治理层。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ5YICeEFkXLQCznIrz4mF1nsDeyTJGyibARiclKvgamNd1jzIeDoDJibHZ00emCrpQP0NOynxfzF5thM4pd72ibaX8zYJLQRibIUQH0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<h2>但先泼盆冷水</h2>
+<p>方向说完了，说说现实。以下是我的一些观察和判断</p>
+<p>第一， 安全现阶段不是2C获客属性。 现在很多OpenClaw生态的创业项目主打&quot;更安全的agent&quot;——NanoClaw、ZeroClaw都是这个定位。但安全是门槛，不是钩子。用户不会因为&quot;这个agent更安全&quot;而买单，但会因为&quot;不安全&quot;而离开。对创业者来说，企业端的资金和安全这块，大概率还是大公司在主导。创业者要想的是怎么破局，怎么把流量和热度先搞明白，这比堆安全功能重要。除非你是做2b，那么可以参考yc几个公司怎么玩的。</p>
+<p>第二， 这波创业者几乎都是有积累的人，不是从零开始的。 Daniel Foch能用agent跑房地产CRM是因为他本来就懂房地产流程，Greg Isenberg能提出&quot;boring industry+agent&quot;框架是因为他做过很多垂直SaaS。我目前没看到这一波里有从0到1特别牛的新人。都是之前融了一两轮、有行业认知的人在吃这波红利。如果你什么积累都没有就想进场，要想清楚自己的认知差在哪。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6CI5nUmfJztyQIVdVGLurxKsmN4XZNZ42Y0g7I2uKtSDcm5VHQQmwsmbibZaHVqcZN3gjW7qQx5h2FibnzQxqckCcgq9C0ycvHo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>最后一句话：不管形态判断多正确、创业方向多清晰，到用户手上没有一个产品用不起来，一切都白玩。创业者应先把基本功夯实，把市场解读透彻，然后快速开发一个版本出来。</p>
+<h2>现阶段能用的人很少</h2>
+<p>说完理想形态，说说现实。</p>
+<p>对个人用户来说，&quot;Telegram里开几个agent窗口，各管一摊事&quot;这个方案现在就能跑。不需要什么特殊架构，就是多部署几个OpenClaw实例，配不同的SOUL.md和技能，连到不同的Telegram bot上。成本是主要门槛——每个agent每月100-300美元的API费用，开三四个就是小一千美元/月。Daniel Foch算过账，对他的房地产业务来说替代人力还是划算的，但对普通个人用户来说这个数字不低。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ6y7icZc3PUS8ib1lsvw97BDjvB6gseORlCTaQ5ibcdvk761rEpTJcmVAPs7IQuqEj5ibhayhibQibZKsLdxmOiaczjUZhsNz0hrVyic9U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>对团队和企业来说，目前基本不现实。原因不是技术，是管理和合规：</p>
+<p>谁来决定agent的权限边界？agent之间共享的记忆里如果包含敏感信息怎么办？agent做了错误决策谁负责？WIRED的安全警告和HuggingFace 58.9%的审计评分不是闹着玩的——agent在明确任务上表现可靠，但在理解意图上还是0%。</p>
+<p>所以现阶段真正能把多agent跑起来的，是一小群技术能力强、风险承受力高、业务场景明确的个人创业者。像Daniel Foch（房地产CRM）、Ziwen（10-agent公司）、Presh Kumar（创业邮件自动化）这样的人。他们的共同特点是：自己就是老板，自己能承担风险，业务流程足够清晰到可以交给agent。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ6UibhjbVh1qUfzBNSpHLgBDXMib3oruiaAsGAm73IyHibibULicsebfK6SbIlDiaSPmE9iar5gicRTdSOOckbtkJvrQPcic3lUky2jeVquc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>企业市场要等Knolli（结构化权限+SOC 2方向）、Lindy（零配置+HIPAA）这类产品把合规和管理层解决了，才会真正打开。</p>
+<h2>总结一下</h2>
+<p>我认为AI agent的正确形态是：</p>
+<p>1、不是独立App，是嵌入在你常用的聊天软件（目前最优解是Telegram）里的对话窗口</p>
+<p>2、不是一个万能agent，是多个专注不同领域的agent，各有自己的窗口</p>
+<p>3、需要一个大总管agent负责调配和维护统一记忆</p>
+<p>4、主动汇报比被动聊天重要——每天早上你打开Telegram，每个agent已经把简报发过来了，你扫一遍就行</p>
+<p>5、记忆共享是当前最大的技术短板，Mnemo和Memory System 2.0是早期尝试</p>
+<p>6、现阶段能真正用起来的是少数个人创业者，企业市场还需要合规层的成熟</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ4bJkiaCshxwziaCw93icicwuIe0NquTfPkSTYClHo4t061kImibkVtbTbicmsqCw0NibgODOMicUHSnzE1VWKt3WpTu9En7XSRWHcgE8w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>OpenClaw的贡献是证明了&quot;agent住在聊天软件里&quot;这个方向是对的。接下来要解决的是怎么从&quot;一个agent一个窗口&quot;进化到&quot;多个agent协同工作&quot;，以及记忆怎么在它们之间流动。这两个问题谁先解决好，谁就拿下下一阶段。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ5yxEKbDSVvYm7cX11bHd0DsDjn9EU2I09hLRGqSnbbw3zuiaLV15sPWZ52haZfuyo9dmXPtRC2hc2lD5jJllLOapCxvnPbXFiaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<h2>附：支持和反对这个观点的案例</h2>
+<p>上面是我的判断。下面是从83条推文和132个用例里找到的支撑材料，也包括跟我观点矛盾的案例——放在一起看更完整。</p>
+<h3>支持&quot;agent应该在聊天软件里，不是独立App&quot;</h3>
+<p>René Schulte让agent &quot;Dave&quot;通过WhatsApp从零建了一个完整网站——没用IDE、没push过git，全程聊天完成。他的原话是&quot;no IDE, no git push, just chat&quot;。这说明聊天界面不只是&quot;方便&quot;，它本身就能承载复杂的生产力工作。——by @rschu，2月16日</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ7cLdR5Xf5yCPUEz1jKLg6cmFrsLxhdc1F94iaicoan1pVy3lG81OtMumibybLDeuWm4bDxEogvFJLVw5NbJEuuVeu3UcERJpaKNM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p>Contabo的部署教程有个细节值得注意：他们建议agent跑在VPS而不是Mac Mini上，因为&quot;Mac mini会离线，VPS不会&quot;。但如果agent通过Telegram跟你通信，Telegram本身就是永远在线的——设备离不离线不影响你跟agent的对话。</p>
+<p>Radek Sienkiewicz的描述很有画面感：&quot;它替我干活、关心我的睡眠、理解我的梗，早上准备好报告等我起床。&quot;这种交互方式天然就是聊天，不是打开一个App。——by @velvet_shark，1月25日</p>
+<h3>支持&quot;多窗口多agent，不是一个万能agent&quot;</h3>
+<p>Ryan Seamons第一周就给家庭每个成员配了不同的bot——这是最原始的&quot;每人一个窗口&quot;实践。——by @ryanseamons，1月25日</p>
+<p>Rahul Singh的Lead Agent &quot;Supaclaw&quot;抓取了Postiz的API文档，从零构建了一个专门管社媒的子agent。这就是&quot;大总管派活给专业agent&quot;的模式。——by @rahul_singh07，2月14日</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ7iahXdSwH8ukYc2AntGjDzwk2D9cdmIfJiahsjG02d8n3TILOKLqmA2nb2zwuicRiccsxgyyASCNwuygLEfv43BicXNxmCPEWoj5bY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p>Greg Isenberg的商业框架——&quot;OpenClaw是wrapper，Claude Code是工厂，sub-agent/skill是劳动力，垂直bundle是产品&quot;——本质上就是多agent分工。——by @gregisenberg，2月18日</p>
+<p>第五周集中出现的ClawWork、Duet、Agify、TinkerClaw Recipes全都在解决multi-agent管理的问题，说明&quot;多agent怎么协同&quot;已经成了社区最迫切的需求。</p>
+<h3>支持&quot;统一记忆是关键短板&quot;</h3>
+<p>Suhail Balhatlani做的Mnemo试图解决跨工具记忆——把Cursor、Claude Code、Gemini CLI等10多个工具的聊天记录统一索引到本地SQLite。但这还只是&quot;归档&quot;层面的统一，不是&quot;实时共享&quot;。——by @sbalhatlani，2月22日</p>
+<p>中国开发者社区自建的Memory System 2.0走得更远一步，做了持久记忆架构。这不是OpenClaw官方功能，是社区等不及自己造的——说明记忆是真刚需。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ4yHNpK6U6yhCTp4TLmqHgzkACgfYibJkHeQcs70PzKlIPibtaPcwHbrva7hx3wa9egaDq6ia8CSPB3oc7QiaDMgALYQo2JIZvDHNs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>OpenClaw v2026.2.9专门修了一个bug：compaction之后agent会失忆。连单个agent的记忆持久化都还在修，多agent之间的记忆共享难度可想而知。</p>
+<p>Machina（@EXM7777）说得很准确：&quot;真正的价值在于本地运行+持续记忆+主动推送&quot;——他把记忆列为三大核心价值之一，和运行方式、交互方式并列。</p>
+<h3>不支持我的观点的案例——也值得看</h3>
+<p><strong>&quot;嵌入聊天&quot;不代表好用。</strong> Will Cheung对比了OpenClaw和Manus，结论是OpenClaw复杂很多：&quot;OpenClaw像自建房，Manus像精装房。&quot;他还发现OpenClaw做简单查询要5-10分钟延迟，Manus几乎即时。&quot;聊天窗口&quot;形态的易用性天然受限于底层配置的复杂度。——by @willcheung，2月14日</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/K1icJ0FOfdZ6192819sMaQT7bKPWS3eLVIp6uSqU0cAYZNvHmk40LUicmVkM48khyIf7Hjodiau7a6G4qicvHOiaSCuH58ckqKba4bfTibiayib15g0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p><strong>大多数人根本用不了。</strong> OpenClaw维护者Shadow自己在Discord上说过：&quot;if you can&#39;t understand how to run a command line, this is far too dangerous for you to use.&quot;（如果你连命令行都不会，这个项目对你来说太危险了。）这直接质疑了&quot;聊天窗口降低门槛&quot;这个假设——形态上是聊天窗口没错，但背后的搭建和维护门槛很高。</p>
+<p><strong>Agent可能超越屏幕。</strong> Irvin的ROSClaw把agent接入了机器人操作系统，Vitto Rivabella给agent造了物理身体。这些案例指向一个方向：agent最终可能不住在任何屏幕上的&quot;窗口&quot;里，而是存在于物理空间中。当然这离主流还很远，但它提醒我们，&quot;聊天窗口&quot;可能只是agent形态的一个阶段，不是终局。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/K1icJ0FOfdZ5GKUa5BZXfNvHdTewtwXr3iaX6GakGUSsiaJzQZOEVLZBbTSMaVCucxAbbs9wj63MYRsFHJ8Eibgicc1fnCuONwR9CtkGuSYSwgUg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>继续滑动看下一个</p>
+<p>郎瀚威 Will</p>
+<p>向上滑动看下一个</p>
+<p>郎瀚威 Will</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/qtgASw0oyrTx3w-paBBWtg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

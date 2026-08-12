@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从零开始，教你用Codex搓出属于你自己的第一个硬件。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">从零开始，教你用Codex搓出属于你自己的第一个硬件。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%95%B0%E5%AD%97%E7%94%9F%E5%91%BD%E5%8D%A1%E5%85%B9%E5%85%8B">数字生命卡兹克</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91">硬件开发</a><a class="chip" href="../index.html?tag=3D%E6%89%93%E5%8D%B0">3D打印</a><a class="chip" href="../index.html?tag=Codex">Codex</a><a class="chip" href="../index.html?tag=%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5">学习实践</a>
+    <span class="date">2026-08-04</span>
+  </div>
+  <p class="lead">你上你也行</p>
+  <article class="content"><p>数字生命卡兹克 数字生命卡兹克 <em>2026年8月4日 08:06</em></p>
+<p>前两天，我发了一个视频。</p>
+<p>大概就是我搓了一个小硬件，就是一个用来提醒我久坐的猫爪。</p>
+<p>只要我坐得太久，它就会拍我一下，提醒我赶紧站起来走走。</p>
+<p>这其实是我第一次自己造个小硬件，虽然在大佬眼里，它肯定是一个非常非粗糙的东西，但是在造它的过程中，我还是有一个强烈的感受。</p>
+<p>AI时代，只要你敢想并且出身牛犊不怕虎，还真的敢去做，那你很多时候，真的就是无所不能。</p>
+<p>你要搁以前，想做个类似的硬件，虽然对大佬来说很简单，但是你依然要先花大把时间去学习开发板、传感器、舵机和状态机等等等等。</p>
+<p>然后你才能开始尝试搓硬件，搓的过程中，也一定会有无数的问题，好的，百度和Google等着你。</p>
+<p>但是在2026年的今天，你只要有想法，靠着和Codex聊天。</p>
+<p>一个纯粹的小白，居然也能一步一步的，也把它做出来了。</p>
+<p>当然，不一定非得用Codex，随便你喜欢的Agent都可以。</p>
+<p>所以，我也想跟大家分享一下整个的开发过程和故事，愚钝如我都可以，相信我，看完以后，你上你也行。</p>
+<p>在正式讲这个猫爪之前，我先来说一个特别特别简单的，用Agent来调试硬件的例子，方便大家理解后续的一些东西。</p>
+<p>这个简单的例子，其实就足以概括这整篇内容的本质了。</p>
+<p>就是上个月，OpenAI和Work Louder当时联名发布了第一款硬件Codex Micro。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2jjfQoZLoqVQiahlOVG5FmV55bbd8szicG7latFKV8GV2WeGYxm9D535IneJEnXtvLkmD0sQvbxVro3I4uuGyx13uNNAHzoCLLLibMxiapkfhGA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="OpenAI、初のハードウェア製品「Codex Micro」キーパッドを230ドルで発売 Codex の操作に特化した小型キーパッドで、価格は230ドル｜ビジネス+IT"></p>
+<p>OpenAI、初のハードウェア製品「Codex Micro」キーパッドを230ドルで発売 Codex の操作に特化した小型キーパッドで、価格は230ドル｜ビジネス+IT</p>
+<p>第一个专为Vibe Coding而设计的键盘。</p>
+<p>13个机械按键，一个旋钮，一个摇杆，然后这个离谱的售价，要230刀。</p>
+<p>说实话，确实挺帅。</p>
+<p>但230刀。。。</p>
+<p>我当时就在群里开骂了= =</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqUQkSoONgCbbA2KbgYstl478w1xCXak1eHVlTsDuP3rdv3zThDXwRjMVsLp8ZKMlht73iaoa4jWBvFTrMWVVtNycicAqTfkupZdw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>讲道理，我这个100多的宏键盘，功能几乎跟他差不多，而且我可以随便预设和自定义，它长这样。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2jjfQoZLoqXyx5D5maoBDIBWYC73F6rCUDuicmqfd5Eb4jJx5L3R5fh2v9S6T93AHRjV51489oibM96CJObjxgTIeGmxicgLbUhfiaS6oKcz4I8/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>一共6个键还有一个旋钮，按键声音超脆，底座还是金属锭的，手感巨扎实。</p>
+<p>这种键盘，他没法用来打字，但他上面的每一个按键，都可以被重新定义。</p>
+<p>你不仅可以预设成固定的按键，还可以一键打开某个软件，一件输入某个特定的词组，也可以让一个按键，替你按完一整串组合键，启动一套完整的工作流。</p>
+<p>我的这6个键，从左到右、从上到下，分别是Esc、删除、确认、打开Codex、/compact，以及豆包语音输入法。</p>
+<p>自定义的过程很简单，当然有原始的驱动和官方的网页，但是改起来其实特别复杂，在这个年头，我们想改啥，直接把这个宏键盘插上电脑，然后跟Codex说就行了。</p>
+<p>比如，我老是忘记Mac录屏的快捷键，那我就可以让它把最右边的那个键改一下。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqWXaRV05ru5CknBIQOKiba89Bs1vGHrnHKEwDVjT2aqPjicz3qytMib1V4sOnME9iaTSOOmAdR8NZ6UYWPsjC4cf67k09QHlUZX9uQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>它会在我的电脑上装一个macOS键盘改键工具Karabiner-Elements，要一些权限，给完了之后就实现了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqVXwhL0SMW1ibrDDFwf68QgLxeOea375d7tMGxZojlmtibjeIK9SvyiacFJibkDcicZQJ5Cc2YLiblXibvmxiaPj2znXSgdauBIYcshjNc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>后续再想改什么功能，真的是一句话，搞定了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqV7lkiaVia5TGlP0LHPeia3JU8WcfNd60IA4LlxJKcnMja20weEVspmNxyZyL5bk8PZ9f1lo1AIibPWI8drNicY1Xo9EXiaCNub4RZus/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>不过说实话，宏键盘当然不能算什么复杂的硬件开发，这就是个究极简单的用Agent来调试硬件的案例。</p>
+<p>我写这个例子，主要想说的是，在AI时代开发、或者调试硬件，大道至简，你真的不用害怕那些复杂的原理，那些你前期真的是不需要懂的，你只需要记住，插上USB，然后一切，交给Agent就可以。</p>
+<p>回到我做的猫爪的过程上，你会发现本质上其实也都一样，这里面包含的前期准备，电路搭建，代码烧录及调试，3D打印及组装等等，其实无论是哪个步骤，真的就是全程和Codex聊，聊需求，说我的偏好，问问题，跟着他一路坐下来，就成了。</p>
+<p>首先是前期准备，那自然是跟你的Agent来聊需求，这是任何时候开发的第一步。</p>
+<p>一开始，我就和他说我大概想做个什么，我想做一个放在电脑桌边的猫爪，它能判断我是不是坐得太久，然后伸出来拍我一下。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqVmOIG7yzLKWicUwA7gs40Ticf6UGac6DlzZdLfdstXDWDfqjYpMGnUQmRYhFw1zptO3lEL1UETco1oIoWyCUB6a2loYUiaxh71jA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>接下来就是不断聊天。</p>
+<p>先讨论整个东西应该怎么实现。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqUOY2QiaqmTKPaddLUBBr3t7gffyxaph2BhaZ4opP0ZricUiasCEl5mViaGxAciaz7AEjaI9aRwPsvzbkU6Wia4J6nPqbWibaynvsDBec/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>计时逻辑应该怎么做，猫爪应该怎么拍。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqVSZjTRLa4pnm6u9hJicSQwH0aLd2On8EzFEicEMwOhE1Fg7oiccOfO7qjetW9Lo8xSrbg7OGd3PtSiaCAIlzYHr2rXv7fia8UmeNw8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>怎么判断久坐时间。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqWIKWVxsmAWdLnFiaiaTNiau9PbvlGVxFnR1yiaU0RErbhrBglPeEYO3HokW9xEX92pD4UicruYNldHErwngiausYjZAY5xwF1Y0aUng/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>总之，有什么问题和想法直接和他聊就完事了。</p>
+<p>你要觉得哪个方案不合理，也直接让它改。</p>
+<p>比如最开始的方案里，摄像头每隔1秒就要检测一次我在不在。</p>
+<p>我觉得完全没必要，直接给他说让他改。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqUz4IN6SQZcG4dtogrmX5tEnrZ45wrSozFFsmKibZJpYLI3f8HpVMJISyIIqp4grYPp20IOdg1t07K02GTdoAQbd250viaLqTLJw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>虽然你可以不懂技术细节，但是，你不能不懂需求细节，你可以不需要知道底层工程是怎么实现的，但是需求的流程逻辑，你还是需要知道，要不然后面还是会比较痛苦。</p>
+<p>这个在开发软件和开发硬件上，基本都是一样。</p>
+<p>等这些细节聊得差不多以后，Codex会按照规范自己写好项目文档、开发计划。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqUKXdCsXKa1xXDdNWHgd13kWv2FicSibibPoqYGuLHrrt91sqwT7qp4ibfHeXAuiaGtvTk2CTUxWFYGSrBeMAoHF0suZnFvus9iack4U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>我确认没什么问题，就让它直接开始写软件层面的代码实现了。</p>
+<p>代码这部分反而没花多少时间，它一次就写得差不多了。</p>
+<p>现在这种规模的程序，讲道理，对GPT-5.6 Sol这种级别的模型来说，确实已经是个小儿科了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqWlh97JzThC525icdicZnh0suicDMlA1GV3iazpCBO5KXlfZ4IArmdnEmVSfib8DAYibww3IbBFR6dllJMbQJt5K19mxsDYdPtWP9KxA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>代码这块简单，但是接下来的硬件，才是最刺激的。</p>
+<p>具体用什么硬件来去实现，其实也是Codex告诉我的。</p>
+<p>我根据它给我的材料清单，把需要用的硬件都买回来了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqV4bUA8UHWlAM2LJFcrYeWAJcgBibg3MusanuSDoeKgQ0aylyiaSrOqmK8Bt8XjcOyfic9jdPN1nwD4A4e85WKf22icW97eiaw37ABU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>讲道理，在我过去的知识体系中，杜邦线和DC母头，是从来没有在我的词典中出现的词组。。。</p>
+<p>真就是现搜现学现买。</p>
+<p>最后用到的材料就是这些。</p>
+<p>快递到了，我拆的时候，人都是懵逼的。</p>
+<p>一块ESP32开发板，一个舵机，一个DC母头，一条USB线，一个电源适配器，外加一些用来连接的杜邦线。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqWSmOyESa0pujibzKoA63icRLefibnkMTF91ZO9ReiaMr5ibMpB9N3ia3U3iaunP2Y1tSotGxnDWJGZY5L6XRmIS70A3NPdqgRHCp8ib1U/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>不过不慌，遇事不决Agent。</p>
+<p>所以我把所有零件摆好，拍了张照，直接发给Codex，让他告诉我怎么连。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqXfiaqrcLS26ibPZozA6vXsCJ0rmslVdJAY7fVfY8PibzlnBE0gSbuxxrydncXtYiaSRUZf8d51fMCVv9dTAx6V8ghqVzBCtlN89jw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>这里需要提前说一下，不同型号的开发板、舵机和电源，引脚和电压可能不一样，下面只是我这套硬件的接法，零件不一样不能照搬。</p>
+<p>而且所有线，都应该在断电状态下接好！检查完正负极！再通电！！！</p>
+<p>要不然电接错了，板子是真的会烧的。。。</p>
+<p>不然我也不至于买这么多个。。。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqV2dkib9Lh6icAaA10x0umgYvtguRwnnsDuL78ibG5PyeNZA4O3nZ3xJw5QwHdaUWaq7wIibgI2xDJXDm74CGYLz9b1JE51k3ibhrM4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>所以我强烈建议如果真的是零基础的小白但是也想自己搓硬件玩的话，在跟Agent对话的时候，在开头加一句Prompt：</p>
+<p>我是一个智障，现在我想做一个XXXX。</p>
+<p>它就会跟你说的详细非常非常多，真的就是手把手教你，要不然他可能会默认你是一个稍微懂一点的人，某些所谓的常识，会给你省略掉，这都是血的教训。。。</p>
+<p>我这套需要连接的，主要是开发板、舵机和外接电源。</p>
+<p>舵机就像是猫爪的关节，它的转动也就代表着猫爪的拍打。</p>
+<p>开发板负责给舵机发命令，什么时候拍、怎么拍，外接的电源负责给舵机供电。</p>
+<p>连线这部分，我自己其实是完全不懂的，也全是Codex跟我一步步说怎么连，为什么这么连。</p>
+<p>这个其实一边干一边学习，真的还挺好玩的，莫名其妙就学了很多硬件知识。</p>
+<p>我就照着他说的做，磕磕绊绊但也一次性连好了。</p>
+<p>先用一根杜邦线，把开发板的13号引脚接到舵机的黄色信号线。它负责把开发板的命令传给舵机。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqWxZbXMpFFJg1s4frrmviaM0EhZQ0ExzqjCYZtkIiasCHPjZlIoyDbOKu2ZIQ2ibXZz1Sbmianztxn7AJ362goVUWLzGPRXON4p4pk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>然后是舵机供电。</p>
+<p>把电源适配器和DC母头连接起来。DC母头的正极接舵机的正极（红线），负极接舵机的负极（棕线）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqUIdOcZSN5ibh0XFQ2gAsVopNkuyO7j1AqPClucxWDRklxcBKWCtK3oDZXd5cMrYyRwZmV2lswaeH3oNZJxPcLykpBx3o9UbXT4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>还剩下最后一根很重要的线。</p>
+<p>用一根杜邦线，把开发板的GND口，也就是地口和DC母头的负极连在一起。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqWicBcU8ic7o9KQSI7yPzYt8fOXDXT6Woic3KicoVC42nia9B1BzYkCOJkeibH9Go6VOIEO73F191Hk2km6cjtF5QvNDmcd175OKSYfA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>这个操作叫共地，没错，我也是在开发过程中现学的。。。</p>
+<p>其实就是开发板和舵机传信号之前，得先约好什么位置算0，如果两边参考的0都不一样，开发板发过去的命令，舵机就可能听不明白。</p>
+<p>把它们的地线连在一起，就是让两个零件先把这个基准对齐。</p>
+<p>最后，我再用USB线把电脑和开发板连起来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqWniazd6KcHVQ6ooXY0icibcF43qhR2EvrncviazkTnJBGENbmWEAMiap8YiblgZhSqGQ8K0vHtkZvwukaTeTll8g77H6icKrcaIH3I2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>最后，接好的电路长这样了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqWmrS4IHDkXIE7Bc1ibCAcWyNEpgkuouP0y1yY1FDmmT3VUwIZV6hpCBFuaaJGw8bBsUiayJ0BO8nUI09jsbETZlblTTEtqZhCwA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>是不是特别简单！</p>
+<p>但现在呢，我们的猫爪还只是一堆连起来的零件。</p>
+<p>不仅没有身体，他现在也没有灵魂，所以，我们还得把程序写进开发板。</p>
+<p>要知道，开发板跟电脑不一样，它上面没有桌面，没有文件夹，我们不能拖个文件进去双击运行。</p>
+<p>所以电脑需要先把代码翻译成芯片能读懂的机器指令，再把这些指令写进开发板的存储空间。</p>
+<p>这个过程有点像小时候用录音机往磁带里录歌。</p>
+<p>电脑先把代码翻译成芯片能听懂的机器指令，再像录音机把声音写进磁带一样，把这些指令写进开发板的存储芯片里。</p>
+<p>这个过程，就叫烧录。</p>
+<p>如果不理解的话，其实也完全不影响，因为Codex知道下一步该做什么= =</p>
+<p>比如烧录电脑上需要安装对应的编译和烧录工具。</p>
+<p>Codex自己就给我检查电脑环境，自己选择合适的装上了，我就是一个无情的确认机器。</p>
+<p>这里Codex给我装的是Arduino CLI。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqVlVPEcykeRibFTcicrGuibFnZ2OQPzCIpBmVHCicdVeZwEbdwmEwAXx4aiaCSanBZicH5kAfoj8rrKtf7icvu8uHXyicgp5tHCrtG9yQk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>装好之后，让Codex烧录就行了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqUgJwKdnAUzcnV4ktybjYvWjSjNKrXZ7BrEiahzicGoR7rRYico57nib20SMCrnv2RH7kdAFiabibZjxyI1jbf0bJPDtesz5F3IeWCT0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>这个过程按下不表，不过意外的非常的顺利。</p>
+<p>烧录成功之后，猫爪终于可以开始攻击，不对，开始提醒我了。</p>
+<p>因为我在公司里买了个一个3D打印机给大家自己打印东西玩，所以呢，我就先用3D打印做了一块临时测试板，直接插在了舵机上，看看实际拍下来的动作是什么效果。</p>
+<p>说实话，第一次看到猫爪动起来，我当时真的有一种很奇怪的兴奋。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/2jjfQoZLoqX0vXVlJnIZx9tsuN5aYNo297fVnweAlQ2p9oxOSBQl4teQZO3XtJdXA2wD9HfT9R4FNvvm5eMicnFe6tzmu30qberUbegZsfk8/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>从无到有，我靠着AI，真的让桌上的一个东西动了起来，虽然还很粗糙，但是确实是我亲手做的一个小东西。</p>
+<p>这种感觉太爽了。</p>
+<p>但第一版的效果，还是非常粗糙，肯定还需要不断的调试。</p>
+<p>调试的过程也很简单。</p>
+<p>就还是，觉得哪里不对，直接用人话告诉Codex就完事了。</p>
+<p>比如第一版的重拍模式，幅度还是小了一点。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqXUFia9ehs510lRN6Sr8XEP2ZFdF9mjQS8lg58EgMmTG6r1ajUiayTkpZwzeMU1Z1x1kJibS5ic4DxbNcZDNbINFaYjMnTRXsE72EI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>它会自己改开发板代码，重新编译，再烧录进去。</p>
+<p>新程序写进去以后，开发板自动重启，新的动作马上生效。</p>
+<p>就这样。</p>
+<p>整个调试过程中，花时间最多的其实是猫爪的动作。</p>
+<p>比如拍打的速度、角度还有模式这些，你不看到实物你其实是很那预估的，所以其实都在最开始讨论的方案上有了修改。</p>
+<p>为了更快地试动作，我干脆直接让Codex又开发了个网页控制台。</p>
+<p>点一下轻拍，猫爪就轻拍，点一下重拍，它就重拍，改完参数，不用真的坐45分钟，立刻就能看到效果。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqXibRP7j6fTZM8NF0CibiaSJUSLcMZ2W8OE8OA94P24DjYNNkgibsmu2G3uia7VjVCibve6eKBbFu8ibMkqLhzibaEueXehib5hfPiap0nYg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>基础动作调得差不多以后，我又想让它有点性格。</p>
+<p>既然未来都想做成猫爪，那总不能只会打人吧，于是，我又给他加了一个撒娇模式。</p>
+<p>这个模式下猫爪会在15度之间来回摆动，就像是在撒娇。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqWJPQ8zsoORT1xBNiciaea45iaH50hrORYC7dnRxdbAdtJLtCiblC4pnF7C66zQedU1sa8jgPzd8nL8Zm7PZUbgyl5jQySf4Nvjt5Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>我还让他加了一个癫狂模式。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqXjFnSIGKmZoUVuXaCxjw4LU4OJKwGsRh0DIPicToCcIjkHlCCRrwibxibib0hFfAdeXWKyIC5dKM6PVEk5ZwkVw33ia6bjvmpyO7WA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p>效果长下面这样。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/2jjfQoZLoqU5S37Usaoxyw4wzFVK1BKm6x5aNxrw3koEgPpDtyTjayibLjT7xwwdtjkMibF5VML99iaDjnN4BMGicOIK35vF6pAMZdbwHd8MHvw/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p>就是疯狂的抽搐，疯狂的抽你，一直到抽到你的心趴上。</p>
+<p>那现在，纯粹的硬件动作，我就算调试的差不多了，每隔45分钟就会抽疯狂抽我，提醒我滚起来运动。</p>
+<p>但是问题来了，那就是还有点丑，现在，你完全看不出来猫爪的样子，而且都猫爪了，你也还应该得有个猫窝对吧。</p>
+<p>于是，我又直接3D打印了。</p>
+<p>大家相信我，Agent可以操控一切，3D打印其实你也不需要会3D打印，你把需求告诉你的Agent，让你的Agent操控你的建模软件还有3D打印机就行了。。。</p>
+<p>我先让Codex根据舵机尺寸和拍打方式，直接画了一个大概的结构方案。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqXUIrHXQibxeicrV6Ua5VVAliax3ESZG4VAkl9pbicSklNe0y0dZ6PibPicicnEzDUHzFSNnUDSCDPG2RyMNlhLgYaxg7JqFWkgtJGWXI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p>然后我去拓竹3D打印机的社区里，找到了别人上传的猫爪和猫窝模型，再按照我这套舵机和内部结构做修改。</p>
+<p>这里修改的部分，当然也是直接让Codex改的。</p>
+<p>他找了一个OpenSCAD的软件，这是用代码写3D模型的，尺寸可以写得很精确，做嵌套类的模型会特别严丝合缝，然后，它就去改了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqUg1LBBaup6oN4RH7C6X9FdvyTN0sXEM3zf66tNHys8LanhDbwSJC6ibVKZpumho8aF7zOaQ2dCD6pIkRUB5EZcIHKuicwmYicicVY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>最后改出来的模型长这样。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqXgnyiazWP67ScnzDZK6NpzD8DELLQGeM8dAKUkhyqMluaU6qRZicy3JulZEZ97gvBJo3K0Nk1715bZvyMwLsT8vtVzZDGibt2TLI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>于是，我又花了一些时间，直接给3D打印出来了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2jjfQoZLoqVs4h0AIde3XJkykEuesqwicFuOP7xUlh1N1wxibyfoOk4VickLH2oGen67V2n70bjXFNtK29p9VowBAP3X7xhgIkQDcibSHibWE7a4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>然后，做了一点简单的涂装，我们的小伙伴又贴了点毛绒绒的毛，这下，更像猫窝了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqVyGRxnx0BfAiaHBXOpBCa4xxDU0xOUmia4v16micR44PicKOJgcY1GvoXnTdQ42ias2vjPWDz1oibiaeiaSMv5l8nrFPHHAA6jfRIBnMI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></p>
+<p>最终，它就出现在了我的桌面上，成为了我桌搭的一环，也肩负起了，提醒我起身运动的使命。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/2jjfQoZLoqUDHFrOibTqhlfSAjcddw5P7bcmrNQ3KZs8Y3qPhFjbUmSqH8Ou501GWHqdA2ZiabcbXcsaEAcEticibqaGZZN9uBicPqwibyYtmHF18/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p>说真的，整个项目从讨论需求到装好，中间最花时间的不是写代码。</p>
+<p>是等快递，整个的制作周期也就5天时间，但是有3天，都在等快递。。。</p>
+<p>如果你手边有这些东西，相信我，2天就足够了。</p>
+<p>我之前一直觉得硬件离我很远，或者说，我对硬件有一种天然的畏惧心理。</p>
+<p>但实际上手之后发现，我发现对于这种还比较初级的简单的小项目，并不需要先把整套硬件知识学完才有资格开始。</p>
+<p>不知道怎么接，就把零件拍给Codex看。</p>
+<p>不知道怎么烧录，直接给Codex说。</p>
+<p>甚至你都不知道该做什么的时候，也直接可以问Codex下一步该做什么。</p>
+<p>当然它没有把硬件开发变成一件完全不用动脑、绝对不会出错的事，AI时代下，所有的入门都非常简单，你也可以快速的达到60分的水平，但是你想继续做出更牛逼的东西，该补的课、该有的经验，你还是一个都没办法落下。</p>
+<p>它真正缩短的，其实是一个普通人面对陌生领域时，那段不知道下一步该干什么的路。</p>
+<p>从前，你得先学会很多东西，才敢开始做。</p>
+<p>现在，你可以依靠着AI先开始做，再在每一个具体问题出现的时候，再跟AI互动，把需要的东西学会。</p>
+<p>这个顺序的变化，我觉得特别重要。</p>
+<p>人们称这种方法，叫做：</p>
+<p>干中学。</p>
+<p>以前，AI帮我写过代码，做过网站，剪过视频，改过稿子。</p>
+<p>但都在屏幕里面。</p>
+<p>这次，屏幕里的想法，终于长出了一只爪子。</p>
+<p>虽然最后做出来这个东西，还比较粗糙，有很多可以迭代的地方，远远谈不上完美。</p>
+<p>但自己动手，把脑子里的一个小念头做成真实存在的东西，感觉真的很好。</p>
+<p>希望这个小小的案例对大家有用，如果有人在这篇内容的影响下，也尝试着去搓出一个小小的、属于自己的硬件，那我觉得，就太酷了。</p>
+<p>最后，也愿我们所有人。</p>
+<p>无限进步。</p>
+<p><strong><strong><strong>以上，既然看到这里了，如果觉得不错，随手点个赞、在看、转发三连吧，如果想第一时间收到推送，也可以给我个星标⭐～谢谢你看我的文章，我们，下次再见。</strong></strong></strong></p>
+<p>&gt;/ 作者：卡兹克、tashi</p>
+<p>&gt;/ 投稿或爆料，请联系邮箱：<a href="mailto:wzglyay@virxact.com">wzglyay@virxact.com</a></p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+<p>数码硬件 · 目录</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ESx8LG-vpKucEGAEQfEokA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

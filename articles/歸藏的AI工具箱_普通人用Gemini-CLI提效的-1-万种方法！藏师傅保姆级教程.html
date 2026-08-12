@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>普通人用Gemini CLI提效的 1 万种方法！藏师傅保姆级教程 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">普通人用Gemini CLI提效的 1 万种方法！藏师傅保姆级教程</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Gemini%20CLI">Gemini CLI</a><a class="chip" href="../index.html?tag=%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7">命令行工具</a><a class="chip" href="../index.html?tag=%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86">本地文件处理</a><a class="chip" href="../index.html?tag=%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86">多媒体处理</a>
+    <span class="date">2025-07-03</span>
+  </div>
+  <p class="lead">大家好，这里是歸藏（guizang），分享一下 Gemini CLI 不写代码能有多好用！</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年07月02日 17:08</em></p>
+<p>大家好，这里是歸藏（guizang），分享一下 Gemini CLI 不写代码能有多好用！</p>
+<p>前几天最近随着 Claude Code 这个命令行 AI 代码工具的火爆，谷歌也耐不住寂寞推出了自己的同类产品 Gemini CLI，而且完全免费，非常顶。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ic8wCs3sZAPQia57BOWFOWnzRbicAoqbgwgxcbr2Keo4bMHOFuhbb0Bvww/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>探索和整理不易，这里先要一个点赞👍喜欢🩷和转发✈️，谢谢各位了</p>
+<p>来看一下我会教你用 Gemini CLI 实现哪些能力：</p>
+<ul>
+<li>如何低门槛两步用上 Gemini CLI</li>
+<li>查找和批量编辑本地文档</li>
+<li>分析你的 Obsidian 笔记库，将相关的笔记链接起来</li>
+<li>分析本地图片内容批量修改文件名，给图片打标</li>
+<li>批量修改系统设置，创建你的工作模式一键开关</li>
+<li>为本地文档生成效果丰富美观的 PPT</li>
+<li>帮你剪辑和处理本地视频，加水印、转 gif、加音乐、转序列帧。。。</li>
+<li>帮你快速批量下载 youtube 等网站视频和封面</li>
+<li>帮你处理图片，加滤镜、加水印、改大小、多张拼合。。。</li>
+<li>帮你实现不同文档格式的互转，Markdown 转 Word。。。</li>
+</ul>
+<h2>简单解释一下这类产品和 Cursor 之类的区别</h2>
+<p>首先他们是没有界面的，所有的操作都是在终端以命令行的方式展示。</p>
+<p>然后就是也是 Agents 可以自动执行任务处理本地文件，同时内置了非常多的工具，比如谷歌搜索、阅读文件、查找文件、搜索文字、写入文件、保存记忆等，你输入 /tools 然后回车就可以让他列出目前支持的工具。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ic8K9Mecic0vslNCvXyDPpOpRd869wXic66v1AwBfepSbpu7TM804iaGvaA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>另外 Gemini CLI 也是支持 MCP 的，你可以安装其他的 MCP 工具帮助模型扩充上下文。</p>
+<h2>我不会编程是不能不能用</h2>
+<p>很多朋友说命令行是不是很复杂啊，我不会编程是不是会很难用。</p>
+<p>其实并没有， 如果你的网络环境正常，能够正常登录 Gemini CLI 的话，跟使用 Cursor 没有本质区别 。</p>
+<p>因为核心交互的时候还是主要为提示词输入框，命令行又不用你写，Gemini 写就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ic5tjgl7bXr5ibSREV3pkYLxYibG3r92OzcUaibIDTwfV1JaLuRX1vTJkgw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>如何使用 Gemini CLI</h2>
+<p>从这里开始我所有的演示都基于 Mac OS 的自带终端进行，Windows 大部分操作都是通用的，但是可能出问题概率比 Mac 复杂。</p>
+<p>首先要做的第一步就是进入到我们的启动台，搜索终端两个字，搜到之后打开。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ic7KYKuFN2S0Fia3iaLd9ib61T1EfJzmYQlsK700kyvWOdicWP6zmjNmxKHA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这时候你就看到一个空白界面里面写了些你看不懂的字，不要担心。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icaa5Sicvcv4Q7Eu8ibGYf0ic7Ug7Qdicjfz3aNs0BDtrqa8J6GFsuW1BPjA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这里我建议我们想好要进行的任务之后，新建一个文件夹把需要的任务素材扔进去，然后按住 option 按键鼠标右键选择“将 XXXX 文件夹拷贝为路径名称”，这时候你就快速获得了这个文件夹的路径。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ictGeW0Kf69msib3K5r6EOoMaMZfPbpibgBd2ftC3lSHqR9ibS9xa25Kia2A/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后我们回到我们的终端窗口，输入 cd + 空格 + 你刚才复制的路径，接下来你终端的所有操作都只会影响这个文件夹的内容，不用担心把电脑搞坏。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icLgPoCHribDj5qicBCMtHH8r6NNPE6TXkFnw9dKyedDLGTYSsmenwZEjA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>到这一步我们终于开始安装 Gemini CLI 了，非常简单，你只需要输入下面的内容然后回车就行。</p>
+<pre><code>npx https://github.com/google-gemini/gemini-cli
+</code></pre>
+<p>安装成功你就会看到这个界面，应该会先让你选择命令行的颜色主题，然后让你选择登录方式。</p>
+<p>这里需要注意： 终端的操作大部分时间需要用上下左右方向键来操作选项，选中之后按回车确认。</p>
+<p>你只需要选择一个自己喜欢的主题之后，选择正常的谷歌账号登录，在拉起网页登录后关掉就行。</p>
+<p>我这个这里已经登录了，所以没有这些选项，然后你就能看到提示词输入框了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icB8gBPQDrLJ8uwfvnfxVCWkMEPWOHKTGXHiawKWlaZn9pdiaXbT78MWaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>恭喜你到这里，你已经完成了 Gemini 的安装。</p>
+<p>由于用的 NPX 的安装方式，所以你以后每次关掉终端重新使用 Gemini CLI 的时候都需要输入开始的那个命令，不过不用登录了，直接就能用。</p>
+<p>另一种方法是输入下面这个命令，但是对于不会编程的人来说很麻烦，启动就是少输入点东西，输入 Gemini 就能启动。</p>
+<pre><code>npm install -g @google/gemini-cli
+</code></pre>
+<p>最后由于命令行本身都是英文的，可能很多人会望而却步，这个时候你可以 装个 Bob 这个翻译软件，支持划词翻译 ，看不懂的选项直接选中划词翻译就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icdQM1CvTguqhHxwcm8Ts5Ns72AaSAqe4X1lvJnvbict47B8j8QNPdlaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>来点基础用法</h2>
+<p>装好之后我们可以来点基础用法了。</p>
+<p>由于 Gemini 可以看到你的文件并且操作，而且它还有生成能力，本身模型还是多模态的，所以即使只用本身的工具也可以有很多用法。</p>
+<h3>查找和生成本地文档</h3>
+<p>首先是 Gemini CLI 本身支持谷歌搜索， 你可以让他搜索指定内容给你写成文档，也可以对你本身的文档进行编辑 。</p>
+<p>当然搜索工具经常会限额，这个有点恶心，比如让他搜索歸藏的信息并且整理一个介绍文档。</p>
+<pre><code>请使用 Google 搜索功能，查找关于‘量子计算最新突破’的资料，阅读我本地 /research/papers 目录下的相关文档，然后为我生成一份 Markdown 格式的综合报告，并存为 quantum_computing_report.md。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icKuuYvlFbwHe6hCaPW2ZJC6MYvdChc6giazsod7LYvhZkLE8UqAqsOYw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>你也可以让他分析你保存在本地的文章之后进行改写，生成新的文章。</p>
+<p>比如我这里就让他把 Karpathy 的软件 3.0 文章改写成适合发布的博客文章，同时生成对应的推特发布版本，也可以对于会议总结之类的文档进行分析和处理。</p>
+<pre><code>读取我刚才录音转写的会议纪要 meeting_notes.txt，总结出关键决策点，并识别出分配给我的所有待办事项，将它们以任务列表的形式添加到我的 todo.md 文件中。
+</code></pre>
+<pre><code>根据Andrej Karpathy 软件 3.0 分享的文章，将其改写成一篇约 800字的博客文章，风格要轻松有趣。然后，为这篇文章生成 3 个适合在 Twitter 上发布的推文版本，并附上 #AI #Tech 标签
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icjufnsgtkdMTdjtIMR1so6Ipz8ic5DgTXrwPYGJwgSKCvFH4PibZ2YUmA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>记得我之前写的用 Curosr 这种 IDE 帮助分析 Obsidian ， 把 Obsidian 当做本地知识库的方法吗，Gemini CLI 也可以，甚至更加强大。</p>
+<p>你可以找到你的 Obsidian 文件夹打开之后启动 Gemini CLI，然后让 Gemini CLI 查找相关的内容。</p>
+<p>比如我这里就让他检索我所有的剪藏文件，找到 MCP 相关的文章，然后给我生成一个带反向链接的《MCP 剪藏内容索引》文档，可以看到他完成的很好。</p>
+<p>每个无序列表都有文件标题以及文章的总结，最后还有链接可以直达那个文章。</p>
+<pre><code>这是我的 obsidian 剪藏文章文件夹帮我检索所有有关 MCP 相关的讨论文章，写一篇内容为是用无序列表总结所有相关文章，并在每条总结后用反向链接加上原来的标题方便我跳转。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icW981YF2vvDU71l0Gtd2Jo6RSJORvSA14dFKCC91nyibiaV6D7PId1kgQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>提到反向链接了，就不得不提 Obsidian 的一个知识图谱的功能，它可以把所有有反向链接的相关文档都链接起来，形成你自己的网状笔记网络，方便你学习和回顾。</p>
+<p>但是反向链接需要你自己手动加，大部分人都没这个毅力， 现在有了 Gemini CLI 问题解决了，可以让他帮你给你文件夹中的相关文档加反向链接。</p>
+<p>不过这个需要的时间比较长，如果内容多的话可能得等一段时间。</p>
+<pre><code>这是我的obsidian剪藏文件夹，帮我读取每个文章的标题和开头内容为相关的文件加上反向链接，确保 Obsidian 可以生成知识图谱，你需要分析标题和文档开始的部分，搜索对应的关键词，可以搜两到三个，同时都搜到的再进行反向连接的添加。
+</code></pre>
+<h3>图片分析和处理</h3>
+<p>由于本身 Gemini CLI 是多模态的的，所以你的图片也可以让他帮忙处理。</p>
+<p>比如我打开了一个全是图片的文件夹，里面的图片名字乱七八糟的，这时候就可以让他分析图片内容之后根据图片内容给图片重新命名。</p>
+<pre><code>分析我当前文件夹下的所有图片内容，基于图片内容批量对图片进行重新命名。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ickv9Ce2yIfcqds6nsyBGQqLKIRCicLcbOXvAVGCTbLXokibQiaWUoPNPQg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>再重新命名之后我们也不能浪费他分析的图片内容。</p>
+<p>我们都知道在训练图像模型或者 Lora 的时候需要对图像进行标注，大部分训练工具都是把标注放在一个跟图片命名一样的文本文件里，现在我们就可以让 Gemini CLI 来做这件事了。</p>
+<p>可以看到他执行的非常完美，以往这些你还得找对应的工具，而且不好自定义要求，现在提示词就行。</p>
+<pre><code>分析图像内容，生成对图像的详细描述，除了内容还有风格，然后将这些描述放在跟图像名称一样的文本文件中。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ics4l2WvxgypaGXWulLnSNfI3uicSzHa6y1HX253o4foF2vYvy4Jwea0g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h3>修改系统设置整理文件</h3>
+<p>Gemini CLI 除了可以读取文件和修改文件外也是可以控制系统设置的。</p>
+<p>比如我们就可以写好自己日常对于软件和系统设置在不同工作时间的喜好，需要的时候一键完成所有操作的更改。</p>
+<p>这里我就让他给我关掉浏览器，然后打开 Obsidian，降低系统音量，直接进入工作模式。</p>
+<p>更进一步让他把操作写成脚本，之后你就可以直接双击脚本完成系统设置了。</p>
+<pre><code>Gemini，帮我创建一个名为 deep_work.sh 的脚本。这个脚本需要：1. 打开 Obsidian。 2. 关闭所有浏览器和通讯软件。 3. 开启系统的‘勿扰模式’。 4. 播放我本地 /music/focus 文件夹里的白噪音。
+</code></pre>
+<p>我们肯定也有很多时候桌面或者文件没有整理乱七八糟。</p>
+<p>这个时候就可以让 Gemini CLI 新建文件夹进行分类和整理。</p>
+<p>但是这里得注意，不要让他整理过大的过于重要的文件夹，不然误删了就痛苦了。</p>
+<p>这里我就让他把刚才的图像和标注文件新建了两个文件夹分别整理了。</p>
+<pre><code>帮我将这个文件夹下的图像和文本文档通过新建的文件夹进行分类
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icN38aC0uJt6ONOcQG8wiaiaq8UJYFiaD4oWuvnr43iaTbqMfRKFY0Z9dEvQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>Gemini CLI 的高级使用方法</h2>
+<p>上面都是些基本用法，你最近可能也看到了一些。</p>
+<p>但是我发现结合一些本地软件，Gemini CLI 能实现对各种文件更加高级的处理，比如视频转 gif、youtube 视频下载、加水印、文档格式转换等。</p>
+<p>这些就非常牛皮了，而且我们日常内容创作大部分都非常需要。</p>
+<h3>为本地文档生成PPT</h3>
+<p>前面我们有了文档了，但是很多时候演示的时候总不能真给人看 Markdown 文档吧，能不能生成 PPT 呢？</p>
+<p>可以的，朋友，必须可以，比如我这里就把前面我那个 MCP 索引文档的内容直接转换为 PPT 了。</p>
+<p>这个依赖一个叫 Slidev 的项目，它可以用类似 Markdown 文档的格式将内容变成带有丰富样式的 PPT。</p>
+<p>你不需要知道这个项目的细节，直接用我下面的提示词生成文件之后，复制文件到这个页面（ <a href="https://stackblitz.com/github/slidevjs/new?file=slides.md">https://stackblitz.com/github/slidevjs/new?file=slides.md</a> ）预览就行。</p>
+<pre><code>帮我基于刚才总结的那个 MCP剪藏内容索引文章用 Slidev 这个专门用来用 Markdown 格式生成幻灯片的工具语法写一个对应的 PPT，用 Slidev 的语法美化一下
+</code></pre>
+<p>上面的 Slidev 不需要本地安装直接预览就行，接下来我们介绍一些需要本地安装的项目，这些本地的软件，非常强大，但是由于本身他们是没有界面的，阻碍的很多用户使用。</p>
+<p>但是有了 Gemini 之后一切都解决了，提示词可以直接转换为驱动他们的命令行，也可以用提示词直接安装他们，你直接用就行。</p>
+<h3>用 ffmpeg 帮助处理视频</h3>
+<p>首先先介绍一下 ffmpeg 这个项目，给予他你可以实现非常强的视频编辑能力，理论上剪映之类的视频编辑软件都是基于这个完成的。</p>
+<p>你可以对本地的视频进行拼接、剪辑、增加文字、转换格式、转换分辨率、增加音乐，基本上你能想到的视频编辑能力他都能做到。</p>
+<p>首先我们需要大概你需要处理视频的的文件夹，然后启动 Gemini CLI 第一个命令是让他安装 Homebrew。</p>
+<pre><code>帮我安装 Homebrew 并配置环境变量
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3ichzfp33vZHghxh1iauRBY2wB7kxYAkwDcuDYtm5qvEcRX1BWrtuIibVUQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后安装完成后，让他用 Homebrew 帮你安装 ffmpeg。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icONpeR5078NsiaOhY4Rq5G2S5dEIYRJHphg4zKosIWZhojN9icXI0H5xQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<pre><code>帮我用 Homebrew 安装 ffmpeg
+</code></pre>
+<p>看到没，跟网页哪些乱七八糟的要求都没关系，你只需要说两句话，就全部安装了。</p>
+<p>然后我们就可以爽用了，先给我们指定的视频加个水印试试。</p>
+<p>可以看到新的视频右上角果然有了一个水印，这种言出法随的感觉谁不喜欢，你不需要了解原理，你就只需要知道所有的视频编辑他都能帮你搞定。</p>
+<pre><code>帮我将 Cute Cat Holding Item_watermarked 这个视频用 ffmpeg 打上一个 10% 透明度的水印在右上角，水印内容为“guizang”然后存储为新视频。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icC9lLIics9T0YzqvIEsOibevOx9au3ozLwxlncmyC5mMnVibBPH5ruPfiaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>然后我想要给视频配乐也可以，你只需要告诉他视频文件和音乐文件的名字就行，我甚至让他给音乐加上了淡入和淡出。</p>
+<p>他先是获取了一下视频的时长，然后就开始操作了，然后搞定了，非常完美，严丝合缝，淡入淡出也加上了，可以看剪映界面预览的频谱。</p>
+<pre><code>帮我将 XXX 这个视频用 ffmpeg 将它和 XXX 音频合并为一个新的视频，音频的长度需要跟视频一样长并且加上淡入淡出。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icPfia1EGeY0nZgo3bEEwZveEu6e6m05kcbtEKOGibhpUFd9XNOTdvxpBw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>我们很多时候需要把视频转换为序列帧，然后拿其中一帧进行处理，或者处理所有的帧，以前你是不是还得到处找这种工具，而且转换效果不一定好。</p>
+<p>Gemini CLI 一句话就能搞定，处理的又快又好，而且节省了用网页工具上传下载的时间。</p>
+<pre><code>帮我将 XXXX 这个视频用 ffmpeg 转换为 png 序列帧放在一个新的文件夹里面。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icEFiboq4lurInt3F7Qic38icUY8duawLtjGXt4kJxWHRUHribv9RiaBX6ppQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>另一个常见的任务就是视频转 gif，尤其公众号有 10 个视频的限制，很多时候迫不得已得转成 gif 发布。</p>
+<p>Gemini 捕捉到了高品质这个关键词还制作了调色板保证颜色还原度，最后处理的非常完美。</p>
+<pre><code>帮我将文件夹中的第一个视频用 ffmpeg 转换为一个高品质 gif
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icvxRPtqu6SxoVGK10xa6GO8BSEhZW7mqB12k9wHymV1iaFpxCtOC5sbQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h3>利用 yt-dlp 下载视频</h3>
+<p>像 ffmpeg 这种宝藏项目还有很多，比如 yt-dlp 这个项目跟 ffmpeg 配合几乎可以下载你能想到的所有视频平台的视频。</p>
+<p>我们还是可以让 Gemini CLI 帮我们安装 yt-dlp 这个项目就行。</p>
+<pre><code>帮我用 Homebrew 安装 yt-dlp
+</code></pre>
+<p>然后直接提供视频链接他就会帮你下载，甚至可以批量下载多个视频或者一起连封面和视频一起下载，再也不需要忍受那些工具的垃圾网速了。</p>
+<pre><code>帮我用 yt-dlp 和 ffmpeg 下载这个 liblib 的视频和它的封面：XXX 链接
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icaAcnWWOWmppzqxsDoWRrKjEiaiapymOwl5dsRCnlXPibg43TibIqPpl8icw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h3>利用 ImageMagick 处理图片</h3>
+<p>处理视频我们有 ffmpeg 这种项目，当然图片也有。</p>
+<p>ImageMagick 是一个极其强大的工具集，你可以用它来转换格式、缩放、裁剪、旋转、添加滤镜、组合图片等等。</p>
+<p>依然是老一套，先让 Gemini 帮我们安装</p>
+<pre><code>帮我用 Homebrew 安装 ImageMagick
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icKoPjoNKkcy5KvlcfFF1FCCl35wH3jcro003voqylS63rvmqcwPvkMw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>先来一个常见任务，我们设计师做外包经常用，在没结款之前给甲方低分辨率和带水印的图片，现在就可以直接批量完成。</p>
+<p>这里我让他把所有图片宽边调整为 800 PX，然后统一加上带“内部资料”文字的水印。</p>
+<pre><code>帮我用ImageMagick把文件夹下的所有图片的宽边尺寸统一调整为宽度 800 像素，并给它们加上一个10%透明度的灰色水印，水印文字是‘内部资料’，放在新的文件夹里面
+</code></pre>
+<p>中文的水印有些问题，后来改成英文就 OK 了，而且出错之后他自己开始用多模态能力 检查修 改后的 图像了，发现 10% 不透明度的文字不明显，又自己重新改了一下，太聪明了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3iclUCDTJ9rJa5cib7WGqhQkUfO1NF9TLlLicibBicsTgv9vqlWpR0WZXbIIw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>然后再来一个常见的图像拼接需求，这种在媒体上发消息的时候经常需要，尤其是推特。</p>
+<pre><code>将加过水印的图片用ImageMagick拼合成一张四宫格图片，中间有白色分隔
+</code></pre>
+<p>搞得不错，这几张图比例不同，所以没有对齐，可以在命令上加上统一比例这种要求就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icSOBEEZt7cbZHwYZdNyMYTmOVlpXw6cucGwXjtrOGywjia2bYtEcibQfA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h3>利用 Pandoc 进行文档转换</h3>
+<p>文档格式转换也是常见的需求，相当多的公司工作文档还是 word，很多时候我发过去.md 文件那边都不知道怎么办。</p>
+<p>首先还是让 Gemini CLI 帮我们安装。</p>
+<pre><code>帮我用Homebrew 安装 Pandoc
+</code></pre>
+<p>这个时候我们就可以利用 Pandoc 这个项目进行各种文档格式之间的互相转换，当然批量转换也是可以的。</p>
+<pre><code>将Andrej Karpathy 软件 3.0 分享这个 Markdown 文档用Pandoc转换为 word 文档
+</code></pre>
+<p>可以看到转的很好，Markdown 的一些基本格式也都迁移了，不管是加粗还是无序列表有序列表。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgetDEuJrltjre9ojsGTbq3icDYOvclCZDl17b2C7k0ySwp5uU4xN45NrtvrP05kd3QZJ8ZWu4Q80rA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>好了教程到这里就结束了。</p>
+<p>到现在你应该知道为什么我会说会有一万种用法了。</p>
+<p>你可以用 Gemini CLI 控制这些已经非常成熟的命令行项目，基本上你所有的需求都能找到对应的项目。</p>
+<p>不是只有 MCP 才能做 Agent，这些传统工具在有了 LLM 加持之后会更加强大。</p>
+<p>看到这里，你可能会突然意识到： 原来那些让我们望而却步的专业工具，其实一直都在那里等着我们。</p>
+<p>史蒂夫·乔布斯说过的一句话：&quot;技术应该是隐形的。&quot; 今天的 Gemini CLI，正是让那些强大的命令行工具变得&quot;隐形&quot;——你不需要理解它们的工作原理，只需要说出你的需求。</p>
+<p>更重要的是，这种改变不仅仅是效率的提升，而是创作门槛的彻底消失。</p>
+<p>所以，如果你还在犹豫要不要试试 Gemini CLI，我想说： 别让&quot;我不会编程&quot;成为你探索新世界的借口。 因为在这个新世界里，你需要的不是编程能力，而是想象力。</p>
+<p>那些曾经高高在上的专业工具，现在都在静静等待着你的一句话。而你要做的，就是勇敢地说出你的需求。</p>
+<p>因为最好的工具，是让你忘记它是工具的工具。</p>
+<p>探索和整理不易，这里要一个点赞👍喜欢🩷和转发✈️，谢谢各位了</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 4.48 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | 3 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 4.48 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.90 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 861.6 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Frdf_Gh3Xhvvmw2g-zOolA?clicktime=1751512632&amp;enterid=1751512632&amp;scene=126&amp;sessionid=1751512621&amp;subscene=91" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

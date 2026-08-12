@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教程 | 如何做出 X 上爆火的 AI 蓝图动画 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">教程 | 如何做出 X 上爆火的 AI 蓝图动画</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%B5%B7%E8%BE%9B">海辛</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Midjourney">Midjourney</a><a class="chip" href="../index.html?tag=AI%E5%8A%A8%E7%94%BB">AI动画</a><a class="chip" href="../index.html?tag=%E8%93%9D%E5%9B%BE%E9%A3%8E%E6%A0%BC">蓝图风格</a>
+    <span class="date">2025-07-14</span>
+  </div>
+  <p class="lead">拆解笔记：当拿到一段神秘咒语后可以做什么？</p>
+  <article class="content"><p>原创 海辛 <em>2025年07月14日 00:42</em></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPTJVP7CuII2Sv2xjibsF7RNYGS1b89bmlEfG0RGjY8JdMYufiaeKsvsMw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>Hi 这里是海辛和阿文~</p>
+<p>前段时间在 X 上看到博主 @sergeantsref 分享了一个 Midjourney 风格代码 --sref 2007748773 ，瞬间被圈粉。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPPKGOqSluNE5yfA5EuOyW0uKgfich84XaCbyERIe9P17iajRzSafUc4hg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>@aoki_tosh 还 用这个风格做了一个 MV 直接引爆了整个 X，不到几天就斩获了 300 万播放量。</p>
+<p>▶ 原贴: x.com/aoki_tosh/status/1941742544846725625</p>
+<p>一时间，我的 X 被这个风格刷屏了。受这个风格启发，我和阿文也做了一条恐龙主题的小短片。</p>
+<p>身边有很多朋友们希望我们能分享一些制作方法，刚好在制作过程中我们也积累了一些小技巧，趁这个机会给大家分享一下~</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPjRH3fhC98kgOzJic4e2Vm9ggic45txkEHFGxFpIDTg9OOpoJppGkvoicA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>先解释一下什么是 Midjourney 风格代码（Sref Code）。</p>
+<p>这是一项类似风格滤镜的强大功能， 用户只需在提示词中加上 --sref 和对应数字，就能套用预设的视觉风格 ，无需繁琐描述，即可保持作品风格一致。</p>
+<p>举例：在 Midjourney 里仅输入“ 一杯牛奶 ”，这是生成的图片：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2R3NFVZGsQaoZhbdUyf9R3upiaqUtlrZW4MNpKuw8xnjpoe1TXA5licKvQpBGmtXkeV6uSDDrbFNGRA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>如果在 “一杯牛奶” 后面加上风格代码 --sref 2007748773 ，这是生成的图片：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2R3NFVZGsQaoZhbdUyf9R3u3Aib4TE5VIiboR3kL7tm2qjwx86ic4B8yM3oolE3SP8kPYCI4vBL6NNzA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>使用风格代码来控制生成的最大好处是： 如果你想画一系列风格完全一样的图（比如一本绘本），用同一个代码就行了，非常方便省事。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPmYkd540KXkooFzEU8nicLP898QBgsMNIfhkGZ5EUwxuQZnKGxlRwg7A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>如果你想 100% 复现这种风格，在任意 prompt 的末尾加上 --sref 2007748773 的风格代码就可以了。</p>
+<p>一些小经验：Prompt 部分可以详细一些，出来的效果会更好，毕竟风格代码只控制其中风格的部分。</p>
+<p>恐龙的样片，我们图像和动画模型都是 Midjourney 直出，详细的版本和 prompt 如下：</p>
+<p>▶ 图像：Midjourney V7</p>
+<p>▶ 动画：Midjourney Animation V1</p>
+<p>▶ prompt：（见代码框）</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPP1yk4x2cQMcFYJyC6L6s9HvvmK9aqSfYB4gDEhzShxQtYMiarCwC9KMA/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-cs">A watercolor and ink sketch of a mechanical velociraptor, rendered in a raw manuscript style. The mecha-raptor is perfectly centered in a low, dynamic, predatory crouch. The texture of its armored plating, exposed pistons, and wiring is defined by sharp, expressive, hand-drawn ink lines and cross-hatching. Furthermore, delicate, fine-lined dimension lines and measurement annotations are lightly sketched directly onto its body, as if a designer is actively measuring the force of its hydraulic jaw or the arc of its sickle-like talon, enhancing the authentic draft feeling. The coloring is done with a very light and loose watercolor wash, applied in a sketchy, almost translucent style. The colors are pale, allowing much of the white paper to show through, and are not strictly contained within the ink lines, giving it a spontaneous, unfinished sketch aesthetic. The overall palette is low-saturation with weathered metallic tones, accented only by a single, more saturated pop of color on its cold, glowing orange optical sensor. This artistic sketch is superimposed onto a rich and intricate mecha-dinosaur engineering blueprint. The blueprint background is a clean, bright white, densely populated with fine schematic lines, detailed callout sketches, and exploded-view diagrams showcasing the actuator mechanism of its formidable killing claw, the piston-driven power of its legs, and a detailed schematic of its jaw assembly. Handwritten notes and technical labels like &#39;Talon Actuator&#39; and &#39;Balancing Gyroscope&#39; are scattered throughout. The overall image remains high-key, with even studio lighting and minimal shadows, creating a bright, clean, and graphic feel that marries a sketchy aesthetic with a polished, highly-detailed presentation.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPR7NFxobic5LH2ExB76OVuMq7WLFlJTlibAtVu7Vvsgicr17viaWQIxoH8w/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-cs">A watercolor and ink sketch of a mechanical Triceratops, rendered in a raw manuscript style. The mecha-fortress is perfectly centered, planted in a sturdy, defensive stance, its head lowered as if ready to charge. The texture of its heavy-duty armored plating, its iconic cranial shield, and energy conduits is defined by sharp, expressive, hand-drawn ink lines and cross-hatching. Furthermore, delicate, fine-lined dimension lines and measurement annotations are lightly sketched directly onto its body, as if a designer is testing the structural integrity of its shield or the impact force of its horns, enhancing the authentic draft feeling. The coloring is done with a very light and loose watercolor wash, applied in a sketchy, almost translucent style. The colors are pale, allowing much of the white paper to show through. The overall palette is low-saturation with weathered metallic tones, accented only by a single, more saturated pop of color on its defiant, glowing yellow optical sensor. This artistic sketch is superimposed onto a rich and intricate mecha-dinosaur engineering blueprint. The blueprint background is a clean, bright white, densely populated with schematics and exploded-view diagrams showcasing the power systems for its formidable horns, the energy matrix within its defensive shield, and the robust design of its chassis. Handwritten notes and technical labels like &#39;Shield Emitter,&#39; &#39;Impact Absorber,&#39; and &#39;Ramming Piston&#39; are scattered throughout. The overall image remains high-key, with even studio lighting and minimal shadows, creating a bright, clean, and graphic feel.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPZd9boEQxSTkMFcniaEQT0wibGYIujCY1AOQGxqpicqZ8pImH2nicP6qpeg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-cs">A watercolor and ink sketch of a mechanical Pterosaur, rendered in a raw manuscript style. The mecha-creature is perfectly centered, captured in a tense, dramatic pose perched on an unseen cliff edge, its vast wings partially folded, ready to launch. The design emphasizes its unique anatomy, with a long, sharp beak and a prominent, aerodynamic cranial crest. The texture of its hollow-titanium bone structure, the network of synthetic muscle fibers controlling its leathery patagium (wing membrane) is defined by sharp, expressive, hand-drawn ink lines and cross-hatching. Furthermore, delicate, fine-lined dimension lines and measurement annotations are lightly sketched directly onto its body, as if a designer is analyzing the tensile strength of its wing membrane or the energy output required for a single powerful downstroke, enhancing the authentic draft feeling. The coloring is done with a very light and loose watercolor wash, applied in a sketchy, almost translucent style. The colors are pale, allowing much of the white paper to show through. The overall palette is low-saturation with weathered metallic tones, accented only by a single, more saturated pop of color on its predatory, glowing crimson optical sensor. This artistic sketch is superimposed onto a rich and intricate biomechanical engineering blueprint. The blueprint background is a clean, bright white, densely populated with schematics and exploded-view diagrams showcasing the intricate skeletal joint of the elongated fourth finger that supports the wing, the internal structure of the cranial crest, and the layout of synthetic muscle fibers across the patagium. Handwritten notes and technical labels like &#39;Phalangeal Actuator&#39;, &#39;Patagium Tensioner&#39; and &#39;Cranial Balancer&#39; are scattered throughout. The overall image remains high-key, with even studio lighting and minimal shadows, creating a bright, clean, and graphic feel..
+</code></pre>
+<p>到这里为止，已经非常酷了。但我们希望在视觉上再往上翻一番。</p>
+<p>我们希望能给每个恐龙的背景加上自定义的大色块以及对应的点缀色，赋予恐龙不同的性格。但这个 sref code 会把整体配色限制得很死，甚至没办法生成纯色背景。</p>
+<p>如果想要得到这种效果，必须魔改或者抛弃这个 sref code。</p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPMVHb2hNxwdoqyTYhBHyblfIlJibZELCnibT7LKxibs03Jj1HDXdMZXOpA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>分析了一下这种风格，我们喜欢的点可以总结为： 充满技术细节的蓝图 ，以及 复古的对比配色 。所以我们在 prompt 的写作中，保留了密集的精细原理图和细节标注。</p>
+<p>在配色上：先给背景指定一个纯色色块，同时，再选择一个相似色/对比色，作为恐龙身上的点缀色。</p>
+<p>Set against a flat, uniform sheet of high-saturation green paper , features a ink sketch of a mechanical velociraptor, rendered in a raw manuscript style. The mecha-raptor is perfectly centered in a low, dynamic, predatory crouch.<br>一幅平整、均匀的高饱和度绿色纸张上，以原始手稿风格绘制了一幅机械迅猛龙的墨水素描。这只机械迅猛龙完美地居中，蹲伏着，动作敏捷，如同捕食者。<br>Its armored plating, exposed pistons, and wiring are defined by expressive hand-drawn ink lines and cross-hatching.<br>其装甲板、外露的活塞和线路均由富有表现力的手绘墨线和交叉影线定义。<br>Fine measurement notations and dimension lines are lightly drawn across the body, as if a designer is calculating the jaw&#39;s hydraulic force or the reach of its talons. Watercolor is applied loosely and translucently, with pale, desaturated metallic tones. Accents of vivid yellow and soft green highlight specific elements such as glowing cables, sensors, and joint details with the yellow rendered in a bold, eye-catching tone that immediately draws attention.<br>精细的测量符号和尺寸线轻描淡写地刻画在身体上，仿佛设计师正在计算下颌的液压力或爪子的伸展范围。水彩画采用轻盈半透明的笔触，并带有淡淡的、不饱和的金属色调。鲜艳的黄色和柔和的绿色点缀着发光电缆、传感器和关节细节等特定元素，大胆醒目的黄色色调立即吸引人们的注意。<br>The blueprint lines, callout sketches, and technical markings are cleanly rendered in deep crimson and black ink, maintaining clarity and contrast. The lighting is bright and even, giving the image a crisp and refined look that balances loose sketchwork with technical precision.<br>蓝图线条、标注草图和技术标记均以深红色和黑色墨水清晰呈现，保持了清晰度和对比度。光线明亮均匀，赋予图像清晰精致的外观，在散漫的草图与精准的技术之间取得平衡。</p>
+<p>很快，我们就可以自由控制整个画面的配色啦：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPtWLUPUmLUrnjUYWzyqraMQxiaClYY5xosgbytZM6G9OJLglyLdgeJxg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>接下来，我们只需要替换恐龙的品种以及想要的配色即可，剩余图片的prompt 如下。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPv4VP7kWyOA1z1frU5aBBcQWFic7Cnxdq44icrruS9vgcpKH1rriaVNM3w/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-sql">Set against a flat, high-saturation yellow paper background, this image presents a full-body ink and watercolor sketch of a mechanical Stegosaurus in a tense, battle-ready posture. The mecha-dinosaur is broad and low, but every line of its body hints at coiled power its limbs anchored with reinforced joints and angular armor panels. Along its back, a row of blade-like dorsal fins rise sharply, each shaped like serrated combat cleavers and integrated with glowing cobalt-blue data channels that pulse along their edges like neural conduits. These electric blue tracers also run along the tail vertebrae and spinal core, creating a reactive feedback grid across the body. The segmented tail curves into a multi-jointed strike limb, ending in four brutal spike modules each resembling high-density impact drills rather than passive spikes, with calibration marks etched into their housings. The creature is drawn with expressive ink lines and heavy cross-hatching, and shaded with cold metallic watercolors steel grey, deep black, and glints of reflected silver. Technical labels, angle diagrams, and impact stress annotations are rendered in deep crimson and black ink, standing out with surgical clarity against the intense yellow background. The composition radiates control and danger a silent, cold-blooded war machine poised like a coiled weapon.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPaib0ay38JNPwINu1DyANnXUZP45EtFg18TcNLG52HdoQma1ibuIdjWvQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-sql">Set against a flat, uniform sheet of high-saturation blue paper, this image features an ink sketch of a mechanical Mosasaurus, rendered in a raw manuscript style. The mecha-Mosasaurus is captured mid-attack, its massive body coiled in a powerful, serpentine S-curve through the water. Its long, powerful jaw is wide open, revealing mechanical mandibles and inner hydraulic tubing, as if moments away from clamping down or unleashing a submerged weapon from its gullet. Its streamlined armored plating, exposed pistons, and internal cabling are defined by expressive hand-drawn ink lines and dense cross-hatching. Fine measurement notations and dimension lines are sketched across its body, as though the designer is actively calculating its hydrodynamic efficiency during torsion or the force of its bite. Watercolor is applied loosely and translucently in pale, desaturated metallic hues. Vivid red or orange accents highlight critical areas--glowing sensors, fin joints, and concealed weapon ports--with the red/orange rendered in a bold, attention-grabbing tone. The blueprint lines, callouts, and technical markings are cleanly rendered in deep crimson and black ink, standing out crisply against the rich blue background. Bright, even lighting gives the sketch a refined, high-contrast finish that merges raw artistry with mechanical precision.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPWgiasslcRYlR2BEo8cqicPesQKPnMicntCH8ROrqYncJmgwF1bs2SHpcg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-sql">Set against a flat, uniform sheet of high-saturation purple paper, this image features a single mechanical Compsognathus rendered in ink sketch and translucent watercolor wash, presented in a raw manuscript style. The small mecha-dinosaur stands poised atop the massive skull of a fossilized Tyrannosaurus rex its tiny, angular frame sharply contrasted against the weathered, cracked surface of the enormous bone structure. The mechanical Compsognathus is drawn with tight, expressive ink lines and dense cross-hatching, showcasing its segmented plating, hydraulic joints, and needle-like claws. Despite its size, it exudes a quiet menace, its head tilted with curiosity, sensors glowing in sharp, saturated yellow. Fine measurement annotations and dimension lines trace both its form and the contours of the skull beneath it as if this scene were part of an engineering study comparing scale, power, or legacy. The watercolor tones are kept pale and metallic, while vivid yellow accents define sensors, cables, and illuminated markings. The blueprint lines and technical labels are rendered in crisp black and deep crimson ink, standing out clearly against the rich purple backdrop. Even under bright, even lighting, the image retains a poetic sense of tension one small, dangerous machine surveying the ruins of a giant.
+</code></pre>
+<p>最后在剪映里配上音效以后，得到这条动画。</p>
+<p>补充一个冷知识，剪映里真的是什么音效都有……</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPP6icrv8koXzb5w8ZyGGHCngatryIY5bNKScuFtic9iapneszdJT9do0Izg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<hr>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPPV76l9OiaTjxDwW9Fjkf8VeYQojd87p6gh8HpNMRT6pFgGU9bGIXPmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>方向一: 尝试更复杂的动画 prompt  </p>
+<p>比如让这些机甲分解，或者变形。但 MJ 动画模型对提示词的遵循有点玄学，需要抽卡。放一些我们的测试 prompt 抛个砖吧~</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2R3NFVZGsQaoZhbdUyf9R3uKdywYzJTubgRrEib0hSxOgBP1kYgCricUMyaSOhBZdgJX0nTJg7rwJmg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-swift">Set against a flat, high-saturation yellow background, this image shows a mechanical Stegosaurus captured mid-disassembly in a technical sketch style. The dinosaur&#39;s heavy armor plating, dorsal blades, limb segments, and tail modules are all separated from the core frame and suspended in air, each part hovering slightly apart as if held in magnetic stasis. The back-mounted plates are arrayed in a precise arc above the spine, revealing inner cooling conduits and data cable nodes. The tail spikes float outward, exposing internal articulation joints and impact-control systems. Sections of the torso open to reveal servo clusters, gear meshes, and layered circuit boards drawn in fine ink detail. Thin dimension lines and exploded-view annotations connect each part to its original location, while mechanical labels and material specs are printed in black and dark crimson ink. The overall sketch uses dense cross-hatching and translucent metallic watercolor washes cool titanium blue, brushed silver, and cobalt to enhance depth and volume. The scene evokes a controlled teardown of a war machine, frozen in time like a diagram from a classified military manual.
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2R3NFVZGsQaoZhbdUyf9R3uhibZXWDAhog4BxYZasHpyhqGUmnCdADCKXB2z3LHe6fn6K9eOuxzj5Q/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPuZEBb2FDFVbYwEJjPtG0CtqGDZC5Rcb5u5FlqiaeeCpUoFpWvk4ebGQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-cs">The transformation initiates as the upper segments of the smooth metallic shell begin to split along hidden seams. Petal-like dorsal plates unfurl outward from the top, rotating and locking into upright positions along the spine. Side panels shift laterally and retract, revealing tightly folded limbs within. The head emerges from the front section, rising and extending forward on a telescopic neck. Each limb unfolds in sequence hind legs extending downward with hydraulic snaps, forelegs rotating outward and stabilizing the stance. The tail uncoils from the rear compartment, extending segment by segment, ending in a multi-pronged spike array. As internal joints lock and outer plating settles into place, the mechanical Stegosaurus stands fully deployed massive, precise, and ready to move.
+</code></pre>
+<p>方向二： 何必受限于一种风格呢？</p>
+<p>给大家推荐三个作者，一个网站。</p>
+<p>X 和 INS 上有很多优秀的创作者会经常分享自己发现的 sref code, 这是我们喜欢的三位，基本都是日更选手。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPP8ZGC9swuBbJuKrlvPgvkP6JN7tXrialN1uwPSXTjDHQ8WVShhFMyH0w/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPTiaafZwiaRQMUGLEc7YcWV0SUboraicd8b7ibCwOska5n5Xs4JldPhAMTg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPha1iaU0JM4Sic6aIdqibGc8Xb7zOhiamWn5ZwKND5yaxsoibwX68yb6Er5g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>另外，再给大家推荐一个网站：</p>
+<p>midjourneysref.com<br>midjourneysref.com</p>
+<p>里面收集了许多 Midjourney 的风格代码，并且可以通过输入关键词的方式进行检索，非常方便。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPR7N5yl1G54LWyHdOk8IZXmXNNiaZicQAqMHoH1CmJU1icytcWFLLoFMSQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<pre><code class="language-sql">Set against a flat, uniform sheet of high-saturation purple paper, this image features a single mechanical Compsognathus rendered in ink sketch and translucent watercolor wash, presented in a raw manuscript style. The small mecha-dinosaur stands poised atop the massive skull of a fossilized Tyrannosaurus rex its tiny, angular frame sharply contrasted against the weathered, cracked surface of the enormous bone structure. The mechanical Compsognathus is drawn with tight, expressive ink lines and dense cross-hatching, showcasing its segmented plating, hydraulic joints, and needle-like claws. Despite its size, it exudes a quiet menace, its head tilted with curiosity, sensors glowing in sharp, saturated yellow. Fine measurement annotations and dimension lines trace both its form and the contours of the skull beneath it as if this scene were part of an engineering study comparing scale, power, or legacy. The watercolor tones are kept pale and metallic, while vivid yellow accents define sensors, cables, and illuminated markings. The blueprint lines and technical labels are rendered in crisp black and deep crimson ink, standing out clearly against the rich purple backdrop. Even under bright, even lighting, the image retains a poetic sense of tension one small, dangerous machine surveying the ruins of a giant.
+</code></pre>
+<p>我给小盗龙的这段 prompt 添加不同的 sref code，会出现截然不同的效果。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPDfgN5Q1ic3dx2MUweS8KSlhVzHgDzzqD6oJJxw9RVTmuY5EHuIL7nIg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPq16de19ibdyib5AOu3dhKu5rbZ0vmMVheicMlhZfxBxUTwpbJuicL7O5PQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>也欢迎你在评论区推荐你收集 sref code 的方式，或者你喜欢的 sref code!</p>
+<hr>
+<p>在创作的过程中，我们不仅会关注，什么样的内容吸引我们，我们会在此之上，不断问自己：吸引我们的是什么？我们为什么被吸引？</p>
+<p>AI 能一键为我们开启通往新世界的大门。但工具的终点，恰恰是创造的起点。当千万人在同一扇门前排队时，我们总会想：“我能不能亲手造一扇属于自己的门？”</p>
+<hr>
+<p>希望这篇分享对你有用！想看更多我们的创作笔记的话，请让我们知道。收到大家的积极反馈，我们会尽快带来新的内容~！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/bj4yrbqny2RCm2Bu4Ol7vIkj4uo15cPPfYxubjFafhKG0bbIX1HLr5ACCoWVBC9zPp5PhaNsHXiao2REGT2DqSQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>继续滑动看下一个</p>
+<p>海辛Hyacinth</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 15.55 MB   MP4 文件 15.55 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/sLL5TfFXICqQQE33YUwW_A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

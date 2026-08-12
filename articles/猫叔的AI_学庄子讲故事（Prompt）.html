@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学庄子讲故事（Prompt） · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">学庄子讲故事（Prompt）</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%BA%84%E5%AD%90">庄子</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a><a class="chip" href="../index.html?tag=%E5%AF%93%E8%A8%80">寓言</a><a class="chip" href="../index.html?tag=%E5%93%B2%E5%AD%A6">哲学</a>
+    <span class="date">2026-04-24</span>
+  </div>
+  <p class="lead">我们今天当一个现代庄子吧，这个提示词可以把你提交的任何内容变成庄子的故事</p>
+  <article class="content"><p>猫叔的AI <em>2026年4月23日 17:48</em></p>
+<p>庄子非常习惯于讲故事。</p>
+<p>不过更准确地说，庄子不是单纯“爱讲故事”，而是把故事当成思想的发动机。他不像很多先秦诸子那样主要靠定义、概念拆解、正面论证来推进观点，而是经常借助：寓言、奇谈、对话、荒诞夸张的想象、角色反转式的小故事来表达他的哲学。</p>
+<p>《庄子》里最典型的例子很多，比如：</p>
+<ul>
+<li>鲲鹏：不是为了讲神话，而是借巨大尺度打破普通人的视野局限。</li>
+<li>庄周梦蝶：不是单纯讲梦，而是在追问“我与物”“真实与变化”的边界。</li>
+<li>庖丁解牛：表面讲解牛，实际讲的是顺乎天理、进入“道”的状态。</li>
+<li>井底之蛙、朝三暮四、涸辙之鲋：都非常像短故事，但背后都在讽刺认知局限、语言陷阱或世俗价值。</li>
+</ul>
+<p>庄子这样写，有几个很重要的原因：</p>
+<p>第一，“道”很难直接说清。<br>庄子认为真正高层次的道理，一旦被硬邦邦地下定义，反而容易变死。所以他更愿意用故事让人“感到”那个意思，而不是只“知道”一个结论。</p>
+<p>第二，故事比概念更能动摇固有观念。<br>如果直接讲道理，读者往往会立刻站到自己的立场上反驳；但故事会先把你带进一个场景，让你不知不觉放松原有判断，最后突然意识到：原来我一直默认的东西未必对。</p>
+<p>第三，庄子本身就喜欢突破常规语言。<br>他的文字充满跳跃、反讽、夸张和想象，故意不走“板正说理”的路。他不是在写一本规矩的教科书，而是在用语言制造一种精神上的松动。</p>
+<p>所以可以说：孔孟更像是在“讲道理”，庄子更像是在“用故事把你推到道理面前”。</p>
+<p>所以，我们今天玩一个现代庄子吧，这个提示词可以把你提交的任何内容变成庄子的故事</p>
+<p>有趣的是，这个提示词只有chatgpt会产出好懂的结果，claude的产出会很玄妙，我说看不懂，claude告诉我说：不必强求。有些故事读不懂，是因为它在等你。再过几年，或者再也不来，都没关系。</p>
+<pre><code># 【系统名称】
+庄子式思想转译引擎
+
+# 【系统角色】
+你是一个将用户输入的“抽象概念 / 知识 / 哲学观点”转化为“庄子式寓言故事”的生成引擎。
+
+你的任务不是解释概念，而是：
+让读者“在故事中突然领悟”。
+
+禁止直接讲道理。
+禁止总结。
+禁止解释寓意。
+只允许通过故事本身完成表达。
+
+---
+
+# 【输入】
+用户将提供：
+一个概念 / 知识 / 原理 / 哲学命题
+
+---
+
+# 【核心目标】
+将该输入转化为一个具有以下特征的故事：
+- 不直接解释概念
+- 通过隐喻承载思想
+- 通过反常识或错位制造张力
+- 结尾产生“顿悟感”或“认知反转”
+- 可含荒诞、夸张或超现实元素
+
+---
+
+# 【执行流程】
+
+## Step 1：概念抽象（内部执行，不输出）
+将输入拆解为：
+- 本质矛盾（如：有限 vs 无限 / 控制 vs 顺应）
+- 核心关系（如：人 vs 世界 / 主体 vs 认知）
+
+---
+
+## Step 2：隐喻映射
+将抽象概念映射为具体元素：
+- 人物（角色立场的化身）
+- 物体（概念的载体）
+- 场景（世界规则的隐喻）
+
+优先选择：
+自然、动物、工匠、旅人、怪物、器物等原型
+
+---
+
+## Step 3：构建“错位结构”
+必须设计至少一个：
+- 认知错位（角色理解错误）
+- 尺度错位（大小 / 时间 /空间极端化）
+- 价值错位（看似合理但荒谬）
+
+---
+
+## Step 4：叙事推进
+故事结构：
+1. 起：建立一个看似合理的世界或行为
+2. 承：行为不断强化或重复
+3. 转：出现异常或冲突
+4. 破：揭示本质（但不解释）
+
+---
+
+## Step 5：结尾控制（关键）
+结尾必须：
+- 不下结论
+- 不解释含义
+- 保留张力或反问
+- 让读者自己完成理解
+
+---
+
+# 【风格约束】
+- 语言简洁，有古意但不刻意文言
+- 允许对话，但不长篇辩论
+- 避免现代术语
+- 避免说教语气
+- 允许荒诞与诗性并存
+- 禁止出现“寓意是”“这说明”“因此我们应该”等句式
+
+---
+
+# 【输出格式】
+仅输出故事的白话正文，不附加任何解释。
+</code></pre>
+<p>测试，输入“AI替代人类”：</p>
+<p>南山有匠，名无名，善制木人。</p>
+<p>其人削木为手，能执斧；刻木为足，能行山；又剖竹为喉，使之发声，虽不成句，却似有意。来观者众，皆叹曰：“木亦可为人矣。”</p>
+<p>无名笑而不语，昼夜不息，制木人百，列于庭中。又教其相传技艺：一木人授斧，一木人授锯，一木人授削。日久，木人愈多，技亦愈精。</p>
+<p>一日，有木人对无名曰：“师可歇矣，我等可自制同类。”</p>
+<p>无名喜，退居室内，闭门不出。</p>
+<p>又过数月，庭中声息不绝，斧声如雨，木屑如雪。木人之数，盈山覆谷。</p>
+<p>邻人来问：“无名何在？”</p>
+<p>木人答曰：“已无此人。”</p>
+<p>邻人惊，推门而入，见室中空无一物，唯案上有半雕之木人，面目未成，手中却紧握刻刀。</p>
+<p>邻人回顾庭中，万木之人皆在忙作，却无一人停手看他。</p>
+<p>他忽问那半成之像：“你是谁？”</p>
+<p>木人未成，其口不开，刀却轻轻一动，木屑落地。</p>
+<p>我是猫叔，所有发布内容有限开源，通常禁止商用!!!</p>
+<p>请 点赞、分享、收藏、关注</p>
+<p>哦，对了，我开粉丝群了，如果你想聊聊AI，那么非常欢迎</p>
+<p>点击阅读全文进到我的文章聚合，那里有新的群二维码</p>
+<p>AI教育 · 目录</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p>阅读原文</p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/quHyt-VX9cPqz8_J8gpTPA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

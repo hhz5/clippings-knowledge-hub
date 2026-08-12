@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>不看这藏师傅篇深度拆解，你永远不知道Lovart AI有多可怕（有邀请码） · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">不看这藏师傅篇深度拆解，你永远不知道Lovart AI有多可怕（有邀请码）</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Lovart%20AI">Lovart AI</a><a class="chip" href="../index.html?tag=%E8%97%8F%E5%B8%88%E5%82%85">藏师傅</a><a class="chip" href="../index.html?tag=%E8%AE%BE%E8%AE%A1Agent">设计Agent</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90">视频生成</a>
+    <span class="date">2025-05-13</span>
+  </div>
+  <p class="lead">我来一步一步深度拆解一下Lovart 的 Agent 是如何做的，同时看一下我的心路历程，后面我都傻了。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kceC8cxsxLAvM6Eetc96k5GDMMBMCAurG1PXWP0wfLvE1LAicmUiagMEQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 歸藏的 AI 工具箱 <a href="https://mp.weixin.qq.com/s/">歸藏的AI工具箱</a> <em>2025年05月13日 16:42</em></p>
+<p>估计今天都被 Lovart AI 刷屏了，前段时间也受邀参加了测试，先看图了解一下产品基本能力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6k1OdDqPLkvhnKbPFonZIgaYf796pV9t1CwNvjo3ic3t6dTn7EmPQY4nQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>当时看到 GPT-4o 的图片的时候，我就知道通用的设计 Agent产品出现的条件已经成熟，没想到是他们先掏了出来。</p>
+<p>而且效果还这么好， 整个产品很好的兼顾了设计小白和专业用户，把设计门槛拉低到了令人发指的地步 。</p>
+<p>无论你是个体户老板、营销人员、设计师、电商设计，只要你会打字，能够描述你的大致要求，哪怕只会打几个字你也可以获得高水准的设计产出。</p>
+<h2>流程深度拆解</h2>
+<p>先来看一个案例，这是个香水的视频广告，完成度非常高，，而我的提示词只有几十个字，而且从提示词来看我也没有指望他直接完成视频的制作，我写的都是为后面做做视频做准备。</p>
+<p>提示词：帮我为这个产品生成一个 30 秒广告需要的所有分镜图片，后续我会基于这些图片指导拍摄和生成视频</p>
+<p>很多朋友可能对 AI 能全自动做出这个产品的难度没有概念。</p>
+<p>我来一步一步深度拆解一下Lovart 的 Agent 是如何做的，同时看一下我的心路历程，后面我都傻了。</p>
+<p>一般来说你肯定以为他要直接生成提示词开始画图了，但并没有，Lovart 进行了非常多的分析，比一些设计师都专业。</p>
+<p>首先他根据我上传的香水图片获得了香水的信息和名字。</p>
+<p>然后他开始写脚本了， 还自己发散了这个视频的视觉风格关键词“优雅、精致、电影感”太专业了 ，懂行的朋友就会发现很像专业的广告拍摄流程。</p>
+<p>之后他写了简单的视频简介，确保整个视频的分镜是有连贯性的，在一整个场景。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kCo253gmnxaZHydJnL8iaic4nicYMbbqw6hJx47CfGouDd5OEjiacm18poA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6k8vPlyKjEID2lvNHX8kHab5kSJibBTiaYzJaiaTdgicCTGicOdO4XqrrGH3A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>故事知识这部分还没完，他还对广告片的主角做了详细的设定，比如外貌、衣着、性格、情感表现等。</p>
+<p>之后开始写每个分镜场景的描述，这部分也相当专业了，说实话让我自己搞我搞不了这么细。</p>
+<p>到这里，他依然没有开始进行设计， 真的朋友们，在设计开始前搞这么多调研，都比很多所谓的“调研 Agent”专业的多了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kDwvQvnmMNzqsm33RXLQSHSBCdcibR2sIfxE45Upb3SujuPk4bIiaBmXQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kZMDqKB7Zjd8CThk4nmdYtwCqSyuH21qFGHzrDvAVyp62DNJJLbV5CA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>终于他开始生成图片了，这时候又惊到我了，他会自动判断需要什么类型的模型，这里他觉得用 FLUX 效果好。</p>
+<p>他居然开始挑选合适的 Lora！</p>
+<p>可以看到他选的都是非常合适的，有人像的还有专门的化妆品广告图片模型。</p>
+<p>更邪门的是他会主动维持人像的一致性，他知道先生成一个主角的全身图用来给后面的 InstentID 类的 ID 保持模型进行参考，确保每个分镜的主角面部和穿着是一致的。</p>
+<p>tmd 真的他太会了，朋友们，你就学吧，这套流程比很多专门做 AI 视频的都要专业了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kuSZ5cdEpLoKsM3RDg75lwzKWTAV7ccfMiaw0SAR9rq6Ls1n3ZfKOUcQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kWhJNneGFc45zsFWx094rDOXVTstfwK7oo2K3QG1ldvYnDNE3QHHz2g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>到这个时候他才终于开始完成我本来想要求他做的工作，生成分镜图片。</p>
+<p>可以看到前面的准备真的用到了图片生成上面，真的是“优雅、精致、电影感”，另外 人物的穿着、面部和表现都能展示出刚开始的设定一致性。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kicQrZBRGaBewicOybFxSyaMOrWcrViaglAqamVibYaXVz3RNfhZDGOWOUA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>接下来第一次震惊我的地方到了。</p>
+<p>他一个设计 Agent 居然为了给我解释每个分镜应该怎么拍具体是怎么设计的，写了个网页！</p>
+<p>然后他做了长截图，放在了画布里面，太天才了这个操作！</p>
+<p>可以看到整个长图非常直观，而且标题的文字和排版也很高级，连解释的物料都延续了他设定的设计风格。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6k9SEKibrLSPia4eFpa2bia7BQN5ZTTpicGxIIBf614gdS3DJ6tzxs91oN3g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>前面说过我本来没想到他能生成视频的，右边的过程都是英语我也没仔细看。</p>
+<p>到这里，我发现不对了，他好像真的在生成视频。</p>
+<p>这里视频生成的提示词也在延续他刚才的设定，运镜、人物运动方式等。</p>
+<p>可灵的生成时长是很长的 8 个分镜图片的生成起码得十几分钟，算上之前的一堆内容， 整个 Agent 的上下文已经非常长了，而且时间也很长，这非常考验对模型和 Agent 设计的优化。</p>
+<p>一般我们自己搞的时候，这时候已经要超上下文了，他们的技术实力真的很厉害。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kNyQiaW29BI3m1kDd5BUbbRktbZ0HgpgD5cZIwGst6PSYqdicHynrMXTg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>现在最关键的部分来了，我们指导视频视频模型生成的视频片段并不能算是完整的视频。</p>
+<p>一个完整的视频起码包括：多个连贯的分镜、流畅的剪辑、优秀的配乐、广告口播。</p>
+<p>这一部分目前做的平台和公司很少，所以很多人还是 AI 生成视频片段之后自己剪，你现在招一个剪辑虽然便宜，但是自己学起来真的很难。</p>
+<p>由于要考虑的维度和素材过多自动化也很难。</p>
+<p>结果，我看到了什么朋友们！</p>
+<p>Lovart 自己开始生成对应的背景音乐，然后开始生成对应的口播语音，最后 tmd 他真的搞定了一个完整的视频。</p>
+<p>我自己探索过这类视频自动化流程，我知道这有多难，到现在我真的只有佩服，真的很厉害 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6ksOdG1BMOxTM1FibQYsuYgIt8DhbpTbUYATfHcSxzONCpzjLCHIwHFBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"> <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kcK17icr15kby33LMrhuibK11EZedJ7QwPoyicVSGEFeoJKWwkObich05rw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<h2>其他测试</h2>
+<p>我还让他试了一下藏师傅的 4o 经典提示词，比如下面这个为不同的城市生成茶杯头风格的复古海报。</p>
+<p>你只需要给他示例的提示词就行，完全不需要自己更改，他会自己搜索这些城市的信息给你然后自动批量生成，效率非常高。</p>
+<p>另外你有没有发现，Lovart 用 4o 生成的这几张没有 GPT 那么黄（拉萨是 ChatGPT 生成的）。</p>
+<p>他们真的很听劝，藏师傅说了可以参考我的调色方式做一下 4o 图片的去黄他们立刻就上了，而且效果比我自己搞的可能还好点。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kRBdPMBRDKjHys2Oshtiavib7Tcrz2MKgYE0H7GiaNhFrGqP8vm25dJ8ng/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>常见的设计需求几乎都可以丢给他，比如我这里让他把图2 的 T 恤穿到图 1 的模特图身上，然后基于这个图片生成不同分辨率的商品广告宣传图，他也搞得很好，我全程没有干预，一次搞定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgctXqcB3mXa9jSicticXqyy6kZS7iclu80jBEY97fD0Odh1l2IuiazyPiaUwgWc2PzdGFL2xicrLJumm7RA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>到这里藏师傅的介绍和流程拆解就结束了。</p>
+<p>可以看到我上面一直在强调的词就是“专业”，再做垂类 Agent 的时候这个非常重要。</p>
+<p>你要足够了解垂类用户的需求，足够了解图像和视频模型的工作流程，足够了解 LLM 和 Agent 本身。</p>
+<p>从 Lovart 这里我看到了 Agent 产品的壁垒在哪里。</p>
+<p>不是非要搞预训练搞模型才有壁垒，当你在每个部分都很“专业”的时候，别人就很难追上你。</p>
+<p>老规矩，还带点邀请码，但现在发放量真的很少， 藏师傅求了三个，咱们抽奖得了，满 2000 人开奖。</p>
+<p>如果你觉得教程对你有帮助的话可以帮我点个赞👍或者喜欢🩷，也可以推荐给你需要的朋友们！</p>
+<p><img src="https://mmbiz.qlogo.cn/mmbiz_jpg/FHoZCAjrvqgWLlBljDrYWKz1Ye6EYz33ukAVcyMBsRVbMqbfUibViadbnEGQmq4UkIoTodgambExicYdObJmQ8ZeA/0?wx_fmt=jpeg" alt=""></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p> <a href="https://mp.weixin.qq.com/s/">喜欢作者</a></p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>剪存为飞书云文档</p>
+<p>| |  | MP4 File 5.44 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 5.44 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/ImQ_aejzGvenVhE8tSROTw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

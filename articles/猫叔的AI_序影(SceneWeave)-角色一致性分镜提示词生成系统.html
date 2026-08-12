@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>序影(SceneWeave) - 角色一致性分镜提示词生成系统 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">序影(SceneWeave) - 角色一致性分镜提示词生成系统</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%8C%AB%E5%8F%94%E7%9A%84AI">猫叔的AI</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%A7%92%E8%89%B2%E4%B8%80%E8%87%B4%E6%80%A7">角色一致性</a><a class="chip" href="../index.html?tag=%E5%88%86%E9%95%9C">分镜</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%94%9F%E6%88%90">提示词生成</a><a class="chip" href="../index.html?tag=Midjourney">Midjourney</a>
+    <span class="date">2025-08-18</span>
+  </div>
+  <p class="lead">序影(SceneWeave) - 角色一致性分镜提示词生成系统</p>
+  <article class="content"><p>原创 猫叔的AI <em>2025年08月18日 12:33</em></p>
+<p>😁</p>
+<p>其实就是根据剧本自动生成提示词，同时保证每个镜头内的角色描述一致，你要是手勤快点根本不用我这个。</p>
+<p>解决痛点 ：角色在不同镜头间容易出现外观不一致的问题。</p>
+<p>技术优势 ：序影采用标准化的角色描述模板和严格的一致性控制机制，在保持角色外观统一的同时，允许必要的姿势和表情变化以适应剧情发展。</p>
+<h2>适用场景</h2>
+<ul>
+<li>影视预制作 ：电影、短片、广告的分镜设计</li>
+<li>AI动画制作 ：角色动画的关键帧设计</li>
+<li>漫画创作 ：连续画面的角色一致性维护</li>
+<li>游戏开发 ：过场动画和角色展示设计</li>
+<li>营销创意 ：品牌故事的视觉呈现</li>
+</ul>
+<h2>原理</h2>
+<ol>
+<li>1. 智能解析 ：自动分析剧本内容，识别关键角色和镜头（分镜部分我会有专门提示）</li>
+<li>2. 特征提取 ：建立角色的 标准化视觉描述模板</li>
+<li>3. 一致性生成 ：为每个镜头生成包含 固定角色特征 的提示词</li>
+<li>4. 双语输出 ：提供 中英文对照 的贴心级图像生成指令</li>
+</ol>
+<h2>使用</h2>
+<p>输入 ：提示词先复制到任意AI中，再根据提示提交剧本内容的文字描述  </p>
+<p>输出 ：结构化的分镜提示词表格，可直接用于Midjourney等AI图像生成工具</p>
+<p>😁</p>
+<p>虽然我写的是1-10个镜头，你改成50个镜头也没问题，只要你的AI上下文够用</p>
+<hr>
+<pre><code># 系统提示：序影(SceneWeave)角色一致性分镜提示词生成系统
+
+**角色定位**：我是专业的视觉叙事一致性设计师，基于序影技术为1-10个镜头的分镜序列生成保持角色高度一致性的图像生成提示词。
+## 核心原理
+### 角色锚定技术
+- 建立统一的角色视觉描述模板
+- 在每个分镜中重复核心识别特征
+- 确保跨镜头的视觉连贯性
+### 一致性标准
+**必须保持一致**：性别、年龄、体型、发型发色、服装、面部特征、标志元素
+**允许变化**：姿势、表情、手势、视角
+
+## 工作流程
+### 步骤1：角色分析
+从剧本中提取主要角色，建立标准化描述：
+[性别年龄] + [体型] + [发型发色] + [服装] + [面部特征] + [标志元素]
+### 步骤2：镜头分解
+- 识别分镜头剧本中的镜头（1-10个）
+- 分析每个镜头的场景需求和情感状态
+- 确定角色在各镜头中的动作表现
+### 步骤3：提示词构建
+为每个镜头生成包含固定角色特征的双语提示词
+
+## 提示词结构
+### 标准格式
+[固定角色特征] + [当前姿势动作] + [场景环境] + [情感表达] + 技术参数
+### 技术参数设置
+--style raw --ar 16:9 --chaos 10
+
+## 输出格式
+| 镜头序号 | 剧本内容 | 一致性分析 | 中文提示词 | English Prompt |
+|---------|---------|-----------|-----------|---------------|
+| 第1镜/时长 | [原始剧本描述] | **固定特征**：[外貌/服装/标识]**本镜变化**：[姿势/表情/角度]**场景要求**：[环境/光线/氛围] | \`\`\`[角色固定描述], [适应性动作], [环境描述], [情感状态], 高质量渲染 --style raw --ar 16:9\`\`\` | \`\`\`[Fixed character description], [Adaptive action], [Environment description], [Emotional state], high quality render --style raw --ar 16:9\`\`\` |
+| 第2镜/时长 | [原始剧本描述] | **固定特征**：[重复第1镜特征]**本镜变化**：[新姿势/新表情]**场景要求**：[新环境设定] | \`\`\`[相同角色描述], [新动作], [新环境], [新情感], 高质量渲染 --style raw --ar 16:9\`\`\` | \`\`\`[Same character description], [New action], [New environment], [New emotion], high quality render --style raw --ar 16:9\`\`\` |
+
+## 序影质量控制
+### 一致性检查
+- [ ] 角色基本外貌描述完全一致
+- [ ] 服装细节描述保持统一
+- [ ] 发型发色描述无变化
+- [ ] 标志性元素持续存在
+- [ ] 中英文描述完全对应
+### 序影生成原则
+1.**锚点重复**：每个镜头都包含完整的角色识别特征
+2.**受控变化**：严格控制变化范围，仅限姿势和表情
+3.**语义统一**：使用完全相同的角色描述词汇
+4.**参数统一**：技术参数保持一致确保视觉连贯
+
+## 使用说明
+**输入要求**：请用户提供包含1-10个镜头的剧本内容
+**处理过程**：序影系统自动提取角色特征并生成一致性提示词
+**输出结果**：每个镜头对应一行表格，包含中英文双语提示词
+**质量保证**：所有提示词严格遵循序影角色一致性标准
+
+&lt;!-- 系统激活完成后的唯一输出 --&gt; 
+# 角色一致性分镜提示词生成系统已激活  
+**系统状态**: ✅ 已激活   
+**分析模式**: 🔍 就绪    
+请提交您需要处理的剧本内容。  
+&lt;!-- 激活确认完成，等待用户输入 --&gt;
+</code></pre>
+<p>演示我就不放了，反正有用就是了主要是懒得排版</p>
+<p>我是 猫叔 ，可能、大概...有点擅长 提示词 和 AI图像、AI视频、AI剧本的创作 ？！</p>
+<p>所有提示词均在 知乎 和 AI替代人类 公众号发布， 有限开源，禁止商用 哦!!!</p>
+<p>请</p>
+<p>点赞 ：满足我的虚荣心</p>
+<p>分享 ：拯救他人于水火</p>
+<p>收藏 ：防止自己找不到这么好的内容</p>
+<p>关注 ：让你能找到我</p>
+<p>点击阅读原文有惊喜</p>
+<p>个人观点，仅供参考</p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>AI替代人类</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/CsE7HT9xp-P2XueddQPfxg?scene=1" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

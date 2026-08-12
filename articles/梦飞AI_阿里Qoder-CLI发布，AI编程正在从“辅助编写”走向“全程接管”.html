@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>阿里Qoder CLI发布，AI编程正在从“辅助编写”走向“全程接管” · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">阿里Qoder CLI发布，AI编程正在从“辅助编写”走向“全程接管”</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BC%A0%E6%A2%A6%E9%A3%9Ei">张梦飞i</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=Qoder%20CLI">Qoder CLI</a><a class="chip" href="../index.html?tag=%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4">阿里巴巴</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2025-10-21</span>
+  </div>
+  <p class="lead">Qoder CLI在试图打破用户对命令行的“惯性认知”</p>
+  <article class="content"><p>原创 张梦飞i <em>2025年10月20日 13:55</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4LyJbabticeib9Scjdpvyvonk4EDVASemO30nTKRafQdtzGqdm7XTwIAg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>前几天，Qoder官方官宣：阿里全新AI编程工具 Qoder CLI（命令行界面）正式上线。</p>
+<p>这是一款 专为命令行环境打造的AI Coding Agent 。在评论区看到有很多小伙伴好奇他和Qoder有什么区别、Qoder CLI下载之后要怎么用、CodeReview效果到底如何等一系列问题。</p>
+<p>我们团队当天就下载并在业务Case中使用了Qoder CLI，我们执行的三个业务场景刚好可以解答以上问题，帮助大家更好的了解Qoder CLI，从而能选择最适合自己的Coding工具。</p>
+<p><strong>我们先说结论，Qoder CLI：</strong></p>
+<p><strong>1、安装和交互体验相对Claude Code都更加简单，零配置启动，门槛更低，CLI新手友好。</strong></p>
+<p><strong>2、适合经常使用多种IDE的开发者，Qoder CLI可以作为轻量级CLI交互和重量级IDE使用的桥梁，深度集成切换自然。</strong></p>
+<p><strong>3、适合经常需要在远程服务器/云资源环境中工作的工程师，利用CLI可以无缝接入用上Qoder Agent的强大功能。</strong></p>
+<p><strong>「 一、下载与安装 」</strong></p>
+<p><strong>1、安装基础软件</strong> <strong>node.js</strong></p>
+<p>如果你是windows电脑或，需要安装一个基础软件：node.js。（Mac无需安装），为了对新手更加友好，这个安装用的是windows系统。</p>
+<p>下载链接：<a href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL45LWboVL311vKAeFNtOk7GJ5sBKzcpvfJ96wQkXnP0uQjJtEe6YJCSw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="1280X1280 (1).PNG"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4elOrNkcVlNptcRQmXJyRradluGG9BnAB3qtw9GwNAmXVFYx5jLV04w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="1280X1280 (2).PNG"></p>
+<p>1.1、下载之后，一路点击“Next”，直到安装完成即可。</p>
+<p>1.2、安装完成后，右键点击电脑的左下角的【开始】菜单，点击【终端管理员】，打开windows终端。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4xkbqriaJoxBP4NSR1RicPicFkolHUI5NUia9AcetkegII1cHnibFkctcotA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="1280X1280 (3).PNG"></p>
+<p>1.3、输入 【 <code>node -v】</code> ，回车，确认是否安装成功。如下显示出V开头的版本号，表示安装成功。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4XVUSSqsIGGZcU48HPEQLiaV8tR65MSSAHjic2ABlia94U3RaDCZlqphtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="1280X1280 (4).PNG"></p>
+<p><strong>2、安装Qoder CLI</strong></p>
+<p>2.1、Windows/Ubuntu安装命令：</p>
+<pre><code class="language-nginx">npm install -g @qoder-ai/qodercli
+</code></pre>
+<p>2.2、mac安装命令：</p>
+<pre><code class="language-bash">brew install qoderai/qoder/qodercli --cask
+</code></pre>
+<pre><code class="language-bash">2.3、执行完成后，可以输入如下命令查看版本号：
+</code></pre>
+<pre><code class="language-actionscript">qodercli --version
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4P1WicevpNxuPEbLvQCROtU3dLAQIYlu3WRvkiciamWY1Xu0Cx2UR1swVQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="4cbb6fc0-88d9-439c-9cf6-743d234c0f9e.png"></p>
+<p>返回版本号即为成功。你看，Qoder CLI的安装非常简单。</p>
+<p><strong>「 二、启动与使用 」</strong></p>
+<p>在终端输入启动命令：</p>
+<pre><code class="language-cmake">qodercli
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4ObiaeaFFMWKHqovZuQOpicKeLdT5ibRZyrEytichltMVTXI88ksGEAWvhA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="af191a11-10b7-4b2c-ad43-365e3bd45643.png"></p>
+<p>输入后会自动弹出网页进行登录：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4T4MLPictGIPoCa4HrgN42JKeYRn9p26hSxhtvveSrQskjTMaKjWicFWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="cd74f199-8f1c-42d5-9bf5-29e42f1242b7.png"></p>
+<p>在网页登录成功后终端会自动登录，看终端左下角，不再是橙色的Not logged提示，就代表登录成功了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4ZzItrVBJ7AR9BSm3oDAIeNd2FZ1ZUJ4D7Dg7cs4Mn5icsp6ljc9IN5A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="77125ad0-82e5-4ffe-8993-197e2417a2b3.png"></p>
+<p>有一说一，Qoder从安装到使用的流程，确实要比Cladue Code 简单太多了，阿里在把产品做的更普适方面真的有一套。</p>
+<p>安装完成后，我们输入任意文本，就可以开启对话和使用了。</p>
+<p>我们可以在对话框输入 <strong>【</strong> <code>**@+命令行】**</code> 。来执行shell命令，是这类 <strong>CLI Coding</strong> 的一大优势，因为本身就在终端里，它就可以直接执行命令行，来达到目的，比如直接查阅文件夹目录、直接进行脚本启动测试等。 只要你授权，你能做的，它几乎都能做。</p>
+<p>还可以通过 <strong>【</strong> <code>**/+命令】**</code> 来使用内置的一些命令，比如：</p>
+<ul>
+<li><code>**/review**</code> <strong>，</strong> 来对本地代码改动进行评审。</li>
+<li><code>**/compact**</code> <strong>，</strong> 来总结当前会话的历史上下文。</li>
+<li><code>**/memory**</code> <strong>，</strong> 来编辑 <strong><code>AGENTS.md</code></strong> 记忆文件</li>
+</ul>
+<p>其中，在使用时你会发现有一个 <strong><code>AGENTS.md</code></strong> ，这是Qoder CLI 的记忆文件，会作为 CLI 的上下文内容来指导开发过程。包括但不限于开发规范与说明、整体系统架构等。可以通过输入 <code>#</code> 进入记忆模式。在对话模式下输入 <strong>【</strong> <code>**#**</code> <strong>】</strong> 可将内容追加到 <strong><code>AGENTS.md</code></strong> 记忆文件</p>
+<p>也可以通过添加工具的 MCP 服务，实现Qoder CLI 与标准 MCP 工具的集成和使用。</p>
+<p>使用方式、玩法和命令很多，不一一列举，感兴趣的建议去官网查看使用说明。</p>
+<p><strong>「 三、 实测体验 」</strong></p>
+<p>我们一共跑了3个Case，这3个Case都是我们日常业务中，经常会用到的CLI能力。</p>
+<h5>Case1：API调用体验</h5>
+<p><strong>CLI 编程</strong> 的一大优势就在于：能直接执行命令。所以第一个Case，就先让它按照一个接口文档，写了一个API的调用并自己测试跑通：</p>
+<pre><code class="language-actionscript">了解这个接口文档https://XXXXXXXXXXX，我的项目需要在用户提交表单时，调用这个接口，帮我写好个项目，需要哪些参数请你告诉我，我给你提供。项目完成后你先自己进行确认接口能正常调用和返回数据。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4x7YCeNPSQZg65JjgD7d4fzarPmHg2Jc7qib3y4lyvbWSbRrbHrSSuKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt=""></p>
+<p>我回答了Qoder的问题，提供了对应的密钥及偏好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL44HrrFZy1agsYr87o3mLEuwpCTjvOxjhictIIuVbR7mR1OWxkotuXsRw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="92dfa343-0d77-4d53-8a80-1626c7a9ab2e.png"></p>
+<p>然后，我看着Qoder执行了 <strong>代码编写、配置API key值、接口调用测试、安装项目依赖、启动项目。</strong> 全部一次性自动完成。</p>
+<p>最后输出结果，告诉了我应该如何使用。不过告诉我也无用，因为有了CLI Agent之后，这些简单的执行，我根本不会去自己操作。</p>
+<p>我只需要直接访问链接【<a href="http://localhost:3000/%E3%80%91%EF%BC%8C%E5%B0%B1%E7%9B%B4%E6%8E%A5%E5%8F%AF%E4%BB%A5%E8%BF%9B%E8%A1%8C%E4%BD%BF%E7%94%A8%E4%BA%86%E3%80%82">http://localhost:3000/】，就直接可以进行使用了。</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL48gbRIL9ic4cicAoaCJfxTavB4NW1JiaasUzAuR7MPE91nttBxAgRODTaw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="2c14a5cc-363b-476f-b1c5-1c2753311bc8.png"></p>
+<p>如果在IDE里进行AI编程，需要在完成代码编写后，我们自己手动 <strong>修改key值、启动终端、安装项目依赖、启动项目、测试接口能否正常调用</strong> ，有时候接口还是调不通的，还得告诉编辑器发生了什么错误、为什么调用不了，让它再进行修改，有时候还可能会因为描述的不清楚导致需要反复进行修改。</p>
+<p>但是用Qoder就不一样了，它在终端就可以直接进行接口调用的测试，如果此时有什么报错，它就可以直接进行修改，确保接口能正常调用后，给你进行输出。再也不用反复鞭策AI来进行调整了。</p>
+<p>对于零开发基础的小白来说，看起来有门槛，其实是更加友好了 ，因为本需要你手动操作的安装依赖、改环境变量、启动项目这些，统统不需要再管了，只需要给出要求就可以。CLI Agent能力不局限于IDE或插件形态，迭代和更新速度更快，CLI Agent可以自己执行，其实花30分钟学习一下CLI，以后用它来写一些日常要用到的小工具，会变得更加方便。</p>
+<h5>Case2：2万行数据自动清洗</h5>
+<p>今天在做一个项目的时候，刚好有一个需求是：约两万条的json数据库，有一个字段的Value值要通过调用外部接口修改。修改逻辑比较复杂：首先要在对应位置，调用接口获取对应Value值，再按原本的数据结构，修改值。</p>
+<p>这两万行数据，如果挨个调用接口，还只修改json中的某一个字段，且保证原本数据结构不被破坏，如果是手动进行修改，那可得要了老命了。</p>
+<p>我们拿这个需求，让Qoder CLI写一个自动化程序来实现数据的获取、修改和结构清洗。告诉Qoder CLI我的诉求：</p>
+<pre><code class="language-actionscript">了解下C:\Users\admin\city-data.js这个文件，给我写一个python程序，用于替换所有数据中的apiValue的值。这个值的来源是，用每个json中的test的值，调用https://XXXXXXXXXX这个接口，获取它的timezone的值，我的APIkey是XXXXXXXXXX。你来自动执行写好的python程序，最终告诉我修改完成后的文件是哪个。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4TKko3GdIVEMQWebNbz967p6d5RpHS46p9jlUCZpyp4eFo4MG3h0JIg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="00322201-0211-40df-aca5-a39f0ee21ca9.png"></p>
+<p>整个过程的代码编写、测试接口调用情况、自动化程序的依赖安装、启动、选择数据文件、数据分段处理、取值、调用接口、替换数据、多线程处理、数据合并、处理事务报告、失败日志、项目使用说明、处理过程中的hook反馈（让我知道事务还在进行中），全都是它自己进行完成的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL48gib0eG0pTUBbPyb2e4rjSTJC70Prm9XLFkj7ZO5zTp7JToSqZa13cg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="image (1).png"></p>
+<p>image (1).png</p>
+<p>由于数据比较多，所以这个过程等了大概二十分钟。但是从我告诉他任务，直到输出结果，完全不需要我做任何事情，全部由Qoder自动化进行处理，每个过程的进度反馈也给的很到位，我能实时查看程序的处理进度。它还主动输出了一份“处理日志”，告诉我哪些没有在API中找到：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4ic3EPf8x92sFf9KqC8ZbwltkBBReDpIJNiarzicKibY7hxOYic6CCMJTvgA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="e14bbcdb-913b-4f45-bec5-a2eb048248fd.png"></p>
+<p>我等待了大约半小时，Qoder CLI输出了最终的文档，我合并到项目中测试了下，能够直接投入到项目中使用了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4ZOOdMzSzjy0HTPyOduk2zmaR92tx8eEF8IByoTK7WtAxRAZ3sibgC7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="9cd1b92d-11a5-4476-9635-561c874a2356.png"></p>
+<p>要不是线上业务要求严谨，我甚至想直接告诉Qoder CLI，让他直接帮我上传到目标服务器，然后帮我停止和重启项目，省去运维的环节。</p>
+<h5>Case3：视频剪辑GPU加速</h5>
+<p>前段时间，我们处理一个关于视频剪辑的项目，背景是：服务器的GPU配置高，但是在处理视频时，用不了GPU算力，一直在用CPU来处理视频，导致视频的处理很慢。</p>
+<p>关键难点是，在本地进行测试时，一直都是正常的，能正确使用本地GPU做视频处理。但是一旦迁移到云端，就是调用不起来，后来经过多个技术大拿判断，定位了问题，但是几乎要重构项目，修改成本很高，当时都计划放弃了，后续我们确实也硬着头皮解决了。</p>
+<p>但是，为了测试一下Qoder CLI 的Agent能力，我直接使用这个原项目进行了测试：</p>
+<pre><code class="language-actionscript">先整体了解一下video-cut这个项目，我现在的诉求是，现在处理视频时，用的是CPU进行处理的，但是我期望是用GPU来处理，并且现在有时候CPU使用率会超过95%，就会导致项目卡死，现在诉求是把CPU的使用给降下来，用GPU进行视频处理，确保项目能正常进行，并且期望能使用多线程进行处理。
+</code></pre>
+<p>然后Qoder就开始进行了解这个项目以及进行修改代码和做执行测试</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4qOGMLRTX9wNxlBLQm4CPZXNbahuQD8Oz3IAPOuuTKm1yDbw0UpkXMw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="96f30870-2d2e-4264-afe3-9fc653f291b0.png"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4kiam9yLOWH8ADtXq9swpU612UhPurMx8Qq2hoQK7C4nLVDGtgBibzWibQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="image (2).png"></p>
+<p>image (2).png</p>
+<p>在Qoder处理之前，GPU和CPU的使用如图：GPU只有1%，一直不会变化。而CPU时高时低，大概会平均在70%，并且输出视频需要大概半个小时，并且不稳定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL43bO8l7vCia43kM6W32a6FmjDwjdPIOnJ03NicC5Dx0qQmKdWuS3szOdA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="f0cef007-5e65-474c-ba07-9c3982fa2c2f.png"></p>
+<p>然后Qoder CLI 重新安装了服务器的GPU驱动、 导入了新的GPU的配置、优化 FFmpeg GPU 编码参数、实现智能多线程任务调度、增加了配置异步处理避免卡死、测试优化效果和性能验证。</p>
+<p>在它的一通操作之下，自动执行了十几分钟。</p>
+<p>最后，我做了一次视频输出验证，这次效果明显好了很多很多。CPU的使用已经降低到40%了，GPU的使用也能够跑到70%了。输出所需要的时间，也从30分钟降低到了稳定的七分钟输出。</p>
+<p>我大概看了看修改的内容，明显的提升，一是因为它优化了多线程，二是正确的把使用CPU修改为了使用GPU加速。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW0wpvy3WiapzZskVtjPTyJL4icITJCRibThSOJTedPO51ozxKaCUhia6oqmjvWPDy4EsFKiak26clgUib2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="5f3dcf9c-2e85-420f-81a6-91e785be0ab3.png"></p>
+<p>在这个处理过程中，它还发现了原始项目上的一些问题，是因为对视频字幕的处理的方式不正确，导致对CPU的使用依赖较高，因此在处理字幕时就容易因使用率过高而导致项目崩溃，于是它自动处理了视频字幕的生成方式。</p>
+<p>这个项目是我们已经完成的项目，但是之前的处理方式是在本地IDE里以人工+AI的方式处理的，因为环境不一样，配置不一样的问题，导致在本地修改了很久都没有修改成功。这次试用Qoder CLI能一次性完成，其实是出乎意料的。这个过程要读取服务器配置，根据实际环境，重新梳理代码，才能完成，Qoder CLI确实做到了。</p>
+<p>根据官方文档， Qoder CLI会针对不同场景使用最适合的SOTA模型，并且内置了Qoder IDE中备受好评的CodeReview功能，使得整个的终端开发体验更加的丝滑和流畅 。 以上能力更进一步，Qoder CLI完全可以与企业流程的自动化结合， 如CI/CD 、日志监控等，覆盖运维任务。</p>
+<p>「 四、 最后 」</p>
+<p>在日常生活中，看到黑乎乎的命令行窗口和密密麻麻的代码，总给人一种望而生畏的感觉。</p>
+<p>全程使用下来，我们能够明显感受到Qoder CLI 是在试图打破用户对命令行的“惯性认知”。</p>
+<p>它零配置启动：安装即用，无需复杂初始化，为终端设计的交互十分简介，内置 Quest 与 CodeReview 能力自动审查和扫描关键改动点。这些特性让 CLI 不再是冷冰冰的命令窗口，而是一个随时可以沟通的智能助手。</p>
+<p>这甚至比用IDE还可以更加的省心，无需关注文件，直接关注结果即可。</p>
+<p>当多数工具还在优化 “写代码” 效率时，Qoder CLI 已在解决 “代码怎么用、怎么跑” 的实际问题。想摆脱重复操作，或缺少趁手的 AI 工具，不妨试试它。</p>
+<p>毕竟能让你只关注 “要做什么” 的工具，才是真提效。</p>
+<p>我是梦飞，持续分享 AI 工具的实战体验，帮你在技术浪潮里少走弯路，我们下次见！</p>
+<p>往期推荐</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247489411&idx=1&sn=c1cd2a51aa75b9efcb811c34f70c2e1f&scene=21#wechat_redirect">我是如何把AI从爱好做成“副业”和“全职”的</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490942&idx=1&sn=705451ab19375b4ec05e44c1142e9f9d&scene=21#wechat_redirect">献给大学生的：开学第一节AI课</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490862&idx=1&sn=2cf2e780968809d59869d23fc7bbd48b&scene=21#wechat_redirect">如果做应用像刷抖音一样简单，会发生什么？</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247491003&idx=1&sn=10a8757bd78b810a5d3f63e656ff9d60&scene=21#wechat_redirect">Claude断供，火山引擎助你一分钟“搬家”国产模型</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490806&idx=1&sn=499000ac5238b35ed0b31b3469f53149&scene=21#wechat_redirect">10分钟带货，这个智能体让“搞钱”速度快到离谱！</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247489307&idx=1&sn=8fdf1bfae135ac01aa05cf0c8961c61e&scene=21#wechat_redirect">用了两周，发现小米AI眼镜最有用的竟是这个...</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490196&idx=1&sn=0e712b667f3652b616aa430e9de1a302&scene=21#wechat_redirect">8000块赚130万的生意门道，这个阿里Agent居然“秒懂”</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490319&idx=1&sn=ded495f0d85025c00d0467e13758cbd0&scene=21#wechat_redirect">发现大家似乎忽略了一个学AI的超优质的地...</a></p>
+<p>继续滑动看下一个</p>
+<p>梦飞 AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/z7Yu7qX1wjydcBieH9zecw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

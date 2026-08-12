@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从案例分析到提示词写作，手把手教你制作最火爆的AI视频 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">从案例分析到提示词写作，手把手教你制作最火爆的AI视频</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=AI%E8%A7%86%E9%A2%91">AI视频</a><a class="chip" href="../index.html?tag=Veo3">Veo3</a><a class="chip" href="../index.html?tag=NotebookLM">NotebookLM</a><a class="chip" href="../index.html?tag=%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C">内容创作</a>
+    <span class="date">2025-06-19</span>
+  </div>
+  <p class="lead">大家好我是歸藏（guizang），今天教大家制作现在最火的 AI 视频品类。
+无论你是否关注 AI 最近肯定在不同的社交媒体上刷到了这类视频。</p>
+  <article class="content"><p>原创 歸藏的 AI 工具箱 <em>2025年06月18日 14:58</em></p>
+<p>大家好我是歸藏（guizang），今天教大家制作现在最火的 AI 视频品类。</p>
+<p>无论你是否关注 AI 最近肯定在不同的社交媒体上刷到了这类视频。</p>
+<p>一个大猩猩或者其他动物对着镜头絮叨，要不就是各种虚构的历史事件的采访。</p>
+<p>每一个点赞和播放都很高不管是在国内还是海外。</p>
+<p>虽然很无聊但是刷到就看的停不下来，即使是我这种经常接触 AI 内容的人都是如此。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaYYbDyCaQbJ9Qia9CB6OuH3InBAhxPZP2nxPibn7INmYsOVaKJUCuwAcQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这种品类甚至都渗透到了广告和营销的领域。</p>
+<p>ins 上有个牙医诊所每天都发广告，每个播放都只有几千，但是换成“大脚男孩”之后他的广告播放高达 56 万次！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaPm9CdoYZqQcVgicwvDlxJice7HfficibkianNNpWKkwqwZuCoGH8Dc2icwPQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>有了 Veo3 之后 AI 视频的制作成本下降了非常多。</p>
+<p>现在可能是你入门 AI 视频制作非常好的机会，只需要两次生成简单的合并两段视频，你的作品就已经完成了。</p>
+<p>你可能以为上面这些视频的点子都是创作者自己想的，但我要告诉你，其实不是。</p>
+<p>上面大部分爆火的 AI 视频几乎从构思到提示词到生成全是 AI 为主， 人类需要做的事情只有挑选点子，生成和复制提示词而已。</p>
+<p>所以这篇内容我不只会教你如何用视频模型，我还会 教你用各种工具分析视频从而生成新的创意，给你提示词模板，让你从创意到生成全部自动化。</p>
+<p>我这个流程其实接近工程化了，你甚至可以用来做视频 Agent 产品，先要个赞🩷不过分吧。</p>
+<p>先来看两个我用这流程做的这类 AI 视频，首先是荒诞采访形式的海盗财报会议。</p>
+<p>之后是一个给巨龙看守地牢的倒霉哥布林牛马的一天。</p>
+<p>是不是很牛批！好了，从现在开始扔掉你的脑子，开搞！！！</p>
+<h2>如何分析爆款视频</h2>
+<p>首先我们要教的是如何分析视频和拓展创意，这里我用的 NotebookLM。</p>
+<p>你是不是只用 NotebookLM 来分析有口播的 youtube 视频，但我要告诉你，Gemini 其实是能分析视频画面的，所以你可以让 Noteboolm 帮你分析任何 Youtube 爆款视频的创作形式。</p>
+<p>你甚至可以往里面加入多个爆款视频一起交叉分析。</p>
+<p>你需要做的第一步是打开页面，新建一个 NotebookLM 笔记本，在添加来源这里输入你找到的 youtube 爆款视频地址。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaAIX3DmibEo6uXclKC61EHbsjenvUh85cClglDk4gUNiccQpyibO7icVhBg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>你可以在来源这里继续添加，我最后一次性添加了找到的四个 Veo3 做的爆款 AI 视频，两个是第一人称Vlog 形式的，两个是采访形式的。</p>
+<p>然后就可以写提示词让 NotebookLM 开始分析了，这里我放上我的提示词改一下前面的部分可以套用到任何创意视频上。</p>
+<p>这四个视频都是用谷歌新发布的 Veo 3 视频模型生成编排的，在 Youtube 非常火爆，详细分析每个视频的每一个分镜的台词和画面内容，然后总结爆火的原因。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaS41QoIrX85YxHGRq9oRiaPaDcU0a0SG4l8icu4YnxvO2czdl8AuJcMIQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>可以看到 NotebookLM 分析的非常详细。</p>
+<p>每个视频的分镜画面以及台词内容都输出了，同时对于这类视频爆火的原因分析的也非常好。</p>
+<p>我看完对这些视频爆火的原因是有些感觉到，但是完全做不到 NotebookLM 分析的这么细致和完整。</p>
+<h2>如何拓展视频创意</h2>
+<p>我们上面已经有了这类爆款视频的创作逻辑和分镜描述了，接下来我们需要让 AI 根据这些上下文帮我们拓展创意。</p>
+<p>你可以打开任何一个你用的惯的 AI 模型，我这里用的还是 Gemini。</p>
+<p>将刚才 Notebooklm 分析的结果发给他，然后跟他说：</p>
+<p>我会发给你几个最近非常火爆的用 AI 视频模型生成的视频内容和爆火的原因，你需要结合这些内容给我一些类似第一人称 Vlog 形式的点子，详细描写每个分镜（8 秒）对应的环境和角色以及说话内容和语气，适当插入打破第四面墙的说话方式，比如要赞。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaBryYPXl0vby14hfCibO8vub4JViaCTxGWQ3N1rBooOZABNJnSTporG5Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>这里我们首先做的是第一人称 Vlog 形式的视频。</p>
+<p>这里的文案可能和内容可能我们生成提示词到时候并不会用，但是依然要让他输出是因为需要用详细的分镜内容和口播文案来判断创意的质量，不能只依赖标题和简单的描述。</p>
+<p>之后你就可以根据他输出的点子内容进行挑选，首选比较好实现和偏现实题材的，这样生成的效果比较好。</p>
+<p>这里我选了哥布林牛马这个，感觉反差感很强，在《龙与地下城》这种宏大视觉观的小角色视角。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaVFLibQpTuykhJolY5qHkcobUSBtf1evmic2ThkSA3K9f5Goa2miaacvyw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在虚构采访这里我选用了海盗年会和金融行业黑话这个点子，反差感也很足，也会让打工人很有共鸣。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaLCXbKuAl1dEaPjOuM7TG4ic6O1iam1jGNL15uSMoxcaxZwAiagUyOZItg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<h2>提示词生成</h2>
+<p>如果你对某个分镜感觉有需要修改的部分可以让他重新修改，直到内容你就的没问题。</p>
+<p>这里我偷懒了，没有改直接进入了下一步，开始生成提示词。</p>
+<p>这部分就比较简单了，我会给你第一人称 Vlog 和采访两个方案的提示词模板。</p>
+<p>让 AI 基于刚才讨论的结果和提示词模板输出每个分镜的提示词就行。</p>
+<p>第一人称 Vlog 风格视频提示词生成：</p>
+<p>【地老哥布林清洁工】，这个点子很好，将每个分镜的所有提示描述内容都放在一段话中，包括音频相关内容，每个分镜 8 秒，注意台词长度，不要超时。</p>
+<p>参考这个模板生成提示词：A cinematic, handheld selfie-style shot of [a detailed character description, e.g., a sci-fi explorer in a sleek silver spacesuit].<br>They hold the camera at arm&#39;s length, and their [specific arm/hand description, e.g., armored silver gauntlet] is clearly visible in the frame as they show a [specific emotional expression, e.g., look of pure awe].<br>The scene is a [detailed location and time of day, e.g., bioluminescent alien jungle at twilight], and behind them, [describe the key background element, e.g., massive, pulsating mushroom-like trees] cast a [specific lighting quality, e.g., vibrant purple and blue light] across the landscape.<br>The character looks directly into the camera and speaks in a [specific tone of voice, e.g., breathless, excited whisper]: &quot;[Your Dialogue Here]&quot;. (Optional: For extra control, add specs like Lens: wide-angle with shallow focus or describe a camera pan).</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiaLQeZudqmj5u4Glx6TgV3lYRibEUWMpKNnkWRTGSuS9BiabflrHgtQa4w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>虚构采访类型提示词生成</p>
+<p>【海盗会议】，这个点子很好，将每个分镜的所有提示描述内容都放在一段话中，包括音频相关内容，每个分镜 8 秒，注意台词长度，不要超时。</p>
+<p>参考这个模板生成提示词：A cinematic, medium handheld interview shot featuring [a detailed character description, e.g., a fearsome pirate captain in a captain&#39;s coat with a Bluetooth earpiece]. They display a [specific emotional expression, e.g., look of confident authority] as they speak.<br>The scene is set in [detailed location, e.g., a secluded alcove of a massive, torch-lit sea cave], with [key background elements, e.g., other pirates mingling near a makeshift bar] visible in the slightly out-of-focus background.<br>The atmosphere is thick with [describe environmental sounds, e.g., the murmur of distant conversations and the clinking of tankards]. Flickering [specific lighting quality, e.g., torchlight] illuminates the character, casting dynamic shadows.<br>Crucially, the character looks slightly off-camera, addressing an unseen interviewer. They speak in a [specific tone of voice, e.g., a fast-talking, confident finance-bro voice]: &quot;[Your Dialogue Here]&quot;.<br>(Optional: For extra control, specify lens details like &#39;shot on a 50mm lens with a shallow depth of field&#39; or describe camera movement like &#39;a slow push-in during the dialogue&#39;).</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiakC88iaW8pA3rrTLMaPq4J3uHaIdpDATIibsPibJIMk9luTXkbjj7lIGHA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>到这一步，基本上我们的前期准备工作就结束了。</p>
+<p>因为 Veo3 强大的提示词遵循和稳定性以及音频生成能力，我们可以直接跳过图生视频的图片生成、语音生成、唇形同步、音效匹配这几步。</p>
+<p>如果以前要做类似的视频你可以想象要多麻烦，上面跳过的每一步都有可能出问题导致增加好几倍的工作量。</p>
+<h2>生成视频</h2>
+<p>接下来我们就可以生成视频了，如果你想简单点搞定，我推荐你开个 Gemini Pro 会员，在 Gemini 里面生成。</p>
+<p>直接进入到 Gemini APP 里面，选中输入框下面的视频按钮，输入提示词然后回车就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiayAW33uOgqssdJHViaMicias1QibiaRUVLuYRicNlDVlaiateHtuicwwnjGjv5A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>如果你不怕麻烦的话可以用 FLOW （ labs.google/fx/zh/tools/flow/ ）这个谷歌专门用来视频生成的产品。</p>
+<p>详细的教程我之前写过《 <a href="https://mp.weixin.qq.com/s?__biz=MzU0MDk3NTUxMA==&mid=2247489241&idx=2&sn=6479bd19ec9e4ee6cb9b7971ced66a75&scene=21#wechat_redirect">Veo3和FLOW一手实测：谷歌这次成了，这次视频创作可能彻底变天</a> 》，这里就写一下简单的。</p>
+<p>进来以后先创建项目，然后在输入框设置这里把模型调整到 Veo3 Fast 模型，这个很便宜。</p>
+<p>不要再因为没切换模型，跑来问我为啥视频没声音了！</p>
+<p>如果你追求质量可以用Quality 模型，但很贵。然后输入提示词等待生成就行。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyia6ico01oibSLGzEPI02xu2qgYVLQBm3ibUEqTtTeNjFq7I836I0TlZAwBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>如果这里下载的时候可以选择将生成的结果超分成 1080P，视频会清晰一些。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyia2NNbUibhSpg9vPjPy0eBc5ich34ONOdahupA2TQEfxZGrwicBUticSOO7A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>到这里我们基本上全部都 OK 了。</p>
+<h2>视频合并及后处理</h2>
+<p>最后就是把视频合起来了，由于 Veo3 生成的视频基本就是完整的，你只需要用剪映或者其他工具把多端视频拼接然后导出就行，这应该都会做吧。</p>
+<p>如果是英文的话可以点上面的字幕让剪映帮你自动生成一个字幕。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiab88XgZpa0N0YEj8wCDbF6hiaKIWEXibC7zKpneK8Em6JhRUBibsasOGaQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>如果你还需要增加一些沉浸感的话可以加一些装饰，比如像我这个海盗年会一样加了一些类似电视台新闻直播都有的台标和文字滚动新闻。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgcAzw8HiaMXqibj3edaunwnyiayoLl6XnKtzhRciag5CsicCxb3C1hFjFGHQA8aYj65zTgFduyszKA5rjg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>在一个月前我 Veo 3 的测评文章里面就说过，“每一次Agent的模型化即使每个部分的模型本身质量没有升级也会带来非常多的应用场景和新的产品机会”。</p>
+<p>现在回看我这个预言是不是算成真了，最近几乎每天都有基于 Veo3 制作的视频爆款产生，而且不断向不同的视频品类扩散。</p>
+<p>AI 视频制作过程每少一步对于创作者基本盘的拓展就不止 10 倍这么简单 ，很多人有很好的点子和流量嗅觉只是因为技术和对 AI 的了解不够，所以没办法生产内容。</p>
+<p>Veo3 生产成本已经很低了，如果出现视频类 Agent 把视频字幕之类的包装工作搞定，AI 视频生产者又何止百倍。</p>
+<p>我们今年或许就能看到这一天的到来。</p>
+<p>好了，到这里教程基本就结束了， 谢谢各位的双击🩷和大大的赞👍，孩子饿坏了，给点吧。</p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/tRoEKCsZBBTEIaeKovJ4Zw?clicktime=1750309574&amp;enterid=1750309574&amp;scene=126&amp;sessionid=1750309570&amp;subscene=91" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

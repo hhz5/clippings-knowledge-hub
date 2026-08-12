@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obsidian x Agent 终极指南，从零打造个人 Agent 系统 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Obsidian x Agent 终极指南，从零打造个人 Agent 系统</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Obsidian">Obsidian</a><a class="chip" href="../index.html?tag=%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86">知识管理</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Agent">Agent</a>
+    <span class="date">2026-04-22</span>
+  </div>
+  <p class="lead">这应该是全网最完整的一份「Obsidian × AI 生产力」指南。</p>
+  <article class="content"><p>原创 空格丶 空格丶 空格的键盘</p>
+<p><em>2026年4月22日 08:01</em> <em>广东</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz0VYRAoO5wdw0YDlOeIyZ0HAHYdkpdzBIwdUPxr6LCc08IO6AXcP9fyEvt8wkAeYR9Ch2OfUiatfpgdKp3F3r0BJydThWtTMrM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片"></p>
+<p>这应该是全网最完整的一份「Obsidian × AI 生产力」指南。</p>
+<p>全文近万字，是我过去一年用 Obsidian + Claude Code 搭建个人 AI 生产力系统的完整思考。</p>
+<p><strong>Obsidian 的价值，在 AI 时代被重新审视了。</strong></p>
+<p>它是 AI 的操作系统，是 Claude Code 的工作台、是我个人上下文的资料库、是 Agent 能伸手就拿到所有材料的那张桌子。</p>
+<p>过去这段时间，我把所有专栏、所有文章、所有选题、所有播客摘要、所有周计划，全搬进了一个 Obsidian Vault（存储库）。AI 在这套系统里读、写、跑脚本、管任务，所有动作都发生在一个本地文件夹里。</p>
+<p>一个好的 Obsidian Vault，可以让 Agent 变成&quot;懂你&quot;的私人助理。</p>
+<p>这篇文章一次讲完：</p>
+<ul>
+<li>Obsidian 价值与原理</li>
+<li>Obsidian 对 AI 产品设计和个人工作流的影响</li>
+<li>完整的搭建与使用教程（入门 → 精通）</li>
+<li>obsidian 的常见功能和高阶功能</li>
+<li>插件生态和 CLI 的使用</li>
+</ul>
+<p>如果你是第一次听到&quot;AI 生产力系统&quot;，这篇文章是最合适的入门；</p>
+<p>如果你已经在用 Obsidian，那我希望这篇能让你看到 Obsidian 被低估的那一面。</p>
+<p>一、Obsidian 是什么：从本地编辑器到 AI 操作系统</p>
+<p>大部分人第一次看 Obsidian，会觉得它就是一个&quot;支持双链的 Markdown 编辑器&quot;。</p>
+<p>在我看来，Obsidian 更像是一个<strong>本地文件夹的可视化编辑器</strong>。</p>
+<p>它只是帮你把一堆<code>.md</code>文件用图形界面打开、编辑、互相链接。</p>
+<p>所有的文件都能以命令行的方式被 Agent 读取调用。</p>
+<p>发生这一切行为的场所，obsidian 就是最合适的。</p>
+<p><strong>在 obsidian 里，人类可以控制和看到 AI 在读取什么、在输出什么。</strong></p>
+<p>1.1 把 Obsidian 理解成&quot;AI 的工作桌&quot;</p>
+<p>这里有一个更直观的类比。</p>
+<p>你请了一个助理，想让他帮你处理工作。你会怎么准备？</p>
+<ul>
+<li>给他一张桌子（有权限能随时拿到所有材料）</li>
+<li>桌上按分类摆好文件夹（客户资料、项目档案、个人偏好）</li>
+<li>贴几张便利贴（写清楚哪些规则不能违反）</li>
+<li>桌角放一本 SOP（不同任务按什么流程做）</li>
+<li>给他一支笔，让他能随手记、随手写</li>
+</ul>
+<p>Obsidian 就是这张桌子的数字版，Agent 就是那个助理。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowRNbN6VtsDawrq0eUhpLL4SzHFADibmTL7icukRAGNLGAUrMSC1EeXww6qhPLuHOhxiaib6ice0NtA83T2kia6qOCmypuWiaJAibway0I/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片"></p>
+<p>我的 obsidian 每个文件夹、文件都是由 AI 来读取和输出</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozzDRzQ2mjc6PwUGBGF329fEBnB2lch6EXBsh1AJ8iadIqGoL3f7rkPicRFCWMvJBjwjOtSzm5fPMpNeImWgRrRkpbwoKx6o9gIw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片"></p>
+<p>Claude Code 进入这个文件夹的第一件事，就是读<code>CLAUDE.md</code>。</p>
+<p>它告诉 AI：这里有什么、不能碰什么、不同任务应该走哪条线。</p>
+<p>然后 AI 开始工作，过程中自己翻文件夹、读文档、查索引、写笔记。</p>
+<p>整个过程里，我基本不用解释任何背景。</p>
+<p>1.2 Karpathy 的 Obsidian 三件套：剪藏 + Wiki + 规则</p>
+<p>先用一套具体的方法论把 Obsidian 的用法讲清楚。</p>
+<p>这套方法来自 Andrej Karpathy，前 OpenAI 联创、前 Tesla AI 总监。</p>
+<p><strong>① 剪藏：一切入口都是 Obsidian</strong></p>
+<p>看到值得记的东西，不要收藏到浏览器、发给文件传输助手、丢进备忘录，而是<strong>剪进 Obsidian</strong>。</p>
+<p>比如可以把文章用 Web Clipper （浏览器插件）一键保存到 obsidian 的Markdown文件、把推文复制正文贴进笔记、播客字幕整段存进来、一句想法开个新文件就写。</p>
+<p>不需要管理目录、文件名称，所有原料在同一个文件夹里，AI 想用时随时可得。</p>
+<p>不在 Obsidian 里的信息，对你的 AI 系统来说就等于不存在。</p>
+<p><strong>② Wiki ：知识自己长成网</strong></p>
+<p>剪完关键是用让 Agent 来调取他们。</p>
+<p>比如读到一个重要概念，在笔记里写<code>[[概念名]]</code>，</p>
+<p>告诉你的 Agent，让它根据这个概念来读取剪藏的内容中有哪些相关的，按 xx 规则整理到wiki 中。</p>
+<p>这样子，你收藏的内容就被 Agent 关联起来，并创作出来新的内容。</p>
+<p>久了之后，你的 Vault 是<strong>一张自己长出来的 wiki</strong>。</p>
+<p>AI 读到任何一篇笔记，都能顺着双链拿到背景、案例、相关概念。这就是最好的上下文。</p>
+<p><strong>③ 规则：给 AI 制定输入和输出的 md 规则文档</strong></p>
+<p>光有原料和连接还不够，AI 不知道你希望它怎么工作。</p>
+<p>所以 Karpathy 会在 Vault 里写一份**规则文档，**什么该做、什么不该做、不同任务怎么走。</p>
+<ul>
+<li>可以写根据剪藏的内容，按照你的博客规则，来创作博客</li>
+<li>根据剪藏的内容，按照你的论文写作规则，来创作论文</li>
+<li>等等</li>
+</ul>
+<p>可以把一些通用的规则写到 claude.md里，让Agent 执行时，每次都独立规则目录下的文档。</p>
+<p>这三件事合起来就是一个完整的个人 AI 知识系统：</p>
+<p>剪藏  →  把信息搬进来 。Wiki  →  让信息自己组织。 规则  →  告诉 AI 怎么用</p>
+<p>1.3 我的 obsidian 运作机制：CLAUDE.md + 文件夹 + MD 文件</p>
+<p>但是对于Karpathy 的方法并不适用于大多人。</p>
+<p>因为它不仅需要你提供大量参考文件，还可能消耗你大量的 token。</p>
+<p>下面是我的方法，这是我从众多知识管理的方案中提炼出来的适用于AI的。</p>
+<p>Obsidian 作为 AI 操作系统的运行机制，可以拆成三层：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy3OoECuaibayqXvvQFKQDRUOKv0a2KKC7nr4UereG4dQmSuMZjCuHianzXrvlppoWsibmNtib9SI5icHMHRnFAQcbiaLtH2y9RSnCjk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片"></p>
+<p>Layer 1 是 AI 进入 Vault 时读的第一个文件。我的 CLAUDE.md 包含四件事：</p>
+<ul>
+<li><strong>项目概述：这个 Vault 是什么、目标是什么</strong></li>
+<li><strong>模块地图：每个文件夹的职责</strong></li>
+<li><strong>核心行为规则：比如&quot;JSONL 只能追加不能覆盖&quot;&quot;写文章前必读写作风格&quot;</strong></li>
+<li><strong>任务路由表：不同类型的任务走哪个流程、读哪些文件</strong></li>
+</ul>
+<p>Layer 2 是文件夹。编号 + 中文名：<code>00 收件箱</code>、<code>01 内容创作</code>、<code>02 选题管理</code>……编号保证排序稳定，中文名保证 AI 一看就懂。</p>
+<p>Layer 3 是具体文件。命名、格式、结构都有规范：</p>
+<ul>
+<li>文件夹：<code>序号 名称/</code></li>
+<li>独立文章：<code>MMDD-标题.md</code></li>
+<li>专栏文章：<code>章节号-标题.md</code></li>
+<li>索引文件：<code>xxx_index.jsonl</code>。用于记录 Agent 在这个文件夹下做了什么事情。</li>
+</ul>
+<p>Agent 在我的 vault 需要输出内容时，通常它的执行步骤是，先读取 claude.md，然后判断是否需要调用 Skill，下一步去读取到指定的文件夹，在文件夹里读取<code>_index.jsonl</code>，查看这个文件夹做过什么，最后来输出内容。</p>
+<p>每一步 Agent 都知道自己在做什么、读什么、写到哪里。</p>
+<p>二、Obsidian 详细教程</p>
+<p>这部分分两段：入门（今天就能装起来用）、精通（真的把它变成 AI 操作系统）。</p>
+<p>2.1 入门：30 分钟搭起一个能用的 Vault</p>
+<p>Step 1：装 Obsidian</p>
+<p>去obsidian.md下载对应系统版本，双击安装，开箱即用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozpa8JA7kOic4K9T6gibf7mHKibWPCYyiaQ7Y0Qeb5CojN4d6Zpm4WTYAicdfsw4XmGuDQPFgyB0ibnFcyGc2qopBicFd3Z7nCwSzicoGs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片"></p>
+<p>打开后它会让你选一个本地文件夹作为 Vault（存储库）。</p>
+<p>这个文件夹就是你未来所有笔记的根目录，选一个你能长期稳定管理的位置。</p>
+<p>我个人推荐放在：</p>
+<pre><code>~/Documents/GitHub/obsidian
+</code></pre>
+<p>放在 GitHub 目录下是因为后续方便统一 Git CLI 来做版本管理。</p>
+<p>如果你不熟悉 Git，mac 电脑放 iCloud 或者本地任意位置都行。</p>
+<p>Step 2：理7 个核心功能</p>
+<p>Obsidian 功能很多，但 80% 场景用这 7 个就够：</p>
+<p><strong>① 双向链接</strong></p>
+<p>任意笔记里写<code>[[笔记名]]</code>就能链接到另一篇笔记。被链接的那篇会自动显示&quot;谁引用了我&quot;。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozh4GDJrBrCnl5Oyfib3opK3bEKVB0cfb0x9N3vPPLSTfS1J9GvlNwFTqrZPlsrfnqmDamzT6ibzsdicXogrhn6ZCuUibyqzy6ZmuU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片"></p>
+<p><strong>② 知识图谱</strong></p>
+<p>所有双链可视化出来，就是图谱。节点是笔记、连线是引用。不是每天都用的功能，适合发现知识盲区，如果某个主题的笔记孤零零没有连线，说明你还没把它和其他东西关联起来。</p>
+<p>在 Obsidian 左侧点击下图按钮，就能进入知识图谱</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowTK1mXqMH7yDHhxcjxZ0F0kupU438IKyKlcibuHesQqia2MQ4jEYNsQiayFjXDWzgDHWr1MvJdW7dib2ktIcS0BenUPictf91BQ3Tg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片"></p>
+<p><strong>③ 笔记属性（YAML 元数据）</strong></p>
+<p>每篇笔记顶部可以写一段结构化字段：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyESQEz4vV33pT77KoHKw0r4tgIJk1wmjmbNb9LGMqdlCro4xNCImCPicwZxjq2o99j5OCNl2F962EO9A2beJTjcKiauURFA4shA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片"></p>
+<p>AI 读笔记时，这是它看到内容的第一步。</p>
+<p><strong>④ Daily Notes</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowswLwVv65a9qf3mBHRIZg7hIKZsteelRhuUBatwj1pu8AO7ZiaGRKodia9LR4BWdymmd4xIxdzgCWPwmJHYuQk2CTt4QWGnEZMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片"></p>
+<p>点击每日笔记，自动创建一个日期命名的笔记文件，比如<code>2026-04-15.md</code>。</p>
+<p>我用它做一天的工作日志，结合 Calendar 插件还能看日历视图。</p>
+<p><strong>⑤ Templates</strong></p>
+<p>模板的价值是快速复制某个文件的框架到新建的文件在。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz27fCkMAVN8ofYgAmMRxGlxO9Uljuzeom6AVzoicyUUdcNumIrNFP9ribKG8YlBpTSm84pKquFic3iaNuwFyOUNQDkEQoxMFCvQvI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片"></p>
+<p>比如周复盘模板、选题模板、日报模板……这些都可以用模板。</p>
+<p><strong>⑥ Canvas</strong></p>
+<p>Obsidian 的内置白板。零散想法摊开来看、画概念关系图、导出成图片插文章。两种场景最好用：头脑风暴、画关系图。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowHYdPqoPjx707Za33ticfBz1slqicuEnHYp8hciaZgzmJwlgwel8SY1slQia1cPdia05xoaCle2BGPqRZmD4bkfVfeQoG8FtgZdfHM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片"></p>
+<p><strong>⑦ Web Clipper</strong></p>
+<p>Web Clipper 是官方浏览器扩展，在浏览器看到好文章点一下图标，就以 Markdown 存进 Vault。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozjmHw8fk9IB7CC7d7BAibe5EXIXbaacLUNy2g17LPKicFFowgZpV4NJHT5slujoXT3mbic2MvKydenF0Rft8NpyEciaiat82nayvkc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片"></p>
+<p>下载地址：<a href="https://chromewebstore.google.com/detail/obsidian-web-clipper/cnjifjpddelmedmihgijeibhnjfabmlf">https://chromewebstore.google.com/detail/obsidian-web-clipper/cnjifjpddelmedmihgijeibhnjfabmlf</a></p>
+<p><strong>8 Bases</strong></p>
+<p>Bases 是 2025 年 v1.9 新增的能力，能把笔记集合变成结构化数据库视图（表格/卡片）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxRDDBFdBHhPuDpxnxcy9EyrggNY79Wb2ibnuY5U9VjLmNVMua5sMRTZ5mRUaxibnVsYn5gZ37ecD5IwMDJJmLF6Aic9vtSJDfVco/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片"></p>
+<p>Step 3：Markdown 语法</p>
+<p>Obsidian 用 Markdown 写笔记。如果看到类似下面的文字加载着各种符号，不要慌，这就是 markdown 语法的标志。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozuxbwJBtmVuMVa8n4DJ1yRHVrc6gKjiaGeE9CjGLzGd9iaRce00lS7lXd0CIV63aC77KWKuia0zUjIsQLGJrf3Zywl4ouMPC11Lg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="飞书文档 - 图片"></p>
+<p>在飞书、钉钉这类文档通常都自动渲染了 markdown 语法，下面是常见的语法符号。</p>
+<p><strong>1 标题</strong><strong><code>#→ AI 理解文章结构。</code></strong><code>h1</code>是主题，<code>h2</code>是分论点，<code>h3</code>是细节。</p>
+<p><strong>2 列表</strong><strong><code>- / 1.→ AI 理解&quot;这些是并列/有序要点&quot;，摘要时优先关注。</code></strong></p>
+<p><strong>3 双链</strong><strong><code>[[...]]→ AI 理解&quot;这个概念在系统里有专门文档&quot;。</code></strong></p>
+<p><strong>4 代码块 ```→ AI 识别&quot;这段是代码不是正文&quot;，不会把变量名当中文理解。</strong></p>
+<p><strong>5 Frontmatter→ AI 读笔记的第一印象，用来分类和过滤。</strong></p>
+<p><strong>6 标签</strong><strong><code>#tag→ AI 做分类检索。</code></strong>  </p>
+<p>Markdown 不仅是给人看的，更是给 AI 看的结构化指引。</p>
+<p>2.2  精通：把 Obsidian 变成 AI 操作系统</p>
+<p>这一篇章详述应该如何让 AI 读懂你的 Obsidian 文件夹</p>
+<p>Step 1：设计你的文件夹模块地图</p>
+<p>这是整个系统的骨架。我的划分方法：</p>
+<pre><code>05 工具箱/       — 插件、脚本、Skill06 计划/         — 年度 → 周计划 → 每日 → 复盘07 系统方法/     — 工作流、迭代记录08 交付物/       — 工作交付、甲方内容09 image/        — 文章配图10 About me/     — 个人介绍、写作风格、审稿标准
+</code></pre>
+<p><strong>三个原则</strong>：</p>
+<ul>
+<li><strong>序号 + 中文名：保证排序稳定、一眼能懂</strong></li>
+<li><strong>每个文件夹有 README.md：写清楚放什么、不放什么</strong></li>
+<li><strong>深度不超过 3 层：太深 AI 和你都找不到</strong></li>
+</ul>
+<p>Step 2：写好你的 CLAUDE.md</p>
+<p>这是 Agent 进入 Vault 的第一个文件。</p>
+<p>一个合格的 CLAUDE.md 应该包含：</p>
+<ul>
+<li><strong>项目概述：Vault 是什么、核心理念</strong></li>
+<li><strong>模块地图：每个文件夹的职责</strong></li>
+<li><strong>核心行为规则：AI 必须遵守的铁律</strong></li>
+<li><strong>任务路由表：不同任务走哪个流程</strong></li>
+<li><strong>命名规范：文件怎么命名</strong></li>
+<li><strong>关键索引位置：核心 JSONL 在哪里</strong></li>
+</ul>
+<p>我的claude.md规则是这几条：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyQG4NnycY0uSmIXxiazS7qM1HE97YUiaX1WysT5tjGSTNe5X52E1SCfBjoo159ULUx5rjQ56gQVGiahyfgiadiaSicyeOOFIKicHhgY4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="飞书文档 - 图片"></p>
+<ul>
+<li>操作 JSONL 文件时<strong>只允许追加</strong>，绝不覆盖</li>
+<li>写文章前<strong>必须先读</strong>写作风格文件</li>
+<li>创建新文件前确认应该放哪个子文件夹</li>
+<li>写专栏文章<strong>先拟大纲讨论</strong>，切勿一次性输出几千字</li>
+<li>每个文件夹下有 README，进入新文件夹时先读</li>
+</ul>
+<p>这些规则仅让 claude code 对你的 obsidian 文件夹项目生效，退出这个文件夹后，以.claude.md的规则为准。</p>
+<p>Step 3：建立索引文件</p>
+<p>CLAUDE.md 是指南，JSONL 是Agent 对于每个文件夹的规则记录</p>
+<p>我用四个 JSONL 贯穿整个系统：</p>
+<ul>
+<li><code>daily_log.jsonl— 每日产出记录，在07 系统管理文件夹</code></li>
+<li><code>goals_tracker.jsonl— 年度目标追踪，在年度文件夹目标下</code></li>
+<li><code>articles_index.jsonl— 独立文章索引，在个人创作文件夹下</code></li>
+<li><code>series_index.jsonl— 专栏进度索引，在个人专栏更新文件夹下</code></li>
+</ul>
+<p>JSONL 的好处：每次执行完成任务，<strong>AI 追加一行记录，读取成本极低，但可以让 AI 很好的按照文件夹规则输出执行</strong>。</p>
+<p>对比 JSON 或数据库，JSONL 的结构最简单、AI 操作最稳定。</p>
+<p>我在 CLAUDE.md 里定了一条死规则：JSONL 只追加、不覆盖。</p>
+<p>这条规则几乎是整个系统最重要的护栏。</p>
+<p>Step 4：沉淀你的个人上下文</p>
+<p>AI 懂不懂你，取决于你愿不愿意把自己的偏好、风格、历史沉淀下来。</p>
+<p>我在<code>10 About me/</code>下有这几个文件：</p>
+<ul>
+<li><code>我的介绍.md— 身份、背景、当前身份</code></li>
+<li><code>写作风格.md— 语言偏好、文章结构、禁忌</code></li>
+<li><code>内容定位.md— 写什么、不写什么、读者是谁</code></li>
+<li><code>审稿标准.md 一篇文章发布前要过哪些关</code></li>
+<li><code>性格特点.md— MBTI、决策倾向、沟通偏好</code></li>
+</ul>
+<p>这些文件的作用是——<strong>让 AI 不需要再&quot;了解你&quot;，它打开文件就懂你</strong>。</p>
+<p>刚开始写这些很像写简历，但一旦写完，AI 的输出质量会跃升一个台阶。</p>
+<p>Step 5：搭建你的三大工作闭环</p>
+<p>我的系统里跑着三个核心闭环，互相喂养：</p>
+<p><strong>闭环一：内容创作</strong></p>
+<p>选题 → 素材 → 起草 → 审稿 → 发布 → 归档</p>
+<p>每一步都绑定到一个文件夹或文件。AI 读到&quot;写文章&quot;这个任务，自动按这条线走。</p>
+<p><strong>闭环二：知识管理</strong></p>
+<p>信息来源（播客/文章/书）→ 消化（摘要/金句）→ 分类存档 → 选题反哺</p>
+<p>这个闭环的关键是&quot;消化&quot;——原始信息进来不能直接放着，得经过一轮压缩和结构化，才能变成可检索的素材。</p>
+<p><strong>闭环三：周复盘</strong></p>
+<p>每日日志追加 → 周计划对比 → 年度目标追踪 → 下周规划</p>
+<p>这个闭环的价值是让系统自己&quot;跟踪自己&quot;。每周末我让 AI 读本周<code>daily_log.jsonl</code>、对比<code>02 周计划</code>、计算年度目标进度，自动产出一份复盘。</p>
+<p>三、插件生态：让 Obsidian 真正&quot;活&quot;起来</p>
+<p>搭完文件夹、写完 CLAUDE.md，只是把骨架搭好。</p>
+<p>要让 Obsidian 真正跑起来，还需要两样东西：<strong>合适的插件</strong>（把信息搬进来、管起来、输出出去），以及<strong>CLI 能力</strong>（让 AI 直接调用 Obsidian）。</p>
+<p>截止 2026 年初，Obsidian 社区插件已经超过 2700 个。看着吓人，但按&quot;采集 → 整理 → 输出&quot;三个阶段来选，每个阶段 2-3 个就够了。</p>
+<p>3.1：采集：把信息搬进 Vault</p>
+<p>AI 生产力系统的第一个瓶颈，不是&quot;怎么写&quot;，而是&quot;写什么&quot;。没素材，AI 再强也是空转。</p>
+<p><strong>① Web Clipper（官方）</strong></p>
+<p>看到一篇好文章，点一下扩展图标，整篇以 Markdown 存进 Vault。标题、正文、链接、图片都保留。</p>
+<p>比&quot;收藏到浏览器书签然后再也不看&quot;强在哪？存进 Vault 就是 AI 可以<code>grep</code>的素材，而不是躺在收藏夹里的死链接。</p>
+<p><strong>② 微信读书插件</strong></p>
+<p>在插件社区搜索“weread”就能下载</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxiao6s5xib9szDiamsib1h9iaVQR1iacmONJR3bichdV7ic37TaJL5bdvOvRdT1ibZ7Ac7zeGJB0OPK9PBKxTyEicD01fZRMFwibbdwIDzRg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="飞书文档 - 图片"></p>
+<p>一键同步微信读书的所有划线、笔记、书评到 Vault。每本书一个文件，带 （书名、作者、进度）。</p>
+<p>AI 写文章时能直接搜你划线过的段落，比从头搜互联网快得多，而且是你亲自筛选过的内容。</p>
+<p><strong>③ RSS</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyYVyBbic9AAbjPibLegibgg4p5tXlI9NN4nwasR9ibOXZmWkLSHDPy7nFibfRgSq0TRuFWH0FCFib6CKFWb8YicDtXvwmz8ia4AugsojU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="飞书文档 - 图片"></p>
+<p>订阅播客字幕、技术博客、Newsletter 的 RSS。自动拉新内容，以笔记形式存到指定文件夹。</p>
+<p>我的<code>每日播客/</code>文件夹就是这么来的——AI 每天自动从 RSS 拉字幕，整理成摘要等我消化。</p>
+<p>3.2：整理：把信息变成可查询的知识</p>
+<p><strong>① Dataview</strong></p>
+<p>用类 SQL 语法查询你的笔记库。比如「所有<code>status: 待写</code>的笔记，按优先级排序」：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyeYBpqBKAbzEN1NCdVaNnaQZdqkyjib6eLrtFkfrSVsL8icjL9jvc9O6Evr8kWW6wHGXeh2jNSQsc4tMGCbjibiaDUNMWxsA56uaU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="飞书文档 - 图片"></p>
+<p>Dataview 帮你维护的结构化视图，反过来也会指导 AI 的行为——AI 看到选题看板就知道该优先写什么。</p>
+<p><strong>④ QuickAdd</strong></p>
+<p>解决&quot;捕获一个想法要打开 Obsidian、找文件夹、新建文件&quot;的摩擦。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxQibiajAjSTpYZnZOnxQFMEOL1Nso0GABFia4icgxyaicmibkHOGFia6IawsaOdBQicpH5qLtaQ6TzXVccSrjqCqo6RZjKyWnzaGkpaXU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="飞书文档 - 图片"></p>
+<p>我设了几个快捷键：</p>
+<p><code>Ctrl+Shift+A 新增一条选题，自动写入``02 选题管理</code></p>
+<p><code>Ctrl+Shift+N 新增一条笔记到收件箱</code></p>
+<p>按一下，弹出输入框，写一句回车就完事。</p>
+<p>3.3：输出：把知识变成产品</p>
+<p><strong>① Kanban</strong></p>
+<p>看板视图。每张卡片是一个笔记文件。我用它管文章写作进度：选题 → 写作中 → 待审 → 已发布。</p>
+<p>Claude Code 能直接读取看板状态，知道每篇文章在哪个阶段。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy0ib11sgicuPJibM5mRsibAG1eQPpKrVj1bHJa4wy7pISxSTziaFicoSGLCxMYjFb042sDWdpBPoeaDCZzlicgoLYZ8EjhcT2dDUS3uM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="飞书文档 - 图片"></p>
+<p><strong>② Excalidraw</strong></p>
+<p>在 Obsidian 里画手绘风格的流程图、架构图、概念关系图。画完能嵌入笔记，也能导出图片。</p>
+<p>说实话我用得不多，因为大部分图我直接让 AI 生成。Excalidraw 更适合需要精细调整的场景。</p>
+<p>四、CLI：Obsidian 真正的&quot;AI 通道&quot;</p>
+<p>让 AI 能真正用起Obsidian 的关键，是 CLI。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoyicM7ef4LqUBHc9g2OV555DsHg1Y8iboXaq4zg2lg0JwJ3aaiaDmIEn3qhQ5aianqS84xgXCSjoVgaulPw9EnTN9TgX6Om8Kp5jEo/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="飞书文档 - 图片"></p>
+<p>Obsidian 本身支持<strong>URI Scheme</strong>，也就是通过<code>obsidian://</code>协议直接打开 Vault 中的任意文件、执行操作。</p>
+<p>比如：</p>
+<pre><code># 新建文件obsidian://new?vault=obsidian&amp;name=新笔记&amp;content=内容# 搜索obsidian://search?vault=obsidian&amp;query=上下文工程
+</code></pre>
+<p>我们可以在终端里、Claude Code 里、Shortcuts 里、任意自动化工具里，<strong>一行命令让 Obsidian 打开某个笔记或跳到某个位置</strong>。</p>
+<p>更合适的是，现在都可以让 Agent 执行上面的命令，我们用自然语言描述就可以了</p>
+<p>我的用法：</p>
+<ul>
+<li>AI 起草完文章后，让它用 CLI 打开到写好的文件，方便我审稿</li>
+<li>Skill 调用时返回 URL 链接，点击就能跳到对应的参考文档</li>
+<li>写文章时让 AI 插入相关笔记的 URL 链接，读者点击能跳到我的原始笔记</li>
+</ul>
+<p>AI 能直接<code>cat</code>、<code>grep</code>、<code>rg</code>遍历整个 Vault，按需加载上下文。</p>
+<p>本地文件加本地 CLI，就是目前为止 AI 读写个人知识最低成本的方案。</p>
+<p>五、写在最后</p>
+<p>obsidian 的同步，可以实现跨设备操作，在手机或其他电脑使用文件的，可以参考下面方式</p>
+<ul>
+<li><strong>官方会员：价格较贵，据反馈咸鱼可以低价拼团</strong></li>
+<li><strong>iCloud：适合 50GB 以内，毕竟 50GB 的 icloud 会员只要 6 元一个月</strong></li>
+<li><strong>NAS：适合 100GB 以上的，比较折腾，需要自己搭自动同步脚本</strong></li>
+<li><strong>Git：使用 github 同步，适合 10GB 以内的，太大不推荐</strong></li>
+</ul>
+<p>很多人还把它当成一个&quot;笔记 App&quot;，觉得它门槛高、功能碎、学习曲线陡。</p>
+<p>但我现在的看法是：<strong>Obsidian 是个人 AI 生产力系统最好的起点</strong>。</p>
+<p>它把 AI 需要的三件事：<strong>MD文本、结构化目录、CLI 调用、插件生态，</strong></p>
+<p>做到了最简单、最开放、最可控。</p>
+<p>搭建一套完整的 AI 生产力系统，听起来是个大工程。但其实拆开来看，就是：</p>
+<ul>
+<li>选一个 Vault 位置</li>
+<li>搭一套文件夹结构</li>
+<li>写一份 CLAUDE.md</li>
+<li>导入你的个人上下文</li>
+<li>跑通一两个工作闭环</li>
+</ul>
+<p>做完这五步，你就已经有一个&quot;懂你&quot;的 AI 助手了。</p>
+<p>参考资料</p>
+<ul>
+<li>Obsidian 官网：<a href="https://obsidian.md">https://obsidian.md</a></li>
+<li>Agent Skills 开放标准：<a href="https://agentskills.io">https://agentskills.io</a></li>
+<li>Claude Code 文档：<a href="https://code.claude.com/docs">https://code.claude.com/docs</a></li>
+<li>本文节选自我的 AI 生产力专栏系列第四章，obsidian 的使用教程</li>
+</ul>
+<p>如果大家想要更系统的掌握 coding Agent、Obsidian、Skill、Vibecoding 的技能，欢迎订阅我的 AI 生产力专栏+社群。接下来就要更新 Obsidian 更详细系统的使用、还有 vibecoding 基础和 Coding Agent 的使用待更新。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxP1nZVnPTby0aJ3QUXfxRZeicsqvMIs9q8uycvPf8vCSSKDiaT4yd7hjTLub9HKpflibDGk66HVeibicG2eOa4N0zS8ic3fJWWrlibRo/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=13" alt="Image"></p>
+<p>我是空格，持续分享 AI 产品的思考与实践。</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/l38S21qKqi6eLaqFPZS0qw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

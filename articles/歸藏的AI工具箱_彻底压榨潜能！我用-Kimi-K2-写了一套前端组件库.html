@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>彻底压榨潜能！我用 Kimi K2 写了一套前端组件库 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">彻底压榨潜能！我用 Kimi K2 写了一套前端组件库</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E6%AD%B8%E8%97%8F%E7%9A%84%C2%A0AI%C2%A0%E5%B7%A5%E5%85%B7%E7%AE%B1">歸藏的 AI 工具箱</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91">前端开发</a><a class="chip" href="../index.html?tag=Kimi%20K2">Kimi K2</a><a class="chip" href="../index.html?tag=%E7%BB%84%E4%BB%B6%E5%BA%93">组件库</a><a class="chip" href="../index.html?tag=%E6%AD%B8%E8%97%8F">歸藏</a>
+    <span class="date">2025-07-15</span>
+  </div>
+  <p class="lead">大家好，我是歸藏（guizang），今天展示一下我用 Kimi K2 实现的一套组件库，以及K2 替代 Claude Code 的默认模型的教程补充。</p>
+  <article class="content"><p>set 限制解除 </p>
+<p>原创 歸藏的 AI 工具箱 <em>2025年07月14日 17:37</em></p>
+<p>大家好，我是歸藏（guizang），今天展示一下我用 Kimi K2 实现的一套组件库，以及K2 替代 Claude Code 的默认模型的教程补充。</p>
+<p>上周五晚上 Kimi K2 发布的第一时间，我就对他做了一些测试，还是用我之前的测试集已经很强了。</p>
+<p>然后我周末突然想上点压力，就说要不是提高一下难度。</p>
+<p>直接 把所有的代码示例、组件引用、设计指导等都去掉 ，只留下纯粹的任务要求，看看他能做到啥程度。</p>
+<p>结果没想到这么牛批，结果所有任务都一次性完成。</p>
+<p>最后的结果就是用 KImi K2 实现了一个全部都是复杂组件的 B 端组件库：</p>
+<p>包括了日历日程组件、分步引导弹窗组件、富文本编辑器组件、快捷搜索组件、带筛选的数据表格组件、文件树组件、可拖拽的数据仪表盘组件等。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKrqPS80Aia0oibN4jKrloF7DEt3RJZlEHaVDuMEYx5u3Jt69UAKH5iczaw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></p>
+<p>🎁</p>
+<p>目前所有的组件都是用 ChatWise 调用 K2 API 生成的，Artifacts 预览非常强，而且 K2 发布就已经火速支持，只需填写 API Key 就能添加。</p>
+<p>如果想要购买的话可以用藏师傅的链接， 可以打八五折 ： <a href="https://chatwise.app/?atp=guizang1">https://chatwise.app/?atp=guizang1</a></p>
+<h3>可拖拽的数据仪表盘组件</h3>
+<p>很多朋友可能说可能这些 Sonnet 4 也都能做。</p>
+<p>这里我着重展示一个复杂的可拖拽的数据仪表盘组件，我用同样的提示词让 Sonnet 4 写了之后完全不行，根本无法拖动全是 Bug。</p>
+<pre><code>创建一个可定制的仪表盘组件，允许用户通过拖放来添加、移除和重新排列不同的小部件（Widgets）。每个小部件都可以展示不同类型的数据或功能。核心功能：网格布局系统： 支持响应式网格，小部件可以自动对齐和调整大小。小部件库： 提供一个可供选择的小部件列表，例如图表（折线图、饼图）、数据卡片、任务列表、时钟等。拖放功能： 用户可以直观地拖动小部件来改变其在仪表盘上的位置。调整大小： 用户可以拖动小部件的边缘来调整其尺寸。状态保存： 仪表盘的布局和小部件配置（例如，图表的数据源）可以被保存（例如在 LocalStorage 或后端服务器中），以便用户下次访问时恢复。添加/删除小部件： 用户可以从库中添加新的小部件，或关闭不再需要的小部件。专业的用户界面： 简洁、现代的设计，清晰的网格线和占位符提示，流畅的拖放动画。
+</code></pre>
+<p>这是 K2 的结果和 Sonnet 4 的结果对比。</p>
+<p>Sonnet 首次运行的时候页面上一堆未知组件，最核心的问题是完全无法拖动，也没有处理每个卡片的最大最小这种边界情况，K2 把所有的问题都考虑到了。</p>
+<p>下面就全是对应的结果和提示词，你也可以参考这些提示词让他生成你定制的 React 组件库：</p>
+<h3>文件树组件</h3>
+<pre><code>创建文件树组件。应显示包含子文件夹的文件夹，不同文件类型的图标，选择，折叠按钮，打开/折叠文件夹的不同图标，简洁专业的用户界面。finder/文件浏览器。
+</code></pre>
+<h3>全能日历组件</h3>
+<pre><code>创建一个功能全面的日历组件，不仅能展示日期，还能用于管理事件和日程安排。核心功能：多种视图： 支持月、周、日视图的切换。事件展示： 在日历上清晰地展示事件，长时间的事件可以跨越多天或多个时间格。不同类型的事件可以有不同的颜色。事件操作：创建： 点击日期或时间格可以快速创建新事件，并弹出表单填写详情（标题、时间、描述、参与人等）。编辑/删除： 点击已有事件可以查看详情或进行编辑/删除。拖放： 支持拖放事件以快速更改其日期或时间。调整时长： 支持拖动事件的边缘来调整其持续时间。
+</code></pre>
+<h3>产品教程分步引导组件</h3>
+<pre><code>创建一个引导新用户熟悉应用功能的产品教程组件。该教程将以分步提示的形式，高亮显示界面上的不同元素，并引导用户进行操作。核心功能：分步引导： 能够定义一系列引导步骤，每个步骤都包含标题、描述和指向的特定页面元素。高亮和遮罩： 当引导到某个元素时，页面其他部分会有一个半透明的遮罩层，而被引导的元素则会高亮显示。提示框定位： 提示框（Tooltip/Popover）能够智能地定位在被引导元素的上方、下方、左侧或右侧，以避免遮挡重要内容。导航控制： 包含“上一步”、“下一步”和“完成/跳过”按钮。动态触发： 可以根据用户的特定操作（例如，点击某个按钮）来触发下一步引导。进度指示： 以点或数字的形式显示当前的步骤和总步骤数。简洁的界面： 提示框设计友好，不干扰视线，动画效果平滑（例如，高亮区域的平滑过渡）。
+</code></pre>
+<h3>现代化富文本编辑器</h3>
+<pre><code>创建一个现代化的富文本编辑器，提供直观的文本格式化工具栏，并能生成干净、标准的 HTML。核心功能：格式化工具栏： 提供常见的文本格式化选项，如加粗、斜体、下划线、标题（H1-H6）、列表（有序/无序）、引用、代码块等。插入媒体： 支持插入图片、视频和链接。图片支持上传、调整大小和对齐。实时预览： 编辑区域内的内容样式应与最终发布后的样式几乎一致。HTML 输出： 生成结构清晰、语义化的 HTML 代码，避免不必要的内联样式。撤销/重做： 标准的编辑历史追溯功能。全屏模式： 提供一个“沉浸式”的全屏写作环境。可扩展性： 允许开发者通过插件的形式添加自定义功能（例如，插入表格、特殊字符等）。用户界面： 工具栏图标清晰易懂，布局合理，整体设计现代、无干扰。
+</code></pre>
+<h3>高级数据表格组件</h3>
+<pre><code>创建一个功能丰富的数据表格组件，用于展示和操作大量结构化数据。应提供排序、筛选、分页、内联编辑等高级功能。核心功能：数据展示： 高效渲染大量数据行，支持虚拟滚动以保证性能。排序与筛选： 用户可以点击列标题进行升序/降序排序，并能对特定列进行文本、数字范围或日期的筛选。分页： 支持前端或后端分页，提供页码、每页显示数量选择器和导航按钮。内联编辑： 双击单元格即可进入编辑模式，根据数据类型显示不同的输入控件（文本框、下拉选择、日期选择器等）。编辑完成后可保存或取消。可定制的列： 用户可以显示/隐藏某些列，并能拖动列标题以调整列的顺序。行选择： 支持单选和多选，并能对选中行进行批量操作（如删除、导出）。固定列/表头： 在水平或垂直滚动时，可以固定表头和指定的列。专业的用户界面： 清晰的表格线，不同状态（悬停、选中）的视觉反馈，紧凑而不拥挤的布局。
+</code></pre>
+<h3>键盘驱动的快速操作中心</h3>
+<pre><code>创建一个由键盘驱动的快速操作中心（也称为 Omnibox），类似于 VS Code、Slack 或 GitHub 中的 Ctrl/Cmd + K 功能。它允许用户通过模糊搜索快速查找内容、导航页面或执行命令。核心功能：快速调用： 通过全局键盘快捷键（如 Cmd+K）在应用的任何地方快速唤出。模态浮层： 以页面中心浮层的形式出现，背景有遮罩，让用户聚焦于命令操作。模糊搜索： 用户输入关键词时，能快速、智能地匹配相关结果，无需输入完整词语。结果分类： 将搜索结果按类别分组（例如：“页面导航”、“操作命令”、“帮助文档”等），方便用户识别。键盘导航： 用户可以完全通过键盘（上/下箭头选择，Enter键执行）来操作，无需鼠标。可执行动作： 不仅能链接到不同页面，还能直接执行应用内的功能（例如“创建新项目”、“切换主题”）。上下文感知： （可选高级功能）可以根据用户当前所在的页面，智能推荐更相关的命令。专业的用户界面： 极简、轻量、响应迅速。列表项清晰，当前选中项有明显高亮，整体设计注重效率。
+</code></pre>
+<h3>Claude Code 调用 K2 教程的一些补充说明</h3>
+<p>上次写完教程之后很多朋友遇到了不少问题，一个是我迷迷糊糊写错了一些，还有就是没有考虑到的复杂情况。</p>
+<p>这里统一补充说明一下，之前的教程在这里：</p>
+<ol>
+<li>1. 如果你之前安装过 Claude Code 的话可能设置 API 无法生效，这时候要不删除掉你安装的 Claude Code 重新安装，要不更改一下里面 Config 文件的设置，这里用评论朋友（carline1314）的图片示例一下。 <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKKejbAicTdjZVotvIIeo0IMscVXLz3jwgVvVKJQcI01jNlWCtOBcDYMQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>2. 通过我之前方法更改环境变量的方式每次启动都需要修改一下，如果需要一劳永逸可以参考下面的命令行，重启终端可以直接使用。<pre><code>echo -e &#39;\n export ANTHROPIC_AUTH_TOKEN=sk-...&#39; &gt;&gt; ~/.bash_profile echo -e &#39;\n export ANTHROPIC_BASE_URL=https://anyrouter.top&#39; &gt;&gt; ~/.bash_profile echo -e &#39;\n export ANTHROPIC_AUTH_TOKEN=sk-...&#39; &gt;&gt; ~/.bashrc echo -e &#39;\n export ANTHROPIC_BASE_URL=https://anyrouter.top&#39; &gt;&gt; ~/.bashrc echo -e &#39;\n export ANTHROPIC_AUTH_TOKEN=sk-...&#39; &gt;&gt; ~/.zshrc echo -e &#39;\n export ANTHROPIC_BASE_URL=https://anyrouter.top&#39; &gt;&gt; ~/.zshrc
+</code></pre>
+</li>
+<li>3. 很多朋友更改频繁的话可能会遇到速率限制，这个需要充值更多金额提高 TPM 才行。 <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKXZX1DOTNC5ricxqyzia8KwmjRskYbORle8MjiaNsjjWzybShSzVeZIFeg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="Image"></li>
+<li>4. 上次的命令我把国内和国外的 API 地址写错了，大部分用户都是用的国内的我给写成了国外的，原文已经修改，国内的链接后缀是 cn 国外是 ai。<pre><code>export ANTHROPIC_AUTH_TOKEN=你的月之暗面 API Keyexport ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic
+</code></pre>
+</li>
+</ol>
+<p>好了这次内容就是这些。</p>
+<p>这几天海外 K2 的内容不断的发酵，因为模型是开源的大家也对模型做了非常详细的验证。</p>
+<p>除了在代码和智能体调用上非常强悍外，大家还发现 Kimi K2 在创意写作和 EQ 上的成绩也非常强。</p>
+<p>而且我的推特信息流已经全部都是 K2 了，专业的研究员在讨论 K2 的架构，其他朋友在讨论自己用 K2 跑出的惊艳 Case。</p>
+<p>连月之暗面研究员关于 K2 的博客文章都被翻译为英语疯狂传播，以前都是我们翻译别人的。</p>
+<p>现在来看 Kimi K2 这个模型的素质应该没啥悬念了，很多有异议的朋友我的建议是自己试试，毕竟官网的是免费的。</p>
+<p>6 月份我明显感觉整个 AI 圈子弥漫着一股非常疲惫的情绪，产品都大同小异，模型也没有什么进步，国内尤其严重，K2 发布以后明显不一样了，感谢月之暗面在 Manus 和 DeepSeek 之后又给国内 AI 产业续了一波。</p>
+<p>测试整理不易，如果这篇文章对你有帮助，记得点个赞。我是歸藏，我们下次再见。</p>
+<p>🎁</p>
+<p>目前所有的组件都是用 ChatWise 调用 K2 API 生成的，Artifacts 预览非常强，而且 K2 发布就已经火速支持，只需填写 API Key 就能添加。</p>
+<p>如果想要购买的话可以用藏师傅的链接， 可以打八五折 ： <a href="https://chatwise.app/?atp=guizang1">https://chatwise.app/?atp=guizang1</a></p>
+<p>感谢支持，正在努力产出内容🙏</p>
+<p>修改于 2025年07月14日</p>
+<p>继续滑动看下一个</p>
+<p>歸藏的AI工具箱</p>
+<p>向上滑动看下一个</p>
+<p>| |  | 5 Files |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.05 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 565.2 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 579.2 KB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 1.15 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/W_9hypErhMSE3vcoWnfuMA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

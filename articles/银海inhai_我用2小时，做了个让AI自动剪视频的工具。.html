@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我用2小时，做了个让AI自动剪视频的工具。 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">我用2小时，做了个让AI自动剪视频的工具。</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91">视频剪辑</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91">产品开发</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%B0%B1AI">智谱AI</a><a class="chip" href="../index.html?tag=%E6%8F%90%E7%A4%BA%E8%AF%8D">提示词</a>
+    <span class="date">2025-12-15</span>
+  </div>
+  <p class="lead">让AI帮忙看完视频自动剪辑一气呵成。</p>
+  <article class="content"><p>原创 银海 <em>2025年12月15日 11:04</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcxcf0WWtMsBFBSMgrmic5bVDgNWrUFzWkRqu1e5nicWFpCqdqJEfvoqSw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>Hi，我是银海。</p>
+<p>不知道大家在整理录过的一些视频素材时，有没有遇到这样的问题： <strong>长视频里总有那么几个精彩片段，但它们散落在各处。</strong></p>
+<p>每次都得拖着进度条一点点找，找到还得记时间点，再切到剪辑软件里手动剪，费时又费劲。</p>
+<p>既然现在AI已经能“看懂”视频了，那有没有可能让它帮我把关键片段自动挑出来，我只需要点几下就能导出成品？</p>
+<p>带着这个想法，我花了两小时左右把这个工具做了出来，看下面这个视频：</p>
+<p>整个工具的逻辑不复杂，流程大致分三步：</p>
+<p><strong>上传视频文件，先让AI分析视频内容，找出值得剪的片段，然后我在界面里挑选想要的部分，最后后台自动剪辑并导出。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcESQJsVm2l3a1UHTg4regmLic8n1iaL6zLx57FdyYqO94YFX5T90pI8mA/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>但是真正做起来时，细节比想象得多，踩坑也不少， <strong>下面就一步一步分享我是怎么搭建出这个应用出来的吧。</strong></p>
+<p>工具的实现过程中，最大的问题来自于“让AI看到视频”，然后分析出不同的时间片段并分析出为什么，这对于视觉模型的基础能力来说就非常关键。</p>
+<p>我本次用的是智谱最新开源的 GLM-4.6V 视觉模型，之前看一些宣传参数里说明，GLM-4.6V 在 MMBench、MathVista 等 30+ 评测中表现优异，128k 上下文（约等于 150 页文档或 1 小时视频），支持“过目不忘”的长视频理解和多文档分析 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcab1wtzC7RYFRWRBQUPy1SicXVibYCo43FlYJ6GKkicunhBeqgxcFDdrLw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>之前在演示视频里面直接输入主题或论文，自动检索配图、审核图片质量，生成图文并茂的公众号/研报内容，还是比较让我好奇心动，所以选择它作为本次的选手。</p>
+<p>而前段时间趁低价购买的最低只要20元/月的GLM Coding Plan正好跟本次的 GLM 4.6V 结合就是本次的工具构建的最佳拍档，体验链接：<a href="https://www.bigmodel.cn/claude-code?ic=XOPPYZLH2M">https://www.bigmodel.cn/claude-code?ic=XOPPYZLH2M</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcrrichtgfaW9oJ6EvNaPDLdXJqmMaRo0Yb9J5qx3gtOd6ddG7aP0SGyQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>关于如何在Claude Code、Cursor、Cline中使用GLM 4.6在这里就不逐步配置说明了，感兴趣的朋友可以直接看这份教科书级的官方文档说明：<a href="https://docs.bigmodel.cn/cn/coding-plan/overview">https://docs.bigmodel.cn/cn/coding-plan/overview</a></p>
+<p>现在万事俱备了，我们就展开讲讲如何实现。</p>
+<p>开局直接输入一个需求，你可以是一个模糊的需求，然后先能够表达出整个实现逻辑，我这里是直接用语音输入的，即便有一些字样出现了混乱，但是智谱GLM4 4.6依旧能够很好的理解我的诉求，然后先帮我设计架构图：</p>
+<blockquote>
+<p>我想做一个能够上传视频后识别视频中的一些精彩片段，并进行自动剪辑。我会提供具备多模态视频理解的大语言模型 API。我需要你帮我做的是根据识别出来的这个结果，然后进行视频片段的这个剪辑，然后我需要一个前端的页面，然后后端处理使用拍摄。请你帮我设计一整个架构信息，然后我喜欢使用简约风格的设计，请你可以使用 tailwindcss 的 CSS 样式作为前端的这个规范。</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcvibIgoDAAy5Qkve4CAk0H52Kdydn1GAgnEdPoNrohfcB0ObUzmibRRgA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>前端用的是 TailwindCSS，布局参考了剪映： <strong>左边是片段列表，中间是视频预览区域，右侧显示AI分析出来的片段信息，而实现方式也是非常的简单粗暴。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcQskMmzFa9rDFkcq1RET5oDIU5EzSfKcuxBQXR5WC3xUFBxDQiapAYYw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><strong>因为我们选用的 Coding Plan 里面有具备</strong> <strong>GLM</strong> <strong>4.6</strong> <strong>V模型</strong> <strong>的工具调用能力，我如果想要调整</strong> <strong>UI</strong> <strong>只需要截个图进去传入即可。</strong></p>
+<p>我传入的图实际上就是这么一张图，然后简单的一句话，因为它能够很好地看懂你想要的布局信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcG8ESwgjQFiaPKVWjgI2wlFMCe2maOt2DHK3MnTJgUKBkPN02NrvGvqw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>对我而言，深色主题，看起来更舒服一些。</p>
+<p>后端用 Python ，主要是它底层还是有使用FFmpeg这个包。而我们所需要使用到的两个其他的后端服务，一个是视觉分析的能力API（GLM 4.6V），还有一个是将上传的视频转成公网OSS地址的服务能力，直接给GLM 4.6 说读取我们提供的相关接口文档即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcY2xodNfEg0BGibic08whslZVECCEjQQhn8SyhajMWrofhahd1o9pgeKA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>你可以直接去智谱的官网，把GLM 4.6V 的相关文档直接贴给对话窗里面即可，依旧简单粗暴。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgco74Jvm8ca2th0Kn7oeEUaAibSibXBIbCHPPZO4y2yrNjntVX0KiaH2bkA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>参考文档地址：<a href="https://docs.bigmodel.cn/api-reference/">https://docs.bigmodel.cn/api-reference/</a></p>
+<p>在我们测试运行中发现，因为我们的视频是存在本地的，为了能够让GLM-4.6V能够读取我们的视频，我们需要有一个让视频能够在公网上可以访问的地址。</p>
+<p>最后实现的是： <strong>用户上传 → 后端自动推到</strong> <strong>OSS</strong> <strong>→ 获取</strong> <strong>公网</strong> <strong>可访问的地址 → 发给 GLM-4.6V 分析 → 返回结果渲染。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcHLK8lCIdWv2JcbibkU6VuQS7ezqn9eTZJC7hsa4e3Z3HWqpBt7Ddx4A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>所以用了阿里云的OSS对象存储，然后就可以给到GLM-4.6V去使用这个上传后返回的视频链接。</p>
+<p>而至于如何对接以及获取对应的密钥信息，这些都直接问 GLM-4.6 就能搞定，它的本身训练数据里面，已经有了相关产品的对接信息，它在整个代码生成过程中，只需要我们把鉴权信息和OSS Bucket地址一贴就完事。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgc5Wia16w57UYEKXyAu5kBv86TbPgQ66DFODrN2PdqeMX2flN8qmAoLpw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>甚至在追问的过程中，你可以直接把一些报错给到GLM-4.6，它会很细心教你如何设置相关的权限信息。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcFyUR4wfX4Ru14uu6s2JHHffrZpCNRAkxUniaQvcNIHiaOAGic74hqmHqQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>在整个过程中，真正花时间最多的不是写代码，而是调提示词，下面把我的提示词分享给大家供参考。</p>
+<pre><code class="language-markdown">你是一位顶级短视频运营专家和病毒式传播内容策划师。你的任务是从视频中精准识别具有&quot;爆款潜质&quot;的高光片段——那些能让观众停下来、产生强烈反应、忍不住分享的内容。## 🔥 核心筛选标准：什么是&quot;爆点&quot;？### 💥 第一优先级：情绪炸弹识别能引发强烈情绪反应的时刻：- **震惊/意外**：出人意料的反转、神操作、意想不到的结果- **爆笑**：搞笑失误、神回复、抽象行为、整活名场面- **感动/泪点**：真情流露、温暖瞬间、催泪时刻- **愤怒/争议**：引发讨论的观点、离谱操作、槽点满满- **惊艳/震撼**：视觉冲击、高能画面、技术展示### 🎯 第二优先级：传播钩子识别具有病毒传播特征的内容：- **金句/名言**：一句话能截图传播的精辟表达- **表情包素材**：夸张表情、魔性动作、反应镜头- **模仿素材**：可以二创、翻拍的有趣片段- **话题引爆点**：能引发评论区讨论的争议内容- **悬念/钩子**：让人想看后续的&quot;未完待续&quot;感### ⚡ 第三优先级：节奏高能识别信息密度高、节奏紧凑的片段：- **高能预警**：密集笑点/爆点连续输出- **节奏转折**：突然加速、画风突变、反差萌- **高潮时刻**：故事顶点、决战时刻、揭晓答案- **BGM卡点**：音乐与画面完美配合的高光### 🎬 第四优先级：内容精华视频的核心价值浓缩：- **干货精华**：最有价值的知识点/技巧- **产品亮点**：最吸引人的功能/特色展示- **人物高光**：展现魅力/能力的决定性瞬间- **故事核心**：不看就不懂整个视频的关键情节## 📊 爆点评分标准| 分数区间 | 爆点等级 | 标准 ||---------|---------|------|| 0.9-1.0 | 🔥🔥🔥 S级 | 绝对爆款：让人忍不住分享、截图、二创 || 0.8-0.89 | 🔥🔥 A级 | 高能时刻：明显的情绪峰值或记忆点 || 0.7-0.79 | 🔥 B级 | 精彩片段：值得保留但不是爆点 || 0.6-0.69 | C级 | 普通内容：有一定价值但缺乏传播力 || &lt;0.6 | D级 | 过渡内容：不建议剪辑 |**注意：只输出 0.7 分以上的片段，低于此分数不要输出！**## 📝 输出格式\`\`\`json{    &quot;highlights&quot;: [        {            &quot;start_time&quot;: 10.5,            &quot;end_time&quot;: 25.0,            &quot;description&quot;: &quot;【爆点类型】具体描述：1)发生了什么 2)为什么是爆点（情绪点/传播点）3)适合的使用场景（抖音开头/高潮/结尾/单独成片）&quot;,            &quot;score&quot;: 0.92,            &quot;category&quot;: &quot;类别&quot;        }    ]}\`\`\`## 🏷️ 类别标签（必须从以下选择）| 类别 | 适用场景 ||-----|---------|| 💥 炸裂名场面 | 病毒传播级别的高能时刻 || 😂 爆笑时刻 | 搞笑、抽象、整活内容 || 😭 泪点暴击 | 感人、温情、催泪片段 || 🤯 神反转 | 出人意料的剧情/结果 || 💬 金句输出 | 可截图传播的精辟表达 || 🎭 表情包素材 | 魔性表情/动作 || ⚡ 高能预警 | 密集输出的精彩片段 || 🎯 干货精华 | 最有价值的核心内容 || 🌟 人物高光 | 展现魅力的决定性瞬间 || 🔊 争议话题 | 能引发讨论的内容 || 🎬 视觉震撼 | 画面冲击力强的片段 || 🎵 卡点时刻 | 节奏感强的高光 |## ⚠️ 重要要求1. **宁缺毋滥**：只选真正的爆点，不要凑数。一个10分钟视频可能只有2-5个真正的爆点2. **精准卡点**：时间要卡在情绪/内容的完整波峰，不要截断3. **详细说明**：描述要说清楚&quot;为什么这是爆点&quot;，而不是简单描述画面4. **时长适中**：短视频爆点片段建议 8-30 秒，最长不超过 60 秒5. **避免平淡**：过渡、铺垫、日常对话等不要选请仔细观看视频，以&quot;这个片段能不能火&quot;为核心标准进行筛选。只返回JSON格式结果，不要有其他文字。
+</code></pre>
+<p>一开始我让AI“找精彩片段”，结果它给出的分析完全泛化，什么“画面清晰”“内容丰富”这种毫无参考价值的判断。</p>
+<p>我后来换了一种提法，不说“精彩”，改说“爆点”，就是那种让人愿意停下来、愿意分享的片段。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgczLPzGv69lAoW5eMObicYTSWcr4JfV0qic6uNZTpDCDFl0fHXCBWwHcyw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>提示词里加了很多具体标准，比如有没有情绪爆发、有没有金句、有没有反转、适不适合做短视频开头，并且特别强调宁缺毋滥，分数低于0.7的不用给我。</p>
+<p>这样调整之后，AI的判断明显靠谱了不少。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcOibVvGibQP5tPSjq5ejTnh6ujgDDLEdBIpWALNib2LgRQciak2DfterXPA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>它不仅告诉我哪个片段值得剪，还会给出原因，是节奏变化、情绪高潮，还是一句话特别有传播力，这些都让筛选过程更有参考意义。</p>
+<p><strong>现在这个工具我自己用得挺舒服。</strong></p>
+<p>录一个几十分钟的视频，上传后让AI分析一下，几分钟就能把值得剪的片段全部标出来，点几下就能生成成品。效率比以前手动找片段快太多， <strong>而且最后剪辑出来的片段，我对它的期待是宁缺毋滥，只希望有高质量的结果输出。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcnicibXq8ibazCT6gcySh2iaSriaHibB9FQSoQMHvFtL9bKajWKI7w8nhXBVw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>如果你正在做类似的事情，或者想学习如何把AI能力整合到自己的工具里，这个项目或许能给你一些参考。</p>
+<p>然后如果你如果还没有找到合适的编程工具和基础模型的话，直接上这个 Coding Plan 就完事了，一整套方案开箱即用，性价比极高。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgczZ6WZOAIPzR5lbg9we3FUqZOSpqORxm2Zmic3qxLl8BL1JzO5sD9MuQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>Coding Plan 介绍：<a href="https://www.bigmodel.cn/claude-code?ic=XOPPYZLH2M">https://www.bigmodel.cn/claude-code?ic=XOPPYZLH2M</a></p>
+<p>此外，如果你的GLM-4.6V模型分析资源不够用的话，可以直接进特惠专区去买这个5.9元的 GLM-4.6V的特惠包，1000万tokens 个人日常使用还是绰绰有余了，真的很香。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6mWVqr9GMNXMIPhov8IPgcTcpp3liafdtgk82rzbVH3K95k8Vk8xGiaNLuTiczvlEE2xe6wIfhwqGxA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>AI 的能力越来越强，但它依然是工具，关键是先把自己的需求想清楚，再决定让AI接手哪一步。</p>
+<p>对我来说，这个工具最省时间的地方并不是“剪辑”，而是“找片段”。</p>
+<p>AI帮我把最机械、最耗时的部分自动化了，而怎么剪、剪哪段，最终决策仍然在我手里。</p>
+<p><strong>人机协作，各做各的强项，大概才是我认为的把AI真正用好的方式。</strong></p>
+<p>以上就是本次内容的所有分享啦，我是银海，我们下期再见👋</p>
+<p>© THE END</p>
+<p>觉得我的内容还不错， 顺手点个赞、分享、在看</p>
+<p>都是对我最好的认可！</p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>| |  | MP4 File 3.43 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+<p>| |  | MP4 File 3.43 MB |  | | --- | --- | --- | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Qnga_PEg68RQ0BP0jMO5lA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

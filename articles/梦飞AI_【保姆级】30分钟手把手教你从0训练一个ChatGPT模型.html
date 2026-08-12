@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【保姆级】30分钟手把手教你从0训练一个ChatGPT模型 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">【保姆级】30分钟手把手教你从0训练一个ChatGPT模型</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BC%A0%E6%A2%A6%E9%A3%9Ei">张梦飞i</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=nanochat">nanochat</a><a class="chip" href="../index.html?tag=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83">大模型训练</a><a class="chip" href="../index.html?tag=Andrej%20Karpathy">Andrej Karpathy</a><a class="chip" href="../index.html?tag=%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE">服务器配置</a>
+    <span class="date">2025-10-15</span>
+  </div>
+  <p class="lead">Andrej Karpathy发布了一个从零构建 LLM 训练和推理的项目，使用此项目，我们手把手操作，就能以极低的成本就可以学习LLM训练的所有步骤！</p>
+  <article class="content"><p>set 限制解除 </p>
+<p>原创 张梦飞i <em>2025年10月14日 19:28</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhpGYaeibMz6ccwF187icoBoKPRibA2BwcvMC5qkdvrwJQLkodCwPOfiaoxw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="nanochat logo"></p>
+<p>昨天，OpenAI的联合创始人Andrej Karpathy (安德烈·卡帕西) 发布了一个名为 &quot;nanochat&quot; 的新开源项目，一夜之间斩获了7.6k star。</p>
+<p>这个项目是从零开始，完成一个ChatGPT这样的模型。提供了从最初的分词器、预训练、中间训练、监督微调 (SFT)到强化学习 (RL) 的完整流程。</p>
+<p>可以说，这个项目是你了解大模型究竟是如何“炼”成的史无前例的绝佳项目。</p>
+<p>「它有一定门槛，但是并非不可企及」</p>
+<p>本篇文章手把手带你完成全流程 ，跟着这篇教程，相信你一定能完成由你训练的第一个“GPT”模型，并且深入理解“大模型究竟是如何炼成的”。</p>
+<p>以下步骤是我尝试两遍的步骤，训练步骤不会出错。即使你是完全小白，只需要跟着以下步骤，也能够完成。如果你看不懂，你甚至可以把这篇文章直接发给豆包或者GLM，让他们去引导你。</p>
+<blockquote>
+<p>代码多次尝试，如果你出现问题，应该是系统环境导致，99%的问题AI都可以帮你解决。</p>
+</blockquote>
+<p>在开始前，你无需任何压力，我不会过多讲解原理，只会有简单的步骤提醒。你可以先跟随步骤完成，如果你想要进一步了解，可以把你感兴趣步骤的输出内容丢给AI，让AI解释这是在做什么，相信，如果整个流程下来，你一定会对大模型有更深入的理解。</p>
+<p>这应该是全网首发教程</p>
+<p>求个三连和关注，我们正式开始</p>
+<p>原项目地址： <a href="https://github.com/karpathy/nanochat">https://github.com/karpathy/nanochat</a></p>
+<p>以下教程大约为三部分，全程约需要1-2小时（含训练时间）：</p>
+<p>1、租一台带有显卡的服务器。</p>
+<p>2、为这台服务器配置环境。</p>
+<p>3、跟着代码操作进行训练。</p>
+<p>一、租用云服务器</p>
+<p>因为我并不是真的想要训练一个多么可用的模型，我只是想体验完整的训练流程，所以原项目完成整个训练需要8张A100显卡跑4个小时才可以完成，我把步数和深度在训练时做了调整，我们来训练一个小模型，只需要A100跑15-20分钟即可。</p>
+<p>那么，也就是说 你体验整个训练流程的成本，不过是：50块钱左右。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhx6EMYnP1ux9WibDgNOvZ3DlADobAlUDmBsrkueMAkvG7vk12fPCcribA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>如果你本身没有显卡，那么你可以去：火山云、阿里云、腾讯云、无问芯穹等平台租用一台挂载A100显卡的机器即可。</p>
+<p>需要注意的是：系统盘最低也要50G，因为训练的时候需要下载24G的训练数据。其他的配置并没有太多要求，大家根据预算自行选择。</p>
+<p>我有A100显卡和服务器可用，所以我就直接使用这台服务器进行操作和演示，这个服务器和在云厂商租用的没有任何区别。</p>
+<p>具体如何购买的操作，大家可以参考各厂商的购买指引，我就不做演示了。</p>
+<p>（后续如果有需要，再出一个专门的指引，本篇先专注于训练教程）</p>
+<p>二、服务器配置</p>
+<p>各个服务器厂商的操作位置都差不多，大家找找在哪登录就好，登录完成后就都一样了。以下使用的我之前的服务器为例。</p>
+<p>1、 添加端口</p>
+<p>在控制台，找到你购买的服务器，点击图中，箭头指示的空白区域。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhMVYTsHOicY5WpnTmf8ClhR8CIV4UOhdiaOib43ldCJ2icsicOMVsMcDg4uQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>选择“防火墙”菜单栏，点击【添加规则】按钮，添加【20219】和【8000】端口并确定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKh9YK4JqT1hWP6sKXLZkrMuiczjculVphg8uib9tytUBmb1F7IUme8icdfw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhzeFOtqa2ibsn27pTuQ2CQ9bWib28Nib0ib2vxevAJYb84qGYFeXSWicOnNA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>2、安装操作面板</p>
+<p>然后点击右上角的登录：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhicATW953eWD2CqyTAAurBks52AM9kzQ3lcgXZL7TzPcrbjElkkocicJg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>直接粘贴命令到命令行中，点击回车开始执行：</p>
+<pre><code class="language-bash">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhPrmkYQ6XITjqhXMCxtazjicPb8MILibQptwG2LpguQoKmqOPEibZzYDoA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>然后一路点击回车就可以了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhDibZhK9V5bUgpT1UloYVOm0yHwG1Wv9CIfAUBKfZ7DPtcQf46YhvlRA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>3、最后到这一步，记住你自己的登录地址和账号密码。复制出来保存好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhTYvt9OYsibqCL5K44yE0hiaib6dheXrW22DvRKibEomTtDhKHCgCtqTbdg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>使用「外部地址」，输入面板用户和密码，来登录即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhr5DqhtThg2tiaFYlIDVsNT67b2RPs9tKXWpSMlTD059kUBnAppHsUXg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>好，到这里你已经可以开始方便的使用服务器了。</p>
+<p>三、训练环境配置</p>
+<p>我们的命令都在终端执行，直接在管理面板，打开左侧的终端，来粘贴命令：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhPLpbhtDh1ianNmBKzN0u4Wic8Ko80hCuovlGAFORpFed60hRLDHvBu9g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>⚠️注意：</p>
+<ul>
+<li>下边将出现代码，复制的时候，注意复制全。</li>
+<li>代码我已经分好步骤，每次只需要粘贴一行代码，然后点击一次回车。 中文字符的是解释不需要复制粘贴，每次只复制和粘贴“代码”部分即可。</li>
+<li>回车后，只有最左边显示[ ]中括号时，才是上一个命令执行完毕了。 没有出现[ ]中括号对话前缀时，不要操作。</li>
+<li>如果你发现 ctrl+v 粘贴不进去，试试 shift+ctrl+v 粘贴。</li>
+</ul>
+<p>1、我们来检查一下你租用的服务器配置：</p>
+<pre><code class="language-perl"># 检查NVIDIA驱动是否正确安装nvidia-smi# 查看CUDA版本nvcc --version# 检查GPU内存和使用情况nvidia-smi --query-gpu=memory.total,memory.used --format=csv
+</code></pre>
+<p>2、为了防止有的小伙伴的服务器使用的CUDA版本不行，我们都更新一遍</p>
+<pre><code class="language-apache"># 更新软件包列表sudo apt update# 安装NVIDIA驱动和CUDA工具包sudo apt install -y nvidia-driver-550 nvidia-cuda-toolkit# 重启系统使驱动生效sudo reboot
+</code></pre>
+<p>3、上一步会重启，等待1-2分钟，刷新页面，继续操作即可。</p>
+<pre><code class="language-nginx"># 验证安装情况nvcc --version# 验证GPU可用nvidia-smi
+</code></pre>
+<p>输出这个就是可以了：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhKrY1Ia2ppnqCYbRLnQfs9059JIJXJPMaP1DAfPQemBSSB1kJMO8nSw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhp0IGQs9E7zekL8hUia7NiaCSnp0Hly76fH2sIXqMS7Q782aojACH57Kg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>4、安装PyTorch对应的CUDA</p>
+<pre><code class="language-perl">pip uninstall torch -ypip install torch --index-url https://download.pytorch.org/whl/cu121
+</code></pre>
+<p>5、测试CUDA是否可用</p>
+<pre><code class="language-nginx">python -c &quot;import torch; print(&#39;CUDA available:&#39;, torch.cuda.is_available()); print(&#39;GPU count:&#39;, torch.cuda.device_count()); print(&#39;GPU name:&#39;, torch.cuda.get_device_name(0) if torch.cuda.is_available() else &#39;N/A&#39;)&quot;
+</code></pre>
+<p>如果最后的测试输出如下，那么就是可以了：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhic57icutxMHCSZ3hGNBSEc51E39kEyuy5bYL49n4NJEib8oOgMDiasPR8Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>6、安装环境管理工具</p>
+<p>然后我们安装一个环境管理工具，下方两行粘贴进入，然后点击回车，等待下载完成。</p>
+<pre><code class="language-apache">echo &quot;开始安装 Anaconda...&quot;wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+</code></pre>
+<p>（如果这里有了卡点，直接报错发给AI解决即可，这里只是在安装一个环境工具）</p>
+<p>7、再粘贴下方代码，出现下图，就代表在执行中了。</p>
+<pre><code class="language-apache">bash Anaconda3-2021.05-Linux-x86_64.sh -b -p /root/anaconda
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhoa2ImVFiaWbZ7HD09f0fJibp2iajRLHqzribAd9qb12NPwPldJJnJ3xOOA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>8、然后把下边这行粘贴进去，点击回车。</p>
+<pre><code class="language-apache">rm -f Anaconda3-2021.05-Linux-x86_64.sh
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhWicKTpFR4JPqLfK7ErXYgJTfZCl7raKPsXs9B3xIGxhMFibVthQDU0ibQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>9、然后创建一个训练环境</p>
+<p># 创建新的conda环境</p>
+<pre><code class="language-apache">conda create -n nanochat python=3.10 -yconda activate nanochat
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKh0jM471DOE3d59VAFNKTiaic6ojkbf0BOwoibv40iaImjNl5qwIZObx4DGg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>至此，环境配置和检查完成。</p>
+<p>四、进入训练</p>
+<p>1、 继续粘贴，首先创建项目目录：</p>
+<pre><code class="language-bash">mkdir -p ~/projectscd ~/projects
+</code></pre>
+<p>2、 下载AK大神的项目：</p>
+<pre><code class="language-bash">git clone https://github.com/karpathy/nanochat.gitcd nanochat
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKh9k5XU26cuelusicX7HXrLn8B0Qf4kO568Oxpkm9pPibRFJOABaGBrksw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>3、 继续安装</p>
+<pre><code class="language-nginx"># 安装项目依赖pip install -e .# 安装maturinpip install maturin
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhGP0Fjhap9aHIRYfZickoYdsEZVvNhPEmYN183gnXnfo7d3aPs07xEibA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<pre><code class="language-bash"># 确保Rust环境变量已加载source &quot;$HOME/.cargo/env&quot;# 构建tokenizermaturin develop --release --manifest-path rustbpe/Cargo.toml
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKh6Itybwico9Ksosaka7UNR7jbrFjoCp24uaE8U5xqnX1cOcLYFaeCsRQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>4、创建缓存目录</p>
+<pre><code class="language-bash">mkdir -p ~/.cache/nanochat
+</code></pre>
+<p>5、下载初始数据集并训练tokenizer</p>
+<p>下载初始数据集(约800MB，这可能需要几分钟)</p>
+<pre><code class="language-apache">python -m nanochat.dataset -n 8
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhUtOOdYUxrDB01sRNf53N4VuXhLJXfrokmoazUgQCC4Ht9kRuwLa2Xg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>大家可能好奇这个数据集里都有什么，我打开来给大家看一下。</p>
+<p>原始内容其实就是一些Json格式的纯文本数据。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhYTkDlibx94HK5GYAwMvhoffKL7WEqdWMn7dic5uYUMXMXfQRFJPaeFRQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>每一行其实都很长，大概有个五六千字。我把第一行复制出来翻译了一下，大家可以看下，是一篇关于运输与物流的文本。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhp81PY0rxmW2dZzggltxuicvlQOz4Q2Zj1K9YQoQQBFYDEdqgtKWrX6g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>6、等上一步执行完成后，我们继续训练tokenizer。</p>
+<p>这也需要一些时间</p>
+<pre><code class="language-apache">python -m scripts.tok_train --max_chars=2000000000
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhJ8icPAwicH13asqmHyYpRs1gicmgxpc1SSfwEOLKibCgz2OL60vicGQ24bQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>7、评估tokenizer</p>
+<pre><code class="language-nginx">python -m scripts.tok_eval
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhsmBIYAPHleGOibg1ZQeAfVWq72JiawfdHC9I3ksUmN2DYW9RpbY7xdHA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+<p>8、下载更多训练数据和评估数据</p>
+<p># 后台下载更多训练数据(约24GB，这会需要较长时间)</p>
+<pre><code class="language-apache">python -m nanochat.dataset -n 240 &amp;DATASET_DOWNLOAD_PID=$!
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhjplwyspbsA0Zm4Gd0icOYd9BsfSPpzJQDNwiakfRicRuSh0hnKW8G5icwg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="图片"></p>
+<p>出现这个就是下载完成了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhKEEkib8Cbokmq1HsOCYxjQkKdSs4aUHzttFTbuOz6gCY67eROAhDyKg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="图片"></p>
+<p>9、下载评估数据(约162MB)</p>
+<pre><code class="language-bash">curl -L -o eval_bundle.zip https://karpathy-public.s3.us-west-2.amazonaws.com/eval_bundle.zipunzip -q eval_bundle.zipmv eval_bundle ~/.cache/nanochat/rm eval_bundle.zip
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhTDQjAqtlAoYSwZOwK0OLIicmdeacMgof5bPXupXqvmO6L3GTUlLXWNA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>10、至此环境和数据均已准备完成，我们开始训练“模型”。</p>
+<p># 训练一个超小模型（大约10-15分钟完成）</p>
+<pre><code class="language-apache">python -m scripts.base_train --depth=4 --device_batch_size=32 --num_iterations=500
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhrsQYsz9KM5YSqnQKmwfVRnB8UgNBialTUclibTkL0uWFvIgEvez90G7Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="图片"></p>
+<p>然后就是等待，此时你会看到命令行中不断输出。上图中的部分显示了程序正在覆盖某些默认配置参数，这些参数意思是：</p>
+<p>depth = 4: 模型的层数（深度）被设置为4。</p>
+<p>device_batch_size = 32: 每个设备（比如一张GPU卡）一次处理的数据批次大小为32。</p>
+<p>num_iterations = 500: 总共要训练500个步数。</p>
+<p>然后你会看到模型的训练步骤返回的日志：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhL7331WPzQFqe2AtGWhQrWeJhg3ZVs4ZwUE9e0sLiaGcdoaM15ESAE8Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"></p>
+<p>反正也是在等待，我们拿这一行举例解释一下都是什么意思：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhGpyia2kJgjvSaQC1ia41Gv5dKX9ylaHZEt27Hb2BaapeayibpyHf6WAOQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p>看到下图就是训练完成了，我们用了18分钟进行训练。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhPQ989PibGWYc3GHT1xWGTIQvpGgexbjxh8bv0rHzxUpibouvB5G9lF8g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>11、中间训练</p>
+<p>这一步是为了教会模型理解对话格式和特殊标记（大约15-20分钟）。这步我也更改了参数，原参数跑起来太慢了。我们只需要走一遍流程就好。同样的你也可以看到训练步骤。</p>
+<pre><code class="language-apache">python -m scripts.mid_train --device_batch_size=128
+</code></pre>
+<p>如果你不在乎时间，你也可以使用原参数训练，命令是： python -m scripts.mid_train</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKh4eDYNkK7fzxQQpoBggUplLiafmQ9oOckiay1sZDhgFfSBhT4O91wCkQQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>看到下方这个就是完成：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhzoMRk5cl49CKqkwtnBzPaiciac4UvoG47x4LeNw8ddvcEeB0mfkBbXcg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="图片"></p>
+<p>12、中间训练完成， 我们就进入到了最后一步的SFT（监督微调阶段），这一阶段会让模型更好的学会我们的语言习惯和方式</p>
+<p>同样的，为了训练速度更快，我更改了训练参数，直接粘贴进去即可继续训练：</p>
+<pre><code class="language-apache">python -m scripts.chat_sft --device_batch_size=16
+</code></pre>
+<p>如果你不在乎时间，你也可以使用原参数训练，命令是：python -m scripts.chat_sft</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhm7xaAcEgSwyrOqIibsPNFdudyrV1Pkib2goQ5pCtJpnQ05J9GblCU9OA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></p>
+<p>看到输出以下即表示训练完成！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhtCKVW8YKYBpYZw7khyuickaQ4j3pDjDYoHC99oyoWIQsLWn07yESAxQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=35" alt="图片"></p>
+<p>我们从评估结果可以看到：</p>
+<p>MMLU准确率：25.88%</p>
+<p>ARC-Easy准确率：23.05%</p>
+<p>GSM8K和HumanEval：0%（这个小模型在数学和编程上还不行，正常现象）</p>
+<p>这是个很小的模型，效果有限，但已经具备基本的对话能力了。</p>
+<p>13、我们先开放一下8000端口：</p>
+<pre><code class="language-apache">sudo ufw allow 8000
+</code></pre>
+<p>14、然后继续在命令行输入：</p>
+<pre><code class="language-nginx">python -m scripts.chat_web
+</code></pre>
+<p>你会看到以下输出：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhkG5YE3V2G5kCRjf6dDVUt71E2R6m5hlkMCzib9OIE8eialhmRb73leQA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=36" alt="图片"></p>
+<p>现在，只需要把中间的0.0.0.0 改成你的服务器IP地址即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhUeWPZHk6ayYVZ6xvzeIiclrEFyYkalaia0GriazE5YEo5KHJNSx5dEFlQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=37" alt="图片"></p>
+<p>假如我的是：12.45.748.105</p>
+<p>那么拼接地址就是：<a href="http://12.45.748.105:8000/">http://12.45.748.105:8000/</a></p>
+<p>把这个地址粘贴到你浏览器中，你就会打开这个页面：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhI19R2O6cJ2hGIicNlrAz1o7E0YlubQ1a2fDRazK7SVDVRSH2kwVl4nw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="图片"></p>
+<p>恭喜你，你已经从零完成了一个大模型的训练。</p>
+<p>你现在可以与他对话，来唤醒这个刚刚问世的大模型了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW2l0UIXaI5ggrfaQs08szKhG50HZiamSRexSicRhbrSh4kfAnzyZvWOlSsVWsXfibBrpibVsQDrXoWRKA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=39" alt="图片"></p>
+<p>五、结束</p>
+<p>至此，恭喜你！🎉</p>
+<p>你已经成功完了从零开始“炼”成一个大语言模型的完整旅程。</p>
+<p>从分词器的构建，到预训练、中间训练，再到最后的监督微调（SFT），你亲手操作了每一个环节，这短短1-2小时的实践，将原本遥不可及的AI魔法，拆解成了一步步清晰可见的代码和日志。</p>
+<p>你看到的不再是一个黑箱，而是一个由数据、算力和算法共同驱动的、可以亲手塑造的大模型。此时你应该对“大模型究竟是如何炼成的”这句话，有了远超书本的、具象化的深刻理解。</p>
+<p>如果这这个过程让你获得了成就感，请继续保持这份好奇心与成就感，继续前行。 期待你能够更加深入的探索，与我们分享你更多的发现和收获。</p>
+<p>如果这篇教程对你有帮助，别忘了 点赞、收藏和转发 。</p>
+<p>我是梦飞，我们下期再见！</p>
+<p>往期推荐</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247489411&idx=1&sn=c1cd2a51aa75b9efcb811c34f70c2e1f&scene=21#wechat_redirect">我是如何把AI从爱好做成“副业”和“全职”的</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490942&idx=1&sn=705451ab19375b4ec05e44c1142e9f9d&scene=21#wechat_redirect">献给大学生的：开学第一节AI课</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490862&idx=1&sn=2cf2e780968809d59869d23fc7bbd48b&scene=21#wechat_redirect">如果做应用像刷抖音一样简单，会发生什么？</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247491003&idx=1&sn=10a8757bd78b810a5d3f63e656ff9d60&scene=21#wechat_redirect">Claude断供，火山引擎助你一分钟“搬家”国产模型</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490806&idx=1&sn=499000ac5238b35ed0b31b3469f53149&scene=21#wechat_redirect">10分钟带货，这个智能体让“搞钱”速度快到离谱！</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247489307&idx=1&sn=8fdf1bfae135ac01aa05cf0c8961c61e&scene=21#wechat_redirect">用了两周，发现小米AI眼镜最有用的竟是这个...</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490196&idx=1&sn=0e712b667f3652b616aa430e9de1a302&scene=21#wechat_redirect">8000块赚130万的生意门道，这个阿里Agent居然“秒懂”</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&mid=2247490319&idx=1&sn=ded495f0d85025c00d0467e13758cbd0&scene=21#wechat_redirect">发现大家似乎忽略了一个学AI的超优质的地...</a></p>
+<p>继续滑动看下一个</p>
+<p>梦飞 AI</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/CToTaDDIEBTWZ_XrkNmukg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

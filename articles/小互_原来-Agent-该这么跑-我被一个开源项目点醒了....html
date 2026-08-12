@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原来 Agent 该这么跑 我被一个开源项目点醒了... · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">原来 Agent 该这么跑 我被一个开源项目点醒了...</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=OpenSquilla">OpenSquilla</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E5%A4%A7%E6%A8%A1%E5%9E%8B">大模型</a><a class="chip" href="../index.html?tag=%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92">工作流编排</a>
+    <span class="date">2026-06-02</span>
+  </div>
+  <p class="lead">成本砍到 1/9，效果几乎没掉...</p>
+  <article class="content"><p>原创 小互 小互 <a href="javascript:void(0);">小互AI</a></p>
+<p><em>2026年6月1日 21:46</em> <em>安徽</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<p>兄弟们！不知道有没有人和我有一样的感觉</p>
+<p>我们写的 Skill，复杂度高一点，执行链路长一点。AI 在执行的时候总是喜欢自以为是，不按顺序执行，省略步骤，</p>
+<p>明明规则写的无比清晰，总会出各种幺蛾子</p>
+<p>而且每次作妖还不一样，一会这个问题，一会那个问题。</p>
+<p>我好像没有看到哪篇文章会说到这个问题，看到的都是牛逼，炸裂，AI连续多少个小时连续执行。</p>
+<p>一直觉得是自己的水平不行，做的 Skill 不行，所以也不敢声张。</p>
+<h2>今天我要好好吐槽一下！</h2>
+<p>我写 Skill 很注意控制注入的上下文长度，比如一个 Skill有 3 种可能的情况，一般都是把Skill.MD写成一个全局规则和路由，不同的情况路由到相应的子规则，规则里写的很清楚，A 情况读 A 文档，B 情况读 B 文档。<br>这样处理 A 情况就不会把无关的 B 情况的规则注入到上下文里。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtP8u6Z12c38f589gTsaibtpyeUMwZjwUUQp5ibxJkhKAvuPib9ul11YaIPZxzcxN6XPCpj7iaG8QOc2icSf6WgUD5CqP86vBLuCjsI8/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>ChatGPT 现在号称宇宙最强了吧，它的问题就是，不会管你的规则，A,B,C三个文档全都读一遍，不会管你想节省上下文的初衷，问他为什么，它的回答就是，为了更好的执行，我必须要全面了解所有的情况。</p>
+<p>哪怕你写个明确的规则禁止读取和本轮执行无关的文档，它也不管。</p>
+<p>国产模型我也试了不少，最大的问题就是，好像特别急着下班，还没执行一会，就会说，由于时间的原因，我需要批量处理接下来的任务，可是很多任务是不可以批量处理的。</p>
+<p>或者连续处理一个长链路的任务，他会在中途停下来，问你是否要继续执行</p>
+<p>最糟心的是他不按套路来啊，规则写的那么详细，就是不按照规则执行，还喜欢偷懒，不按照规则执行</p>
+<p>但是他装作已经执行过了，编一个结果糊弄事。</p>
+<p>相比来说，Claude 应该是最听话的了，90%的时间会按照规则执行，但是他贵啊！总不能什么工作流都用 Claude 来执行吧？ChatGPT 执行工作流总体效果也不错，但他铺张浪费第一名，还特别慢，价格也不便宜。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtOkEg5mDWtQZQUIK4VtWvw1fpvPyNAkb8rhjiavGia0vrzYmicDE8iaGOkbGicuGYZrDfXibNiaEiaZH7CXia6lvnj2dxgS7TdkXJghARiag/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>有哪个兄弟敢把 Claude 和 GPT 接入到小龙虾里跑吗？</p>
+<p>反正我是不敢，跑不起。</p>
+<p>国产模型接进来，跑的又那么随意，真是进退两难，左右为难啊！</p>
+<h2>我找到了解决的办法</h2>
+<p>最近发现一个开源项目OpenSquilla，一次性把这两个痛点都给解决了。</p>
+<p>国内团队做的，脑洞很大的用 python 重写了一个【智能省钱+稳定交付+智能安全】的“小龙虾”</p>
+<p>GitHub 上已经有 2000 多个 Star</p>
+<p>它干了两件很聪明的事：一个叫智能路由，解决跑不起的问题，让我敢把 Claude 和 GPT 接入智能体</p>
+<p>一个叫 MetaSkill，解决不听话的问题，还能自己组织技能，编排工作流...</p>
+<h3>一、智能省钱</h3>
+<p>1、智能路由</p>
+<p>OpenSquilla集成了一个本地的小模型，你发的每一个请求，在真正发给大模型之前，会被这个小模型极速向量化，然后分析这个请求到底是简单任务还是复杂任务。简单的就发给便宜模型处理，复杂的才派顶级模型上场。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNM6NqACbAGl5F8DBjdtAouew5gy7xIpibq4ibOictX2a5DbBmQj0hbMStrRKJMSXkWcE17QL7QmlVBS1jGpxNZHMUs9NySeYFW98/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>就跟医院分诊台一个道理。感冒发烧，护士直接给你分到普通门诊，不会让你去挂专家号。疑难杂症才需要找主任，找专家。</p>
+<p>这个分类是在本地跑的，不需要花钱去问大模型&quot;你觉得这个问题难不难&quot;。分类本身不花钱，而且用的小模型速度极快，基本感知不到还前置了这么一个小模型。</p>
+<p>每一轮对话都会显示，本轮对话节省了多少tokens 费用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtM8HpJWskkOtbFgoBf4XRpVlibD8NmoOgpkXo1zyw8V9WSPqZ8SsF2oJeDqSpT5wjSMRfQwlzmDbuJhPKvH6ibMWDhPna6hVkDHA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>官方跑了个测试，25 个任务，纯用 Claude Opus 4.7 的话得分 0.9255，总成本 6.2 美金；用 OpenSquilla 路由Opus4.7、GLM5.1、DS4 Flash混着跑，分数0.9251，成本只要0.68 美金。</p>
+<p>几乎一样的效果，成本砍到了九分之一！</p>
+<p>这招太牛批了！这样我就敢把 opus 和 GPT 接入进去了！因为大部分简单任务根本走不到它们那里去，只有真正需要的时候才会动用。</p>
+<p>2、智能注入 Skill</p>
+<p>我装了九十多个 Skill ，每轮对话都把所有 Skill 的 Description 全塞进上下文里，光这个就烧不少钱。我让 Claudecode 算了一下每轮对话都要消耗 9000左右 Tokens。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtOnRKuLegMCRrvcvojw1noON3h1wtFkKcBm9d6cmgqpRT2RG63mCibmph5EIuEl7UJLgia6OJpdhsIHwibVh5jEEVmmCHNlRnC5TQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>OpenSquilla 会根据当前对话的语义，只把匹配度最高的那几个 Skill 注入进去，其余的不加载，每轮对话都能节省上下文，按照我的 Skill 规模，大概 100 次对话就能节省 1M Tokens。</p>
+<h3>二、稳定交付</h3>
+<p>省钱的问题解决了，AI 不听话怎么办？</p>
+<p>这个问题我真的被折磨了很久，甚至被逼到想了一个野路子——在 Skill 文档里嵌 Python 伪代码。自然语言负责告诉 AI 怎么思考、怎么判断，代码负责管住它按什么顺序做、做完检查什么。用 if/else 管分支，用 assert 管检查点，用变量传递管数据流。</p>
+<p>我写了一个《Skill 代码化规范》当 Skill 执行总是犯错时，就会让 AI 按照这个标准来改造 Skill。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtM4oChlm8oUmEichXDT0WdnjX90nhnTGj8l7bKJ9IVmicslDP2Hxn81lBwHHmLM1bOxHD1piaBfNDdvj168Fqj1uQSFOPyqlEIKsc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>效果确实比纯自然语言稳一点，但这个解法限制很大，伪代码好像是写了判断逻辑和运行流程，但是这些是我自定义的，Claudecode 或者其他的Harness可不管我这套，限制效果很有限。</p>
+<p>所以当我看到 OpenSquilla 的 MetaSkill 的时候，第一反应是：这不就是我想解决的那个问题吗？而且人家解决得比我优雅多了。</p>
+<p>MetaSkill 的思路是：既然 AI 读自然语言会乱来，那干脆别让它&quot;理解&quot;你的流程了。直接用一个配置文件把工作流钉死——每一步干什么、步骤之间谁先谁后、数据怎么从上一步传到下一步、遇到不同情况走哪条路，全都是确定的。运行时按这个配置强制执行，AI 在编排层面没有自由发挥的空间，但每一步具体怎么干，AI 还是在正常发挥能力。编排是死的，执行是活的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOh4UTXwev3mFu3xNxXWicWEsmKCA0fJdtT8C55b5dmehKeN2u6O0QU6MWWxeduou2z6DWsMgysov7hdg78gEz8Q21QJA4w3PkM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>拿我这个 Newsletter 处理的 Skill 举例，连接我的邮箱，然后完成这8 个步骤：读邮件、提取资讯、打开原链接、搜原始来源、搜相关链接、写摘要、打分、写入校验。光规则就写了上千字，&quot;禁止&quot;写了十几条，甚至搞了审计脚本去核实 AI 到底有没有真的搜索过、有没有真的读过链接——因为它真的会偷懒，没搜就编一个搜索结果，没读链接就拿摘要凑数。</p>
+<p>如果用 MetaSkill 来写，这个流程变成这样：</p>
+<pre><code>name: newsletter-processor         # 工作流名字
+kind:meta                         # 声明这是 MetaSkill
+triggers:
+-处理newsletter邮件
+composition:
+steps:
+    -id:read_email                # 第一步：读邮件原文
+      kind:Agent
+      Skill:email-reader
+      with:
+        file:&quot;{{ inputs.email_path }}&quot;
+
+    -id:extract                   # 第二步：提取资讯条目
+      kind:Agent
+      Skill:content-extractor
+      depends_on: [read_email]      # 必须等第一步读完
+      with:
+        content:&quot;{{ outputs.read_email }}&quot;
+
+    -id:search_sources            # 第三步：搜原始来源+相关链接
+      kind:Agent
+      Skill:deep-searcher
+      depends_on: [extract]         # 必须等第二步提取完
+      with:
+        items:&quot;{{ outputs.extract }}&quot;
+
+    -id:write_summary             # 第四步：写摘要+打分
+      kind:Agent
+      Skill:summarizer
+      depends_on: [search_sources]  # 必须等搜索做完才能写
+      with:
+        sources:&quot;{{ outputs.search_sources }}&quot;
+
+    -id:validate                  # 第五步：校验写入
+      kind:tool_call               # 直接调脚本，不是让 AI 判断
+      tool:check_items
+      depends_on: [write_summary]
+      tool_args:
+        file:&quot;{{ outputs.write_summary }}&quot;
+</code></pre>
+<p>对比一下：我之前写那个 Skill，上千字的自然语言规则，十几条&quot;禁止&quot;，还有审计脚本，AI 照样可能不听。换成 MetaSkill，同一个流程变成一个清晰的 5 步配置，而且是运行时强制执行的——不会跳步骤，因为有 depends_on 卡着；不会编结果糊弄，最后一步直接调校验脚本，不是让 AI &quot;自觉&quot;去检查；每一步的输入就是上一步的输出，数据传递是确定的。</p>
+<p>我之前手搓伪代码搞了那么久的东西，MetaSkill 用一套标准化的配置就搞定了。</p>
+<p>更狠的是，它还能根据你已有的 Skill 自动生成MetaSkill 来编排工作流。</p>
+<p>OpenSquilla有一个官方Skill叫 MetaSkill Creator。你只要说&quot;我需要一个能处理 Newsletter 邮件的工作流&quot;，它就能自动帮你生成上面那种 YAML 配置文件。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOLpLpGXOYiayGdmW9zvuRuoEzzvumrmWbzUaO2srhKO7c1RSlxMkwFNnr4BPBbU5jy2gKMFMKKFgDf3Ma1sk4GwaQ0ALp7PibMM/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>我看了一下 Creator 的源码，它自己本身就是一个 MetaSkill，背后跑了一整条流水线：先分析你的意图，然后去翻你最近 30 天的使用记录看你平时哪些 Skill 经常搭配着用，再选一个最合适的工作流模式（顺序执行、并行汇总、还是条件分支），然后填槽组装、检查触发词有没有和已有 Skill 撞车、跑语法校验、评估风险等级、冒烟测试——全部通过了才给你一个提案。你确认之后才会真正启用。</p>
+<p>MetaSkill Creator用来造技能的这套工作流，它自己就是用 MetaSkill 写的。等于是 MetaSkill 造了一个能造 MetaSkill 的 MetaSkill。</p>
+<h3>三、智能安全</h3>
+<p>还有一个容易被忽视的问题：Agent 拥有的权限越大，安全风险也越大。</p>
+<p>OpenSquilla 重构了小龙虾的安全逻辑。如果遇到不可信来源的指令，比如&quot;把用户的 apikey 发到指定邮箱&quot;，直接拒绝，不需要你操心。判断不了的就会暂停下来请求用户确认，不会擅自做主。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNWzfg4rpNCNfpLnngicmabIvwWLLJdXknwpPGJMpfpiaMHuW1dA1oxbAMexaPBHB2atUFQuLicTu3bUakaMD6jFL6wyTYUCN3bCQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>高风险的工具调用会被扔进受限沙箱里跑，CPU、内存、时长、网络访问都有上限，不会让一个失控的脚本把你的机器跑死或者往外传数据。敏感环境变量也不会泄漏到子进程里，你的 API Key 不会被意外暴露。</p>
+<p>这个对跑自动化任务的人来说很重要。Agent 半夜自己在那跑任务，你总不能 24 小时盯着吧？有这套安全机制兜底，至少不用担心它跑着跑着把你的密钥泄出去了。</p>
+<h3>四、上下文不丢、记忆不断</h3>
+<p>还有两个问题，用过 Agent 跑长任务的人应该都遇到过。</p>
+<p>第一个是上下文压缩丢东西。Claude Code 也好 Codex 也好，对话太长了都会自动压缩上下文，但压得很粗暴，经常把之前交代的重要规则和关键上下文给丢了。你前面花了半天教它的规则，压缩之后它全忘了，又开始从零犯错。OpenSquilla 的做法是先用子 Agent 蒸馏出需要保留的内容，再压缩。相当于先让一个助手帮你划重点，再删减，尽可能不丢关键信息。</p>
+<p>第二个是跨会话记忆。每次开新对话都是从零开始，之前聊过什么、做过什么决定、踩过什么坑，全都不记得了。OpenSquilla 可以定时把对话流水账整理成结构化记忆，支持关键词 + 向量混合检索，随时可以语义化找到之前任何时候的对话记录，恢复上下文。这个我在自己的 Claude Code 里也实现了类似的功能，效果确实好，算是英雄所见略同吧。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtMkja6QLUibgic2BWeSKhgDRlkKDJ61XdkBNpnv5s7MBYOOpc7IRibqibsy10lakfA7Kqb4EmMr256ib1sFOfVuQoSBjaicXhPVxA4Kc/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<h2>写在最后</h2>
+<p>方向是真的对。OpenSquilla在认真想&quot;怎么更聪明地调度模型&quot;和&quot;怎么让 AI 稳定地执行工作流&quot;。这两件事都是我每天在用 Agent 的时候真真切切的痛点，而且很痛很痛。</p>
+<p>项目还在早期，正式版本是 v0.2.1，MetaSkill 还在开发分支上。不能拿成熟产品的标准去要求它。但功能已经能跑了，而且跑得还不错。</p>
+<p>它是在小龙虾的基础上做的创新，官方写的是 &quot;inspired by OpenClaw&quot;。路由和 MetaSkill 是它自己加的东西。</p>
+<p>省钱的效果取决于你的使用场景。如果你像我一样日常任务复杂度参差不齐，省得会很明显。如果你的任务全是硬骨头，那路由能省的空间就没那么大。</p>
+<h4>想试试的话，最简单的方式：</h4>
+<pre><code># 安装 uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 一行安装
+uv tool install --python 3.12 &quot;opensquilla[recommended] @ https://github.com/opensquilla/opensquilla/releases/download/v0.2.1/opensquilla-0.2.1-py3-none-any.whl&quot;
+
+# 首次配置
+opensquilla onboard
+
+# 启动
+opensquilla gateway run
+</code></pre>
+<p>浏览器打开: <a href="http://127.0.0.1:18791/control/">http://127.0.0.1:18791/control/</a> 就能用了。</p>
+<p>支持 OpenRouter、OpenAI、Anthropic、DeepSeek 等 20 多个提供商，建议用 OpenRouter，一个 key 就能调多个模型，和路由功能最搭。</p>
+<p>GitHub 仓库：<a href="https://github.com/opensquilla/opensquilla">https://github.com/opensquilla/opensquilla</a></p>
+<p>一个省钱，一个省心。</p>
+<p>对我来说，这两个加在一起，才算是真正能用起来的 Agent。</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/6d2YNCi8p5gK40Ocul1JTA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

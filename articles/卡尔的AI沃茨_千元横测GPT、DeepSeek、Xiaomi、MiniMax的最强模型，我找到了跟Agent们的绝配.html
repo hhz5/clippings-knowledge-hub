@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Agent">Agent</a><a class="chip" href="../index.html?tag=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A8%AA%E6%B5%8B">大模型横测</a><a class="chip" href="../index.html?tag=MiniMax">MiniMax</a><a class="chip" href="../index.html?tag=%E5%B0%8F%E7%B1%B3AI">小米AI</a>
+    <span class="date">2026-05-01</span>
+  </div>
+  <p class="lead">这次钱包大出血</p>
+  <article class="content"><p>原创 AI沃茨 AI沃茨 <a href="javascript:void(0);">卡尔的AI沃茨</a></p>
+<p><em>2026年4月30日 21:47</em> <em>浙江</em></p>
+<p>在小说阅读器读本章</p>
+<p>去阅读</p>
+<p>在小说阅读器中沉浸阅读</p>
+<h2>事情是酱的。</h2>
+<p>这天我在AA榜上看前28的模型感到有点陌生。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxBibdJ04lcLEjPibj4OOegVPtZ7QeLjjgFPGMP7Z7Ctorsf31njd7BCT7zStb8J4azjrAI7HibptmguT0lxDGjhzTrpVcOSoSJnw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>上周太集中发的后果就是光在用GPT -5.5了，小米的Mimo-V2.5-Pro，DeepSeek V4 Pro还没有放在Agent的场景上测。所以我跟钱包一拍即合，复制了4个一模一样的Hermes Agent，</p>
+<p>记忆一样，skill一样，</p>
+<p>系统设置一样，能调用的工具也一样。</p>
+<p>我只换模型。</p>
+<p>这次的4个候选是GPT 5.5、MiniMax M2.7、DeepSeek V4 Pro和小米Mimo-V2.5-Pro，默认能开高推理就上高。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FydTvRBdibiceQhicGYXCj5h1IPxrmzWVoZXDrndQ76r0MFcDlDPm3yZCt1DgTD882Y7qC37Sg68pZpYjEenwJTHC1yzO3MggltwA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>为什么没上Opus？</p>
+<p>API太费钱，账号额度不敢打满，比起作为Agent的主力还要长时间不掉线的模型，它还是更适合养在web端上，至少我这样Claude Design能爽用。</p>
+<p>那我们先用30s简单回顾一下这次横测的选手们！</p>
+<p>DeepSeek V4 Pro最近还刚开了识图模式，5月底之前都是2.5折。V4 Pro的总参数量1.6T，比V3.2翻了两倍多。</p>
+<p>这四个模型的API价和订阅价我都放在后面用表格对比了，所以我们先看后续。V4 Pro这几天有被发现放在Agent场景上识别本地的Skill不成功，执行高风险动作的时候也没有询问的，用人话说就是Agent框架失效了。</p>
+<p>还有说V4 Pro巨烧token的，同样的任务是sonnet 4.6 medium的8倍。</p>
+<p>我太好奇了我。</p>
+<p>Mimo-V2.5-Pro也传很猛，能跟和GLM 5.1打得有来有回。但额度也烧超快，据说是一个5分钟编程任务月额度就没了50%。</p>
+<p>我更好奇了我。</p>
+<p>所以才有了这次的四个模型搭配，选MiniMax M2.7是因为它的Codng Plan真的量大管饱。这段时间MiniMax开源了自家CLI，在一个coding plan里还用视频生成，音乐生成和语音合成模型，不需要额外去接MCP server，额度也是分开计算的。</p>
+<p>长话短说，</p>
+<p>我这次设计了5个Agent任务，但不想写成机械的case1、case2、case3。那太像实验报告，读起来也没劲。</p>
+<p>你可以把它理解成5关，包括Skill打包，网页开发，PPT设计和文案，知识库管理和巨烧token的浏览器自动化。</p>
+<p>Here we go！</p>
+<p>第一关，</p>
+<p>让模型把Claude Design提示语打包成可发布的skill。这一步是文档整理的升级版，Hermes自己也会时不时被动触发新建Skill，如果说一个模型连稳定把我们的经验打包成Skill都做不到的话，下面救不用测了。</p>
+<p>🌅</p>
+<p>把我提供给你Claude Design提示语（/Users/carl/Downloads/Claude-Design-Sys-Prompt.txt）整理成一个可线上发布的skill。<br>目标不是复制提示语，而是把它封装成别人装上就能用的能力包。<br>输出后自检一次，指出这个skill可能出错的地方。</p>
+<p>PS：模型他们用到的Hermes是完全复刻了我本地已经用了几个月的原型，所以并不会出现说一些专有名词完全不懂，或者是一些约束完全不知道的情况。</p>
+<p>实际上手就会很明显发现就算记忆备份一样，不同模型说话的风格就是很不同。</p>
+<p>GPT 5.5列出了它在原版提示语提到的一些能力，然后去掉了一些很明显的约束条件，因为这些放到别的模型或者别的环境的时候不会起作用，然后也为了线上发布，在这个skill上做了这个命名规避，整体来说就是一个很标准的答案。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxxHJIOcvyib2FkFNyXXR56661PaC2lelV8aQ0TDrtH51klwPFTPthLZT2uGShbKTKq1CHnome8pepgxwxFwjiahNUoK3n7vytR0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>MiniMax 2.7在打包的过程发现了更多的细节，包括因为它只是一个提示语，里面提到的很多环境都是没有的，所以直接打包成Skill的时候，会把这些理想化的条件设定进去。</p>
+<p>2.7还觉得现在Skill的触发条件不够宽。现有的触发只给了设计关键词，但是如果我说给我做一个好看的页面的时候，是不会触发的。</p>
+<p>发现这个Skill有缺陷的时候，比方说JS或者是动画组件不完整。他也给了我对应的解决方案，要不要去联网搜索来去补足。所以这个skill后续的完整性我觉得是会更好。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzkYUuFF7U6A9CvjTkvE8SourfbGkLKnJB05uTTTuxKoHaAicS0Xmua4Iehic5iaVrTMUzkxcGYAnGJn8yw8RKVBEFWBhPtOWOeu4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p>DeepSeek V4 Pro同样是自检出了不少的问题。</p>
+<p>我觉得给我的一个惊喜就是不像开头听到的，Agent框架的约束不起作用，至少在这个case上也没有明显体验到，甚至是提出了一些我在之前用Claude Opus 4.6打包这个skill的时候，我没看到的一些潜在的问题，</p>
+<p>所以我也很好奇，后面让他用自己打包好的skill做网站设计的时候，表现会是怎么样的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzXpfZXcOCelZd6S6RricxwPJ01XcHfcIGPnNycIlRl2SB2HrAQpXhOczId8bHAhqiay6KEr4TLa8mq2OxtIZQwsvmP5999HwuCo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>小米这个就跟其他三家都不太一样了。</p>
+<p>他先是看到我本地已经有一个打包好的 Claude design skill，他觉得这个skill已经非常完善了，去检查了一下它有没有什么问题。</p>
+<p>当我明确给他答复，我们要打包成为一个新的skill之后，他又给了我打包了个新的，自检结果大家也可以看出来不一样了。他更多的是针对这个skill在触发的过程中，会遇到什么使用问题。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FybNGuWLdop5kicDaL5IcAahJMr4Ezic7BiaunaFic2MABAgRpY42WtNaC96e6t0kFxPhSNUqibYqQTQxib4zpn36ZuepnkTgHCEQ7og/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>马上到第二关，</p>
+<p>基于这个skill做个人网页。</p>
+<p>这关测的是审美迁移，很多模型会背Skill里的设计词，但做出来还是公式模板味。</p>
+<p>我直接就是把一个简历和公开知识库的链接作为这次的数据源。</p>
+<p>💡</p>
+<p>加载刚生成的Claude Design风格skill，为卡尔做一个个人网页单页，让陌生人快速理解卡尔的价值。</p>
+<p>按照你对卡尔的理解，还有他的简历（/Users/carl/Downloads/2026-04-22__文档_其他__简历（23-03-06）.pdf），以及他公开的知识库（<a href="https://aiwarts101.feishu.cn/wiki/MZTNwQ7b9i1dyXklFxzcirOxnRg?fromScene=spaceOverview%EF%BC%89%E3%80%82">https://aiwarts101.feishu.cn/wiki/MZTNwQ7b9i1dyXklFxzcirOxnRg?fromScene=spaceOverview）。</a></p>
+<p>卡尔想要一个交互超级不一样的页面。</p>
+<p>结尾说明你的视觉决策。</p>
+<p>PS：每个都配了飞书Cli，所以他们读取的知识库是有快100个表格和文档的。</p>
+<p>GPT 5.5，</p>
+<p>我只能说学Claude有点有点子学到精髓了。但是也不知道它是怎么去做这个定位跟整个尺寸的放大缩小了，可以看到它那个页面跟它里面的这些组件不是说完全对位的，整体是往左边上面缩小的。</p>
+<p>虽然说它有一个比较有意思的互动，包括中间的SVG点击可以跳转不同的页面，以及右下角的这个一个提问，可以问问题给出答案，</p>
+<p>但是整体来说我只能说，在大家都只有一次修改的机会上， GPT 5.5这不能说是一个成品。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:28</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:28</p>
+<p>00:28</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3u4acgaaanuabskpt3buvbj6deotqaiya.f10002.mp4?dis_k=863e3786ef4df87228504e6b99f34a04&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=Vd6NheBIEGge1pf62hMsH0xKM2cYYGwwRmwpGGJNQHVuE0oQKX4qY0scDDUAcW8mQ15l&amp;auth_key=04b8b06da110120e0870b4f92578197c&amp;vid=wxv_4495550783043584001&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FzgQicNbzeMWuAunlD4r5KzBCpuWUoMwBjEjWvQjNkUKt1NZzeb0oZXGu7Rd9v8BE6kYDSkUxAIwUNR7xaibkhQGbFRkI8sRnZDk/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797382">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>MiniMax M2.7优先保留了页面的完整性，然后再去做整体的设计和互动。</p>
+<p>而且它的互动也是有巧思在里面的。我是程序员，所以它给我保留了这个输入光标，然后用一些动态图表去做成果展示，底部也留下了我的联系方式。</p>
+<p>我觉得一个比较难得的细节就是它的中英文字体搭配不丑，很多模型要么就是中英文混杂会很奇怪，要么就是只擅长做一种语言，纯中文或者纯英文，然后再用i18n切换。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:12</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:12</p>
+<p>00:12</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eiudoqaagluanhjpvu5uvmrod5bcqn2aa.f10002.mp4?dis_k=3713838568168fa8b19dc737af64cc18&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=BqaA+YIWRmJO35uujUEpShQVY2BPYm08TW0rTmlJQHY9TU9CdyB8aRsVAGFXI2pzGwE1&amp;auth_key=893c9f5eee9819b1f03ee5d43a24dfc1&amp;vid=wxv_4495552097807171591&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fzo8LZlgZPpEGVfmZfrIghQDOoJIY6lFR61vr5QzCVc2qb3rqZdPCT7MKaRk9Q9Y8QGyg50olHNbiceaq34Dpvkicru4T8vfcnDs/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797377">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>DeepSeek这脑回路跟大家想的都不一样，他根据了我们知识库过去分享的一些内容，想出了用鼠标作为探照灯，然后去看四个角跟中间的一部分，我有一些什么样的信息。</p>
+<p>比较可惜的就是中间那一页被知识库的信息所污染了。这里面的信息居然全都是Hermes和OpenClaw的一些特点。所以我只能说交互方式我觉得还蛮惊喜的，跟V3.2还是有比较不一样的，但在这个长文知识处理上，比我想象中差点。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:24</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:24</p>
+<p>00:24</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3eyevcaajqyagx772ujuvsjwdketasuia.f10002.mp4?dis_k=2961ea55ce856a97fa3eee676cf3272c&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=U92sjtQXHm1Kj5GvixMsSkMQM2ceNm5nTGMsTDQbTXZoEEZBeSckZh9FCmBRcW9zTARl&amp;auth_key=8696ab592ab2b8d1e2b5c7ecc288676c&amp;vid=wxv_4495550073652854796&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FwkVz51ZFl3QU0j38OCLI7S02qvOgbyWPuXcdvHSblfTUA22L21cpnwqiclBtne4jhHug9j1L1wa9SnYpIU0IszEfbichWDBT7IY/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797378">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>小米的话，网页就更贴合普通的个人网站了，</p>
+<p>在第四页做了一个简单的命令行样式，我们可以输入固定指令，来得到答案。我觉得是太强调程序员身份了，没有给到很亮眼的交互。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:19</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:19</p>
+<p>00:19</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3eubmsaaccaapevprznuvejodzesqfsia.f10002.mp4?dis_k=eeae485c1561ee1b10639ad40c91f6b4&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=AZDHiKwRFjgd3pT51xd+SUUQbGVKNz4wGz97GGVCTSA6QEhFKiMsM0gUDzYNdT1wSgQ6&amp;auth_key=d20b4a84694cd2b83021c115c236f2b1&amp;vid=wxv_4495552569616138244&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FwfnymgM4ySgxzvQDmboOxoREogZX2sfRRmx50Am4ibialwzISdxKhDM3ogicP8icr3UBOouEQY6yGHZjLiab3gZHBqseWdS8syOic3c/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797380">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>OKOK，我们到了第三关，马上来个中场结算。</p>
+<p>经历了上面两轮至少10轮多轮对话后，他们消耗了多少的上下文？然后API价格又是多少？</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FybaDBC3cGU75cibVYvsv7JOC8C54pEYR8WMpqG15bHGgia2HXnr7oWOB7hia2rVm32HTz8XzD3EicJLpYha4BvnVZmvymHw0lS8Kk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyricTY0mNgsQR4UQ4wVMqAfuicmEjm40wsLt2Tv27RcnxJ3bOtaz9AZhCBTNHzVIUkteAgJibQpUDBXGwRHickmVq8dCr1WYIibsWU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzA25licVFNZEZHEv34jiaiadwN0oNo4nUQpgiahHLviblU5GvtT2cvib4KW6OIAXsB9icNyhEgCbmCIiau56CzfWOAeicBydVuZdeMQeM8/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8Fw1XkL2Hmeh5qkvwN84UYKYptlD4NnswpyUPNMowR5QSUibmEr92XAC7U4ICPSpPMWyMJ1BBTdSZ3dS77Fvhd0PNCMPWPFiboEqc/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fxic1xWAkicWgpAU88jXltxxXGBFU5O34j9Bm0dmLNRgmRPj6NVjK3PF3XV42o4yl8uj2VOibwLaKItwDmgYIZdiaXwpyyCgdodQoY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="Image"></p>
+<p>按照完成两个任务来算额度的话，</p>
+<p>MiniMax消耗的上下文更少，价格也够低，要是能用1M上下文就更好了。</p>
+<p>我在最后，也就是第五个问之后再去横向对比的他们的订阅和Coding Plan的价格。</p>
+<p>第三关，</p>
+<p>让它们加载PPT相关skill，把Hermes的安装手册变成一份能讲的HTML PPT。</p>
+<p>这里我很在意一个点是，代码和文字混在一起的时候，模型会不会露馅。</p>
+<p>Agent任务里最常见的不是纯写作，也不是纯代码，而是两者混在一起。模型要会组织观点，也要会控制组件，还要记得别把思考过程中的碎碎念带进最终拿来展示的PPT，说的就是GPT 5.4，做网页太拉了。</p>
+<p>安装github. com/op7418/guizang-ppt-skill，配置好环境，这个skill根据字体跟不同的明暗度，有20种搭配。你来判断哪一种配色是最符合今天的主题的。然后把hermes-agent.nousresearch. com/docs/getting-started/quickstart做成一个10页的html ppt</p>
+<p>GPT 5.5完全在我预料当中，</p>
+<p>排版都是没什么问题的，但是它就像那种把自己的思考过程什么的一股脑全部都倒给你。。。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:20</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:20</p>
+<p>00:20</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc33aam6aaahyapkjxtpvuvbwgdz7mabtya.f10002.mp4?dis_k=ce73222694e0dba073e7ccb85e555e7f&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=CY/hwbQRRmob3cf9jRV4RUAWYGEZZGtiHT8tTmNISnUyQRtEKyR8YU4XXDJXdzt8TwI2&amp;auth_key=43c5bb52af2116865431661a286b0828&amp;vid=wxv_4495551255288692742&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FzwJygtM3GNpdoxCSlJn16CCL8iaMajpjQvJPWSbLI8Uf93jA1g8MibIuvyfic2ZZXKHRLbiajgvraEjtUAz1rdrrHdgiaias2icCjyQQ/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797381">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>MiniMax M2.7就更多是偏向于说明，</p>
+<p>在对话过程里，它觉得这10页我们只够的篇幅去安装 Hermes ，里面的模型配置还有更复杂的这些 skill 之类的，它更想在这10页里面做一个总篇目录，就是使用 Hermes 通常要装些什么，要经过哪几个阶段，然后有没有合适的模型可以选。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:30</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:30</p>
+<p>00:30</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2e7qbxyaadyiaeolxqonuvh7gdpt6ag7aa.f10002.mp4?dis_k=f2f339ccf5d29ebf6024068bfb16c5c3&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=Vpmeh8oXRTwa3pD+3kAiHxMRZGJPND83GGh8TmJDGyBtQBpGdiN/N08UCzEEImEmHAUy&amp;auth_key=4374f3f4c89405c8de678652cd2e4e16&amp;vid=wxv_4495552731079786502&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FzY4iaXbdlhc45xKJjt8Zic9AWBfmoaMAYwAjpLibRZfib67HafyKZCibIm7ibBZZqOy3aMTWdwMwLeeUFdqn3icrgVgMvdDfSzviao6s0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797379">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>DeepSeek从第二页开始就开始放飞自己了，</p>
+<p>我觉得配色选的倒是没什么问题，就是页面切换一页蓝一页白，然后在小字的排版上，其中有一页显得特别严重。安装命令的那一页左侧竟然是完全是空的。。。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:20</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:20</p>
+<p>00:20</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2ecadkuaagxuajbkhvmbuvmegdviiankqa.f10002.mp4?dis_k=fb57db7a4960324e5797f1232a8ab9ab&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=BNiV4+hHEz8Z2Zv9iEcoTkcSbTVOOD1mGDgvSjUYTyI/TEhEfHQpNEwTADJSJWt3SAY7&amp;auth_key=4e3de28dc840b80e40ef89bf348f1156&amp;vid=wxv_4495550290212782089&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fx1pIeKDHucdGBGbGEZO1icMC3p7F2enrCVYVYxL50ibOWpPFRpocb4W74KskMhVDXz2utlpVo8FWAkywhng78jzGwwPGySPzicq0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797383">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>又又又又到小米了，</p>
+<p>小米这一把就有点奇怪了。</p>
+<p>首先，中间我还做了一次对话重置，但是它会比较频繁的触发。比方说我们早就已经做完Skill打包跟网页开发的任务了，它又向我确认这一次是不是已经完成了。还有就是它的上下文明明只消耗了154K左右，但是它就不往下跑了，我需要手动输入继续。不过最后输出的结果是好的，然后也给出了具体的安装命令以及分步骤来执行。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:30</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:30</p>
+<p>00:30</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2e7qbxyaadyiaeolxqonuvh7gdpt6ag7aa.f10002.mp4?dis_k=f2f339ccf5d29ebf6024068bfb16c5c3&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=Vpmeh8oXRTwa3pD+3kAiHxMRZGJPND83GGh8TmJDGyBtQBpGdiN/N08UCzEEImEmHAUy&amp;auth_key=4374f3f4c89405c8de678652cd2e4e16&amp;vid=wxv_4495552731079786502&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FzY4iaXbdlhc45xKJjt8Zic9AWBfmoaMAYwAjpLibRZfib67HafyKZCibIm7ibBZZqOy3aMTWdwMwLeeUFdqn3icrgVgMvdDfSzviao6s0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>第四关是我最期待的一关。</p>
+<p>让模型判断我本地Obsidian目录怎么整理，我这里准备了从5号到30号中间，我收录到知识库里面的所有零散信息，包括但不限于视频，图文，播客，让模型们给一个整理计划。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyUHdfmVgjicUT4MGu0ibRibfmKsFV1EOp2MYVncFAeSAwM4aaKCVCrjjib0m212emxBlLhqzuHibpoERVzrZBsV9EbtGHJibhic09MjU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"></p>
+<p>这里有个我自己的经验。</p>
+<p>本地知识库如果已经比较干净，不一定适合直接接LLM Wiki。LLM Wiki更适合从零开始或者资料很乱的时候。而Garry Tan那套GBran，更适合用Git管理整个知识库，把变化、分支、回滚都管起来。</p>
+<p>我想看的就是，模型会怎么解决这种没有标准答案的问题。</p>
+<p>GPT 5.5首先查看了一下整个目录里面有的文件数量，然后去补充说明文件，让后续的Agent能够更好的读懂我们所有的文件夹能有什么用，然后给了我一个测试流程，既然我想测LLM Wiki的话，他就给了我选了一个合适的目录作为试点，先连续观察两周使用这类系统的时候，某个文件夹有什么变化。</p>
+<p>最后就是设置了不同的资料应该进哪个文件夹，</p>
+<p>因为很明显，我现在就是一股脑的掉到了收件箱，所以会导致里面的文件过多。我觉得就很延伸了这个Agent 的优势，也就是说他们完全可以做到无感、定时化的缓慢迁移，而不是要一次性把所有东西都改到位，特别是对于知识管理这种任务的时候。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzwcLk7ANEMPXs9Kn0XNTN0EdBB6zib6SXdpfp76zawDwx1JuyUfpBLkCGaicw242sK2nqJyCGTibiabwY4hl7bEhQYDTKdibYRUHeU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyZpAibo90unDkJkOIjZVrM1J7ia7wuLOKp2PsblichZOjUjiaHGdiaMzTnNqtIW6xUtjCEY3Mrm8788NibVW6tWlMpx40iaXWqqaXwv4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="Image"></p>
+<p>MiniMax M2.7同样是用了定时迁移+试点目录。</p>
+<p>不同于GPT，它给出了更具体的方案。比方说我很喜欢这样有时间轴的答复，它给出的是我们先按照哪几个目录，然后观察3周。评估的标准就是这3周我们是不是多次用到了语义索引来去提问搜索里面的文件，再决定 LLM wiki 要不要保留下来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwMfN3ibPxhIk9ic1pTsALcFsic4ibm0qYUHJrPiaBWibmDAu8NSsA2NYNoHcDjUXa5icmqNUCT8CtU15ialAt2cX0WlGkXSEJGYcByKsA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxxawRr1foh0tw3k2Yox0jHZnIJRrQV2B9Rp7QYwoF3RoLGe3ciaIkR8ibmibpOniayOJKJ2EAYHfLx46vSp8xzX087RQ01iby1v8uQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>轮到Deepseek了，</p>
+<p>它给出的路线就更激进。首先它让我自己给自己问问题，觉得我现在的obsidian是处理到一个什么样的阶段。</p>
+<p>如果我觉得我的主题的边界都非常清晰，而且我能记住每个东西都在哪一个文件夹，那我不需要修改，更多的是录入进去。并且他给出了匹配度，他觉得我的obsidian 的目录是有设计过的有动线的，但是目前来说存储的文件太乱。</p>
+<p>所以它也给出了一个 LLM wiki的一个完全重建方案，虽然会抹掉我们一些项目的目录结构，但是会让整体语义匹配会更高效。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzOKcBSicd9SS6iauIgBB8mOrk3hnZlwGwwmxZ6LCYsuL8JhkAmu7lOEWesTwN0UZK8VUFibtict78LPEBsOibLicwOzdwpXYicocNbvc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyZ6q1Mickvv4icjvwRIAibzGnEeHWrnZ3kDKhiaPT5icYSOBicL00lY6a3GSvlw6nlsj5ib1ny1BTwPEWGLECibia9D253ErVWLmaWuLp0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="Image"></p>
+<p>小米同样是给了三条路线，并且还给了路线规划。</p>
+<p>那么它的处理方式就是在我们已经有一个比较成体系的obsidian的文件夹，是很明显看出是手动整理过的一个情况下，我希望 AI 能够更快速的理解我的知识库上下文。</p>
+<p>是的，它在生成这个方案之前还来主动要求跟我进行对话。他给出我的方法是不动现在已有的目录，而是在旁边新建一个 LM wiki 作为速读层，那么 obsidian 就作为一个桥接。那简单来说，就是给文件加一个快速路径，这样的话又可以让 agent 能读得懂，我也不会丧失我原有的目录结构。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FyiasP7wWibYGdq5fhXoZtvZcrA20WV8NWk3XrI22QzwD0r2IOaLEt0tLwuibkqictT5tBQmSu2s2bAxvcwtvL7Ky6YMHw817aGq1Y/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxzdaRgu14VFyxnq5uuCJhHKLwcyavveyVr6KULBdiaampJtLdfzMOqficiccqNJ8YUcj0SOPuLKiauASeibS3KwR446YhvViaLicPXqY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<p>第五关，让模型们完成高token消耗的浏览器自动化任务。</p>
+<p>我定时会让Code X 去查看Clawhub的这个网页前100的 skill ，然后跟前一天的备份去对比，看看有哪些skill是新上进了前100名，会不会跟原有的100名的skill有功能重叠，</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fy4Dk4pbibRfEibQ9vHdz5iceB73JHf0O2icygDcD0WjtIvVXsDVZShSEoWuwBqVXKFLE90DuFUa9pkfPWNjia0DwFBkGCJnWsqasQk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="Image"></p>
+<p>为了可视度高一点，我这次让他们完成了整个任务后，把他们得到的结论做成可视化的网页。可以看到他们延续了上上上一个任务里面，我让他们学到的这个网页的风格。</p>
+<p>GPT 5.5的实际效果，我也是有预期的。</p>
+<p>但它做这个的时间，平时我挂在 CodeX App上面让它跑定时任务，我不觉得有那么长。但是今天跟这四个模型对比的时候它几乎是花了这些下面所有的模型两倍到三倍的时间，才完成了这个任务。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:20</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:20</p>
+<p>00:20</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3vearsaabkaacglpsrnuvdkoddguqcgia.f10002.mp4?dis_k=4db112fc7ae03f0ffceb6d19e790eac4&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=B5zQ8KgUFzxKjceo2BIrRBBEbGRJYD8wSj54TGBIHiA8FBtEfCAtNx9HXGcCcGh9H1A6&amp;auth_key=6696ea7139ad4bc8f10544cbf063e759&amp;vid=wxv_4495551567110275081&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FxJ91NZPTibPYfQTAdTqhVquREDPaDf6QazQ0Nfu79Rg2XNUtlAhaibWlRVBHmUiceOLtJ0jMDfaDNMT7fDlZCz1slczX4micpEiaibM/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797384">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>MiniMax M2.7是把结论写的最细致的一次，</p>
+<p>因为他不仅把中间遇到的一些路径错误告诉我，还说明了每次翻页他是怎么实现的，以及给出了三个双十榜，排名前十，下载前十以及star量的前十。然后给出了潜力Skill的一个评估标准，有三个条件，如果新进的Top100，下载增量的Top 20，然后排名比起上次涨了八位以上，那就是潜力新星。</p>
+<p>已关注</p>
+<p>关注</p>
+<p>重播 分享 赞</p>
+<p><strong>观看更多</strong>卡尔的AI沃茨0/0</p>
+<p>00:00/00:24</p>
+<p>进度条，百分之0</p>
+<p><a href="javascript:;">播放</a></p>
+<p>00:00</p>
+<p>/</p>
+<p>00:24</p>
+<p>00:24</p>
+<p><a href="javascript:;">倍速</a></p>
+<p><em>全屏</em></p>
+<p>倍速播放中</p>
+<p><a href="javascript:;">0.5倍</a> <a href="javascript:;">0.75倍</a> <a href="javascript:;">1.0倍</a> <a href="javascript:;">1.5倍</a> <a href="javascript:;">2.0倍</a></p>
+<p><a href="javascript:;">超清</a> <a href="javascript:;">流畅</a></p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3qmakcaaaqqaju6ptmvuvba6dugbqbiia.f10002.mp4?dis_k=7cb262692517d6a95597a4cf0ff6c92a&amp;dis_t=1777607400&amp;play_scene=10120&amp;auth_info=Asrvs6BHRmMZ25v9j0J5G0UVM2JPOG5lSTl4T2dITno5QE9DK3B8aEwRADJVIDoiSgFl&amp;auth_key=80cb2c7d6041a9c49721e4b83bcf29b6&amp;vid=wxv_4495551808450543621&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fw5wypF1kDZAzd1b6s2EibNhcvm0pF5Uufmb6dUonsLgUibc3ZS5mAKt4DAv7iaRTVOlJp8WjO3eiaymR7kxZp82ibnZTmrKQKHeZib0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1549797385">您的浏览器不支持 video 标签</video></p>
+<p>继续观看</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>转载</p>
+<p>,</p>
+<p>千元横测GPT、DeepSeek、Xiaomi、MiniMax的最强模型，我找到了跟Agent们的绝配</p>
+<p>卡尔的AI沃茨</p>
+<p>已同步到看一看<a href="javascript:;">写下你的评论</a></p>
+<p><a href="javascript:;">视频详情</a></p>
+<p>DeepSeek对比了多个本地备份后，发现前后排名有大幅度震荡，不过只给了这个的提醒没有做修复，然后就综合给出了新进榜单的下载增量跟新进榜单的前七名。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/VNz1x8bH8FwHQW0UT6tRBzay9OeOoL64LaEGzq7HUaqQwGLwalqxdwYmaS9lGjVJXHM28rXlNURBsetyd5FUlKuaiaSg25Hq8VkU5gLxbhlE/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<p>小米在这次做浏览器自动化的时候，就比前面几个任务表现的效果要更好一点。</p>
+<p>因为它完成了skill加载，网页内容梳理，还已成功找了我obsidian之前对于这个网页数据的一个数据备份，还额外去编写了一个脚本，实现分页，结构标准化。最后也是成功配置了一个在本地运行的定时任务。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/VNz1x8bH8FxONboPt3IEYibB5Pv9TAMQvKW9eQNZUPBCojqibDicm0nYAo3iaQTO9Wfxul3SKOZZzb50pnHic5aHg4DkgeFWXYt0lwNFvC258VCA/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>测到这里，基本就能看出差异了。</p>
+<p>如果一个模型只是会聊天，它很快就会露馅。</p>
+<p>如果一个模型只是编程强，它也会在PPT里露馅。</p>
+<p>如果一个模型只会跟着提示语走，它会在知识管理的环节受到我原来偏好的影响限制。</p>
+<p>说到这里，我们再来看看订阅侧，</p>
+<p>因为现在我更习惯，放在Agent这个高强度使用场景上来说，每5个小时做一次额度重置。</p>
+<p>大家会觉得小米这个TokenPlan比较烧Token的一个原因，也可能因为他们把这个月费额度固定在一个数值上面，这就会导致了使用的焦虑感会放大。如果是高强度的使用的话，Plus是真不够用，你至少得上Pro才行，但Pro的价格又摆在这，</p>
+<p>所以如果让我去选择，</p>
+<p>在今天这个Claude反复调价，甚至4月20号之后的Pro套餐已经不包含Claude Code的额度了，不是自家的Agent就不能用额度只能烧API的情况下，</p>
+<p>我会选择GPT和MiniMax作为我一个长期的Agent模型搭配。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fxq2pDtxxj6fvfTqGQ93rWZoxjHp7oq6VEQibb9mhlho8Xd5Wcw2DABUb0rfbJY7GpWQkjKlWLcP15hfZnm7IvXK7xR6cp2HiaoI/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="Image"></p>
+<p>它们的组合不一定最炸。</p>
+<p>但都是真用得起，愿意每天用的模型。</p>
+<p>这也是我对这次横测最期待的地方。</p>
+<p>以前总是在问，哪个模型更聪明。</p>
+<p>但现在我越来越觉得，</p>
+<p>真正的问题应该是，</p>
+<p>哪个模型能长期稳定干活。</p>
+<p>能封装Skill，有自己的审美，</p>
+<p>能整理本地知识库，</p>
+<p>能在浏览器自动化里摔几次后继续爬起来干活的。</p>
+<p>这才配叫主力模型。</p>
+<p>不是榜单上的第一名。</p>
+<p>是我真的敢把任务全盘交给它负责的那个。</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/QBgd-BY4nZu79MxwfoIAOw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>智谱正式开源GLM-5，我们也有自己的Claude 4.5 Opus了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">智谱正式开源GLM-5，我们也有自己的Claude 4.5 Opus了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E7%BC%96%E7%A8%8B">编程</a><a class="chip" href="../index.html?tag=GLM-5">GLM-5</a><a class="chip" href="../index.html?tag=%E6%99%BA%E8%B0%B1">智谱</a><a class="chip" href="../index.html?tag=Claude">Claude</a>
+    <span class="date">2026-02-12</span>
+  </div>
+  <p class="lead">能撑起OpenClaw的模型又多一个</p>
+  <article class="content"><p>原创 AI沃茨 <a href="https://mp.weixin.qq.com/s/">卡尔的AI沃茨</a></p>
+<p><em>2026年2月12日 12:33</em> <em>浙江</em></p>
+<h2>不装了，摊牌了，</h2>
+<p>前段时间在OpenRouter被猜是Claude Sonnet 5的Pony Alpha，就是智谱新开源GLM5，先来看看它这次的纸面实力，</p>
+<p>还是开源power，参数量从355B扩展到744B，还大跳了好几个排名，仅次于Opus 4.5/4.6和GPT 5.2 high</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwM3Mpiar6mUYveCcnicCJdWyHRroJaPRF7vqrq8LKmdw7xMynISPD0EWyLvuntjPRgwpG6QMt7tYvicDGQ0CEdibE6QibcRSskNIsU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Image"></p>
+<p>我也是Coding Plan老用户了，马上就给GLM5安排上地狱级测试，这个token烧起来我不心痛，API价格就只有Claude的1/7，</p>
+<p>我直接就是一个我要验牌（大佬坐姿）。我测试了Z.ai，Claude Code和OpenClaw三大使用场景的7个case！如果让我打分的话，</p>
+<p> Opus 4.6 + Agent Teams &gt; GPT-5.3-Codex &gt; Opus 4.6 &gt; Opus 4.6（Antigravity）= GLM-5 （Coding Plan）</p>
+<p>BTW，强烈希望z.ai增加一下个人Agent空间的数量，我要挂十个openclaw！</p>
+<p>以前我都没有觉得z.ai上面的云电脑环境有那么好用，很多时候我就把它做一个比较完整的临时开发环境，但现在它居然可以直接部署 OpenClaw</p>
+<pre><code>帮我看https://openclaw.ai/以及https://docs.openclaw.ai/start/getting-started# windows-powershell，在云端服务器部署好openclaw并启动，然后我要配置到飞书上
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwzJnEzgR26atZ1ypVEOOryrdk2icQEdQSkVgFOSIKMAHicuciaFtpebSSlTxxoAJnia1KqeqRMKJqJwk29GoWVPMZ8Iu51nZdJDts/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Image"></p>
+<p>这才是真正意义上开袋即食，直接在云端想什么时候做个应用，什么时候部署个Agent，直接让GLM5做就好</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fyb6epTj2jSLrPyHDbyP9S8TicgOiaKic5E2XefiaRa2OHByJ1vTTsFVfiaUF6iafhwOcagcCTxb8T36anLjnz9Pq3aSF7lyr0M7UrOU/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="Image"></p>
+<p>关于飞书 API权限问题，可以跟大家说一下。</p>
+<p>这是OpenClaw版本升级后出现的一个bug，它需要飞书应用多加一个可以读取联系人的权限。如果你直接更新原有的应用，其实是不行的，它会跟原有的飞书配置产生冲突。我建议重新建一个应用。</p>
+<p>接下来我们马上来测试看看代码三幻神，交互动画，3D粒子，手势互动和2D小游戏，</p>
+<p>因为这四个case能够非常直观地看到GLM5的提升，看它能不能真的够到Opus 4.5的级别</p>
+<p>GLM5:</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2e7qaa2aaav4afzxmnkruvb7gdbx6aadia.f10002.mp4?dis_k=a59951b4bf7c8a86486b79a795de8d59&amp;dis_t=1770874446&amp;play_scene=10120&amp;auth_info=fMm6jJNbYGk85a+kiF9RMmNbf2s0EEYwYk0rMTEdf2RHZVJadHB7JEs6J25SMFwSd1E=&amp;auth_key=9c19949e6980804a9b838dea0bb4786d&amp;vid=wxv_4383497382252986381&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FySXy6bdXoXKYmc0aiahWx88iaDkVqibZiceD5RCudcJONVhxlalg3AFzgq86Ljibia7RrXEtHp4JmZIbc2icprS2ibB64FpmqQOTibKsJ4/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="" style="display: block; width: 677px; height: 381px;" jm_neat="1196230658">您的浏览器不支持 video 标签</video></p>
+<p>Opus 4.6：</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2e3qa76aaboaak5gemlvuvdxgd77oad7ya.f10002.mp4?dis_k=992f8b9007d4b2e2ef44b578d45fced1&amp;dis_t=1770874446&amp;play_scene=10120&amp;auth_info=IYDsyuMPNWVq6vKl2VwKMzJTJ2c/T0tjOUl5YGJKJTcaYQMEdiYuKB01em8DMwcTJlk=&amp;auth_key=3b1a1c9e3c391bca30d529be91699f3c&amp;vid=wxv_4383498868747780112&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8Fxaqk9CnVrAwNZSvnBJ1PZmEdSr8mjicFrchTJ34iauWA6J2NEwB9P6ppzialKvrkxEkl3JhVicJnaHcX22Wh4ugycyAZx7PKJ2Lh0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1196230659">您的浏览器不支持 video 标签</video></p>
+<p>这就是同一个提示语里面，用Opus 4.6跟GLM5跑出来的效果。说实话，对于这个图片展示来说，GLM5会有一点点卡顿，会有一些拖影，但差距真的少了很多。</p>
+<pre><code>为 \[您的姓名\] 设计一个个人作品集落地页，采用单页全屏 Hero 布局，铺满整个视口。使用一张大幅人像照片 \[图片一\] 作为背景，居中放置并缩放至覆盖全屏。在左上角以 Playfair Display 等优雅的衬线字体显示姓名，且姓与名分行叠放。在右上角添加一个简洁的导航链接，标注为F1 Records。
+
+  
+
+在右下角放置 X的链接，使用实心填充的 SVG 图标，确保其清晰可见且易于辨识。每个图标均应链接至相应的社交媒体主页。
+
+  
+
+核心交互设计为一个圆形的高亮光标，它会随着鼠标平滑移动并带有轻微的延迟感。这个圆形聚光灯充当揭示遮罩的角色，实时显现出底层隐藏的第二张人像照片 \[图片二\]。当用户移动光标时，感觉就像是在扫描照片的另一个维度。
+
+  
+
+当光标移动加快时，圆形高亮区域应留下柔和、逐渐消失的残影，以增强动感和响应性。背景中加入细微的动画网格图案，随光标移动产生轻微反应，在保持低调的同时营造视觉深度。
+
+  
+
+所有文本元素（包括姓名、F1 Records链接和社交图标）在被圆形高亮区域覆盖时，应动态反转为白色以保持对比度。采用约 300 毫秒的平滑过渡效果。此外，应用轻微的视差效应，使各元素随光标反向轻微偏移。整体风格应保持极简且精致，以纯白为基调，将影像与交互作为视觉核心。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fxpbj650Nb5mgwwr8pjVOwibLNKAica6S1J1cqXN2nBj3icYOrfia9abM1QlZicVfxlfNXftES7lY6ry8bm9dD2AhVtL3C5iaNSFiaHfs/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="Image"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fwibn4xH5tJh6QVKLItibDHcKKfUsQjW4c5icxBsKJgY8xshs4echAEriaO9BReJce0MxPmn10STzqLeAlqYACrZWQvIzp8d9wqKgw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Image"></p>
+<p>图片素材我也留给大家，真的可以去选一个自己常用的模型去试一试。</p>
+<p>Level Up！</p>
+<p>最近春节不是在抢票吗？我想给自己算一卦，</p>
+<p>做一个六爻，算算我的飞机会不会延误，我自己还专门收集了三个旺旺硬币来测试，</p>
+<p>但不能随身带，所以我让GLM5做一个模拟器，界面上有三个硬币，可以通过抛掷这三个硬币，来得到一个卦象，然后模型根据六爻的理论来解卦。</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3pea6yaab7yal2xmmsfuvc6od5r4qd3aa.f10002.mp4?dis_k=c6b11cb6542c3420d5f83f56d7a6fcb7&amp;dis_t=1770874446&amp;play_scene=10120&amp;auth_info=do2d/dcEZDZo5PKmjQwPNTRVfWhvGEJiYk98YzQddDFNYwJXJCp/ex87emxXYwIVIF8=&amp;auth_key=822f4c11003c518ee9f73a5ba08a83e4&amp;vid=wxv_4383498256077471754&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FwHgva11hYbxWNRlJ0cw3Wf6ibq0891qJqliaKgvZtPicK6GckIV8ybJ9Q4JcpkRonChjh6vtDibnKPciajVNiam5OVbgBgNnDCXehq0/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video_fill" style="display: block; width: 677px; height: 381px;" jm_neat="1196230661">您的浏览器不支持 video 标签</video></p>
+<p>后续迭代的时候，我还加了中英文双语，主题颜色切换，增加摄像头。</p>
+<p>只要摄像头看到我双手合十，就代表我要抛一次硬币。仪式感拉满了，也就烧了我十万多的Token就做出来了。</p>
+<pre><code>我想做一个算命的六爻模拟器，主要功能需求如下：
+
+1. 1\. 界面与自定义设置：  
+	主界面要有3个硬币。用户可以通过上传正面和反面的图片，将硬币更换成自己想要的样式。
+2. 2\. 交互流程：  
+	用户通过手动、语音或打字交互来决定抛掷动作：  
+	(a) 抛第一枚硬币并出结果  
+	(b) 抛第二枚硬币并出结果  
+	(c) 抛第三枚硬币并出结果
+3. 3\. 计算与反馈：  
+	(a) 得到三个硬币的结果后，你需要根据六爻理论计算出它属于八卦中的哪一个卦  
+	(b) 最后根据六爻的解卦，给出当前用户的本底运势
+
+如果你对六爻有任何不懂的地方，请主动追问我。
+
+  
+
+首先非常有仪式感，你算的也是对的，但我这里有几个修改意见：
+
+1. 1\. 功能双语化：我希望现在所有的功能都是中英文双语的。比如“老阴”、“老阳”，不光要有英文，还要有中文。卦象最终的结果也要以中英双文呈现。
+2. 2\. 排版优化：我留意到你现在输出的结果是 Markdown 格式的，但输出后格式没有生效，导致排版非常不好。在目前的条件下，我觉得卦象模块可以单独占满一行，左边显示中文，右边显示英文。
+3. 3\. 增加摄像头功能：在这个基础上，我发现语音功能好像没什么用，所以我希望有一个按钮可以打开摄像头。
+
+打开摄像头后，我们的仪式感会好很多。只要你看到我双手合十，一合十，就意味着我要抛硬币了。合十一次抛一次硬币，这样就好了
+</code></pre>
+<p>继续继续，我们上游戏克隆，</p>
+<p>没有给模型更多信息，直接就是让他给我做一个宝可梦。我想看看GLM5能不能自己了解到游戏的核心交互逻辑，角色的状态管理，以及PK系统是怎么体现的。</p>
+<pre><code>Make a Pokemon Clone
+</code></pre>
+<p>我最开始还想做一个纯像素风格的拼接，觉得这个过程还挺好玩的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fxqb5ICVPjibjhNHeicK6QBe11cDrkSjVQX8AvGgRLd5pPDsGTxQxvjlLvWwpd0zY5uCnF7kzNLdk2laModcdyQsr4HCnWwlIqqg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Image"></p>
+<p>但后面我还是让它去网上找了一些图片素材，给我做了这样一款宝可梦。</p>
+<p>经典2D，可以上下左右移动，碰到隐藏区域会展示对应的宝可梦图片。我们可以使用不同的招数，比如这是小火龙的经典招数。我们这把没能把这个草系宝可梦击败，所以我直接跑路。</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eymaaaaaadqafdnunnnuvbq6dadbqaaaa.f10002.mp4?dis_k=d433019a5b58b789475f865a89de7d96&amp;dis_t=1770874446&amp;play_scene=10120&amp;auth_info=UcqK13IxaGvn96nVXgxhMlsoOjkaQDExQChiZEt/Z0hrX1Z1JyolHDh/Yw8xAUEmUQ==&amp;auth_key=e92039a2c5de7032358e22403ab2c595&amp;vid=wxv_4383499737740558345&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FypKAjxecicrIPN6cUxlkmq6knibrTcoSYjEz8LurHyjeia2qcAyaA0o6gJZgReIFBasztm34ekOucHBXtFQeibgWeEMlvew8K1rUw/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="" style="display: block; width: 677px; height: 508px;" jm_neat="1196230662">您的浏览器不支持 video 标签</video></p>
+<p>第四个案例，我们来挑战一下3D互动领域。</p>
+<p>有了之前Claude Code和各种Skills的经验，我们已经知道AI已经能做一些简单的3D场景了。</p>
+<p>但我想看看GLM5能不能做更复杂的粒子系统。这个系统能展示一个由几百个微小立方体组成的3D模型，并且能够通过点击按钮，让这个模型瞬间粉碎，变成受物理引擎影响的独立方块散落一地，然后再点击另一个按钮，让这些散落的方块平滑地飞回原位，重新组装成模型。</p>
+<p>以后做3D就不需要做3D模拟宇宙了，在Claude Code里plan模式下，我roll了二十轮就能做出来这样的效果。</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eseabcaaaq4aegrunijuvbeodcgiqaeia.f10002.mp4?dis_k=8634b48d6a1ff9b8920ebff4e7242fe6&amp;dis_t=1770874446&amp;play_scene=10120&amp;auth_info=JpOPt45bNTY75vOm3g5bMDNUJmg+HRE1OB1/NjcYITwda19Qcncue0w5e2wEYVYQJ14=&amp;auth_key=62557dd5d29d65195fd1123a888f570c&amp;vid=wxv_4383500651796365317&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FxJw8qsDJ0XYQDcTrKicYGmF2Yxc5PmCazF3fyl19DaPMgiaMjlGCdrnLNfP5hDNVjEQfqcP4S6m5ddbYjucBR3glQTEvAqaUSGA/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="" style="display: block; width: 677px; height: 508px;" jm_neat="1196230660">您的浏览器不支持 video 标签</video></p>
+<pre><code>你是一位精通 Three.js、React 和 WebGL 的高级前端开发工程师。我要你做一个名为“Voxel Toy Box”的 3D 粒子交互系统。
+
+  
+
+场景与视觉描述： 这是一个基于 Web 的 3D 场景，背景干净整洁（类似于淡色渐变或白色），地面有一个接收阴影的平面。场景中心展示了一个由数百个微小立方体（Voxel 像素块）组成的 3D 模型（例如视频中的老鹰）。UI 界面漂浮在 3D 画布之上，左上角显示当前粒子数量（例如 923），右上角有暂停和分享按钮，正下方有一个醒目的交互主按钮。
+
+  
+
+核心数据结构： 模型数据基于 JSON 格式，每个粒子包含 {x, y, z, color} 属性。系统应该支持通过 JSON 导入导出模型布局。
+
+  
+
+核心交互逻辑（物理与动画）：
+
+1. 构建状态 (Build Mode)： 初始状态下，所有立方体根据 JSON 数据静止在目标位置（一只鹰），组成完整的物体。
+2. 粉碎效果 (Break Mode)： 当点击底部的粉红色“BREAK”按钮时，应用物理引擎（建议使用 Cannon.js 或 Rapier）。此时，原本静止的体素方块瞬间变成受重力和碰撞影响的独立刚体，并施加一个随机的爆炸力，让它们散落在地面上，模拟乐高积木倒塌的效果。
+3. 重构效果 (Rebuild Mode)： 当粒子散落后，按钮变为绿色的“REBUILD”。点击后，禁用物理模拟，所有粒子应忽略重力，通过插值动画（Lerp）平滑地从当前的散落位置飞行回到它们原始的初始坐标 (x, y, z)，重新组装成原来的形状。
+4. 多模型切换： 系统应具备菜单功能，允许用户在不同模型（如老鹰、猫、兔子）之间切换，或者重新利用地上的散落粒子组装成全新的形状（例如“Eagle x2”变成两个老鹰）。
+
+技术栈要求： 请使用 React 配合 React Three Fiber (R3F) 进行开发。为了保证性能（处理 1000+ 粒子），请务必使用 InstancedMesh 来渲染立方体，并配合 use-cannon 或 @react-three/rapier 处理物理效果。请输出完整的、可运行的代码结构。
+</code></pre>
+<p>因为最近我还在尝试怎么去搭配OpenClaw和 Claude Code做一些实用的案例，</p>
+<p>所以给大家分享一下Obsidian的，</p>
+<p>简单来说，我决定把飞书，Notion，滴答上面记的所有东西，都熔炼到Obsidian 里面。</p>
+<p>这相当于我把习惯做了一个改变，我在本地写的所有文字，要么通过ClaudeCode来写，要么就是写完之后跟它说你做了哪些改动。这其实是让自己被动适应，让ClaudeCode记录每一次修改，去搭建我的喜好偏好。</p>
+<p>这样的话，真的能做到越用越贴心。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzCkwDD415RvUPqmtrf1QzyH9dkM6SD5mlfujNKJUQFyEo0DT94Dlw2bMzFjKhnplJr4NDkm4Gw8u7L72uK8sSgQAYPrUgibBPg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Image"></p>
+<p>目前来说，我可能直接丢一个 X 的链接给它，它就会知道要把内容提取出来，不需要我去做过多的解释。但是如果要做这种日常记录，沟通次数会比我日常跟GPT对话次数还要多出两三倍。</p>
+<p>使用Antigravity Tools的一个账号有时候会卡，用多了直接403，GLM5 Coding Plan版能撑得住，</p>
+<p>昨天晚上我测了一下，根据向阳乔木出分享出来的图，一对一复刻了一套个人知识管理系统。</p>
+<p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0bc3gmaqiaabi4afdg4mrvuvcm6daqzqcbaa.f10002.mp4?dis_k=7b4c4d5bf3f1e69bbb309e2f507987f1&amp;dis_t=1770874446&amp;play_scene=10120&amp;auth_info=ff3BttQPbjVvtKOh2wNRYTBTKTw5SkdlNRsvZGBPIjNGMQQAcSJ1eBhrK2sBbFxBJFk=&amp;auth_key=1b9e0928084ef6e4cc3d1c466b6492f7&amp;vid=wxv_4383515118471397391&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/sz_mmbiz_jpg/VNz1x8bH8FxdWRWDQ5b7EW9TSwbTfkiaTvpbWBdOVwriavIRxEkdWaia6wqs3fqiaFSgt9LlERB15kFhzoXzlchUL2iawQVGBHjFpnnVxJtokFVo/0?wx_fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="" style="display: block; width: 677px; height: 508px;" jm_neat="1196230657">您的浏览器不支持 video 标签</video></p>
+<p>光是做一个新建文件还不够，</p>
+<p>我还要跟Codex app比一个文件整理，很多朋友的误区是以为只有Openclaw和Cowork可以做。</p>
+<p>但实际上，使用Codex和Claude Code来做文件管理其实是绰绰有余的，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FzfibKWw2GNeo7WhLFMCiapcPsxibQ0XrkN8ZlMgIE8V1eIIySVhutsOFbpGibru58kvpQIYLibgYmibJ87rJ7a4XvH7vyHhueeAicnho/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="Image"></p>
+<p>也可以让GLM5生成一些 ICS 格式的日历，可以导入到苹果系统里面</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxaU3OHO4BKIOic1V4s802MqCwibm2xictqf3xpXcWbVu3QuA12obsiaibqlJ9UhSLXHibmSwo9XVsicQNBlnAfU1zkZnuvzxzWpaL8NY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Image"></p>
+<p>测了一大轮，</p>
+<p>GLM5的开发和Agent能力又提升了不少，</p>
+<p>是真的做到了PK Opus 4.5不输的状态，</p>
+<p>很开心，真的很开心</p>
+<p>Claude系列的模型是好用，</p>
+<p>但心累，我们要防ban防API，</p>
+<p>小心翼翼用Antigravity Tools，</p>
+<p>就是那种我明明知道很好用，</p>
+<p>但不敢放开用，大胆地用，肆无忌惮地去用。</p>
+<p>所以我做出来的很多 case，比方说刚才看到的手势互动和粒子系统，起手就要烧大几十，</p>
+<p>这不是一个小白看到后会想去尝试的程度。</p>
+<p>GLM5现在的生态位真的很不错，</p>
+<p>持续开源，也有Coding plan，</p>
+<p>Claude Code，OpenClaw等项目都兼容GLM，</p>
+<p>我们没有任何的使用限制，</p>
+<p>想什么时候用就什么时候用，</p>
+<p>真的太好了！</p>
+<p>@ 作者 / 卡尔</p>
+<hr>
+<p>最后，感谢你看到这里👏如果喜欢这篇文章，不妨顺手给我们<em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区和我聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/grB4kT5wzyylYDELYnPVYA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

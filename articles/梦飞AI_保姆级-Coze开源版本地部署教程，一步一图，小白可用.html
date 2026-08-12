@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>保姆级 | Coze开源版本地部署教程，一步一图，小白可用 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">保姆级 | Coze开源版本地部署教程，一步一图，小白可用</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%BC%A0%E6%A2%A6%E9%A3%9Ei">张梦飞i</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Coze%20Studio">Coze Studio</a><a class="chip" href="../index.html?tag=%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2">本地部署</a><a class="chip" href="../index.html?tag=%E5%BC%80%E6%BA%90">开源</a><a class="chip" href="../index.html?tag=%E8%85%BE%E8%AE%AF%E4%BA%91">腾讯云</a>
+    <span class="date">2025-07-28</span>
+  </div>
+  <p class="lead">感谢扣子，感谢字节，开源万岁！！</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRp0dSFyfLNJLYpxnltwcPtF7Ppfic7fwC9kTzwqy4978NMKCBak6pqXQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 张梦飞i <a href="https://mp.weixin.qq.com/s/">Equity AI</a> <em>2025年07月26日 03:59</em></p>
+<p>刚刚，Coze宣布开源</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRwFqpib9WC0U0tUtP1pI9Okfopu0VFCY2hu9OsDr7D8eDjff2StJQNyQ/640?wx_fmt=png&from=appmsg&randomid=nrbfljcw&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>对于智能体开发者来说，Coze开源是十足的好消息！</p>
+<p>之前总有人问我为什么交付智能体从来不用Coze，就是因为Coze不能本地化，不能本地化不仅意味着数据安全问题（其实这对小企业来说并不是什么问题） ， 最大的问题是版本不稳定！</p>
+<p>当你为客户开发好一套工作流，运行好好的时候，突然一个改版或者一个插件的调整，就可能导致整个工作流的崩盘，这我们交付团队来说来说是不能承受之重。</p>
+<p>终于，Coze宣布开源，Coze在企业端的落地终于有希望了！于是马不停蹄为大家带来，Coze本地化部署教程。</p>
+<p>希望更多的个人、更多的企业能够让 AI在实际场景中落地，期望AI在各位手中发挥更大的价值。</p>
+<p>以下教程依旧是手把手教程，从服务器开始，一步一图，确保任何小白都能够完成 。</p>
+<p>一共五个步骤，约25分钟完成：</p>
+<ul>
+<li>一、注册云服务器</li>
+<li>二、配置环境</li>
+<li>三、部署Coze</li>
+<li>四、获取key和model接入点</li>
+<li>五、启动Coze，快乐玩耍~</li>
+</ul>
+<hr>
+<h2>一、注册云服务器</h2>
+<p>1、新用户可以有免费服务器，老用户可以去别的云服商那里购买，点击去注册腾讯云：轻量应用服务器</p>
+<p>（这个地方用腾讯云只是因为之前的教程都是腾讯云，为了统一，方便之前买过服务器的人使用，新用户可以用别的云服务器）</p>
+<p>2、进入腾讯云，微信扫码注册，</p>
+<p>首次注册 会进入这个页面， <strong>Coze项目要求，最低2核4G</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRicIgwO4nMY8phletqwIRCGNGQXZtD7QNQeUibicwiawgicgBNgrbJtTibtjA/640?wx_fmt=png&from=appmsg&randomid=sqi93cil&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRB0f0ICsttdJ4fC1nSX3GPzCty996FscxGnguHzcvoDAibYLwgGjkzXg/640?wx_fmt=png&from=appmsg&randomid=cdk6jam4&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>3、点击立即试用后，会出现下图。</p>
+<p>地域随便选择，镜像选择下拉框最上边的 宝塔8.1.0 。然后点击“立即试用”</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRCiaWhxPlrldj1YAWA7JS3J7RtWr4tUeN6WKbFhpjiaPKunABeb3jTjjQ/640?wx_fmt=png&from=appmsg&randomid=12rvsk9t&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>4、进入腾讯云服务台了，点击“登录”。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRpx4ya6u19LpNjVTSXHic3c0v663u5rnUvZzxdPAqQnGuPVvpxRoxoPA/640?wx_fmt=png&from=appmsg&randomid=t09gqqmj&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>5、这里直接登录即可，后续也可以微信扫码登录</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRf8d8ia6yPhIF2nB3RvCGB4Q1ZNhsZd3VIqL9K3d1BVAm0RheyickoepQ/640?wx_fmt=png&from=appmsg&randomid=pzs6jr80&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>6、登录后，就在当前页面，复制 <code>sudo /etc/init.d/bt default</code> ，粘贴进入图示位置，然后点击回车。</p>
+<p>此处输出的内容，也要保存好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRZ5V6VjMEmNOhCYLhs3ibnQ3qeQZX8dPs5ib0ibvY5CBAbUur2Z6NkUu0g/640?wx_fmt=png&from=appmsg&randomid=u0qyotmp&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>7、返回服务器控制台。点击图中，箭头指示的空白区域。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRJT9RRl8ickiafzKZeI8w13ooicuCZsurrGjSRiaLCaVdPaLoGsdMFe4fYg/640?wx_fmt=png&from=appmsg&randomid=d643nvnx&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>8、选择“防火墙”菜单栏，点击【添加规则】按钮，</p>
+<p>只需要填写再添加“8888”和“9999”作为开放端口。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRGYLpncXAYzqbiaHUXqYTJ3gAibo7H7YbJrk672bkicvYrWpecxbhoRicdg/640?wx_fmt=png&from=appmsg&randomid=opvbdmpt&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR1icI9RWyPzXLOmqS2MRR9Tia0fic9sptHvmEliaFs3t7hYKCmJmfIicZ7icA/640?wx_fmt=png&from=appmsg&randomid=eokkciy4&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<h2>二、配置环境</h2>
+<p>1、刚才在这里保存的“外网面板地址”，点击打开。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR1sgHrR9A4icicMI1X3kZ2Zo7HF5YvUGNr0TnBAPknpeHQT42keU2KsJQ/640?wx_fmt=png&from=appmsg&randomid=4je80qfw&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>（有小伙伴反馈，命令输出的地址是login结尾的，点击打不开。那你只需要把login改成 <a href="http://xxx.xxx.xx.xxx:8888/">http://xxx.xxx.xx.xxx:8888/</a> tencentcloud 就可以了）</p>
+<p>2、输入账号密码，即上图中的 username、password</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRRPVrMofKkY0jQu44T9JiaqZF6t35u1GeuJXXxKzKPYZX4gdQyI2op0Q/640?wx_fmt=png&from=appmsg&randomid=mo0ul4qr&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>3、第一次进入会让你绑定一下，点击免费注册，注册完成后，返回此页，登录账号。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRpia4ns3FUw8dAeccwjcL9icpEOrmElLzD5wr6ViaOnbynwibB9icQSUOG8w/640?wx_fmt=png&from=appmsg&randomid=ocyai1dd&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>4、首次会有个推荐安装， 只安装第一个即可。其他的取消勾选 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRk8FeG3Nlh21tjCaZubTZRsG7kDaHichPOJFbgUuYicfc2MlAgbVTpHfQ/640?wx_fmt=png&from=appmsg&randomid=w8rnicxl&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>1、回到宝塔，选择Docker</strong></p>
+<p>（如果如图显示，就跟着我安装。 如果没显示“当前未安装”，就不需要这一步 ）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRkWpyGG4StoTqadHiaWI9rJicMMQmQvEqR4BfAHRCgTm8rZOoPfsUkuOQ/640?wx_fmt=png&from=appmsg&randomid=14p7ccdd&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>2、选择，点击确定。比较慢，等待安装完成。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR13CLn12moAlicjhXSqw0rE13icMLaPldHd9R9cIBomqGdDULy7wRd7iag/640?wx_fmt=png&from=appmsg&randomid=g3bzr2o0&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>3、安装完成后，刷新当前页面。看到下图的样子，则表示安装成功。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRibR71YsPtVEf6yrl3icwPeTGLjbTZbzQbhf3zeFF5mhjdU7ygDDwLfmA/640?wx_fmt=png&from=appmsg&randomid=d5keggep&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>4、打开左侧【终端】，粘贴以下两行，再验证下Docker是否可用。看见版本号，就是没问题了。</strong></p>
+<pre><code>docker -vdocker-compose -v
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRfCsicmDF6eO7Gia55MpTg93JC4dicB2aFYbYjRYZNA8MBKlLM3dnaMcXg/640?wx_fmt=png&from=appmsg&randomid=lphvh6zl&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<h2>三、部署Coze</h2>
+<p>1、点击文件，进入“根目录”进入“home文件夹”，点击“新建文件夹”</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR39lGbA0TbM67UShp4bFqc1SQjIxiaI5aAs7BLyLT8yY2DibDROYhKfsg/640?wx_fmt=png&from=appmsg&randomid=1igsdiae&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>2、然后进入Coze文件夹，在顶部点击“终端”，并在终端中粘贴以下命令。</p>
+<p>注意：不要用ctrl+V粘贴，直接鼠标右键粘贴。</p>
+<pre><code class="language-bash">git clone https://github.com/coze-dev/coze-studio.git
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR63gD5rsOts15nQfjX9GjMoXBFblRLd02TG8Ahn0wn5ibAWMIz74YlWA/640?wx_fmt=png&from=appmsg&randomid=r6dusosn&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>如果你的服务器网不好，一直在进行中，下载不了，可以直接去Github下载代码包。</p>
+<p><a href="https://github.com/coze-dev/coze-studio">https://github.com/coze-dev/coze-studio</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRJicIaAY2nwFled1G0nfLrDG2VIU8TrawQpLyZ78KRh6b0MwPAF1yYRg/640?wx_fmt=png&from=appmsg&randomid=rgcnpi5q&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>然后把下载的包直接拖拽到Coze文件夹下，解压即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRqY44fOR6cbV9z8OVuCltZ2XJ3DWA8USQ4vekMCnJW7NwGc6L8eaY0g/640?wx_fmt=png&from=appmsg&randomid=mh2n62qq&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>3、双击打开下载过的Coze-studio文件夹，在顶部点击“终端”输入以下命令并点击回车。</p>
+<pre><code>cp backend/conf/model/template/model_template_ark_doubao-seed-1.6.yaml backend/conf/model/ark_doubao-seed-1.6.yaml
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRuhZQht5lYGW9hbeJM0iahOxKuKFicw4szfCn9RpC2ro5Weg9g3PUKlvw/640?wx_fmt=png&from=appmsg&randomid=lqj77fb3&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>4、关掉这个终端窗口，</p>
+<p>5、然后在文件夹中找到以下目录</p>
+<p>5.1 进入目录 <code>backend/conf/model</code> 。打开文件 <code>ark_doubao-seed-1.6.yaml</code> 。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRkHfwRVibiaVpgXmQ2GIqgeYNJI8TyjWHqZ9aV9JVMavrngOrMKPsQbibQ/640?wx_fmt=png&from=appmsg&randomid=8tyb7h12&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>5.2 需要设置 <code>id</code> 、 <code>meta.conn_config.api_key</code> 、 <code>meta.conn_config.model</code> 这三个字段。</p>
+<ul>
+<li>id ：Coze Studio 是中的模型 ID，由开发者自行定义，必须是非 0 的整数，且全局唯一。模型上线后请勿修改模型 id。 意思就是id可以随便设置，保持唯一性就好。我们直接设置“888”
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRfwMjJLT5mKT1QX2XSKUnA3ekV3kibOtlvbkzFNb7uRY4OffPticoVZzQ/640?wx_fmt=png&from=appmsg&randomid=sl3aqm21&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></li>
+</ul>
+<p>继续往下翻翻到底，需要填写以下两个值，如果是开发者，你可以直接去火山后台获取，如果是新手，看下方教程。</p>
+<ul>
+<li>meta.conn_config.api_key： 在线模型服务的 API Key。</li>
+<li>meta.conn_config.model： 在线模型服务的 model ID，在本示例中为火山方舟模型接入点的 Endpoint ID，
+<img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRFOzlKJkibVmxdb7OLdqoSRM6AVNSpwptQMg8TkFAqecsVFOxPjagAfA/640?wx_fmt=png&from=appmsg&randomid=m69u51ia&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></li>
+</ul>
+<h2>四、获取key和model接入点</h2>
+<p>1、注册并登录火山引擎，点击立即体验进入控制台。</p>
+<p><a href="https://zjsms.com/iP5QRuGW/">https://zjsms.com/iP5QRuGW/</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRSCelPPGl5mIpHYjTtjIpNv1nhGYEmw53cSic4NK3NQnRZDCVx2uWicnA/640?wx_fmt=jpeg&from=appmsg&randomid=kaj9zzkh&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>2、创建一个接入点</p>
+<p>点击 在线推理 -- 创建推理接入点</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRNUjVLhzibegqH4wibwe0Xh4icUjJSX4prPfUVUMoMk5hib5XMSEGrRTKRg/640?wx_fmt=png&from=appmsg&randomid=ply4l1ee&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>3、为接入点命名为DeepSeek-R1</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRbHQrXicib0tbPH4UoSQnDQ9QKibibvZpOiacdDV2icZy3f3cYObb2IJ3iblAA/640?wx_fmt=png&from=appmsg&randomid=fggb9bay&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRaibzdDzEv6ibDib01wicRNAh86oKlr3QMfeaDEC9WoiajSgbMTTjoLQcPTg/640?wx_fmt=png&from=appmsg&randomid=538zlf2y&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>然后可能会提示：“该模型未开通，开通后可创建推理接入点”。 如果有提示，就点击“立即开通”，开通一下就可以了。</p>
+<p>如果无提示则直接到：第5步，点击确认接入。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRNBPIus8bEWFQFKyeo2YesHiahnK31kbx7Jfw1BFGic1C1TmDQaBVcygw/640?wx_fmt=png&from=appmsg&randomid=7jevfgh2&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>4、点击“立即开通”跳转到此页面，勾选全部模型和协议，一路点击开通即可。（这里是免费的）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRUCNdgyZYGlnqibdkaI42qthVEvib7GtYeaKE8cBSr5MB0H67W9oV5wVg/640?wx_fmt=png&from=appmsg&randomid=vqs9mndb&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>5、确认以下无误后，点击“确认接入”按钮。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRvQQH5nuR6xxicChzc52qVXHmuOIHoVpibD14771TBop8KoqWDSDJcE4w/640?wx_fmt=png&from=appmsg&randomid=672intey&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>6、自动返回创建页面。发现多出一行接入点名是“DeepSeek-R1” （我们刚才自己设置的命名）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRC2A3kC1H6mKj8ZE6rbR0HiaTrfpfMDEdicq3ubgrAUdWymGb5EwNy39A/640?wx_fmt=png&from=appmsg&randomid=xxhoqhzk&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p><strong>重点来了：这个就是推理点的ID，也就是刚才提到的</strong> <code>meta.conn_config.model</code> ：在线模型服务的 model ID。</p>
+<p><strong>复制他放到你的微信里，发给自己保存一下。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRib4EGfK3icJvKTYa7F0LyhJFk9oZbLhuGrUVgTfy4k13wRsrsPAECClw/640?wx_fmt=png&from=appmsg&randomid=bpjda9j0&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>7、保存后再点击【API调用】按钮，进入后点击【选择API Key并复制】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRviaEibJ9G0TTPqx97791wGMSTKxVSWM2WYRs9FOcI9RYRPR0KmAkJhRg/640?wx_fmt=png&from=appmsg&randomid=kg6qquvh&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>8、 如果你已经有API key了，就直接查看并复制。</p>
+<p>如果没有，则点击【创建API key】</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRicANsCwvCaKhST1gvDic7O4Wze0n4WFnHu0gO87OymU1qRAxGnNf1cng/640?wx_fmt=png&from=appmsg&randomid=x0ikx40e&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRYpWZS3DotRhnePmYquLrgyl9EpYlE4icKNM7hcibc3N4Q1gl1tDaNicJw/640?wx_fmt=png&from=appmsg&randomid=lr9pwjdd&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRq5LbeThawu5y6yOaYcswTHrScE3dpjpQnyQUYjyEjtFAJRTm6GYATA/640?wx_fmt=png&from=appmsg&randomid=scpmqyme&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>9、把这个复制好之后，也放到你自己微信里，保存好。</p>
+<p>这个就是meta.conn_config.api_key：在线模型服务的 API Key。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRFOzlKJkibVmxdb7OLdqoSRM6AVNSpwptQMg8TkFAqecsVFOxPjagAfA/640?wx_fmt=png&from=appmsg&randomid=m8bm7q9w&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>把这两个填入对应的位置，如上图。 然后保存</p>
+<h2>五、启动Coze</h2>
+<p>1、返回上一层文件夹，进入到 <code>/home/Coze/coze-studio/docker</code> 文件夹中</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRhPCemnWvlwjFBhnzYXoCvRrgmCavzCHboEZJ7o1xYccobelnwXxKbg/640?wx_fmt=png&from=appmsg&randomid=jhg8wjk7&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>（这里修改端口是因为，宝塔面板是8888，和Coze的冲突了，所以修改一下）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRYcalM7iaXbtKDEQBMJdiaE3n0WOSys7CHSmKq7tYdicvZJwBe5dkYqMWg/640?wx_fmt=png&from=appmsg&randomid=a98al4h3&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>2、然后保存文件。回到主文件夹“coze-studio”文件夹下，打开“终端”一次一行，粘贴并执行以下命令：</p>
+<pre><code class="language-bash">cd dockercp .env.example .envdocker compose --profile &#39;*&#39; up -d
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRRTpoTu3yMTtkicvWicsIYR7cG9x13pibl9Bqg4WpJkhpBW26P6CxpQ7JIw/640?wx_fmt=png&from=appmsg&randomid=q5r5a6fh&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>3、首次部署并启动 Coze Studio 需要拉取镜像、构建本地镜像，可能耗时较久，耐心等待即可。</p>
+<p>最终看到终端：提示 &quot;Container coze-server Started&quot;，表示 Coze Studio 服务已成功启动。</p>
+<p>4、至此，本地部署已经全部完成。可以直接通过浏览器访问了</p>
+<p>访问地址： http://这里改成你自己宝塔左上角的地址:9999/</p>
+<p>（举例：假如我左上角是11.123.23.454，那么就把下边网址放到浏览器中就可以打开你自己的Coze了</p>
+<p><a href="http://11.123.23.454:9999%EF%BC%89">http://11.123.23.454:9999）</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW23DqY33NFb2PmKBI6M0YRR82SkfGiakiaicQ8o6NhnRDId3GN68KPVKMzgU4khfwC9kxv2cbG4Ruc9A/640?wx_fmt=png&from=appmsg&randomid=b4yzuzev&watermark=1&tp=webp&wxfrom=5&wx_lazy=1" alt="图片"></p>
+<p>恭喜你！已成功部署 Coze Studio，可以根据页面提示注册账号、上手体验了！</p>
+<p>最后感谢字节，感谢扣子，开源万岁！</p>
+<p>我是梦飞，我去睡了~ 我们下次见</p>
+<p>既然看到这里了，如果你喜欢，请随手点个赞、在看、转发三连吧，感谢你的支持~</p>
+<p>往期推荐</p>
+<p><img src="https://mmbiz.qlogo.cn/sz_mmbiz_jpg/CYFXko0WaRGzu9VFIWjh1QTLVvQ778LBBgTsLv2xsg2ggfKiaQAcT2qYmicLX8XtQxe3OQLlq5t89bNKgaQQsiaxA/0?wx_fmt=jpeg" alt=""></p>
+<p>感谢你的喜欢</p>
+<p> <a href="https://mp.weixin.qq.com/s/">喜欢作者</a></p>
+<p>继续滑动看下一个</p>
+<p>Equity AI</p>
+<p>向上滑动看下一个</p>
+<p>Equity AI</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/-manJwsvH-IuQ9W2EjtdiA" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

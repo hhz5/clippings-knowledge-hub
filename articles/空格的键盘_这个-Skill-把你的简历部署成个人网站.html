@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这个 Skill 把你的简历部署成个人网站 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">这个 Skill 把你的简历部署成个人网站</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E7%A9%BA%E6%A0%BC%E4%B8%B6">空格丶</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99">个人网站</a><a class="chip" href="../index.html?tag=%E7%AE%80%E5%8E%86">简历</a><a class="chip" href="../index.html?tag=%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA">网站搭建</a><a class="chip" href="../index.html?tag=UI%E8%AE%BE%E8%AE%A1">UI设计</a>
+    <span class="date">2026-08-03</span>
+  </div>
+  <p class="lead">发现很多人都有做个人网站的需求，所以做了这个 skill</p>
+  <article class="content"><p>空格丶 空格的键盘 <em>2026年8月3日 11:37</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyccb60fl7SPCic1KicmmnBKp6jVla3neqA2ticT1XRVxye8BeXKojbPovFGNDF5SwUOmzAMLhbyicHlH9fkUxgFBFBiagsC3Z1FSu4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>发现很多人都有做个人网站的需求。所以，我做了一个 Skill： <code>personal-site-builder</code> 。</p>
+<p>它可以读取你的简历、社交主页、作品集和过往项目，帮你整理内容、设计网站，最后完成部署。</p>
+<p>下面是我用这个 Skill 给自己制作的极客风格网站，只要给到信息就能按 6 种内置的风格出网站。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCow8RB8WKBj2yEr2WJzYBKCKQQUfQfGdOv7RWX1GPiaw06IaPDRvj2jpNCK7yrib6zKG3AfP6OHfuoynVGLp7Q2LQByA6ws8ibpPz0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>个人网站在找工作时，可以介绍你自己；别人搜索你时可以找到你；如果你有咨询、课程或产品，也可以直接在网站上销售。</p>
+<p>它是实时在线的，帮你连接潜在的朋友、客户和合作伙伴。</p>
+<p>现在有了 Agent，几乎人人都能做网站。但真正开始做个人网站，还是会卡在三个地方：</p>
+<ol>
+<li>不知道怎样收集和整理个人资料；</li>
+<li>不知道网站应该放什么，以及采用什么风格；</li>
+<li>页面写出来了，不知道怎么部署上线。</li>
+</ol>
+<p>这个 Skill 可以帮你快速搭建，下面是详细教程：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxmP4ibhaOMYsMSS2wWia3ichygmP5b8qIicXcunnaomRmk7kTVTCJJib9MLUTPDI0uv0qJYzCic5ztZtqSu5ibp3JgZficWTcGUGKOlhk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>安装和使用</p>
+<p>可以直接把项目地址交给 Agent，让它安装：</p>
+<pre><code>帮我安装这个 Skill https://github.com/SpaceZephyr/personal-site-builder.git ~/.claude/skills/personal-site-builder
+</code></pre>
+<p>安装完成后，告诉 Claude Code：</p>
+<pre><code>帮我制作一个个人网站。
+</code></pre>
+<p>接下来，它会带你完成整个流程。</p>
+<p>第一步：把资料都交给它</p>
+<p>简历、GitHub、公众号、小红书、作品集， 给个链接也可以。有什么就给什么。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoykJOWcJSia43LghBTdLZicZbf05WWqsSgaYia95Yr6f3a8eDzDMicwCoSxVd5ZH8WJeRzxEY6CGKvtj58WSKTKQ0g4RWYJpKGKBJE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>它会读取资料，并整理成一份清单：</p>
+<ul>
+<li>哪些经历和数字已经得到证实；</li>
+<li>哪些信息需要你确认；</li>
+<li>目前还缺少什么；</li>
+<li>哪些内容建议补充截图或案例。</li>
+</ul>
+<p>第二步：确定网站是给谁看的</p>
+<p>它不会先问你喜欢什么颜色，而是先问：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoykCtvf0vfs7ibA1xjz1u5XgdpO80ibdXf2t7YJPcMZramhIujticFtYBy0sA6eIibz97RXHKdVzM6AiaER2osYPFIjkibpFMe9N8fn4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>继续和它讨论，它会给你提供一些详细的网站搭建的方案。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoypdwRs3IKVRUibVjicImtfmet1ksOWtzfTMlqym7sL2AQB8tHO3ib8rbOWJlI5rNUMib8vBjKlgcv5BF2FLkGfZnogib49QfdgO2Oo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>这个 Skill 总共内置了 7 种类型的网站设计方案</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowlLM32ZJ7fibeNQhKL7rMMdp4vc17hqOUn3KibnpeO7DzxxnDtxYfKEOCeX9cnEgibD7SCd8qCBGUM4Me9iaXfAc4FrU00DEibqQ44/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>网站还会根据用户提供的内容量级，分成三个层级：</p>
+<ul>
+<li>L1：个人名片；</li>
+<li>L2：经历和作品证明；</li>
+<li>L3：可以持续更新的内容系统。</li>
+</ul>
+<p>资料不够，就先上线一个完整的 L1。</p>
+<p>等一切信息确认后，就可以让 Agent 选择视觉风格来搭建网站来。</p>
+<p>第三步：选择设计风格</p>
+<p>Skill 内置了极简黑白、编辑排版、终端极客、Bento 卡片、杂志标题和暖色手作等 6 种风格。下面是一些示例。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowUO0JPGslicCvz5ZeacJjsZveWgsibCUKibqkwy4wum2OTt8GNVPWygDGuJtkdIAvhdfKibE7ibCWR0YQ6yjRH9vMNSB2nmPg93aAY/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozriccnicgnpkKFaRod5gq8GUkdCEYZF2oOoSVWWq12khfXZKn9up1bsc3nfjrH1hQclQar5Eb8ppmCuV03SDvyXjXnoMPhKhuA0/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>如果你有自己喜欢的风格，也可以直接发给它一个参考网站，说：</p>
+<pre><code>参考这个网站xxx，来设计，但不要复制内容和版式。
+</code></pre>
+<p>它会分析字体、字号、颜色、间距、内容宽度、圆角和明暗主题，再转化成适合你资料的设计。</p>
+<p>可以在 behance 站酷搜个人网站设计给 Agent 参考：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozBkOwlYWf5zukB7G9x6du4VRudzKScdFgue4czSFPxbhmY8HNtG2wKRIk0V4h8ialdV2RYfOSFKnQJzD6AtBgiaYT1VQCibO6mUM/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>好的个人网站是借助设计把你自己的信息讲清楚。</p>
+<p>第四步：验收并部署</p>
+<p>网站完成后，Skill 会自动检查不同屏幕宽度、明暗主题、文字溢出、控制台错误，以及页面中是否还残留占位符和假数据。</p>
+<p>部署不会自动执行。</p>
+<p>它会先告诉你准备发布到哪个平台、使用哪个仓库，以及哪些联系方式将被公开。</p>
+<p>这里推荐你在 Agent 连接器安装 Github 和 Vercel，将代码推送到 Github，再用 Vercel 部署</p>
+<p>详细教程： <a href="https://mp.weixin.qq.com/s?__biz=MzkxMTQ0ODE3Ng==&mid=2247495909&idx=1&sn=cd9beaaeca1d807942c50c708ea3f687&scene=21#wechat_redirect">个人网站</a> 教程</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozaITqmTG5gWetwaq5sBIjbanxjYBdlL67libibGCENzKrKVAnsCYw21pZia5ff5kicbwJBwrp0B9ueLsBCyDrkXOECiaBUtvwl5QBk/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>最后</p>
+<p>个人网站是自己在互联网上真正拥有的一块地方。</p>
+<p>个人网站会不断生长。</p>
+<p>今天先上线一张个人名片，做了新项目就增加一个案例，有了稳定输出再加入文章。</p>
+<p>时间久了，它自然会变成你的作品档案和个人品牌入口。</p>
+<p>这个 Skill 不负责替你产生经历，也不能替你拥有品味。</p>
+<p>它帮你解决资料整理、网站设计和部署上线这些容易拖延的事情。</p>
+<p>让你把精力留给真正重要的部分：你是谁，以及你希望别人怎样认识你。</p>
+<p>项目地址：SpaceZephyr/personal-site-builder</p>
+<p><strong>微信扫一扫赞赏作者</strong></p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/mQQd889_Repz-OgYHQxy8A" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

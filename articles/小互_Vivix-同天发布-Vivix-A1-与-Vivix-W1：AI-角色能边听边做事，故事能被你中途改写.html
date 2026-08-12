@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivix 同天发布 Vivix-A1 与 Vivix-W1：AI 角色能边听边做事，故事能被你中途改写 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">Vivix 同天发布 Vivix-A1 与 Vivix-W1：AI 角色能边听边做事，故事能被你中途改写</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%B0%8F%E4%BA%92">小互</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Vivix">Vivix</a><a class="chip" href="../index.html?tag=%E5%AE%9E%E6%97%B6%E7%94%9F%E6%88%90">实时生成</a><a class="chip" href="../index.html?tag=AI%E8%A7%92%E8%89%B2">AI角色</a><a class="chip" href="../index.html?tag=%E4%BA%92%E5%8A%A8%E5%8F%99%E4%BA%8B">互动叙事</a>
+    <span class="date">2026-07-30</span>
+  </div>
+  <p class="lead">首个面向 AI 角色的实时全双工交互模型：角色可以边听、边说、边行动，用户也能随时打断或调整指令；角色还拥有完整的全身动作能力，可以在场景中走动、拿取物品并与环境互动，整个互动过程可以持续流式生成。</p>
+  <article class="content"><p>小互 小互AI <em>2026年7月29日 22:04</em></p>
+<p>产品发布 · 小互解读</p>
+<p>一分钟速览</p>
+<p>今天的视频模型多数是一次生成的：你把条件给完，等它算完，拿到一段拍好的视频，中间插不进手。</p>
+<p>Vivix 同天发布 Vivix-A1、Vivix-W1 和 API 平台，两款模型激活参数均约 300 亿，它交出的不再只是一段生成结果，而是一个用户可以随时介入的实时生成过程。</p>
+<p>A1 是首个面向 AI 角色的实时全双工交互模型：角色可以边听、边说、边行动，用户也能随时打断或调整指令；角色还拥有完整的全身动作能力，可以在场景中走动、拿取物品并与环境互动，整个互动过程可以持续流式生成。</p>
+<p>W1 则把实时交互带进故事生成：在故事持续生成的过程中，用户仍可以随时通过语音、文字或图像介入，改变后续走向；画面、声音、角色反应与镜头切换也会由同一个流式模型协同生成。</p>
+<p>官方口径：可见反应平均延迟（TTFF）低于 0.6 秒，考虑到全球网络延迟、直播推流等全部环节的端到端首次反应延迟（TTFR）低于 1.7 秒，实时视频推理成本落在每小时 1 美元以内的大众娱乐价格带。</p>
+<p>⚑ 下面的能力、延迟、评测胜率和成本档位，都出自 Vivix 自己的产品页与四份技术报告；演示视频全部由官方提供，两款模型处在内测阶段，可前往 Vivix 官网 vivix.ai 申请体验。凡出自中文发布材料而非官方英文报告的数字，句中都标了出来。</p>
+<p>开场</p>
+<h2>你问它接下来去哪，它拿起地图边走边指</h2>
+<p>屏幕里的角色正在陪你逛一片风景。你随口问一句接下来去哪，它没有停下来等你说完再原地答话，而是拿着一张旅游地图，边走边指着身旁的景物讲下去。</p>
+<p>这段画面不是提前录好的。角色是实时生成的，你说出口的每一句都直接改变它接下来讲什么、做什么。</p>
+<p>2026 年 7 月 24 日，Vivix 一次放出三样东西：两款激活参数均约 300 亿的实时交互多模态模型 Vivix-A1 和 Vivix-W1，加一个 API 平台。这是这家公司第一次把自己的模型成果摊开给外面看。Vivix 成立于 2025 年 1 月，创始人刘宇此前是商汤的研究执行总监、事业部总经理，目前已完成 A 轮融资。</p>
+<p>这次发布的两句话</p>
+<p>A1 让数字人不只会说话，而是有真实活人感、能在场景里真正做事；W1 让角色、场景和故事在你以任意方式介入之后继续变化。</p>
+<p>Vivix-A1 主演示：角色在场景里移动、与物体互动，并随对话变化调整表情和动作。画面自带英文字幕，右下角小窗是正在与它对话的真人 · 来源：Vivix</p>
+<p>范式</p>
+<h2>等它算完再看，和一边生成一边改</h2>
+<p>今天主流的 AI 模型仍采用一次性生成：先给定提示词、图片等条件，等待模型生成一段视频；想改变方向，通常需要重新生成或编辑。</p>
+<p>Vivix 采用持续流式生成。内容以连续片段不断向前生成，用户可以随时通过语音、文字或图像介入，让后续的画面、声音、动作、镜头和剧情随之变化。</p>
+<p>同时，A1 和 W1 都支持全双工模式。这意味着模型在持续生成内容的同时，仍能接收新的输入。A1 中，角色可以边听、边说、边行动，用户能够随时打断或改变指令；W1 中，新的输入可以随时进入生成过程，实时改变故事的后续走向。</p>
+<p>直播、游戏，都可以理解为实时交互内容的一种形态。Vivix 认为要用模型重构这类内容的底层引擎，至少得同时满足四个条件：</p>
+<p>01</p>
+<p>持续生成</p>
+<p>模型在运行过程中一直往下产出，不停在某一个片段上收工。</p>
+<p>02</p>
+<p>实时交互</p>
+<p>用户能在生成过程中用多种方式打断、调整、改变发展方向。</p>
+<p>03</p>
+<p>原生多模态</p>
+<p>声音、画面、文字、手势、鼠标键盘一起参与理解和生成，不必先翻成语言。</p>
+<p>04</p>
+<p>在线经济性</p>
+<p>延迟、稳定性和推理成本，要撑得住消费级应用长时间在线。</p>
+<p>所以这件事的核心是把「体验」当成生成的基本单位：内容消费力、泛化性、交互方式、速度和成本，是一起算的。把视频生成做得更快，只是其中一项。</p>
+<p>拆开来看是三层，Vivix 这次三层一起交：</p>
+<p>人</p>
+<p>Vivix-A1</p>
+<p>让一个角色听懂你并采取行动：走动、拿东西、边说边听。</p>
+<p>世界与故事</p>
+<p>Vivix-W1</p>
+<p>让角色之外的环境、事件、镜头也跟着你的输入继续变。</p>
+<p>系统</p>
+<p>Vivix Model Infra</p>
+<p>让这些变化在多久之内真的出现在你屏幕上，并且长时间运行的成本扛得住。</p>
+<p>W1 常被顺手归进世界模型一类，但它的官方定位是面向互动叙事的实时交互多模态模型，落点在音视频联合生成、多模态参考和实时交互三者合一，与以场景漫游为主的世界模型不是同一件事。</p>
+<p>次序</p>
+<h2>为什么先做人，再做世界</h2>
+<p>一段有沉浸感的互动内容里有三个元素：人是主体，场景是舞台，时间带来变化和故事。Vivix 的第一步选了人。</p>
+<p>理由有两条。逻辑上，人是体验和故事发生的中心。数据上，Vivix 统计过人在消费短视频、短剧和游戏时，有七到八成的注意力落在与人有关的部分。</p>
+<p>它想做成的事</p>
+<p>像真实的人与人互动一样，把大量原本只能发生在线下的体验复制、扩展、重组。线下体验今天依然是高成本、稀缺的，AI 有机会把它们变成一种可以规模化的新体验。</p>
+<p>下一步才是把人、物、场景和时间一起处理，并且要能实时响应。实时在这里不只是一个工程指标，它直接决定你信不信自己正在参与一个活的世界。而一个世界光有舞台还不够，还需要一个聪明的导演：不只是生成元素，而是组织元素；不只是让画面动起来，还要调度事件、组织节奏、理解你的意图，把故事自然接下去。</p>
+<p>A1 和 W1 就是这两步的产物。</p>
+<p>A1 能力</p>
+<h2>A1：从一张会说话的脸，到一个会做事的角色</h2>
+<p>现在市面上的数字人，重点通常在脸、口型和声音，做得好的能加几个简单的四肢动作。A1 把能力空间扩到了完整身体和开放场景：角色不只说话，还能听见环境、产生情绪、行走、转身、改变姿态、跳舞、走近或拿起物体，而且这些动作发生的同时还在接收你的新输入。</p>
+<p>而且它是从一张人物图起步的，生成的是全身可驱动的角色，不是半身像或大头像。</p>
+<p>以下几段演示各自对应了A1的一项核心能力：</p>
+<h3>全身行动，在场景中自由探索</h3>
+<p>Act：角色在场景里移动，并与场景中的物体发生实际接触 · 来源：Vivix</p>
+<p>一句话：介绍一下这个房子</p>
+<p>画面变化角色自如地走动并开始介绍，镜头跟着人移动，画面保持稳定。</p>
+<p>说明能力角色有身体，能在场景里位移，并和场景里的物体建立空间关系，不是在固定机位前把手抬一抬。</p>
+<h3>互动到一半，丢一张商品图进去</h3>
+<p>对话进行中临时上传商品图，角色把它带进场景并接着讲解 · 来源：Vivix</p>
+<p>对话已经开始之后，临时上传一张商品图</p>
+<p>画面变化角色把这件商品带进场景，转身面向它、拿起来，接着开始讲解。整段接在当前视频后面，不用重新开始生成。</p>
+<p>说明能力图片不只用来定第一帧的长相。它可以在互动中途进来，成为持续存在的行为参照，改变角色、环境和接下来的动作。</p>
+<h3>环境里的一阵风，直接变成它的反应</h3>
+<p>Sense：角色对吹来的强风作出反应 · 来源：Vivix</p>
+<p>一句描述环境变化的话：一阵风吹来</p>
+<p>画面变化角色的表情、姿态和动作跟着变，像真的被风吹到。</p>
+<p>说明能力模型能够理解风声等环境音所表达的事件与变化，并将其持续转化为角色的表情、姿态和动作反馈，使环境变化直接影响正在生成的画面。</p>
+<p>表情和情绪也是一起生成的</p>
+<p>A1 把面部表情、视线、手势和全身动作放在同一次生成里，覆盖写实人物、3D 角色和动漫形象三类风格。角色开心、惊讶或生气时，变化会同时落在眉毛、眼神、嘴角、语气和身体姿态上，不是从一套预设表情里挑一个播。加上长期一致性上的处理，它支持无限时长的流式生成，不是只能出几十秒的片段。</p>
+<p>写实风格下的情绪演示。产品页另有 3D 角色和动漫两组同类演示 · 来源：Vivix</p>
+<p>同一套能力换到真实业务上是这样：线上看房时，AI 销售可以带你看完户型，再自然走出房间展示外立面；露营场景里，AI 向导会随手拿起一盏营灯，边展示边讲。官方给的应用面还包括 AI 角色、游戏、虚拟主播、教育培训和数字展陈，共同点是讲解跟着人的行动展开，不用被钉在一个机位前。</p>
+<p>A1 机制</p>
+<h2>A1 把四段接力换成一个循环</h2>
+<p>这些能力以前做不出来，是因为业内通行的做法是把四件事排成一条接力。接力越长，等待越久，每次交接还会丢掉一部分信息。</p>
+<p>你说话</p>
+<p>→</p>
+<p>转成文字</p>
+<p>→</p>
+<p>想答案</p>
+<p>→</p>
+<p>合成语音</p>
+<p>→</p>
+<p>驱动画面</p>
+<p>旧办法：一段做完下一段才开始，每个接缝都在等</p>
+<p>每多一段接力，就多一次等待和一次交接。更麻烦的是第二段：把声音压成文字这一步，会把大量信息直接扔掉。你说话的语气和停顿、屋子里突然响起的雷声、画面里一个手势。文字装不下这些，模型也就无从反应。</p>
+<p>A1 没有去优化这几段之间的衔接。它把整条链换成了一个循环：声音、图片、交互信号直接进同一个模型，模型直接吐出音频和画面的小片段。中间不再绕道文字。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPVwia8NcPpB71TbU9juWy3MQx8icQ9Eyd9qDn9CNCtu9RVtkOK3hFrYQLMqRgibw4wQIIQXcom7pa1y1fGe8icXicW1yN2fzlsdyC0/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="Vivix-A1 技术报告 Figure 1，三种系统的对照"></p>
+<p>Vivix-A1 技术报告 Figure 1，三种系统的对照</p>
+<p>技术报告 Figure 1。最上面一行是传统做法：人声进来，经过静音检测、语言模型、语音合成、音频驱动视频四段才出画面。中间一行是把语音直接对语音，再外挂若干段音频转视频。最下面是 A1：人声进来，Director Agent 在中间做判断，音频和视频两条带子并排往外流 · 来源：Vivix</p>
+<p>图上那个 Director Agent 负责慢的那部分判断：推理、调用工具、决定角色接下来该说什么做什么，同时记住此前的对话和场景状态。模型本体负责快的那部分：在约 300 毫秒的最快时间片里，直接对当前听到看到的东西作出反应。你中途换了话题，角色从当前状态继续接，不必回头重算。</p>
+<h3>一小段一小段往外吐，怎么不越跑越偏</h3>
+<p>流式生成有个天生的麻烦。传统视频模型一次生成 5 到 10 秒的完整片段，它能提前看到整段，前后动作和画面容易统一。改成一小段一小段往外发之后，模型不知道三秒后会发生什么，只能看着已经生成的画面接着往下猜。时间一长，误差会累积：人物的脸慢慢变形，背景飘，动作幅度越来越小。</p>
+<p>打个比方</p>
+<p>一边铺铁轨一边开火车。铺得越久，偏差越容易一节一节攒起来，最后火车还在跑，方向已经不对了。</p>
+<p>业内常用的解法是加固定的参考锚点把画面按住。稳是稳了，代价是角色也变得不敢动。一个不敢转身、不敢伸手碰东西的角色，谈不上有身体。</p>
+<p>A1 的做法是把「让画面连得上」和「让角色敢动」这两件事分开管：相邻的小片段之间用局部连续性先验接住，保证动作和画面接得自然；更长的时间尺度上用全局序列先验，管住角色身份、场景和物体关系不漂。这样一来，保证稳定的那部分约束只作用在相邻片段之间，不会顺带把角色的动作幅度也一起限制住。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtN0oB1LlOzicQaaKnbt9w9QSZahIQJ6trJDhsa07kgD827vPr50bibkfWDXT3ibDJudQOqq2ztmEW3rreeD78k9w6mvYnTf8gTOuM/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="Vivix-A1 架构图，标出局部连续性先验与全局序列先验"></p>
+<p>Vivix-A1 架构图，标出局部连续性先验与全局序列先验</p>
+<p>A1 架构图。横轴是时间片 T0、T1、T2，每一片里并排着三样东西：用户交互（蓝）、A1 生成的画面信号（绿）、A1 生成的声音信号（粉）。红色标注的 local continuity priors 管相邻两片接得上，右侧紫色小块是全局序列先验，管更长时间里的身份与场景一致 · 来源：Vivix</p>
+<p>让生成跑得够快的办法叫多维联合蒸馏：高质量视频扩散系统通常需要 4 到 8 步推理，A1 把这个过程压进 2 步模型。只盯着单帧画质压是压不出来的。这样压完，短时间的画质、听指令的准确度、动作表现和长时间的稳定性都尽量保住。</p>
+<p>A1 把用户语音的理解与实时反馈交给原生多模态生成循环处理，同时保留可插拔的语音能力，由 Director Agent 在需要时提供更复杂、更高质量的响应。架构图里的「Audio: Voice · TTS stream」和接口文档中的语音配置，属于这套协同架构的一部分。</p>
+<p>W1 能力</p>
+<h2>W1：提示词决定开场，交互改变后续</h2>
+<p>A1 让一个角色跟着你的要求继续行动。W1 把你能改变的范围从这个角色扩大到整个场景、正在发生的事件，以及镜头怎么切。</p>
+<p>A1 和 W1 改的是同一步，只是 W1 管的范围更大。今天的视频模型把文字、图片、音频统统当成开拍前的条件，条件给完，剩下的就是等。W1 让同一种输入在生成过程中继续生效：一张图可以是第一帧的场景，也可以是半路塞进来的一个新物体；一段文字可以是开头设定，也可以是中途的一次转折。</p>
+<p>Vivix-W1 主演示 · 来源：Vivix</p>
+<p>官方给 W1 的用户交互响应延迟口径是低于 1 秒。能插进去的东西也比现在讲互动生成的产品多得多。那类产品的交互面基本停在导航和运镜：按方向键走两步、把镜头转一转。W1 的清单要长得多：说话、打字、上传新图片、点击画面里的物体、触屏拖动、控制镜头和人物移动，而且全都能在世界已经跑起来之后再进来，不用重新开始生成。</p>
+<h3>说一句、点一下、丢一张图</h3>
+<p>语音与文字输入：世界正在生成，一句话进来改变后面的走向 · 来源：Vivix</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/iafyQTicPqUtP6k0EqqQbcIqHwdTeYPL0Sojk6r0OISnBqglOOaL31J7hvvODkdQNB2QibiaKxwL6FSN1dJ9ic2urCEciaxT0kpNwxrY1eDjWezgs/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>你给的一句话、一次点击，或者一张刚上传的图片。给的时机是在世界已经开始生成之后。</p>
+<p>画面变化后面的内容从当前状态接着改，前面已经出现的部分照常保留。</p>
+<p>说明能力交互信号和多模态参考被同一套流式架构一起理解。交互在生成的全过程里持续起作用，不只是开跑前拧一次、跑完再拧一次的开关。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOz3zRwVQeajFXmA3FP0vDrJIb0LUOfe16q5mKXhmfIHia9ucV3ZHiaaicFgwGAs6E4EmVibzps4n827JQKyBbHOEczKV5Q8KWibeKw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="Vivix-W1 架构图"></p>
+<p>Vivix-W1 架构图</p>
+<p>W1 架构图。底部黄色是多模态参考（图片、音频、视频），蓝色是每个时间片进来的用户交互（文字、音频、触屏、动作与镜头控制），绿色是上一段已经生成的画面和声音。三者一起进模型，模型吐出下一段的画面和声音，再作为下一片的上下文 · 来源：Vivix</p>
+<p>W1 机制</p>
+<h2>声音跟着画面一起长，参考随时能进，镜头自己会切</h2>
+<p>W1 把三件通常分开处理的事放进了同一个流式模型。三件事都做到，一段内容才能一直演下去而不散架。</p>
+<h3>一、画面和声音在同一条流里出来</h3>
+<p>画面里开始下雨，雨声同时就有，不需要再让另一个音频模型事后补上。对白、环境音、空间音效、口型、节奏都是一起生成的，也就不存在音画各做各的、最后对不上的问题。W1 同时支持多种语言的对白。</p>
+<h3>二、参考不只定开场，中途也能进</h3>
+<p>文字、图片、音频、视频都能当生成的依据，共同定义世界里的人、物、环境、动作和视觉风格。</p>
+<p>关键在于这些参考不限于开头。一张图能在半路引入一个新物体或新环境，一段视频能提供动作或视觉上下文，一段音频能加一个声音参考。它们会被带进正在进行的流里，成为已有世界的一部分，不会另开一段新片。</p>
+<h3>三、镜头由模型自己调度</h3>
+<p>故事往下走的时候，模型自己决定什么时候切镜头、切给谁、镜头怎么移，并在切的过程中接住对白的节奏和人物的反应。产出的是一段有调度的序列，不是几段孤立片段拼在一起。Vivix 把这个能力称作模型自带的导演。配上长期一致性上的处理，W1 同样支持无限长度的流式生成。这套能力对应的应用面是互动短剧、游戏、沉浸式文旅和数字内容创作。</p>
+<p>这一项目前没有量化指标。切得对不对、叙事连不连贯，只能看演示片判断，技术报告里没有针对多镜头的评测。</p>
+<h3>让它长时间跑而不散架：Vivix-Turbo</h3>
+<p>内容演得越久，人物、场景和声音越容易慢慢走样。W1 为此配了一套叫 Vivix-Turbo 的加速与一致性方案，同时做四件事：用超低步数蒸馏压掉每一段的推理开销；把镜头规划和时间连续性放在一起优化，让长的多镜头序列走到后面也不断掉故事线；压住长时间生成里的误差累积，稳住角色长相、场景、镜头和动作；再加强多模态参考的一致性，让人物、声音、风格、环境在世界继续演变时不走样。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPB4xohxSZFeP6K9S19p4r5ZwgJAN8VmJbfSj8xDOd4zRrwLZNQynSUB00bY7zLWhGHvzWjNPZoSqoXBZichpAdmD5sR24d7yL4/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="Vivix-Turbo 与其他方法在 VBench 上的对照图"></p>
+<p>Vivix-Turbo 与其他方法在 VBench 上的对照图</p>
+<p>Vivix-Turbo 与其他加速方法的对照：横轴是推理步数（越左越省算力），纵轴是 VBench 得分（越高越好），星号是 Vivix-Turbo。⚠️ 图下角的说明写明了测试条件：5 秒生成、832×480 分辨率、图中所有模型都是 13 亿参数。这是小模型上的方法对比，不是 300 亿激活参数的 W1 本体成绩 · 来源：Vivix</p>
+<p>硬约束</p>
+<h2>改的永远是还没播出去的那一段</h2>
+<p>W1 的接口文档里有一处设计，把实时生成的根本限制写得最清楚：你用一个事件往正在跑的世界里发指令，这个事件有四种状态，但没有「已完成」这一种。</p>
+<p>accepted收下了，开始处理。画面还没变。</p>
+<p>applied第一帧受它影响的画面已经进了输出通道。</p>
+<p>superseded更新的事件接管了，但它已经造成的后果留在世界里。</p>
+<p>failed收下了却没能生效。</p>
+<p>completed没有这一项。文档给的理由是：一个事件可能在它第一次可见之后很久，还在影响这个持续演变的世界，因此不存在可靠的完成边界。</p>
+<p>与之配套，默认的改写方式叫 steer：已经播出去的画面保留原样，被改写的只有还没播出去的未来。</p>
+<p><svg viewBox="0 0 640 210" style="width:100%;height:auto;display:block;" role="img" aria-label="插图"><text x="30" y="26" font-family="PingFang SC,-apple-system,sans-serif" font-size="13" fill="#6a635c"><tspan leaf="">时间 →</tspan></text> <path d="M 30 150 L 610 150" stroke="#e6e0d9" stroke-width="1"></path><rect x="30" y="96" width="290" height="40" rx="8" fill="#0f6f7b" fill-opacity="0.85"></rect><rect x="320" y="96" width="290" height="40" rx="8" fill="#ffffff"></rect><path d="M320.0,107.3 L331.3,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M320.0,118.6 L342.6,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M320.0,129.9 L353.9,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M325.3,136.0 L365.3,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M336.6,136.0 L376.6,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M347.9,136.0 L387.9,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M359.2,136.0 L399.2,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M370.5,136.0 L410.5,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M381.8,136.0 L421.8,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M393.1,136.0 L433.1,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M404.5,136.0 L444.5,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M415.8,136.0 L455.8,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M427.1,136.0 L467.1,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M438.4,136.0 L478.4,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M449.7,136.0 L489.7,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M461.0,136.0 L501.0,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M472.3,136.0 L512.3,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M483.6,136.0 L523.6,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M495.0,136.0 L535.0,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M506.3,136.0 L546.3,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M517.6,136.0 L557.6,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M528.9,136.0 L568.9,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M540.2,136.0 L580.2,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M551.5,136.0 L591.5,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M562.8,136.0 L602.8,96.0" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M574.2,136.0 L610.0,100.2" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M585.5,136.0 L610.0,111.5" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M596.8,136.0 L610.0,122.8" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><path d="M608.1,136.0 L610.0,134.1" stroke="#0f6f7b" stroke-opacity="0.28" stroke-width="3"></path><rect x="320" y="96" width="290" height="40" rx="8" fill="none" stroke="#0f6f7b" stroke-opacity="0.45" stroke-width="1"></rect><path d="M 320 76 L 320 164" stroke="#0f6f7b" stroke-width="2" stroke-dasharray="4 4"></path><text x="320" y="70" text-anchor="middle" font-family="PingFang SC,-apple-system,sans-serif" font-size="13" font-weight="700" fill="#0f6f7b"><tspan leaf="">此刻</tspan></text> <text x="175" y="121" text-anchor="middle" font-family="PingFang SC,-apple-system,sans-serif" font-size="14" fill="#ffffff"><tspan leaf="">已经播出去 · 收不回来</tspan></text> <text x="465" y="121" text-anchor="middle" font-family="PingFang SC,-apple-system,sans-serif" font-size="14" fill="#1b1917"><tspan leaf="">还没播出去 · 可以改写</tspan></text> <path d="M400,182 L400,142" stroke="#0f6f7b" stroke-width="2"></path><path d="M392,154 L400,140 L408,154 Z" fill="#0f6f7b"></path><path d="M480,182 L480,142" stroke="#0f6f7b" stroke-width="2"></path><path d="M472,154 L480,140 L488,154 Z" fill="#0f6f7b"></path><path d="M560,182 L560,142" stroke="#0f6f7b" stroke-width="2"></path><path d="M552,154 L560,140 L568,154 Z" fill="#0f6f7b"></path><text x="480" y="202" text-anchor="middle" font-family="PingFang SC,-apple-system,sans-serif" font-size="13" fill="#6a635c"><tspan leaf="">你的每一次输入，只能落在这一侧</tspan></text></svg></p>
+<p>本站示意图，非官方图表</p>
+<p>这条约束正是实时生成比离线难的地方。离线出片可以生成一百次，从里面挑一条最好的发出去，观众只看见那条 9 分的；模型平均 7 分也没关系，人替它兜住了下限。实时生成没有这个机会：生成即消费，模型平均 7 分，观众收到的就是 7 分。</p>
+<p>实时生成难在哪</p>
+<p>门槛不在模型的上限有多高，在它的失败率能压到多低。每一次都得及格，因为没有第二次机会重来。</p>
+<p>难点</p>
+<h2>难在哪：每秒要处理的信息多出三到四个数量级</h2>
+<p>以 DiT 为代表的主流视频生成架构，是为一次性离线生成设计的：你先给完整条件，模型再围绕整段视频统一计算和优化。这样有利于画质和前后一致，但它有个默认前提，生成目标在开始时就已经基本定了。</p>
+<p>实时交互把这个前提拿掉了。你可能随时说话、打断、改变角色行为，模型得知道之前发生过什么、理解此刻正在进行的交互，再生成下一帧。问题就不只是生成得更快，而是要在持续生成的同时实时理解输入、更新状态、改变后续结果。</p>
+<p>这一改，信息吞吐压力直接上了几个台阶。文字交互里，人每秒只能消费三到五个 token；音视频交互里，你每秒接收的是数万个视觉 token 加上同步的音频 token，吞吐量高出大约一千到一万倍。</p>
+<p>3–5</p>
+<p>文字交互每秒消费的 token 数</p>
+<p>数万</p>
+<p>音视频交互每秒的视觉 token 数，另有同步音频</p>
+<p>10³–10⁴ 倍</p>
+<p>吞吐量增幅</p>
+<p>在这个量级上还要保持毫秒级时延，持续完成理解、生成、记忆更新和响应，围绕「输入指令、完成推理、输出片段」设计的离线架构就搬不过来了。模型架构、交互层和基础设施必须一起重构，这也是下一节要讲的事。</p>
+<p>系统层</p>
+<h2>三层基础设施：训练、推理、数据</h2>
+<p>模型算得快，不等于你马上看得到。一条新指令还要经过处理、生成、解码、推流，才变成屏幕上的画面和声音。Vivix 在这一层攒的东西分三块。</p>
+<p>训练架构把视频特征解码做成独立服务，实现原生 2K、10 位色深的长视频训练；再用 Vivix Sparse Attention 压缩视频在时间和空间上的稀疏特征。结果是约 300 亿激活参数的视频模型能在一个月内完成稳定训练。</p>
+<p>推理架构把用户音画理解、导演 Agent、音画生成、编解码和推流从串行链路改成可并行重叠、可抢占、可打断的实时链路；同时支持快思考和慢思考，用统一的上下文让多个 Agent 循环编排指令。</p>
+<p>数据平台实时交互模型不只要学「下一刻会发生什么」，还要学「用户介入之后内容怎么变」。这类数据没有现成来源，Vivix 从成立起就按「过去发生了什么—人如何交互—下一刻发生什么」构建交互数据三元组，目前精标数据规模已与头部视频生成模型的训练语料相当，并用数十个专项训练的专家模型做自动化筛选、标注和质检。</p>
+<h3>为什么生成到一半能被打断</h3>
+<p>系统把输入编码和实时视频解码拆成了两部分。新的语音、动作、人物参考和镜头信息交给 Encoder Service 处理；真正在实时链路上的 Decoder Loop 持续生成音视频，并允许调度器追加新输入、中止正在执行的生成步骤。所以「打断」是进到了模型的流式生成链路里面。播放器切掉旧视频再重新生成，是另一回事。</p>
+<p>当你在角色行动或故事进行中突然改变要求，系统不必等当前片段生成完。新输入进入正在运行的循环，模型从当前状态调整接下来的画面和声音。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtNfPEfuAdeTicAhJ3522ZLamS7qyicBtAXTU3gupRerkhAdqm03nfIibJAYMbMcAp3BmWfhKF4LiaiclVddhYYqueWoPLfXz0Ex1Bnc/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="Vivix Model Infra 的编码器/解码器解耦架构图"></p>
+<p>Vivix Model Infra 的编码器/解码器解耦架构图</p>
+<p>左边紫色的编码服务不在关键路径上，走批量、追吞吐，每个输入的延迟预算是数十毫秒级；右边绿色的实时解码循环在关键路径上，逐段生成、随时可被抢占 · 来源：Vivix</p>
+<p>&lt; 0.6 秒</p>
+<p>视频出现可见反应的延迟</p>
+<p>&lt; 1.7 秒</p>
+<p>含全球网络延迟与直播推流的端到端首次反应</p>
+<p>300–900 毫秒</p>
+<p>架构图上模型原生打断的典型区间</p>
+<h3>还要以足够低的成本一直跑</h3>
+<p>低精度计算、Vivix Sparse Attention、缓存管理、通信与计算重叠、预填充与解码解耦，这些放在一起回答的是另一个问题：跑出效果之后，能不能一直跑得起。其中数值精度这一项走得比较远：推理侧对降噪过程的累计误差做了免训练矫正，首次实现 4 位精度（4-bit，Blackwell 显卡上的 NVFP4 格式）的无损推理，配合视频流式推理的预填充与解码分离，把推理成本压了下来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNck5fQ5MPiaCm52RzAORESIqoD6wqRoSdRAbMIrqrud70cX6x1GuhbLzKD7y171kU6xZjhJBia3LmJffbWG1UTHvDdk0l3cRCWY/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="实时 AI 视频互动的每小时成本与消费级娱乐订阅的对照条形图"></p>
+<p>实时 AI 视频互动的每小时成本与消费级娱乐订阅的对照条形图</p>
+<p>每小时成本对照。Runway / Kling / Pika / Seedance 这类视频接口折算成小时约在百美元档，只做脸的数字人平台更高；Vivix 的实时视频推理落在每小时 1 美元以内，与云游戏、音乐和流媒体订阅同一带 · 来源：Vivix。⚠️ 这是官方报告里的实时视频推理成本口径，不是最终 API 售价</p>
+<p>落到这个价格带的意义是：AI 实时互动娱乐可以规模化地服务普通消费者，而不只是做几个演示。同一张图上也标了标准视频 CDN 约每小时 0.1 美元、短视频 CDN 约 0.01 美元，Vivix 自己把「逼近 CDN 量级」写成下一个里程碑。</p>
+<p>这一层为什么重要</p>
+<p>模型决定角色和故事会做什么，基础设施决定这些变化能不能及时发生。在实时视频里，延迟本身就是模型能力是否成立的一部分，不能等模型做完再当成工程指标去优化。</p>
+<p>中文发布材料里还有几个数字：推理效率提升近两个数量级、单卡吞吐超过 10000 video tokens/s、多卡 PCIe 带宽利用率 88% 以上、压缩率 8×8×4、消费级显卡实时推理。官方英文技术报告里只有定性说法（orders of magnitude、RTX-class consumer hardware），没有对应的具体数值。</p>
+<p>成绩</p>
+<h2>官方成绩：优势最明显的两维，和还要打磨的那一维</h2>
+<p>A1 建了自己的评测集 Vivix-Bench，1000 条样本，覆盖写实、艺术、动漫等多种画风和人类与非人类主体，统一输入条件，用成对人评打 Good / Same / Bad。三场对照的整体结果：</p>
+<p>对 LiveAvatar</p>
+<p>85.2%</p>
+<p>对 LongCat-Video-Avatar1.5</p>
+<p>76.8%</p>
+<p>对 SoulX-LiveAct</p>
+<p>46.4%</p>
+<p>条形长度 = 人评判定 Vivix-A1 更好的比例。三场分别还有 13.0% / 7.1% / 35.7% 判为相同，1.8% / 16.1% / 17.9% 判对手更好</p>
+<p>逐维度看，优势最集中的是两项：动作动态和音画同步。对 LiveAvatar 那一场，动作动态有 96.4% 判 A1 更好，音画同步 56.4%；对 LongCat-Video-Avatar1.5，音画同步 87.5%、动作动态 64.3%。这跟它主打的全身运动是一致的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPKXv1ia08odCv8eazkib8rxJztJExpRwUR2sAw8OkvVq2HVmEQUJDRfe0u6zBAbAl4uXKJQzMC47ibYx3cCwvzPza86TU1A5Cibib0/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="Vivix-A1 与 SoulX-LiveAct 的人评对照图"></p>
+<p>Vivix-A1 与 SoulX-LiveAct 的人评对照图</p>
+<p>三场对照里最接近的一场：对 SoulX-LiveAct，整体 46.4% 判 A1 更好、35.7% 判相同、17.9% 判对手更好。逐项看，动作动态 41.1%、角色一致性 30.4%、开放世界自由行为 25.0%、音画同步 35.7% · 来源：Vivix</p>
+<p>另外两项则有相当比例被评为持平：角色一致性和开放世界自由行为。三场里角色一致性判 A1 更好的分别是 35.7%、32.1%、30.4%，持平占了 41% 到 46%。这和它的设计取舍对得上：让角色敢走、敢转身、敢碰东西，长时间保持同一张脸就更难。这组数字适合用来看优势具体出现在哪些维度，不适合读成全面碾压。</p>
+<p>对照系统</p>
+<p>整体判 A1 更好</p>
+<p>角色一致性判 A1 更好</p>
+<p>LiveAvatar</p>
+<p>85.2%</p>
+<p>35.7%</p>
+<p>LongCat-Video-Avatar1.5</p>
+<p>76.8%</p>
+<p>32.1%</p>
+<p>SoulX-LiveAct</p>
+<p>46.4%</p>
+<p>30.4%</p>
+<p>该结果来自团队内部评测。样本怎么选、评测员是谁、是否盲评等细节尚未公开。</p>
+<p>边界与上手</p>
+<h2>边界，和现在能拿到什么</h2>
+<p>当前版本仍处于持续开发阶段，两份技术报告都写了自己的边界。</p>
+<p>Vivix-A1</p>
+<p>复杂场景下仍会失手</p>
+<p>在快速复杂运动、空间移动和精细物体交互中，仍可能出现动作不一致或物理关系偏移。</p>
+<p>Vivix-W1</p>
+<p>画质还比不过离线大模型</p>
+<p>实时版本在专业级视觉质感、复杂运动和高密度场景上，与训练数据和优化周期更大的头部离线视频模型仍有差距。</p>
+<p>API 平台已经上线，两款模型都在内测，官网挂着排队入口。定价页只有 Developer Preview 免费试用和 Enterprise 定制两档，没有公开单价。</p>
+<p>把这次发布放回行业里看：A1 把数字人和开放场景行动能力融合进了一个模型，在完整身体运动、开放场景行动、物体交互和实时全双工这几个维度上，超出了目前市面上相关概念产品和传统 talking avatar 的能力边界；W1 则把原生音画、多镜头叙事、多模态参考和实时交互整合进了同一个流式模型。</p>
+<p>这次发布交出的是什么</p>
+<p>把角色行动、用户交互、持续生成、音画协同和在线推理放进同一个模型与系统里，靠模型、训练、推理、数据四层一起攒出来。单看某一个画质或速度指标，看不出这件事。</p>
+<p>🧰 上手卡 · Vivix API 平台</p>
+<p>入口<a href="https://vivix.ai/">https://vivix.ai/</a></p>
+<p>门槛A1 / W1 内测中，需在官网 Join Waitlist 排队；Developer Preview 可先进 Playground 试用</p>
+<p>来源</p>
+<p>Vivix-A1 / Vivix-W1 产品页</p>
+<p>Vivix·vivix.ai/vivix-a1·vivix.ai/vivix-w1·2026-07-24</p>
+<p>说明</p>
+<p>演示视频与架构图、评测图、成本图均来自 Vivix 官方页面，图注为本站所写。人评比例、延迟档位、成本档位按官方原图与官方材料口径抄录，成本为实时视频推理口径而非 API 售价。「已播出／未播出」时间带为本站示意图。训练架构、数据平台、注意力占比、吞吐量倍数等来自 Vivix 官方对外材料。推理效率倍数、单卡吞吐、带宽利用率等数字仅见于中文材料，官方英文报告只有定性表述，正文已标注。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 3.90 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 4.62 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 3.90 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 4.62 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 3.95 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.46 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 7.39 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 12.73 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 7.98 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/Gm9eOn7H723_OORJKWRnnQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

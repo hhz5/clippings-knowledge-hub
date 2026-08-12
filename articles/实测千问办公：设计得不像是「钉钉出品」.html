@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实测千问办公：设计得不像是「钉钉出品」 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">实测千问办公：设计得不像是「钉钉出品」</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E4%B8%80%E6%B3%BDEze">一泽Eze</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=%E5%8D%83%E9%97%AE%E5%8A%9E%E5%85%AC">千问办公</a><a class="chip" href="../index.html?tag=%E9%92%89%E9%92%89">钉钉</a><a class="chip" href="../index.html?tag=%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6">办公软件</a><a class="chip" href="../index.html?tag=%E4%BA%A7%E5%93%81%E8%AF%84%E6%B5%8B">产品评测</a>
+    <span class="date">2026-08-03</span>
+  </div>
+  <p class="lead">如何降低门槛，培养用户对 Agent 的信赖？</p>
+  <article class="content"><p>一泽Eze 一泽Eze <em>2026年8月3日 12:39</em></p>
+<p>前两天阿里有了新 AI Agent 大产品：千问办公。</p>
+<p>有客户端与网页版两个版本，差别不小，前者包含了更完整的能力。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb5FQ80TiaYCubMs0cZLRBrEFI8tOCYCD7f9ibRAaLuDkxLZWYF8GFLnghLwWSLAJafic3ASXD6W77zpAsgXGibYTXuSQGvPFib9EWqo/640?wx_fmt=png&from=appmsg#imgIndex=0" alt="Image"></p>
+<p>独立客户端</p>
+<p>而大家以为该是完整客户端的钉钉版，实则是网页版。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/DGyz1tk4xb5hibAn1jT2DsrVSf3ib6qNWfHvpgxGEZQTDkhvWHWZg1REJPicflRI3YQSpU8FzJIVJOK2OfPejEF7hVAicCHxUJxmB801VuhhXqQ/640?wx_fmt=jpeg&from=appmsg#imgIndex=1" alt="Image"></p>
+<p>网页版与钉钉当前接入的网页版</p>
+<p>原以为千问办公的定位 only for 钉钉（毕竟是宇森接手钉钉后的产品发布）。</p>
+<p>实际体验下来，它的生态边界比我想象中开放得多，也有不少很棒的 Agent 产品实现：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5Bwo4pwmicncovZCoSQ0w0TPzDPqEgOvyoqSwP3DpExNQCNMibzIevnooUatV3CjqHxLO1PIF6sQeEPCCYPvSfsBZrMELDnqgHo/640?wx_fmt=png&from=appmsg#imgIndex=2" alt="Image"></p>
+<ol>
+<li>1.IM 互联：从钉钉、微信，到飞书、企微，应接尽可接</li>
+<li>2.专家套件：按岗位职能打包技能套件，而非“请个专家团”</li>
+<li>3.专业工作台：专为设计、PPT 场景打造的人机协作工作台</li>
+<li>4.更多细节：技能自进化、图片&amp;音频生成提升……</li>
+</ol>
+<p>本文将从产品设计、能力范围的角度，向你分享千问办公全貌，应该是最全的产品一览了。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h2>👉 速览千问办公</h2>
+<p>本次千问办公分为 2 个端：客户端、网页版。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb6YvMsBxqQ9GiapEVsB3TEodibRz1JXiaa0o16HkpEMr4IpsX5WhJZpMx4tlseZA43Xhib2cvQWeicJLo18mhbjOADCNy66CWjicy3Vg/640?wx_fmt=png&from=appmsg#imgIndex=3" alt="Image"></p>
+<p>核心的区别在于，客户端拥有完整电脑权限，除了选择工作目录自动读取本地文件外，还有更多 Agent 本地连接能力（包括 MCP、CLI 等连接模式）。</p>
+<p>　ㅤ</p>
+<p>而网页版运行于云端，少了本地权限能力，只多了「个人网盘」功能区，用于保存用户上传与 Agent 创建的工作文件：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb7I7TLvuibdfqPlJ50fUxtllKlXQzrUH3ZicYB2dwSb01rUTkpro35MagdQa1JM0133MZrOVnubafmMGbsOK5lNa3cQfibfCiauPlU/640?wx_fmt=png&from=appmsg#imgIndex=4" alt="Image"></p>
+<p>本文主要测试功能更多的独立客户端。先从出乎我们意料的点讲起：千问办公没有把能力边界限定在钉钉里。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h2>📲 IM 互联：Agent 时代，搞这么开放？</h2>
+<p>千问办公最让人意外的地方，是它与钉钉关系如此紧密，但 Agent 连接却没有局限在钉钉、甚至不止阿里生态。</p>
+<p>　ㅤ</p>
+<p>先是聊天接入的开放性：</p>
+<p>在客户端，从钉钉到飞书、从微信、企微到 Slack、WhatsAPP，应接尽可接。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb73JiarRkgKuvc9iaLGNbBFVAu8UMO9RgNo0G7y0UMadWYGLRtHbry6AC0hED3HmnYcFw8VbYPBdCgB2tCeZKRwR5UrIEQnHaLWY/640?wx_fmt=png&from=appmsg#imgIndex=5" alt="Image"></p>
+<p>堪称见过的大厂 Agent 里，官方支持接入聊天频道最多的 Agent 产品。（毕竟连友商的 IM 也支持了）</p>
+<p>基本都只需要「点击按钮-扫码确认」，就能完成接入。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4ib2WjibHGbxNW8uDzQyyulqTnZkIglEVBUYOaNliby6ibSsME6HoAXmagibumG3HlgBvdicLv5UJlMebvibMTeUrZ92cjQia3Bh3mznI/640?wx_fmt=png&from=appmsg#imgIndex=6" alt="Image"></p>
+<p>通过微信 Clawbot 实现的微信互联</p>
+<p>　ㅤ</p>
+<p>另外，得益于今年 MCP、CLI 等连接器生态的普及，千问办公第一时间预置了一些可接入的应用。</p>
+<p>还是得讲一下钉钉生态的打通，允许 Agent 读写钉钉上的日历、联系人、群聊、任务和审批等：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb638jm3FBmf5yQfg22Picfg782Aa8SrGfibKKnBXHo3XkHSxfmdLicZoCLZOK0evzQtk9IL4Pictzgh3bX5lrKxwncM1aHD77bkwOc/640?wx_fmt=png&from=appmsg#imgIndex=7" alt="Image"></p>
+<p>1）既可以自动整理与某个好友、群的任意时段的钉钉消息。尤其是可以把某个人在单聊与共同群聊里的所有消息都找出来</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb7DUdDp1ichtRnFCvRWYvVVMsicxBW5J9keU96S7C11GSQoGLNXjPQAgpZAQNOn7IczgZEcC2qh6P6PsRWyyicMJblW4HG5ZmEGHA/640?wx_fmt=png&from=appmsg#imgIndex=8" alt="Image"></p>
+<p>2）也能替你自动向人、群发送消息</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4BTFSCAia7DG1589AZrzQ2F9eLSzsL0BSST4ic5C38s84f6AVmlaZ0woDplY3okY5liaEmcfAPx14blpCmoJtqXFNk04AlLouQzs/640?wx_fmt=png&from=appmsg#imgIndex=9" alt="Image"></p>
+<p>打开思路，还能给千问办公设置定时任务，做到类似「每天自动整理信源，向群聊发送日报」等组合技。</p>
+<p>　ㅤ</p>
+<p>在外部生态这块，连接器板块也在陆续增加各种选项，拓宽 Agent 可触达、管理的领域。</p>
+<p>包括用户自己电脑内的 Mac 系统日历、提醒，Microsoft 365 套件；以及外部的 飞书文档、Notion、Supabase、高德云图，均已支持接入。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5BQdGMU9VS2LduSN4dp0E3LVNZLGjicCQ07O2L7fyWBmvDfCxuotlXUc8XA5UdP8T9CBOUoSytl4icRpLsxjB687g9oGxMZ0Ohs/640?wx_fmt=png&from=appmsg#imgIndex=11" alt="Image"></p>
+<p>当然，也可以自定义 MCP 连接，为特定需求用户留了口子。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h2>📦 专家套件：被正确定义的「Skill + 连接器」组合包</h2>
+<p>我比较喜欢千问办公对「专家」模式的定义，和朋友讨论后都以为妙绝。</p>
+<h3>1）为什么说是正确的定义？</h3>
+<p>Agent 发展到 2026 年中，我依然不支持在任务中「请个专家」，或者「拉个专家团组合执行」的说法。（个人真实感想，比较早之前也在即刻提过。）</p>
+<ul>
+<li>ㅤ
+  先是混淆概念：大部分「专家」只是同一个 LLM，披着不同 Context 外皮，在玩角色扮演，算不上真「专家」。加之“我从专家市场雇个专家”，不得先通过我的面试？这种「雇佣」关系自带不信任感。</li>
+<li>ㅤ
+  再者，每个 Agent 任务都请「专家」站台，总有乱糟糟的感觉。好像不是我来把控任务，而是任由请来的「Agent 专家」们摆布。
+<img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5J9ictQjMEvfN2JoWTnoCwfOVMGJOvWrADs48Pdep9rfs6qERAo2ibo8eBaXDYAumPuGfu51wqNDNONUpAj9smp95bL3tbic3q0o/640?wx_fmt=png&from=appmsg#imgIndex=13" alt="Image"></li>
+</ul>
+<p>　ㅤ</p>
+<p>千问办公把说法的重心放在了「套件」，淡去「专家」人设。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb6ICBicxIZu064NFOb4lp09yOMX8ZCVOQzztUxbwswgsTgYuT5J4zLib5On7vEAnqsWj6F5PXiadQRVnLNvINxiclkKXHoCdn0Dsu4/640?wx_fmt=png&from=appmsg#imgIndex=14" alt="Image"></p>
+<p>　ㅤ</p>
+<p>如果说：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb7Q4rDPhiaX8saS65hpKYLkT6jnDmPPXdmr9ic4TZA6Y0ZlnzXX3icUK0kYCuGp6RW9GemW8j0TmaU5ianAYQu7CeiasKdZTNJDiayrI/640?wx_fmt=png&from=appmsg#imgIndex=15" alt="Image"></p>
+<ul>
+<li>ㅤ
+  「技能」是做某个特定任务的 SOP，装上目前已上架的「工作周报、数据分析、长文写作」等技能，就能让 Agent 按对应流程，产出符合预期标准的成果。</li>
+<li>ㅤ
+  至于「连接器」，甭管背后是 MCP、CLI 还是 API，用户只需要知道：它能把浏览器、系统日历、钉钉、飞书，乃至 Supabase、Vercel 项目，以及企查查、北大法宝等外部数据连接起来，供 Agent 调度。</li>
+</ul>
+<p>　ㅤ</p>
+<p>那么，「专家套件」则是组合 Skill、连接器的职责能力包：</p>
+<p>Skill 告诉 Agent 具体怎么做，连接器把真实数据和工作环境接进来，加之把 Skill 预置为快捷指令，实现打包场景的低门槛一键使用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb57KXuuqeYEeBPlTibNL7piaIMsOaF9zjapTm9UE3VIVMI5wylp45lJ3tTOQZAPXJE9ChqPtrEqyCO8mC9Gogd89BSbD4icKtND50/640?wx_fmt=png&from=appmsg#imgIndex=17" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb6SibnNiavrEQTmRxyViciblqN9S0cjbk57GboibEq1a6cW7HfmFYicCL5HDVjQvIzk64ibRImrHMvk44enZic1cqoicoZXUIYShichcB1ps/640?wx_fmt=png&from=appmsg#imgIndex=19" alt="Image"></p>
+<p>比如投研分析、合同管理、企业法务等，每个套件还标注了出品团队。</p>
+<p>　ㅤ</p>
+<p>这是一个很棒的视角转变：以用户的职能认知视角，引入技能、连接器，形成完整的场景能力包，既方便理解，也比一个个装零散技能、连接器方便不少。</p>
+<p>比如我平时很少装单独的 Skill。临时想审查一下合同，我也不愿意专门找一个 Skill，用完还想着删。</p>
+<p>但如果你告诉我，我的办公 Agent 可以一键安装「合同管理」套件，从而具备一套相对完整的合同管理能力？——那我觉得太好了，谁不希望自己的 Agent 能力再宽一点呢？</p>
+<p>套件还支持整体开关，不用时可以临时关闭，也更方便统一管理。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h3>2）从一键 fork 定制现有套件，到组织复用</h3>
+<p>安装只是第一步：</p>
+<ul>
+<li>ㅤ
+  用户不仅可以自行创建套件：告诉 AI 想要新建一个专属套件，AI 就会问他职业方向是什么，平常有哪些需求、要连接哪些数据，就能 0~1 自建完整工作套件</li>
+<li>ㅤ
+  还能一键 fork 定制市场上的套件 ⬇️</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb4MbBQYeBiaH4ANeh0dHbh4aMOiaaVrvzrvMAKicvfYzjOBjk0y7ML2PIICtaTk8mZkRyzsQr2O9q5IWssysOQFEibtSicMeLI9ic3IY/640?wx_fmt=png&from=appmsg#imgIndex=20" alt="Image"></p>
+<p>　ㅤ</p>
+<p>比如我希望在市场已有「合同管理」套件上，增加「合同风险速查」能力：按我的审查标准校对我给的合同，并用 HTML 可视化风险清单列出问题。</p>
+<p>⬇️</p>
+<p>可很方便的按以下流程，对套件进行一键 fork 与改造：</p>
+<ol>
+<li>1.选择定制套件
+<img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5tYAKGyLlCSKxQkakzmlKLR7wr4tc2jQ7NnDc5pfMObn20mJKbzib2kicyZe9RXyg1JRXibiaqwX5lu7k1MVw4QcjWg8OUACEmKzE/640?wx_fmt=png&from=appmsg#imgIndex=21" alt="Image"></li>
+<li>2.输入改造要求
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb61mdWMyggXDX2Kp3fsSqypBeLVChXyGk7WezMwfxGpAyqUsFT6ttkdoUficsKpN6Ibicr43jDu8fRAEOAGgc1RwcU3tpbzNO2PA/640?wx_fmt=png&from=appmsg#imgIndex=22" alt="Image"></li>
+</ol>
+<p>　ㅤ</p>
+<p>过程中，AI 会继续询问我“有没有报告模板”“主要关注哪些类型的风险”。</p>
+<p>确认信息后，就能一键完成改造。改好后，套件中的新技能同样可以通过快捷命令调用。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb4g0zfMcELyIWvQOfYMNP49lvZ3W3xPYMNfhE1ianOkj3EbryD0BGl5AT7wY0ib4nErVtyN2uFLeMRwcgcObKjAkeAaYoVK3tz4c/640?wx_fmt=png&from=appmsg#imgIndex=23" alt="Image"></p>
+<p>一键按照套件内的配置，得到预期结果。⬇️</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb78m9ZBWK2MrNiaS0PQfz9KUic3I5AU5xAxzl04aoVHJ3vUdFeib3s9kwKISQz7xlX2Vooeib8SlOYPgYgicN4tIpliac6IM0MvymZJ8/640?wx_fmt=png&from=appmsg#imgIndex=24" alt="Image"></p>
+<p>从长远来看，不仅每个人都能从市场里的现成套件开始，改造出更贴合自己工作习惯的 Agent 方案；组织内的 AI 先行者，也能方便地为部门定制可复用的“岗位”套件，从部门规范文档沉淀转向 Agent 套件沉淀，提升组织 AI 效率。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h2>💻 专业工作台：网页、PPT 设计，并一键发布为在线网页</h2>
+<p>除了通用模式外，千问办公里预置了设计、幻灯片、写作三个特定场景模式。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5sV5zykHMO3ZwBVBhlnG3zPHn21y5GgGh6G6av0xHIgh819FNCibpNtica7RARozKSoxTgQpVOF3UMAT5ds2YmeHA1nM9foTyHk/640?wx_fmt=png&from=appmsg#imgIndex=25" alt="Image"></p>
+<h3>1）设计模式：一键制作 AI 思维导图产品</h3>
+<p>千问办公在设计模式中，提供了特殊选项，包括参考 Airbnb、Apple 等数十种风格；选择设计线框图 or 高保真原型；指定 shadcn、Ant Design 等组件库。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb7WgYyVJho2FgxQvGxXFgYa2IIicv5YsbhzEPZC5KlTjCFAG8fQ96ibLaUjXd0XibyFDVg4QmuG0F4qYpAiawovVS79TD6k3hnMicvE/640?wx_fmt=png&from=appmsg#imgIndex=26" alt="Image"></p>
+<p>也支持自行创建前端设计规范，方便稳定复用已有设计习惯 ⬇️</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb7DYMF5lsd3O1G6eeYSjaFegSf9v3luzKpTvB2OkhN8olVcgPicWxgBQsYY0jMvicf7leooibQpTsEWUqmjicGlNhCicqYibphLDic8k0/640?wx_fmt=png&from=appmsg#imgIndex=27" alt="Image"></p>
+<p>要求：做一个 Figma 风格，Chat 为主要交互，可按各个节点框选与对话的 AI MindMap 的高保真原型</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DGyz1tk4xb43IyPbYIOwtltnDKiaLkZafRERtsqp9QbNZgk1ahM11Htj3ibw2FnXI127kTEQDJRA3JMbzZl4jdfgsfse6SYZDmv6nKoIpn8E4/640?wx_fmt=png&from=appmsg#imgIndex=28" alt="Image"></p>
+<p>Agent 自动切换到设计工作台模式：人可通过画布功能，对生成页面进行所见即所得的编辑（但在我实测时，发现目前编辑能力开放有限，很多调节受到限制，得等他们继续开发）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5vtpEjtjeGrPEoqQUM0GzhVuic9eYkfNISbmtc9yWicd59bIdo8LL5ypzvHpGw38zhE03duhEmGwuwLxo51VTuZmfhjZiazZAibCs/640?wx_fmt=png&from=appmsg#imgIndex=29" alt="Image"></p>
+<p>大概跑出来如下效果：</p>
+<p>，时长00:26</p>
+<p><video src="https://mpvideo.qpic.cn/0bc32yac2aaa2aamjplp7jvfbvwdfxlaalia.f10002.mp4?dis_k=6c3502f013737beb502f8e10e8cd230c&amp;dis_t=1785736212&amp;play_scene=10120&amp;auth_info=V7HN9MUIPwVip8329z9UV30/WmIcFmFafmggGUwtMR5sLTZMPiYkSBUfKzcdUll3aTU=&amp;auth_key=2f747a52e93392c3076b1661d41dba7f&amp;vid=wxv_4632638559303335939&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>　ㅤ　ㅤ</p>
+<p>总体一梭流下来完成了大致要求，如果导入自己的设计规范系统，应该能出更好的效果。</p>
+<p>不过这个专业工作台模式上线还没多久，在长程运行过程中，任务有中断行为，估计 Agent Loop 层面还需要多优化迭代。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h3>2）幻灯片模式</h3>
+<p>支持选择预置的 PPT 模板，从预留的「导入」按钮来看，未来也将支持导入自己的 PPT 模板。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4teV8ibN2dLPHlicIZ5BAP9W6JepHDp36gDRSolJxoYocV8y4xObszpJVuq3w8c8fqoc3KzI1ovclqLicP0nRe8bOt9nML1HPlq8/640?wx_fmt=png&from=appmsg#imgIndex=30" alt="Image"></p>
+<p>要求其自主调研「近十年中国家装风格流行变迁历史」，生成一份好看的 PPT。</p>
+<p>支持 multi-agent 并行调研与制作各页 PPT 内容：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb498pP3P0dpmUJLNPZm8bYxSZASdfVkzkOvicczuCMRLvemPVAVUwV7JNQGBpwTFkchuD37Oy6LPa5nTDQyOkhIuDG00qAib4XB8/640?wx_fmt=png&from=appmsg#imgIndex=31" alt="Image"></p>
+<p>IF 在网页端，Multi-Agent 的运行过程会在侧边透明展示，每个子 Agent 也都支持输入反馈，这点设计非常方便</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb6TVIHwcwnnMRhoQARz4Vnw9oUxPgxInN2y58RTicZbxiby3oMQnOlrsiakaBMpdIqicu2PWkrgsLyrkFUZL3Rk4PYx5lquFFoTmGA/640?wx_fmt=png&from=appmsg#imgIndex=32" alt="Image"></p>
+<p>跑出来的效果不错，完整遵循了模板设计要求，但希望后续能再提升一下生成速度 ⬇️</p>
+<p>，时长00:17</p>
+<p><video src="https://mpvideo.qpic.cn/0bc3rqcg4aaevmaipudlmzvfjdgdn2gai3qa.f10002.mp4?dis_k=52c6a69e2e1b14b2d10a933a69cdd066&amp;dis_t=1785736212&amp;play_scene=10120&amp;auth_info=VpjZ4ZAJPwU0pMuj9G4EVCw7BTcfQGcLeD4nSR0sMxltezQdbSckSEMcLWIeAwl0ODE=&amp;auth_key=026850b816ade030732cadd249954804&amp;vid=wxv_4632639108538974212&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>　ㅤ</p>
+<p>BTW：已支持直接编辑 or 让 AI 替你局部改写文件内容：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb7eSic1WJPIZicOBaF0tuIQurMW0ptSvwRInY6HrqbcXguBPG0qFm4m3HL0I7E3EynKkSqBTicnVtFDsMicj3Vsq63Om0AicAYqVfKQ/640?wx_fmt=png&from=appmsg#imgIndex=33" alt="Image"></p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h3>3）写作模式</h3>
+<p>目前则是创建一个编辑器工作台，人类用户可以直接编辑 or 批注建议 AI 生成结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5KxYQicNb9MOFwTtdlib0ibKtbOLibXcLIUj6Ggk9GruMlloejRWPMiaAeJ6CCbdkQAHILcLGQGo0xjCwKTicibvmJKb5jBOqnia5lyqk/640?wx_fmt=png&from=appmsg#imgIndex=34" alt="Image"></p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h3>4）一键发布网页为在线链接</h3>
+<p>千问办公也支持用户一键发布网页，但在两个端上表现有所区别：</p>
+<ol>
+<li>1.客户端发布，貌似还没接内置发布功能，实现方式为用本地电脑上的 Github、Cloudflare 等 CLI 工具，发到用户直接的 Github 等空间</li>
+<li>2.网页版发布，才能在千问办公内置的「我的网页」内完成发布，不需要额外连接用户自己的服务器资源</li>
+</ol>
+<p>...</p>
+<pre><code>我要创建一个在线网页，并发布为在线链接，内容是【2026 年 7 月 AI 新模型发布与对比】
+</code></pre>
+<p>就一次性跑完了数据调研，并开发上线了报告网页：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb4jS5IPARtAFSocnDPFm5yowialL9ZB9GPxqDzGiaPwzztx4tFJvrC449J8tY0p8aqibLw4kPNQ6ZOxEUmTwnkPLic6xgR7VXibaDDE/640?wx_fmt=png&from=appmsg#imgIndex=35" alt="Image"></p>
+<p>具体效果 ⬇️</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/DGyz1tk4xb4jEvp731YhZRwYheFrlUAkNnDHfkYibMeTUHohDxp3bAYR8Te9QopxkbcbH19Qg7nOSF9icWfZWZ7MmmZSjH1giciacIqic64U6uFU/640?wx_fmt=jpeg&from=appmsg#imgIndex=36" alt="Image"></p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h2>📝 更多细节：图片创作、技能自进化</h2>
+<p>千问办公当然接了千问模型，不缺多模态生成能力。</p>
+<p>我大致也跑了些 one shot 案例。</p>
+<p>1）图片生成</p>
+<p>...</p>
+<pre><code>图片生成：一条充满自然灵动美感的项链设计。采用柔和扭转、仿佛清晨藤蔓般的拉丝纹理925银作为主体结构，形成一个开放式的、不对称的环绕形态。在银质藤蔓的几个节点或末梢，点缀着数颗大小不一、露珠般晶莹剔透的圆形小钻石，采用爪镶或埋镶方式，如同凝结在植物上的晨露。链条为极细的银色绞丝链，与主体有机连接。整体造型追求流畅的曲线和不对称的平衡，体现自然造物的精巧与生命的活力。银材质部分拉丝部分抛光，形成丰富的光影层次。
+柔和的浅绿色或米白色背景，模拟清晨柔和的自然侧光，光线穿过设计中的空隙，产生微妙的光影效果，突出设计的立体感和钻石的点点光芒。高分辨率，超现实珠宝摄影，细节丰富，质感逼真，整体氛围清新、脱俗、充满生机与轻盈感。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/DGyz1tk4xb68iaHEJT1txMtaNvxZR9k3WxCWHUBKbPrSB1vX1FVeLibLjN90S15UxxPXLtL11xGE7rdQKp5pfuT44tqZWPcDXW3NAX71P0XJM/640?wx_fmt=jpeg&from=appmsg#imgIndex=37" alt="Image"></p>
+<p>...</p>
+<pre><code>生成图片：像素艺术风格，横版 RPG 游戏界面截图。画面核心是激烈的 Boss 战，设定在中国仙侠世界。场景灵感强烈源自参考图：一个被古老石灯笼环绕的宁静庭院或山坡，地面铺满了厚厚的、色彩分明的红色落叶（似枫叶）和白色花瓣区域。一棵巨大的、枝干虬劲的古树（类似参考图中的红叶树）占据画面一侧，树叶是鲜艳的红色，并有红叶不断飘落。**背景天空非常明亮，呈现出被强烈阳光穿透薄雾的效果，靠近光源（可能在画面外或被树遮挡）的区域接近耀眼的亮白色或淡淡的暖金色，向上方或远处则过渡为柔和的、高亮的淡蓝色或天青色，整体充满大气透视感和光芒感。**朦胧的山峦在远方的亮色光雾中若隐若现。阳光透过树枝形成明显的光束（像素化的体积光/神圣光），照亮空气中飞舞的红叶与白花瓣粒子。界面元素清晰可见：左下角是玩家角色（仙侠风格，如道袍剑客）的像素头像、血条/法力条；屏幕顶部中央是巨大的 BosS（如妖兽、魔尊，设计需符合仙侠主题）及其醒目的血条；底部有一排简洁的技能图标栏。玩家与 Boss 处于战斗姿态，伴有像素化的法术光效或剑气特效。整体色调鲜明，红、白、绿（植被）、灰（石头）构成主要色彩，强调带来的唯美、萧瑟又带有神圣感的氛围，同时融入战斗的紧张感。细节丰富，高质量像素艺术。
+</code></pre>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/DGyz1tk4xb4ib9z9HytHrlwqdBITNVMkBzF4EPdBhibJDTZc5wb1iaRg12NWJiaepcfgJtF0B0q4F9vXyTaqNxpJHuRp79JNZwDLt5Ly5IYk30Q/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=38" alt="Image"></p>
+<p>诶，你别说，千问办公 Agent 跑出来的图，现在效果也不错了，清晰度也很够用。</p>
+<p>　ㅤ</p>
+<p>2）音频生成</p>
+<p>目前似乎客户端里还没接进去这个能力，网页端倒是可用的。</p>
+<p>,1分钟</p>
+<p>BTW：当前版本暂不支持视频生成。</p>
+<p>　ㅤ</p>
+<p>3）Agent 技能、规则自进化</p>
+<p>在「设置-意识」中可以看到，客户端藏了 AutoDream 能力，能自动归纳会话记忆，进化技能。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb5zEvZC3gnSXQlfL3P9H5aus5rlUIpYc75APxDgz9jf6WYV8ya5jqNERI27Nc89XBUa8jvNvzeiciaOSGQp7NBibiae4jLsFfq6ylg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=39" alt="Image"></p>
+<p>基于记忆的自进化还是对普通用户来说，Agent 越用越顺手的一环。我在有限的实测过程中，感觉并未触发？</p>
+<p>但在首发阶段就上线了该能力，看来在产品规划里，降低 Agent 使用门槛是相当重要的指标，期待团队的后续优化。</p>
+<p>　ㅤ</p>
+<p>　ㅤ</p>
+<h2>🎐 写在最后</h2>
+<p>说千问办公「不像钉钉出品」，是因为它没有像大部分人预想的那样，把 Agent 的使用边界限定在钉钉里。</p>
+<p>从现有形态来看，它不仅想让 Agent 服务好钉钉用户，也想承接使用其他办公产品的用户群体。</p>
+<p>　ㅤ</p>
+<p>千问办公刚刚发布，还有不少 Agent 稳定性、双端一致性问题待打磨。但并不影响它在思考「如何让 Agent 适应人的工作习惯，让更多普通人和组织更容易上手」，并将阶段结果呈现在产品细节里。</p>
+<p>　ㅤ</p>
+<p>国内各类 Co-work 产品的竞争逐渐进入白热化阶段，接下来，如何让用户打开产品第一眼就知道自己该从哪开始，以及培养对 Agent 成果的信赖度，会变得更加重要。</p>
+<p>　ㅤ</p>
+<p>希望本文能对你有所启发，记得关注～</p>
+<p>也感谢你的点赞与分享：)</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/DGyz1tk4xb7ib7dwsjkXia7sNdibkOAg9bSspibUUyArnK9iacCfJqveSxS4JXibkEjbjsNLnEcV0IbJZlQEg37zyQcr0QfYoHHZRIXibPfXEzXM3I/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=40" alt="Image"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 835.0 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 624.8 KB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/5-HUVO-jTwUfU4QG7iRVzw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

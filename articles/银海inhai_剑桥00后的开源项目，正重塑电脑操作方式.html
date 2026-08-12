@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剑桥00后的开源项目，正重塑电脑操作方式 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">剑桥00后的开源项目，正重塑电脑操作方式</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E9%93%B6%E6%B5%B7inhai">银海inhai</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Turix">Turix</a><a class="chip" href="../index.html?tag=%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a><a class="chip" href="../index.html?tag=%E5%89%91%E6%A1%A5">剑桥</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-01-09</span>
+  </div>
+  <p class="lead">用AI自动操作电脑，项目已开源。</p>
+  <article class="content"><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/GkSBRc9GpQ5fXaF4th5TmEicibnXfK8Ob82ILNYVMJeibZib2hngqN9js6gYjJr7xBqCaTS3EtecfV6gRTm4d2a2WQ/0?wx_fmt=jpeg" alt="cover_image"></p>
+<p>原创 银海 <a href="https://mp.weixin.qq.com/s/">AI产品银海</a> <em>2026年1月9日 09:10</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5fXaF4th5TmEicibnXfK8Ob8RO7iczgzo8AI3JQ48lzbRL9fV6mBmP7SwJb1rhjwvkia408EpPU1jt5g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>Hi，我是银海。</p>
+<p>最近我在想，现在的 AI 如果真的进入到日常工作里，最先被改变的会是哪一层。</p>
+<p>前段时间豆包手机的自动化操作刷屏，更多解决的是移动端的信息和内容问题。</p>
+<p>但在真实的工作场景里，绝大多数任务依然发生在电脑上，发生在终端、系统界面和各种复杂的软件之间。</p>
+<p>也正是在这样的背景下，我在刷 GitHub 的时候注意到了一个很有意思的开源项目 Turix。</p>
+<p>项目地址先放在前面，感兴趣的可以直接点进去看看： <a href="https://github.com/TurixAI/TuriX-CUA">https://github.com/TurixAI/TuriX-CUA</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJE2SPG9xuQcr2kaorETuCKma75Q2z5o3oicjkSmdRB24ttxMcmRdSd6ibw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>从表面看，Turix 也是一个 Computer Use 项目，让模型看懂屏幕、操作界面、完成任务，这可能见怪也不怪了，比如让它查询 iPhone 价格、创建 Pages 文档、并发送给联系人。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEy87zWaYqOsPJFOgmcVfHQTBEtcoxwj5MKibKibibvc9OUmjw1Mba5ibt5Q/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p>比如在老板通过 Discord 发来的 Numbers 文件中生成一个柱状图，将它插入到我的 PowerPoint 的合适位置，并回复老板。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJE3ZtmOBiaCfMtE1ZwFY3fVOlaibXYQxmkhutgnDibzTvHlBwUDRw6xgJ9Q/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>但真正让我停下来认真看的原因，这件事在做个很有意思的点，就是能不能变成一个长期可用的执行系统，能不能持续的跑通任务。</p>
+<p>Turix 把终端执行、任务拆解、GUI 操作这些能力全部开源出来，你下载安装到本地之后， 只需要在终端里下发一个任务，它就会自动把需求拆成具体步骤，然后一步一步执行。</p>
+<p>更重要的是， 这些执行流程是可以被保存下来的，下次遇到类似任务，不需要重新来一遍。</p>
+<p>一开始我也会有一个直觉反应，这和之前看到的 Computer Use 到底有什么区别。</p>
+<p>在Turix网页端：<a href="https://cloud.turix.ai/%EF%BC%8C%E7%9B%B4%E6%8E%A5%E5%8F%AF%E4%BB%A5%E9%80%89%E6%8B%A9%E9%9C%80%E8%A6%81%E6%89%A7%E8%A1%8C%E7%9A%84%E8%AE%BE%E5%A4%87%EF%BC%8C%E5%B9%B6%E4%B8%8B%E5%8F%91%E4%BB%BB%E5%8A%A1%E7%BB%99%E5%88%B0%E5%AF%B9%E5%BA%94%E7%9A%84%E8%AE%BE%E5%A4%87%E4%B8%8A%E3%80%82">https://cloud.turix.ai/，直接可以选择需要执行的设备，并下发任务给到对应的设备上。</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEc7AnS2ibo9DpDibXN0GF6GyA1ic30aeQ6icU3zNsSwYcFViaXZiaXSxmt3Yg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>很多 Computer Use 项目，本质上是在一个封闭环境里完成一次完整操作，更像是在验证模型有没有能力操作电脑。你看着它跑，跑完任务就结束了。</p>
+<p>而 Turix 的思路明显更偏向工程化。</p>
+<p>你在终端里下发的是一个抽象任务，系统负责拆解步骤、调度执行，并把成功跑通的流程沉淀下来复用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEqEu41czYK8tYPenpeR5Pp4rCsyqONrtoXouFFtEVS5rPTsC58ICicGg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p>你关注的不再是模型下一步点哪里，而是任务有没有被正确分发，流程能不能稳定跑起来。</p>
+<p>这种体验更接近在管理一组数字员工，而不是单次演示模型能力。</p>
+<p>有一个很容易被忽略但非常重要的细节， 是它对多设备执行的支持。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJE8QuwuZQrVlEq9ibQjCwqIWgj7MZKaP63zmHsMKEUtQcBLaJFe68wpkg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>如果你外接了显示器，或者有多个虚拟桌面，Turix 可以指定在哪一个界面上执行任务。</p>
+<p>也就是说，当你下发命令的时候，可以把不同任务分配给不同设备同时跑，而不是在一台机器里排队执行。</p>
+<p>这种产品设计明显是从真实办公场景出发的，而不是为了做一个看起来很酷的 Demo。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJELdU3pdozpmjb4U0TLhFicUXX4O9j1gBlqvQg2UCZQG3whE6jmmOwVow/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>然后它还能在一个地方给你去回溯这些任务。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJECfVyyz18JXZU7fP9w7ppQXMNSzJBssKV5OibEjcxCAX3kc5JccPadyA/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>再往前看，它已经开始提供空间管理、工作流、定时任务这些能力。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEMrhV1CicLVRVCu1xSLhxicYjQhWzGG5EYDbXCdA2QqSJOBT3qJWqlPhg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>你可以把它理解成一个面向 GUI 世界的调度中枢，模型不只是会点按钮，而是被组织进一套可以持续运转的执行体系里。</p>
+<p>另外在Github项目中也顺手了解了一下项目背景，这个项目发起团队的 CTO是一位来自剑桥大学的 00 后，并且团队里面还有来自 Google DeepMind 的高级工程师，不得不佩服，现在的年轻人真的是越来越厉害了。</p>
+<p>翻他们的 roadmap 时能明显感受到这是一个有长期规划的项目，对 memory、workflow、自动化调度以及 GUI 识别能力的迭代，都有比较清晰的方向。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEVJXqbearb6r1roMLzYaOfcXbY8cSAuA2eppCYro4yntMrBF7icP5khg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>我在实际使用上，也是把这个开源项目直接下载下来了，用 Cursor 跑的。</p>
+<p>把项目拉下来之后，先让系统自我介绍一遍，搞清楚需要哪些信息，然后配置模型就可以开始了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEtOqxVib6z3AkPs5qAQZkkKNicTJw8rG85UdJDJCGnJoIFYlBrqyYZic3g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>Turix 官方提供了自己的模型 API，注册后会有 20 美金的体验额度，用来跑机器控制相关的任务。</p>
+<p>他们也提到，官方模型在 GUI 操作上做过专项训练，整体精度会更稳定一些。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJE3iaZOMdiaxACBF2ibp7HoxHNtUmB6CguJcibZoLYLyuKtlNSO70dYVTGvg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>如果你有自己的模型服务，也可以直接替换，只需要填写对应的 API 地址、模型 ID 和 key。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJE9MgFfggob6EwvMVZ2e4Sa2Nc8nmIebdY47GoJRfVCdEd5Ul5yc7vXA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>我自己试着接了阿里云百炼的千问 VL 系列模型，整体体验也很顺畅，这一点对习惯用不同模型体系的人来说非常友好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ5AjicCBrl0U4Y7z22v7duJEX1NmylUQ6sBh8f6Jt8gQPdnEabYwq7ibjtXUuiaQoecBCQZVXqiaCXK2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>整体用下来，我会觉得 Turix 补齐了 Computer Use 里非常关键的一块， 也就是从能力展示走向任务调度和流程复用。</p>
+<p>它让模型操作电脑这件事，开始具备进入真实工作流的可能性。</p>
+<p>未来如果在 GUI 操作专用模型和自动化能力上持续演进 ，这类系统的价值会越来越清晰。</p>
+<p>现在回头看，会发现很多人第一次用 Turix 时会觉得和 Computer Use 差不多，但用得越久，差异反而越明显。</p>
+<p>关注点 从模型理解并操作电脑，慢慢转移到了系统能不能变成定时任务进行长期跑，能不能真的帮人减少重复性劳动，节省时间。</p>
+<p>如果你对 Computer Use、数字员工或者 AI 自动化执行层感兴趣，强烈建议你去 GitHub 看一眼这个项目，地址再放一次</p>
+<p><a href="https://github.com/TurixAI/TuriX-CUA%E3%80%82">https://github.com/TurixAI/TuriX-CUA。</a></p>
+<p>也欢迎顺手点个 star，这类长期主义的开源项目，值得被更多人看到。</p>
+<p>以上就是本次的所有分享啦，我们下次再见 👋</p>
+<p>© THE END</p>
+<p>觉得我的内容还不错， 顺手点个赞、分享、在看</p>
+<p>都是对我最好的认可！</p>
+<p>继续滑动看下一个</p>
+<p>AI产品银海</p>
+<p>向上滑动看下一个</p>
+<p>AI产品银海</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/DzyR30p40IBrasylY0LjWw" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

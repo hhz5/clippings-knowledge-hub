@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>保姆级教程 | 专业创作者都在用的 Obsidian + PicGO + 七牛云全自动工作流 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">保姆级教程 | 专业创作者都在用的 Obsidian + PicGO + 七牛云全自动工作流</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=%E5%8D%97%E5%B7%9D%E5%90%8C%E5%AD%A6">南川同学</a>
+    <a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="chip" href="../index.html?tag=Obsidian">Obsidian</a><a class="chip" href="../index.html?tag=PicGO">PicGO</a><a class="chip" href="../index.html?tag=%E4%B8%83%E7%89%9B%E4%BA%91">七牛云</a><a class="chip" href="../index.html?tag=%E5%9B%BE%E5%BA%8A">图床</a>
+    <span class="date">2025-11-18</span>
+  </div>
+  <p class="lead">让我们一起搭建属于你自己的高效“内容工厂”！</p>
+  <article class="content"><p>原创 南川同学 <em>2025年11月13日 15:36</em></p>
+<blockquote>
+<p>自从经营我们手工川这个账号以来，很多朋友问我为什么文章能写的这么快，有什么秘诀？答案是，我们确实有一套完整的内容产出工作流，涉及到选题、内容生成、排版、发布等等。本期，我给大家介绍的是我们写作的 IDE Obsidian 以及图片上传最佳实践。</p>
+</blockquote>
+<p>你是否也经历过这样的创作“内耗”？</p>
+<ul>
+<li>为了在不同平台发布，一篇文章里的几十张配图，需要反复上传 N 遍；</li>
+<li>每次截图、保存、打开图床网页、上传、复制链接、再粘贴回文章... 这个过程机械又繁琐，瞬间打断了涌动的文思；</li>
+<li>文章写得越多，图片散落在各个角落，难以管理，想找回某张图如同大海捞针；</li>
+<li>依赖的在线笔记平台突然改变规则或无法访问，多年的心血积累可能毁于一旦。</li>
+</ul>
+<p>这些看似微不足道的“小事”，正在无声地吞噬着我们最宝贵的创作精力。今天，我就把我们团队一直在用的这套“内容武器库”完整地分享给你。</p>
+<p>这套工作流以强大的知识管理工具 <strong>Obsidian</strong> 为写作基地，以开源的图床神器 <strong>PicGO</strong> 为自动化枢纽，以稳定可靠的 <strong>七牛云</strong> 对象存储为云端仓库。它将彻底解决内容创作中最核心的图片处理难题，让你体验到“粘贴即发布”的丝滑快感，真正实现“一次编写，处处运行”的终极自由。</p>
+<p>准备好了吗？让我们一起搭建属于你自己的高效“内容工厂”。</p>
+<h2>告别创作“内耗”，我们为什么需要一套现代化的写作流？</h2>
+<p>在深入技术细节之前，我想先聊聊我们为什么要去“折腾”这样一套看起来有点复杂的流程，而不是继续用那些现成的笔记软件或在线编辑器。</p>
+<p>答案很简单： <strong>为了拿回内容的“掌控权”，并享受效率的“复利”。</strong></p>
+<p>传统的写作平台，本质上是一个个“数据孤岛”。你的文字和图片都被锁在它们的私有格式和服务器里。而我们即将构建的这套工作流，其核心理念源自开发者世界里久经考验的 <strong>“纯文本 + 自动化”</strong> 哲学。</p>
+<ul>
+<li><strong>Markdown (纯文本)</strong>
+  : 它让你专注于内容本身，而不是排版。更重要的是，<code>.md</code> 文件是开放的、永恒的。无论十年、二十年后，任何一个简单的文本编辑器都能打开它，你的思想得以永存。</li>
+<li><strong>Obsidian (你的本地大脑)</strong>
+  : 它将所有笔记以 <code>.md</code> 文件的形式存在你自己的电脑上，让你对数据有 100% 的掌控权。</li>
+<li><strong>PicGO + 七牛云 (自动化图床)</strong>
+  : 这套组合拳将图片处理彻底自动化。只需粘贴，图片便会自动上传至云端并替换为永久链接。这个过程为你节省下的每一秒钟，都将累积成巨大的创作势能。</li>
+</ul>
+<p>Markdown 是一种轻量级标记语言，让你用非常简单的符号来标记文本格式，比如用 <code>##</code> 表示二级标题，用 <code>**文字**</code> 表示加粗。因为它易读易写，已经成为程序员、写作者圈子里的通用语言。</p>
+<p>从现在开始，请将你的内容创作视为一项严肃的工程。我们要构建的不是一个临时的写作工具，而是一座能够持续产出、不断迭代、完全属于你自己的“内容工厂”。</p>
+<hr>
+<h2>第一站：搭建你的云端“图片仓库”——七牛云 Kodo</h2>
+<p>我们的“内容工厂”需要一个坚固的仓库来存放图片，这个仓库就是“对象存储服务”。国内的阿里云 OSS、腾讯云 COS 和我们这次选的七牛云 Kodo 都是很好的选择。七牛云对新用户非常友好，提供了免费的存储和流量额度，非常适合个人创作者上手。</p>
+<p>你可以把它简单理解成一个“无限容量的云端硬盘”。它不像你的电脑硬盘那样有文件夹层级，而是把每个文件（比如一张图片）当作一个独立的对象来存储，每个对象都有一个独一无二的网址。这种方式特别适合存放海量的图片、视频等文件，而且访问速度很快，成本也低。</p>
+<p>下面，我们就一步步把这个“仓库”建起来。</p>
+<h3>存储空间配置</h3>
+<p>首先，你需要注册并登录七牛云 <sup><span>[1]</span></sup> ，完成实名认证。之后，进入“对象存储 Kodo”的管理控制台。</p>
+<p>七牛云的对象存储叫 Kodo（看来 born for coder 啊 哈哈哈哈）：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtjcEuaR3eKUSYMMDDTBy483MH7XhnjsdJ1u9R2Czpl7L7LJd3Ypevnw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p>按照指引，我们点击“新建空间”：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtexqSV2XNqGia7iarIeVlD3zL9UoLDbrpUOOhAbMgY2Z0PUG5LOCzribRg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<p>在这里，你需要填几个关键信息：</p>
+<ul>
+<li><strong>存储空间名称</strong>
+  ：一个全局唯一的名字，别人没用过的，比如 <code>shougongchuan-assets</code> 。</li>
+<li><strong>存储区域</strong>
+  ：选离你读者近的，国内用户就选华东、华北、华南。</li>
+<li><strong>访问控制</strong>
+  ：一定要选“公开空间”，这样我们上传的图片才能被别人看到。
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtlg1PIo1TOMtbiaVursADNytSeCuliadZpxZQyntA5oHhkvNz8UA8u0hg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></li>
+</ul>
+<p>整体来看，海内外都是包括的，尤其是最热门的华东华北华南，以及新加坡美国等，基本 cover 90%的用户群体了。</p>
+<h3>自定义域名</h3>
+<p>空间建好后，七牛云会给你一个临时的测试域名，但这个域名一个月后就会失效。所以，绑定一个自己的域名是必须的！这不仅看起来更专业，更重要的是，未来就算你不用七牛云了，换到别家，只需改一下域名解析，你所有文章里的图片链接依然有效。</p>
+<p>在空间的“域名管理”里，点击“绑定域名”。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtZ7lpcE6xy0funvxhhP8iaX2HWy7U9FXwTeEXiaFVKurxkdZGqf0sWd2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p>我们建议 <strong>优先使用已备案的国内域名下的二级域名</strong> ，比如 <code>cdn.yourdomain.com</code> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtfTFnibrMRkkTiaKiaGno07NLzv1vtTnZ92e9ViaJ4AwmsMAKCvAL4B5XTQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p>点击确认后，七牛云会给你一个 CNAME 值，让你去你的域名服务商那里做个解析。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtunhO8RKaSG9GCFqIJzFTnDzklL77kxDGzmTKFTfdVt4xFQdQaZPMQw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMt6Gs4dtEgLib1Wtics35aQaPs0FgbJkJestgLPIyKRp5WNkhn8XwD7cmQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<p>你需要登录你的域名注册商（比如阿里云、腾讯云），在 DNS 解析后台，添加一条 CNAME 记录。</p>
+<p>我们这个域名是在阿里云，进入云解析 DNS 配置页面：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtJv6xYGibdELqzJqS3MPlZChCmWrudk1AUgy2EmAkJz4qpkJrOrI8d1g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtanN8QbibrOmOXibwfqoa3ViauNRSfBWJSsIVt7T8keqKOBOLcicsiakq7Aw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
+<p>配置完成后，回到七牛云点验证，一般几分钟就好了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMt3L6C22ia9puPeNTxaSK7oeBtiaE0cgWVNU0XxbRp4JpY8kSUh6WnoPZQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9" alt="图片"></p>
+<p>或者过几分钟后手动刷新：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMt6JAdGZhMgpglKeFhfzpLvKlRiagthZAjjkt1gXzcNaadXznCfIN8iaog/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10" alt="图片"></p>
+<p>怎么知道有没有生效呢？可以用阿里云的网络拨测工具 <sup><span>[2]</span></sup> 查一下，如果全国各地都指向七牛云了，那就没问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtkGyqdHbwuqnXickhzqsdjoWNZeTWic42TmV85oBh3teBtiafAImzoznqQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="图片"></p>
+<p>但其实出了个小意外，我复制 CNAME 时漏了个前缀，导致始终不奏效，阿里云的网络拨测工具只管杀（解析 DNS 背后的值）不管埋（不管这个值有效不有效），折腾了近一个小时，各种怀疑是七牛云的问题，最后问 GPT 时在输入框里才发现是自己的问题。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtKkJo638zS7XRy6yKJCorMG7YUdibyLlPffsvtGmXRwwbXRrhJuFwCPw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>我回顾了一下，应该是我先创建了一个 cs-magic.cn 的加速域名，并复制了其 CNAME，后面意识到应该设置二级域名，所以又新建了一个 cdn.cs-magic.cn，但误以为是同一个 CNAME，就拿之前的值复制到阿里云 DNS 配置台了。大家配置的时候千万要仔细！</p>
+<p>域名管理里有不少配置项，个人比较关心的是访问控制和图片优化功能。</p>
+<p>我之前也是用了很久的阿里云 OSS 才知道还可以通过修改图片链接结尾的一些参数控制图片的处理的，七牛云也支持，真好。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtwPsbtIx59xd8RxaAjYBwWpXpujluHWwHnW28rXJ9ibBv4icZgIMdggDA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="source: https://help.aliyun.com/zh/oss/user-guide/img-parameters/?spm=a2c4g.11186623.help-menu-31815.d_0_11_2_1.42a2575a2ZbWHm"></p>
+<p>source: <a href="https://help.aliyun.com/zh/oss/user-guide/img-parameters/?spm=a2c4g.11186623.help-menu-31815.d%5C_0%5C_11%5C_2%5C_1.42a2575a2ZbWHm">https://help.aliyun.com/zh/oss/user-guide/img-parameters/?spm=a2c4g.11186623.help-menu-31815.d\_0\_11\_2\_1.42a2575a2ZbWHm</a></p>
+<p>说到这个云端图片处理，不知道大家有没有了解最近的 太空算力 <sup><span>[3]</span></sup> 的概念，和这种云服务图片自动处理的思想是一样的，非常有意思。</p>
+<p>未来用户在手机端发送需求，在太空的服务端算完答案直接就呈现到用户的手机端，连 App 都不需要了，用户端只要定义 Renderer 即可……</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtL9RBXaUKqJvKRt4V2ZdkqVMtmFxICrI1UXsur0faCPQsBxibXbhgrQg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<h3>测试存储空间</h3>
+<p>接下来测试好不好用。我们选一张本地文件上传试试。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtxUfVtSREqfmAcQicywckkA8VNmFqmjLiaYibpgic5XThKhdMae2RADdXwg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="图片"></p>
+<p>先在前端测试上传，没问题：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMt9vwuTdasRHKQ5a8c4xTJSuDkej65I7wjW8MzRO3nzTWlp7Gy05399g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>上传成功后， <strong>注意</strong> ：在右上角复制外链时，一定要把默认的测试域名，切换成你自己的域名！</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtDyYTBK0QicZBSC3DCws4bk9n7PfUD3ic46RFjpGEI7puiad0B1ibdZnftg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>现在，在浏览器里打开 <code>http://cdn.cs-magic.cn/lovpen-手环.png</code> (请替换成你的链接) 试试，如果能看到图片，那恭喜你，你的“云端仓库”正式竣工！</p>
+<hr>
+<h2>第二站：装上“自动传送带”——配置 PicGO 连接云端</h2>
+<p>有了仓库，我们还需要一个全自动的传送带，把图片从我们的写作“车间”（Obsidian）送到仓库里。这个传送带就是 <strong>PicGO</strong> 。它是一个开源免费的图床上传工具，能帮你把图片自动上传到包括七牛云在内的各种云存储。</p>
+<h3>获取七牛云密钥</h3>
+<p>为了让 PicGO 能操作你的七牛云仓库，我们需要给它一把“钥匙”，也就是 API 密钥 (AK/SK)。</p>
+<p>直接访问 七牛云访问管理 <sup><span>[4]</span></sup> 或者点击头像选择 <strong>访问管理</strong> ：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtibVkRHp0IdfQviaDeOlP5xA5nwu0UbEXkrfwcT43CiauoB1eqyQ4gnh2Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=18" alt="图片"></p>
+<p>然后新建一个用户，新手的话直接授权全部权限，然后就可以拿到 AK 和 SK 了！ <strong>拿到后一定保存好，SK 只会显示一次。</strong></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtaaMUGicOMQ1qc2kZ9QtR7U6lGXibHIBd1Ow9lua6uGEEOD97xb1x2B9g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=19" alt="图片"></p>
+<h3>配置七牛云</h3>
+<p>从 PicGO 官网 <sup><span>[5]</span></sup> 下载并安装客户端。打开后，进入“图床设置”，选择“七牛云”。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtTyNFgWnrWtHDkPT6xicclsC30y4hS0ueQlP6l5fWhoQOHpTa2OUuLhA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=20" alt="图片"></p>
+<p>然后把我们准备好的信息填进去：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtric7IE0UbbiaPCIXj9JrRA8tnYspQibHaSLPE11eeIWZcdH6TPWibVnvZw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=21" alt="图片"></p>
+<ul>
+<li><strong>AccessKey 和 SecretKey</strong>
+  : 就是我们上一步拿到的 AK 和 SK。</li>
+<li><strong>存储空间名</strong>
+  : 你在七牛云创建的空间名字。</li>
+<li><strong>访问网址</strong>
+  : 填写你绑定的自定义域名，记得带上 <code>http://</code> 或 <code>https://</code> 。</li>
+<li><strong>存储区域</strong>
+  : 和你创建空间时选的区域要对应，比如华东是 <code>z0</code> ，华北 <code>z1</code> ，华南 <code>z2</code> 。</li>
+<li><strong>指定存储路径</strong>
+  : 可选。可以填个 <code>img/</code> 之类的，图片就会被传到这个文件夹里，方便管理。</li>
+</ul>
+<p>配置完，点一下“设为默认图床”。</p>
+<h3>测试与 debug PicGO</h3>
+<p>来，试试我们的传送带。在 PicGO 首页，随便拖一张图片进去。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtOvMr1YYQMDBWkJV8JVJM6Rz4M6WiauGSjgiaJNHISOWoNzwiaKAI9l9Gw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=22" alt="图片"></p>
+<p>如果成功了，在“相册”里就能看到这张图，链接也是我们自己的域名。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtic7AKiaPenFOR7JuPVVmt19uYf4my6zUoCgglqGEclZXpIjqwPEGMR9g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=23" alt="图片"></p>
+<p>如果不成功，别慌。打开 PicGO 的设置，找到日志选项，点击日志文件，就可以看到错误信息。99% 的问题都是配置填错了，对着日志的提示检查一遍就好。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtdY735sGoSaRGQMhLwibuOSK8b6do6sJXEQGRbSIA5gp8YLBrDxLvssA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=24" alt="图片"><br>PicGO 的日志系统还是很不错的，常见的问题比如说授权啊、账号欠费啊等等什么的基本都能在日志里窥见一二，然后自行去云厂商 check 即可。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtOvAviciaBm1CMoUFtJvrW92JNia9FwJjgLa6ot9UeFpDyHsNicFHibyc5FQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=25" alt="正常 log vs 有问题的 log"></p>
+<p>正常 log vs 有问题的 log</p>
+<p>我刚刚查了一下 PicGO 的 star history，稳定的离谱，这究竟是怎么做到如此波澜不惊的 🤔。。。。。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMticUby6iazQKrCRHQXu0VIF1iaAZo1So4p1gickhB3ImlWEyib99LDjjrKiaA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=26" alt="source: https://www.star-history.com/#Molunerfinn/PicGo&amp;type=date&amp;legend=top-left"></p>
+<p>source: <a href="https://www.star-history.com/">https://www.star-history.com/</a> <a href="https://mp.weixin.qq.com/s/">#Molunerfinn</a> /PicGo&amp;type=date&amp;legend=top-left</p>
+<hr>
+<h2>终点站：终极合体！在 Obsidian 里实现“粘贴即上传”</h2>
+<p>现在，我们来到了这套工作流最核心的一步：把我们的写作神器 Obsidian 和自动传送带 PicGO 无缝对接起来。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtRAxhDDGJ2fybVA9nBJkibE7tkLicH4jDx4kjMSNxI6hicib2ydiaBeRralg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=27" alt="图片"></p>
+<p>我平常都是在 Obsidian 里管理自己的知识库，它是一个基于本地 Markdown 文件的编辑器，默认粘贴图片是存在本地的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtZrTkVicuhJSOiaQDnpdLoia70OhonQpaGMArhlnrkiaLCFaiaU6A93xiapcQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=28" alt="source: https://obsidian.md/"></p>
+<p>source: <a href="https://obsidian.md/">https://obsidian.md/</a></p>
+<p>为了能将我们的 markdown 文件分享给别人使用，就需要把本地的图片文件上传到云端。我的解决方案是使用 <code>image-auto-upload</code> 插件。</p>
+<p>在 obsidian 里按 <code>cmd+,</code> 打开设置面板，去“第三方插件”的市场里搜索 <code>image-auto-upload</code> ，安装并启用它。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtwefejX5sPfca22FficjcY0ARH6J06Om8yAP697oab6rlic3vnOtVk8BQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=29" alt="图片"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtpZickGWs8OytdZ7XS4E0pcYKBG85GY0iaDrO28vicibMJhogp5GUbWebXg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=30" alt="图片"></p>
+<p>它的配置很清爽，启用插件，并配置好 PicGO 的服务地址即可。你需要先确保 PicGO 客户端在后台运行，并开启了 Server 功能（默认端口是 36677）。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMt2ibxLcxLhELkKpshVU2VuFpapOZeyZRic2S1JIHXhvBbteuCkMQbGiazA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=31" alt="图片"></p>
+<p>现在，见证奇迹的时刻到了：</p>
+<ol>
+<li>你在任何地方截图或复制一张图片。</li>
+<li>回到 Obsidian 的笔记里，按下 <code>Cmd + V</code> 粘贴。</li>
+<li>你会看到一个 <code>[uploading...]</code> 的提示一闪而过。</li>
+<li>几秒内，这个提示就会自动被替换成一张以你自己的域名开头的图片链接！</li>
+</ol>
+<p>整个流程全自动完成，你的图片已经永久地存放在了七牛云。这篇 Markdown 文档，无论你发到哪里，图片都能完美显示。</p>
+<p>最终整个 markdown 文件就可以直接分享给别人看到有图片的效果了。</p>
+<p>比如在 Markdown Preview <sup><span>[6]</span></sup> 这类在线预览网站，或者在我们即将发布的 Lovpen 插件内：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtWjX4NOR7eYut9lntibA2ubicNRgZBa0sIsHjSX9GkDuz7KtEwcrt7Z9Q/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=32" alt="图片"></p>
+<p>以及我们 AI Native 的轻量笔记软件 Lovmind（正在内测，欢迎申请）：</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtIqAEeujJChTDUayAg1HBajB8RoL92GqN8ZdHKfBmQ2kgtgX2S7xibBg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=33" alt="Lovmind Design"></p>
+<p>Lovmind Design</p>
+<h2>【限时福利】手工川粉丝专属，百元套餐0元领！</h2>
+<p>为了让大家能无门槛地体验到这套工作流的魅力，我特地和七牛云官方争取到了一波 <strong>手工川粉丝专属福利</strong> ！</p>
+<p><strong>福利内容：</strong><br>原价 100 元的资源包，现在 <strong>0 元免费领取</strong> ！包含：</p>
+<ul>
+<li><strong>50GB/月 标准存储空间 (共 12 个月，总计 600GB)</strong></li>
+<li><strong>100GB CDN 流量</strong></li>
+<li><strong>1000 分钟实时音视频转码时长</strong></li>
+</ul>
+<p>这个套餐对于个人博客、笔记图床来说绰绰有余，用一年基本不用担心容量和流量问题，诚意满满！</p>
+<p><strong>领取方式：</strong></p>
+<ol>
+<li>添加七牛云官方福利官 <strong>牛小七</strong> 的微信：
+<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFj8CDbB3JvOHzZyHwSIyMtXxHKBE8LEFbibAJFx5cnaIc8DgzklHSfM9c9qC5MeibtUPg4qwXv2pfA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=34" alt="图片"></li>
+<li>发送对接暗号： <strong>【手工川粉丝】</strong></li>
+<li>小七就会把 <strong>0 元购</strong> 的专属链接发给你！</li>
+</ol>
+<p><strong>名额有限，仅限前 50 名，先到先得，拼手速的时候到了！</strong> 赶紧去添加吧，把这套高效工作流真正用起来！</p>
+<blockquote>
+<p>注：本篇由本篇所介绍的工作流产出。</p>
+</blockquote>
+<hr>
+<p>[1] 七牛云, <a href="https://www.qiniu.com">https://www.qiniu.com</a></p>
+<p>[2] 阿里云的网络拨测工具, <a href="https://boce.aliyun.com/detect/dns">https://boce.aliyun.com/detect/dns</a></p>
+<p>[3] 太空算力, <a href="https://eu.36kr.com/zh/p/3537436945733766">https://eu.36kr.com/zh/p/3537436945733766</a></p>
+<p>[4] 七牛云访问管理, <a href="https://portal.qiniu.com/iam/overview">https://portal.qiniu.com/iam/overview</a></p>
+<p>[5] PicGO 官网, <a href="https://picgo.github.io/PicGo-Doc/en/guide/">https://picgo.github.io/PicGo-Doc/en/guide/</a></p>
+<p>[6] Markdown Preview, <a href="https://markdownlivepreview.com/">https://markdownlivepreview.com/</a></p>
+<p><a href="https://mp.weixin.qq.com/s/">阅读原文</a></p>
+<p>继续滑动看下一个</p>
+<p>五道口手工川</p>
+<p>向上滑动看下一个</p>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/xyDVwPrjbo1dAYZRXuRlxg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

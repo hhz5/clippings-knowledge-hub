@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源一个为演讲而生的PPT Skill，再不用跟观众大眼瞪小眼了 · 剪藏知识库</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){ try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html">剪藏知识库</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+  </div>
+</header>
+<main class="wrap article">
+  <a class="back" href="../index.html">← 返回总览</a>
+  <h1 class="article-title">开源一个为演讲而生的PPT Skill，再不用跟观众大眼瞪小眼了</h1>
+  <div class="meta">
+    <a class="chip author" href="../index.html?author=AI%E6%B2%83%E8%8C%A8">AI沃茨</a>
+    <a class="chip" href="../index.html?tag=AI">AI</a><a class="chip" href="../index.html?tag=Humanize%20PPT">Humanize PPT</a><a class="chip" href="../index.html?tag=%E6%BC%94%E8%AE%B2">演讲</a><a class="chip" href="../index.html?tag=PPT">PPT</a><a class="chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a>
+    <span class="date">2026-06-22</span>
+  </div>
+  <p class="lead">一页好看的PPT首先要是一页有信息量的PPT</p>
+  <article class="content"><p>AI沃茨 卡尔的AI沃茨 <em>2026年6月19日 17:48</em></p>
+<p>最近三个月一直用HTML PPT线下演讲，</p>
+<p>工作流极其重复枯燥，基本上都是用Codex一口气做个30页，然后就是一页一页磨，字多了不好看，字少了页面太空，没有配图的话还要用GPT Image2生成再额外接入。</p>
+<p>一句话总结，很多HTML PPT Skill，根本就不是为演讲准备的。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzZCrgkYJicqPpAUuGU4VicHVcfx18G1VhvDGzeMjhjWRq3vNX5SD9Ds0ibZHkXL1icnx3Xia7LCxQpjFa3BIcyOpcTVAM6neJjIOX0/640?wx_fmt=png&from=appmsg#imgIndex=0" alt="图片"></p>
+<p>这不是这些Skill的锅，真的。</p>
+<p>我前后尝试过按章节搭配不同的颜色页面，然后也总结过几个常见的PPT的结构，比方说左右平分，上下平分，三列式上下左右4个方块的格式，基本上能在HTML PPT里面调的，我都试过了。</p>
+<p>就跟马铃薯炒土豆一样，</p>
+<p>同样的材料炒不出第二种味。</p>
+<p>问题不在模板数量。仔细复盘的话是上游Agent给每页信息分配不均的锅。</p>
+<p>上游怎么收集整理信息，怎么分配到每页，中间质量有没有过关（重复标题，字体重叠，为了好看加了很多根本没人看的小字），做好之后的演讲稿能不能分到每一页看，</p>
+<p>这些都没Skill管。</p>
+<p>于是就有了Humanize PPT v0.9版！</p>
+<p>我一口气全解决了，再次怀念Claude Fable5。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwTZ3nicm2hEiaqwrO1bz0VTkzanmgq6N1Tr2rSX9hMv1vZGcNG8KORZ94lGGVN1EUuHIpLDSolXvEKdUbyLiaqD9xsZgG7NWv9VQ/640?wx_fmt=png&from=appmsg#imgIndex=1" alt="图片"></p>
+<p>🔗 github. com/LearnPrompt/humanize-ppt</p>
+<p>从v0.7开始，我先给 Humanize PPT 划了一条边界。把渲染PPT页面外包给下游的Skill。</p>
+<p>Humanize PPT负责把大纲，逐页意图，视频和图片素材的坑位和演讲稿，整理成结构化的 JSON 与 Markdown，再交给下游 Skill 原生渲染。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fw4dqtdg0JFDIDZUCZibwibXgDL4WZ4GTSiakBj4bmTVuSmTfrVribJhCuUWejp30xVIy4FBTlRchfuIMLA7pxHbZn9ibt8RVWev0jo/640?wx_fmt=png&from=appmsg#imgIndex=2" alt="Image"></p>
+<p>所以理论上是可以适配所有的HTML PPT Skill，当然为了严谨我跑通了两条完整的工作流。</p>
+<p>中文可以接guizang-ppt-skill，英文可以接frontend-slides和beautiful-html-templates。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fz1icz4yB7msHYKZ79DMuQjDemQtX5Sfkibo84gfIYejbeNQAxy2wtWZoMuKILU4J1icaoS5bV50rWS66j0l5sVh4KvNX2ppygRek/640?wx_fmt=png&from=appmsg#imgIndex=3" alt="图片"></p>
+<p>用AI做PPT最隐蔽的坑就是页数压不下来。</p>
+<p>一小时演讲的PPT，很多时候也就三十多页。每一页都得承载信息。</p>
+<p>要么推进一个判断，要么解释一个阻力，要么让观众突然意识到，哦，原来这个事还能这么想。</p>
+<p>所以我把资料整理和页面信息分配，做成了 Humanize PPT 的地基。</p>
+<p>AST，也就是 Audience、State、Transfer。</p>
+<p>A是观众的身份。谁在听？他们已经知道什么？他们凭什么要继续听下去？</p>
+<p>S是状态。观众看你的PPT之前是什么状态，看完之后应该变成什么状态。</p>
+<p>T是转移。每一页slide的任务不是展示信息，而是推着观众从一个状态走到下一个状态。</p>
+<p>Humanize PPT做的第一件事，就是在渲染之前，先帮你把素材按AST的逻辑重新编排。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fw4nxOEaDibv6sxOIXZYVbDY91nrsEk1pqYb38C0SmmkectWdF0nDJh5lJVn8lejCL82iaQ5cu5nVW2vHicjRVicICP6fW8CIdHwz4/640?wx_fmt=png&from=appmsg#imgIndex=4" alt="图片"></p>
+<p>它会输出一份大纲，每一页都标注观众进入时的状态，这一页的意图，以及离开时应该带走的信息。</p>
+<p>我还真的拿同一主题的材料跑了一次前后对左边直接交给 guizang ppt skill，按背景、痛点、方案来分。右边先经过Humanize 的AST编排，再交给同一套guizang视觉体系。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwiaiazlOwpyT5DWoILVfoZeiaUUqicDfia8ZMQ2R3kYQNqLOzm9JhiapN8pTkTz7peGDx9zq7OBEMraxbuctib8zHAGQn6FOr4X2a7DU/640?wx_fmt=png&from=appmsg#imgIndex=5" alt="图片"></p>
+<p>从视觉上看，左边并不丑，甚至guizang的Swiss validator和静态演讲体检都能通过。</p>
+<p>但它还是更像一个整理得很漂亮的文件夹。</p>
+<p>到了右边，页面不再叫「背景」「痛点」「方案」，而是直接讲真实演讲不是概念展示，AST 先决定观众怎么变。</p>
+<p>渲染器没有换，变化是来自上游。</p>
+<p>大纲确定以后，Humanize PPT 不会马上让下游一口气写完整份 deck。</p>
+<p>它会先拿同一份内容，渲染四张真实页面，让你提前看看最终效果。</p>
+<p>不是看色板，也不是看几句抽象的风格描述。</p>
+<p>直接看下游 Skill 真正做出来的 HTML 页面。字体怎么排，信息密度怎么样，版式和动效是不是你想要的，一眼就能看出来。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fws14mibbLPnhC6nS5G5j9M30icjZOorSkQhQtkicB0fDLGcXFeVartTeNJee1biaNVKpphAaIdTlTcTnTR2lVSk5UWStJLw4Xs0icQ/640?wx_fmt=png&from=appmsg#imgIndex=6" alt="图片"></p>
+<p>选定其中一个风格以后，Agent 才会沿着这套视觉体系，继续完成后面的二三十页。</p>
+<p>这样就不用等整份 PPT 全部做完，才发现方向从一开始就错了。</p>
+<p>图片和视频放置的方式也全改变了，</p>
+<p>以前Humanize出大纲，会写「这一页可能需要一张图」。到了 v0.9，不只是说「需要」了。素材放哪，文件叫什么，用什么 prompt 生成，全部写进大纲。</p>
+<p>baoyu-image-gen接GPT Image2配图，remotion-video-production做视频。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/VNz1x8bH8FxjglX6rKcD5CWN9bXvxia3Ec4e71coBzHNch0Nqmh2JdLKTQ0eVWX2v5H62gn6xANFjm8JZsUxBVibMjBrBRxrSJMiaTMTrLIgaU/640?wx_fmt=gif&from=appmsg#imgIndex=7" alt="图片"></p>
+<p>当然，后面我发现先用 SVG 做一个流程图，然后把这个图改成 Remotion，会有更好的效果。</p>
+<p>所以我把这个工作流也融入到了 V0.9 里面了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/VNz1x8bH8FyWIqXmA9ibQ49GZSrDQ2yBGyhUztXIMEGiaKBPh0ic3mU8lHGfZwhSlcMxiaDQPG8pgthyicXx4GHDicJYEziaCKCBSKg2umcJVt1eD8/640?wx_fmt=gif&from=appmsg#imgIndex=8" alt="图片"> <img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwHOjjnJ75t7cyas9laNLNWA7weeLMrFPouicaPmpzAe9YL3IzwBcG4vicS3awKWHbZ3ykvsWqDhtSoalSQcoibSYYUAxsSMqvMt4/640?wx_fmt=png&from=appmsg#imgIndex=9" alt="Image"></p>
+<p>我之前也试过另一条路，把别人的画风和版式强行搬进自己的框架，再拖三四十个模板进来。</p>
+<p>但最终结果，真的四不像，打破原有框架的约束后做出来的页面只能做到80%左右的效果。</p>
+<p>四不像甚至还不是最严重的问题。</p>
+<p>我还做出过一大堆根本讲不动的页面，信息密度不够，一句话就要跳四五页。</p>
+<p>我挑出来一些给大家看，</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FxQSTfsR9zhJFviaOiavu1Z7Fbic755026OjYzCJDDf18VMrAUiciaoGd27wHQmx4HDooHJHw8FzsAsQGdQD4O90P2H0eRK02XEh0uw/640?wx_fmt=jpeg&from=appmsg#imgIndex=10" alt="Image"></p>
+<p>比方说第三页，上面就三个词加一张全屏背景图。好看是好看，那我讲什么？很多时候，在演讲的过程中，观众其实是会分神的。我认为，如果一页PPT在观众短暂分神再回神之后，就完全看不出有什么主体内容，那这页PPT其实就是失败的。</p>
+<p>第五页，一整屏文字挤在一起，我跟观众属于是面面相觑，一起沉默的状态，照着文字念那还不如直接打印出来一手一份。</p>
+<p>第八页，标题就写着「技术架构」，下面一个TODO占位符还没填完，图片素材和视频素材都没有。</p>
+<p>渲染出PPT的下一步是质检和把演讲稿分配到每一页。</p>
+<p>Humanize PPT输出的deck支持演讲模式。按S键切换，演讲稿实时出现在独立窗口，带页码，带备注。</p>
+<p>不用对稿，不用背稿，你盯着观众，备注在另一个屏幕跟着翻。</p>
+<p>按 ESC 键打开全局索引，所有页面缩成一张总览。讲到哪里忘了，临时想跳页，不用一张张往回翻，找到对应页面，点一下就能直接切过去。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fxc6wm5icLZJ5Xhs9ibW6CMEmMpVwicibiburDI1WOAtoial849JVU4QQsAa6yWwoWnVhw8JYaVCpSUVDgUB8W0ye3DT4AzbnTR4EKxo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11" alt="Image"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxBtDesRg6CKNTVic6icN5k0Tm85nOmGERhmrV7pJ1PZs3syFEEmxBz7rLaKibsnTYwBO5RQ47rU8S5yj8HLia5NZM0B7zDibBP5sWo/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12" alt="图片"></p>
+<p>，时长00:15</p>
+<p><video src="https://mpvideo.qpic.cn/0bc32mcqkaafeqamzlzr55vflu6daxjqkbia.f10002.mp4?dis_k=e239559e39b7f82adc1e2efbce9cee02&amp;dis_t=1782113293&amp;play_scene=10120&amp;auth_info=UaudkZlyJXcKtLSf53wCHAdybGgbHDA1TW0tNEU5LRtqSBkhblw+On1rPFU9Ew88E3g=&amp;auth_key=964716856a1b5f2d77d745545f5a530e&amp;vid=wxv_4567633973342109706&amp;format_id=10002&amp;support_redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
+<p>在演讲的过程中，我还发现HTML PPT有常见的渲染问题，</p>
+<p>所以我们在演讲之前，还加了一个质检环节。</p>
+<p>比方说，这个PPT原本是由beautiful-html-templates纯渲染的，风格是Neo-Grid Bold。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FxtslJRyKwTTwYArs4lOwtzibj0wsWpkdUrZY73kO8c5VPniaQFxnMpPtvMKPCUoiajnFhuVBMB6Q7hZibQSFJtibJZOdDicCARsur1o/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13" alt="图片"></p>
+<p>如果当它是一个html网页静态扫描先跑了一遍的话，全绿，0 fail，0 warn。</p>
+<p>结果截图逐页人工复核的时候，</p>
+<p>直接给我整不会了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FyLD17Ugf20icdzoZicNVsHv3Mv9OLxwn9D1PdzDeuTOnCxy0iakLcdazUkCXfIiaBnuxJAhCqf7YDvPGmNsTsePz76PKc7j2ZibJIc/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14" alt="图片"></p>
+<p>左下角的页码，把正文最后一行吃掉了一半。</p>
+<p>观众实际看到的是「uires confirmation.」，但那句话原本应该是「What requires confirmation.」。这就是多少显得有点业余了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxNibOKvzOSFgznKruYJGmnRMqko3FGpNjI3qOrWzbsIz6CdMfl9ZG93oSuH2ItsF93zoRWd0Ke5VR4sTI3XPhal2cZia25NTAOE/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=15" alt="Image"></p>
+<p>但加上Humanize PPT流程后，「What requires confirmation.」会完整展现且视觉体系一个像素没动。</p>
+<p>我还把做HTML PPT的出错大全都统计起来，通通能修。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FwKHz7cJa2TLCBHRLdOpBH28FAsoD4uyvm3PpSrjIdQiagKDN3TQGayCyuZZiaI6icCNldWNauBM91wbibjf1vclY9BwIchEQp9vR4/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=16" alt="图片"></p>
+<p>很长一段时间，Humanize PPT都是走弯路，</p>
+<p>一个劲在死磕。怎么让AI做得更漂亮。</p>
+<p>现在我更想做的是，</p>
+<p>怎么让AI做出来的PPT，真的能被拿去演讲。</p>
+<p>漂亮当然重要，</p>
+<p>但在演讲里，决定一份PPT有没有用的，</p>
+<p>是你翻到下一页的时候，</p>
+<p>观众有没有跟着你一起往前走。</p>
+<p>这就是 Humanize PPT。</p>
+<p>一个为演讲而生的PPT Skill。</p>
+<p>把PPT从「看起来很高级」，</p>
+<p>往「能大讲特讲」推一点。</p>
+<p>那种页面明明很好看，</p>
+<p>但站上去不知道怎么讲的尴尬感。</p>
+<p>那种明明代码没错，</p>
+<p>但投影上就是少了半行字的无语感。</p>
+<p>那种一页一页截图，</p>
+<p>跟Agent说去看第几页第几行的疲惫感。</p>
+<p>我通通不要，</p>
+<p>这件事交给Skill就好啦。</p>
+<p>@ 作者 / 卡尔 &amp; yc星辰</p>
+<hr>
+<p>最后，感谢你看到这里👏</p>
+<p>如果喜欢这篇文章，不妨顺手给我们</p>
+<p><em>点赞｜在看｜转发｜评论 📣</em></p>
+<p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
+<p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
+<p>更多的内容正在不断填坑中……</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=17" alt="图片"></p>
+<p>卡尔的AI沃茨</p>
+<p>邀请你前往腾讯公益一起捐</p>
+<p>给困境儿童送关爱包</p>
+<p>271人捐赠</p>
+<p>有趣的AI教程 · 目录</p>
+<p>继续滑动看下一个</p>
+<p>卡尔的AI沃茨</p>
+<p>向上滑动看下一个</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MP4 File 1.43 MB</th>
+<th></th>
+</tr>
+</thead>
+</table>
+</article>
+  <p class="orig"><a href="https://mp.weixin.qq.com/s/rGoYnUcBRkfRKQPbIaawyg" target="_blank" rel="noopener">查看原文 ↗</a></p>
+</main>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', cur);
+      try { localStorage.setItem('theme', cur); } catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
