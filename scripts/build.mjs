@@ -87,12 +87,13 @@ function slugify(rel) {
 }
 
 function firstImage(md) {
-  // 跳过微信公众平台等带反盗链的图床，避免卡片封面显示“未经允许不可引用”占位图
-  const blocked = /mmbiz\.qpic\.cn|mmbiz\.qlogo\.cn/;
+  // 跳过微信公众平台 / 表情 / 非图片资源，避免卡片封面显示占位图或 404
+  const blocked = /mmbiz\.qpic\.cn|mmbiz\.qlogo\.cn|mmecoa\.qpic\.cn|res\.wx\.qq\.com|mp\.weixin\.qq\.com/;
   const re = /!\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/g;
   for (const m of md.matchAll(re)) {
     const url = m[1];
     if (blocked.test(url)) continue;
+    if (!/\.(png|jpg|jpeg|webp|gif|avif|bmp)(\?.*)?$/i.test(url)) continue;
     return url;
   }
   return '';
