@@ -2,9 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import { loadSrc, projectRoot } from './config.mjs';
 
-const SRC = '/Users/han/Desktop/Haaan/剪藏文件';
-const OUT = '/Users/han/Sites/WorkBuddy/剪藏网站';
+const SRC = loadSrc();
+const OUT = projectRoot;
 const ART = path.join(OUT, 'articles');
 const ASSETS = path.join(OUT, 'assets');
 

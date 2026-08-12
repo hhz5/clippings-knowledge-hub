@@ -1,0 +1,4 @@
+{
+  "src": "<PATH_TO_YOUR_CLIPPINGS_FOLDER>",
+  "note": "将此文件复制为 config.local.json 并填入你的剪藏文件夹绝对路径；config.local.json 已被 .gitignore 忽略，不会进仓库。也可用环境变量 CLIPPINGS_SRC 替代。"
+}

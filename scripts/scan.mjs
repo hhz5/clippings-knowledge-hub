@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
+import { loadSrc } from './config.mjs';
 
-const SRC = '/Users/han/Desktop/Haaan/剪藏文件';
+const SRC = loadSrc();
 
 // 健壮 frontmatter 解析：gray-matter 失败时回退正则解析，处理内部未转义引号等脏数据
 function parseFront(raw) {

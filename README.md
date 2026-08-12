@@ -26,16 +26,12 @@
 
 ### 直接双击打开
 
-```bash
-open /Users/han/Sites/WorkBuddy/剪藏网站/index.html
-```
-
-数据已内联到 `assets/data.js`，无需启动服务器。
+直接双击项目根目录下的 `index.html` 即可（数据已内联到 `assets/data.js`，无需启动服务器）。
 
 ### 本地 HTTP 服务
 
 ```bash
-cd /Users/han/Sites/WorkBuddy/剪藏网站
+cd <项目根目录>
 python3 -m http.server 8099
 # 浏览器访问 http://localhost:8099
 ```
